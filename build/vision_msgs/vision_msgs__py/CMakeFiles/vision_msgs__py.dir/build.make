@@ -71,9 +71,11 @@ vision_msgs__py/CMakeFiles/vision_msgs__py: rosidl_generator_py/vision_msgs/_vis
 vision_msgs__py/CMakeFiles/vision_msgs__py: rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_c.c
 vision_msgs__py/CMakeFiles/vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_detection.py
 vision_msgs__py/CMakeFiles/vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_detection_array.py
+vision_msgs__py/CMakeFiles/vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_ai_status.py
 vision_msgs__py/CMakeFiles/vision_msgs__py: rosidl_generator_py/vision_msgs/msg/__init__.py
 vision_msgs__py/CMakeFiles/vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_detection_s.c
 vision_msgs__py/CMakeFiles/vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_detection_array_s.c
+vision_msgs__py/CMakeFiles/vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_ai_status_s.c
 
 rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/lib/rosidl_generator_py/rosidl_generator_py
 rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_py/__init__.py
@@ -90,6 +92,7 @@ rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.
 rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/rosidl_generator_py/resource/_srv.py.em
 rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/vision_msgs/msg/Detection.idl
 rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/vision_msgs/msg/DetectionArray.idl
+rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/vision_msgs/msg/AIStatus.idl
 rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -137,6 +140,9 @@ rosidl_generator_py/vision_msgs/msg/_detection.py: rosidl_generator_py/vision_ms
 rosidl_generator_py/vision_msgs/msg/_detection_array.py: rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/vision_msgs/msg/_detection_array.py
 
+rosidl_generator_py/vision_msgs/msg/_ai_status.py: rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/vision_msgs/msg/_ai_status.py
+
 rosidl_generator_py/vision_msgs/msg/__init__.py: rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/vision_msgs/msg/__init__.py
 
@@ -146,10 +152,15 @@ rosidl_generator_py/vision_msgs/msg/_detection_s.c: rosidl_generator_py/vision_m
 rosidl_generator_py/vision_msgs/msg/_detection_array_s.c: rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/vision_msgs/msg/_detection_array_s.c
 
+rosidl_generator_py/vision_msgs/msg/_ai_status_s.c: rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/vision_msgs/msg/_ai_status_s.c
+
 vision_msgs__py: rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_c.c
 vision_msgs__py: rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 vision_msgs__py: rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_introspection_c.c
 vision_msgs__py: rosidl_generator_py/vision_msgs/msg/__init__.py
+vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_ai_status.py
+vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_ai_status_s.c
 vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_detection.py
 vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_detection_array.py
 vision_msgs__py: rosidl_generator_py/vision_msgs/msg/_detection_array_s.c

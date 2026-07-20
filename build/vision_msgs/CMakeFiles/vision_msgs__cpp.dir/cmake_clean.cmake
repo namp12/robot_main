@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/vision_msgs__cpp"
+  "rosidl_generator_cpp/vision_msgs/msg/ai_status.hpp"
+  "rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__builder.hpp"
+  "rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__struct.hpp"
+  "rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__traits.hpp"
+  "rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__type_support.hpp"
   "rosidl_generator_cpp/vision_msgs/msg/detail/detection__builder.hpp"
   "rosidl_generator_cpp/vision_msgs/msg/detail/detection__struct.hpp"
   "rosidl_generator_cpp/vision_msgs/msg/detail/detection__traits.hpp"

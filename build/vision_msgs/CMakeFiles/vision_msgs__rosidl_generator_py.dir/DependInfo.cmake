@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/robot/robot_ws/build/vision_msgs/rosidl_generator_py/vision_msgs/msg/_ai_status_s.c" "CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_ai_status_s.c.o" "gcc" "CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_ai_status_s.c.o.d"
   "/home/robot/robot_ws/build/vision_msgs/rosidl_generator_py/vision_msgs/msg/_detection_array_s.c" "CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_detection_array_s.c.o" "gcc" "CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_detection_array_s.c.o.d"
   "/home/robot/robot_ws/build/vision_msgs/rosidl_generator_py/vision_msgs/msg/_detection_s.c" "CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_detection_s.c.o" "gcc" "CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_detection_s.c.o.d"
   )

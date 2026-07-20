@@ -84,6 +84,7 @@ rosidl_generator_c/vision_msgs/msg/detection.h: /opt/ros/humble/share/rosidl_gen
 rosidl_generator_c/vision_msgs/msg/detection.h: /opt/ros/humble/share/rosidl_generator_c/resource/srv__type_support.h.em
 rosidl_generator_c/vision_msgs/msg/detection.h: rosidl_adapter/vision_msgs/msg/Detection.idl
 rosidl_generator_c/vision_msgs/msg/detection.h: rosidl_adapter/vision_msgs/msg/DetectionArray.idl
+rosidl_generator_c/vision_msgs/msg/detection.h: rosidl_adapter/vision_msgs/msg/AIStatus.idl
 rosidl_generator_c/vision_msgs/msg/detection.h: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_c/vision_msgs/msg/detection.h: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_generator_c/vision_msgs/msg/detection.h: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -140,11 +141,26 @@ rosidl_generator_c/vision_msgs/msg/detail/detection_array__struct.h: rosidl_gene
 rosidl_generator_c/vision_msgs/msg/detail/detection_array__type_support.h: rosidl_generator_c/vision_msgs/msg/detection.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vision_msgs/msg/detail/detection_array__type_support.h
 
+rosidl_generator_c/vision_msgs/msg/ai_status.h: rosidl_generator_c/vision_msgs/msg/detection.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vision_msgs/msg/ai_status.h
+
+rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.h: rosidl_generator_c/vision_msgs/msg/detection.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.h
+
+rosidl_generator_c/vision_msgs/msg/detail/ai_status__struct.h: rosidl_generator_c/vision_msgs/msg/detection.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vision_msgs/msg/detail/ai_status__struct.h
+
+rosidl_generator_c/vision_msgs/msg/detail/ai_status__type_support.h: rosidl_generator_c/vision_msgs/msg/detection.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vision_msgs/msg/detail/ai_status__type_support.h
+
 rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c: rosidl_generator_c/vision_msgs/msg/detection.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c
 
 rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c: rosidl_generator_c/vision_msgs/msg/detection.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c
+
+rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c: rosidl_generator_c/vision_msgs/msg/detection.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c
 
 CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c.o: CMakeFiles/vision_msgs__rosidl_generator_c.dir/flags.make
 CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c.o: rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c
@@ -174,23 +190,39 @@ CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/ms
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c -o CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c.s
 
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o: CMakeFiles/vision_msgs__rosidl_generator_c.dir/flags.make
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o: rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o: CMakeFiles/vision_msgs__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robot/robot_ws/build/vision_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o -MF CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o.d -o CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o -c /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c
+
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c > CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.i
+
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c -o CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.s
+
 # Object files for target vision_msgs__rosidl_generator_c
 vision_msgs__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c.o" \
-"CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c.o"
+"CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c.o" \
+"CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o"
 
 # External object files for target vision_msgs__rosidl_generator_c
 vision_msgs__rosidl_generator_c_EXTERNAL_OBJECTS =
 
 libvision_msgs__rosidl_generator_c.so: CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c.o
 libvision_msgs__rosidl_generator_c.so: CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c.o
+libvision_msgs__rosidl_generator_c.so: CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o
 libvision_msgs__rosidl_generator_c.so: CMakeFiles/vision_msgs__rosidl_generator_c.dir/build.make
 libvision_msgs__rosidl_generator_c.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
 libvision_msgs__rosidl_generator_c.so: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so
 libvision_msgs__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libvision_msgs__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 libvision_msgs__rosidl_generator_c.so: CMakeFiles/vision_msgs__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robot/robot_ws/build/vision_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared library libvision_msgs__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robot/robot_ws/build/vision_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C shared library libvision_msgs__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vision_msgs__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -201,6 +233,11 @@ CMakeFiles/vision_msgs__rosidl_generator_c.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/vision_msgs__rosidl_generator_c.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/vision_msgs__rosidl_generator_c.dir/clean
 
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/vision_msgs/msg/ai_status.h
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.h
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/vision_msgs/msg/detail/ai_status__struct.h
+CMakeFiles/vision_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/vision_msgs/msg/detail/ai_status__type_support.h
 CMakeFiles/vision_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c
 CMakeFiles/vision_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/vision_msgs/msg/detail/detection__functions.h
 CMakeFiles/vision_msgs__rosidl_generator_c.dir/depend: rosidl_generator_c/vision_msgs/msg/detail/detection__struct.h

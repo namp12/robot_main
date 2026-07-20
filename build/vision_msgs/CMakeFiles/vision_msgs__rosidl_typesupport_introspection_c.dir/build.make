@@ -79,6 +79,7 @@ rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_type
 rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h: /opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/srv__type_support.c.em
 rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h: rosidl_adapter/vision_msgs/msg/Detection.idl
 rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h: rosidl_adapter/vision_msgs/msg/DetectionArray.idl
+rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h: rosidl_adapter/vision_msgs/msg/AIStatus.idl
 rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -117,11 +118,17 @@ rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_type
 rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_c.h: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_c.h
 
+rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__rosidl_typesupport_introspection_c.h: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__rosidl_typesupport_introspection_c.h
+
 rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c
 
 rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c
+
+rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c
 
 CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c.o: CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/flags.make
 CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c.o: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c
@@ -151,16 +158,32 @@ CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesuppor
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/robot/robot_ws/build/vision_msgs/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c -o CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c.s
 
+CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o: CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/flags.make
+CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c
+CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o: CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robot/robot_ws/build/vision_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o -MF CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o.d -o CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o -c /home/robot/robot_ws/build/vision_msgs/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c
+
+CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/robot/robot_ws/build/vision_msgs/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c > CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.i
+
+CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/robot/robot_ws/build/vision_msgs/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c -o CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.s
+
 # Object files for target vision_msgs__rosidl_typesupport_introspection_c
 vision_msgs__rosidl_typesupport_introspection_c_OBJECTS = \
 "CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c.o" \
-"CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c.o"
+"CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c.o" \
+"CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o"
 
 # External object files for target vision_msgs__rosidl_typesupport_introspection_c
 vision_msgs__rosidl_typesupport_introspection_c_EXTERNAL_OBJECTS =
 
 libvision_msgs__rosidl_typesupport_introspection_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c.o
 libvision_msgs__rosidl_typesupport_introspection_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c.o
+libvision_msgs__rosidl_typesupport_introspection_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o
 libvision_msgs__rosidl_typesupport_introspection_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/build.make
 libvision_msgs__rosidl_typesupport_introspection_c.so: libvision_msgs__rosidl_generator_c.so
 libvision_msgs__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
@@ -171,7 +194,7 @@ libvision_msgs__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/libbu
 libvision_msgs__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libvision_msgs__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/librcutils.so
 libvision_msgs__rosidl_typesupport_introspection_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robot/robot_ws/build/vision_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared library libvision_msgs__rosidl_typesupport_introspection_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robot/robot_ws/build/vision_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C shared library libvision_msgs__rosidl_typesupport_introspection_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -182,6 +205,8 @@ CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/clean
 
+CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__rosidl_typesupport_introspection_c.h
+CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c
 CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h
 CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c
 CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_c.h

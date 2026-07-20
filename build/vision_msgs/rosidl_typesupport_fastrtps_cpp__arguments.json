@@ -4,7 +4,8 @@
   "template_dir": "/opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource",
   "idl_tuples": [
     "/home/robot/robot_ws/build/vision_msgs/rosidl_adapter/vision_msgs:msg/Detection.idl",
-    "/home/robot/robot_ws/build/vision_msgs/rosidl_adapter/vision_msgs:msg/DetectionArray.idl"
+    "/home/robot/robot_ws/build/vision_msgs/rosidl_adapter/vision_msgs:msg/DetectionArray.idl",
+    "/home/robot/robot_ws/build/vision_msgs/rosidl_adapter/vision_msgs:msg/AIStatus.idl"
   ],
   "ros_interface_dependencies": [
     "std_msgs:/opt/ros/humble/share/std_msgs/msg/Bool.idl",
@@ -51,6 +52,7 @@
     "/opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource/srv__type_support.cpp.em",
     "/home/robot/robot_ws/build/vision_msgs/rosidl_adapter/vision_msgs/msg/Detection.idl",
     "/home/robot/robot_ws/build/vision_msgs/rosidl_adapter/vision_msgs/msg/DetectionArray.idl",
+    "/home/robot/robot_ws/build/vision_msgs/rosidl_adapter/vision_msgs/msg/AIStatus.idl",
     "/opt/ros/humble/share/std_msgs/msg/Bool.idl",
     "/opt/ros/humble/share/std_msgs/msg/Byte.idl",
     "/opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl",

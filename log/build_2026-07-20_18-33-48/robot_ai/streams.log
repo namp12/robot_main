@@ -1,0 +1,57 @@
+[14.360s] Invoking command in '/home/robot/robot_ws/src/robot_ai': PYTHONPATH=/home/robot/robot_ws/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_ai build --build-base /home/robot/robot_ws/build/robot_ai/build install --record /home/robot/robot_ws/build/robot_ai/install.log --install-scripts $base/lib/robot_ai --single-version-externally-managed install_data
+[17.492s] running egg_info
+[17.504s] creating ../../build/robot_ai/robot_ai.egg-info
+[17.507s] writing ../../build/robot_ai/robot_ai.egg-info/PKG-INFO
+[17.511s] writing dependency_links to ../../build/robot_ai/robot_ai.egg-info/dependency_links.txt
+[17.512s] writing entry points to ../../build/robot_ai/robot_ai.egg-info/entry_points.txt
+[17.514s] writing requirements to ../../build/robot_ai/robot_ai.egg-info/requires.txt
+[17.515s] writing top-level names to ../../build/robot_ai/robot_ai.egg-info/top_level.txt
+[17.521s] writing manifest file '../../build/robot_ai/robot_ai.egg-info/SOURCES.txt'
+[17.527s] reading manifest file '../../build/robot_ai/robot_ai.egg-info/SOURCES.txt'
+[17.537s] writing manifest file '../../build/robot_ai/robot_ai.egg-info/SOURCES.txt'
+[17.542s] running build
+[17.548s] running build_py
+[17.554s] creating /home/robot/robot_ws/build/robot_ai/build
+[17.559s] creating /home/robot/robot_ws/build/robot_ai/build/lib
+[17.564s] creating /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai
+[17.570s] copying robot_ai/publisher.py -> /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai
+[17.574s] copying robot_ai/camera.py -> /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai
+[17.578s] copying robot_ai/__init__.py -> /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai
+[17.583s] copying robot_ai/ai_node.py -> /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai
+[17.589s] copying robot_ai/config.py -> /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai
+[17.594s] copying robot_ai/model_loader.py -> /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai
+[17.601s] copying robot_ai/detector.py -> /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai
+[17.605s] running install
+[17.612s] running install_lib
+[17.616s] creating /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[17.621s] copying /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai/publisher.py -> /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[17.624s] copying /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai/camera.py -> /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[17.628s] copying /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai/__init__.py -> /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[17.632s] copying /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai/ai_node.py -> /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[17.636s] copying /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai/config.py -> /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[17.640s] copying /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai/model_loader.py -> /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[17.643s] copying /home/robot/robot_ws/build/robot_ai/build/lib/robot_ai/detector.py -> /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[17.647s] byte-compiling /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai/publisher.py to publisher.cpython-310.pyc
+[17.651s] byte-compiling /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai/camera.py to camera.cpython-310.pyc
+[17.655s] byte-compiling /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai/__init__.py to __init__.cpython-310.pyc
+[17.658s] byte-compiling /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai/ai_node.py to ai_node.cpython-310.pyc
+[17.662s] byte-compiling /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai/config.py to config.cpython-310.pyc
+[17.666s] byte-compiling /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai/model_loader.py to model_loader.cpython-310.pyc
+[18.113s] byte-compiling /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai/detector.py to detector.cpython-310.pyc
+[18.119s] running install_data
+[18.124s] creating /home/robot/robot_ws/install/robot_ai/share/ament_index
+[18.126s] creating /home/robot/robot_ws/install/robot_ai/share/ament_index/resource_index
+[18.128s] creating /home/robot/robot_ws/install/robot_ai/share/ament_index/resource_index/packages
+[18.130s] copying resource/robot_ai -> /home/robot/robot_ws/install/robot_ai/share/ament_index/resource_index/packages
+[18.131s] copying package.xml -> /home/robot/robot_ws/install/robot_ai/share/robot_ai
+[18.133s] creating /home/robot/robot_ws/install/robot_ai/share/robot_ai/launch
+[18.135s] copying launch/ai.launch.py -> /home/robot/robot_ws/install/robot_ai/share/robot_ai/launch
+[18.137s] creating /home/robot/robot_ws/install/robot_ai/share/robot_ai/config
+[18.139s] copying config/ai.yaml -> /home/robot/robot_ws/install/robot_ai/share/robot_ai/config
+[18.140s] creating /home/robot/robot_ws/install/robot_ai/share/robot_ai/model
+[18.142s] running install_egg_info
+[18.154s] Copying ../../build/robot_ai/robot_ai.egg-info to /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai-1.0.0-py3.10.egg-info
+[18.172s] running install_scripts
+[18.385s] Installing ai_node script to /home/robot/robot_ws/install/robot_ai/lib/robot_ai
+[18.389s] writing list of installed files to '/home/robot/robot_ws/build/robot_ai/install.log'
+[18.609s] Invoked command in '/home/robot/robot_ws/src/robot_ai' returned '0': PYTHONPATH=/home/robot/robot_ws/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_ai build --build-base /home/robot/robot_ws/build/robot_ai/build install --record /home/robot/robot_ws/build/robot_ai/install.log --install-scripts $base/lib/robot_ai --single-version-externally-managed install_data

@@ -86,8 +86,10 @@ rosidl_generator_rs/vision_msgs/rust/src/lib.rs: /opt/ros/humble/share/rosidl_ge
 rosidl_generator_rs/vision_msgs/rust/src/lib.rs: /opt/ros/humble/share/rosidl_generator_rs/resource/templates/srv_rmw.rs.em
 rosidl_generator_rs/vision_msgs/rust/src/lib.rs: rosidl_adapter/vision_msgs/msg/Detection.idl
 rosidl_generator_rs/vision_msgs/rust/src/lib.rs: rosidl_adapter/vision_msgs/msg/DetectionArray.idl
+rosidl_generator_rs/vision_msgs/rust/src/lib.rs: rosidl_adapter/vision_msgs/msg/AIStatus.idl
 rosidl_generator_rs/vision_msgs/rust/src/lib.rs: rosidl_adapter/vision_msgs/msg/Detection.idl
 rosidl_generator_rs/vision_msgs/rust/src/lib.rs: rosidl_adapter/vision_msgs/msg/DetectionArray.idl
+rosidl_generator_rs/vision_msgs/rust/src/lib.rs: rosidl_adapter/vision_msgs/msg/AIStatus.idl
 rosidl_generator_rs/vision_msgs/rust/src/lib.rs: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_rs/vision_msgs/rust/src/lib.rs: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_generator_rs/vision_msgs/rust/src/lib.rs: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl

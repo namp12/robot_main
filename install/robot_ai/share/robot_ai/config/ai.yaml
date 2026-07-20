@@ -1,0 +1,34 @@
+# ai.yaml - Default parameters for robot_ai node
+#
+# Loaded by ai.launch.py. Override via launch arguments:
+#   ros2 launch robot_ai ai.launch.py fps_limit:=10.0
+
+/**:
+  ros__parameters:
+    # Path to YOLO model file (.onnx preferred, .pt fallback)
+    # ONNX: lower RAM (~150MB), faster on CPU
+    # PyTorch: higher RAM (~400MB), no conversion needed
+    model_path: ""
+
+    # Minimum confidence [0.0 - 1.0] to keep a detection
+    confidence_threshold: 0.5
+
+    # IoU threshold for Non-Maximum Suppression
+    iou_threshold: 0.45
+
+    # Max inference rate (frames/sec)
+    # Lower = less CPU. 5 FPS is good for RPi4 with YOLOv11n
+    fps_limit: 5.0
+
+    # Camera resolution (for reference, actual from camera_node)
+    camera_width: 640
+    camera_height: 480
+
+    # Enable GPU (not available on RPi4, kept for future use)
+    enable_gpu: false
+
+    # TF frame ID for detection headers
+    frame_id: "camera_link"
+
+    # Enable/disable detection at startup
+    enable_detection: true

@@ -1,0 +1,67 @@
+[0.129s] Invoking command in '/home/robot/robot_ws/build/vision_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/vision_msgs -- -j4 -l4
+[6.044s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[24.908s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[24.936s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[26.143s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[49.484s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[55.097s] -- Found std_msgs: 4.9.1 (/opt/ros/humble/share/std_msgs/cmake)
+[73.511s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[80.412s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[85.065s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[88.460s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[96.347s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[96.348s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[96.350s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[101.674s] -- Configuring done
+[107.396s] -- Generating done
+[108.995s] -- Build files have been written to: /home/robot/robot_ws/build/vision_msgs
+[109.237s] [  2%] Generating C code for ROS interfaces
+[131.715s] Consolidate compiler generated dependencies of target vision_msgs__rosidl_generator_c
+[133.056s] [  4%] Building C object CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c.o
+[143.455s] [  6%] Building C object CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c.o
+[144.843s] [  8%] Building C object CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o
+[146.378s] [ 10%] Linking C shared library libvision_msgs__rosidl_generator_c.so
+[151.261s] [ 10%] Built target vision_msgs__rosidl_generator_c
+[151.654s] [ 10%] Built target ament_cmake_python_copy_vision_msgs
+[151.757s] [ 12%] Generating C introspection for ROS interfaces
+[158.746s] Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_introspection_c
+[159.473s] [ 14%] Building C object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c.o
+[161.065s] [ 16%] Building C object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c.o
+[162.642s] [ 18%] Building C object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o
+[163.407s] [ 20%] Linking C shared library libvision_msgs__rosidl_typesupport_introspection_c.so
+[164.433s] [ 20%] Built target vision_msgs__rosidl_typesupport_introspection_c
+[164.535s] [ 22%] Generating C type support dispatch for ROS interfaces
+[171.145s] Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_c
+[171.548s] [ 25%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp.o
+[178.511s] [ 27%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp.o
+[179.239s] [ 29%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o
+[179.684s] [ 31%] Linking CXX shared library libvision_msgs__rosidl_typesupport_c.so
+[180.583s] [ 31%] Built target vision_msgs__rosidl_typesupport_c
+[181.109s] [ 33%] Generating C type support for eProsima Fast-RTPS
+[192.622s] Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_fastrtps_c
+[193.501s] [ 35%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vision_msgs/msg/detail/detection__type_support_c.cpp.o
+[208.653s] [ 37%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vision_msgs/msg/detail/detection_array__type_support_c.cpp.o
+[212.873s] [ 39%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vision_msgs/msg/detail/ai_status__type_support_c.cpp.o
+[217.460s] [ 41%] Linking CXX shared library libvision_msgs__rosidl_typesupport_fastrtps_c.so
+[219.781s] [ 41%] Built target vision_msgs__rosidl_typesupport_fastrtps_c
+[223.611s] running egg_info
+[223.613s] writing vision_msgs.egg-info/PKG-INFO
+[223.615s] writing dependency_links to vision_msgs.egg-info/dependency_links.txt
+[223.616s] writing top-level names to vision_msgs.egg-info/top_level.txt
+[223.793s] reading manifest file 'vision_msgs.egg-info/SOURCES.txt'
+[223.801s] writing manifest file 'vision_msgs.egg-info/SOURCES.txt'
+[224.266s] [ 41%] Built target ament_cmake_python_build_vision_msgs_egg
+[224.366s] [ 43%] Generating Rust code for ROS interfaces
+[236.970s] [ 43%] Built target vision_msgs__rs
+[237.378s] [ 45%] Generating C++ code for ROS interfaces
+[247.555s] [ 45%] Built target vision_msgs__cpp
+[247.790s] [ 47%] Generating C++ type support for eProsima Fast-RTPS
+[257.351s] Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_fastrtps_cpp
+[257.905s] [ 50%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vision_msgs/msg/detail/dds_fastrtps/detection__type_support.cpp.o
+[267.225s] [ 52%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vision_msgs/msg/detail/dds_fastrtps/detection_array__type_support.cpp.o
+[273.059s] [ 54%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vision_msgs/msg/detail/dds_fastrtps/ai_status__type_support.cpp.o
+[278.018s] [ 56%] Linking CXX shared library libvision_msgs__rosidl_typesupport_fastrtps_cpp.so
+[280.177s] [ 56%] Built target vision_msgs__rosidl_typesupport_fastrtps_cpp
+[280.279s] [ 58%] Generating C++ type support dispatch for ROS interfaces
+[287.002s] Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_cpp
+[287.707s] [ 60%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vision_msgs/msg/detection__type_support.cpp.o

@@ -77,6 +77,7 @@ rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp: /opt/ros/humbl
 rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp: /opt/ros/humble/share/rosidl_typesupport_c/resource/srv__type_support.cpp.em
 rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp: rosidl_adapter/vision_msgs/msg/Detection.idl
 rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp: rosidl_adapter/vision_msgs/msg/DetectionArray.idl
+rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp: rosidl_adapter/vision_msgs/msg/AIStatus.idl
 rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -115,6 +116,9 @@ rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp: /opt/ros/humbl
 rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp: rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp
 
+rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp: rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp
+
 CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp.o: CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/flags.make
 CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp.o: rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp
 CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp.o: CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/compiler_depend.ts
@@ -143,16 +147,32 @@ CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robot/robot_ws/build/vision_msgs/rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp -o CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp.s
 
+CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o: CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/flags.make
+CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o: rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp
+CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o: CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robot/robot_ws/build/vision_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o -MF CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o.d -o CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o -c /home/robot/robot_ws/build/vision_msgs/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp
+
+CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robot/robot_ws/build/vision_msgs/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp > CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.i
+
+CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robot/robot_ws/build/vision_msgs/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp -o CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.s
+
 # Object files for target vision_msgs__rosidl_typesupport_c
 vision_msgs__rosidl_typesupport_c_OBJECTS = \
 "CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp.o" \
-"CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp.o"
+"CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp.o" \
+"CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o"
 
 # External object files for target vision_msgs__rosidl_typesupport_c
 vision_msgs__rosidl_typesupport_c_EXTERNAL_OBJECTS =
 
 libvision_msgs__rosidl_typesupport_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp.o
 libvision_msgs__rosidl_typesupport_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp.o
+libvision_msgs__rosidl_typesupport_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o
 libvision_msgs__rosidl_typesupport_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/build.make
 libvision_msgs__rosidl_typesupport_c.so: libvision_msgs__rosidl_generator_c.so
 libvision_msgs__rosidl_typesupport_c.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_c.so
@@ -163,7 +183,7 @@ libvision_msgs__rosidl_typesupport_c.so: /opt/ros/humble/lib/libbuiltin_interfac
 libvision_msgs__rosidl_typesupport_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libvision_msgs__rosidl_typesupport_c.so: /opt/ros/humble/lib/librcutils.so
 libvision_msgs__rosidl_typesupport_c.so: CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robot/robot_ws/build/vision_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libvision_msgs__rosidl_typesupport_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robot/robot_ws/build/vision_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libvision_msgs__rosidl_typesupport_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -174,6 +194,7 @@ CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/clean
 
+CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp
 CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp
 CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp
 	cd /home/robot/robot_ws/build/vision_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robot/robot_ws/src/vision_msgs /home/robot/robot_ws/src/vision_msgs /home/robot/robot_ws/build/vision_msgs /home/robot/robot_ws/build/vision_msgs /home/robot/robot_ws/build/vision_msgs/CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/DependInfo.cmake --color=$(COLOR)

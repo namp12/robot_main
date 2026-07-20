@@ -1,0 +1,48 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from vision_msgs/msg/AIStatus.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module vision_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "AI Vision node status and performance metrics" "\n"
+      "" "\n"
+      "Published periodically by robot_ai node for monitoring.")
+    struct AIStatus {
+      @verbatim (language="comment", text=
+        "Header with timestamp")
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "Current inference FPS (actual frames processed per second)")
+      float fps;
+
+      @verbatim (language="comment", text=
+        "Last inference time in milliseconds")
+      float inference_time_ms;
+
+      @verbatim (language="comment", text=
+        "CPU usage percentage")
+      @unit (value="0.0 - 100.0")
+      float cpu_usage;
+
+      @verbatim (language="comment", text=
+        "RAM usage in megabytes")
+      float memory_mb;
+
+      @verbatim (language="comment", text=
+        "Whether model is loaded and ready")
+      boolean model_loaded;
+
+      @verbatim (language="comment", text=
+        "Number of detections in last frame")
+      int32 num_detections;
+
+      @verbatim (language="comment", text=
+        "Current status: \"Running\", \"Idle\", \"Error\"")
+      string status;
+    };
+  };
+};

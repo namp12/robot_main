@@ -1,0 +1,130 @@
+[0.000000] (-) TimerEvent: {}
+[0.002450] (-) JobUnselected: {'identifier': 'camera_node'}
+[0.004100] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.005348] (-) JobUnselected: {'identifier': 'robot_serial'}
+[0.005930] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.006844] (-) JobUnselected: {'identifier': 'vision_ai_node'}
+[0.007413] (-) JobUnselected: {'identifier': 'vision_msgs'}
+[0.007814] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_description', '/home/robot/robot_ws/install/robot_description'), ('sllidar_ros2', '/home/robot/robot_ws/install/sllidar_ros2')])}
+[0.008245] (robot_bringup) JobStarted: {'identifier': 'robot_bringup'}
+[0.096286] (-) TimerEvent: {}
+[0.197057] (-) TimerEvent: {}
+[0.297825] (-) TimerEvent: {}
+[0.398633] (-) TimerEvent: {}
+[0.604501] (-) TimerEvent: {}
+[0.705416] (-) TimerEvent: {}
+[0.840418] (-) TimerEvent: {}
+[1.044610] (-) TimerEvent: {}
+[1.272441] (-) TimerEvent: {}
+[1.494997] (-) TimerEvent: {}
+[2.384193] (-) TimerEvent: {}
+[2.485005] (-) TimerEvent: {}
+[2.585831] (-) TimerEvent: {}
+[2.686672] (-) TimerEvent: {}
+[2.787585] (-) TimerEvent: {}
+[2.888393] (-) TimerEvent: {}
+[2.989167] (-) TimerEvent: {}
+[5.562934] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'cmake'}
+[5.563637] (-) TimerEvent: {}
+[5.569601] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'build'}
+[5.576050] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/robot_bringup', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.1.87 53972 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/3ed5d31635b5343712913d2f132876a4b5dc7e53/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '7'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.87 53972 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/camera_node:/opt/ros/humble')]), 'shell': False}
+[5.667558] (-) TimerEvent: {}
+[5.768368] (-) TimerEvent: {}
+[5.926696] (-) TimerEvent: {}
+[6.027533] (-) TimerEvent: {}
+[6.200180] (-) TimerEvent: {}
+[6.301020] (-) TimerEvent: {}
+[6.829808] (-) TimerEvent: {}
+[6.930659] (-) TimerEvent: {}
+[7.104714] (-) TimerEvent: {}
+[7.205530] (-) TimerEvent: {}
+[7.542124] (-) TimerEvent: {}
+[7.642949] (-) TimerEvent: {}
+[7.811017] (-) TimerEvent: {}
+[8.177781] (-) TimerEvent: {}
+[8.278548] (-) TimerEvent: {}
+[8.379419] (-) TimerEvent: {}
+[8.480226] (-) TimerEvent: {}
+[8.581080] (-) TimerEvent: {}
+[8.681861] (-) TimerEvent: {}
+[8.782651] (-) TimerEvent: {}
+[8.883531] (-) TimerEvent: {}
+[8.984377] (-) TimerEvent: {}
+[9.085129] (-) TimerEvent: {}
+[9.307843] (-) TimerEvent: {}
+[9.408676] (-) TimerEvent: {}
+[9.432413] (robot_bringup) CommandEnded: {'returncode': 0}
+[9.445303] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'install'}
+[9.509062] (-) TimerEvent: {}
+[9.527715] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/robot_bringup'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.1.87 53972 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/3ed5d31635b5343712913d2f132876a4b5dc7e53/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '7'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.87 53972 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/camera_node:/opt/ros/humble')]), 'shell': False}
+[9.609396] (-) TimerEvent: {}
+[9.615284] (robot_bringup) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.764261] (-) TimerEvent: {}
+[9.767919] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch\n'}
+[9.771056] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/slam.launch.py\n'}
+[9.772298] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/localization.launch.py\n'}
+[9.775132] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/robot.launch.py\n'}
+[9.776473] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/lidar.launch.py\n'}
+[9.777506] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/view_robot.launch.py\n'}
+[9.778558] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config\n'}
+[9.780556] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/slam_toolbox_params.yaml\n'}
+[9.781755] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz\n'}
+[9.782828] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz/robot_view.rviz\n'}
+[9.783948] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/mount_hdd.sh\n'}
+[9.784949] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/unmount_hdd.sh\n'}
+[9.788571] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/save_map.sh\n'}
+[9.790502] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/setup_hdd_automount.sh\n'}
+[9.792396] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps\n'}
+[9.793628] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/.gitkeep\n'}
+[9.794644] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup\n'}
+[9.795738] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup\n'}
+[9.796769] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh\n'}
+[9.797740] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv\n'}
+[9.804574] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.sh\n'}
+[9.806776] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.dsv\n'}
+[9.808706] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.bash\n'}
+[9.810811] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.sh\n'}
+[9.812001] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.zsh\n'}
+[9.812975] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.dsv\n'}
+[9.813895] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.dsv\n'}
+[9.814807] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup\n'}
+[9.815829] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake\n'}
+[9.816802] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake\n'}
+[9.817747] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.xml\n'}
+[9.864559] (-) TimerEvent: {}
+[9.965308] (-) TimerEvent: {}
+[10.230409] (robot_bringup) CommandEnded: {'returncode': 0}
+[10.234692] (-) TimerEvent: {}
+[10.335347] (-) TimerEvent: {}
+[10.436129] (-) TimerEvent: {}
+[10.716487] (-) TimerEvent: {}
+[10.817363] (-) TimerEvent: {}
+[11.023207] (-) TimerEvent: {}
+[11.373956] (-) TimerEvent: {}
+[11.474747] (-) TimerEvent: {}
+[11.733957] (-) TimerEvent: {}
+[11.834817] (-) TimerEvent: {}
+[11.935874] (-) TimerEvent: {}
+[12.340520] (-) TimerEvent: {}
+[12.441222] (-) TimerEvent: {}
+[12.626855] (-) TimerEvent: {}
+[12.876542] (-) TimerEvent: {}
+[12.977314] (-) TimerEvent: {}
+[13.078143] (-) TimerEvent: {}
+[13.178889] (-) TimerEvent: {}
+[13.279825] (-) TimerEvent: {}
+[13.518361] (-) TimerEvent: {}
+[13.619141] (-) TimerEvent: {}
+[13.719983] (-) TimerEvent: {}
+[14.122892] (-) TimerEvent: {}
+[14.223640] (-) TimerEvent: {}
+[14.324342] (-) TimerEvent: {}
+[14.425058] (-) TimerEvent: {}
+[14.525829] (-) TimerEvent: {}
+[15.543927] (-) TimerEvent: {}
+[15.732578] (-) TimerEvent: {}
+[15.833398] (-) TimerEvent: {}
+[15.934266] (-) TimerEvent: {}
+[15.995869] (robot_bringup) JobEnded: {'identifier': 'robot_bringup', 'rc': 0}
+[16.183770] (-) TimerEvent: {}
+[17.869928] (-) EventReactorShutdown: {}

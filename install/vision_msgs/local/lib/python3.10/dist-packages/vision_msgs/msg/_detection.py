@@ -64,6 +64,8 @@ class Detection(metaclass=Metaclass_Detection):
         '_y_min',
         '_x_max',
         '_y_max',
+        '_center_x',
+        '_center_y',
     ]
 
     _fields_and_field_types = {
@@ -74,6 +76,8 @@ class Detection(metaclass=Metaclass_Detection):
         'y_min': 'int32',
         'x_max': 'int32',
         'y_max': 'int32',
+        'center_x': 'float',
+        'center_y': 'float',
     }
 
     SLOT_TYPES = (
@@ -84,6 +88,8 @@ class Detection(metaclass=Metaclass_Detection):
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -97,6 +103,8 @@ class Detection(metaclass=Metaclass_Detection):
         self.y_min = kwargs.get('y_min', int())
         self.x_max = kwargs.get('x_max', int())
         self.y_max = kwargs.get('y_max', int())
+        self.center_x = kwargs.get('center_x', float())
+        self.center_y = kwargs.get('center_y', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -140,6 +148,10 @@ class Detection(metaclass=Metaclass_Detection):
         if self.x_max != other.x_max:
             return False
         if self.y_max != other.y_max:
+            return False
+        if self.center_x != other.center_x:
+            return False
+        if self.center_y != other.center_y:
             return False
         return True
 
@@ -250,3 +262,33 @@ class Detection(metaclass=Metaclass_Detection):
             assert value >= -2147483648 and value < 2147483648, \
                 "The 'y_max' field must be an integer in [-2147483648, 2147483647]"
         self._y_max = value
+
+    @builtins.property
+    def center_x(self):
+        """Message field 'center_x'."""
+        return self._center_x
+
+    @center_x.setter
+    def center_x(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'center_x' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'center_x' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._center_x = value
+
+    @builtins.property
+    def center_y(self):
+        """Message field 'center_y'."""
+        return self._center_y
+
+    @center_y.setter
+    def center_y(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'center_y' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'center_y' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._center_y = value

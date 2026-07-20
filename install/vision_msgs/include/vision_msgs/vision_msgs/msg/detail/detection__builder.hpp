@@ -21,16 +21,48 @@ namespace msg
 namespace builder
 {
 
+class Init_Detection_center_y
+{
+public:
+  explicit Init_Detection_center_y(::vision_msgs::msg::Detection & msg)
+  : msg_(msg)
+  {}
+  ::vision_msgs::msg::Detection center_y(::vision_msgs::msg::Detection::_center_y_type arg)
+  {
+    msg_.center_y = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::vision_msgs::msg::Detection msg_;
+};
+
+class Init_Detection_center_x
+{
+public:
+  explicit Init_Detection_center_x(::vision_msgs::msg::Detection & msg)
+  : msg_(msg)
+  {}
+  Init_Detection_center_y center_x(::vision_msgs::msg::Detection::_center_x_type arg)
+  {
+    msg_.center_x = std::move(arg);
+    return Init_Detection_center_y(msg_);
+  }
+
+private:
+  ::vision_msgs::msg::Detection msg_;
+};
+
 class Init_Detection_y_max
 {
 public:
   explicit Init_Detection_y_max(::vision_msgs::msg::Detection & msg)
   : msg_(msg)
   {}
-  ::vision_msgs::msg::Detection y_max(::vision_msgs::msg::Detection::_y_max_type arg)
+  Init_Detection_center_x y_max(::vision_msgs::msg::Detection::_y_max_type arg)
   {
     msg_.y_max = std::move(arg);
-    return std::move(msg_);
+    return Init_Detection_center_x(msg_);
   }
 
 private:

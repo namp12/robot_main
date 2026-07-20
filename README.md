@@ -270,7 +270,7 @@ Nạp bản đồ đã lưu và định vị robot.
 
 ```bash
 ros2 launch robot_bringup localization.launch.py \
-  map:=/mnt/robot_hdd/maps/my_room/map.yaml
+  map:=/home/robot/robot_maps/my_room/map.yaml
 ```
 
 ---
@@ -318,11 +318,11 @@ ros2 launch robot_bringup view_robot.launch.py
 ## Lưu bản đồ
 
 ```bash
-# Lưu vào HDD rời
+# Lưu vào SD card (~/robot_maps/)
 ros2 run robot_bringup save_map.sh my_room
 
-# Hoặc tự động mount HDD rồi lưu
-ros2 run robot_bringup save_map.sh my_room --auto
+# Liệt kê bản đồ đã lưu
+ls ~/robot_maps/
 ```
 
 ## Cấu trúc thư mục workspace

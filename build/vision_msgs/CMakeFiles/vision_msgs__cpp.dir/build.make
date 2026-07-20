@@ -76,6 +76,11 @@ CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/detecti
 CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/detection_array__struct.hpp
 CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/detection_array__traits.hpp
 CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/detection_array__type_support.hpp
+CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/ai_status.hpp
+CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__builder.hpp
+CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__struct.hpp
+CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__traits.hpp
+CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__type_support.hpp
 CMakeFiles/vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
 
 rosidl_generator_cpp/vision_msgs/msg/detection.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
@@ -95,6 +100,7 @@ rosidl_generator_cpp/vision_msgs/msg/detection.hpp: /opt/ros/humble/share/rosidl
 rosidl_generator_cpp/vision_msgs/msg/detection.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
 rosidl_generator_cpp/vision_msgs/msg/detection.hpp: rosidl_adapter/vision_msgs/msg/Detection.idl
 rosidl_generator_cpp/vision_msgs/msg/detection.hpp: rosidl_adapter/vision_msgs/msg/DetectionArray.idl
+rosidl_generator_cpp/vision_msgs/msg/detection.hpp: rosidl_adapter/vision_msgs/msg/AIStatus.idl
 rosidl_generator_cpp/vision_msgs/msg/detection.hpp: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_cpp/vision_msgs/msg/detection.hpp: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_generator_cpp/vision_msgs/msg/detection.hpp: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -157,7 +163,27 @@ rosidl_generator_cpp/vision_msgs/msg/detail/detection_array__traits.hpp: rosidl_
 rosidl_generator_cpp/vision_msgs/msg/detail/detection_array__type_support.hpp: rosidl_generator_cpp/vision_msgs/msg/detection.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vision_msgs/msg/detail/detection_array__type_support.hpp
 
+rosidl_generator_cpp/vision_msgs/msg/ai_status.hpp: rosidl_generator_cpp/vision_msgs/msg/detection.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vision_msgs/msg/ai_status.hpp
+
+rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__builder.hpp: rosidl_generator_cpp/vision_msgs/msg/detection.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__builder.hpp
+
+rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__struct.hpp: rosidl_generator_cpp/vision_msgs/msg/detection.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__struct.hpp
+
+rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__traits.hpp: rosidl_generator_cpp/vision_msgs/msg/detection.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__traits.hpp
+
+rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__type_support.hpp: rosidl_generator_cpp/vision_msgs/msg/detection.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__type_support.hpp
+
 vision_msgs__cpp: CMakeFiles/vision_msgs__cpp
+vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/ai_status.hpp
+vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__builder.hpp
+vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__struct.hpp
+vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__traits.hpp
+vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/ai_status__type_support.hpp
 vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/detection__builder.hpp
 vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/detection__struct.hpp
 vision_msgs__cpp: rosidl_generator_cpp/vision_msgs/msg/detail/detection__traits.hpp

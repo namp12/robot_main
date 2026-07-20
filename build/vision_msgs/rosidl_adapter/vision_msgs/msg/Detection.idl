@@ -41,6 +41,12 @@ module vision_msgs {
       @verbatim (language="comment", text=
         "Bottom edge")
       int32 y_max;
+
+      @verbatim (language="comment", text=
+        "Bounding box center point")
+      float center_x;
+
+      float center_y;
     };
   };
 };

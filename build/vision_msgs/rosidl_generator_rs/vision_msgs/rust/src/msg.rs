@@ -35,6 +35,14 @@ pub struct Detection {
     /// Bottom edge
     pub y_max: i32,
 
+    /// Bounding box center point
+    pub center_x: f32,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub center_y: f32,
+
 }
 
 
@@ -58,6 +66,8 @@ impl rosidl_runtime_rs::Message for Detection {
         y_min: msg.y_min,
         x_max: msg.x_max,
         y_max: msg.y_max,
+        center_x: msg.center_x,
+        center_y: msg.center_y,
       }),
       std::borrow::Cow::Borrowed(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
         class_name: msg.class_name.as_str().into(),
@@ -67,6 +77,8 @@ impl rosidl_runtime_rs::Message for Detection {
       y_min: msg.y_min,
       x_max: msg.x_max,
       y_max: msg.y_max,
+      center_x: msg.center_x,
+      center_y: msg.center_y,
       })
     }
   }
@@ -80,6 +92,8 @@ impl rosidl_runtime_rs::Message for Detection {
       y_min: msg.y_min,
       x_max: msg.x_max,
       y_max: msg.y_max,
+      center_x: msg.center_x,
+      center_y: msg.center_y,
     }
   }
 }
@@ -159,6 +173,91 @@ impl rosidl_runtime_rs::Message for DetectionArray {
       image_width: msg.image_width,
       image_height: msg.image_height,
       inference_time_ms: msg.inference_time_ms,
+    }
+  }
+}
+
+
+// Corresponds to vision_msgs__msg__AIStatus
+/// AI Vision node status and performance metrics
+///
+/// Published periodically by robot_ai node for monitoring.
+
+#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+#[derive(Clone, Debug, PartialEq, PartialOrd)]
+pub struct AIStatus {
+    /// Header with timestamp
+    pub header: std_msgs::msg::Header,
+
+    /// Current inference FPS (actual frames processed per second)
+    pub fps: f32,
+
+    /// Last inference time in milliseconds
+    pub inference_time_ms: f32,
+
+    /// CPU usage percentage
+    pub cpu_usage: f32,
+
+    /// RAM usage in megabytes
+    pub memory_mb: f32,
+
+    /// Whether model is loaded and ready
+    pub model_loaded: bool,
+
+    /// Number of detections in last frame
+    pub num_detections: i32,
+
+    /// Current status: "Running", "Idle", "Error"
+    pub status: std::string::String,
+
+}
+
+
+
+impl Default for AIStatus {
+  fn default() -> Self {
+    <Self as rosidl_runtime_rs::Message>::from_rmw_message(super::msg::rmw::AIStatus::default())
+  }
+}
+
+impl rosidl_runtime_rs::Message for AIStatus {
+  type RmwMsg = super::msg::rmw::AIStatus;
+
+  fn into_rmw_message(msg_cow: std::borrow::Cow<'_, Self>) -> std::borrow::Cow<'_, Self::RmwMsg> {
+    match msg_cow {
+      std::borrow::Cow::Owned(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
+        header: std_msgs::msg::Header::into_rmw_message(std::borrow::Cow::Owned(msg.header)).into_owned(),
+        fps: msg.fps,
+        inference_time_ms: msg.inference_time_ms,
+        cpu_usage: msg.cpu_usage,
+        memory_mb: msg.memory_mb,
+        model_loaded: msg.model_loaded,
+        num_detections: msg.num_detections,
+        status: msg.status.as_str().into(),
+      }),
+      std::borrow::Cow::Borrowed(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
+        header: std_msgs::msg::Header::into_rmw_message(std::borrow::Cow::Borrowed(&msg.header)).into_owned(),
+      fps: msg.fps,
+      inference_time_ms: msg.inference_time_ms,
+      cpu_usage: msg.cpu_usage,
+      memory_mb: msg.memory_mb,
+      model_loaded: msg.model_loaded,
+      num_detections: msg.num_detections,
+        status: msg.status.as_str().into(),
+      })
+    }
+  }
+
+  fn from_rmw_message(msg: Self::RmwMsg) -> Self {
+    Self {
+      header: std_msgs::msg::Header::from_rmw_message(msg.header),
+      fps: msg.fps,
+      inference_time_ms: msg.inference_time_ms,
+      cpu_usage: msg.cpu_usage,
+      memory_mb: msg.memory_mb,
+      model_loaded: msg.model_loaded,
+      num_detections: msg.num_detections,
+      status: msg.status.to_string(),
     }
   }
 }

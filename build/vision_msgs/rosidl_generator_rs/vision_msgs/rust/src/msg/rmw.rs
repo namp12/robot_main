@@ -49,6 +49,14 @@ pub struct Detection {
     /// Bottom edge
     pub y_max: i32,
 
+    /// Bounding box center point
+    pub center_x: f32,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub center_y: f32,
+
 }
 
 
@@ -178,6 +186,99 @@ impl rosidl_runtime_rs::RmwMessage for DetectionArray where Self: Sized {
   fn get_type_support() -> *const std::ffi::c_void {
     // SAFETY: No preconditions for this function.
     unsafe { rosidl_typesupport_c__get_message_type_support_handle__vision_msgs__msg__DetectionArray() }
+  }
+}
+
+
+#[link(name = "vision_msgs__rosidl_typesupport_c")]
+extern "C" {
+    fn rosidl_typesupport_c__get_message_type_support_handle__vision_msgs__msg__AIStatus() -> *const std::ffi::c_void;
+}
+
+#[link(name = "vision_msgs__rosidl_generator_c")]
+extern "C" {
+    fn vision_msgs__msg__AIStatus__init(msg: *mut AIStatus) -> bool;
+    fn vision_msgs__msg__AIStatus__Sequence__init(seq: *mut rosidl_runtime_rs::Sequence<AIStatus>, size: usize) -> bool;
+    fn vision_msgs__msg__AIStatus__Sequence__fini(seq: *mut rosidl_runtime_rs::Sequence<AIStatus>);
+    fn vision_msgs__msg__AIStatus__Sequence__copy(in_seq: &rosidl_runtime_rs::Sequence<AIStatus>, out_seq: *mut rosidl_runtime_rs::Sequence<AIStatus>) -> bool;
+}
+
+// Corresponds to vision_msgs__msg__AIStatus
+#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
+
+/// AI Vision node status and performance metrics
+///
+/// Published periodically by robot_ai node for monitoring.
+
+#[repr(C)]
+#[derive(Clone, Debug, PartialEq, PartialOrd)]
+pub struct AIStatus {
+    /// Header with timestamp
+    pub header: std_msgs::msg::rmw::Header,
+
+    /// Current inference FPS (actual frames processed per second)
+    pub fps: f32,
+
+    /// Last inference time in milliseconds
+    pub inference_time_ms: f32,
+
+    /// CPU usage percentage
+    pub cpu_usage: f32,
+
+    /// RAM usage in megabytes
+    pub memory_mb: f32,
+
+    /// Whether model is loaded and ready
+    pub model_loaded: bool,
+
+    /// Number of detections in last frame
+    pub num_detections: i32,
+
+    /// Current status: "Running", "Idle", "Error"
+    pub status: rosidl_runtime_rs::String,
+
+}
+
+
+
+impl Default for AIStatus {
+  fn default() -> Self {
+    unsafe {
+      let mut msg = std::mem::zeroed();
+      if !vision_msgs__msg__AIStatus__init(&mut msg as *mut _) {
+        panic!("Call to vision_msgs__msg__AIStatus__init() failed");
+      }
+      msg
+    }
+  }
+}
+
+impl rosidl_runtime_rs::SequenceAlloc for AIStatus {
+  fn sequence_init(seq: &mut rosidl_runtime_rs::Sequence<Self>, size: usize) -> bool {
+    // SAFETY: This is safe since the pointer is guaranteed to be valid/initialized.
+    unsafe { vision_msgs__msg__AIStatus__Sequence__init(seq as *mut _, size) }
+  }
+  fn sequence_fini(seq: &mut rosidl_runtime_rs::Sequence<Self>) {
+    // SAFETY: This is safe since the pointer is guaranteed to be valid/initialized.
+    unsafe { vision_msgs__msg__AIStatus__Sequence__fini(seq as *mut _) }
+  }
+  fn sequence_copy(in_seq: &rosidl_runtime_rs::Sequence<Self>, out_seq: &mut rosidl_runtime_rs::Sequence<Self>) -> bool {
+    // SAFETY: This is safe since the pointer is guaranteed to be valid/initialized.
+    unsafe { vision_msgs__msg__AIStatus__Sequence__copy(in_seq, out_seq as *mut _) }
+  }
+}
+
+impl rosidl_runtime_rs::Message for AIStatus {
+  type RmwMsg = Self;
+  fn into_rmw_message(msg_cow: std::borrow::Cow<'_, Self>) -> std::borrow::Cow<'_, Self::RmwMsg> { msg_cow }
+  fn from_rmw_message(msg: Self::RmwMsg) -> Self { msg }
+}
+
+impl rosidl_runtime_rs::RmwMessage for AIStatus where Self: Sized {
+  const TYPE_NAME: &'static str = "vision_msgs/msg/AIStatus";
+  fn get_type_support() -> *const std::ffi::c_void {
+    // SAFETY: No preconditions for this function.
+    unsafe { rosidl_typesupport_c__get_message_type_support_handle__vision_msgs__msg__AIStatus() }
   }
 }
 

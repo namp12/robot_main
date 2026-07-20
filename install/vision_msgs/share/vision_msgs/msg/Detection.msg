@@ -18,3 +18,7 @@ int32 x_min    # Left edge
 int32 y_min    # Top edge
 int32 x_max    # Right edge
 int32 y_max    # Bottom edge
+
+# Bounding box center point
+float32 center_x
+float32 center_y

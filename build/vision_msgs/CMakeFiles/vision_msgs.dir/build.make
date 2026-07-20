@@ -68,6 +68,7 @@ include CMakeFiles/vision_msgs.dir/progress.make
 
 CMakeFiles/vision_msgs: /home/robot/robot_ws/src/vision_msgs/msg/Detection.msg
 CMakeFiles/vision_msgs: /home/robot/robot_ws/src/vision_msgs/msg/DetectionArray.msg
+CMakeFiles/vision_msgs: /home/robot/robot_ws/src/vision_msgs/msg/AIStatus.msg
 CMakeFiles/vision_msgs: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 CMakeFiles/vision_msgs: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 CMakeFiles/vision_msgs: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl

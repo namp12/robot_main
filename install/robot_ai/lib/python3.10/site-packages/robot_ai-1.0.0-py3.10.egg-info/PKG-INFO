@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: robot-ai
+Version: 1.0.0
+Summary: AI Vision module with YOLO + ONNX Runtime
+Home-page: UNKNOWN
+Maintainer: robot
+Maintainer-email: robot@todo.todo
+License: Apache-2.0
+Platform: UNKNOWN
+Provides-Extra: test
+
+UNKNOWN
+

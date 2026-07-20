@@ -4,3 +4,6 @@ vision_msgs.egg-info/PKG-INFO
 vision_msgs.egg-info/SOURCES.txt
 vision_msgs.egg-info/dependency_links.txt
 vision_msgs.egg-info/top_level.txt
+vision_msgs/msg/__init__.py
+vision_msgs/msg/_detection.py
+vision_msgs/msg/_detection_array.py

@@ -46,6 +46,8 @@ struct Detection_
       this->y_min = 0l;
       this->x_max = 0l;
       this->y_max = 0l;
+      this->center_x = 0.0f;
+      this->center_y = 0.0f;
     }
   }
 
@@ -62,6 +64,8 @@ struct Detection_
       this->y_min = 0l;
       this->x_max = 0l;
       this->y_max = 0l;
+      this->center_x = 0.0f;
+      this->center_y = 0.0f;
     }
   }
 
@@ -87,6 +91,12 @@ struct Detection_
   using _y_max_type =
     int32_t;
   _y_max_type y_max;
+  using _center_x_type =
+    float;
+  _center_x_type center_x;
+  using _center_y_type =
+    float;
+  _center_y_type center_y;
 
   // setters for named parameter idiom
   Type & set__class_name(
@@ -129,6 +139,18 @@ struct Detection_
     const int32_t & _arg)
   {
     this->y_max = _arg;
+    return *this;
+  }
+  Type & set__center_x(
+    const float & _arg)
+  {
+    this->center_x = _arg;
+    return *this;
+  }
+  Type & set__center_y(
+    const float & _arg)
+  {
+    this->center_y = _arg;
     return *this;
   }
 
@@ -193,6 +215,12 @@ struct Detection_
       return false;
     }
     if (this->y_max != other.y_max) {
+      return false;
+    }
+    if (this->center_x != other.center_x) {
+      return false;
+    }
+    if (this->center_y != other.center_y) {
       return false;
     }
     return true;

@@ -211,4 +211,7 @@ CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generato
  /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/detection_array__struct.h \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.h \
  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h \
- /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.h
+ /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.h \
+ /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/ai_status__type_support.h \
+ /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/ai_status__struct.h \
+ /home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.h

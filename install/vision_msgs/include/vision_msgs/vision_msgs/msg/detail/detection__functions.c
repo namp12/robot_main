@@ -32,6 +32,8 @@ vision_msgs__msg__Detection__init(vision_msgs__msg__Detection * msg)
   // y_min
   // x_max
   // y_max
+  // center_x
+  // center_y
   return true;
 }
 
@@ -49,6 +51,8 @@ vision_msgs__msg__Detection__fini(vision_msgs__msg__Detection * msg)
   // y_min
   // x_max
   // y_max
+  // center_x
+  // center_y
 }
 
 bool
@@ -87,6 +91,14 @@ vision_msgs__msg__Detection__are_equal(const vision_msgs__msg__Detection * lhs, 
   if (lhs->y_max != rhs->y_max) {
     return false;
   }
+  // center_x
+  if (lhs->center_x != rhs->center_x) {
+    return false;
+  }
+  // center_y
+  if (lhs->center_y != rhs->center_y) {
+    return false;
+  }
   return true;
 }
 
@@ -116,6 +128,10 @@ vision_msgs__msg__Detection__copy(
   output->x_max = input->x_max;
   // y_max
   output->y_max = input->y_max;
+  // center_x
+  output->center_x = input->center_x;
+  // center_y
+  output->center_y = input->center_y;
   return true;
 }
 

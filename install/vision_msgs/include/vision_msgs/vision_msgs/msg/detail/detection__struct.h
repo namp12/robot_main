@@ -46,6 +46,9 @@ typedef struct vision_msgs__msg__Detection
   int32_t x_max;
   /// Bottom edge
   int32_t y_max;
+  /// Bounding box center point
+  float center_x;
+  float center_y;
 } vision_msgs__msg__Detection;
 
 // Struct for a sequence of vision_msgs__msg__Detection.

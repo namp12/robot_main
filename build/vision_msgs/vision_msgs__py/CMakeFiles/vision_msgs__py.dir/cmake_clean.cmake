@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c"
   "../rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_introspection_c.c"
   "../rosidl_generator_py/vision_msgs/msg/__init__.py"
+  "../rosidl_generator_py/vision_msgs/msg/_ai_status.py"
+  "../rosidl_generator_py/vision_msgs/msg/_ai_status_s.c"
   "../rosidl_generator_py/vision_msgs/msg/_detection.py"
   "../rosidl_generator_py/vision_msgs/msg/_detection_array.py"
   "../rosidl_generator_py/vision_msgs/msg/_detection_array_s.c"

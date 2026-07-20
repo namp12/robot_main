@@ -1,3 +1,5 @@
+msg/AIStatus.idl
+msg/AIStatus.msg
 msg/Detection.idl
 msg/Detection.msg
 msg/DetectionArray.idl
