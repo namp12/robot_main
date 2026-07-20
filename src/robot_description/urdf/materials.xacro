@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+  materials.xacro - Color definitions for the robot model.
+
+  Usage:
+    Included by robot.urdf.xacro via <xacro:include filename="materials.xacro"/>
+
+  Convention:
+    Each material has a name and an RGBA color (0-1 range).
+    These are used in <material> tags inside <visual> elements.
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Chassis: dark blue -->
+  <material name="chassis_blue">
+    <color rgba="0.15 0.15 0.6 1.0"/>
+  </material>
+
+  <!-- Wheels: dark rubber gray -->
+  <material name="wheel_gray">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+
+  <!-- Caster wheel: bronze -->
+  <material name="caster_bronze">
+    <color rgba="0.6 0.4 0.2 1.0"/>
+  </material>
+
+  <!-- RPLidar: dark gray cylinder -->
+  <material name="lidar_dark">
+    <color rgba="0.15 0.15 0.15 1.0"/>
+  </material>
+
+  <!-- Camera: matte black -->
+  <material name="camera_black">
+    <color rgba="0.05 0.05 0.05 1.0"/>
+  </material>
+
+  <!-- Raspberry Pi: PCB green -->
+  <material name="rpi_green">
+    <color rgba="0.0 0.5 0.2 1.0"/>
+  </material>
+
+  <!-- IMU: orange -->
+  <material name="imu_orange">
+    <color rgba="0.9 0.5 0.0 1.0"/>
+  </material>
+
+  <!-- Battery: red -->
+  <material name="battery_red">
+    <color rgba="0.7 0.1 0.1 1.0"/>
+  </material>
+
+  <!-- Encoder: yellow -->
+  <material name="encoder_yellow">
+    <color rgba="0.9 0.8 0.0 1.0"/>
+  </material>
+
+  <!-- Generic white -->
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+
+</robot>

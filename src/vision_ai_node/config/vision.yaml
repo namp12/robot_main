@@ -1,0 +1,25 @@
+# vision.yaml - Default parameters for vision_ai_node
+#
+# Loaded by vision_ai.launch.py. Override via launch arguments:
+#   ros2 launch vision_ai_node vision_ai.launch.py enable_detection:=true
+
+/**:
+  ros__parameters:
+    # Enable/disable YOLO detection
+    # false = node receives frames but does not run AI (saves CPU)
+    enable_detection: false
+
+    # Minimum confidence [0.0 - 1.0] to keep a detection
+    confidence_threshold: 0.5
+
+    # Maximum AI processing rate (frames per second)
+    # Lower = less CPU. 5 FPS is good for RPi4 with YOLOv8n
+    max_fps: 5.0
+
+    # Path to YOLO model file (.pt)
+    # Leave empty to start without AI (enable_detection=false required)
+    model_path: ""
+
+    # Publish annotated images with bounding boxes drawn
+    # Set false to save bandwidth if only detections are needed
+    publish_image: true

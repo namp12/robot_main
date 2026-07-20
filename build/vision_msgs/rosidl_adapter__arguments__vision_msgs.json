@@ -1,0 +1,7 @@
+{
+  "package_name": "vision_msgs",
+  "non_idl_tuples": [
+    "/home/robot/robot_ws/src/vision_msgs:msg/Detection.msg",
+    "/home/robot/robot_ws/src/vision_msgs:msg/DetectionArray.msg"
+  ]
+}

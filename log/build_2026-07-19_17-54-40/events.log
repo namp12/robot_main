@@ -1,0 +1,539 @@
+[0.000000] (-) TimerEvent: {}
+[0.002119] (-) JobUnselected: {'identifier': 'camera_node'}
+[0.003587] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.003892] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.004976] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.005472] (vision_msgs) JobQueued: {'identifier': 'vision_msgs', 'dependencies': OrderedDict()}
+[0.006491] (vision_msgs) JobStarted: {'identifier': 'vision_msgs'}
+[0.089706] (vision_msgs) JobProgress: {'identifier': 'vision_msgs', 'progress': 'cmake'}
+[0.096172] (vision_msgs) JobProgress: {'identifier': 'vision_msgs', 'progress': 'build'}
+[0.096756] (-) TimerEvent: {}
+[0.103235] (vision_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/vision_msgs', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/vision_msgs', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.1.87 62742 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/3ed5d31635b5343712913d2f132876a4b5dc7e53/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '12'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/vision_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.87 62742 192.168.1.252 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.197108] (-) TimerEvent: {}
+[0.297947] (-) TimerEvent: {}
+[0.398928] (-) TimerEvent: {}
+[0.499881] (-) TimerEvent: {}
+[0.600949] (-) TimerEvent: {}
+[0.632965] (vision_msgs) StdoutLine: {'line': b'[  2%] Built target vision_msgs__rs\n'}
+[0.637129] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_generator_c\n'}
+[0.695523] (vision_msgs) StdoutLine: {'line': b'[  5%] Built target vision_msgs__cpp\n'}
+[0.701340] (-) TimerEvent: {}
+[0.782507] (vision_msgs) StdoutLine: {'line': b'[ 15%] Built target vision_msgs__rosidl_generator_c\n'}
+[0.801783] (-) TimerEvent: {}
+[0.820637] (vision_msgs) StdoutLine: {'line': b'[ 15%] Built target ament_cmake_python_copy_vision_msgs\n'}
+[0.851887] (vision_msgs) StdoutLine: {'line': b'[ 17%] Generating C++ introspection for ROS interfaces\n'}
+[0.902346] (-) TimerEvent: {}
+[0.917529] (vision_msgs) StdoutLine: {'line': b'[ 20%] Generating C++ type support dispatch for ROS interfaces\n'}
+[0.954773] (vision_msgs) StdoutLine: {'line': b'[ 22%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vision_msgs/msg/detail/dds_fastrtps/detection__type_support.cpp.o\n'}
+[1.002566] (-) TimerEvent: {}
+[1.020010] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_fastrtps_c\n'}
+[1.102858] (-) TimerEvent: {}
+[1.161651] (vision_msgs) StdoutLine: {'line': b'[ 32%] Built target vision_msgs__rosidl_typesupport_fastrtps_c\n'}
+[1.203167] (-) TimerEvent: {}
+[1.296467] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_introspection_c\n'}
+[1.303442] (-) TimerEvent: {}
+[1.404201] (-) TimerEvent: {}
+[1.429555] (vision_msgs) StdoutLine: {'line': b'[ 42%] Built target vision_msgs__rosidl_typesupport_introspection_c\n'}
+[1.504541] (-) TimerEvent: {}
+[1.605401] (-) TimerEvent: {}
+[1.694594] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_c\n'}
+[1.705816] (-) TimerEvent: {}
+[1.810733] (-) TimerEvent: {}
+[1.859930] (vision_msgs) StdoutLine: {'line': b'[ 52%] Built target vision_msgs__rosidl_typesupport_c\n'}
+[1.911169] (-) TimerEvent: {}
+[1.973239] (vision_msgs) StdoutLine: {'line': b'[ 55%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vision_msgs/msg/detail/dds_fastrtps/detection_array__type_support.cpp.o\n'}
+[2.011477] (-) TimerEvent: {}
+[2.112719] (-) TimerEvent: {}
+[2.213625] (-) TimerEvent: {}
+[2.314924] (-) TimerEvent: {}
+[2.415797] (-) TimerEvent: {}
+[2.516608] (-) TimerEvent: {}
+[2.617455] (-) TimerEvent: {}
+[2.718434] (-) TimerEvent: {}
+[2.819350] (-) TimerEvent: {}
+[2.920141] (-) TimerEvent: {}
+[3.020973] (-) TimerEvent: {}
+[3.121927] (-) TimerEvent: {}
+[3.222892] (-) TimerEvent: {}
+[3.323781] (-) TimerEvent: {}
+[3.424701] (-) TimerEvent: {}
+[3.525697] (-) TimerEvent: {}
+[3.626614] (-) TimerEvent: {}
+[3.727500] (-) TimerEvent: {}
+[3.828495] (-) TimerEvent: {}
+[4.954126] (-) TimerEvent: {}
+[5.055062] (-) TimerEvent: {}
+[5.155980] (-) TimerEvent: {}
+[5.256886] (-) TimerEvent: {}
+[5.357878] (-) TimerEvent: {}
+[5.458832] (-) TimerEvent: {}
+[5.559921] (-) TimerEvent: {}
+[5.660979] (-) TimerEvent: {}
+[5.762074] (-) TimerEvent: {}
+[5.863241] (-) TimerEvent: {}
+[5.964103] (-) TimerEvent: {}
+[6.065147] (-) TimerEvent: {}
+[6.166272] (-) TimerEvent: {}
+[6.267197] (-) TimerEvent: {}
+[6.368109] (-) TimerEvent: {}
+[6.469170] (-) TimerEvent: {}
+[6.570053] (-) TimerEvent: {}
+[6.670954] (-) TimerEvent: {}
+[6.771972] (-) TimerEvent: {}
+[6.872935] (-) TimerEvent: {}
+[6.973860] (-) TimerEvent: {}
+[7.074708] (-) TimerEvent: {}
+[7.175829] (-) TimerEvent: {}
+[7.276827] (-) TimerEvent: {}
+[7.377998] (-) TimerEvent: {}
+[7.479679] (-) TimerEvent: {}
+[7.580800] (-) TimerEvent: {}
+[7.681921] (-) TimerEvent: {}
+[7.783896] (-) TimerEvent: {}
+[7.884848] (-) TimerEvent: {}
+[7.984758] (vision_msgs) StdoutLine: {'line': b'[ 57%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vision_msgs/msg/detail/detection__type_support.cpp.o\n'}
+[7.986757] (-) TimerEvent: {}
+[8.018098] (vision_msgs) StdoutLine: {'line': b'[ 60%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vision_msgs/msg/detection__type_support.cpp.o\n'}
+[8.087085] (-) TimerEvent: {}
+[8.187956] (-) TimerEvent: {}
+[8.289136] (-) TimerEvent: {}
+[8.390124] (-) TimerEvent: {}
+[8.491058] (-) TimerEvent: {}
+[8.591938] (-) TimerEvent: {}
+[8.692831] (-) TimerEvent: {}
+[8.793712] (-) TimerEvent: {}
+[10.824198] (-) TimerEvent: {}
+[10.925066] (-) TimerEvent: {}
+[11.026125] (-) TimerEvent: {}
+[11.127072] (-) TimerEvent: {}
+[11.227997] (-) TimerEvent: {}
+[11.328927] (-) TimerEvent: {}
+[11.429854] (-) TimerEvent: {}
+[11.531018] (-) TimerEvent: {}
+[11.631829] (-) TimerEvent: {}
+[11.732670] (-) TimerEvent: {}
+[11.833539] (-) TimerEvent: {}
+[11.934544] (-) TimerEvent: {}
+[12.035373] (-) TimerEvent: {}
+[12.136227] (-) TimerEvent: {}
+[12.237098] (-) TimerEvent: {}
+[12.337887] (-) TimerEvent: {}
+[12.438955] (-) TimerEvent: {}
+[12.539950] (-) TimerEvent: {}
+[12.601665] (vision_msgs) StdoutLine: {'line': b'[ 62%] Linking CXX shared library libvision_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[12.640304] (-) TimerEvent: {}
+[12.741448] (-) TimerEvent: {}
+[12.842541] (-) TimerEvent: {}
+[12.943446] (-) TimerEvent: {}
+[12.957250] (vision_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[12.966146] (vision_msgs) StdoutLine: {'line': b'writing vision_msgs.egg-info/PKG-INFO\n'}
+[12.973477] (vision_msgs) StdoutLine: {'line': b'writing dependency_links to vision_msgs.egg-info/dependency_links.txt\n'}
+[12.975303] (vision_msgs) StdoutLine: {'line': b'writing top-level names to vision_msgs.egg-info/top_level.txt\n'}
+[13.007479] (vision_msgs) StdoutLine: {'line': b"reading manifest file 'vision_msgs.egg-info/SOURCES.txt'\n"}
+[13.016577] (vision_msgs) StdoutLine: {'line': b"writing manifest file 'vision_msgs.egg-info/SOURCES.txt'\n"}
+[13.044022] (-) TimerEvent: {}
+[13.145161] (-) TimerEvent: {}
+[13.246268] (-) TimerEvent: {}
+[13.347168] (-) TimerEvent: {}
+[13.413848] (vision_msgs) StdoutLine: {'line': b'[ 62%] Built target ament_cmake_python_build_vision_msgs_egg\n'}
+[13.448476] (-) TimerEvent: {}
+[13.539032] (vision_msgs) StdoutLine: {'line': b'[ 65%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vision_msgs/msg/detection_array__type_support.cpp.o\n'}
+[13.548861] (-) TimerEvent: {}
+[13.596615] (vision_msgs) StdoutLine: {'line': b'[ 67%] Built target vision_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[13.649305] (-) TimerEvent: {}
+[13.716681] (vision_msgs) StdoutLine: {'line': b'[ 70%] Building CXX object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vision_msgs/msg/detail/detection_array__type_support.cpp.o\n'}
+[13.752737] (-) TimerEvent: {}
+[14.776076] (-) TimerEvent: {}
+[14.877029] (-) TimerEvent: {}
+[14.977954] (-) TimerEvent: {}
+[15.078895] (-) TimerEvent: {}
+[15.179786] (-) TimerEvent: {}
+[15.281391] (-) TimerEvent: {}
+[15.382402] (-) TimerEvent: {}
+[15.483297] (-) TimerEvent: {}
+[15.584257] (-) TimerEvent: {}
+[15.685226] (-) TimerEvent: {}
+[15.786286] (-) TimerEvent: {}
+[15.887100] (-) TimerEvent: {}
+[15.987972] (-) TimerEvent: {}
+[16.089102] (-) TimerEvent: {}
+[16.190145] (-) TimerEvent: {}
+[16.291274] (-) TimerEvent: {}
+[16.393086] (-) TimerEvent: {}
+[16.495538] (-) TimerEvent: {}
+[16.596736] (-) TimerEvent: {}
+[16.697795] (-) TimerEvent: {}
+[16.798750] (-) TimerEvent: {}
+[16.901201] (-) TimerEvent: {}
+[17.002293] (-) TimerEvent: {}
+[17.103182] (-) TimerEvent: {}
+[17.204064] (-) TimerEvent: {}
+[17.304989] (-) TimerEvent: {}
+[17.406021] (-) TimerEvent: {}
+[17.458492] (vision_msgs) StdoutLine: {'line': b'[ 72%] Linking CXX shared library libvision_msgs__rosidl_typesupport_cpp.so\n'}
+[17.506619] (-) TimerEvent: {}
+[17.608151] (-) TimerEvent: {}
+[17.709034] (-) TimerEvent: {}
+[17.809946] (-) TimerEvent: {}
+[17.910800] (-) TimerEvent: {}
+[17.916757] (vision_msgs) StdoutLine: {'line': b'[ 72%] Built target vision_msgs__rosidl_typesupport_cpp\n'}
+[18.011158] (-) TimerEvent: {}
+[18.112035] (-) TimerEvent: {}
+[18.212875] (-) TimerEvent: {}
+[18.313725] (-) TimerEvent: {}
+[18.414711] (-) TimerEvent: {}
+[18.515565] (-) TimerEvent: {}
+[18.616455] (-) TimerEvent: {}
+[18.717407] (-) TimerEvent: {}
+[18.818601] (-) TimerEvent: {}
+[19.429640] (-) TimerEvent: {}
+[19.530525] (-) TimerEvent: {}
+[19.631378] (-) TimerEvent: {}
+[19.732231] (-) TimerEvent: {}
+[19.833103] (-) TimerEvent: {}
+[19.933914] (-) TimerEvent: {}
+[20.034834] (-) TimerEvent: {}
+[20.135586] (-) TimerEvent: {}
+[20.211210] (vision_msgs) StdoutLine: {'line': b'[ 75%] Linking CXX shared library libvision_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[20.235898] (-) TimerEvent: {}
+[20.336618] (-) TimerEvent: {}
+[20.437409] (-) TimerEvent: {}
+[20.538512] (-) TimerEvent: {}
+[20.639436] (-) TimerEvent: {}
+[20.740421] (-) TimerEvent: {}
+[20.841362] (-) TimerEvent: {}
+[20.933837] (vision_msgs) StdoutLine: {'line': b'[ 75%] Built target vision_msgs__rosidl_typesupport_introspection_cpp\n'}
+[20.941666] (-) TimerEvent: {}
+[21.042440] (-) TimerEvent: {}
+[21.132276] (vision_msgs) StdoutLine: {'line': b'[ 75%] Built target vision_msgs\n'}
+[21.142770] (-) TimerEvent: {}
+[21.243547] (-) TimerEvent: {}
+[21.341805] (vision_msgs) StdoutLine: {'line': b'[ 77%] Generating Python code for ROS interfaces\n'}
+[21.344211] (-) TimerEvent: {}
+[21.445039] (-) TimerEvent: {}
+[21.545867] (-) TimerEvent: {}
+[21.646690] (-) TimerEvent: {}
+[21.747462] (-) TimerEvent: {}
+[21.848249] (-) TimerEvent: {}
+[21.949021] (-) TimerEvent: {}
+[22.049809] (-) TimerEvent: {}
+[22.150724] (-) TimerEvent: {}
+[22.251590] (-) TimerEvent: {}
+[22.352466] (-) TimerEvent: {}
+[22.453182] (-) TimerEvent: {}
+[22.553881] (-) TimerEvent: {}
+[22.654852] (-) TimerEvent: {}
+[22.755603] (-) TimerEvent: {}
+[22.856314] (-) TimerEvent: {}
+[22.957041] (-) TimerEvent: {}
+[23.057795] (-) TimerEvent: {}
+[23.158618] (-) TimerEvent: {}
+[23.259408] (-) TimerEvent: {}
+[23.360243] (-) TimerEvent: {}
+[23.461097] (-) TimerEvent: {}
+[23.561927] (-) TimerEvent: {}
+[23.662918] (-) TimerEvent: {}
+[23.763825] (-) TimerEvent: {}
+[24.048283] (-) TimerEvent: {}
+[24.149101] (-) TimerEvent: {}
+[24.249878] (-) TimerEvent: {}
+[24.350704] (-) TimerEvent: {}
+[24.451498] (-) TimerEvent: {}
+[24.552240] (-) TimerEvent: {}
+[24.653016] (-) TimerEvent: {}
+[24.753731] (-) TimerEvent: {}
+[24.854481] (-) TimerEvent: {}
+[24.955231] (-) TimerEvent: {}
+[25.056023] (-) TimerEvent: {}
+[25.156899] (-) TimerEvent: {}
+[25.257715] (-) TimerEvent: {}
+[25.358573] (-) TimerEvent: {}
+[25.459393] (-) TimerEvent: {}
+[25.560268] (-) TimerEvent: {}
+[25.661163] (-) TimerEvent: {}
+[25.762036] (-) TimerEvent: {}
+[25.862929] (-) TimerEvent: {}
+[25.963749] (-) TimerEvent: {}
+[26.064609] (-) TimerEvent: {}
+[26.165452] (-) TimerEvent: {}
+[26.266255] (-) TimerEvent: {}
+[26.367086] (-) TimerEvent: {}
+[26.467857] (-) TimerEvent: {}
+[26.568606] (-) TimerEvent: {}
+[26.669346] (-) TimerEvent: {}
+[26.770025] (-) TimerEvent: {}
+[26.871142] (-) TimerEvent: {}
+[26.972156] (-) TimerEvent: {}
+[27.072922] (-) TimerEvent: {}
+[27.173703] (-) TimerEvent: {}
+[27.274465] (-) TimerEvent: {}
+[27.375219] (-) TimerEvent: {}
+[27.476133] (-) TimerEvent: {}
+[27.577090] (-) TimerEvent: {}
+[27.677889] (-) TimerEvent: {}
+[27.778756] (-) TimerEvent: {}
+[27.879506] (-) TimerEvent: {}
+[27.980316] (-) TimerEvent: {}
+[28.081106] (-) TimerEvent: {}
+[28.181865] (-) TimerEvent: {}
+[28.282739] (-) TimerEvent: {}
+[28.383810] (-) TimerEvent: {}
+[28.484687] (-) TimerEvent: {}
+[28.585428] (-) TimerEvent: {}
+[28.686186] (-) TimerEvent: {}
+[28.787093] (-) TimerEvent: {}
+[29.228216] (-) TimerEvent: {}
+[29.328988] (-) TimerEvent: {}
+[29.429968] (-) TimerEvent: {}
+[29.531517] (-) TimerEvent: {}
+[29.632763] (-) TimerEvent: {}
+[29.733794] (-) TimerEvent: {}
+[29.834775] (-) TimerEvent: {}
+[29.849790] (vision_msgs) StdoutLine: {'line': b'[ 77%] Built target vision_msgs__py\n'}
+[29.935109] (-) TimerEvent: {}
+[30.035981] (-) TimerEvent: {}
+[30.062532] (vision_msgs) StdoutLine: {'line': b'[ 80%] Building C object CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_detection_s.c.o\n'}
+[30.071829] (vision_msgs) StdoutLine: {'line': b'[ 82%] Building C object CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_detection_array_s.c.o\n'}
+[30.136339] (-) TimerEvent: {}
+[30.237991] (-) TimerEvent: {}
+[30.338945] (-) TimerEvent: {}
+[30.439813] (-) TimerEvent: {}
+[30.540691] (-) TimerEvent: {}
+[30.641607] (-) TimerEvent: {}
+[30.742556] (-) TimerEvent: {}
+[30.843392] (-) TimerEvent: {}
+[30.944207] (-) TimerEvent: {}
+[31.045216] (-) TimerEvent: {}
+[31.146057] (-) TimerEvent: {}
+[31.247077] (-) TimerEvent: {}
+[31.348002] (-) TimerEvent: {}
+[31.448955] (-) TimerEvent: {}
+[31.549878] (-) TimerEvent: {}
+[31.650723] (-) TimerEvent: {}
+[31.696825] (vision_msgs) StdoutLine: {'line': b'[ 85%] Linking C shared library rosidl_generator_py/vision_msgs/libvision_msgs__rosidl_generator_py.so\n'}
+[31.751078] (-) TimerEvent: {}
+[31.851955] (-) TimerEvent: {}
+[31.952772] (-) TimerEvent: {}
+[32.053661] (-) TimerEvent: {}
+[32.154561] (-) TimerEvent: {}
+[32.163443] (vision_msgs) StdoutLine: {'line': b'[ 85%] Built target vision_msgs__rosidl_generator_py\n'}
+[32.254920] (-) TimerEvent: {}
+[32.356026] (-) TimerEvent: {}
+[32.379507] (vision_msgs) StdoutLine: {'line': b'[ 87%] Building C object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\n'}
+[32.391136] (vision_msgs) StdoutLine: {'line': b'[ 90%] Building C object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\n'}
+[32.403184] (vision_msgs) StdoutLine: {'line': b'[ 92%] Building C object CMakeFiles/vision_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_c.c.o\n'}
+[32.456380] (-) TimerEvent: {}
+[32.557989] (-) TimerEvent: {}
+[32.667483] (-) TimerEvent: {}
+[32.768953] (-) TimerEvent: {}
+[32.869732] (-) TimerEvent: {}
+[32.970516] (-) TimerEvent: {}
+[33.071341] (-) TimerEvent: {}
+[33.172256] (-) TimerEvent: {}
+[33.273161] (-) TimerEvent: {}
+[33.373940] (-) TimerEvent: {}
+[33.481990] (-) TimerEvent: {}
+[33.583040] (-) TimerEvent: {}
+[33.684398] (-) TimerEvent: {}
+[33.785622] (-) TimerEvent: {}
+[34.245937] (-) TimerEvent: {}
+[34.304004] (vision_msgs) StdoutLine: {'line': b'[ 95%] Linking C shared library rosidl_generator_py/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[34.346424] (-) TimerEvent: {}
+[34.434699] (vision_msgs) StdoutLine: {'line': b'[ 97%] Linking C shared library rosidl_generator_py/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[34.446651] (-) TimerEvent: {}
+[34.450013] (vision_msgs) StdoutLine: {'line': b'[100%] Linking C shared library rosidl_generator_py/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[34.547042] (-) TimerEvent: {}
+[34.648036] (-) TimerEvent: {}
+[34.749444] (-) TimerEvent: {}
+[34.843112] (vision_msgs) StdoutLine: {'line': b'[100%] Built target vision_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[34.849941] (-) TimerEvent: {}
+[34.951817] (-) TimerEvent: {}
+[34.988659] (vision_msgs) StdoutLine: {'line': b'[100%] Built target vision_msgs__rosidl_typesupport_c__pyext\n'}
+[34.994491] (vision_msgs) StdoutLine: {'line': b'[100%] Built target vision_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[35.052131] (-) TimerEvent: {}
+[35.152960] (-) TimerEvent: {}
+[35.244855] (vision_msgs) CommandEnded: {'returncode': 0}
+[35.253250] (vision_msgs) JobProgress: {'identifier': 'vision_msgs', 'progress': 'install'}
+[35.254092] (-) TimerEvent: {}
+[35.334026] (vision_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/vision_msgs'], 'cwd': '/home/robot/robot_ws/build/vision_msgs', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.1.87 62742 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/3ed5d31635b5343712913d2f132876a4b5dc7e53/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '12'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/vision_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.87 62742 192.168.1.252 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[35.354413] (-) TimerEvent: {}
+[35.414800] (vision_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[35.418278] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/rosidl_interfaces/vision_msgs\n'}
+[35.421704] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[35.424973] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[35.428862] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection.h\n'}
+[35.431350] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[35.436191] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[35.437722] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__functions.c\n'}
+[35.441532] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__functions.h\n'}
+[35.444808] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.h\n'}
+[35.448062] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__functions.c\n'}
+[35.450093] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__struct.h\n'}
+[35.453170] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__functions.h\n'}
+[35.454432] (-) TimerEvent: {}
+[35.456725] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.h\n'}
+[35.459845] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__struct.h\n'}
+[35.462965] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection_array.h\n'}
+[35.467412] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/library_path.sh\n'}
+[35.470612] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/library_path.dsv\n'}
+[35.477506] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_c.so\n'}
+[35.484804] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_c.so" to ""\n'}
+[35.489806] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[35.491458] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[35.494609] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[35.496118] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[35.499665] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_fastrtps_c.h\n'}
+[35.501876] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_fastrtps_c.h\n'}
+[35.503486] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[35.510666] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[35.514379] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[35.516824] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[35.517899] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[35.519069] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h\n'}
+[35.523234] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.c\n'}
+[35.526872] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_c.h\n'}
+[35.530310] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.c\n'}
+[35.537151] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[35.543143] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_c.so\n'}
+[35.551309] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[35.554797] (-) TimerEvent: {}
+[35.555166] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_c.so\n'}
+[35.561149] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_c.so" to ""\n'}
+[35.564476] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[35.565876] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[35.569430] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection_array.hpp\n'}
+[35.571197] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[35.573689] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__struct.hpp\n'}
+[35.574933] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.hpp\n'}
+[35.577025] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__builder.hpp\n'}
+[35.579347] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__traits.hpp\n'}
+[35.582927] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__struct.hpp\n'}
+[35.586765] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.hpp\n'}
+[35.590144] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__traits.hpp\n'}
+[35.593950] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__builder.hpp\n'}
+[35.598596] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[35.603130] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection.hpp\n'}
+[35.609941] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[35.613995] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[35.619449] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[35.623531] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[35.631322] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/dds_fastrtps\n'}
+[35.640437] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[35.641911] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[35.646271] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[35.647883] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[35.649232] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[35.651731] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[35.653741] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[35.656433] (-) TimerEvent: {}
+[35.657707] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.cpp\n'}
+[35.659232] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.cpp\n'}
+[35.661295] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_cpp.hpp\n'}
+[35.662760] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_cpp.hpp\n'}
+[35.663897] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[35.674564] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[35.675999] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_cpp.so\n'}
+[35.679961] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[35.683605] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/pythonpath.sh\n'}
+[35.688864] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/pythonpath.dsv\n'}
+[35.693416] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info\n'}
+[35.696571] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/PKG-INFO\n'}
+[35.697754] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/top_level.txt\n'}
+[35.699897] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[35.702073] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[35.711104] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs\n'}
+[35.714076] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/__init__.py\n'}
+[35.716426] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[35.720081] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[35.724924] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[35.728413] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/libvision_msgs__rosidl_generator_py.so\n'}
+[35.735242] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[35.738877] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg\n'}
+[35.741381] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/__init__.py\n'}
+[35.745846] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_array_s.c\n'}
+[35.752955] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_array.py\n'}
+[35.756457] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection.py\n'}
+[35.758007] (-) TimerEvent: {}
+[35.759852] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_s.c\n'}
+[35.763524] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[35.767729] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[35.858407] (-) TimerEvent: {}
+[35.959172] (-) TimerEvent: {}
+[36.059899] (-) TimerEvent: {}
+[36.160693] (-) TimerEvent: {}
+[36.202307] (vision_msgs) StdoutLine: {'line': b"Listing '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs'...\n"}
+[36.204706] (vision_msgs) StdoutLine: {'line': b"Compiling '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/__init__.py'...\n"}
+[36.207128] (vision_msgs) StdoutLine: {'line': b"Listing '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg'...\n"}
+[36.209448] (vision_msgs) StdoutLine: {'line': b"Compiling '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/__init__.py'...\n"}
+[36.212911] (vision_msgs) StdoutLine: {'line': b"Compiling '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection.py'...\n"}
+[36.215115] (vision_msgs) StdoutLine: {'line': b"Compiling '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_array.py'...\n"}
+[36.258610] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[36.260879] (-) TimerEvent: {}
+[36.266741] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[36.270856] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[36.278941] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[36.283512] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[36.291909] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[36.294787] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_py.so\n'}
+[36.305343] (vision_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_py.so" to ""\n'}
+[36.309327] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/rust_packages/vision_msgs\n'}
+[36.314623] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust\n'}
+[36.318441] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src\n'}
+[36.320001] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/msg.rs\n'}
+[36.321508] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/msg\n'}
+[36.324805] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/msg/rmw.rs\n'}
+[36.326981] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/lib.rs\n'}
+[36.328152] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/build.rs\n'}
+[36.330124] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/Cargo.toml\n'}
+[36.332983] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/Detection.idl\n'}
+[36.336325] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/DetectionArray.idl\n'}
+[36.339527] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/Detection.msg\n'}
+[36.342795] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/DetectionArray.msg\n'}
+[36.346641] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/package_run_dependencies/vision_msgs\n'}
+[36.351503] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/parent_prefix_path/vision_msgs\n'}
+[36.355071] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/ament_prefix_path.sh\n'}
+[36.358393] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/ament_prefix_path.dsv\n'}
+[36.361109] (-) TimerEvent: {}
+[36.362497] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/path.sh\n'}
+[36.365174] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/path.dsv\n'}
+[36.369053] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.bash\n'}
+[36.372169] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.sh\n'}
+[36.375540] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.zsh\n'}
+[36.378751] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.dsv\n'}
+[36.381772] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/package.dsv\n'}
+[36.385785] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/packages/vision_msgs\n'}
+[36.390346] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_cExport.cmake\n'}
+[36.394118] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[36.398675] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[36.402864] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[36.406980] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[36.411193] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[36.415359] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cExport.cmake\n'}
+[36.419220] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[36.423326] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_cppExport.cmake\n'}
+[36.427481] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[36.431618] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[36.435916] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[36.440022] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[36.444173] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[36.448153] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[36.452947] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_pyExport.cmake\n'}
+[36.456812] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[36.460810] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[36.462526] (-) TimerEvent: {}
+[36.464277] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[36.468087] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[36.471791] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[36.475656] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[36.480575] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[36.483243] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[36.486594] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake\n'}
+[36.490167] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgsConfig.cmake\n'}
+[36.493044] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgsConfig-version.cmake\n'}
+[36.496364] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/package.xml\n'}
+[36.513874] (vision_msgs) CommandEnded: {'returncode': 0}
+[36.562796] (-) TimerEvent: {}
+[36.665741] (-) TimerEvent: {}
+[36.769051] (-) TimerEvent: {}
+[36.776501] (vision_msgs) JobEnded: {'identifier': 'vision_msgs', 'rc': 0}
+[36.782034] (-) EventReactorShutdown: {}

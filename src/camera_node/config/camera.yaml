@@ -1,0 +1,21 @@
+# camera.yaml - Default parameters for camera_node
+#
+# Loaded by camera.launch.py. Override individual values via launch arguments:
+#   ros2 launch camera_node camera.launch.py fps:=30.0 width:=1280
+
+/**:
+  ros__parameters:
+    # V4L2 device index (0 = /dev/video0, 1 = /dev/video1, etc.)
+    camera_index: 0
+
+    # Frame resolution
+    width: 640
+    height: 480
+
+    # Target frames per second
+    # Lower FPS = less CPU/bandwidth. 15 FPS is good for SLAM.
+    fps: 15.0
+
+    # TF frame ID published in image headers
+    # Must match the link name in robot.urdf.xacro
+    frame_id: "camera_link"

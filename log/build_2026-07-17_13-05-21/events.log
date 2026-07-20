@@ -1,0 +1,568 @@
+[0.000000] (-) TimerEvent: {}
+[0.000629] (-) JobUnselected: {'identifier': 'robot_camera'}
+[0.001075] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.001427] (robot_description) JobQueued: {'identifier': 'robot_description', 'dependencies': OrderedDict()}
+[0.001691] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_description', '/home/robot/robot_ws/install/robot_description'), ('sllidar_ros2', '/home/robot/robot_ws/install/sllidar_ros2')])}
+[0.001976] (robot_description) JobStarted: {'identifier': 'robot_description'}
+[0.090588] (-) TimerEvent: {}
+[0.094945] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'cmake'}
+[0.099523] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '/home/robot/robot_ws/src/robot_description', '-DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/robot_description'], 'cwd': '/home/robot/robot_ws/build/robot_description', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.31.103 56500 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/df796da00864399fd38bf22024de7bdc0bbd9d73/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '16'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/robot_description'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.31.103 56500 192.168.31.121 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.190937] (-) TimerEvent: {}
+[0.291711] (-) TimerEvent: {}
+[0.448094] (-) TimerEvent: {}
+[0.653738] (-) TimerEvent: {}
+[0.754506] (-) TimerEvent: {}
+[1.105140] (-) TimerEvent: {}
+[1.205845] (-) TimerEvent: {}
+[1.306548] (-) TimerEvent: {}
+[1.407285] (-) TimerEvent: {}
+[1.545395] (-) TimerEvent: {}
+[1.659214] (-) TimerEvent: {}
+[1.759961] (-) TimerEvent: {}
+[1.860742] (-) TimerEvent: {}
+[1.961509] (-) TimerEvent: {}
+[2.062267] (-) TimerEvent: {}
+[2.162978] (-) TimerEvent: {}
+[2.595687] (-) TimerEvent: {}
+[2.696399] (-) TimerEvent: {}
+[2.823508] (-) TimerEvent: {}
+[3.099228] (-) TimerEvent: {}
+[3.199924] (-) TimerEvent: {}
+[3.300633] (-) TimerEvent: {}
+[3.401430] (-) TimerEvent: {}
+[3.502109] (-) TimerEvent: {}
+[3.602775] (-) TimerEvent: {}
+[4.042123] (-) TimerEvent: {}
+[4.142795] (-) TimerEvent: {}
+[4.296218] (-) TimerEvent: {}
+[4.397008] (-) TimerEvent: {}
+[4.701865] (-) TimerEvent: {}
+[4.802655] (-) TimerEvent: {}
+[5.284138] (-) TimerEvent: {}
+[5.384891] (-) TimerEvent: {}
+[5.873307] (-) TimerEvent: {}
+[5.974062] (-) TimerEvent: {}
+[6.074921] (-) TimerEvent: {}
+[6.175721] (-) TimerEvent: {}
+[6.276439] (-) TimerEvent: {}
+[6.377251] (-) TimerEvent: {}
+[6.477977] (-) TimerEvent: {}
+[6.578679] (-) TimerEvent: {}
+[6.679380] (-) TimerEvent: {}
+[6.780071] (-) TimerEvent: {}
+[6.880841] (-) TimerEvent: {}
+[6.981524] (-) TimerEvent: {}
+[7.658952] (-) TimerEvent: {}
+[7.963751] (-) TimerEvent: {}
+[8.064451] (-) TimerEvent: {}
+[8.165286] (-) TimerEvent: {}
+[8.266266] (-) TimerEvent: {}
+[8.366971] (-) TimerEvent: {}
+[8.467746] (-) TimerEvent: {}
+[8.595861] (-) TimerEvent: {}
+[8.696631] (-) TimerEvent: {}
+[8.797442] (-) TimerEvent: {}
+[8.898158] (-) TimerEvent: {}
+[8.998857] (-) TimerEvent: {}
+[9.099558] (-) TimerEvent: {}
+[9.200355] (-) TimerEvent: {}
+[9.301115] (-) TimerEvent: {}
+[9.401885] (-) TimerEvent: {}
+[9.502669] (-) TimerEvent: {}
+[9.603395] (-) TimerEvent: {}
+[9.704235] (-) TimerEvent: {}
+[9.804940] (-) TimerEvent: {}
+[9.906178] (-) TimerEvent: {}
+[10.007197] (-) TimerEvent: {}
+[10.107993] (-) TimerEvent: {}
+[10.208881] (-) TimerEvent: {}
+[10.309623] (-) TimerEvent: {}
+[10.461631] (-) TimerEvent: {}
+[10.562438] (-) TimerEvent: {}
+[10.854107] (-) TimerEvent: {}
+[10.954792] (-) TimerEvent: {}
+[11.114213] (-) TimerEvent: {}
+[11.215043] (-) TimerEvent: {}
+[11.695421] (-) TimerEvent: {}
+[11.871120] (-) TimerEvent: {}
+[11.971851] (-) TimerEvent: {}
+[12.072605] (-) TimerEvent: {}
+[12.603655] (-) TimerEvent: {}
+[12.907052] (-) TimerEvent: {}
+[13.184212] (-) TimerEvent: {}
+[13.285002] (-) TimerEvent: {}
+[13.385807] (-) TimerEvent: {}
+[13.899902] (-) TimerEvent: {}
+[14.000672] (-) TimerEvent: {}
+[14.186066] (-) TimerEvent: {}
+[14.286837] (-) TimerEvent: {}
+[14.656715] (-) TimerEvent: {}
+[14.757464] (-) TimerEvent: {}
+[14.951298] (-) TimerEvent: {}
+[15.301449] (-) TimerEvent: {}
+[15.402150] (-) TimerEvent: {}
+[15.897000] (-) TimerEvent: {}
+[15.997730] (-) TimerEvent: {}
+[16.098423] (-) TimerEvent: {}
+[16.716940] (-) TimerEvent: {}
+[16.817626] (-) TimerEvent: {}
+[17.409175] (-) TimerEvent: {}
+[17.509875] (-) TimerEvent: {}
+[17.610659] (-) TimerEvent: {}
+[17.711370] (-) TimerEvent: {}
+[18.058460] (-) TimerEvent: {}
+[18.159136] (-) TimerEvent: {}
+[18.259915] (-) TimerEvent: {}
+[18.360687] (-) TimerEvent: {}
+[18.841818] (robot_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[18.843533] (-) TimerEvent: {}
+[18.944117] (-) TimerEvent: {}
+[19.044922] (-) TimerEvent: {}
+[19.145686] (-) TimerEvent: {}
+[19.350151] (-) TimerEvent: {}
+[19.639844] (-) TimerEvent: {}
+[19.740570] (-) TimerEvent: {}
+[19.888389] (-) TimerEvent: {}
+[19.989102] (-) TimerEvent: {}
+[20.089799] (-) TimerEvent: {}
+[20.288986] (-) TimerEvent: {}
+[20.389744] (-) TimerEvent: {}
+[20.492122] (-) TimerEvent: {}
+[20.592964] (-) TimerEvent: {}
+[20.693724] (-) TimerEvent: {}
+[20.962545] (-) TimerEvent: {}
+[21.063356] (-) TimerEvent: {}
+[21.189307] (robot_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[21.190733] (-) TimerEvent: {}
+[21.291307] (-) TimerEvent: {}
+[21.742028] (robot_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[21.894428] (-) TimerEvent: {}
+[21.995084] (-) TimerEvent: {}
+[22.095930] (-) TimerEvent: {}
+[22.758725] (-) TimerEvent: {}
+[22.951032] (-) TimerEvent: {}
+[23.051770] (-) TimerEvent: {}
+[23.254322] (-) TimerEvent: {}
+[23.355023] (-) TimerEvent: {}
+[23.455731] (-) TimerEvent: {}
+[23.556468] (-) TimerEvent: {}
+[23.657224] (-) TimerEvent: {}
+[23.757976] (-) TimerEvent: {}
+[23.858686] (-) TimerEvent: {}
+[23.959415] (-) TimerEvent: {}
+[24.060115] (-) TimerEvent: {}
+[24.160905] (-) TimerEvent: {}
+[24.261688] (-) TimerEvent: {}
+[24.362392] (-) TimerEvent: {}
+[24.463110] (-) TimerEvent: {}
+[24.717596] (-) TimerEvent: {}
+[24.818390] (-) TimerEvent: {}
+[24.843528] (robot_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[24.915841] (robot_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[24.918547] (-) TimerEvent: {}
+[25.019137] (-) TimerEvent: {}
+[25.119862] (-) TimerEvent: {}
+[25.125535] (robot_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[25.502381] (-) TimerEvent: {}
+[25.506114] (robot_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[25.602798] (-) TimerEvent: {}
+[25.624959] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[25.703079] (-) TimerEvent: {}
+[25.803774] (-) TimerEvent: {}
+[25.904517] (-) TimerEvent: {}
+[26.005316] (-) TimerEvent: {}
+[26.106026] (-) TimerEvent: {}
+[26.206769] (-) TimerEvent: {}
+[26.307485] (-) TimerEvent: {}
+[26.551136] (-) TimerEvent: {}
+[26.944365] (-) TimerEvent: {}
+[27.135462] (-) TimerEvent: {}
+[27.236219] (-) TimerEvent: {}
+[27.445092] (-) TimerEvent: {}
+[27.545961] (-) TimerEvent: {}
+[27.646883] (-) TimerEvent: {}
+[27.659730] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[27.747191] (-) TimerEvent: {}
+[27.921856] (robot_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[27.923217] (-) TimerEvent: {}
+[27.924459] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[27.928945] (robot_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[28.023550] (-) TimerEvent: {}
+[28.124247] (-) TimerEvent: {}
+[28.504256] (-) TimerEvent: {}
+[28.604967] (-) TimerEvent: {}
+[28.705665] (-) TimerEvent: {}
+[28.806393] (-) TimerEvent: {}
+[28.907101] (-) TimerEvent: {}
+[29.007806] (-) TimerEvent: {}
+[29.108541] (-) TimerEvent: {}
+[29.209274] (-) TimerEvent: {}
+[29.309973] (-) TimerEvent: {}
+[29.410697] (-) TimerEvent: {}
+[29.511506] (-) TimerEvent: {}
+[29.612187] (-) TimerEvent: {}
+[29.712929] (-) TimerEvent: {}
+[29.813672] (-) TimerEvent: {}
+[29.914372] (-) TimerEvent: {}
+[30.014999] (-) TimerEvent: {}
+[30.115691] (-) TimerEvent: {}
+[30.216416] (-) TimerEvent: {}
+[30.317142] (-) TimerEvent: {}
+[30.417821] (-) TimerEvent: {}
+[30.518531] (-) TimerEvent: {}
+[30.619260] (-) TimerEvent: {}
+[30.719966] (-) TimerEvent: {}
+[30.820724] (-) TimerEvent: {}
+[30.921514] (-) TimerEvent: {}
+[31.022212] (-) TimerEvent: {}
+[31.122901] (-) TimerEvent: {}
+[31.223633] (-) TimerEvent: {}
+[31.279337] (robot_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[31.323860] (-) TimerEvent: {}
+[31.424558] (-) TimerEvent: {}
+[31.525438] (-) TimerEvent: {}
+[31.626186] (-) TimerEvent: {}
+[31.853542] (-) TimerEvent: {}
+[32.315199] (-) TimerEvent: {}
+[32.503685] (-) TimerEvent: {}
+[32.695622] (-) TimerEvent: {}
+[32.796344] (-) TimerEvent: {}
+[32.897157] (-) TimerEvent: {}
+[32.997898] (-) TimerEvent: {}
+[33.098642] (-) TimerEvent: {}
+[33.199340] (-) TimerEvent: {}
+[33.300011] (-) TimerEvent: {}
+[33.566351] (-) TimerEvent: {}
+[33.656910] (robot_description) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[33.666665] (-) TimerEvent: {}
+[33.767354] (-) TimerEvent: {}
+[33.868031] (-) TimerEvent: {}
+[33.968752] (-) TimerEvent: {}
+[34.069486] (-) TimerEvent: {}
+[34.170157] (-) TimerEvent: {}
+[34.270910] (-) TimerEvent: {}
+[34.371728] (-) TimerEvent: {}
+[34.472438] (-) TimerEvent: {}
+[35.619783] (-) TimerEvent: {}
+[35.720580] (-) TimerEvent: {}
+[36.005034] (-) TimerEvent: {}
+[36.197532] (-) TimerEvent: {}
+[36.578212] (-) TimerEvent: {}
+[36.678942] (-) TimerEvent: {}
+[36.770171] (robot_description) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[36.779225] (-) TimerEvent: {}
+[37.062878] (-) TimerEvent: {}
+[37.163577] (-) TimerEvent: {}
+[37.264290] (-) TimerEvent: {}
+[37.365091] (-) TimerEvent: {}
+[37.465829] (-) TimerEvent: {}
+[37.566538] (-) TimerEvent: {}
+[37.823286] (-) TimerEvent: {}
+[37.923988] (-) TimerEvent: {}
+[38.024711] (-) TimerEvent: {}
+[38.125457] (-) TimerEvent: {}
+[38.226240] (-) TimerEvent: {}
+[38.326929] (-) TimerEvent: {}
+[38.427693] (-) TimerEvent: {}
+[38.528447] (-) TimerEvent: {}
+[38.958795] (-) TimerEvent: {}
+[39.529074] (-) TimerEvent: {}
+[40.082157] (-) TimerEvent: {}
+[40.182828] (-) TimerEvent: {}
+[40.461428] (-) TimerEvent: {}
+[40.658455] (-) TimerEvent: {}
+[40.759157] (-) TimerEvent: {}
+[40.966758] (-) TimerEvent: {}
+[41.161480] (-) TimerEvent: {}
+[41.262235] (-) TimerEvent: {}
+[41.362999] (-) TimerEvent: {}
+[41.463771] (-) TimerEvent: {}
+[41.564468] (-) TimerEvent: {}
+[41.665218] (-) TimerEvent: {}
+[42.109381] (-) TimerEvent: {}
+[42.210152] (-) TimerEvent: {}
+[42.404839] (-) TimerEvent: {}
+[42.505546] (-) TimerEvent: {}
+[42.606298] (-) TimerEvent: {}
+[42.707006] (-) TimerEvent: {}
+[42.807706] (-) TimerEvent: {}
+[42.908419] (-) TimerEvent: {}
+[43.009124] (-) TimerEvent: {}
+[43.109847] (-) TimerEvent: {}
+[43.210524] (-) TimerEvent: {}
+[43.311298] (-) TimerEvent: {}
+[43.412032] (-) TimerEvent: {}
+[43.512846] (-) TimerEvent: {}
+[43.613529] (-) TimerEvent: {}
+[43.714239] (-) TimerEvent: {}
+[43.814933] (-) TimerEvent: {}
+[43.915642] (-) TimerEvent: {}
+[44.016412] (-) TimerEvent: {}
+[44.117157] (-) TimerEvent: {}
+[44.217975] (-) TimerEvent: {}
+[44.318697] (-) TimerEvent: {}
+[44.419429] (-) TimerEvent: {}
+[44.833583] (-) TimerEvent: {}
+[45.025544] (-) TimerEvent: {}
+[45.126234] (-) TimerEvent: {}
+[45.227022] (-) TimerEvent: {}
+[45.327750] (-) TimerEvent: {}
+[45.428449] (-) TimerEvent: {}
+[45.529256] (-) TimerEvent: {}
+[45.629922] (-) TimerEvent: {}
+[45.730629] (-) TimerEvent: {}
+[45.831374] (-) TimerEvent: {}
+[45.932109] (-) TimerEvent: {}
+[46.333417] (-) TimerEvent: {}
+[46.434109] (-) TimerEvent: {}
+[46.537642] (-) TimerEvent: {}
+[46.638374] (-) TimerEvent: {}
+[46.839819] (-) TimerEvent: {}
+[46.940561] (-) TimerEvent: {}
+[47.041435] (-) TimerEvent: {}
+[47.255988] (-) TimerEvent: {}
+[47.443061] (-) TimerEvent: {}
+[47.543762] (-) TimerEvent: {}
+[47.564448] (robot_description) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[47.610091] (robot_description) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[47.644117] (-) TimerEvent: {}
+[47.744884] (-) TimerEvent: {}
+[47.799135] (robot_description) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[48.176182] (-) TimerEvent: {}
+[48.747804] (robot_description) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[48.749319] (-) TimerEvent: {}
+[48.849908] (-) TimerEvent: {}
+[48.950596] (-) TimerEvent: {}
+[49.106595] (robot_description) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[49.108081] (-) TimerEvent: {}
+[49.128444] (robot_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[49.188705] (robot_description) StdoutLine: {'line': b'-- Generating done\n'}
+[49.208437] (-) TimerEvent: {}
+[49.213583] (robot_description) StdoutLine: {'line': b'-- Build files have been written to: /home/robot/robot_ws/build/robot_description\n'}
+[49.243576] (robot_description) CommandEnded: {'returncode': 0}
+[49.248239] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'build'}
+[49.255824] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/robot_description', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/robot_description', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.31.103 56500 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/df796da00864399fd38bf22024de7bdc0bbd9d73/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '16'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/robot_description'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.31.103 56500 192.168.31.121 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[49.308753] (-) TimerEvent: {}
+[49.409520] (-) TimerEvent: {}
+[49.510223] (-) TimerEvent: {}
+[49.944895] (-) TimerEvent: {}
+[50.120133] (robot_description) CommandEnded: {'returncode': 0}
+[50.123247] (-) TimerEvent: {}
+[50.125255] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'install'}
+[50.200987] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/robot_description'], 'cwd': '/home/robot/robot_ws/build/robot_description', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.31.103 56500 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/df796da00864399fd38bf22024de7bdc0bbd9d73/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '16'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/robot_description'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.31.103 56500 192.168.31.121 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[50.223645] (-) TimerEvent: {}
+[50.274549] (robot_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[50.276041] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description//launch\n'}
+[50.278304] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description//launch/robot_state_publisher.launch.py\n'}
+[50.280339] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf\n'}
+[50.282664] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf/robot.urdf.xacro\n'}
+[50.286323] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description//config\n'}
+[50.287909] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description//config/joint_limits.yaml\n'}
+[50.290907] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description\n'}
+[50.295504] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description\n'}
+[50.299657] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.sh\n'}
+[50.302965] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv\n'}
+[50.306467] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/path.sh\n'}
+[50.309804] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/path.dsv\n'}
+[50.313049] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.bash\n'}
+[50.316250] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.sh\n'}
+[50.319407] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.zsh\n'}
+[50.322575] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.dsv\n'}
+[50.324143] (-) TimerEvent: {}
+[50.325951] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/package.dsv\n'}
+[50.329899] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/ament_index/resource_index/packages/robot_description\n'}
+[50.333942] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake\n'}
+[50.337036] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake\n'}
+[50.340383] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/package.xml\n'}
+[50.353723] (robot_description) CommandEnded: {'returncode': 0}
+[50.426266] (-) TimerEvent: {}
+[50.527450] (-) TimerEvent: {}
+[50.628126] (-) TimerEvent: {}
+[50.728886] (-) TimerEvent: {}
+[50.829597] (-) TimerEvent: {}
+[50.930296] (-) TimerEvent: {}
+[51.031000] (-) TimerEvent: {}
+[51.131782] (-) TimerEvent: {}
+[51.232501] (-) TimerEvent: {}
+[51.804344] (robot_description) JobEnded: {'identifier': 'robot_description', 'rc': 0}
+[51.815095] (-) TimerEvent: {}
+[51.815594] (robot_bringup) JobStarted: {'identifier': 'robot_bringup'}
+[51.881081] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'cmake'}
+[51.886177] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '/home/robot/robot_ws/src/robot_bringup', '-DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/robot_bringup'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.31.103 56500 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/df796da00864399fd38bf22024de7bdc0bbd9d73/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '16'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.31.103 56500 192.168.31.121 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[51.915405] (-) TimerEvent: {}
+[52.575261] (-) TimerEvent: {}
+[52.675962] (-) TimerEvent: {}
+[52.883841] (-) TimerEvent: {}
+[52.984592] (-) TimerEvent: {}
+[53.258131] (-) TimerEvent: {}
+[53.358908] (-) TimerEvent: {}
+[53.605273] (-) TimerEvent: {}
+[53.780228] (robot_bringup) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[53.781936] (-) TimerEvent: {}
+[53.882529] (-) TimerEvent: {}
+[53.983284] (-) TimerEvent: {}
+[54.084036] (-) TimerEvent: {}
+[54.184758] (-) TimerEvent: {}
+[54.285615] (-) TimerEvent: {}
+[54.386455] (-) TimerEvent: {}
+[54.487157] (-) TimerEvent: {}
+[54.587883] (-) TimerEvent: {}
+[54.724567] (robot_bringup) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[54.726071] (-) TimerEvent: {}
+[54.795174] (robot_bringup) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[54.826373] (-) TimerEvent: {}
+[55.280482] (-) TimerEvent: {}
+[55.381283] (-) TimerEvent: {}
+[55.482041] (-) TimerEvent: {}
+[55.582759] (-) TimerEvent: {}
+[55.683473] (-) TimerEvent: {}
+[55.784195] (-) TimerEvent: {}
+[55.885016] (-) TimerEvent: {}
+[55.985702] (-) TimerEvent: {}
+[56.086398] (-) TimerEvent: {}
+[56.187083] (-) TimerEvent: {}
+[56.287775] (-) TimerEvent: {}
+[56.388491] (-) TimerEvent: {}
+[56.489307] (-) TimerEvent: {}
+[56.950124] (-) TimerEvent: {}
+[57.050908] (-) TimerEvent: {}
+[57.434107] (robot_bringup) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[57.435391] (-) TimerEvent: {}
+[57.503763] (robot_bringup) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[57.506131] (robot_bringup) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[57.510047] (robot_bringup) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[57.535706] (-) TimerEvent: {}
+[57.720061] (robot_bringup) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[57.723398] (-) TimerEvent: {}
+[57.824008] (-) TimerEvent: {}
+[57.924718] (-) TimerEvent: {}
+[58.025486] (-) TimerEvent: {}
+[58.236064] (-) TimerEvent: {}
+[58.336758] (-) TimerEvent: {}
+[58.604066] (-) TimerEvent: {}
+[58.704986] (-) TimerEvent: {}
+[59.026456] (robot_bringup) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[59.027668] (-) TimerEvent: {}
+[59.128187] (-) TimerEvent: {}
+[59.478364] (robot_bringup) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[59.479860] (-) TimerEvent: {}
+[59.481137] (robot_bringup) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[59.486040] (robot_bringup) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[59.572883] (robot_bringup) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[59.580113] (-) TimerEvent: {}
+[59.680726] (-) TimerEvent: {}
+[59.781444] (-) TimerEvent: {}
+[59.882234] (-) TimerEvent: {}
+[59.982936] (-) TimerEvent: {}
+[60.083686] (-) TimerEvent: {}
+[60.184469] (-) TimerEvent: {}
+[60.285322] (-) TimerEvent: {}
+[60.386142] (-) TimerEvent: {}
+[60.486842] (-) TimerEvent: {}
+[60.587577] (-) TimerEvent: {}
+[62.472199] (-) TimerEvent: {}
+[62.573011] (-) TimerEvent: {}
+[62.673789] (-) TimerEvent: {}
+[62.774461] (-) TimerEvent: {}
+[62.875157] (-) TimerEvent: {}
+[62.975912] (-) TimerEvent: {}
+[63.076622] (-) TimerEvent: {}
+[63.119635] (robot_bringup) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[63.177096] (-) TimerEvent: {}
+[63.277802] (-) TimerEvent: {}
+[63.378475] (-) TimerEvent: {}
+[63.479241] (-) TimerEvent: {}
+[63.579917] (-) TimerEvent: {}
+[63.680601] (-) TimerEvent: {}
+[63.781308] (-) TimerEvent: {}
+[63.881983] (-) TimerEvent: {}
+[63.982675] (-) TimerEvent: {}
+[64.083427] (-) TimerEvent: {}
+[64.184106] (-) TimerEvent: {}
+[64.284908] (-) TimerEvent: {}
+[64.385689] (-) TimerEvent: {}
+[64.486438] (-) TimerEvent: {}
+[64.587207] (-) TimerEvent: {}
+[64.687927] (-) TimerEvent: {}
+[64.788589] (-) TimerEvent: {}
+[64.889338] (-) TimerEvent: {}
+[64.990015] (-) TimerEvent: {}
+[65.090716] (-) TimerEvent: {}
+[66.982555] (-) TimerEvent: {}
+[67.083310] (-) TimerEvent: {}
+[67.184028] (-) TimerEvent: {}
+[67.284740] (-) TimerEvent: {}
+[67.385546] (-) TimerEvent: {}
+[67.486233] (-) TimerEvent: {}
+[67.586921] (-) TimerEvent: {}
+[67.687624] (-) TimerEvent: {}
+[67.788336] (-) TimerEvent: {}
+[67.882691] (robot_bringup) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[67.888572] (-) TimerEvent: {}
+[67.989351] (-) TimerEvent: {}
+[68.090128] (-) TimerEvent: {}
+[68.190942] (-) TimerEvent: {}
+[68.292062] (-) TimerEvent: {}
+[68.392880] (-) TimerEvent: {}
+[68.493670] (-) TimerEvent: {}
+[68.594461] (-) TimerEvent: {}
+[70.865482] (-) TimerEvent: {}
+[70.966182] (-) TimerEvent: {}
+[71.066872] (-) TimerEvent: {}
+[71.167564] (-) TimerEvent: {}
+[71.902278] (robot_bringup) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[71.903642] (-) TimerEvent: {}
+[71.961274] (robot_bringup) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[71.972104] (robot_bringup) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[71.980191] (robot_bringup) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[72.003966] (-) TimerEvent: {}
+[72.012331] (robot_bringup) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[72.033396] (robot_bringup) StdoutLine: {'line': b'-- Configuring done\n'}
+[72.093323] (robot_bringup) StdoutLine: {'line': b'-- Generating done\n'}
+[72.104231] (-) TimerEvent: {}
+[72.117705] (robot_bringup) StdoutLine: {'line': b'-- Build files have been written to: /home/robot/robot_ws/build/robot_bringup\n'}
+[72.148568] (robot_bringup) CommandEnded: {'returncode': 0}
+[72.152670] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'build'}
+[72.154818] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/robot_bringup', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.31.103 56500 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/df796da00864399fd38bf22024de7bdc0bbd9d73/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '16'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.31.103 56500 192.168.31.121 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[72.204687] (-) TimerEvent: {}
+[72.305560] (-) TimerEvent: {}
+[72.406326] (-) TimerEvent: {}
+[72.505074] (robot_bringup) CommandEnded: {'returncode': 0}
+[72.508153] (-) TimerEvent: {}
+[72.510374] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'install'}
+[72.512157] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/robot_bringup'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.31.103 56500 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/df796da00864399fd38bf22024de7bdc0bbd9d73/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('DISABLE_AUTO_UPDATE', 'true'), ('ROS_PYTHON_VERSION', '3'), ('npm_config_yes', 'true'), ('VSCODE_PREVENT_SHELL_HISTORY', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '16'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('QODER_AGENT', 'true'), ('GIT_PAGER', 'cat'), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.31.103 56500 192.168.31.121 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('PIP_NO_INPUT', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[72.585283] (robot_bringup) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[73.729399] (-) TimerEvent: {}
+[73.729737] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch\n'}
+[73.741926] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/slam.launch.py\n'}
+[73.749255] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/localization.launch.py\n'}
+[73.754572] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/robot.launch.py\n'}
+[73.757344] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/lidar.launch.py\n'}
+[73.760123] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/view_robot.launch.py\n'}
+[73.763147] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config\n'}
+[73.765258] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/slam_toolbox_params.yaml\n'}
+[73.768429] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz\n'}
+[73.770728] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz/robot_view.rviz\n'}
+[73.773522] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps\n'}
+[73.775570] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/.gitkeep\n'}
+[73.779513] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup\n'}
+[73.784209] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup\n'}
+[73.788559] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh\n'}
+[73.792074] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv\n'}
+[73.795719] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.sh\n'}
+[73.799048] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.dsv\n'}
+[73.802353] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.bash\n'}
+[73.805597] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.sh\n'}
+[73.810461] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.zsh\n'}
+[73.813968] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.dsv\n'}
+[73.826731] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.dsv\n'}
+[73.829697] (-) TimerEvent: {}
+[73.832054] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup\n'}
+[73.841478] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake\n'}
+[73.845533] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake\n'}
+[73.849513] (robot_bringup) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.xml\n'}
+[73.859822] (robot_bringup) CommandEnded: {'returncode': 0}
+[73.929979] (-) TimerEvent: {}
+[74.030708] (-) TimerEvent: {}
+[74.036338] (robot_bringup) JobEnded: {'identifier': 'robot_bringup', 'rc': 0}
+[74.041847] (-) EventReactorShutdown: {}

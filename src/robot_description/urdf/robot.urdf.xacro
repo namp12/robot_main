@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<!--
+  robot.urdf.xacro - Full robot model for autonomous delivery robot.
+
+  This is the MAIN file that assembles the complete robot from sub-files:
+    - materials.xacro  : color definitions
+    - macros.xacro     : reusable component macros (wheels, encoders)
+    - gazebo.xacro     : Gazebo simulation plugins
+
+  Robot components:
+    1. Chassis (khung xe)     - 400x300x150mm box
+    2. Raspberry Pi 4         - compute module, mounted inside
+    3. RPLidar C1M1           - 360-degree lidar, mounted on top
+    4. UGREEN USB Webcam      - front-facing camera
+    5. 2x Drive wheels        - left/right, continuous joints
+    6. 2x Encoders            - read wheel rotation
+    7. IMU                    - inertial measurement unit
+    8. Battery                - power source, bottom for low CoG
+    9. Caster wheel           - rear support wheel
+
+  TF Tree:
+    odom
+     └── base_footprint
+          └── base_link
+               ├── left_wheel          (continuous joint)
+               ├── right_wheel         (continuous joint)
+               ├── left_encoder        (fixed)
+               ├── right_encoder       (fixed)
+               ├── rear_caster_wheel   (fixed)
+               ├── laser               (fixed - RPLidar C1)
+               ├── camera_link         (fixed - UGREEN webcam)
+               │    └── camera_optical_frame
+               ├── imu_link            (fixed - IMU sensor)
+               ├── raspberry_pi        (fixed - compute module)
+               └── battery             (fixed - power source)
+
+  Physical layout (top view, X+ = front):
+              front (X+)
+               ^
+               |
+         [camera]
+         [lidar  ]     <- centered on top
+         [ RPi  ]      <- inside chassis
+         [battery]     <- bottom inside
+    [L_enc][L_wheel]  [R_wheel][R_enc]
+         [caster]      <- rear
+               |
+              rear (X-)
+
+  Side view (Z up):
+    z=0.25  [===lidar===]
+    z=0.20  [           ] <- chassis top
+    z=0.12  [  RPi/IMU  ] <- internal components
+    z=0.05  [           ] <- chassis bottom
+    z=0.033 [O]  [O]     <- wheel centers
+    z=0.00  ============  <- ground
+
+  All dimensions in meters (m), all masses in kilograms (kg).
+-->
+<robot name="delivery_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ==================== Arguments ======================= -->
+  <!--
+    use_static_odom: When true, odom->base_footprint is a fixed (static) joint.
+                     Set to false when ESP32 publishes real odometry on /odom.
+  -->
+  <xacro:arg name="use_static_odom" default="true"/>
+  <!--
+    use_gazebo: When true, includes gazebo.xacro for simulation plugins.
+                Set to false for real robot operation.
+  -->
+  <xacro:arg name="use_gazebo" default="false"/>
+
+  <!-- ==================== Includes ======================== -->
+  <xacro:include filename="$(find robot_description)/urdf/materials.xacro"/>
+  <xacro:include filename="$(find robot_description)/urdf/macros.xacro"/>
+
+  <xacro:if value="$(arg use_gazebo)">
+    <xacro:include filename="$(find robot_description)/urdf/gazebo.xacro"/>
+  </xacro:if>
+
+  <!-- ==================== Properties ====================== -->
+  <!-- Chassis dimensions -->
+  <xacro:property name="chassis_length"  value="0.40"/>
+  <xacro:property name="chassis_width"   value="0.30"/>
+  <xacro:property name="chassis_height"  value="0.15"/>
+  <xacro:property name="chassis_mass"    value="3.0"/>
+  <!-- Ground clearance: distance from ground to chassis bottom -->
+  <xacro:property name="ground_clearance" value="0.05"/>
+
+  <!-- Drive wheels -->
+  <xacro:property name="wheel_radius"    value="0.033"/>
+  <xacro:property name="wheel_width"     value="0.040"/>
+  <xacro:property name="wheel_mass"      value="0.100"/>
+  <xacro:property name="wheel_separation" value="0.30"/>
+  <!-- Wheel center Z = wheel_radius (so wheel bottom touches ground at z=0) -->
+  <!-- But base_link is at ground_clearance above ground, so wheel z relative to base_link: -->
+  <xacro:property name="wheel_z_offset"  value="${wheel_radius - ground_clearance}"/>
+
+  <!-- Caster wheel -->
+  <xacro:property name="caster_radius"   value="0.020"/>
+  <xacro:property name="caster_mass"     value="0.050"/>
+
+  <!-- Encoders -->
+  <xacro:property name="enc_x" value="0.030"/>
+  <xacro:property name="enc_y" value="0.020"/>
+  <xacro:property name="enc_z" value="0.025"/>
+  <xacro:property name="enc_mass" value="0.020"/>
+
+  <!-- RPLidar C1M1 -->
+  <xacro:property name="lidar_radius"  value="0.035"/>
+  <xacro:property name="lidar_height"  value="0.040"/>
+  <xacro:property name="lidar_mass"    value="0.190"/>
+  <xacro:property name="lidar_z_offset" value="0.10"/>
+
+  <!-- UGREEN Webcam -->
+  <xacro:property name="cam_x_size"  value="0.030"/>
+  <xacro:property name="cam_y_size"  value="0.060"/>
+  <xacro:property name="cam_z_size"  value="0.040"/>
+  <xacro:property name="cam_mass"    value="0.050"/>
+  <xacro:property name="cam_x_offset" value="0.20"/>
+  <xacro:property name="cam_z_offset" value="0.10"/>
+
+  <!-- Raspberry Pi 4 -->
+  <xacro:property name="rpi_x"  value="0.085"/>
+  <xacro:property name="rpi_y"  value="0.056"/>
+  <xacro:property name="rpi_z"  value="0.017"/>
+  <xacro:property name="rpi_mass" value="0.045"/>
+  <xacro:property name="rpi_x_offset" value="-0.05"/>
+  <xacro:property name="rpi_z_offset" value="0.02"/>
+
+  <!-- IMU (small PCB module) -->
+  <xacro:property name="imu_x"  value="0.020"/>
+  <xacro:property name="imu_y"  value="0.020"/>
+  <xacro:property name="imu_z"  value="0.005"/>
+  <xacro:property name="imu_mass" value="0.005"/>
+  <xacro:property name="imu_x_offset" value="0.05"/>
+  <xacro:property name="imu_y_offset" value="0.0"/>
+  <xacro:property name="imu_z_offset" value="0.01"/>
+
+  <!-- Battery (18650 4S pack) -->
+  <xacro:property name="bat_x"  value="0.14"/>
+  <xacro:property name="bat_y"  value="0.065"/>
+  <xacro:property name="bat_z"  value="0.035"/>
+  <xacro:property name="bat_mass" value="0.600"/>
+  <xacro:property name="bat_x_offset" value="0.0"/>
+  <xacro:property name="bat_z_offset" value="-0.04"/>
+
+  <!-- ============================================================ -->
+  <!--                     BASE_LINK (Chassis)                      -->
+  <!-- ============================================================ -->
+  <!--
+    base_link is the robot's reference frame.
+    Origin: center of the chassis, at ground_clearance above ground.
+    X+ = forward, Y+ = left, Z+ = up (ROS standard).
+  -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+      </geometry>
+      <material name="chassis_blue"/>
+      <origin xyz="0 0 ${chassis_height/2}" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+      </geometry>
+      <origin xyz="0 0 ${chassis_height/2}" rpy="0 0 0"/>
+    </collision>
+    <xacro:box_inertia mass="${chassis_mass}" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}"/>
+  </link>
+
+  <!-- ============================================================ -->
+  <!--                     BASE_FOOTPRINT                            -->
+  <!-- ============================================================ -->
+  <!--
+    base_footprint is the ground projection of base_link.
+    This is the standard ROS convention: the robot's "foot" on the floor.
+    Nav2 uses this as the base_frame for costmaps.
+  -->
+  <link name="base_footprint"/>
+
+  <joint name="base_footprint_to_base" type="fixed">
+    <parent link="base_footprint"/>
+    <child  link="base_link"/>
+    <origin xyz="0 0 ${ground_clearance}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ============================================================ -->
+  <!--                     ODOM (placeholder)                        -->
+  <!-- ============================================================ -->
+  <!--
+    Static odom frame. Currently odom == base_footprint (identity).
+    When ESP32 is added, this joint will be removed and the
+    robot_base node will publish odom->base_footprint dynamically.
+  -->
+  <link name="odom"/>
+
+  <xacro:if value="$(arg use_static_odom)">
+    <joint name="odom_to_base_footprint" type="fixed">
+      <parent link="odom"/>
+      <child  link="base_footprint"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+  </xacro:if>
+
+  <!-- ============================================================ -->
+  <!--                     DRIVE WHEELS                              -->
+  <!-- ============================================================ -->
+  <!--
+    Two drive wheels on left and right sides.
+    Continuous joints allow rotation (needed for /joint_states from ESP32).
+
+    Wheel positions:
+      - X: center of chassis (x=0)
+      - Y: +/- wheel_separation/2 from center
+      - Z: so that wheel bottom is at ground level (z=0 relative to base_footprint)
+  -->
+  <xacro:drive_wheel prefix="left"
+    wheel_radius="${wheel_radius}"
+    wheel_width="${wheel_width}"
+    wheel_mass="${wheel_mass}"
+    x_offset="0"
+    y_offset="${wheel_separation / 2}"
+    z_offset="${wheel_z_offset}"/>
+
+  <xacro:drive_wheel prefix="right"
+    wheel_radius="${wheel_radius}"
+    wheel_width="${wheel_width}"
+    wheel_mass="${wheel_mass}"
+    x_offset="0"
+    y_offset="${-wheel_separation / 2}"
+    z_offset="${wheel_z_offset}"/>
+
+  <!-- ============================================================ -->
+  <!--                     ENCODERS                                  -->
+  <!-- ============================================================ -->
+  <!--
+    Encoders mounted next to each wheel axis.
+    Fixed joints (they don't rotate - they READ the wheel rotation).
+    Positioned slightly inward from the wheels, on the chassis wall.
+  -->
+  <xacro:encoder prefix="left"
+    enc_x="${enc_x}" enc_y="${enc_y}" enc_z="${enc_z}" enc_mass="${enc_mass}"
+    x_offset="0"
+    y_offset="${wheel_separation / 2 - 0.04}"
+    z_offset="${wheel_z_offset}"/>
+
+  <xacro:encoder prefix="right"
+    enc_x="${enc_x}" enc_y="${enc_y}" enc_z="${enc_z}" enc_mass="${enc_mass}"
+    x_offset="0"
+    y_offset="${-wheel_separation / 2 + 0.04}"
+    z_offset="${wheel_z_offset}"/>
+
+  <!-- ============================================================ -->
+  <!--                     CASTER WHEEL                              -->
+  <!-- ============================================================ -->
+  <!--
+    Passive caster wheel at the rear for support.
+    Fixed joint, low friction sphere.
+  -->
+  <xacro:caster_wheel prefix="rear"
+    caster_radius="${caster_radius}"
+    caster_mass="${caster_mass}"
+    x_offset="${-chassis_length/2 + caster_radius + 0.02}"
+    y_offset="0"
+    z_offset="${caster_radius - ground_clearance}"/>
+
+  <!-- ============================================================ -->
+  <!--                     RPLIDAR C1M1                              -->
+  <!-- ============================================================ -->
+  <!--
+    RPLidar C1M1 mounted on top of chassis, centered.
+    Specs: 12m range, 360-degree, 460800 baud serial.
+    Frame ID: "laser" (must match sllidar_node frame_id parameter).
+  -->
+  <link name="laser">
+    <visual>
+      <geometry>
+        <cylinder radius="${lidar_radius}" length="${lidar_height}"/>
+      </geometry>
+      <material name="lidar_dark"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="${lidar_radius}" length="${lidar_height}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <xacro:cylinder_inertia mass="${lidar_mass}" radius="${lidar_radius}" length="${lidar_height}"/>
+  </link>
+
+  <joint name="base_to_laser" type="fixed">
+    <parent link="base_link"/>
+    <child  link="laser"/>
+    <!-- Lidar centered on top of chassis -->
+    <origin xyz="0 0 ${chassis_height + lidar_z_offset}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ============================================================ -->
+  <!--                     UGREEN WEBCAM                             -->
+  <!-- ============================================================ -->
+  <!--
+    UGREEN USB webcam, front-facing.
+    camera_link: the physical camera body frame.
+    camera_optical_frame: ROS camera convention (Z forward, X right, Y down).
+  -->
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <box size="${cam_x_size} ${cam_y_size} ${cam_z_size}"/>
+      </geometry>
+      <material name="camera_black"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${cam_x_size} ${cam_y_size} ${cam_z_size}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <xacro:box_inertia mass="${cam_mass}" x="${cam_x_size}" y="${cam_y_size}" z="${cam_z_size}"/>
+  </link>
+
+  <joint name="base_to_camera" type="fixed">
+    <parent link="base_link"/>
+    <child  link="camera_link"/>
+    <!-- Camera at front of chassis, facing forward -->
+    <origin xyz="${cam_x_offset} 0 ${cam_z_offset}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Camera optical frame (ROS convention) -->
+  <link name="camera_optical_frame"/>
+
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child  link="camera_optical_frame"/>
+    <!-- Rotate from camera body frame to optical frame -->
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+  </joint>
+
+  <!-- ============================================================ -->
+  <!--                     RASPBERRY PI 4                            -->
+  <!-- ============================================================ -->
+  <!--
+    Raspberry Pi 4 compute module, mounted inside chassis.
+    Position: slightly rear of center, above chassis floor.
+  -->
+  <link name="raspberry_pi">
+    <visual>
+      <geometry>
+        <box size="${rpi_x} ${rpi_y} ${rpi_z}"/>
+      </geometry>
+      <material name="rpi_green"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${rpi_x} ${rpi_y} ${rpi_z}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <xacro:box_inertia mass="${rpi_mass}" x="${rpi_x}" y="${rpi_y}" z="${rpi_z}"/>
+  </link>
+
+  <joint name="base_to_rpi" type="fixed">
+    <parent link="base_link"/>
+    <child  link="raspberry_pi"/>
+    <origin xyz="${rpi_x_offset} 0 ${rpi_z_offset}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ============================================================ -->
+  <!--                     IMU                                       -->
+  <!-- ============================================================ -->
+  <!--
+    IMU sensor (e.g., MPU6050/BNO055), mounted on chassis floor.
+    Position: front of center for clean rotation readings.
+    Will publish /imu/data when connected.
+  -->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="${imu_x} ${imu_y} ${imu_z}"/>
+      </geometry>
+      <material name="imu_orange"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${imu_x} ${imu_y} ${imu_z}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <xacro:box_inertia mass="${imu_mass}" x="${imu_x}" y="${imu_y}" z="${imu_z}"/>
+  </link>
+
+  <joint name="base_to_imu" type="fixed">
+    <parent link="base_link"/>
+    <child  link="imu_link"/>
+    <origin xyz="${imu_x_offset} ${imu_y_offset} ${imu_z_offset}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ============================================================ -->
+  <!--                     BATTERY                                   -->
+  <!-- ============================================================ -->
+  <!--
+    Battery pack (4S 18650), mounted at bottom of chassis.
+    Low position keeps center of gravity low for stability.
+  -->
+  <link name="battery">
+    <visual>
+      <geometry>
+        <box size="${bat_x} ${bat_y} ${bat_z}"/>
+      </geometry>
+      <material name="battery_red"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${bat_x} ${bat_y} ${bat_z}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <xacro:box_inertia mass="${bat_mass}" x="${bat_x}" y="${bat_y}" z="${bat_z}"/>
+  </link>
+
+  <joint name="base_to_battery" type="fixed">
+    <parent link="base_link"/>
+    <child  link="battery"/>
+    <origin xyz="${bat_x_offset} 0 ${bat_z_offset}" rpy="0 0 0"/>
+  </joint>
+
+</robot>

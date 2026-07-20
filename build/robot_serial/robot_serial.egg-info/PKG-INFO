@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: robot-serial
+Version: 1.0.0
+Summary: Serial bridge between ESP32 and ROS2
+Home-page: UNKNOWN
+Maintainer: robot
+Maintainer-email: robot@todo.todo
+License: Apache-2.0
+Platform: UNKNOWN
+Provides-Extra: test
+
+UNKNOWN
+

@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<!--
+  gazebo.xacro - Gazebo simulation plugins and properties.
+
+  This file adds Gazebo-specific elements to the robot model:
+    1. Friction coefficients for wheels and caster
+    2. Differential drive controller plugin (simulates ESP32 + motors)
+    3. Lidar sensor plugin (simulates RPLidar C1)
+    4. IMU sensor plugin
+    5. Camera sensor plugin
+
+  When running in Gazebo, these plugins replace the real hardware:
+    - diff_drive plugin publishes /odom and subscribes to /cmd_vel
+    - lidar plugin publishes /scan
+    - imu plugin publishes /imu/data
+
+  Usage:
+    Included by robot.urdf.xacro. Only active when loading in Gazebo.
+    Does NOT affect real robot operation.
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ============= Gazebo Material Colors ================= -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="left_wheel">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+
+  <gazebo reference="right_wheel">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+
+  <gazebo reference="rear_caster_wheel">
+    <material>Gazebo/Grey</material>
+    <mu1>0.001</mu1>
+    <mu2>0.001</mu2>
+    <kp>1000000.0</kp>
+    <kd>100.0</kd>
+  </gazebo>
+
+  <!-- ============= Differential Drive Plugin ============== -->
+  <!--
+    Simulates the ESP32 + BTS7960 motor controller.
+    In Gazebo, this plugin:
+      - Subscribes to /cmd_vel (geometry_msgs/Twist)
+      - Publishes /odom (nav_msgs/Odometry)
+      - Publishes TF: odom -> base_footprint
+
+    Parameters match the real robot's kinematics:
+      wheel_separation: distance between left and right wheels
+      wheel_diameter: diameter of drive wheels
+  -->
+  <gazebo>
+    <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+
+      <!-- Wheels -->
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+
+      <!-- Kinematics -->
+      <wheel_separation>0.30</wheel_separation>
+      <wheel_diameter>0.066</wheel_diameter>
+
+      <!-- Limits -->
+      <max_wheel_torque>20.0</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+      <!-- Output -->
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+
+      <update_rate>30</update_rate>
+    </plugin>
+  </gazebo>
+
+  <!-- ============= RPLidar C1 Gazebo Plugin =============== -->
+  <!--
+    Simulates the RPLidar C1M1 in Gazebo.
+    Publishes /scan (sensor_msgs/LaserScan) matching real C1 specs:
+      - 12m max range
+      - 360 degrees
+      - ~8000 points/s at 10Hz
+  -->
+  <gazebo reference="laser">
+    <sensor type="ray" name="rplidar_c1">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.12</min>
+          <max>12.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+
+      <plugin name="lidar_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>laser</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- ============= IMU Gazebo Plugin ====================== -->
+  <gazebo reference="imu_link">
+    <sensor type="imu" name="imu_sensor">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <imu>
+        <angular_velocity>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.001</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.001</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.001</stddev>
+            </noise>
+          </z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </z>
+        </linear_acceleration>
+      </imu>
+
+      <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+        <ros>
+          <remapping>~/out:=imu/data</remapping>
+        </ros>
+        <frame_name>imu_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- ============= Camera Gazebo Plugin =================== -->
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="usb_camera">
+      <update_rate>30</update_rate>
+      <camera name="ugreen_cam">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <ros>
+          <remapping>~/image_raw:=camera/image_raw</remapping>
+          <remapping>~/camera_info:=camera/camera_info</remapping>
+        </ros>
+        <camera_name>camera</camera_name>
+        <frame_name>camera_optical_frame</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>

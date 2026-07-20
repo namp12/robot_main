@@ -1,0 +1,37 @@
+[7.068s] Invoking command in '/home/robot/robot_ws/src/robot_camera': PYTHONPATH=/home/robot/robot_ws/build/robot_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_camera build --build-base /home/robot/robot_ws/build/robot_camera/build install --record /home/robot/robot_ws/build/robot_camera/install.log --install-scripts $base/lib/robot_camera --single-version-externally-managed install_data
+[9.898s] running egg_info
+[9.904s] creating ../../build/robot_camera/robot_camera.egg-info
+[9.906s] writing ../../build/robot_camera/robot_camera.egg-info/PKG-INFO
+[9.909s] writing dependency_links to ../../build/robot_camera/robot_camera.egg-info/dependency_links.txt
+[9.912s] writing entry points to ../../build/robot_camera/robot_camera.egg-info/entry_points.txt
+[9.914s] writing requirements to ../../build/robot_camera/robot_camera.egg-info/requires.txt
+[9.915s] writing top-level names to ../../build/robot_camera/robot_camera.egg-info/top_level.txt
+[9.916s] writing manifest file '../../build/robot_camera/robot_camera.egg-info/SOURCES.txt'
+[9.934s] reading manifest file '../../build/robot_camera/robot_camera.egg-info/SOURCES.txt'
+[9.943s] writing manifest file '../../build/robot_camera/robot_camera.egg-info/SOURCES.txt'
+[9.948s] running build
+[9.949s] running build_py
+[9.951s] creating /home/robot/robot_ws/build/robot_camera/build
+[9.952s] creating /home/robot/robot_ws/build/robot_camera/build/lib
+[9.953s] creating /home/robot/robot_ws/build/robot_camera/build/lib/robot_camera
+[9.954s] copying robot_camera/__init__.py -> /home/robot/robot_ws/build/robot_camera/build/lib/robot_camera
+[9.956s] copying robot_camera/camera_node.py -> /home/robot/robot_ws/build/robot_camera/build/lib/robot_camera
+[9.958s] running install
+[9.960s] running install_lib
+[9.968s] creating /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera
+[9.969s] copying /home/robot/robot_ws/build/robot_camera/build/lib/robot_camera/__init__.py -> /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera
+[9.970s] copying /home/robot/robot_ws/build/robot_camera/build/lib/robot_camera/camera_node.py -> /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera
+[9.977s] byte-compiling /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera/__init__.py to __init__.cpython-310.pyc
+[9.980s] byte-compiling /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera/camera_node.py to camera_node.cpython-310.pyc
+[9.990s] running install_data
+[9.992s] creating /home/robot/robot_ws/install/robot_camera/share/ament_index
+[9.993s] creating /home/robot/robot_ws/install/robot_camera/share/ament_index/resource_index
+[9.994s] creating /home/robot/robot_ws/install/robot_camera/share/ament_index/resource_index/packages
+[9.996s] copying resource/robot_camera -> /home/robot/robot_ws/install/robot_camera/share/ament_index/resource_index/packages
+[9.997s] copying package.xml -> /home/robot/robot_ws/install/robot_camera/share/robot_camera
+[9.999s] running install_egg_info
+[10.018s] Copying ../../build/robot_camera/robot_camera.egg-info to /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera-0.0.0-py3.10.egg-info
+[10.033s] running install_scripts
+[10.233s] Installing camera_node script to /home/robot/robot_ws/install/robot_camera/lib/robot_camera
+[10.239s] writing list of installed files to '/home/robot/robot_ws/build/robot_camera/install.log'
+[10.439s] Invoked command in '/home/robot/robot_ws/src/robot_camera' returned '0': PYTHONPATH=/home/robot/robot_ws/build/robot_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_camera build --build-base /home/robot/robot_ws/build/robot_camera/build install --record /home/robot/robot_ws/build/robot_camera/install.log --install-scripts $base/lib/robot_camera --single-version-externally-managed install_data

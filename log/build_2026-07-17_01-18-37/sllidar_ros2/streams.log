@@ -1,0 +1,5 @@
+[0.132s] Invoking command in '/home/robot/robot_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/robot_camera:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/sllidar_ros2 -- -j4 -l4
+[0.621s] [0mCMake Error: The source directory "/home/robot/robot_ws/src/sllidar_ros2" does not exist.
+[0.623s] Specify --help for usage, or press the help button on the CMake GUI.[0m
+[0.624s] gmake: *** [Makefile:740: cmake_check_build_system] Error 1
+[0.638s] Invoked command in '/home/robot/robot_ws/build/sllidar_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/robot_camera:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/sllidar_ros2 -- -j4 -l4

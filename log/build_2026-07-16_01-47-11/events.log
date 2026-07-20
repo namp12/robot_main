@@ -1,0 +1,122 @@
+[0.000000] (-) TimerEvent: {}
+[0.000848] (robot_camera) JobQueued: {'identifier': 'robot_camera', 'dependencies': OrderedDict()}
+[0.001404] (robot_camera) JobStarted: {'identifier': 'robot_camera'}
+[0.097199] (-) TimerEvent: {}
+[0.197920] (-) TimerEvent: {}
+[0.298842] (-) TimerEvent: {}
+[0.400044] (-) TimerEvent: {}
+[0.501268] (-) TimerEvent: {}
+[0.602829] (-) TimerEvent: {}
+[0.704090] (-) TimerEvent: {}
+[0.805275] (-) TimerEvent: {}
+[0.906500] (-) TimerEvent: {}
+[1.007726] (-) TimerEvent: {}
+[1.108939] (-) TimerEvent: {}
+[1.210142] (-) TimerEvent: {}
+[1.311430] (-) TimerEvent: {}
+[1.413310] (-) TimerEvent: {}
+[1.514664] (-) TimerEvent: {}
+[1.616183] (-) TimerEvent: {}
+[1.717430] (-) TimerEvent: {}
+[1.818625] (-) TimerEvent: {}
+[1.919926] (-) TimerEvent: {}
+[2.021250] (-) TimerEvent: {}
+[2.122560] (-) TimerEvent: {}
+[2.223846] (-) TimerEvent: {}
+[2.325055] (-) TimerEvent: {}
+[2.426252] (-) TimerEvent: {}
+[2.527655] (-) TimerEvent: {}
+[2.629221] (-) TimerEvent: {}
+[2.730494] (-) TimerEvent: {}
+[2.831408] (-) TimerEvent: {}
+[2.932617] (-) TimerEvent: {}
+[3.033847] (-) TimerEvent: {}
+[3.135240] (-) TimerEvent: {}
+[3.237101] (-) TimerEvent: {}
+[3.338338] (-) TimerEvent: {}
+[3.439886] (-) TimerEvent: {}
+[3.541212] (-) TimerEvent: {}
+[3.642524] (-) TimerEvent: {}
+[3.743870] (-) TimerEvent: {}
+[3.845123] (-) TimerEvent: {}
+[3.946360] (-) TimerEvent: {}
+[4.047657] (-) TimerEvent: {}
+[4.148903] (-) TimerEvent: {}
+[4.250148] (-) TimerEvent: {}
+[4.351371] (-) TimerEvent: {}
+[4.673837] (-) TimerEvent: {}
+[4.775093] (-) TimerEvent: {}
+[4.876329] (-) TimerEvent: {}
+[4.977593] (-) TimerEvent: {}
+[5.078839] (-) TimerEvent: {}
+[5.191962] (-) TimerEvent: {}
+[5.293297] (-) TimerEvent: {}
+[5.394664] (-) TimerEvent: {}
+[5.496058] (-) TimerEvent: {}
+[5.597387] (-) TimerEvent: {}
+[5.698605] (-) TimerEvent: {}
+[5.799833] (-) TimerEvent: {}
+[5.901016] (-) TimerEvent: {}
+[6.002327] (-) TimerEvent: {}
+[6.103854] (-) TimerEvent: {}
+[6.205109] (-) TimerEvent: {}
+[6.292992] (robot_camera) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/robot_camera', 'build', '--build-base', '/home/robot/robot_ws/build/robot_camera/build', 'install', '--record', '/home/robot/robot_ws/build/robot_camera/install.log', '--install-scripts', '$base/lib/robot_camera', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/robot_camera', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'AI_AGENT': 'github_copilot_vscode_agent', 'USER': 'robot', 'SSH_CLIENT': '192.168.31.103 54180 22', 'GIT_EDITOR': ':', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'COPILOT_AGENT': '1', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws', 'TERM_PROGRAM_VERSION': '1.128.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-797c9112-18d1-4dff-b6d3-2d0745de481e.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '0', 'HISTCONTROL': 'ignorespace', 'PATH': '/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-29982aea13.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/robot_camera:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'GIT_PAGER': 'cat', 'PWD': '/home/robot/robot_ws/build/robot_camera', 'GIT_MERGE_AUTOEDIT': 'no', 'LC_ALL': 'en_US.UTF-8', 'COPILOT_DEBUG_NONCE': '0151b03fbf2e827f08d4509a6f0c239d', 'SSH_CONNECTION': '192.168.31.103 54180 192.168.31.119 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/robot_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[6.307349] (-) TimerEvent: {}
+[6.409910] (-) TimerEvent: {}
+[6.511258] (-) TimerEvent: {}
+[6.612531] (-) TimerEvent: {}
+[6.713800] (-) TimerEvent: {}
+[6.815153] (-) TimerEvent: {}
+[6.916613] (-) TimerEvent: {}
+[7.017875] (-) TimerEvent: {}
+[7.119451] (-) TimerEvent: {}
+[7.220721] (-) TimerEvent: {}
+[7.321942] (-) TimerEvent: {}
+[7.423376] (-) TimerEvent: {}
+[7.524684] (-) TimerEvent: {}
+[7.625987] (-) TimerEvent: {}
+[7.727241] (-) TimerEvent: {}
+[7.828483] (-) TimerEvent: {}
+[7.929679] (-) TimerEvent: {}
+[8.030946] (-) TimerEvent: {}
+[8.132901] (-) TimerEvent: {}
+[8.234133] (-) TimerEvent: {}
+[8.335378] (-) TimerEvent: {}
+[8.437000] (-) TimerEvent: {}
+[8.538277] (-) TimerEvent: {}
+[8.640142] (-) TimerEvent: {}
+[8.741404] (-) TimerEvent: {}
+[8.842644] (-) TimerEvent: {}
+[8.943904] (-) TimerEvent: {}
+[8.963149] (robot_camera) StdoutLine: {'line': b'running egg_info\n'}
+[8.970513] (robot_camera) StdoutLine: {'line': b'writing ../../build/robot_camera/robot_camera.egg-info/PKG-INFO\n'}
+[8.973494] (robot_camera) StdoutLine: {'line': b'writing dependency_links to ../../build/robot_camera/robot_camera.egg-info/dependency_links.txt\n'}
+[8.977486] (robot_camera) StdoutLine: {'line': b'writing entry points to ../../build/robot_camera/robot_camera.egg-info/entry_points.txt\n'}
+[8.980886] (robot_camera) StdoutLine: {'line': b'writing requirements to ../../build/robot_camera/robot_camera.egg-info/requires.txt\n'}
+[8.982143] (robot_camera) StdoutLine: {'line': b'writing top-level names to ../../build/robot_camera/robot_camera.egg-info/top_level.txt\n'}
+[9.000652] (robot_camera) StdoutLine: {'line': b"reading manifest file '../../build/robot_camera/robot_camera.egg-info/SOURCES.txt'\n"}
+[9.012665] (robot_camera) StdoutLine: {'line': b"writing manifest file '../../build/robot_camera/robot_camera.egg-info/SOURCES.txt'\n"}
+[9.016779] (robot_camera) StdoutLine: {'line': b'running build\n'}
+[9.021181] (robot_camera) StdoutLine: {'line': b'running build_py\n'}
+[9.025318] (robot_camera) StdoutLine: {'line': b'copying robot_camera/camera_node.py -> /home/robot/robot_ws/build/robot_camera/build/lib/robot_camera\n'}
+[9.031189] (robot_camera) StdoutLine: {'line': b'running install\n'}
+[9.035255] (robot_camera) StdoutLine: {'line': b'running install_lib\n'}
+[9.040035] (robot_camera) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_camera/build/lib/robot_camera/camera_node.py -> /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera\n'}
+[9.044036] (-) TimerEvent: {}
+[9.047208] (robot_camera) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera/camera_node.py to camera_node.cpython-310.pyc\n'}
+[9.056272] (robot_camera) StdoutLine: {'line': b'running install_data\n'}
+[9.057774] (robot_camera) StdoutLine: {'line': b'copying package.xml -> /home/robot/robot_ws/install/robot_camera/share/robot_camera\n'}
+[9.059310] (robot_camera) StdoutLine: {'line': b'running install_egg_info\n'}
+[9.073048] (robot_camera) StdoutLine: {'line': b"removing '/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[9.077900] (robot_camera) StdoutLine: {'line': b'Copying ../../build/robot_camera/robot_camera.egg-info to /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot_camera-0.0.0-py3.10.egg-info\n'}
+[9.094884] (robot_camera) StdoutLine: {'line': b'running install_scripts\n'}
+[9.144297] (-) TimerEvent: {}
+[9.245826] (-) TimerEvent: {}
+[9.300987] (robot_camera) StdoutLine: {'line': b'Installing camera_node script to /home/robot/robot_ws/install/robot_camera/lib/robot_camera\n'}
+[9.304746] (robot_camera) StdoutLine: {'line': b"writing list of installed files to '/home/robot/robot_ws/build/robot_camera/install.log'\n"}
+[9.346197] (-) TimerEvent: {}
+[9.448255] (-) TimerEvent: {}
+[9.505900] (robot_camera) CommandEnded: {'returncode': 0}
+[9.548486] (-) TimerEvent: {}
+[9.593955] (robot_camera) JobEnded: {'identifier': 'robot_camera', 'rc': 0}
+[9.600992] (-) EventReactorShutdown: {}

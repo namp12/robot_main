@@ -1,0 +1,3 @@
+Invoking command in '/home/robot/robot_ws/build/vision_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/robot/robot_ws/src/vision_msgs -DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/vision_msgs
+Invoked command in '/home/robot/robot_ws/build/vision_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/robot/robot_ws/src/vision_msgs -DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/vision_msgs
+Invoking command in '/home/robot/robot_ws/build/vision_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/vision_msgs -- -j4 -l4

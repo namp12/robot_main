@@ -1,0 +1,40 @@
+running egg_info
+creating ../../build/vision_ai_node/vision_ai_node.egg-info
+writing ../../build/vision_ai_node/vision_ai_node.egg-info/PKG-INFO
+writing dependency_links to ../../build/vision_ai_node/vision_ai_node.egg-info/dependency_links.txt
+writing entry points to ../../build/vision_ai_node/vision_ai_node.egg-info/entry_points.txt
+writing requirements to ../../build/vision_ai_node/vision_ai_node.egg-info/requires.txt
+writing top-level names to ../../build/vision_ai_node/vision_ai_node.egg-info/top_level.txt
+writing manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'
+reading manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'
+writing manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/robot/robot_ws/build/vision_ai_node/build
+creating /home/robot/robot_ws/build/vision_ai_node/build/lib
+creating /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node
+copying vision_ai_node/__init__.py -> /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node
+copying vision_ai_node/vision_ai_node.py -> /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node
+running install
+running install_lib
+creating /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node
+copying /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node/__init__.py -> /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node
+copying /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node/vision_ai_node.py -> /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node
+byte-compiling /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node/vision_ai_node.py to vision_ai_node.cpython-310.pyc
+running install_data
+creating /home/robot/robot_ws/install/vision_ai_node/share/ament_index
+creating /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index
+creating /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index/packages
+copying resource/vision_ai_node -> /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index/packages
+copying package.xml -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node
+creating /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/launch
+copying launch/vision_ai.launch.py -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/launch
+creating /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/config
+copying config/vision.yaml -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/config
+creating /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/models
+running install_egg_info
+Copying ../../build/vision_ai_node/vision_ai_node.egg-info to /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node-1.0.0-py3.10.egg-info
+running install_scripts
+Installing vision_ai_node script to /home/robot/robot_ws/install/vision_ai_node/lib/vision_ai_node
+writing list of installed files to '/home/robot/robot_ws/build/vision_ai_node/install.log'

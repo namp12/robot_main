@@ -1,0 +1,46 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from vision_msgs/msg/Detection.msg
+// generated code does not contain a copyright notice
+
+
+module vision_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Single object detection result" "\n"
+      "" "\n"
+      "Published by vision_ai_node after YOLO inference." "\n"
+      "Each detection contains the class name, confidence score," "\n"
+      "and bounding box in pixel coordinates.")
+    struct Detection {
+      @verbatim (language="comment", text=
+        "Class label from YOLO model (e.g. \"person\", \"car\", \"bottle\")")
+      string class_name;
+
+      @verbatim (language="comment", text=
+        "Class ID from YOLO model (integer index)")
+      int32 class_id;
+
+      @verbatim (language="comment", text=
+        "Detection confidence")
+      @unit (value="0.0 - 1.0")
+      float confidence;
+
+      @verbatim (language="comment", text=
+        "Bounding box in pixel coordinates (top-left origin)" "\n"
+        "Left edge")
+      int32 x_min;
+
+      @verbatim (language="comment", text=
+        "Top edge")
+      int32 y_min;
+
+      @verbatim (language="comment", text=
+        "Right edge")
+      int32 x_max;
+
+      @verbatim (language="comment", text=
+        "Bottom edge")
+      int32 y_max;
+    };
+  };
+};

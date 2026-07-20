@@ -1,0 +1,1545 @@
+[0.000000] (-) TimerEvent: {}
+[0.002065] (robot_camera) JobQueued: {'identifier': 'robot_camera', 'dependencies': OrderedDict()}
+[0.002766] (sllidar_ros2) JobQueued: {'identifier': 'sllidar_ros2', 'dependencies': OrderedDict()}
+[0.003286] (robot_camera) JobStarted: {'identifier': 'robot_camera'}
+[0.070034] (sllidar_ros2) JobStarted: {'identifier': 'sllidar_ros2'}
+[0.099066] (-) TimerEvent: {}
+[0.350129] (-) TimerEvent: {}
+[0.450935] (-) TimerEvent: {}
+[0.551763] (-) TimerEvent: {}
+[0.652610] (-) TimerEvent: {}
+[0.753320] (-) TimerEvent: {}
+[0.854127] (-) TimerEvent: {}
+[0.955097] (-) TimerEvent: {}
+[1.055850] (-) TimerEvent: {}
+[1.156613] (-) TimerEvent: {}
+[1.257323] (-) TimerEvent: {}
+[1.358149] (-) TimerEvent: {}
+[1.459251] (-) TimerEvent: {}
+[1.560662] (-) TimerEvent: {}
+[1.661719] (-) TimerEvent: {}
+[1.762753] (-) TimerEvent: {}
+[1.864002] (-) TimerEvent: {}
+[1.965245] (-) TimerEvent: {}
+[2.066553] (-) TimerEvent: {}
+[2.167742] (-) TimerEvent: {}
+[2.268967] (-) TimerEvent: {}
+[2.370070] (-) TimerEvent: {}
+[2.471263] (-) TimerEvent: {}
+[2.572477] (-) TimerEvent: {}
+[2.673690] (-) TimerEvent: {}
+[2.774704] (-) TimerEvent: {}
+[2.875581] (-) TimerEvent: {}
+[2.977778] (-) TimerEvent: {}
+[2.979439] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'cmake'}
+[2.982028] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '/home/robot/robot_ws/src/sllidar_ros2', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/sllidar_ros2'], 'cwd': '/home/robot/robot_ws/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.31.103 64480 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws/src'), ('TERM_PROGRAM_VERSION', '1.128.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-c567b934-eccd-426b-8406-a86f8e1092c9.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '6'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-100bde8285.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/robot_camera:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/robot/robot_ws/build/sllidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('COPILOT_DEBUG_NONCE', '8c0712f04b1117e7b690022b6a04670b'), ('SSH_CONNECTION', '192.168.31.103 64480 192.168.31.121 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/robot_camera:/opt/ros/humble')]), 'shell': False}
+[3.078044] (-) TimerEvent: {}
+[3.179025] (-) TimerEvent: {}
+[3.279845] (-) TimerEvent: {}
+[3.380775] (-) TimerEvent: {}
+[3.482121] (-) TimerEvent: {}
+[3.583043] (-) TimerEvent: {}
+[3.683855] (-) TimerEvent: {}
+[3.784666] (-) TimerEvent: {}
+[3.885545] (-) TimerEvent: {}
+[3.986327] (-) TimerEvent: {}
+[4.087428] (-) TimerEvent: {}
+[4.188132] (-) TimerEvent: {}
+[4.288889] (-) TimerEvent: {}
+[4.389728] (-) TimerEvent: {}
+[4.447426] (sllidar_ros2) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[4.489896] (-) TimerEvent: {}
+[4.590764] (-) TimerEvent: {}
+[4.691669] (-) TimerEvent: {}
+[4.792483] (-) TimerEvent: {}
+[4.893366] (-) TimerEvent: {}
+[4.995087] (-) TimerEvent: {}
+[5.096293] (-) TimerEvent: {}
+[5.197492] (-) TimerEvent: {}
+[5.298480] (-) TimerEvent: {}
+[5.399473] (-) TimerEvent: {}
+[5.500677] (-) TimerEvent: {}
+[5.601622] (-) TimerEvent: {}
+[5.702629] (-) TimerEvent: {}
+[5.764722] (sllidar_ros2) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[5.802838] (-) TimerEvent: {}
+[5.835020] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[5.903033] (-) TimerEvent: {}
+[6.004049] (-) TimerEvent: {}
+[6.105245] (-) TimerEvent: {}
+[6.206231] (-) TimerEvent: {}
+[6.308099] (-) TimerEvent: {}
+[6.409038] (-) TimerEvent: {}
+[6.421045] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[6.451118] (sllidar_ros2) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[6.453772] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[6.458747] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[6.478132] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[6.509333] (-) TimerEvent: {}
+[6.612720] (-) TimerEvent: {}
+[6.715712] (-) TimerEvent: {}
+[6.818323] (-) TimerEvent: {}
+[6.921020] (-) TimerEvent: {}
+[6.958027] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.989222] (sllidar_ros2) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[6.990542] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.992647] (sllidar_ros2) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[7.021248] (-) TimerEvent: {}
+[7.048436] (sllidar_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[7.121405] (-) TimerEvent: {}
+[7.222383] (-) TimerEvent: {}
+[7.323782] (-) TimerEvent: {}
+[7.424720] (-) TimerEvent: {}
+[7.525791] (-) TimerEvent: {}
+[7.626617] (-) TimerEvent: {}
+[7.727643] (-) TimerEvent: {}
+[7.828677] (-) TimerEvent: {}
+[7.929693] (-) TimerEvent: {}
+[7.975066] (sllidar_ros2) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[8.029906] (-) TimerEvent: {}
+[8.130683] (-) TimerEvent: {}
+[8.231888] (-) TimerEvent: {}
+[8.333946] (-) TimerEvent: {}
+[8.346010] (robot_camera) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/robot/robot_ws/build/robot_camera/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/home/robot/robot_ws/build/robot_camera', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'robot', 'SSH_CLIENT': '192.168.31.103 64480 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws/src', 'TERM_PROGRAM_VERSION': '1.128.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-c567b934-eccd-426b-8406-a86f8e1092c9.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '6', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-100bde8285.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/robot_camera:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/robot/robot_ws/build/robot_camera', 'LC_ALL': 'en_US.UTF-8', 'COPILOT_DEBUG_NONCE': '8c0712f04b1117e7b690022b6a04670b', 'SSH_CONNECTION': '192.168.31.103 64480 192.168.31.121 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/robot_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[8.434396] (-) TimerEvent: {}
+[8.474254] (sllidar_ros2) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[8.534657] (-) TimerEvent: {}
+[8.636245] (-) TimerEvent: {}
+[8.737971] (-) TimerEvent: {}
+[8.839618] (-) TimerEvent: {}
+[8.941062] (-) TimerEvent: {}
+[9.042551] (-) TimerEvent: {}
+[9.144344] (-) TimerEvent: {}
+[9.245827] (-) TimerEvent: {}
+[9.464353] (-) TimerEvent: {}
+[9.565866] (-) TimerEvent: {}
+[9.667367] (-) TimerEvent: {}
+[9.768797] (-) TimerEvent: {}
+[9.870194] (-) TimerEvent: {}
+[9.971680] (-) TimerEvent: {}
+[10.073858] (-) TimerEvent: {}
+[10.175420] (-) TimerEvent: {}
+[10.277111] (-) TimerEvent: {}
+[10.297859] (sllidar_ros2) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[10.377464] (-) TimerEvent: {}
+[10.478912] (-) TimerEvent: {}
+[10.580337] (-) TimerEvent: {}
+[10.682727] (-) TimerEvent: {}
+[10.784659] (-) TimerEvent: {}
+[10.886177] (-) TimerEvent: {}
+[10.987766] (-) TimerEvent: {}
+[11.093642] (-) TimerEvent: {}
+[11.196368] (-) TimerEvent: {}
+[11.297738] (-) TimerEvent: {}
+[11.398574] (-) TimerEvent: {}
+[11.414658] (robot_camera) StdoutLine: {'line': b'running develop\n'}
+[11.452305] (sllidar_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[11.498737] (-) TimerEvent: {}
+[11.517938] (sllidar_ros2) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[11.598924] (-) TimerEvent: {}
+[11.613784] (sllidar_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[11.699203] (-) TimerEvent: {}
+[11.739596] (sllidar_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[11.799354] (-) TimerEvent: {}
+[11.900861] (sllidar_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[11.903216] (-) TimerEvent: {}
+[12.003973] (-) TimerEvent: {}
+[12.104803] (-) TimerEvent: {}
+[12.205696] (-) TimerEvent: {}
+[12.244321] (robot_camera) StdoutLine: {'line': b'running egg_info\n'}
+[12.245308] (robot_camera) StdoutLine: {'line': b'writing robot_camera.egg-info/PKG-INFO\n'}
+[12.246434] (robot_camera) StdoutLine: {'line': b'writing dependency_links to robot_camera.egg-info/dependency_links.txt\n'}
+[12.247676] (robot_camera) StdoutLine: {'line': b'writing entry points to robot_camera.egg-info/entry_points.txt\n'}
+[12.248678] (robot_camera) StdoutLine: {'line': b'writing requirements to robot_camera.egg-info/requires.txt\n'}
+[12.249752] (robot_camera) StdoutLine: {'line': b'writing top-level names to robot_camera.egg-info/top_level.txt\n'}
+[12.257526] (robot_camera) StdoutLine: {'line': b"reading manifest file 'robot_camera.egg-info/SOURCES.txt'\n"}
+[12.305988] (-) TimerEvent: {}
+[12.394797] (robot_camera) StdoutLine: {'line': b"writing manifest file 'robot_camera.egg-info/SOURCES.txt'\n"}
+[12.403949] (robot_camera) StdoutLine: {'line': b'running build_ext\n'}
+[12.405274] (robot_camera) StdoutLine: {'line': b'Creating /home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages/robot-camera.egg-link (link to .)\n'}
+[12.406017] (-) TimerEvent: {}
+[12.409662] (robot_camera) StdoutLine: {'line': b'Installing camera_node script to /home/robot/robot_ws/install/robot_camera/lib/robot_camera\n'}
+[12.411200] (robot_camera) StdoutLine: {'line': b'\n'}
+[12.414277] (robot_camera) StdoutLine: {'line': b'Installed /home/robot/robot_ws/build/robot_camera\n'}
+[12.416288] (robot_camera) StdoutLine: {'line': b'running symlink_data\n'}
+[12.417927] (robot_camera) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/robot_camera/resource/robot_camera -> /home/robot/robot_ws/install/robot_camera/share/ament_index/resource_index/packages\n'}
+[12.419807] (robot_camera) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/robot_camera/package.xml -> /home/robot/robot_ws/install/robot_camera/share/robot_camera\n'}
+[12.506365] (-) TimerEvent: {}
+[12.527631] (sllidar_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[12.564788] (robot_camera) CommandEnded: {'returncode': 0}
+[12.569891] (sllidar_ros2) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[12.607094] (-) TimerEvent: {}
+[12.708142] (-) TimerEvent: {}
+[12.809422] (-) TimerEvent: {}
+[12.910484] (-) TimerEvent: {}
+[12.940403] (robot_camera) JobEnded: {'identifier': 'robot_camera', 'rc': 0}
+[13.010722] (-) TimerEvent: {}
+[13.111637] (-) TimerEvent: {}
+[13.212424] (-) TimerEvent: {}
+[13.313222] (-) TimerEvent: {}
+[13.413985] (-) TimerEvent: {}
+[13.514764] (-) TimerEvent: {}
+[13.615642] (-) TimerEvent: {}
+[13.716446] (-) TimerEvent: {}
+[13.731000] (sllidar_ros2) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[13.816653] (-) TimerEvent: {}
+[13.917411] (-) TimerEvent: {}
+[13.990870] (sllidar_ros2) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[14.017601] (-) TimerEvent: {}
+[14.118338] (-) TimerEvent: {}
+[14.219079] (-) TimerEvent: {}
+[14.319817] (-) TimerEvent: {}
+[14.400934] (sllidar_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[14.419997] (-) TimerEvent: {}
+[14.520764] (-) TimerEvent: {}
+[15.037860] (-) TimerEvent: {}
+[15.135986] (sllidar_ros2) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[15.138028] (-) TimerEvent: {}
+[15.238992] (-) TimerEvent: {}
+[15.339868] (-) TimerEvent: {}
+[15.459792] (-) TimerEvent: {}
+[15.560858] (-) TimerEvent: {}
+[15.661769] (-) TimerEvent: {}
+[15.762672] (-) TimerEvent: {}
+[15.802530] (sllidar_ros2) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[15.805126] (sllidar_ros2) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[15.862874] (-) TimerEvent: {}
+[15.963835] (-) TimerEvent: {}
+[16.064703] (-) TimerEvent: {}
+[16.165702] (-) TimerEvent: {}
+[16.215175] (sllidar_ros2) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[16.220432] (sllidar_ros2) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[16.265894] (-) TimerEvent: {}
+[16.366734] (-) TimerEvent: {}
+[16.467545] (-) TimerEvent: {}
+[16.568435] (-) TimerEvent: {}
+[16.654328] (sllidar_ros2) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[16.668660] (-) TimerEvent: {}
+[16.769546] (-) TimerEvent: {}
+[16.870347] (-) TimerEvent: {}
+[16.887960] (sllidar_ros2) StdoutLine: {'line': b'-- Found std_srvs: 4.9.1 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[16.970549] (-) TimerEvent: {}
+[17.071350] (-) TimerEvent: {}
+[17.172105] (-) TimerEvent: {}
+[17.272913] (-) TimerEvent: {}
+[17.327836] (sllidar_ros2) StdoutLine: {'line': b'-- Configuring done\n'}
+[17.373099] (-) TimerEvent: {}
+[17.433501] (sllidar_ros2) StdoutLine: {'line': b'-- Generating done\n'}
+[17.459054] (sllidar_ros2) StdoutLine: {'line': b'-- Build files have been written to: /home/robot/robot_ws/build/sllidar_ros2\n'}
+[17.473407] (-) TimerEvent: {}
+[17.501740] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[17.504115] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'build'}
+[17.507353] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/sllidar_ros2', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.31.103 64480 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws/src'), ('TERM_PROGRAM_VERSION', '1.128.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-c567b934-eccd-426b-8406-a86f8e1092c9.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '6'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-100bde8285.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/robot_camera:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/robot/robot_ws/build/sllidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('COPILOT_DEBUG_NONCE', '8c0712f04b1117e7b690022b6a04670b'), ('SSH_CONNECTION', '192.168.31.103 64480 192.168.31.121 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/robot_camera:/opt/ros/humble')]), 'shell': False}
+[17.573614] (-) TimerEvent: {}
+[17.674715] (-) TimerEvent: {}
+[17.770180] (sllidar_ros2) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_client.dir/src/sllidar_client.cpp.o\x1b[0m\n'}
+[17.775146] (-) TimerEvent: {}
+[17.778002] (sllidar_ros2) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/arch/linux/net_serial.cpp.o\x1b[0m\n'}
+[17.778788] (sllidar_ros2) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/src/sllidar_node.cpp.o\x1b[0m\n'}
+[17.788432] (sllidar_ros2) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/arch/linux/net_socket.cpp.o\x1b[0m\n'}
+[17.875328] (-) TimerEvent: {}
+[17.976186] (-) TimerEvent: {}
+[18.077686] (-) TimerEvent: {}
+[18.179172] (-) TimerEvent: {}
+[18.280681] (-) TimerEvent: {}
+[18.382177] (-) TimerEvent: {}
+[18.483712] (-) TimerEvent: {}
+[18.585225] (-) TimerEvent: {}
+[18.686753] (-) TimerEvent: {}
+[18.788217] (-) TimerEvent: {}
+[18.890126] (-) TimerEvent: {}
+[18.991547] (-) TimerEvent: {}
+[19.093062] (-) TimerEvent: {}
+[19.194408] (-) TimerEvent: {}
+[19.295650] (-) TimerEvent: {}
+[19.545263] (-) TimerEvent: {}
+[19.646279] (-) TimerEvent: {}
+[19.747455] (-) TimerEvent: {}
+[19.848428] (-) TimerEvent: {}
+[19.950631] (-) TimerEvent: {}
+[20.052133] (-) TimerEvent: {}
+[20.153660] (-) TimerEvent: {}
+[20.255032] (-) TimerEvent: {}
+[20.356818] (-) TimerEvent: {}
+[20.458378] (-) TimerEvent: {}
+[20.559998] (-) TimerEvent: {}
+[20.661525] (-) TimerEvent: {}
+[20.762976] (-) TimerEvent: {}
+[20.864407] (-) TimerEvent: {}
+[20.965876] (-) TimerEvent: {}
+[21.070160] (-) TimerEvent: {}
+[21.173656] (-) TimerEvent: {}
+[21.277210] (-) TimerEvent: {}
+[21.378727] (-) TimerEvent: {}
+[21.480132] (-) TimerEvent: {}
+[21.581577] (-) TimerEvent: {}
+[21.683061] (-) TimerEvent: {}
+[21.784593] (-) TimerEvent: {}
+[21.885941] (-) TimerEvent: {}
+[21.987139] (-) TimerEvent: {}
+[22.088212] (-) TimerEvent: {}
+[22.189421] (-) TimerEvent: {}
+[22.290558] (-) TimerEvent: {}
+[22.391621] (-) TimerEvent: {}
+[22.492755] (-) TimerEvent: {}
+[22.593812] (-) TimerEvent: {}
+[22.694957] (-) TimerEvent: {}
+[22.797191] (-) TimerEvent: {}
+[22.898604] (-) TimerEvent: {}
+[23.000139] (-) TimerEvent: {}
+[23.102448] (-) TimerEvent: {}
+[23.205348] (-) TimerEvent: {}
+[23.310498] (-) TimerEvent: {}
+[23.417883] (-) TimerEvent: {}
+[23.519700] (-) TimerEvent: {}
+[23.622571] (-) TimerEvent: {}
+[23.725384] (-) TimerEvent: {}
+[23.827129] (-) TimerEvent: {}
+[23.928752] (-) TimerEvent: {}
+[24.032286] (-) TimerEvent: {}
+[24.140108] (-) TimerEvent: {}
+[24.245052] (-) TimerEvent: {}
+[24.348797] (-) TimerEvent: {}
+[24.453067] (-) TimerEvent: {}
+[24.557598] (-) TimerEvent: {}
+[24.662050] (-) TimerEvent: {}
+[24.765924] (-) TimerEvent: {}
+[25.032911] (-) TimerEvent: {}
+[25.135756] (-) TimerEvent: {}
+[25.238683] (-) TimerEvent: {}
+[25.341251] (-) TimerEvent: {}
+[25.442329] (-) TimerEvent: {}
+[25.545226] (-) TimerEvent: {}
+[25.648028] (-) TimerEvent: {}
+[25.752703] (-) TimerEvent: {}
+[25.862002] (-) TimerEvent: {}
+[25.967486] (-) TimerEvent: {}
+[26.071665] (-) TimerEvent: {}
+[26.176204] (-) TimerEvent: {}
+[26.289279] (-) TimerEvent: {}
+[26.338229] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[26.340175] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[26.341857] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[26.343431] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:10\x1b[m\x1b[K:\n'}
+[26.350019] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[26.355142] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[26.356689] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[26.358019] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[26.359362] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[26.360730] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[26.362200] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:10\x1b[m\x1b[K:\n'}
+[26.363575] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[26.365888] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[26.367826] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[26.389649] (-) TimerEvent: {}
+[26.491546] (-) TimerEvent: {}
+[26.593411] (-) TimerEvent: {}
+[26.695355] (-) TimerEvent: {}
+[26.797219] (-) TimerEvent: {}
+[26.899064] (-) TimerEvent: {}
+[27.001030] (-) TimerEvent: {}
+[27.103199] (-) TimerEvent: {}
+[27.195872] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/arch/linux/arch_linux.h:42\x1b[m\x1b[K,\n'}
+[27.200025] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:41\x1b[m\x1b[K,\n'}
+[27.203498] (-) TimerEvent: {}
+[27.206353] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:10\x1b[m\x1b[K:\n'}
+[27.213337] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual u_result rp::arch::net::DGramSocketImpl::sendTo(const rp::net::SocketAddress*, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[27.229310] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_socket.cpp:733:24:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Ksize_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare\x07-Wsign-compare\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[27.234079] (sllidar_ros2) StderrLine: {'line': b'  733 |             assert(\x1b[01;35m\x1b[Kans == len\x1b[m\x1b[K);\n'}
+[27.238203] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[27.303884] (-) TimerEvent: {}
+[27.405514] (-) TimerEvent: {}
+[27.507514] (-) TimerEvent: {}
+[27.609483] (-) TimerEvent: {}
+[27.711467] (-) TimerEvent: {}
+[27.813539] (-) TimerEvent: {}
+[27.916652] (-) TimerEvent: {}
+[28.004375] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool rp::arch::net::raw_serial::open(const char*, uint32_t, uint32_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[28.008600] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:97:74:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflags\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[28.012332] (sllidar_ros2) StderrLine: {'line': b'   97 | bool raw_serial::open(const char * portname, uint32_t baudrate, \x1b[01;35m\x1b[Kuint32_t flags\x1b[m\x1b[K)\n'}
+[28.016128] (sllidar_ros2) StderrLine: {'line': b'      |                                                                 \x1b[01;35m\x1b[K~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[28.021300] (-) TimerEvent: {}
+[28.033419] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void rp::arch::net::raw_serial::flush(_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[28.041887] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:281:30:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflags\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[28.050194] (sllidar_ros2) StderrLine: {'line': b'  281 | void raw_serial::flush( \x1b[01;35m\x1b[K_u32 flags\x1b[m\x1b[K)\n'}
+[28.058777] (sllidar_ros2) StderrLine: {'line': b'      |                         \x1b[01;35m\x1b[K~~~~~^~~~~\x1b[m\x1b[K\n'}
+[28.076451] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual int rp::arch::net::raw_serial::waitforsent(_u32, size_t*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[28.080897] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:286:34:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[28.085330] (sllidar_ros2) StderrLine: {'line': b'  286 | int raw_serial::waitforsent(\x1b[01;35m\x1b[K_u32 timeout\x1b[m\x1b[K, size_t * returned_size)\n'}
+[28.089769] (sllidar_ros2) StderrLine: {'line': b'      |                             \x1b[01;35m\x1b[K~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[28.101581] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual int rp::arch::net::raw_serial::waitforrecv(_u32, size_t*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[28.106181] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:292:34:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[28.111283] (sllidar_ros2) StderrLine: {'line': b'  292 | int raw_serial::waitforrecv(\x1b[01;35m\x1b[K_u32 timeout\x1b[m\x1b[K, size_t * returned_size)\n'}
+[28.128899] (-) TimerEvent: {}
+[28.131309] (sllidar_ros2) StderrLine: {'line': b'      |                             \x1b[01;35m\x1b[K~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[28.140458] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void rp::arch::net::raw_serial::cancelOperation()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[28.145387] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/arch/linux/net_serial.cpp:427:5:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvalue computed is not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value\x07-Wunused-value\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[28.163441] (sllidar_ros2) StderrLine: {'line': b'  427 |     \x1b[01;35m\x1b[K(int)::write(_selfpipe[1], "x", 1)\x1b[m\x1b[K;\n'}
+[28.168347] (sllidar_ros2) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[28.229294] (-) TimerEvent: {}
+[28.332085] (-) TimerEvent: {}
+[28.435266] (-) TimerEvent: {}
+[28.538063] (-) TimerEvent: {}
+[28.640999] (-) TimerEvent: {}
+[28.743846] (-) TimerEvent: {}
+[28.845566] (-) TimerEvent: {}
+[28.948348] (-) TimerEvent: {}
+[29.053156] (-) TimerEvent: {}
+[29.158102] (-) TimerEvent: {}
+[29.262659] (-) TimerEvent: {}
+[29.367738] (-) TimerEvent: {}
+[29.471941] (-) TimerEvent: {}
+[29.575939] (-) TimerEvent: {}
+[29.598719] (sllidar_ros2) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/arch/linux/timer.cpp.o\x1b[0m\n'}
+[29.676497] (-) TimerEvent: {}
+[29.781344] (-) TimerEvent: {}
+[29.883857] (-) TimerEvent: {}
+[31.063546] (-) TimerEvent: {}
+[31.082450] (sllidar_ros2) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/dataunpacker.cpp.o\x1b[0m\n'}
+[31.163981] (-) TimerEvent: {}
+[31.266585] (-) TimerEvent: {}
+[31.368900] (-) TimerEvent: {}
+[31.471059] (-) TimerEvent: {}
+[31.573550] (-) TimerEvent: {}
+[31.675149] (-) TimerEvent: {}
+[31.778526] (-) TimerEvent: {}
+[31.883022] (-) TimerEvent: {}
+[31.986747] (-) TimerEvent: {}
+[32.090274] (-) TimerEvent: {}
+[32.192461] (-) TimerEvent: {}
+[32.296705] (-) TimerEvent: {}
+[32.400790] (-) TimerEvent: {}
+[32.504808] (-) TimerEvent: {}
+[32.608958] (-) TimerEvent: {}
+[32.713190] (-) TimerEvent: {}
+[32.818619] (-) TimerEvent: {}
+[32.922754] (-) TimerEvent: {}
+[33.025661] (-) TimerEvent: {}
+[33.128678] (-) TimerEvent: {}
+[33.233570] (-) TimerEvent: {}
+[33.337744] (-) TimerEvent: {}
+[33.442401] (-) TimerEvent: {}
+[33.547666] (-) TimerEvent: {}
+[33.651980] (-) TimerEvent: {}
+[33.756800] (-) TimerEvent: {}
+[33.861446] (-) TimerEvent: {}
+[33.965946] (-) TimerEvent: {}
+[34.071053] (-) TimerEvent: {}
+[34.176980] (-) TimerEvent: {}
+[34.282969] (-) TimerEvent: {}
+[34.387662] (-) TimerEvent: {}
+[34.492428] (-) TimerEvent: {}
+[34.596712] (-) TimerEvent: {}
+[34.700924] (-) TimerEvent: {}
+[34.805091] (-) TimerEvent: {}
+[34.909283] (-) TimerEvent: {}
+[35.238197] (-) TimerEvent: {}
+[35.343101] (-) TimerEvent: {}
+[35.456014] (-) TimerEvent: {}
+[35.558468] (-) TimerEvent: {}
+[35.660902] (-) TimerEvent: {}
+[35.764276] (-) TimerEvent: {}
+[35.869980] (-) TimerEvent: {}
+[35.979744] (-) TimerEvent: {}
+[36.085531] (-) TimerEvent: {}
+[36.191190] (-) TimerEvent: {}
+[36.295976] (-) TimerEvent: {}
+[36.400626] (-) TimerEvent: {}
+[36.504859] (-) TimerEvent: {}
+[36.609201] (-) TimerEvent: {}
+[36.714240] (-) TimerEvent: {}
+[36.816144] (-) TimerEvent: {}
+[36.918129] (-) TimerEvent: {}
+[37.020125] (-) TimerEvent: {}
+[37.122869] (-) TimerEvent: {}
+[37.226816] (-) TimerEvent: {}
+[37.330060] (-) TimerEvent: {}
+[37.433943] (-) TimerEvent: {}
+[37.537864] (-) TimerEvent: {}
+[37.642175] (-) TimerEvent: {}
+[37.745652] (-) TimerEvent: {}
+[37.850085] (-) TimerEvent: {}
+[37.862645] (sllidar_ros2) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/unpacker/handler_capsules.cpp.o\x1b[0m\n'}
+[37.950535] (-) TimerEvent: {}
+[38.055346] (-) TimerEvent: {}
+[38.154998] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[38.156686] (-) TimerEvent: {}
+[38.159256] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[38.168843] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[38.170601] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[38.171846] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.cpp:39\x1b[m\x1b[K:\n'}
+[38.182223] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[38.186681] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[38.197129] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[38.202131] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[38.206908] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[38.219348] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[38.223614] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[38.228144] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.cpp:39\x1b[m\x1b[K:\n'}
+[38.244308] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[38.248834] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[38.253508] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[38.257822] (-) TimerEvent: {}
+[38.360125] (-) TimerEvent: {}
+[38.462712] (-) TimerEvent: {}
+[38.565463] (-) TimerEvent: {}
+[38.668143] (-) TimerEvent: {}
+[38.770841] (-) TimerEvent: {}
+[38.873396] (-) TimerEvent: {}
+[38.975226] (-) TimerEvent: {}
+[39.078011] (-) TimerEvent: {}
+[39.179278] (-) TimerEvent: {}
+[39.280963] (-) TimerEvent: {}
+[39.382797] (-) TimerEvent: {}
+[39.484625] (-) TimerEvent: {}
+[39.586363] (-) TimerEvent: {}
+[39.687994] (-) TimerEvent: {}
+[39.789730] (-) TimerEvent: {}
+[39.893923] (-) TimerEvent: {}
+[39.996490] (-) TimerEvent: {}
+[49.186439] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.cpp:40\x1b[m\x1b[K:\n'}
+[49.190585] (-) TimerEvent: {}
+[49.197653] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[49.203165] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:52:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.214416] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[49.220881] (sllidar_ros2) StderrLine: {'line': b'      |                                                \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[49.227504] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:66:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.233693] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[49.238453] (sllidar_ros2) StderrLine: {'line': b'      |                                                             \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[49.243686] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:90:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.256188] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[49.261848] (sllidar_ros2) StderrLine: {'line': b'      |                                                                              \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[49.266502] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:103:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.275922] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[49.281933] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                                \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[49.283623] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[49.294359] (-) TimerEvent: {}
+[49.304991] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:42:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.325761] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[49.327581] (sllidar_ros2) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[49.330527] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:54:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.332118] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[49.344061] (sllidar_ros2) StderrLine: {'line': b'      |                                                  \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[49.346859] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:75:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.357370] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[49.358913] (sllidar_ros2) StderrLine: {'line': b'      |                                                               \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[49.368813] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.370545] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[49.371970] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                    \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[49.373436] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[49.374959] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[49.376466] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[49.378195] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[49.379857] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:39\x1b[m\x1b[K:\n'}
+[49.394998] (-) TimerEvent: {}
+[49.397990] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.403150] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[49.407982] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[49.413508] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[49.418552] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[49.423838] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[49.428699] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[49.433686] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:39\x1b[m\x1b[K:\n'}
+[49.438555] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.443527] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[49.448283] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[49.453093] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:40\x1b[m\x1b[K:\n'}
+[49.457546] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[49.463043] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:52:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.467904] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[49.473185] (sllidar_ros2) StderrLine: {'line': b'      |                                                \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[49.478346] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:66:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.484111] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[49.489247] (sllidar_ros2) StderrLine: {'line': b'      |                                                             \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[49.494521] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:90:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.499616] (-) TimerEvent: {}
+[49.502120] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[49.507145] (sllidar_ros2) StderrLine: {'line': b'      |                                                                              \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[49.512315] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:103:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.529222] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[49.534510] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                                \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[49.539465] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[49.544725] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:42:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.549943] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[49.554571] (sllidar_ros2) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[49.556443] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:54:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.558353] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[49.559943] (sllidar_ros2) StderrLine: {'line': b'      |                                                  \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[49.563601] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:75:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.565379] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[49.566898] (sllidar_ros2) StderrLine: {'line': b'      |                                                               \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[49.569043] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.570755] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[49.572447] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                    \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[49.574401] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid sl::internal::unpacker::UnpackerHandler_DenseCapsuleNode::_onScanNodeDenseCapsuleData(rplidar_response_dense_capsule_measurement_nodes_t&, sl::internal::LIDARSampleDataUnpackerInner*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[49.576037] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_capsules.cpp:763:30:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Ktype qualifiers ignored on cast result type [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wignored-qualifiers\x07-Wignored-qualifiers\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[49.577769] (sllidar_ros2) StderrLine: {'line': b'  763 |             const int dist = \x1b[01;35m\x1b[Kstatic_cast<const int>(_cached_previous_dense_capsuledata.cabins[pos].distance)\x1b[m\x1b[K;\n'}
+[49.579151] (sllidar_ros2) StderrLine: {'line': b'      |                              \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[49.600146] (-) TimerEvent: {}
+[49.702108] (-) TimerEvent: {}
+[49.804016] (-) TimerEvent: {}
+[49.906015] (-) TimerEvent: {}
+[50.609385] (-) TimerEvent: {}
+[50.713009] (-) TimerEvent: {}
+[50.814991] (-) TimerEvent: {}
+[50.883489] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[50.886336] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[50.888954] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar.h:36\x1b[m\x1b[K,\n'}
+[50.891453] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/src/sllidar_node.cpp:38\x1b[m\x1b[K:\n'}
+[50.894222] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[50.903274] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[50.905056] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[50.906519] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[50.908622] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar.h:36\x1b[m\x1b[K,\n'}
+[50.924962] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/src/sllidar_node.cpp:38\x1b[m\x1b[K:\n'}
+[50.926674] (-) TimerEvent: {}
+[50.928115] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[50.929987] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[50.931434] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[51.027137] (-) TimerEvent: {}
+[51.130750] (-) TimerEvent: {}
+[51.234422] (-) TimerEvent: {}
+[51.337936] (-) TimerEvent: {}
+[51.439703] (-) TimerEvent: {}
+[51.541546] (-) TimerEvent: {}
+[51.643381] (-) TimerEvent: {}
+[51.744949] (-) TimerEvent: {}
+[51.846550] (-) TimerEvent: {}
+[51.947868] (-) TimerEvent: {}
+[52.049158] (-) TimerEvent: {}
+[52.150203] (-) TimerEvent: {}
+[52.251150] (-) TimerEvent: {}
+[52.352062] (-) TimerEvent: {}
+[52.453198] (-) TimerEvent: {}
+[52.554335] (-) TimerEvent: {}
+[52.655262] (-) TimerEvent: {}
+[52.756659] (-) TimerEvent: {}
+[52.857842] (-) TimerEvent: {}
+[52.959020] (-) TimerEvent: {}
+[53.059988] (-) TimerEvent: {}
+[53.161494] (-) TimerEvent: {}
+[53.262561] (-) TimerEvent: {}
+[53.363635] (-) TimerEvent: {}
+[53.464725] (-) TimerEvent: {}
+[53.565759] (-) TimerEvent: {}
+[53.666802] (-) TimerEvent: {}
+[53.767830] (-) TimerEvent: {}
+[53.868936] (-) TimerEvent: {}
+[53.969984] (-) TimerEvent: {}
+[54.071064] (-) TimerEvent: {}
+[54.172175] (-) TimerEvent: {}
+[54.273333] (-) TimerEvent: {}
+[54.374400] (-) TimerEvent: {}
+[54.475414] (-) TimerEvent: {}
+[54.576514] (-) TimerEvent: {}
+[54.677670] (-) TimerEvent: {}
+[54.778697] (-) TimerEvent: {}
+[54.879743] (-) TimerEvent: {}
+[54.980948] (-) TimerEvent: {}
+[56.125568] (-) TimerEvent: {}
+[56.226614] (-) TimerEvent: {}
+[56.327660] (-) TimerEvent: {}
+[56.428730] (-) TimerEvent: {}
+[56.529777] (-) TimerEvent: {}
+[56.630831] (-) TimerEvent: {}
+[56.731862] (-) TimerEvent: {}
+[56.833017] (-) TimerEvent: {}
+[56.934150] (-) TimerEvent: {}
+[57.035339] (-) TimerEvent: {}
+[57.136257] (-) TimerEvent: {}
+[57.237338] (-) TimerEvent: {}
+[57.338294] (-) TimerEvent: {}
+[57.439308] (-) TimerEvent: {}
+[57.540359] (-) TimerEvent: {}
+[57.641383] (-) TimerEvent: {}
+[57.742344] (-) TimerEvent: {}
+[57.843359] (-) TimerEvent: {}
+[57.944578] (-) TimerEvent: {}
+[58.045802] (-) TimerEvent: {}
+[58.146888] (-) TimerEvent: {}
+[58.248697] (-) TimerEvent: {}
+[58.349681] (-) TimerEvent: {}
+[58.450772] (-) TimerEvent: {}
+[58.551784] (-) TimerEvent: {}
+[58.652792] (-) TimerEvent: {}
+[58.753773] (-) TimerEvent: {}
+[58.854936] (-) TimerEvent: {}
+[58.955856] (-) TimerEvent: {}
+[59.056825] (-) TimerEvent: {}
+[59.157804] (-) TimerEvent: {}
+[59.258790] (-) TimerEvent: {}
+[59.359800] (-) TimerEvent: {}
+[59.460787] (-) TimerEvent: {}
+[59.561796] (-) TimerEvent: {}
+[59.663316] (-) TimerEvent: {}
+[59.764859] (-) TimerEvent: {}
+[59.865988] (-) TimerEvent: {}
+[59.966949] (-) TimerEvent: {}
+[60.068020] (-) TimerEvent: {}
+[60.169088] (-) TimerEvent: {}
+[60.270170] (-) TimerEvent: {}
+[60.371211] (-) TimerEvent: {}
+[60.472385] (-) TimerEvent: {}
+[60.573378] (-) TimerEvent: {}
+[60.674360] (-) TimerEvent: {}
+[60.775432] (-) TimerEvent: {}
+[60.876580] (-) TimerEvent: {}
+[60.977393] (-) TimerEvent: {}
+[61.078245] (-) TimerEvent: {}
+[61.179083] (-) TimerEvent: {}
+[61.279957] (-) TimerEvent: {}
+[61.380816] (-) TimerEvent: {}
+[61.482246] (-) TimerEvent: {}
+[61.583066] (-) TimerEvent: {}
+[61.683868] (-) TimerEvent: {}
+[61.784870] (-) TimerEvent: {}
+[61.885988] (-) TimerEvent: {}
+[61.987086] (-) TimerEvent: {}
+[62.088655] (-) TimerEvent: {}
+[62.190039] (-) TimerEvent: {}
+[62.291391] (-) TimerEvent: {}
+[62.404726] (-) TimerEvent: {}
+[62.506158] (-) TimerEvent: {}
+[62.607627] (-) TimerEvent: {}
+[62.709608] (-) TimerEvent: {}
+[62.813970] (-) TimerEvent: {}
+[62.918245] (-) TimerEvent: {}
+[63.023419] (-) TimerEvent: {}
+[63.126696] (-) TimerEvent: {}
+[63.229717] (-) TimerEvent: {}
+[63.336742] (-) TimerEvent: {}
+[63.438504] (-) TimerEvent: {}
+[63.541165] (-) TimerEvent: {}
+[63.663231] (-) TimerEvent: {}
+[63.764983] (-) TimerEvent: {}
+[63.866778] (-) TimerEvent: {}
+[63.968480] (-) TimerEvent: {}
+[64.070308] (-) TimerEvent: {}
+[64.171987] (-) TimerEvent: {}
+[64.273767] (-) TimerEvent: {}
+[64.375507] (-) TimerEvent: {}
+[64.477343] (-) TimerEvent: {}
+[64.579134] (-) TimerEvent: {}
+[64.681031] (-) TimerEvent: {}
+[64.783099] (-) TimerEvent: {}
+[64.885128] (-) TimerEvent: {}
+[64.989233] (-) TimerEvent: {}
+[65.093623] (-) TimerEvent: {}
+[65.196876] (-) TimerEvent: {}
+[65.299902] (-) TimerEvent: {}
+[65.403070] (-) TimerEvent: {}
+[65.506165] (-) TimerEvent: {}
+[65.609921] (-) TimerEvent: {}
+[65.712847] (-) TimerEvent: {}
+[65.815891] (-) TimerEvent: {}
+[65.919077] (-) TimerEvent: {}
+[66.021190] (-) TimerEvent: {}
+[66.122137] (-) TimerEvent: {}
+[66.223184] (-) TimerEvent: {}
+[66.324123] (-) TimerEvent: {}
+[66.425170] (-) TimerEvent: {}
+[66.526227] (-) TimerEvent: {}
+[66.627441] (-) TimerEvent: {}
+[66.728489] (-) TimerEvent: {}
+[66.831042] (-) TimerEvent: {}
+[66.934444] (-) TimerEvent: {}
+[67.036827] (-) TimerEvent: {}
+[67.139988] (-) TimerEvent: {}
+[67.241788] (-) TimerEvent: {}
+[67.343671] (-) TimerEvent: {}
+[67.446038] (-) TimerEvent: {}
+[67.551346] (-) TimerEvent: {}
+[67.653337] (-) TimerEvent: {}
+[67.754941] (-) TimerEvent: {}
+[67.856657] (-) TimerEvent: {}
+[67.959334] (-) TimerEvent: {}
+[68.062605] (-) TimerEvent: {}
+[68.164785] (-) TimerEvent: {}
+[68.268906] (-) TimerEvent: {}
+[68.370440] (-) TimerEvent: {}
+[68.472021] (-) TimerEvent: {}
+[68.574101] (-) TimerEvent: {}
+[68.678365] (-) TimerEvent: {}
+[68.779944] (-) TimerEvent: {}
+[68.881880] (-) TimerEvent: {}
+[68.988400] (-) TimerEvent: {}
+[69.090842] (-) TimerEvent: {}
+[69.192737] (-) TimerEvent: {}
+[69.294814] (-) TimerEvent: {}
+[69.397804] (-) TimerEvent: {}
+[69.500228] (-) TimerEvent: {}
+[69.603759] (-) TimerEvent: {}
+[69.705449] (-) TimerEvent: {}
+[69.807289] (-) TimerEvent: {}
+[69.909462] (-) TimerEvent: {}
+[70.011592] (-) TimerEvent: {}
+[70.114460] (-) TimerEvent: {}
+[70.117192] (sllidar_ros2) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp.o\x1b[0m\n'}
+[70.214678] (-) TimerEvent: {}
+[70.316029] (-) TimerEvent: {}
+[70.417358] (-) TimerEvent: {}
+[70.518896] (-) TimerEvent: {}
+[70.620441] (-) TimerEvent: {}
+[70.722091] (-) TimerEvent: {}
+[70.823750] (-) TimerEvent: {}
+[70.925687] (-) TimerEvent: {}
+[71.027259] (-) TimerEvent: {}
+[71.128868] (-) TimerEvent: {}
+[71.230425] (-) TimerEvent: {}
+[71.332085] (-) TimerEvent: {}
+[71.433929] (-) TimerEvent: {}
+[71.535530] (-) TimerEvent: {}
+[71.637198] (-) TimerEvent: {}
+[71.738806] (-) TimerEvent: {}
+[71.840506] (-) TimerEvent: {}
+[71.942194] (-) TimerEvent: {}
+[72.043831] (-) TimerEvent: {}
+[72.145521] (-) TimerEvent: {}
+[72.247089] (-) TimerEvent: {}
+[72.348795] (-) TimerEvent: {}
+[72.450437] (-) TimerEvent: {}
+[72.552097] (-) TimerEvent: {}
+[72.653644] (-) TimerEvent: {}
+[72.755229] (-) TimerEvent: {}
+[72.859283] (-) TimerEvent: {}
+[72.962350] (-) TimerEvent: {}
+[73.069028] (-) TimerEvent: {}
+[73.174406] (-) TimerEvent: {}
+[73.279091] (-) TimerEvent: {}
+[73.382966] (-) TimerEvent: {}
+[73.484786] (-) TimerEvent: {}
+[73.586548] (-) TimerEvent: {}
+[73.692762] (-) TimerEvent: {}
+[73.795127] (-) TimerEvent: {}
+[73.896104] (-) TimerEvent: {}
+[73.997102] (-) TimerEvent: {}
+[74.098216] (-) TimerEvent: {}
+[74.199311] (-) TimerEvent: {}
+[74.300440] (-) TimerEvent: {}
+[74.401845] (-) TimerEvent: {}
+[74.502889] (-) TimerEvent: {}
+[74.603912] (-) TimerEvent: {}
+[74.686545] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[74.687577] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[74.688364] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[74.690058] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[74.691727] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp:39\x1b[m\x1b[K:\n'}
+[74.692902] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[74.693880] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[74.694656] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[74.695347] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[74.696065] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[74.696830] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[74.697805] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[74.698580] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp:39\x1b[m\x1b[K:\n'}
+[74.699277] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[74.701205] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[74.702339] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[74.704113] (-) TimerEvent: {}
+[74.805074] (-) TimerEvent: {}
+[74.906229] (-) TimerEvent: {}
+[75.007245] (-) TimerEvent: {}
+[75.108258] (-) TimerEvent: {}
+[75.209341] (-) TimerEvent: {}
+[75.310320] (-) TimerEvent: {}
+[75.411750] (-) TimerEvent: {}
+[75.513239] (-) TimerEvent: {}
+[75.615079] (-) TimerEvent: {}
+[75.651646] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_normalnode.cpp:40\x1b[m\x1b[K:\n'}
+[75.653578] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[75.654468] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:52:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[75.655356] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[75.656121] (sllidar_ros2) StderrLine: {'line': b'      |                                                \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[75.657373] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:66:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[75.658500] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[75.659560] (sllidar_ros2) StderrLine: {'line': b'      |                                                             \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[75.660382] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:90:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[75.661082] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[75.661787] (sllidar_ros2) StderrLine: {'line': b'      |                                                                              \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[75.662477] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:103:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[75.663381] (sllidar_ros2) StderrLine: {'line': b'   54 |        virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[75.664136] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                               \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[75.665237] (sllidar_ros2) StderrLine: {'line': b'\n'}
+[75.666100] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[75.667004] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:42:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[75.667833] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[75.668687] (sllidar_ros2) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[75.671920] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:54:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[75.673413] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[75.674306] (sllidar_ros2) StderrLine: {'line': b'      |                                                  \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[75.675100] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:75:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[75.675903] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[75.676699] (sllidar_ros2) StderrLine: {'line': b'      |                                                               \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[75.677526] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[75.678349] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[75.679059] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                    \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[75.715292] (-) TimerEvent: {}
+[75.817224] (-) TimerEvent: {}
+[75.918193] (-) TimerEvent: {}
+[76.020123] (-) TimerEvent: {}
+[76.122232] (-) TimerEvent: {}
+[76.223711] (-) TimerEvent: {}
+[76.324714] (-) TimerEvent: {}
+[76.332582] (sllidar_ros2) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/hal/thread.cpp.o\x1b[0m\n'}
+[76.424924] (-) TimerEvent: {}
+[76.525881] (-) TimerEvent: {}
+[76.626801] (-) TimerEvent: {}
+[76.727769] (-) TimerEvent: {}
+[76.828752] (-) TimerEvent: {}
+[76.929617] (-) TimerEvent: {}
+[77.030548] (-) TimerEvent: {}
+[77.131510] (-) TimerEvent: {}
+[77.232417] (-) TimerEvent: {}
+[77.333664] (-) TimerEvent: {}
+[77.435189] (-) TimerEvent: {}
+[77.438012] (sllidar_ros2) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/rplidar_driver.cpp.o\x1b[0m\n'}
+[77.535607] (-) TimerEvent: {}
+[77.639614] (-) TimerEvent: {}
+[77.741388] (-) TimerEvent: {}
+[77.843132] (-) TimerEvent: {}
+[77.945221] (-) TimerEvent: {}
+[78.047065] (-) TimerEvent: {}
+[78.148989] (-) TimerEvent: {}
+[78.251132] (-) TimerEvent: {}
+[78.353451] (-) TimerEvent: {}
+[78.455350] (-) TimerEvent: {}
+[78.559790] (-) TimerEvent: {}
+[78.597911] (sllidar_ros2) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp.o\x1b[0m\n'}
+[78.660211] (-) TimerEvent: {}
+[78.764572] (-) TimerEvent: {}
+[78.871359] (-) TimerEvent: {}
+[78.977592] (-) TimerEvent: {}
+[79.081895] (-) TimerEvent: {}
+[79.188960] (-) TimerEvent: {}
+[79.293425] (-) TimerEvent: {}
+[79.397791] (-) TimerEvent: {}
+[79.502167] (-) TimerEvent: {}
+[79.605801] (-) TimerEvent: {}
+[79.711768] (-) TimerEvent: {}
+[79.817567] (-) TimerEvent: {}
+[79.921668] (-) TimerEvent: {}
+[80.025660] (-) TimerEvent: {}
+[80.129755] (-) TimerEvent: {}
+[80.234012] (-) TimerEvent: {}
+[80.337737] (-) TimerEvent: {}
+[80.442276] (-) TimerEvent: {}
+[80.545911] (-) TimerEvent: {}
+[80.649520] (-) TimerEvent: {}
+[80.753313] (-) TimerEvent: {}
+[80.762327] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[80.763795] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[80.765617] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[80.766612] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/hal/thread.cpp:35\x1b[m\x1b[K:\n'}
+[80.768369] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[80.769322] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[80.770205] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[80.772492] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[80.774956] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[80.777867] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[80.780261] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/hal/thread.cpp:35\x1b[m\x1b[K:\n'}
+[80.782534] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[80.785136] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[80.787365] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[80.853632] (-) TimerEvent: {}
+[80.956211] (-) TimerEvent: {}
+[81.059129] (-) TimerEvent: {}
+[81.161944] (-) TimerEvent: {}
+[81.264981] (-) TimerEvent: {}
+[81.343320] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/hal/thread.cpp:43\x1b[m\x1b[K:\n'}
+[81.345419] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:\x1b[m\x1b[K In static member function \xe2\x80\x98\x1b[01m\x1b[Kstatic rp::hal::Thread rp::hal::Thread::create(thread_proc_t, void*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[81.347270] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:52:57:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcast between incompatible function types from \xe2\x80\x98\x1b[01m\x1b[Kthread_proc_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int (*)(void*)\x1b[m\x1b[K\xe2\x80\x99} to \xe2\x80\x98\x1b[01m\x1b[Kvoid* (*)(void*)\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-function-type\x07-Wcast-function-type\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[81.349013] (sllidar_ros2) StderrLine: {'line': b'   52 |     pthread_create((pthread_t *)&newborn._handle, NULL, \x1b[01;35m\x1b[K(void * (*)(void *))proc\x1b[m\x1b[K, data);\n'}
+[81.350617] (sllidar_ros2) StderrLine: {'line': b'      |                                                         \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[81.355237] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result rp::hal::Thread::join(long unsigned int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[81.365001] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/arch/linux/thread.hpp:176:37:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[81.373800] (-) TimerEvent: {}
+[81.375082] (sllidar_ros2) StderrLine: {'line': b'  176 | u_result Thread::join(\x1b[01;35m\x1b[Kunsigned long timeout\x1b[m\x1b[K)\n'}
+[81.377010] (sllidar_ros2) StderrLine: {'line': b'      |                       \x1b[01;35m\x1b[K~~~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[81.474209] (-) TimerEvent: {}
+[81.577990] (-) TimerEvent: {}
+[81.682124] (-) TimerEvent: {}
+[81.786018] (-) TimerEvent: {}
+[81.887727] (-) TimerEvent: {}
+[81.991697] (-) TimerEvent: {}
+[82.095310] (-) TimerEvent: {}
+[82.199024] (-) TimerEvent: {}
+[82.302223] (-) TimerEvent: {}
+[82.405560] (-) TimerEvent: {}
+[82.508639] (-) TimerEvent: {}
+[82.610472] (-) TimerEvent: {}
+[82.712607] (-) TimerEvent: {}
+[82.814385] (-) TimerEvent: {}
+[82.916438] (-) TimerEvent: {}
+[83.018366] (-) TimerEvent: {}
+[83.120393] (-) TimerEvent: {}
+[83.222335] (-) TimerEvent: {}
+[83.324226] (-) TimerEvent: {}
+[83.426154] (-) TimerEvent: {}
+[83.528114] (-) TimerEvent: {}
+[83.631053] (-) TimerEvent: {}
+[83.733142] (-) TimerEvent: {}
+[83.835136] (-) TimerEvent: {}
+[83.936973] (-) TimerEvent: {}
+[83.974550] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[83.977407] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[83.978988] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[83.980479] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:33\x1b[m\x1b[K:\n'}
+[83.982094] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[83.984305] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[83.989708] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[83.995425] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[84.001184] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[84.006971] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[84.013080] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:33\x1b[m\x1b[K:\n'}
+[84.019294] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[84.025415] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[84.030314] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[84.037408] (-) TimerEvent: {}
+[84.141626] (-) TimerEvent: {}
+[84.243793] (-) TimerEvent: {}
+[84.345367] (-) TimerEvent: {}
+[84.447829] (-) TimerEvent: {}
+[84.550414] (-) TimerEvent: {}
+[84.654822] (-) TimerEvent: {}
+[84.758831] (-) TimerEvent: {}
+[84.862390] (-) TimerEvent: {}
+[85.099363] (-) TimerEvent: {}
+[85.201995] (-) TimerEvent: {}
+[85.307622] (-) TimerEvent: {}
+[85.366157] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[85.368005] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[85.370368] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[85.372021] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[85.373990] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp:39\x1b[m\x1b[K:\n'}
+[85.380173] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[85.386313] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[85.392032] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[85.397400] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[85.403247] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[85.408337] (-) TimerEvent: {}
+[85.410549] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[85.416648] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunnpacker_commondef.h:41\x1b[m\x1b[K,\n'}
+[85.422312] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp:39\x1b[m\x1b[K:\n'}
+[85.428083] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[85.433404] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[85.438818] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[85.508824] (-) TimerEvent: {}
+[85.597909] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result rp::standalone::rplidar::RPlidarDriver::connect(const char*, _u32, _u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[85.601146] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:67:77:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflag\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[85.602818] (sllidar_ros2) StderrLine: {'line': b'   67 |     u_result RPlidarDriver::connect(const char *path, _u32 portOrBaud, \x1b[01;35m\x1b[K_u32 flag\x1b[m\x1b[K)\n'}
+[85.604061] (sllidar_ros2) StderrLine: {'line': b'      |                                                                        \x1b[01;35m\x1b[K~~~~~^~~~\x1b[m\x1b[K\n'}
+[85.610961] (-) TimerEvent: {}
+[85.613579] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result rp::standalone::rplidar::RPlidarDriver::reset(_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[85.620239] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:101:40:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[85.626691] (sllidar_ros2) StderrLine: {'line': b'  101 |     u_result RPlidarDriver::reset(\x1b[01;35m\x1b[K_u32 timeout\x1b[m\x1b[K)\n'}
+[85.632021] (sllidar_ros2) StderrLine: {'line': b'      |                                   \x1b[01;35m\x1b[K~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[85.637229] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result rp::standalone::rplidar::RPlidarDriver::getScanDataWithInterval(rplidar_response_measurement_node_t*, size_t&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[85.642363] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:180:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Knodebuffer\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[85.647592] (sllidar_ros2) StderrLine: {'line': b'  180 |     u_result RPlidarDriver::getScanDataWithInterval(\x1b[01;35m\x1b[Krplidar_response_measurement_node_t * nodebuffer\x1b[m\x1b[K, size_t & count)\n'}
+[85.653011] (sllidar_ros2) StderrLine: {'line': b'      |                                                     \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[85.658270] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/rplidar_driver.cpp:180:112:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kcount\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[85.663366] (sllidar_ros2) StderrLine: {'line': b'  180 |     u_result RPlidarDriver::getScanDataWithInterval(rplidar_response_measurement_node_t * nodebuffer, \x1b[01;35m\x1b[Ksize_t & count\x1b[m\x1b[K)\n'}
+[85.668973] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                                       \x1b[01;35m\x1b[K~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[85.711357] (-) TimerEvent: {}
+[85.814042] (-) TimerEvent: {}
+[85.916841] (-) TimerEvent: {}
+[86.019960] (-) TimerEvent: {}
+[86.122733] (-) TimerEvent: {}
+[86.225836] (-) TimerEvent: {}
+[86.329300] (-) TimerEvent: {}
+[86.433978] (-) TimerEvent: {}
+[86.535668] (-) TimerEvent: {}
+[86.639265] (-) TimerEvent: {}
+[86.743695] (-) TimerEvent: {}
+[86.847411] (-) TimerEvent: {}
+[86.950012] (-) TimerEvent: {}
+[87.051702] (-) TimerEvent: {}
+[87.153483] (-) TimerEvent: {}
+[87.255973] (-) TimerEvent: {}
+[87.357974] (-) TimerEvent: {}
+[87.460113] (-) TimerEvent: {}
+[87.562064] (-) TimerEvent: {}
+[87.628050] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/handler_hqnode.cpp:40\x1b[m\x1b[K:\n'}
+[87.632420] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[87.634162] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:52:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[87.635674] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[87.637927] (sllidar_ros2) StderrLine: {'line': b'      |                                                \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[87.639879] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:66:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[87.641666] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[87.643153] (sllidar_ros2) StderrLine: {'line': b'      |                                                             \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[87.646058] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:90:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[87.648415] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[87.650063] (sllidar_ros2) StderrLine: {'line': b'      |                                                                              \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[87.651304] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:54:103:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[87.652644] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[87.653892] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                                \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[87.655157] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[87.656442] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:42:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[87.661977] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[87.663303] (-) TimerEvent: {}
+[87.665384] (sllidar_ros2) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[87.667024] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:54:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[87.668571] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[87.669988] (sllidar_ros2) StderrLine: {'line': b'      |                                                  \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[87.673186] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:75:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[87.675066] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[87.676413] (sllidar_ros2) StderrLine: {'line': b'      |                                                               \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[87.677794] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/unpacker/../dataunpacker.h:56:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[87.679255] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[87.683827] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                    \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[87.763717] (-) TimerEvent: {}
+[87.866680] (-) TimerEvent: {}
+[87.968464] (-) TimerEvent: {}
+[88.073310] (-) TimerEvent: {}
+[88.174240] (-) TimerEvent: {}
+[88.275277] (-) TimerEvent: {}
+[88.350838] (sllidar_ros2) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_crc.cpp.o\x1b[0m\n'}
+[88.375782] (-) TimerEvent: {}
+[88.477457] (-) TimerEvent: {}
+[88.492562] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[88.493459] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_crc.h:36\x1b[m\x1b[K,\n'}
+[88.494291] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_crc.cpp:33\x1b[m\x1b[K:\n'}
+[88.495742] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[88.496791] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[88.497505] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[88.498215] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_crc.h:36\x1b[m\x1b[K,\n'}
+[88.498899] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_crc.cpp:33\x1b[m\x1b[K:\n'}
+[88.499578] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[88.500334] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[88.501192] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[88.577685] (-) TimerEvent: {}
+[88.598968] (sllidar_ros2) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_lidar_driver.cpp.o\x1b[0m\n'}
+[88.677908] (-) TimerEvent: {}
+[88.779210] (-) TimerEvent: {}
+[88.880489] (-) TimerEvent: {}
+[88.981928] (-) TimerEvent: {}
+[89.083118] (-) TimerEvent: {}
+[89.184230] (-) TimerEvent: {}
+[89.286179] (-) TimerEvent: {}
+[89.387696] (-) TimerEvent: {}
+[89.490487] (-) TimerEvent: {}
+[89.591971] (-) TimerEvent: {}
+[89.693627] (-) TimerEvent: {}
+[89.795127] (-) TimerEvent: {}
+[89.896831] (-) TimerEvent: {}
+[90.026301] (-) TimerEvent: {}
+[90.127952] (-) TimerEvent: {}
+[90.230718] (-) TimerEvent: {}
+[90.332222] (-) TimerEvent: {}
+[90.433823] (-) TimerEvent: {}
+[90.535336] (-) TimerEvent: {}
+[90.636935] (-) TimerEvent: {}
+[90.738457] (-) TimerEvent: {}
+[90.839992] (-) TimerEvent: {}
+[90.943120] (-) TimerEvent: {}
+[91.044807] (-) TimerEvent: {}
+[91.146387] (-) TimerEvent: {}
+[91.248070] (-) TimerEvent: {}
+[91.349829] (-) TimerEvent: {}
+[91.451532] (-) TimerEvent: {}
+[91.553272] (-) TimerEvent: {}
+[91.654997] (-) TimerEvent: {}
+[91.712759] (sllidar_ros2) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_lidarprotocol_codec.cpp.o\x1b[0m\n'}
+[91.755422] (-) TimerEvent: {}
+[91.858059] (-) TimerEvent: {}
+[91.959724] (-) TimerEvent: {}
+[92.062663] (-) TimerEvent: {}
+[92.165265] (-) TimerEvent: {}
+[92.267001] (-) TimerEvent: {}
+[92.370159] (-) TimerEvent: {}
+[92.471645] (-) TimerEvent: {}
+[92.573023] (-) TimerEvent: {}
+[92.674200] (-) TimerEvent: {}
+[92.775884] (-) TimerEvent: {}
+[92.848747] (sllidar_ros2) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_async_transceiver.cpp.o\x1b[0m\n'}
+[92.876296] (-) TimerEvent: {}
+[92.984973] (-) TimerEvent: {}
+[93.089236] (-) TimerEvent: {}
+[93.193683] (-) TimerEvent: {}
+[93.306312] (-) TimerEvent: {}
+[93.410776] (-) TimerEvent: {}
+[93.514773] (-) TimerEvent: {}
+[93.616367] (-) TimerEvent: {}
+[93.718104] (-) TimerEvent: {}
+[93.775815] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[93.777495] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[93.778694] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[93.779786] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:33\x1b[m\x1b[K:\n'}
+[93.785413] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[93.790105] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[93.807630] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[93.812071] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[93.816730] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[93.821479] (-) TimerEvent: {}
+[93.823644] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[93.828326] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:33\x1b[m\x1b[K:\n'}
+[93.832904] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[93.837191] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[93.840779] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[93.921848] (-) TimerEvent: {}
+[94.024306] (-) TimerEvent: {}
+[94.127510] (-) TimerEvent: {}
+[94.230302] (-) TimerEvent: {}
+[94.332766] (-) TimerEvent: {}
+[94.435156] (-) TimerEvent: {}
+[94.537629] (-) TimerEvent: {}
+[94.640702] (-) TimerEvent: {}
+[94.744973] (-) TimerEvent: {}
+[94.849223] (-) TimerEvent: {}
+[103.476339] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:50\x1b[m\x1b[K:\n'}
+[103.477435] (-) TimerEvent: {}
+[103.479409] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onCustomSampleDataDecoded(_u8, _u32, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.481014] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:52:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.493159] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(\x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, _u32 customCode, const void* data, size_t size) {}\n'}
+[103.493858] (sllidar_ros2) StderrLine: {'line': b'      |                                                \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[103.494385] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:66:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KcustomCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.494937] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, \x1b[01;35m\x1b[K_u32 customCode\x1b[m\x1b[K, const void* data, size_t size) {}\n'}
+[103.495471] (sllidar_ros2) StderrLine: {'line': b'      |                                                             \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[103.496018] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:90:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.500628] (sllidar_ros2) StderrLine: {'line': b'   54 |         virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, \x1b[01;35m\x1b[Kconst void* data\x1b[m\x1b[K, size_t size) {}\n'}
+[103.501519] (sllidar_ros2) StderrLine: {'line': b'      |                                                                              \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[103.502304] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:54:103:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.503010] (sllidar_ros2) StderrLine: {'line': b'   54 |        virtual void onCustomSampleDataDecoded(_u8 ansType, _u32 customCode, const void* data, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[103.503682] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                               \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[103.504350] (sllidar_ros2) StderrLine: {'line': b'\n'}
+[103.505109] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::LIDARSampleDataListener::onDecodingError(int, _u8, const void*, size_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.505825] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:42:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrMsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.506579] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(\x1b[01;35m\x1b[Kint errMsg\x1b[m\x1b[K, _u8 ansType, const void* payload, size_t size) {}\n'}
+[103.507270] (sllidar_ros2) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K~~~~^~~~~~\x1b[m\x1b[K\n'}
+[103.507938] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:54:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KansType\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.508868] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, \x1b[01;35m\x1b[K_u8 ansType\x1b[m\x1b[K, const void* payload, size_t size) {}\n'}
+[103.509488] (sllidar_ros2) StderrLine: {'line': b'      |                                                  \x1b[01;35m\x1b[K~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[103.510071] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:75:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.510663] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, \x1b[01;35m\x1b[Kconst void* payload\x1b[m\x1b[K, size_t size) {}\n'}
+[103.511177] (sllidar_ros2) StderrLine: {'line': b'      |                                                               \x1b[01;35m\x1b[K~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[103.511675] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/dataunpacker/dataunpacker.h:56:91:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ksize\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.512190] (sllidar_ros2) StderrLine: {'line': b'   56 |         virtual void onDecodingError(int errMsg, _u8 ansType, const void* payload, \x1b[01;35m\x1b[Ksize_t size\x1b[m\x1b[K) {}\n'}
+[103.512789] (sllidar_ros2) StderrLine: {'line': b'      |                                                                                    \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[103.513376] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:51\x1b[m\x1b[K:\n'}
+[103.513974] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::IAsyncProtocolCodec::onChannelError(u_result)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.514684] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:90:48:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.515531] (sllidar_ros2) StderrLine: {'line': b'   90 |         virtual void   onChannelError(\x1b[01;35m\x1b[Ku_result errCode\x1b[m\x1b[K) {}\n'}
+[103.516782] (sllidar_ros2) StderrLine: {'line': b'      |                                       \x1b[01;35m\x1b[K~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[103.517873] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::reset(sl_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.518839] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:511:32:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KtimeoutInMs\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.519790] (sllidar_ros2) StderrLine: {'line': b'  511 |         sl_result reset(\x1b[01;35m\x1b[Ksl_u32 timeoutInMs = DEFAULT_TIMEOUT\x1b[m\x1b[K)\n'}
+[103.521206] (sllidar_ros2) StderrLine: {'line': b'      |                         \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[103.523575] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::startScan(bool, bool, sl_u32, sl::LidarScanMode*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.524451] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:586:69:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Koptions\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.529381] (sllidar_ros2) StderrLine: {'line': b'  586 |         sl_result startScan(bool force, bool useTypicalScan, \x1b[01;35m\x1b[Ksl_u32 options = 0\x1b[m\x1b[K, LidarScanMode* outUsedScanMode = nullptr)\n'}
+[103.530282] (sllidar_ros2) StderrLine: {'line': b'      |                                                              \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[103.530953] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::stop(sl_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.531680] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:763:31:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimeout\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.537242] (sllidar_ros2) StderrLine: {'line': b'  763 |         sl_result stop(\x1b[01;35m\x1b[Ksl_u32 timeout = DEFAULT_TIMEOUT\x1b[m\x1b[K)\n'}
+[103.538225] (sllidar_ros2) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[103.539371] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::getFrequency(const sl::LidarScanMode&, const sl_lidar_response_measurement_node_hq_t*, size_t, float&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.540761] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:880:110:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Knodes\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.541910] (sllidar_ros2) StderrLine: {'line': b'  880 | result getFrequency(const LidarScanMode& scanMode, \x1b[01;35m\x1b[Kconst sl_lidar_response_measurement_node_hq_t* nodes\x1b[m\x1b[K, size_t count, float& frequency)\n'}
+[103.542946] (sllidar_ros2) StderrLine: {'line': b'      |                                                    \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~\x1b[m\x1b[K\n'}
+[103.544479] (sllidar_ros2) StderrLine: {'line': b'\n'}
+[103.545824] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual sl_result sl::SlamtecLidarDriver::getMotorInfo(sl::LidarMotorInfo&, sl_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.547352] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:1023:66:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KtimeoutInMs\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.557178] (sllidar_ros2) StderrLine: {'line': b' 1023 |         sl_result getMotorInfo(LidarMotorInfo &motorInfo, \x1b[01;35m\x1b[Ksl_u32 timeoutInMs\x1b[m\x1b[K)\n'}
+[103.561742] (sllidar_ros2) StderrLine: {'line': b'      |                                                           \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[103.564994] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Ku_result sl::SlamtecLidarDriver::getScanModeCount(sl_u16&, sl_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.567886] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:1199:61:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KtimeoutInMs\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.570665] (sllidar_ros2) StderrLine: {'line': b' 1199 |         u_result getScanModeCount(sl_u16& modeCount, \x1b[01;35m\x1b[Ksl_u32 timeoutInMs = DEFAULT_TIMEOUT\x1b[m\x1b[K)\n'}
+[103.573254] (sllidar_ros2) StderrLine: {'line': b'      |                                                      \x1b[01;35m\x1b[K~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[103.575819] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[103.578141] (-) TimerEvent: {}
+[103.580699] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[103.583624] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[103.587677] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidarprotocol_codec.cpp:35\x1b[m\x1b[K:\n'}
+[103.606650] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.608787] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[103.610437] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[103.612299] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[103.614033] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[103.615981] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[103.644965] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidarprotocol_codec.cpp:35\x1b[m\x1b[K:\n'}
+[103.646360] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.647693] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[103.648999] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[103.650220] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_protocol.h:36\x1b[m\x1b[K,\n'}
+[103.654927] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:39\x1b[m\x1b[K,\n'}
+[103.656240] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[103.657678] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.cpp:35\x1b[m\x1b[K:\n'}
+[103.658810] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.660010] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[103.661264] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[103.662569] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar_cmd.h:36\x1b[m\x1b[K,\n'}
+[103.663711] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/rplidar.h:40\x1b[m\x1b[K,\n'}
+[103.678325] (-) TimerEvent: {}
+[103.681830] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sdkcommon.h:49\x1b[m\x1b[K,\n'}
+[103.683475] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.cpp:35\x1b[m\x1b[K:\n'}
+[103.684845] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.695948] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[103.697448] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[103.698734] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidarprotocol_codec.cpp:49\x1b[m\x1b[K:\n'}
+[103.700023] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::IAsyncProtocolCodec::onChannelError(u_result)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.701596] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:90:48:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.702912] (sllidar_ros2) StderrLine: {'line': b'   90 |         virtual void   onChannelError(\x1b[01;35m\x1b[Ku_result errCode\x1b[m\x1b[K) {}\n'}
+[103.704510] (sllidar_ros2) StderrLine: {'line': b'      |                                       \x1b[01;35m\x1b[K~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[103.713219] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.cpp:44\x1b[m\x1b[K:\n'}
+[103.719635] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvirtual void sl::internal::IAsyncProtocolCodec::onChannelError(u_result)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.725116] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_async_transceiver.h:90:48:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KerrCode\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.730417] (sllidar_ros2) StderrLine: {'line': b'   90 |         virtual void   onChannelError(\x1b[01;35m\x1b[Ku_result errCode\x1b[m\x1b[K) {}\n'}
+[103.735278] (sllidar_ros2) StderrLine: {'line': b'      |                                       \x1b[01;35m\x1b[K~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[103.739723] (sllidar_ros2) StderrLine: {'line': b'/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp: In instantiation of \xe2\x80\x98\x1b[01m\x1b[Kvoid sl::RawSampleNodeHolder<T>::pushNode(_u64, const T*) [with T = sl_lidar_response_measurement_node_hq_t; _u64 = long unsigned int]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[103.744701] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:1648:42:\x1b[m\x1b[K   required from here\n'}
+[103.750328] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:202:28:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Ktimestamp_uS\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.759608] (sllidar_ros2) StderrLine: {'line': b'  202 |         void pushNode(\x1b[01;35m\x1b[K_u64 timestamp_uS\x1b[m\x1b[K, const T* node)\n'}
+[103.764789] (sllidar_ros2) StderrLine: {'line': b'      |                       \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[103.777091] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:\x1b[m\x1b[K At global scope:\n'}
+[103.782483] (-) TimerEvent: {}
+[103.784908] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:83:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid sl::convert(const sl_lidar_response_measurement_node_hq_t&, sl_lidar_response_measurement_node_t&)\x1b[m\x1b[K\xe2\x80\x99 defined but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-function\x07-Wunused-function\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.791962] (sllidar_ros2) StderrLine: {'line': b'   83 |     static void \x1b[01;35m\x1b[Kconvert\x1b[m\x1b[K(const sl_lidar_response_measurement_node_hq_t& from, sl_lidar_response_measurement_node_t& to)\n'}
+[103.800103] (sllidar_ros2) StderrLine: {'line': b'      |                 \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[103.809385] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:75:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid sl::convert(const sl_lidar_response_measurement_node_t&, sl_lidar_response_measurement_node_hq_t&)\x1b[m\x1b[K\xe2\x80\x99 defined but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-function\x07-Wunused-function\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.811330] (sllidar_ros2) StderrLine: {'line': b'   75 |     static void \x1b[01;35m\x1b[Kconvert\x1b[m\x1b[K(const sl_lidar_response_measurement_node_t& from, sl_lidar_response_measurement_node_hq_t& to)\n'}
+[103.812983] (sllidar_ros2) StderrLine: {'line': b'      |                 \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[103.814402] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_lidar_driver.cpp:70:17:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kvoid sl::printDeprecationWarn(const char*, const char*)\x1b[m\x1b[K\xe2\x80\x99 defined but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-function\x07-Wunused-function\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[103.815770] (sllidar_ros2) StderrLine: {'line': b'   70 |     static void \x1b[01;35m\x1b[KprintDeprecationWarn\x1b[m\x1b[K(const char* fn, const char* replacement)\n'}
+[103.819318] (sllidar_ros2) StderrLine: {'line': b'      |                 \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[103.882887] (-) TimerEvent: {}
+[103.944130] (sllidar_ros2) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking CXX executable sllidar_client\x1b[0m\n'}
+[103.983290] (-) TimerEvent: {}
+[104.086742] (-) TimerEvent: {}
+[104.188605] (-) TimerEvent: {}
+[104.290855] (-) TimerEvent: {}
+[104.393436] (-) TimerEvent: {}
+[104.497340] (-) TimerEvent: {}
+[104.598974] (-) TimerEvent: {}
+[104.700890] (-) TimerEvent: {}
+[104.802596] (-) TimerEvent: {}
+[104.904378] (-) TimerEvent: {}
+[105.006553] (-) TimerEvent: {}
+[105.110861] (-) TimerEvent: {}
+[105.214356] (-) TimerEvent: {}
+[105.316112] (-) TimerEvent: {}
+[105.418197] (-) TimerEvent: {}
+[105.520349] (-) TimerEvent: {}
+[105.624120] (-) TimerEvent: {}
+[105.726282] (-) TimerEvent: {}
+[105.830226] (-) TimerEvent: {}
+[105.932609] (-) TimerEvent: {}
+[106.034217] (-) TimerEvent: {}
+[106.135670] (-) TimerEvent: {}
+[106.237108] (-) TimerEvent: {}
+[106.338542] (-) TimerEvent: {}
+[106.440005] (-) TimerEvent: {}
+[106.541413] (-) TimerEvent: {}
+[106.642304] (-) TimerEvent: {}
+[106.743456] (-) TimerEvent: {}
+[106.844655] (-) TimerEvent: {}
+[106.945819] (-) TimerEvent: {}
+[107.046801] (-) TimerEvent: {}
+[107.125288] (sllidar_ros2) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_tcp_channel.cpp.o\x1b[0m\n'}
+[107.147073] (-) TimerEvent: {}
+[107.248260] (-) TimerEvent: {}
+[107.349290] (-) TimerEvent: {}
+[107.450562] (-) TimerEvent: {}
+[107.552788] (-) TimerEvent: {}
+[107.654233] (-) TimerEvent: {}
+[107.755840] (-) TimerEvent: {}
+[107.857375] (-) TimerEvent: {}
+[107.958820] (-) TimerEvent: {}
+[108.060308] (-) TimerEvent: {}
+[108.162755] (-) TimerEvent: {}
+[108.265449] (-) TimerEvent: {}
+[108.369149] (-) TimerEvent: {}
+[108.470611] (-) TimerEvent: {}
+[108.573147] (-) TimerEvent: {}
+[108.903542] (-) TimerEvent: {}
+[109.006201] (-) TimerEvent: {}
+[109.110105] (-) TimerEvent: {}
+[109.212862] (-) TimerEvent: {}
+[109.316366] (-) TimerEvent: {}
+[109.418146] (-) TimerEvent: {}
+[109.519604] (-) TimerEvent: {}
+[109.621277] (-) TimerEvent: {}
+[109.722940] (-) TimerEvent: {}
+[109.826876] (-) TimerEvent: {}
+[109.929344] (-) TimerEvent: {}
+[109.934560] (sllidar_ros2) StdoutLine: {'line': b'[ 85%] Built target sllidar_client\n'}
+[110.029643] (-) TimerEvent: {}
+[110.131188] (-) TimerEvent: {}
+[110.232749] (-) TimerEvent: {}
+[110.334734] (-) TimerEvent: {}
+[110.436277] (-) TimerEvent: {}
+[110.438125] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[110.439568] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[110.440717] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:33\x1b[m\x1b[K:\n'}
+[110.441858] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[110.442988] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[110.446655] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[110.448063] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[110.449637] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:33\x1b[m\x1b[K:\n'}
+[110.450907] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[110.452194] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[110.453558] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[110.477657] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid sl::TcpChannel::setStatus(_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[110.478540] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_tcp_channel.cpp:109:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflag\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[110.479229] (sllidar_ros2) StderrLine: {'line': b'  109 |         void setStatus(\x1b[01;35m\x1b[K_u32 flag\x1b[m\x1b[K){}\n'}
+[110.479895] (sllidar_ros2) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~^~~~\x1b[m\x1b[K\n'}
+[110.536465] (-) TimerEvent: {}
+[110.637348] (-) TimerEvent: {}
+[110.738169] (-) TimerEvent: {}
+[110.758902] (sllidar_ros2) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_udp_channel.cpp.o\x1b[0m\n'}
+[110.838345] (-) TimerEvent: {}
+[110.939084] (-) TimerEvent: {}
+[111.039825] (-) TimerEvent: {}
+[111.140625] (-) TimerEvent: {}
+[111.241359] (-) TimerEvent: {}
+[111.342094] (-) TimerEvent: {}
+[111.442878] (-) TimerEvent: {}
+[111.543697] (-) TimerEvent: {}
+[111.644636] (-) TimerEvent: {}
+[111.745460] (-) TimerEvent: {}
+[111.846379] (-) TimerEvent: {}
+[111.947215] (-) TimerEvent: {}
+[112.048019] (-) TimerEvent: {}
+[112.124016] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[112.124892] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[112.125641] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:33\x1b[m\x1b[K:\n'}
+[112.126188] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[112.126996] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[112.127880] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[112.128588] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[112.129169] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:33\x1b[m\x1b[K:\n'}
+[112.129690] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[112.130339] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[112.130840] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[112.145086] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid sl::UdpChannel::setStatus(_u32)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[112.145813] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_udp_channel.cpp:112:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kflag\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[112.146412] (sllidar_ros2) StderrLine: {'line': b'  112 |         void setStatus(\x1b[01;35m\x1b[K_u32 flag\x1b[m\x1b[K){}\n'}
+[112.146924] (sllidar_ros2) StderrLine: {'line': b'      |                        \x1b[01;35m\x1b[K~~~~~^~~~\x1b[m\x1b[K\n'}
+[112.148149] (-) TimerEvent: {}
+[112.248955] (-) TimerEvent: {}
+[112.350026] (-) TimerEvent: {}
+[112.386314] (sllidar_ros2) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding CXX object CMakeFiles/sllidar_node.dir/sdk/src/sl_serial_channel.cpp.o\x1b[0m\n'}
+[112.450223] (-) TimerEvent: {}
+[112.550964] (-) TimerEvent: {}
+[112.651725] (-) TimerEvent: {}
+[112.752466] (-) TimerEvent: {}
+[112.853201] (-) TimerEvent: {}
+[112.953926] (-) TimerEvent: {}
+[113.054719] (-) TimerEvent: {}
+[113.155563] (-) TimerEvent: {}
+[113.256436] (-) TimerEvent: {}
+[113.357270] (-) TimerEvent: {}
+[113.458096] (-) TimerEvent: {}
+[113.558951] (-) TimerEvent: {}
+[113.659894] (-) TimerEvent: {}
+[113.760599] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:41\x1b[m\x1b[K,\n'}
+[113.761299] (-) TimerEvent: {}
+[113.761781] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[113.762489] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_serial_channel.cpp:33\x1b[m\x1b[K:\n'}
+[113.763585] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_protocol.h:66:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kdata\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[113.764367] (sllidar_ros2) StderrLine: {'line': b'   66 |     sl_u8 data[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[113.764973] (sllidar_ros2) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[113.765560] (sllidar_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_driver.h:54\x1b[m\x1b[K,\n'}
+[113.766480] (sllidar_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/sdk/src/sl_serial_channel.cpp:33\x1b[m\x1b[K:\n'}
+[113.767063] (sllidar_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/robot/robot_ws/src/sllidar_ros2/./sdk/include/sl_lidar_cmd.h:324:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KISO C++ forbids zero-size array \xe2\x80\x98\x1b[01m\x1b[Kpayload\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[113.767779] (sllidar_ros2) StderrLine: {'line': b'  324 |     sl_u8  payload[\x1b[01;35m\x1b[K0\x1b[m\x1b[K];\n'}
+[113.768933] (sllidar_ros2) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[113.861531] (-) TimerEvent: {}
+[113.962405] (-) TimerEvent: {}
+[114.063168] (-) TimerEvent: {}
+[114.126562] (sllidar_ros2) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable sllidar_node\x1b[0m\n'}
+[114.163369] (-) TimerEvent: {}
+[114.264376] (-) TimerEvent: {}
+[114.365306] (-) TimerEvent: {}
+[114.466666] (-) TimerEvent: {}
+[114.567967] (-) TimerEvent: {}
+[114.668921] (-) TimerEvent: {}
+[114.769884] (-) TimerEvent: {}
+[114.870832] (-) TimerEvent: {}
+[114.971663] (-) TimerEvent: {}
+[115.072623] (-) TimerEvent: {}
+[115.173355] (-) TimerEvent: {}
+[115.274183] (-) TimerEvent: {}
+[115.374966] (-) TimerEvent: {}
+[115.475846] (-) TimerEvent: {}
+[115.576672] (-) TimerEvent: {}
+[115.649286] (sllidar_ros2) StdoutLine: {'line': b'[100%] Built target sllidar_node\n'}
+[115.676876] (-) TimerEvent: {}
+[115.777779] (-) TimerEvent: {}
+[115.878965] (-) TimerEvent: {}
+[115.957443] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[115.960112] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'install'}
+[115.979169] (-) TimerEvent: {}
+[116.000069] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/sllidar_ros2'], 'cwd': '/home/robot/robot_ws/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.31.103 64480 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws/src'), ('TERM_PROGRAM_VERSION', '1.128.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-c567b934-eccd-426b-8406-a86f8e1092c9.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '6'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-5264f2156cbcd7aea5fd004d29eaa10209155d66/server/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-100bde8285.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/robot_camera:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/robot/robot_ws/build/sllidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('COPILOT_DEBUG_NONCE', '8c0712f04b1117e7b690022b6a04670b'), ('SSH_CONNECTION', '192.168.31.103 64480 192.168.31.121 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/robot_camera:/opt/ros/humble')]), 'shell': False}
+[116.037681] (sllidar_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[116.039595] (sllidar_ros2) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[116.044353] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a1_launch.py\n'}
+[116.079426] (-) TimerEvent: {}
+[116.082005] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m12_launch .py\n'}
+[116.147456] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m7_launch.py\n'}
+[116.179753] (-) TimerEvent: {}
+[116.230140] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m8_launch.py\n'}
+[116.280080] (-) TimerEvent: {}
+[116.311760] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a3_launch.py\n'}
+[116.380456] (-) TimerEvent: {}
+[116.393847] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_c1_launch.py\n'}
+[116.475899] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_launch.py\n'}
+[116.480747] (-) TimerEvent: {}
+[116.558748] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_tcp_launch.py\n'}
+[116.581088] (-) TimerEvent: {}
+[116.644152] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2_launch.py\n'}
+[116.681425] (-) TimerEvent: {}
+[116.727381] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2e_launch.py\n'}
+[116.781783] (-) TimerEvent: {}
+[116.811304] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s3_launch.py\n'}
+[116.882102] (-) TimerEvent: {}
+[116.893111] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_t1_launch.py\n'}
+[116.973501] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a1_launch.py\n'}
+[116.982441] (-) TimerEvent: {}
+[117.024059] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m12_launch.py\n'}
+[117.060197] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m7_launch.py\n'}
+[117.082592] (-) TimerEvent: {}
+[117.097359] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m8_launch.py\n'}
+[117.134789] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a3_launch.py\n'}
+[117.171328] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_c1_launch.py\n'}
+[117.182825] (-) TimerEvent: {}
+[117.209783] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_launch.py\n'}
+[117.250241] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_tcp_launch.py\n'}
+[117.283047] (-) TimerEvent: {}
+[117.287692] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2_launch.py\n'}
+[117.324332] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2e_launch.py\n'}
+[117.360814] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s3_launch.py\n'}
+[117.383238] (-) TimerEvent: {}
+[117.397388] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_t1_launch.py\n'}
+[117.434861] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz\n'}
+[117.473093] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node\n'}
+[117.483430] (-) TimerEvent: {}
+[117.510500] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client\n'}
+[117.547599] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2\n'}
+[117.583648] (-) TimerEvent: {}
+[117.584594] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2\n'}
+[117.622437] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh\n'}
+[117.658743] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv\n'}
+[117.683830] (-) TimerEvent: {}
+[117.700429] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh\n'}
+[117.737227] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv\n'}
+[117.773630] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash\n'}
+[117.784030] (-) TimerEvent: {}
+[117.811169] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh\n'}
+[117.847449] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh\n'}
+[117.884219] (-) TimerEvent: {}
+[117.884932] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv\n'}
+[117.921408] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv\n'}
+[117.959243] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2\n'}
+[117.984436] (-) TimerEvent: {}
+[117.997970] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[118.034728] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[118.072233] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake\n'}
+[118.084648] (-) TimerEvent: {}
+[118.107742] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake\n'}
+[118.184916] (-) TimerEvent: {}
+[118.505615] (sllidar_ros2) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/package.xml\n'}
+[118.506724] (-) TimerEvent: {}
+[118.554233] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[118.607336] (-) TimerEvent: {}
+[118.625418] (sllidar_ros2) JobEnded: {'identifier': 'sllidar_ros2', 'rc': 0}
+[118.631784] (-) EventReactorShutdown: {}

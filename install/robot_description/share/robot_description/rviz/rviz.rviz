@@ -1,0 +1,99 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+    Expanded:
+      - /Global Options1
+      - /TF1
+      - /RobotModel1
+      - /LaserScan1
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+
+    # ---- Grid (ground reference) ----
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+      Cell Count: 20
+      Cell Size: 0.5
+      Line Style:
+        Line Width: 0.03
+      Normal Cell Count: 0
+      Plane: XY
+      Plane Cell Count: 20
+      Reference Frame: <Fixed Frame>
+
+    # ---- TF Tree (show all frames and axes) ----
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Name: TF
+      Show Axes: true
+      Show Names: true
+      Show Arrows: true
+      Marker Scale: 0.3
+      Update Interval: 0
+
+    # ---- Robot Model (URDF visualization) ----
+    - Class: rviz_default_plugins/RobotModel
+      Enabled: true
+      Name: RobotModel
+      Description Topic:
+        Value: /robot_description
+      Alpha: 1.0
+      Collision Enabled: false
+      Visual Enabled: true
+      TF Prefix: ""
+
+    # ---- LaserScan (RPLidar C1 data) ----
+    - Class: rviz_default_plugins/LaserScan
+      Enabled: true
+      Name: LaserScan
+      Topic:
+        Value: /scan
+      Size (m): 0.03
+      Style: Points
+      Color Transformer: Intensity
+      Decay Time: 0
+      Queue Size: 10
+      Alpha: 1.0
+
+    # ---- Map (SLAM output) ----
+    - Class: rviz_default_plugins/Map
+      Enabled: true
+      Name: Map
+      Topic:
+        Value: /map
+      Alpha: 0.7
+      Color Scheme: map
+      Draw Behind: true
+      Update Topic:
+        Value: /map_updates
+
+  Global Options:
+    Fixed Frame: base_link
+    Frame Rate: 30
+
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Name: Orbit
+      Distance: 1.5
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0.15
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05
+      Invert Z Axis: false
+      Near Clip Distance: 0.01
+      Pitch: 0.5
+      Target Frame: base_link
+      Yaw: 0.8
+
+Window:
+  Width: 1400
+  Height: 900
+  X: 100
+  Y: 100

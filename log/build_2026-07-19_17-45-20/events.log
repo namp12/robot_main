@@ -1,0 +1,329 @@
+[0.000000] (-) TimerEvent: {}
+[0.002647] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.005422] (-) JobUnselected: {'identifier': 'robot_camera'}
+[0.006271] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.006713] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.008415] (camera_node) JobQueued: {'identifier': 'camera_node', 'dependencies': OrderedDict()}
+[0.010406] (camera_node) JobStarted: {'identifier': 'camera_node'}
+[0.097989] (-) TimerEvent: {}
+[0.198726] (-) TimerEvent: {}
+[0.299484] (-) TimerEvent: {}
+[0.400304] (-) TimerEvent: {}
+[0.501073] (-) TimerEvent: {}
+[0.601902] (-) TimerEvent: {}
+[0.703041] (-) TimerEvent: {}
+[0.803860] (-) TimerEvent: {}
+[0.904647] (-) TimerEvent: {}
+[1.005549] (-) TimerEvent: {}
+[1.106334] (-) TimerEvent: {}
+[1.207130] (-) TimerEvent: {}
+[1.307864] (-) TimerEvent: {}
+[1.408538] (-) TimerEvent: {}
+[1.509202] (-) TimerEvent: {}
+[1.610111] (-) TimerEvent: {}
+[1.711154] (-) TimerEvent: {}
+[1.811925] (-) TimerEvent: {}
+[1.912640] (-) TimerEvent: {}
+[2.013398] (-) TimerEvent: {}
+[2.114169] (-) TimerEvent: {}
+[2.214938] (-) TimerEvent: {}
+[2.315726] (-) TimerEvent: {}
+[2.416561] (-) TimerEvent: {}
+[2.517286] (-) TimerEvent: {}
+[2.618214] (-) TimerEvent: {}
+[2.719035] (-) TimerEvent: {}
+[2.819838] (-) TimerEvent: {}
+[2.920593] (-) TimerEvent: {}
+[3.021350] (-) TimerEvent: {}
+[3.122147] (-) TimerEvent: {}
+[3.222919] (-) TimerEvent: {}
+[3.323682] (-) TimerEvent: {}
+[3.424410] (-) TimerEvent: {}
+[3.525109] (-) TimerEvent: {}
+[3.625856] (-) TimerEvent: {}
+[3.726627] (-) TimerEvent: {}
+[3.827375] (-) TimerEvent: {}
+[3.928169] (-) TimerEvent: {}
+[4.028940] (-) TimerEvent: {}
+[4.129762] (-) TimerEvent: {}
+[4.230518] (-) TimerEvent: {}
+[4.331258] (-) TimerEvent: {}
+[4.431993] (-) TimerEvent: {}
+[4.532976] (-) TimerEvent: {}
+[4.634280] (-) TimerEvent: {}
+[4.735821] (-) TimerEvent: {}
+[4.836529] (-) TimerEvent: {}
+[4.937328] (-) TimerEvent: {}
+[5.038127] (-) TimerEvent: {}
+[5.138874] (-) TimerEvent: {}
+[5.239653] (-) TimerEvent: {}
+[5.340902] (-) TimerEvent: {}
+[5.441701] (-) TimerEvent: {}
+[5.542381] (-) TimerEvent: {}
+[5.643153] (-) TimerEvent: {}
+[5.743914] (-) TimerEvent: {}
+[5.844665] (-) TimerEvent: {}
+[5.945363] (-) TimerEvent: {}
+[6.046125] (-) TimerEvent: {}
+[6.146873] (-) TimerEvent: {}
+[6.247628] (-) TimerEvent: {}
+[6.348367] (-) TimerEvent: {}
+[6.449177] (-) TimerEvent: {}
+[6.549973] (-) TimerEvent: {}
+[6.650694] (-) TimerEvent: {}
+[6.751657] (-) TimerEvent: {}
+[6.852457] (-) TimerEvent: {}
+[6.953226] (-) TimerEvent: {}
+[7.054038] (-) TimerEvent: {}
+[7.154974] (-) TimerEvent: {}
+[7.452369] (-) TimerEvent: {}
+[7.553129] (-) TimerEvent: {}
+[7.750010] (-) TimerEvent: {}
+[7.850845] (-) TimerEvent: {}
+[8.055110] (-) TimerEvent: {}
+[8.155869] (-) TimerEvent: {}
+[8.256624] (-) TimerEvent: {}
+[8.357370] (-) TimerEvent: {}
+[8.458159] (-) TimerEvent: {}
+[8.559000] (-) TimerEvent: {}
+[8.660051] (-) TimerEvent: {}
+[8.760762] (-) TimerEvent: {}
+[8.861697] (-) TimerEvent: {}
+[8.962420] (-) TimerEvent: {}
+[9.063189] (-) TimerEvent: {}
+[9.163919] (-) TimerEvent: {}
+[9.264730] (-) TimerEvent: {}
+[9.365444] (-) TimerEvent: {}
+[9.466251] (-) TimerEvent: {}
+[9.566994] (-) TimerEvent: {}
+[9.667755] (-) TimerEvent: {}
+[9.768685] (-) TimerEvent: {}
+[9.869443] (-) TimerEvent: {}
+[9.970390] (-) TimerEvent: {}
+[10.071155] (-) TimerEvent: {}
+[10.172010] (-) TimerEvent: {}
+[10.272899] (-) TimerEvent: {}
+[10.373687] (-) TimerEvent: {}
+[10.474474] (-) TimerEvent: {}
+[10.575170] (-) TimerEvent: {}
+[10.675903] (-) TimerEvent: {}
+[10.776668] (-) TimerEvent: {}
+[10.877488] (-) TimerEvent: {}
+[10.978287] (-) TimerEvent: {}
+[11.079086] (-) TimerEvent: {}
+[11.179838] (-) TimerEvent: {}
+[11.280638] (-) TimerEvent: {}
+[11.381616] (-) TimerEvent: {}
+[11.482377] (-) TimerEvent: {}
+[11.583148] (-) TimerEvent: {}
+[11.683960] (-) TimerEvent: {}
+[11.784741] (-) TimerEvent: {}
+[11.885559] (-) TimerEvent: {}
+[11.986374] (-) TimerEvent: {}
+[12.087145] (-) TimerEvent: {}
+[12.187939] (-) TimerEvent: {}
+[12.288771] (-) TimerEvent: {}
+[12.389616] (-) TimerEvent: {}
+[12.490491] (-) TimerEvent: {}
+[12.591257] (-) TimerEvent: {}
+[12.692045] (-) TimerEvent: {}
+[12.792783] (-) TimerEvent: {}
+[12.893687] (-) TimerEvent: {}
+[12.994620] (-) TimerEvent: {}
+[13.095400] (-) TimerEvent: {}
+[13.196172] (-) TimerEvent: {}
+[13.296937] (-) TimerEvent: {}
+[13.397787] (-) TimerEvent: {}
+[13.498652] (-) TimerEvent: {}
+[13.599416] (-) TimerEvent: {}
+[13.700247] (-) TimerEvent: {}
+[13.801029] (-) TimerEvent: {}
+[13.901863] (-) TimerEvent: {}
+[14.002722] (-) TimerEvent: {}
+[14.103506] (-) TimerEvent: {}
+[14.204264] (-) TimerEvent: {}
+[14.305042] (-) TimerEvent: {}
+[14.405858] (-) TimerEvent: {}
+[14.506686] (-) TimerEvent: {}
+[14.607453] (-) TimerEvent: {}
+[14.708169] (-) TimerEvent: {}
+[14.808849] (-) TimerEvent: {}
+[14.909745] (-) TimerEvent: {}
+[15.010516] (-) TimerEvent: {}
+[15.111265] (-) TimerEvent: {}
+[15.212100] (-) TimerEvent: {}
+[15.312882] (-) TimerEvent: {}
+[15.413718] (-) TimerEvent: {}
+[15.514524] (-) TimerEvent: {}
+[15.615375] (-) TimerEvent: {}
+[15.716226] (-) TimerEvent: {}
+[15.817108] (-) TimerEvent: {}
+[15.917971] (-) TimerEvent: {}
+[16.018804] (-) TimerEvent: {}
+[16.119579] (-) TimerEvent: {}
+[16.220353] (-) TimerEvent: {}
+[16.321141] (-) TimerEvent: {}
+[16.422034] (-) TimerEvent: {}
+[16.522831] (-) TimerEvent: {}
+[16.623687] (-) TimerEvent: {}
+[16.724472] (-) TimerEvent: {}
+[16.825175] (-) TimerEvent: {}
+[16.926027] (-) TimerEvent: {}
+[17.026822] (-) TimerEvent: {}
+[17.127597] (-) TimerEvent: {}
+[17.228405] (-) TimerEvent: {}
+[17.329303] (-) TimerEvent: {}
+[17.430142] (-) TimerEvent: {}
+[17.530918] (-) TimerEvent: {}
+[17.631687] (-) TimerEvent: {}
+[17.732481] (-) TimerEvent: {}
+[17.833303] (-) TimerEvent: {}
+[17.934103] (-) TimerEvent: {}
+[18.034897] (-) TimerEvent: {}
+[18.135678] (-) TimerEvent: {}
+[18.236520] (-) TimerEvent: {}
+[18.337392] (-) TimerEvent: {}
+[18.438256] (-) TimerEvent: {}
+[18.539062] (-) TimerEvent: {}
+[18.639839] (-) TimerEvent: {}
+[18.740622] (-) TimerEvent: {}
+[18.841314] (-) TimerEvent: {}
+[18.942077] (-) TimerEvent: {}
+[19.042822] (-) TimerEvent: {}
+[19.143593] (-) TimerEvent: {}
+[19.244450] (-) TimerEvent: {}
+[19.345215] (-) TimerEvent: {}
+[19.446030] (-) TimerEvent: {}
+[19.546866] (-) TimerEvent: {}
+[19.967354] (-) TimerEvent: {}
+[20.068122] (-) TimerEvent: {}
+[20.469020] (-) TimerEvent: {}
+[20.629380] (-) TimerEvent: {}
+[20.730201] (-) TimerEvent: {}
+[20.830988] (-) TimerEvent: {}
+[20.931910] (-) TimerEvent: {}
+[21.140019] (-) TimerEvent: {}
+[21.240755] (-) TimerEvent: {}
+[21.341505] (-) TimerEvent: {}
+[21.442207] (-) TimerEvent: {}
+[21.542956] (-) TimerEvent: {}
+[21.643715] (-) TimerEvent: {}
+[21.744488] (-) TimerEvent: {}
+[21.845350] (-) TimerEvent: {}
+[21.946237] (-) TimerEvent: {}
+[22.046999] (-) TimerEvent: {}
+[22.147800] (-) TimerEvent: {}
+[22.248604] (-) TimerEvent: {}
+[22.349418] (-) TimerEvent: {}
+[22.450244] (-) TimerEvent: {}
+[22.551088] (-) TimerEvent: {}
+[22.651847] (-) TimerEvent: {}
+[22.752770] (-) TimerEvent: {}
+[25.066155] (-) TimerEvent: {}
+[25.451772] (-) TimerEvent: {}
+[25.552500] (-) TimerEvent: {}
+[26.026197] (-) TimerEvent: {}
+[26.126925] (-) TimerEvent: {}
+[26.227705] (-) TimerEvent: {}
+[26.328656] (-) TimerEvent: {}
+[26.429490] (-) TimerEvent: {}
+[26.530299] (-) TimerEvent: {}
+[26.794812] (-) TimerEvent: {}
+[26.895567] (-) TimerEvent: {}
+[27.404611] (-) TimerEvent: {}
+[27.505524] (-) TimerEvent: {}
+[27.606272] (-) TimerEvent: {}
+[27.707105] (-) TimerEvent: {}
+[27.807893] (-) TimerEvent: {}
+[27.908722] (-) TimerEvent: {}
+[28.009811] (-) TimerEvent: {}
+[28.110888] (-) TimerEvent: {}
+[28.151803] (camera_node) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/camera_node', 'build', '--build-base', '/home/robot/robot_ws/build/camera_node/build', 'install', '--record', '/home/robot/robot_ws/build/camera_node/install.log', '--install-scripts', '$destdir/lib/camera_node', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/camera_node', 'env': {'VSCODE_CWD': '/home/robot', 'USER': 'robot', 'SSH_CLIENT': '192.168.1.87 62742 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/3ed5d31635b5343712913d2f132876a4b5dc7e53/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws', 'DISABLE_AUTO_UPDATE': 'true', 'ROS_PYTHON_VERSION': '3', 'npm_config_yes': 'true', 'VSCODE_PREVENT_SHELL_HISTORY': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '12', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'QODER_AGENT': 'true', 'GIT_PAGER': 'cat', 'PWD': '/home/robot/robot_ws/build/camera_node', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.1.87 62742 192.168.1.252 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/camera_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'PIP_NO_INPUT': 'true'}, 'shell': False}
+[28.211098] (-) TimerEvent: {}
+[28.311860] (-) TimerEvent: {}
+[28.412612] (-) TimerEvent: {}
+[28.515688] (-) TimerEvent: {}
+[28.616462] (-) TimerEvent: {}
+[28.717256] (-) TimerEvent: {}
+[28.818192] (-) TimerEvent: {}
+[28.918923] (-) TimerEvent: {}
+[29.019697] (-) TimerEvent: {}
+[29.120506] (-) TimerEvent: {}
+[29.221257] (-) TimerEvent: {}
+[29.322057] (-) TimerEvent: {}
+[29.422787] (-) TimerEvent: {}
+[29.523568] (-) TimerEvent: {}
+[29.624341] (-) TimerEvent: {}
+[29.725020] (-) TimerEvent: {}
+[29.826041] (-) TimerEvent: {}
+[29.926949] (-) TimerEvent: {}
+[30.028136] (-) TimerEvent: {}
+[30.128880] (-) TimerEvent: {}
+[30.229711] (-) TimerEvent: {}
+[30.330498] (-) TimerEvent: {}
+[30.431279] (-) TimerEvent: {}
+[30.532019] (-) TimerEvent: {}
+[30.632876] (-) TimerEvent: {}
+[30.733722] (-) TimerEvent: {}
+[30.834454] (-) TimerEvent: {}
+[30.935511] (camera_node) StdoutLine: {'line': b'running egg_info\n'}
+[30.937299] (-) TimerEvent: {}
+[30.941135] (camera_node) StdoutLine: {'line': b'creating ../../build/camera_node/camera_node.egg-info\n'}
+[30.945234] (camera_node) StdoutLine: {'line': b'writing ../../build/camera_node/camera_node.egg-info/PKG-INFO\n'}
+[30.947697] (camera_node) StdoutLine: {'line': b'writing dependency_links to ../../build/camera_node/camera_node.egg-info/dependency_links.txt\n'}
+[30.948960] (camera_node) StdoutLine: {'line': b'writing entry points to ../../build/camera_node/camera_node.egg-info/entry_points.txt\n'}
+[30.952014] (camera_node) StdoutLine: {'line': b'writing requirements to ../../build/camera_node/camera_node.egg-info/requires.txt\n'}
+[30.953233] (camera_node) StdoutLine: {'line': b'writing top-level names to ../../build/camera_node/camera_node.egg-info/top_level.txt\n'}
+[30.955743] (camera_node) StdoutLine: {'line': b"writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'\n"}
+[30.973230] (camera_node) StdoutLine: {'line': b"reading manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'\n"}
+[30.982208] (camera_node) StdoutLine: {'line': b"writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'\n"}
+[30.985694] (camera_node) StdoutLine: {'line': b'running build\n'}
+[30.987063] (camera_node) StdoutLine: {'line': b'running build_py\n'}
+[30.988228] (camera_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/build/camera_node/build\n'}
+[30.990716] (camera_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/build/camera_node/build/lib\n'}
+[30.992395] (camera_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/build/camera_node/build/lib/camera_node\n'}
+[30.995179] (camera_node) StdoutLine: {'line': b'copying camera_node/__init__.py -> /home/robot/robot_ws/build/camera_node/build/lib/camera_node\n'}
+[30.996491] (camera_node) StdoutLine: {'line': b'copying camera_node/camera_node.py -> /home/robot/robot_ws/build/camera_node/build/lib/camera_node\n'}
+[30.998755] (camera_node) StdoutLine: {'line': b'running install\n'}
+[31.000051] (camera_node) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[31.001366] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/util.py", line 206, in subst_vars\n'}
+[31.005055] (camera_node) StderrLine: {'line': b"    return re.sub(r'\\$([a-zA-Z_][a-zA-Z_0-9]*)', _subst, s)\n"}
+[31.006881] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/re.py", line 209, in sub\n'}
+[31.009086] (camera_node) StderrLine: {'line': b'    return _compile(pattern, flags).sub(repl, string, count)\n'}
+[31.010994] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/util.py", line 203, in _subst\n'}
+[31.012362] (camera_node) StderrLine: {'line': b'    return os.environ[var_name]\n'}
+[31.013788] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/os.py", line 680, in __getitem__\n'}
+[31.015053] (camera_node) StderrLine: {'line': b'    raise KeyError(key) from None\n'}
+[31.016172] (camera_node) StderrLine: {'line': b"KeyError: 'destdir'\n"}
+[31.017293] (camera_node) StderrLine: {'line': b'\n'}
+[31.020556] (camera_node) StderrLine: {'line': b'During handling of the above exception, another exception occurred:\n'}
+[31.023626] (camera_node) StderrLine: {'line': b'\n'}
+[31.025035] (camera_node) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[31.028990] (camera_node) StderrLine: {'line': b'  File "/home/robot/robot_ws/src/camera_node/setup.py", line 7, in <module>\n'}
+[31.033369] (camera_node) StderrLine: {'line': b'    setup(\n'}
+[31.036337] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 153, in setup\n'}
+[31.039092] (-) TimerEvent: {}
+[31.039697] (camera_node) StderrLine: {'line': b'    return distutils.core.setup(**attrs)\n'}
+[31.042489] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/core.py", line 148, in setup\n'}
+[31.045220] (camera_node) StderrLine: {'line': b'    dist.run_commands()\n'}
+[31.047543] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/dist.py", line 966, in run_commands\n'}
+[31.050265] (camera_node) StderrLine: {'line': b'    self.run_command(cmd)\n'}
+[31.053245] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/dist.py", line 984, in run_command\n'}
+[31.055741] (camera_node) StderrLine: {'line': b'    cmd_obj.ensure_finalized()\n'}
+[31.058101] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/cmd.py", line 107, in ensure_finalized\n'}
+[31.059881] (camera_node) StderrLine: {'line': b'    self.finalize_options()\n'}
+[31.061985] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/setuptools/command/install.py", line 45, in finalize_options\n'}
+[31.064273] (camera_node) StderrLine: {'line': b'    orig.install.finalize_options(self)\n'}
+[31.066474] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/command/install.py", line 377, in finalize_options\n'}
+[31.069322] (camera_node) StderrLine: {'line': b'    self.expand_dirs()\n'}
+[31.071725] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/command/install.py", line 553, in expand_dirs\n'}
+[31.073987] (camera_node) StderrLine: {'line': b"    self._expand_attrs(['install_purelib', 'install_platlib',\n"}
+[31.075619] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/command/install.py", line 543, in _expand_attrs\n'}
+[31.078027] (camera_node) StderrLine: {'line': b'    val = subst_vars(val, self.config_vars)\n'}
+[31.080174] (camera_node) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/util.py", line 208, in subst_vars\n'}
+[31.082608] (camera_node) StderrLine: {'line': b'    raise ValueError("invalid variable \'$%s\'" % var)\n'}
+[31.084795] (camera_node) StderrLine: {'line': b"ValueError: invalid variable '$'destdir''\n"}
+[31.139431] (-) TimerEvent: {}
+[31.216139] (camera_node) CommandEnded: {'returncode': 1}
+[31.220147] (camera_node) JobEnded: {'identifier': 'camera_node', 'rc': 1}
+[31.229016] (-) EventReactorShutdown: {}

@@ -1,0 +1,42 @@
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/robot/robot_ws/build/robot_bringup
+-- Install configuration: ""
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/slam.launch.py
+-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/localization.launch.py
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/robot.launch.py
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/lidar.launch.py
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/view_robot.launch.py
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/slam_toolbox_params.yaml
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz/robot_view.rviz
+-- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/mount_hdd.sh
+-- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/unmount_hdd.sh
+-- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/save_map.sh
+-- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/setup_hdd_automount.sh
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/.gitkeep
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh
+-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.sh
+-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.dsv
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.bash
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.sh
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.zsh
+-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.dsv
+-- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.dsv
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake
+-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.xml

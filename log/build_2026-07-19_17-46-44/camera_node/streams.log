@@ -1,0 +1,34 @@
+[14.282s] Invoking command in '/home/robot/robot_ws/src/camera_node': PYTHONPATH=/home/robot/robot_ws/build/camera_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_node build --build-base /home/robot/robot_ws/build/camera_node/build install --record /home/robot/robot_ws/build/camera_node/install.log --install-scripts $base/lib/camera_node --single-version-externally-managed install_data
+[17.013s] running egg_info
+[17.019s] writing ../../build/camera_node/camera_node.egg-info/PKG-INFO
+[17.022s] writing dependency_links to ../../build/camera_node/camera_node.egg-info/dependency_links.txt
+[17.025s] writing entry points to ../../build/camera_node/camera_node.egg-info/entry_points.txt
+[17.029s] writing requirements to ../../build/camera_node/camera_node.egg-info/requires.txt
+[17.030s] writing top-level names to ../../build/camera_node/camera_node.egg-info/top_level.txt
+[17.049s] reading manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+[17.061s] writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+[17.063s] running build
+[17.065s] running build_py
+[17.068s] running install
+[17.069s] running install_lib
+[17.081s] creating /home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node
+[17.083s] copying /home/robot/robot_ws/build/camera_node/build/lib/camera_node/__init__.py -> /home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node
+[17.095s] copying /home/robot/robot_ws/build/camera_node/build/lib/camera_node/camera_node.py -> /home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node
+[17.096s] byte-compiling /home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node/__init__.py to __init__.cpython-310.pyc
+[17.097s] byte-compiling /home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node/camera_node.py to camera_node.cpython-310.pyc
+[17.114s] running install_data
+[17.115s] creating /home/robot/robot_ws/install/camera_node/share/ament_index
+[17.117s] creating /home/robot/robot_ws/install/camera_node/share/ament_index/resource_index
+[17.118s] creating /home/robot/robot_ws/install/camera_node/share/ament_index/resource_index/packages
+[17.119s] copying resource/camera_node -> /home/robot/robot_ws/install/camera_node/share/ament_index/resource_index/packages
+[17.120s] copying package.xml -> /home/robot/robot_ws/install/camera_node/share/camera_node
+[17.125s] creating /home/robot/robot_ws/install/camera_node/share/camera_node/launch
+[17.128s] copying launch/camera.launch.py -> /home/robot/robot_ws/install/camera_node/share/camera_node/launch
+[17.133s] creating /home/robot/robot_ws/install/camera_node/share/camera_node/config
+[17.136s] copying config/camera.yaml -> /home/robot/robot_ws/install/camera_node/share/camera_node/config
+[17.140s] running install_egg_info
+[17.144s] Copying ../../build/camera_node/camera_node.egg-info to /home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node-1.0.0-py3.10.egg-info
+[17.158s] running install_scripts
+[17.362s] Installing camera_node script to /home/robot/robot_ws/install/camera_node/lib/camera_node
+[17.365s] writing list of installed files to '/home/robot/robot_ws/build/camera_node/install.log'
+[17.584s] Invoked command in '/home/robot/robot_ws/src/camera_node' returned '0': PYTHONPATH=/home/robot/robot_ws/build/camera_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_node build --build-base /home/robot/robot_ws/build/camera_node/build install --record /home/robot/robot_ws/build/camera_node/install.log --install-scripts $base/lib/camera_node --single-version-externally-managed install_data

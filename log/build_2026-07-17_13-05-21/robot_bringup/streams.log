@@ -1,0 +1,57 @@
+[0.085s] Invoking command in '/home/robot/robot_ws/build/robot_bringup': AMENT_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake /home/robot/robot_ws/src/robot_bringup -DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/robot_bringup
+[1.966s] -- The C compiler identification is GNU 11.4.0
+[2.910s] -- The CXX compiler identification is GNU 11.4.0
+[2.980s] -- Detecting C compiler ABI info
+[5.619s] -- Detecting C compiler ABI info - done
+[5.689s] -- Check for working C compiler: /usr/bin/cc - skipped
+[5.691s] -- Detecting C compile features
+[5.695s] -- Detecting C compile features - done
+[5.907s] -- Detecting CXX compiler ABI info
+[7.211s] -- Detecting CXX compiler ABI info - done
+[7.664s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[7.666s] -- Detecting CXX compile features
+[7.671s] -- Detecting CXX compile features - done
+[7.758s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[11.305s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[16.068s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[20.087s] -- Added test 'copyright' to check source files copyright and LICENSE
+[20.146s] -- Added test 'flake8' to check Python code syntax and style conventions
+[20.157s] -- Added test 'lint_cmake' to check CMake code style
+[20.166s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[20.198s] -- Added test 'xmllint' to check XML markup files
+[20.219s] -- Configuring done
+[20.279s] -- Generating done
+[20.303s] -- Build files have been written to: /home/robot/robot_ws/build/robot_bringup
+[20.334s] Invoked command in '/home/robot/robot_ws/build/robot_bringup' returned '0': AMENT_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake /home/robot/robot_ws/src/robot_bringup -DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/robot_bringup
+[20.341s] Invoking command in '/home/robot/robot_ws/build/robot_bringup': AMENT_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/robot_bringup -- -j4 -l4
+[20.691s] Invoked command in '/home/robot/robot_ws/build/robot_bringup' returned '0': AMENT_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/robot_bringup -- -j4 -l4
+[20.700s] Invoking command in '/home/robot/robot_ws/build/robot_bringup': AMENT_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/robot_bringup
+[21.913s] -- Install configuration: ""
+[21.924s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch
+[21.927s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/slam.launch.py
+[21.935s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/localization.launch.py
+[21.940s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/robot.launch.py
+[21.942s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/lidar.launch.py
+[21.945s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/view_robot.launch.py
+[21.949s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config
+[21.950s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/slam_toolbox_params.yaml
+[21.954s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz
+[21.956s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz/robot_view.rviz
+[21.959s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps
+[21.960s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/.gitkeep
+[21.965s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup
+[21.970s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup
+[21.974s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh
+[21.977s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv
+[21.981s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.sh
+[21.984s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.dsv
+[21.988s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.bash
+[21.991s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.sh
+[21.996s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.zsh
+[22.009s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.dsv
+[22.012s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.dsv
+[22.022s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup
+[22.029s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake
+[22.030s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake
+[22.035s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.xml
+[22.050s] Invoked command in '/home/robot/robot_ws/build/robot_bringup' returned '0': AMENT_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/robot_bringup

@@ -1,0 +1,137 @@
+[0.000000] (-) TimerEvent: {}
+[0.001663] (-) JobUnselected: {'identifier': 'camera_node'}
+[0.004640] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.005584] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.008120] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.008507] (-) JobUnselected: {'identifier': 'vision_msgs'}
+[0.009098] (vision_ai_node) JobQueued: {'identifier': 'vision_ai_node', 'dependencies': OrderedDict([('vision_msgs', '/home/robot/robot_ws/install/vision_msgs')])}
+[0.009665] (vision_ai_node) JobStarted: {'identifier': 'vision_ai_node'}
+[0.048824] (-) TimerEvent: {}
+[0.150309] (-) TimerEvent: {}
+[0.347398] (-) TimerEvent: {}
+[0.448198] (-) TimerEvent: {}
+[0.549045] (-) TimerEvent: {}
+[0.649866] (-) TimerEvent: {}
+[0.750899] (-) TimerEvent: {}
+[0.851799] (-) TimerEvent: {}
+[1.970454] (-) TimerEvent: {}
+[2.071305] (-) TimerEvent: {}
+[2.172085] (-) TimerEvent: {}
+[2.273033] (-) TimerEvent: {}
+[2.373876] (-) TimerEvent: {}
+[2.474689] (-) TimerEvent: {}
+[2.575496] (-) TimerEvent: {}
+[2.676367] (-) TimerEvent: {}
+[2.777247] (-) TimerEvent: {}
+[2.878085] (-) TimerEvent: {}
+[2.979008] (-) TimerEvent: {}
+[3.079834] (-) TimerEvent: {}
+[3.180603] (-) TimerEvent: {}
+[3.281481] (-) TimerEvent: {}
+[3.384798] (-) TimerEvent: {}
+[3.485792] (-) TimerEvent: {}
+[4.036369] (-) TimerEvent: {}
+[4.189483] (-) TimerEvent: {}
+[4.345142] (-) TimerEvent: {}
+[4.445956] (-) TimerEvent: {}
+[4.546786] (-) TimerEvent: {}
+[4.815417] (-) TimerEvent: {}
+[4.916254] (-) TimerEvent: {}
+[5.017170] (-) TimerEvent: {}
+[5.117955] (-) TimerEvent: {}
+[5.218739] (-) TimerEvent: {}
+[5.352789] (-) TimerEvent: {}
+[5.453680] (-) TimerEvent: {}
+[5.594185] (-) TimerEvent: {}
+[5.775779] (-) TimerEvent: {}
+[5.876608] (-) TimerEvent: {}
+[6.033445] (-) TimerEvent: {}
+[6.206826] (-) TimerEvent: {}
+[6.307605] (-) TimerEvent: {}
+[6.411731] (-) TimerEvent: {}
+[6.512513] (-) TimerEvent: {}
+[6.613936] (-) TimerEvent: {}
+[6.714701] (-) TimerEvent: {}
+[6.815507] (-) TimerEvent: {}
+[7.009465] (-) TimerEvent: {}
+[7.110272] (-) TimerEvent: {}
+[7.264390] (-) TimerEvent: {}
+[7.365207] (-) TimerEvent: {}
+[7.465977] (-) TimerEvent: {}
+[7.566729] (-) TimerEvent: {}
+[7.667522] (-) TimerEvent: {}
+[7.768404] (-) TimerEvent: {}
+[7.869263] (-) TimerEvent: {}
+[8.002928] (-) TimerEvent: {}
+[8.104013] (-) TimerEvent: {}
+[10.159748] (vision_ai_node) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/vision_ai_node', 'build', '--build-base', '/home/robot/robot_ws/build/vision_ai_node/build', 'install', '--record', '/home/robot/robot_ws/build/vision_ai_node/install.log', '--install-scripts', '$base/lib/vision_ai_node', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/vision_ai_node', 'env': {'VSCODE_CWD': '/home/robot', 'USER': 'robot', 'SSH_CLIENT': '192.168.1.87 62742 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.qoder-server/bin/3ed5d31635b5343712913d2f132876a4b5dc7e53/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws', 'DISABLE_AUTO_UPDATE': 'true', 'ROS_PYTHON_VERSION': '3', 'npm_config_yes': 'true', 'VSCODE_PREVENT_SHELL_HISTORY': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '12', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'QODER_AGENT': 'true', 'GIT_PAGER': 'cat', 'PWD': '/home/robot/robot_ws/build/vision_ai_node', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.1.87 62742 192.168.1.252 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/vision_ai_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'PIP_NO_INPUT': 'true', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description'}, 'shell': False}
+[10.182467] (-) TimerEvent: {}
+[10.283673] (-) TimerEvent: {}
+[10.556232] (-) TimerEvent: {}
+[10.657222] (-) TimerEvent: {}
+[10.758036] (-) TimerEvent: {}
+[10.858878] (-) TimerEvent: {}
+[10.959757] (-) TimerEvent: {}
+[11.060663] (-) TimerEvent: {}
+[11.161598] (-) TimerEvent: {}
+[11.336188] (-) TimerEvent: {}
+[11.590089] (-) TimerEvent: {}
+[11.830405] (-) TimerEvent: {}
+[12.082379] (-) TimerEvent: {}
+[12.247926] (-) TimerEvent: {}
+[12.722508] (-) TimerEvent: {}
+[12.823269] (-) TimerEvent: {}
+[12.924046] (-) TimerEvent: {}
+[13.024944] (-) TimerEvent: {}
+[13.236136] (vision_ai_node) StdoutLine: {'line': b'running egg_info\n'}
+[13.908352] (-) TimerEvent: {}
+[13.908704] (vision_ai_node) StdoutLine: {'line': b'creating ../../build/vision_ai_node/vision_ai_node.egg-info\n'}
+[13.914030] (vision_ai_node) StdoutLine: {'line': b'writing ../../build/vision_ai_node/vision_ai_node.egg-info/PKG-INFO\n'}
+[13.915693] (vision_ai_node) StdoutLine: {'line': b'writing dependency_links to ../../build/vision_ai_node/vision_ai_node.egg-info/dependency_links.txt\n'}
+[13.920173] (vision_ai_node) StdoutLine: {'line': b'writing entry points to ../../build/vision_ai_node/vision_ai_node.egg-info/entry_points.txt\n'}
+[13.924693] (vision_ai_node) StdoutLine: {'line': b'writing requirements to ../../build/vision_ai_node/vision_ai_node.egg-info/requires.txt\n'}
+[13.928561] (vision_ai_node) StdoutLine: {'line': b'writing top-level names to ../../build/vision_ai_node/vision_ai_node.egg-info/top_level.txt\n'}
+[13.930186] (vision_ai_node) StdoutLine: {'line': b"writing manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'\n"}
+[13.945709] (vision_ai_node) StdoutLine: {'line': b"reading manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'\n"}
+[13.954189] (vision_ai_node) StdoutLine: {'line': b"writing manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'\n"}
+[13.957109] (vision_ai_node) StdoutLine: {'line': b'running build\n'}
+[13.960835] (vision_ai_node) StdoutLine: {'line': b'running build_py\n'}
+[13.962387] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/build/vision_ai_node/build\n'}
+[13.963562] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/build/vision_ai_node/build/lib\n'}
+[13.964680] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node\n'}
+[13.967709] (vision_ai_node) StdoutLine: {'line': b'copying vision_ai_node/__init__.py -> /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node\n'}
+[13.969074] (vision_ai_node) StdoutLine: {'line': b'copying vision_ai_node/vision_ai_node.py -> /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node\n'}
+[13.971151] (vision_ai_node) StdoutLine: {'line': b'running install\n'}
+[13.972326] (vision_ai_node) StdoutLine: {'line': b'running install_lib\n'}
+[13.980748] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node\n'}
+[13.983036] (vision_ai_node) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node/__init__.py -> /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node\n'}
+[13.984375] (vision_ai_node) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node/vision_ai_node.py -> /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node\n'}
+[13.993158] (vision_ai_node) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node/__init__.py to __init__.cpython-310.pyc\n'}
+[14.001877] (vision_ai_node) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node/vision_ai_node.py to vision_ai_node.cpython-310.pyc\n'}
+[14.184091] (-) TimerEvent: {}
+[14.185774] (vision_ai_node) StdoutLine: {'line': b'running install_data\n'}
+[14.189794] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/vision_ai_node/share/ament_index\n'}
+[14.192065] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index\n'}
+[14.193378] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index/packages\n'}
+[14.196154] (vision_ai_node) StdoutLine: {'line': b'copying resource/vision_ai_node -> /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index/packages\n'}
+[14.198542] (vision_ai_node) StdoutLine: {'line': b'copying package.xml -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node\n'}
+[14.201121] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/launch\n'}
+[14.203409] (vision_ai_node) StdoutLine: {'line': b'copying launch/vision_ai.launch.py -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/launch\n'}
+[14.207853] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/config\n'}
+[14.210179] (vision_ai_node) StdoutLine: {'line': b'copying config/vision.yaml -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/config\n'}
+[14.213379] (vision_ai_node) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/models\n'}
+[14.215946] (vision_ai_node) StdoutLine: {'line': b'running install_egg_info\n'}
+[14.238713] (vision_ai_node) StdoutLine: {'line': b'Copying ../../build/vision_ai_node/vision_ai_node.egg-info to /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node-1.0.0-py3.10.egg-info\n'}
+[14.256596] (vision_ai_node) StdoutLine: {'line': b'running install_scripts\n'}
+[14.284418] (-) TimerEvent: {}
+[14.385405] (-) TimerEvent: {}
+[14.468562] (vision_ai_node) StdoutLine: {'line': b'Installing vision_ai_node script to /home/robot/robot_ws/install/vision_ai_node/lib/vision_ai_node\n'}
+[14.472604] (vision_ai_node) StdoutLine: {'line': b"writing list of installed files to '/home/robot/robot_ws/build/vision_ai_node/install.log'\n"}
+[14.485790] (-) TimerEvent: {}
+[14.586826] (-) TimerEvent: {}
+[14.697628] (vision_ai_node) CommandEnded: {'returncode': 0}
+[14.755752] (-) TimerEvent: {}
+[14.856972] (-) TimerEvent: {}
+[15.028199] (vision_ai_node) JobEnded: {'identifier': 'vision_ai_node', 'rc': 0}
+[15.033894] (-) TimerEvent: {}
+[15.037583] (-) EventReactorShutdown: {}

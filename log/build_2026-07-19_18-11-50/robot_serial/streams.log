@@ -1,0 +1,47 @@
+[8.025s] Invoking command in '/home/robot/robot_ws/src/robot_serial': PYTHONPATH=/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_serial build --build-base /home/robot/robot_ws/build/robot_serial/build install --record /home/robot/robot_ws/build/robot_serial/install.log --install-scripts $base/lib/robot_serial --single-version-externally-managed install_data
+[10.960s] running egg_info
+[10.971s] creating ../../build/robot_serial/robot_serial.egg-info
+[10.981s] writing ../../build/robot_serial/robot_serial.egg-info/PKG-INFO
+[10.982s] writing dependency_links to ../../build/robot_serial/robot_serial.egg-info/dependency_links.txt
+[10.984s] writing entry points to ../../build/robot_serial/robot_serial.egg-info/entry_points.txt
+[10.985s] writing requirements to ../../build/robot_serial/robot_serial.egg-info/requires.txt
+[10.986s] writing top-level names to ../../build/robot_serial/robot_serial.egg-info/top_level.txt
+[10.988s] writing manifest file '../../build/robot_serial/robot_serial.egg-info/SOURCES.txt'
+[11.004s] reading manifest file '../../build/robot_serial/robot_serial.egg-info/SOURCES.txt'
+[11.015s] writing manifest file '../../build/robot_serial/robot_serial.egg-info/SOURCES.txt'
+[11.018s] running build
+[11.023s] running build_py
+[11.024s] creating /home/robot/robot_ws/build/robot_serial/build
+[11.027s] creating /home/robot/robot_ws/build/robot_serial/build/lib
+[11.029s] creating /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial
+[11.032s] copying robot_serial/__init__.py -> /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial
+[11.035s] copying robot_serial/serial_protocol.py -> /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial
+[11.036s] copying robot_serial/serial_bridge_node.py -> /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial
+[11.041s] copying robot_serial/serial_parser.py -> /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial
+[11.045s] running install
+[11.049s] running install_lib
+[11.053s] creating /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial
+[11.057s] copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/__init__.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial
+[11.059s] copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/serial_protocol.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial
+[11.063s] copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/serial_bridge_node.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial
+[11.065s] copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/serial_parser.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial
+[11.072s] byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/__init__.py to __init__.cpython-310.pyc
+[11.076s] byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_protocol.py to serial_protocol.cpython-310.pyc
+[11.084s] byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_bridge_node.py to serial_bridge_node.cpython-310.pyc
+[11.109s] byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_parser.py to serial_parser.cpython-310.pyc
+[11.124s] running install_data
+[11.126s] creating /home/robot/robot_ws/install/robot_serial/share/ament_index
+[11.130s] creating /home/robot/robot_ws/install/robot_serial/share/ament_index/resource_index
+[11.133s] creating /home/robot/robot_ws/install/robot_serial/share/ament_index/resource_index/packages
+[11.138s] copying resource/robot_serial -> /home/robot/robot_ws/install/robot_serial/share/ament_index/resource_index/packages
+[11.140s] copying package.xml -> /home/robot/robot_ws/install/robot_serial/share/robot_serial
+[11.142s] creating /home/robot/robot_ws/install/robot_serial/share/robot_serial/launch
+[11.144s] copying launch/robot_serial.launch.py -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/launch
+[11.146s] creating /home/robot/robot_ws/install/robot_serial/share/robot_serial/config
+[11.148s] copying config/serial.yaml -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/config
+[11.150s] running install_egg_info
+[11.161s] Copying ../../build/robot_serial/robot_serial.egg-info to /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info
+[11.179s] running install_scripts
+[11.391s] Installing robot_serial_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial
+[11.396s] writing list of installed files to '/home/robot/robot_ws/build/robot_serial/install.log'
+[11.620s] Invoked command in '/home/robot/robot_ws/src/robot_serial' returned '0': PYTHONPATH=/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_serial build --build-base /home/robot/robot_ws/build/robot_serial/build install --record /home/robot/robot_ws/build/robot_serial/install.log --install-scripts $base/lib/robot_serial --single-version-externally-managed install_data

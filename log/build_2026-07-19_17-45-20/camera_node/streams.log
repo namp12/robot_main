@@ -1,0 +1,57 @@
+[28.159s] Invoking command in '/home/robot/robot_ws/src/camera_node': PYTHONPATH=/home/robot/robot_ws/build/camera_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_node build --build-base /home/robot/robot_ws/build/camera_node/build install --record /home/robot/robot_ws/build/camera_node/install.log --install-scripts $destdir/lib/camera_node --single-version-externally-managed install_data
+[30.925s] running egg_info
+[30.930s] creating ../../build/camera_node/camera_node.egg-info
+[30.935s] writing ../../build/camera_node/camera_node.egg-info/PKG-INFO
+[30.937s] writing dependency_links to ../../build/camera_node/camera_node.egg-info/dependency_links.txt
+[30.940s] writing entry points to ../../build/camera_node/camera_node.egg-info/entry_points.txt
+[30.941s] writing requirements to ../../build/camera_node/camera_node.egg-info/requires.txt
+[30.943s] writing top-level names to ../../build/camera_node/camera_node.egg-info/top_level.txt
+[30.945s] writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+[30.962s] reading manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+[30.972s] writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+[30.975s] running build
+[30.976s] running build_py
+[30.977s] creating /home/robot/robot_ws/build/camera_node/build
+[30.980s] creating /home/robot/robot_ws/build/camera_node/build/lib
+[30.983s] creating /home/robot/robot_ws/build/camera_node/build/lib/camera_node
+[30.984s] copying camera_node/__init__.py -> /home/robot/robot_ws/build/camera_node/build/lib/camera_node
+[30.986s] copying camera_node/camera_node.py -> /home/robot/robot_ws/build/camera_node/build/lib/camera_node
+[30.988s] running install
+[30.989s] Traceback (most recent call last):
+[30.990s]   File "/usr/lib/python3.10/distutils/util.py", line 206, in subst_vars
+[30.994s]     return re.sub(r'\$([a-zA-Z_][a-zA-Z_0-9]*)', _subst, s)
+[30.997s]   File "/usr/lib/python3.10/re.py", line 209, in sub
+[30.998s]     return _compile(pattern, flags).sub(repl, string, count)
+[31.000s]   File "/usr/lib/python3.10/distutils/util.py", line 203, in _subst
+[31.001s]     return os.environ[var_name]
+[31.003s]   File "/usr/lib/python3.10/os.py", line 680, in __getitem__
+[31.004s]     raise KeyError(key) from None
+[31.005s] KeyError: 'destdir'
+[31.006s] 
+[31.011s] During handling of the above exception, another exception occurred:
+[31.013s] 
+[31.015s] Traceback (most recent call last):
+[31.021s]   File "/home/robot/robot_ws/src/camera_node/setup.py", line 7, in <module>
+[31.024s]     setup(
+[31.026s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 153, in setup
+[31.030s]     return distutils.core.setup(**attrs)
+[31.033s]   File "/usr/lib/python3.10/distutils/core.py", line 148, in setup
+[31.035s]     dist.run_commands()
+[31.037s]   File "/usr/lib/python3.10/distutils/dist.py", line 966, in run_commands
+[31.041s]     self.run_command(cmd)
+[31.043s]   File "/usr/lib/python3.10/distutils/dist.py", line 984, in run_command
+[31.046s]     cmd_obj.ensure_finalized()
+[31.047s]   File "/usr/lib/python3.10/distutils/cmd.py", line 107, in ensure_finalized
+[31.049s]     self.finalize_options()
+[31.052s]   File "/usr/lib/python3/dist-packages/setuptools/command/install.py", line 45, in finalize_options
+[31.054s]     orig.install.finalize_options(self)
+[31.057s]   File "/usr/lib/python3.10/distutils/command/install.py", line 377, in finalize_options
+[31.059s]     self.expand_dirs()
+[31.061s]   File "/usr/lib/python3.10/distutils/command/install.py", line 553, in expand_dirs
+[31.063s]     self._expand_attrs(['install_purelib', 'install_platlib',
+[31.065s]   File "/usr/lib/python3.10/distutils/command/install.py", line 543, in _expand_attrs
+[31.067s]     val = subst_vars(val, self.config_vars)
+[31.070s]   File "/usr/lib/python3.10/distutils/util.py", line 208, in subst_vars
+[31.072s]     raise ValueError("invalid variable '$%s'" % var)
+[31.074s] ValueError: invalid variable '$'destdir''
+[31.206s] Invoked command in '/home/robot/robot_ws/src/camera_node' returned '1': PYTHONPATH=/home/robot/robot_ws/build/camera_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_node build --build-base /home/robot/robot_ws/build/camera_node/build install --record /home/robot/robot_ws/build/camera_node/install.log --install-scripts $destdir/lib/camera_node --single-version-externally-managed install_data

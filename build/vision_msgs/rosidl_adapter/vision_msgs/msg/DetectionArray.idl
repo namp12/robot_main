@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from vision_msgs/msg/DetectionArray.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+#include "vision_msgs/msg/Detection.idl"
+
+module vision_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "Array of object detections from a single frame" "\n"
+      "" "\n"
+      "Published by vision_ai_node on /vision/detections." "\n"
+      "Contains all detected objects plus metadata about the frame.")
+    struct DetectionArray {
+      @verbatim (language="comment", text=
+        "Header with timestamp and frame_id")
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "List of individual detections")
+      sequence<vision_msgs::msg::Detection> detections;
+
+      @verbatim (language="comment", text=
+        "Original image dimensions")
+      int32 image_width;
+
+      int32 image_height;
+
+      @verbatim (language="comment", text=
+        "Inference time in milliseconds")
+      float inference_time_ms;
+    };
+  };
+};

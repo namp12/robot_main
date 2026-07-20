@@ -1,0 +1,55 @@
+running egg_info
+creating ../../build/camera_node/camera_node.egg-info
+writing ../../build/camera_node/camera_node.egg-info/PKG-INFO
+writing dependency_links to ../../build/camera_node/camera_node.egg-info/dependency_links.txt
+writing entry points to ../../build/camera_node/camera_node.egg-info/entry_points.txt
+writing requirements to ../../build/camera_node/camera_node.egg-info/requires.txt
+writing top-level names to ../../build/camera_node/camera_node.egg-info/top_level.txt
+writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+reading manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/robot/robot_ws/build/camera_node/build
+creating /home/robot/robot_ws/build/camera_node/build/lib
+creating /home/robot/robot_ws/build/camera_node/build/lib/camera_node
+copying camera_node/__init__.py -> /home/robot/robot_ws/build/camera_node/build/lib/camera_node
+copying camera_node/camera_node.py -> /home/robot/robot_ws/build/camera_node/build/lib/camera_node
+running install
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/distutils/util.py", line 206, in subst_vars
+    return re.sub(r'\$([a-zA-Z_][a-zA-Z_0-9]*)', _subst, s)
+  File "/usr/lib/python3.10/re.py", line 209, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+  File "/usr/lib/python3.10/distutils/util.py", line 203, in _subst
+    return os.environ[var_name]
+  File "/usr/lib/python3.10/os.py", line 680, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'destdir'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/robot/robot_ws/src/camera_node/setup.py", line 7, in <module>
+    setup(
+  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 153, in setup
+    return distutils.core.setup(**attrs)
+  File "/usr/lib/python3.10/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/usr/lib/python3.10/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/usr/lib/python3.10/distutils/dist.py", line 984, in run_command
+    cmd_obj.ensure_finalized()
+  File "/usr/lib/python3.10/distutils/cmd.py", line 107, in ensure_finalized
+    self.finalize_options()
+  File "/usr/lib/python3/dist-packages/setuptools/command/install.py", line 45, in finalize_options
+    orig.install.finalize_options(self)
+  File "/usr/lib/python3.10/distutils/command/install.py", line 377, in finalize_options
+    self.expand_dirs()
+  File "/usr/lib/python3.10/distutils/command/install.py", line 553, in expand_dirs
+    self._expand_attrs(['install_purelib', 'install_platlib',
+  File "/usr/lib/python3.10/distutils/command/install.py", line 543, in _expand_attrs
+    val = subst_vars(val, self.config_vars)
+  File "/usr/lib/python3.10/distutils/util.py", line 208, in subst_vars
+    raise ValueError("invalid variable '$%s'" % var)
+ValueError: invalid variable '$'destdir''

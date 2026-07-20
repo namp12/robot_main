@@ -1,0 +1,15 @@
+# Placeholder for future joint limits (ESP32 + motors)
+# Currently all joints are fixed, so no limits are needed.
+# When continuous joints are added for odometry, this file can
+# be loaded by joint_state_publisher or a custom controller.
+
+joint_limits:
+  # Example (uncomment when ESP32 is added):
+  # left_wheel:
+  #   has_position_limits: false
+  #   has_velocity_limits: true
+  #   max_velocity: 1.0
+  # right_wheel:
+  #   has_position_limits: false
+  #   has_velocity_limits: true
+  #   max_velocity: 1.0

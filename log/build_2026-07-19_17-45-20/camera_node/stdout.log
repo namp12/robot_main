@@ -1,0 +1,18 @@
+running egg_info
+creating ../../build/camera_node/camera_node.egg-info
+writing ../../build/camera_node/camera_node.egg-info/PKG-INFO
+writing dependency_links to ../../build/camera_node/camera_node.egg-info/dependency_links.txt
+writing entry points to ../../build/camera_node/camera_node.egg-info/entry_points.txt
+writing requirements to ../../build/camera_node/camera_node.egg-info/requires.txt
+writing top-level names to ../../build/camera_node/camera_node.egg-info/top_level.txt
+writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+reading manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/robot/robot_ws/build/camera_node/build
+creating /home/robot/robot_ws/build/camera_node/build/lib
+creating /home/robot/robot_ws/build/camera_node/build/lib/camera_node
+copying camera_node/__init__.py -> /home/robot/robot_ws/build/camera_node/build/lib/camera_node
+copying camera_node/camera_node.py -> /home/robot/robot_ws/build/camera_node/build/lib/camera_node
+running install
