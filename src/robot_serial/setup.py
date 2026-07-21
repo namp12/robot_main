@@ -26,7 +26,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'robot_serial_node = robot_serial.serial_bridge_node:main',
+            'serial_node = robot_serial.serial_node:main',
         ],
     },
 )

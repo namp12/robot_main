@@ -1,0 +1,37 @@
+running egg_info
+creating ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info
+writing ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/PKG-INFO
+writing dependency_links to ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/dependency_links.txt
+writing entry points to ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/entry_points.txt
+writing requirements to ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/requires.txt
+writing top-level names to ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/top_level.txt
+writing manifest file '../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/SOURCES.txt'
+reading manifest file '../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/SOURCES.txt'
+writing manifest file '../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/robot/robot_ws/build/esp32_ros2_bridge/build
+creating /home/robot/robot_ws/build/esp32_ros2_bridge/build/lib
+creating /home/robot/robot_ws/build/esp32_ros2_bridge/build/lib/esp32_ros2_bridge
+copying esp32_ros2_bridge/esp32_bridge_node.py -> /home/robot/robot_ws/build/esp32_ros2_bridge/build/lib/esp32_ros2_bridge
+copying esp32_ros2_bridge/__init__.py -> /home/robot/robot_ws/build/esp32_ros2_bridge/build/lib/esp32_ros2_bridge
+running install
+running install_lib
+creating /home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32_ros2_bridge
+copying /home/robot/robot_ws/build/esp32_ros2_bridge/build/lib/esp32_ros2_bridge/esp32_bridge_node.py -> /home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32_ros2_bridge
+copying /home/robot/robot_ws/build/esp32_ros2_bridge/build/lib/esp32_ros2_bridge/__init__.py -> /home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32_ros2_bridge
+byte-compiling /home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32_ros2_bridge/esp32_bridge_node.py to esp32_bridge_node.cpython-310.pyc
+byte-compiling /home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32_ros2_bridge/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/robot/robot_ws/install/esp32_ros2_bridge/share/ament_index
+creating /home/robot/robot_ws/install/esp32_ros2_bridge/share/ament_index/resource_index
+creating /home/robot/robot_ws/install/esp32_ros2_bridge/share/ament_index/resource_index/packages
+copying resource/esp32_ros2_bridge -> /home/robot/robot_ws/install/esp32_ros2_bridge/share/ament_index/resource_index/packages
+copying package.xml -> /home/robot/robot_ws/install/esp32_ros2_bridge/share/esp32_ros2_bridge
+creating /home/robot/robot_ws/install/esp32_ros2_bridge/share/esp32_ros2_bridge/launch
+copying launch/esp32_bridge.launch.py -> /home/robot/robot_ws/install/esp32_ros2_bridge/share/esp32_ros2_bridge/launch
+running install_egg_info
+Copying ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info to /home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32_ros2_bridge-1.0.0-py3.10.egg-info
+running install_scripts
+Installing esp32_bridge_node script to /home/robot/robot_ws/install/esp32_ros2_bridge/bin
+writing list of installed files to '/home/robot/robot_ws/build/esp32_ros2_bridge/install.log'

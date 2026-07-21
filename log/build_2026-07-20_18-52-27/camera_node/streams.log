@@ -1,0 +1,21 @@
+[7.599s] Invoking command in '/home/robot/robot_ws/src/camera_node': PYTHONPATH=/home/robot/robot_ws/build/camera_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_node build --build-base /home/robot/robot_ws/build/camera_node/build install --record /home/robot/robot_ws/build/camera_node/install.log --install-scripts $base/lib/camera_node --single-version-externally-managed install_data
+[11.002s] running egg_info
+[11.009s] writing ../../build/camera_node/camera_node.egg-info/PKG-INFO
+[11.013s] writing dependency_links to ../../build/camera_node/camera_node.egg-info/dependency_links.txt
+[11.015s] writing entry points to ../../build/camera_node/camera_node.egg-info/entry_points.txt
+[11.019s] writing requirements to ../../build/camera_node/camera_node.egg-info/requires.txt
+[11.021s] writing top-level names to ../../build/camera_node/camera_node.egg-info/top_level.txt
+[11.039s] reading manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+[11.054s] writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'
+[11.057s] running build
+[11.058s] running build_py
+[11.063s] running install
+[11.067s] running install_lib
+[11.076s] running install_data
+[11.079s] running install_egg_info
+[11.099s] removing '/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node-1.0.0-py3.10.egg-info' (and everything under it)
+[11.105s] Copying ../../build/camera_node/camera_node.egg-info to /home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node-1.0.0-py3.10.egg-info
+[11.125s] running install_scripts
+[11.346s] Installing camera_node script to /home/robot/robot_ws/install/camera_node/lib/camera_node
+[11.352s] writing list of installed files to '/home/robot/robot_ws/build/camera_node/install.log'
+[11.587s] Invoked command in '/home/robot/robot_ws/src/camera_node' returned '0': PYTHONPATH=/home/robot/robot_ws/build/camera_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera_node build --build-base /home/robot/robot_ws/build/camera_node/build install --record /home/robot/robot_ws/build/camera_node/install.log --install-scripts $base/lib/camera_node --single-version-externally-managed install_data

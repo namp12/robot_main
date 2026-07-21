@@ -1,9 +1,13 @@
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/__init__.py
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_protocol.py
+/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_manager.py
+/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_node.py
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_bridge_node.py
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_parser.py
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/__pycache__/__init__.cpython-310.pyc
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/__pycache__/serial_protocol.cpython-310.pyc
+/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/__pycache__/serial_manager.cpython-310.pyc
+/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/__pycache__/serial_node.cpython-310.pyc
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/__pycache__/serial_bridge_node.cpython-310.pyc
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/__pycache__/serial_parser.cpython-310.pyc
 /home/robot/robot_ws/install/robot_serial/share/ament_index/resource_index/packages/robot_serial
@@ -17,4 +21,4 @@
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info/requires.txt
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info/dependency_links.txt
 /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info/zip-safe
-/home/robot/robot_ws/install/robot_serial/lib/robot_serial/robot_serial_node
+/home/robot/robot_ws/install/robot_serial/lib/robot_serial/serial_node

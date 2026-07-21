@@ -14,5 +14,7 @@ launch/robot_serial.launch.py
 resource/robot_serial
 robot_serial/__init__.py
 robot_serial/serial_bridge_node.py
+robot_serial/serial_manager.py
+robot_serial/serial_node.py
 robot_serial/serial_parser.py
 robot_serial/serial_protocol.py
