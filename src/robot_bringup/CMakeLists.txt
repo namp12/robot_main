@@ -31,6 +31,8 @@ install(PROGRAMS
   scripts/unmount_hdd.sh
   scripts/save_map.sh
   scripts/setup_hdd_automount.sh
+  scripts/save_map.py
+  scripts/copy_map.sh
   DESTINATION lib/${PROJECT_NAME}/
 )
 

@@ -33,9 +33,12 @@ def generate_launch_description():
 
     bringup_dir = get_package_share_directory('robot_bringup')
 
-    # Default map path - on SD card at ~/robot_maps/
+    # Default map path - in package share dir
     # Override with: ros2 launch robot_bringup localization.launch.py map:=/path/to/map.yaml
-    default_map = os.path.expanduser('~/robot_maps/my_room/map.yaml')
+    default_map = os.path.join(
+        get_package_share_directory('robot_bringup'),
+        'maps', 'my_room', 'map.yaml'
+    )
 
     # ---- Launch arguments ----
     map_arg = DeclareLaunchArgument(

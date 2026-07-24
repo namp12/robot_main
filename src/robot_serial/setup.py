@@ -11,7 +11,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/launch',
-            ['launch/robot_serial.launch.py']),
+            ['launch/robot_serial.launch.py', 'launch/wheel_odom.launch.py']),
         ('share/' + package_name + '/config',
             ['config/serial.yaml']),
     ],
@@ -27,6 +27,7 @@ setup(
     entry_points={
         'console_scripts': [
             'serial_node = robot_serial.serial_node:main',
+            'wheel_odom_node = robot_serial.wheel_odom_node:main',
         ],
     },
 )

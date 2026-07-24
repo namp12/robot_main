@@ -1,0 +1,21 @@
+[4.465s] Invoking command in '/home/robot/robot_ws/src/robot_serial': PYTHONPATH=/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_serial build --build-base /home/robot/robot_ws/build/robot_serial/build install --record /home/robot/robot_ws/build/robot_serial/install.log --install-scripts $base/lib/robot_serial --single-version-externally-managed install_data
+[5.789s] running egg_info
+[5.792s] writing ../../build/robot_serial/robot_serial.egg-info/PKG-INFO
+[5.794s] writing dependency_links to ../../build/robot_serial/robot_serial.egg-info/dependency_links.txt
+[5.796s] writing entry points to ../../build/robot_serial/robot_serial.egg-info/entry_points.txt
+[5.797s] writing requirements to ../../build/robot_serial/robot_serial.egg-info/requires.txt
+[5.797s] writing top-level names to ../../build/robot_serial/robot_serial.egg-info/top_level.txt
+[5.807s] reading manifest file '../../build/robot_serial/robot_serial.egg-info/SOURCES.txt'
+[5.981s] writing manifest file '../../build/robot_serial/robot_serial.egg-info/SOURCES.txt'
+[5.982s] running build
+[5.982s] running build_py
+[5.985s] running install
+[5.987s] running install_lib
+[5.995s] running install_data
+[5.997s] running install_egg_info
+[6.007s] removing '/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info' (and everything under it)
+[6.009s] Copying ../../build/robot_serial/robot_serial.egg-info to /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info
+[6.021s] running install_scripts
+[6.117s] Installing serial_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial
+[6.119s] writing list of installed files to '/home/robot/robot_ws/build/robot_serial/install.log'
+[6.242s] Invoked command in '/home/robot/robot_ws/src/robot_serial' returned '0': PYTHONPATH=/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_serial build --build-base /home/robot/robot_ws/build/robot_serial/build install --record /home/robot/robot_ws/build/robot_serial/install.log --install-scripts $base/lib/robot_serial --single-version-externally-managed install_data

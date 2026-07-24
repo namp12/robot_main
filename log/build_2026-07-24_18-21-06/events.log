@@ -1,0 +1,127 @@
+[0.000000] (-) TimerEvent: {}
+[0.001094] (-) JobUnselected: {'identifier': 'camera_node'}
+[0.001780] (-) JobUnselected: {'identifier': 'esp32_ros2_bridge'}
+[0.001929] (-) JobUnselected: {'identifier': 'robot_ai'}
+[0.002446] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.002674] (-) JobUnselected: {'identifier': 'robot_serial'}
+[0.003059] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.003326] (-) JobUnselected: {'identifier': 'vision_ai_node'}
+[0.003482] (-) JobUnselected: {'identifier': 'vision_msgs'}
+[0.003610] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_description', '/home/robot/robot_ws/install/robot_description'), ('sllidar_ros2', '/home/robot/robot_ws/install/sllidar_ros2')])}
+[0.003760] (robot_bringup) JobStarted: {'identifier': 'robot_bringup'}
+[0.065905] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'cmake'}
+[0.069642] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'build'}
+[0.074743] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/robot_bringup', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('VSCODE_CWD', '/home/robot'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('KILO_DISABLE_CHANNEL_DB', 'true'), ('USER', 'robot'), ('KILO_ENABLE_QUESTION_TOOL', 'true'), ('SSH_CLIENT', '192.168.1.87 54968 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('AGENT', '1'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('KILO_VSCODE_VERSION', '1.129.1'), ('SHLVL', '0'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('KILO_PROCESS_ROLE', 'main'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-85cb0175-b158-42e8-8951-fb4591b54ca4.sock'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('KILO_APP_VERSION', '7.4.15'), ('KILO_RUN_ID', 'b0e8cc2f-4ff3-41b8-8139-64efceb4ca4e'), ('KILOCODE_VERSION', '7.4.15'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('KILO_CLIENT', 'vscode'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', '9d52aed2-01f8-4726-82b5-3711d9f1f23a'), ('KILO_EDITOR_NAME', 'Visual Studio Code'), ('OPENCODE', '1'), ('PATH', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('VSCODE_AGENT_FOLDER', '/home/robot/.vscode-server'), ('KILO', '1'), ('KILO_SERVER_PASSWORD', 'bbcb59f4dc49259fc2f1d85f0f88b56e2bc16e296f1be1b146a9d84dcf8654c7'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('KILO_APP_NAME', 'kilo-code'), ('LANG', 'en_US.UTF-8'), ('KILO_PID', '1742'), ('KILOCODE_FEATURE', 'vscode-extension'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description'), ('SHELL', '/bin/bash'), ('KILO_PLATFORM', 'vscode'), ('MXC_BIN_DIR', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/node_modules/@microsoft/mxc-sdk/bin'), ('ELECTRON_RUN_AS_NODE', '1'), ('KILOCODE_EDITOR_NAME', 'Visual Studio Code 1.129.1'), ('NODE_USE_SYSTEM_CA', '1'), ('KILO_PARENT_PID', '1440'), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('KILO_MACHINE_ID', 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70'), ('SSH_CONNECTION', '192.168.1.87 54968 192.168.1.252 22'), ('MIMALLOC_PURGE_DELAY', '0'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('KILO_DISABLE_CLAUDE_CODE', 'true'), ('KILO_TELEMETRY_LEVEL', 'all'), ('KILO_TREE_SITTER_WASM_DIR', '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.15-linux-arm64/bin/tree-sitter'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description')]), 'shell': False}
+[0.099407] (-) TimerEvent: {}
+[0.200352] (-) TimerEvent: {}
+[0.300892] (-) TimerEvent: {}
+[0.401564] (-) TimerEvent: {}
+[0.605297] (-) TimerEvent: {}
+[0.705911] (-) TimerEvent: {}
+[0.806515] (-) TimerEvent: {}
+[0.907117] (-) TimerEvent: {}
+[1.007640] (-) TimerEvent: {}
+[1.108198] (-) TimerEvent: {}
+[1.208784] (-) TimerEvent: {}
+[1.309268] (-) TimerEvent: {}
+[1.488478] (-) TimerEvent: {}
+[1.589036] (-) TimerEvent: {}
+[1.689633] (-) TimerEvent: {}
+[1.790191] (-) TimerEvent: {}
+[1.890713] (-) TimerEvent: {}
+[1.991396] (-) TimerEvent: {}
+[2.092069] (-) TimerEvent: {}
+[2.192650] (-) TimerEvent: {}
+[2.293122] (-) TimerEvent: {}
+[2.393609] (-) TimerEvent: {}
+[2.494068] (-) TimerEvent: {}
+[2.594621] (-) TimerEvent: {}
+[2.695224] (-) TimerEvent: {}
+[2.795747] (-) TimerEvent: {}
+[2.896367] (-) TimerEvent: {}
+[2.997099] (-) TimerEvent: {}
+[3.057892] (robot_bringup) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[3.097372] (-) TimerEvent: {}
+[3.198060] (-) TimerEvent: {}
+[3.298864] (-) TimerEvent: {}
+[3.400637] (-) TimerEvent: {}
+[3.501143] (-) TimerEvent: {}
+[3.601743] (-) TimerEvent: {}
+[3.702300] (-) TimerEvent: {}
+[3.802942] (-) TimerEvent: {}
+[3.903451] (-) TimerEvent: {}
+[4.003914] (-) TimerEvent: {}
+[4.104450] (-) TimerEvent: {}
+[4.205051] (-) TimerEvent: {}
+[4.305618] (-) TimerEvent: {}
+[4.406172] (-) TimerEvent: {}
+[4.506789] (-) TimerEvent: {}
+[4.607301] (-) TimerEvent: {}
+[4.707885] (-) TimerEvent: {}
+[4.808629] (-) TimerEvent: {}
+[4.909216] (-) TimerEvent: {}
+[5.009758] (-) TimerEvent: {}
+[5.110298] (-) TimerEvent: {}
+[5.210986] (-) TimerEvent: {}
+[5.311666] (-) TimerEvent: {}
+[5.412242] (-) TimerEvent: {}
+[5.512772] (-) TimerEvent: {}
+[5.613315] (-) TimerEvent: {}
+[5.713826] (-) TimerEvent: {}
+[5.814350] (-) TimerEvent: {}
+[5.914820] (-) TimerEvent: {}
+[6.015398] (-) TimerEvent: {}
+[6.116051] (-) TimerEvent: {}
+[6.216713] (-) TimerEvent: {}
+[6.317368] (-) TimerEvent: {}
+[6.418029] (-) TimerEvent: {}
+[6.518624] (-) TimerEvent: {}
+[6.619261] (-) TimerEvent: {}
+[6.719761] (-) TimerEvent: {}
+[6.820299] (-) TimerEvent: {}
+[6.920844] (-) TimerEvent: {}
+[7.021357] (-) TimerEvent: {}
+[7.121939] (-) TimerEvent: {}
+[7.222534] (-) TimerEvent: {}
+[7.323308] (-) TimerEvent: {}
+[7.423963] (-) TimerEvent: {}
+[7.524617] (-) TimerEvent: {}
+[7.625227] (-) TimerEvent: {}
+[7.725756] (-) TimerEvent: {}
+[7.826330] (-) TimerEvent: {}
+[10.505618] (-) TimerEvent: {}
+[10.606262] (-) TimerEvent: {}
+[10.706792] (-) TimerEvent: {}
+[10.807430] (-) TimerEvent: {}
+[10.908156] (-) TimerEvent: {}
+[11.002281] (robot_bringup) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[11.004987] (robot_bringup) StderrLine: {'line': b'  File "/opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py", line 21, in <module>\n'}
+[11.006656] (robot_bringup) StderrLine: {'line': b'    from ament_package.templates import get_environment_hook_template_path\n'}
+[11.008328] (-) TimerEvent: {}
+[11.008790] (robot_bringup) StderrLine: {'line': b"ModuleNotFoundError: No module named 'ament_package'\n"}
+[11.099657] (robot_bringup) StderrLine: {'line': b'CMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_package_templates-extras.cmake:41 (message):\n'}
+[11.100377] (robot_bringup) StderrLine: {'line': b'  execute_process(/usr/bin/python3\n'}
+[11.100848] (robot_bringup) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py\n'}
+[11.101309] (robot_bringup) StderrLine: {'line': b'  /home/robot/robot_ws/build/robot_bringup/ament_cmake_package_templates/templates.cmake)\n'}
+[11.101844] (robot_bringup) StderrLine: {'line': b'  returned error code 1\n'}
+[11.102656] (robot_bringup) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[11.103545] (robot_bringup) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)\n'}
+[11.104049] (robot_bringup) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)\n'}
+[11.104438] (robot_bringup) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)\n'}
+[11.104811] (robot_bringup) StderrLine: {'line': b'  CMakeLists.txt:8 (find_package)\n'}
+[11.105207] (robot_bringup) StderrLine: {'line': b'\n'}
+[11.105613] (robot_bringup) StderrLine: {'line': b'\n'}
+[11.106010] (robot_bringup) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[11.106400] (robot_bringup) StdoutLine: {'line': b'See also "/home/robot/robot_ws/build/robot_bringup/CMakeFiles/CMakeOutput.log".\n'}
+[11.108480] (-) TimerEvent: {}
+[11.113040] (robot_bringup) StderrLine: {'line': b'gmake: *** [Makefile:226: cmake_check_build_system] Error 1\n'}
+[11.121117] (robot_bringup) CommandEnded: {'returncode': 2}
+[11.208697] (-) TimerEvent: {}
+[11.309174] (-) TimerEvent: {}
+[11.410062] (-) TimerEvent: {}
+[11.510483] (-) TimerEvent: {}
+[11.610960] (-) TimerEvent: {}
+[11.711481] (-) TimerEvent: {}
+[11.773674] (robot_bringup) JobEnded: {'identifier': 'robot_bringup', 'rc': 2}
+[11.811780] (-) TimerEvent: {}
+[11.992317] (-) EventReactorShutdown: {}

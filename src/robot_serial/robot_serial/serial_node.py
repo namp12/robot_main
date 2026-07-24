@@ -1,9 +1,10 @@
 import rclpy
 from rclpy.node import Node
-from rclpy.timer import Timer
-import time
+from sensor_msgs.msg import Imu
+from std_msgs.msg import Float32, String
 
 from robot_serial.serial_manager import SerialManager
+from robot_serial.sensor_parser import parse_sensor_line
 
 
 class SerialNode(Node):
@@ -20,6 +21,18 @@ class SerialNode(Node):
         )
         
         self.connected = False
+
+        self.rx_publisher = self.create_publisher(String, '/esp32/serial_rx', 10)
+        self.tx_subscriber = self.create_subscription(
+            String,
+            '/esp32/serial_tx',
+            self._on_tx_command,
+            10,
+        )
+        self.imu_publisher = self.create_publisher(Imu, '/imu/data', 10)
+        self.front_distance_publisher = self.create_publisher(Float32, '/sensor/front_distance', 10)
+        self.rear_distance_publisher = self.create_publisher(Float32, '/sensor/rear_distance', 10)
+        self.battery_publisher = self.create_publisher(Float32, '/sensor/battery', 10)
         
         # Timer for connection retry and reading
         self.timer = self.create_timer(0.1, self._timer_callback)
@@ -39,6 +52,48 @@ class SerialNode(Node):
     def _on_data_received(self, data: str):
         """Called when data is received from serial port."""
         self.get_logger().info(f'[RX]\n{data}')
+        msg = String()
+        msg.data = data
+        self.rx_publisher.publish(msg)
+
+        parsed = parse_sensor_line(data)
+        if parsed['imu']:
+            imu_msg = Imu()
+            imu_msg.header.stamp = self.get_clock().now().to_msg()
+            imu_msg.header.frame_id = 'imu_link'
+            imu_msg.linear_acceleration.x = float(parsed['imu'].get('ax', 0.0))
+            imu_msg.linear_acceleration.y = float(parsed['imu'].get('ay', 0.0))
+            imu_msg.linear_acceleration.z = float(parsed['imu'].get('az', 0.0))
+            imu_msg.angular_velocity.x = float(parsed['imu'].get('gx', 0.0))
+            imu_msg.angular_velocity.y = float(parsed['imu'].get('gy', 0.0))
+            imu_msg.angular_velocity.z = float(parsed['imu'].get('gz', 0.0))
+            self.imu_publisher.publish(imu_msg)
+
+        if parsed['distance']:
+            if 'front' in parsed['distance']:
+                front_msg = Float32()
+                front_msg.data = float(parsed['distance']['front'])
+                self.front_distance_publisher.publish(front_msg)
+            if 'rear' in parsed['distance']:
+                rear_msg = Float32()
+                rear_msg.data = float(parsed['distance']['rear'])
+                self.rear_distance_publisher.publish(rear_msg)
+
+        if parsed['battery'] is not None:
+            battery_msg = Float32()
+            battery_msg.data = float(parsed['battery'])
+            self.battery_publisher.publish(battery_msg)
+
+    def _on_tx_command(self, msg: String):
+        """Forward a command from ROS2 topic to the ESP32 over serial."""
+        if not self.connected:
+            self.get_logger().warn('Cannot send command: serial not connected')
+            return
+        payload = msg.data.strip()
+        if not payload:
+            return
+        self.get_logger().info(f'[TX] {payload}')
+        self.serial_manager.write_line(payload)
     
     def _timer_callback(self):
         """Timer callback for connection and reading."""
@@ -75,9 +130,16 @@ def main(args=None):
     except KeyboardInterrupt:
         pass
     finally:
-        node.serial_manager.disconnect()
-        node.destroy_node()
-        rclpy.shutdown()
+        try:
+            node.serial_manager.disconnect()
+        except Exception:
+            pass
+        try:
+            node.destroy_node()
+        except Exception:
+            pass
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 if __name__ == '__main__':

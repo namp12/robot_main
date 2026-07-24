@@ -1,0 +1,21 @@
+[5.362s] Invoking command in '/home/robot/robot_ws/src/esp32_ros2_bridge': PYTHONPATH=/home/robot/robot_ws/build/esp32_ros2_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/esp32_ros2_bridge build --build-base /home/robot/robot_ws/build/esp32_ros2_bridge/build install --record /home/robot/robot_ws/build/esp32_ros2_bridge/install.log --single-version-externally-managed install_data
+[7.024s] running egg_info
+[7.191s] writing ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/PKG-INFO
+[7.192s] writing dependency_links to ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/dependency_links.txt
+[7.195s] writing entry points to ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/entry_points.txt
+[7.196s] writing requirements to ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/requires.txt
+[7.197s] writing top-level names to ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/top_level.txt
+[7.208s] reading manifest file '../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/SOURCES.txt'
+[7.295s] writing manifest file '../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/SOURCES.txt'
+[7.402s] running build
+[7.403s] running build_py
+[7.405s] running install
+[7.407s] running install_lib
+[7.416s] running install_data
+[7.417s] running install_egg_info
+[7.427s] removing '/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32_ros2_bridge-1.0.0-py3.10.egg-info' (and everything under it)
+[7.430s] Copying ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info to /home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32_ros2_bridge-1.0.0-py3.10.egg-info
+[7.658s] running install_scripts
+[7.758s] Installing esp32_bridge_node script to /home/robot/robot_ws/install/esp32_ros2_bridge/bin
+[7.759s] writing list of installed files to '/home/robot/robot_ws/build/esp32_ros2_bridge/install.log'
+[8.067s] Invoked command in '/home/robot/robot_ws/src/esp32_ros2_bridge' returned '0': PYTHONPATH=/home/robot/robot_ws/build/esp32_ros2_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/esp32_ros2_bridge build --build-base /home/robot/robot_ws/build/esp32_ros2_bridge/build install --record /home/robot/robot_ws/build/esp32_ros2_bridge/install.log --single-version-externally-managed install_data

@@ -1,50 +1,45 @@
 #!/usr/bin/env python3
-"""
-slam.launch.py - Launch SLAM Toolbox for online async SLAM.
+"""Launch the SLAM Toolbox on top of the minimal robot stack."""
 
-This launch file starts the slam_toolbox node with tuned parameters
-for the RPLidar C1 on Raspberry Pi 4.
-
-Node: slam_toolbox
-  Package: slam_toolbox
-  Subscribes: /scan (sensor_msgs/LaserScan)
-  Publishes:  /map (nav_msgs/OccupancyGrid)
-  TF:         map -> odom (published by slam_toolbox)
-
-The map->odom transform is computed by SLAM Toolbox based on
-scan matching. The odom->base_link transform is currently static
-(from robot_state_publisher), and will become dynamic when ESP32
-provides real odometry.
-"""
-
-import os
-
-from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
+    bringup_pkg = FindPackageShare('robot_bringup')
 
-    bringup_dir = get_package_share_directory('robot_bringup')
-
-    # ---- Launch arguments ----
     use_sim_time_arg = DeclareLaunchArgument(
         'use_sim_time',
         default_value='false',
-        description='Use simulation clock if true'
+        description='Use simulation time if true',
     )
-
+    enable_slam_arg = DeclareLaunchArgument(
+        'enable_slam',
+        default_value='true',
+        description='Launch the SLAM Toolbox when true',
+    )
     params_file_arg = DeclareLaunchArgument(
         'params_file',
-        default_value=os.path.join(bringup_dir, 'config', 'slam_toolbox_params.yaml'),
-        description='Path to slam_toolbox parameter file'
+        default_value=PathJoinSubstitution([bringup_pkg, 'config', 'slam_toolbox_params.yaml']),
+        description='Path to the slam_toolbox params YAML file',
     )
 
-    # ---- slam_toolbox node ----
+    minimal_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([bringup_pkg, 'launch', 'minimal.launch.py'])
+        ),
+        launch_arguments={
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'enable_lidar': 'true',
+            'enable_serial': 'true',
+        }.items(),
+    )
+
     slam_toolbox_node = Node(
         package='slam_toolbox',
         executable='async_slam_toolbox_node',
@@ -54,10 +49,13 @@ def generate_launch_description():
             LaunchConfiguration('params_file'),
             {'use_sim_time': LaunchConfiguration('use_sim_time')},
         ],
+        condition=IfCondition(LaunchConfiguration('enable_slam')),
     )
 
     return LaunchDescription([
         use_sim_time_arg,
+        enable_slam_arg,
         params_file_arg,
+        minimal_launch,
         slam_toolbox_node,
     ])
