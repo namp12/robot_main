@@ -1,0 +1,36 @@
+[3.566s] Invoking command in '/home/robot/robot_ws/src/web_bridge': PYTHONPATH=/home/robot/robot_ws/build/web_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/web_bridge build --build-base /home/robot/robot_ws/build/web_bridge/build install --record /home/robot/robot_ws/build/web_bridge/install.log --single-version-externally-managed install_data
+[4.815s] running egg_info
+[4.818s] creating ../../build/web_bridge/web_bridge.egg-info
+[4.819s] writing ../../build/web_bridge/web_bridge.egg-info/PKG-INFO
+[4.821s] writing dependency_links to ../../build/web_bridge/web_bridge.egg-info/dependency_links.txt
+[4.823s] writing entry points to ../../build/web_bridge/web_bridge.egg-info/entry_points.txt
+[4.823s] writing requirements to ../../build/web_bridge/web_bridge.egg-info/requires.txt
+[4.824s] writing top-level names to ../../build/web_bridge/web_bridge.egg-info/top_level.txt
+[4.825s] writing manifest file '../../build/web_bridge/web_bridge.egg-info/SOURCES.txt'
+[4.832s] reading manifest file '../../build/web_bridge/web_bridge.egg-info/SOURCES.txt'
+[4.836s] writing manifest file '../../build/web_bridge/web_bridge.egg-info/SOURCES.txt'
+[4.838s] running build
+[4.839s] running build_py
+[4.840s] creating /home/robot/robot_ws/build/web_bridge/build
+[4.841s] creating /home/robot/robot_ws/build/web_bridge/build/lib
+[4.842s] creating /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge
+[4.843s] copying web_bridge/__init__.py -> /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge
+[4.843s] copying web_bridge/web_bridge_node.py -> /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge
+[4.844s] running install
+[4.844s] running install_lib
+[4.847s] creating /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge
+[4.847s] copying /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge/__init__.py -> /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge
+[4.855s] copying /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge/web_bridge_node.py -> /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge
+[4.855s] byte-compiling /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge/__init__.py to __init__.cpython-310.pyc
+[4.856s] byte-compiling /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge/web_bridge_node.py to web_bridge_node.cpython-310.pyc
+[4.860s] running install_data
+[4.861s] creating /home/robot/robot_ws/install/web_bridge/share
+[4.862s] creating /home/robot/robot_ws/install/web_bridge/share/ament_index
+[4.863s] creating /home/robot/robot_ws/install/web_bridge/share/ament_index/resource_index
+[4.863s] creating /home/robot/robot_ws/install/web_bridge/share/ament_index/resource_index/packages
+[4.864s] copying resource/web_bridge -> /home/robot/robot_ws/install/web_bridge/share/ament_index/resource_index/packages
+[4.866s] creating /home/robot/robot_ws/install/web_bridge/share/web_bridge
+[4.868s] copying package.xml -> /home/robot/robot_ws/install/web_bridge/share/web_bridge
+[4.869s] creating /home/robot/robot_ws/install/web_bridge/share/web_bridge/launch
+[4.871s] error: can't copy 'launch/web_bridge.launch.py': doesn't exist or not a regular file
+[4.966s] Invoked command in '/home/robot/robot_ws/src/web_bridge' returned '1': PYTHONPATH=/home/robot/robot_ws/build/web_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/web_bridge build --build-base /home/robot/robot_ws/build/web_bridge/build install --record /home/robot/robot_ws/build/web_bridge/install.log --single-version-externally-managed install_data

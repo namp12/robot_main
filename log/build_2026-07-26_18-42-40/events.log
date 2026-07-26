@@ -1,0 +1,98 @@
+[0.000000] (-) TimerEvent: {}
+[0.000629] (-) JobUnselected: {'identifier': 'camera_node'}
+[0.001524] (-) JobUnselected: {'identifier': 'robot_ai'}
+[0.002093] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.002303] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.002632] (-) JobUnselected: {'identifier': 'robot_serial'}
+[0.002817] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.002928] (-) JobUnselected: {'identifier': 'vision_ai_node'}
+[0.003730] (-) JobUnselected: {'identifier': 'vision_msgs'}
+[0.003945] (web_bridge) JobQueued: {'identifier': 'web_bridge', 'dependencies': OrderedDict()}
+[0.004255] (web_bridge) JobStarted: {'identifier': 'web_bridge'}
+[0.098921] (-) TimerEvent: {}
+[0.199433] (-) TimerEvent: {}
+[0.299854] (-) TimerEvent: {}
+[0.400266] (-) TimerEvent: {}
+[0.500732] (-) TimerEvent: {}
+[0.601142] (-) TimerEvent: {}
+[0.701563] (-) TimerEvent: {}
+[0.802058] (-) TimerEvent: {}
+[0.902512] (-) TimerEvent: {}
+[1.003393] (-) TimerEvent: {}
+[1.103843] (-) TimerEvent: {}
+[1.204277] (-) TimerEvent: {}
+[1.304810] (-) TimerEvent: {}
+[1.405319] (-) TimerEvent: {}
+[1.506005] (-) TimerEvent: {}
+[1.606447] (-) TimerEvent: {}
+[1.706883] (-) TimerEvent: {}
+[1.807337] (-) TimerEvent: {}
+[1.908550] (-) TimerEvent: {}
+[2.009193] (-) TimerEvent: {}
+[2.109634] (-) TimerEvent: {}
+[2.210096] (-) TimerEvent: {}
+[2.310552] (-) TimerEvent: {}
+[2.410944] (-) TimerEvent: {}
+[2.511344] (-) TimerEvent: {}
+[2.611777] (-) TimerEvent: {}
+[2.712214] (-) TimerEvent: {}
+[2.812634] (-) TimerEvent: {}
+[2.913051] (-) TimerEvent: {}
+[3.013490] (-) TimerEvent: {}
+[3.113974] (-) TimerEvent: {}
+[3.214425] (-) TimerEvent: {}
+[3.314847] (-) TimerEvent: {}
+[3.415437] (-) TimerEvent: {}
+[3.516190] (-) TimerEvent: {}
+[3.562469] (web_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/web_bridge', 'build', '--build-base', '/home/robot/robot_ws/build/web_bridge/build', 'install', '--record', '/home/robot/robot_ws/build/web_bridge/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/web_bridge', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/robot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'PLATFORMIO_CALLER': 'vscode', 'KILO_DISABLE_CHANNEL_DB': 'true', 'USER': 'robot', 'KILO_ENABLE_QUESTION_TOOL': 'true', 'SSH_CLIENT': '192.168.1.88 62124 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'AGENT': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'KILO_VSCODE_VERSION': '1.130.0', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws', 'KILO_PROCESS_ROLE': 'main', 'NO_PROXY': '127.0.0.1', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock', 'ROS_PYTHON_VERSION': '3', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'PLATFORMIO_IDE': '3.3.4', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'KILO_APP_VERSION': '7.4.16', 'KILO_RUN_ID': 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40', 'KILOCODE_VERSION': '7.4.16', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'KILO_CLIENT': 'vscode', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '3', 'VSCODE_CLI_REQUIRE_TOKEN': 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb', 'KILO_EDITOR_NAME': 'Visual Studio Code', 'ROS_LOCALHOST_ONLY': '0', 'OPENCODE': '1', 'PATH': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'VSCODE_AGENT_FOLDER': '/home/robot/.vscode-server', 'KILO': '1', 'KILO_SERVER_PASSWORD': '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PLATFORMIO_PATH': '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'KILO_APP_NAME': 'kilo-code', 'LANG': 'en_US.UTF-8', 'LS_COLORS': '', 'KILO_PID': '3408', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'KILOCODE_FEATURE': 'vscode-extension', 'SHELL': '/bin/bash', 'KILO_PLATFORM': 'vscode', 'MXC_BIN_DIR': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin', 'ELECTRON_RUN_AS_NODE': '1', 'KILOCODE_EDITOR_NAME': 'Visual Studio Code 1.130.0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'NODE_USE_SYSTEM_CA': '1', 'KILO_PARENT_PID': '2974', 'PWD': '/home/robot/robot_ws/build/web_bridge', 'LC_ALL': 'en_US.UTF-8', 'KILO_MACHINE_ID': 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70', 'SSH_CONNECTION': '192.168.1.88 62124 192.168.1.253 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/web_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'MIMALLOC_PURGE_DELAY': '0', 'COLCON': '1', 'COPILOT_CLI_ENABLED_FEATURE_FLAGS': 'SHELL_SPAWN_BACKEND', 'KILO_DISABLE_CLAUDE_CODE': 'true', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description', 'KILO_TELEMETRY_LEVEL': 'all', 'KILO_TREE_SITTER_WASM_DIR': '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter'}, 'shell': False}
+[3.616378] (-) TimerEvent: {}
+[3.716788] (-) TimerEvent: {}
+[3.817217] (-) TimerEvent: {}
+[3.917639] (-) TimerEvent: {}
+[4.018054] (-) TimerEvent: {}
+[4.118450] (-) TimerEvent: {}
+[4.218829] (-) TimerEvent: {}
+[4.319229] (-) TimerEvent: {}
+[4.419610] (-) TimerEvent: {}
+[4.520011] (-) TimerEvent: {}
+[4.620419] (-) TimerEvent: {}
+[4.720834] (-) TimerEvent: {}
+[4.818713] (web_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[4.820997] (-) TimerEvent: {}
+[4.822340] (web_bridge) StdoutLine: {'line': b'creating ../../build/web_bridge/web_bridge.egg-info\n'}
+[4.823298] (web_bridge) StdoutLine: {'line': b'writing ../../build/web_bridge/web_bridge.egg-info/PKG-INFO\n'}
+[4.824974] (web_bridge) StdoutLine: {'line': b'writing dependency_links to ../../build/web_bridge/web_bridge.egg-info/dependency_links.txt\n'}
+[4.826097] (web_bridge) StdoutLine: {'line': b'writing entry points to ../../build/web_bridge/web_bridge.egg-info/entry_points.txt\n'}
+[4.827107] (web_bridge) StdoutLine: {'line': b'writing requirements to ../../build/web_bridge/web_bridge.egg-info/requires.txt\n'}
+[4.828047] (web_bridge) StdoutLine: {'line': b'writing top-level names to ../../build/web_bridge/web_bridge.egg-info/top_level.txt\n'}
+[4.829120] (web_bridge) StdoutLine: {'line': b"writing manifest file '../../build/web_bridge/web_bridge.egg-info/SOURCES.txt'\n"}
+[4.836249] (web_bridge) StdoutLine: {'line': b"reading manifest file '../../build/web_bridge/web_bridge.egg-info/SOURCES.txt'\n"}
+[4.839701] (web_bridge) StdoutLine: {'line': b"writing manifest file '../../build/web_bridge/web_bridge.egg-info/SOURCES.txt'\n"}
+[4.840929] (web_bridge) StdoutLine: {'line': b'running build\n'}
+[4.842761] (web_bridge) StdoutLine: {'line': b'running build_py\n'}
+[4.843871] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/build/web_bridge/build\n'}
+[4.844888] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/build/web_bridge/build/lib\n'}
+[4.845473] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge\n'}
+[4.846528] (web_bridge) StdoutLine: {'line': b'copying web_bridge/__init__.py -> /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge\n'}
+[4.847186] (web_bridge) StdoutLine: {'line': b'copying web_bridge/web_bridge_node.py -> /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge\n'}
+[4.847839] (web_bridge) StdoutLine: {'line': b'running install\n'}
+[4.848387] (web_bridge) StdoutLine: {'line': b'running install_lib\n'}
+[4.850297] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge\n'}
+[4.851259] (web_bridge) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge/__init__.py -> /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge\n'}
+[4.858580] (web_bridge) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/web_bridge/build/lib/web_bridge/web_bridge_node.py -> /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge\n'}
+[4.859312] (web_bridge) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge/__init__.py to __init__.cpython-310.pyc\n'}
+[4.859859] (web_bridge) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge/web_bridge_node.py to web_bridge_node.cpython-310.pyc\n'}
+[4.863463] (web_bridge) StdoutLine: {'line': b'running install_data\n'}
+[4.864754] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/web_bridge/share\n'}
+[4.865350] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/web_bridge/share/ament_index\n'}
+[4.866586] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/web_bridge/share/ament_index/resource_index\n'}
+[4.867060] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/web_bridge/share/ament_index/resource_index/packages\n'}
+[4.867541] (web_bridge) StdoutLine: {'line': b'copying resource/web_bridge -> /home/robot/robot_ws/install/web_bridge/share/ament_index/resource_index/packages\n'}
+[4.869491] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/web_bridge/share/web_bridge\n'}
+[4.871200] (web_bridge) StdoutLine: {'line': b'copying package.xml -> /home/robot/robot_ws/install/web_bridge/share/web_bridge\n'}
+[4.872468] (web_bridge) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/web_bridge/share/web_bridge/launch\n'}
+[4.873859] (web_bridge) StderrLine: {'line': b"error: can't copy 'launch/web_bridge.launch.py': doesn't exist or not a regular file\n"}
+[4.921289] (-) TimerEvent: {}
+[4.969404] (web_bridge) CommandEnded: {'returncode': 1}
+[4.971177] (web_bridge) JobEnded: {'identifier': 'web_bridge', 'rc': 1}
+[4.981236] (-) EventReactorShutdown: {}

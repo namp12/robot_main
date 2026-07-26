@@ -10,10 +10,10 @@ class SerialManager:
     
     # Prioritized list of serial ports to check
     SERIAL_PORTS = [
-        '/dev/ttyUSB0',
-        '/dev/ttyUSB1',
         '/dev/ttyACM0',
         '/dev/ttyACM1',
+        '/dev/ttyUSB0',
+        '/dev/ttyUSB1',
     ]
     
     BAUDRATE = 115200
