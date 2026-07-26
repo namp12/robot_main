@@ -9,5 +9,12 @@ setup.py
 ../../build/esp32_ros2_bridge/esp32_ros2_bridge.egg-info/zip-safe
 esp32_ros2_bridge/__init__.py
 esp32_ros2_bridge/esp32_bridge_node.py
+esp32_ros2_bridge.egg-info/PKG-INFO
+esp32_ros2_bridge.egg-info/SOURCES.txt
+esp32_ros2_bridge.egg-info/dependency_links.txt
+esp32_ros2_bridge.egg-info/entry_points.txt
+esp32_ros2_bridge.egg-info/requires.txt
+esp32_ros2_bridge.egg-info/top_level.txt
+esp32_ros2_bridge.egg-info/zip-safe
 launch/esp32_bridge.launch.py
 resource/esp32_ros2_bridge

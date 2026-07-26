@@ -1,0 +1,659 @@
+[0.457s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'robot_serial']
+[0.458s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['robot_serial'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffa4d538e0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffa4c91090>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffa4c91090>>)
+[1.199s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.200s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.200s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.200s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.200s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.201s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.201s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/robot/robot_ws'
+[1.202s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.204s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.204s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.205s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.205s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.206s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.206s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.262s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.262s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.264s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extensions ['ignore', 'ignore_ament_install']
+[1.264s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extension 'ignore'
+[1.264s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extension 'ignore_ament_install'
+[1.265s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extensions ['colcon_pkg']
+[1.265s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extension 'colcon_pkg'
+[1.265s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extensions ['colcon_meta']
+[1.265s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extension 'colcon_meta'
+[1.266s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extensions ['ros']
+[1.266s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extension 'ros'
+[1.266s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extensions ['cmake', 'python']
+[1.267s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extension 'cmake'
+[1.267s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extension 'python'
+[1.267s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extensions ['python_setup_py']
+[1.267s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh) by extension 'python_setup_py'
+[1.268s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extensions ['ignore', 'ignore_ament_install']
+[1.268s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extension 'ignore'
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extension 'ignore_ament_install'
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extensions ['colcon_pkg']
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extension 'colcon_pkg'
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extensions ['colcon_meta']
+[1.270s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extension 'colcon_meta'
+[1.270s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extensions ['ros']
+[1.270s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extension 'ros'
+[1.270s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extensions ['cmake', 'python']
+[1.271s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extension 'cmake'
+[1.271s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extension 'python'
+[1.271s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extensions ['python_setup_py']
+[1.271s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI) by extension 'python_setup_py'
+[1.272s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extensions ['ignore', 'ignore_ament_install']
+[1.272s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extension 'ignore'
+[1.273s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extension 'ignore_ament_install'
+[1.273s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extensions ['colcon_pkg']
+[1.273s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extension 'colcon_pkg'
+[1.273s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extensions ['colcon_meta']
+[1.274s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extension 'colcon_meta'
+[1.274s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extensions ['ros']
+[1.274s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extension 'ros'
+[1.274s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extensions ['cmake', 'python']
+[1.275s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extension 'cmake'
+[1.275s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extension 'python'
+[1.276s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extensions ['python_setup_py']
+[1.276s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard) by extension 'python_setup_py'
+[1.277s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extensions ['ignore', 'ignore_ament_install']
+[1.277s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extension 'ignore'
+[1.278s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extension 'ignore_ament_install'
+[1.278s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extensions ['colcon_pkg']
+[1.278s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extension 'colcon_pkg'
+[1.279s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extensions ['colcon_meta']
+[1.279s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extension 'colcon_meta'
+[1.279s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extensions ['ros']
+[1.279s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extension 'ros'
+[1.280s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extensions ['cmake', 'python']
+[1.280s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extension 'cmake'
+[1.280s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extension 'python'
+[1.280s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extensions ['python_setup_py']
+[1.281s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/public) by extension 'python_setup_py'
+[1.281s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extensions ['ignore', 'ignore_ament_install']
+[1.282s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extension 'ignore'
+[1.282s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extension 'ignore_ament_install'
+[1.282s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extensions ['colcon_pkg']
+[1.282s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extension 'colcon_pkg'
+[1.283s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extensions ['colcon_meta']
+[1.283s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extension 'colcon_meta'
+[1.283s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extensions ['ros']
+[1.283s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extension 'ros'
+[1.284s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extensions ['cmake', 'python']
+[1.284s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extension 'cmake'
+[1.284s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extension 'python'
+[1.285s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extensions ['python_setup_py']
+[1.285s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src) by extension 'python_setup_py'
+[1.286s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extensions ['ignore', 'ignore_ament_install']
+[1.286s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extension 'ignore'
+[1.287s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extension 'ignore_ament_install'
+[1.287s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extensions ['colcon_pkg']
+[1.287s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extension 'colcon_pkg'
+[1.288s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extensions ['colcon_meta']
+[1.288s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extension 'colcon_meta'
+[1.289s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extensions ['ros']
+[1.289s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extension 'ros'
+[1.289s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extensions ['cmake', 'python']
+[1.290s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extension 'cmake'
+[1.290s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extension 'python'
+[1.291s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extensions ['python_setup_py']
+[1.291s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/dashboard/src/assets) by extension 'python_setup_py'
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extensions ['ignore', 'ignore_ament_install']
+[1.292s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extension 'ignore'
+[1.293s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extension 'ignore_ament_install'
+[1.293s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extensions ['colcon_pkg']
+[1.293s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extension 'colcon_pkg'
+[1.294s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extensions ['colcon_meta']
+[1.294s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extension 'colcon_meta'
+[1.294s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extensions ['ros']
+[1.294s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extension 'ros'
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extensions ['cmake', 'python']
+[1.295s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extension 'cmake'
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extension 'python'
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extensions ['python_setup_py']
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/include) by extension 'python_setup_py'
+[1.297s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extensions ['ignore', 'ignore_ament_install']
+[1.298s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extension 'ignore'
+[1.298s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extension 'ignore_ament_install'
+[1.299s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extensions ['colcon_pkg']
+[1.299s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extension 'colcon_pkg'
+[1.299s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extensions ['colcon_meta']
+[1.299s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extension 'colcon_meta'
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extensions ['ros']
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extension 'ros'
+[1.300s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extensions ['cmake', 'python']
+[1.301s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extension 'cmake'
+[1.301s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extension 'python'
+[1.301s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extensions ['python_setup_py']
+[1.301s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib) by extension 'python_setup_py'
+[1.302s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extensions ['ignore', 'ignore_ament_install']
+[1.302s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extension 'ignore'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extension 'ignore_ament_install'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extensions ['colcon_pkg']
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extension 'colcon_pkg'
+[1.303s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extensions ['colcon_meta']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extension 'colcon_meta'
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extensions ['ros']
+[1.304s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extension 'ros'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extensions ['cmake', 'python']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extension 'cmake'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extension 'python'
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extensions ['python_setup_py']
+[1.305s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Adafruit) by extension 'python_setup_py'
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extensions ['ignore', 'ignore_ament_install']
+[1.306s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extension 'ignore'
+[1.307s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extension 'ignore_ament_install'
+[1.307s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extensions ['colcon_pkg']
+[1.307s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extension 'colcon_pkg'
+[1.307s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extensions ['colcon_meta']
+[1.308s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extension 'colcon_meta'
+[1.308s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extensions ['ros']
+[1.308s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extension 'ros'
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extensions ['cmake', 'python']
+[1.309s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extension 'cmake'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extension 'python'
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extensions ['python_setup_py']
+[1.310s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/AutoNavigator) by extension 'python_setup_py'
+[1.311s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extensions ['ignore', 'ignore_ament_install']
+[1.311s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extension 'ignore'
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extension 'ignore_ament_install'
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extensions ['colcon_pkg']
+[1.312s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extension 'colcon_pkg'
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extensions ['colcon_meta']
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extension 'colcon_meta'
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extensions ['ros']
+[1.313s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extension 'ros'
+[1.314s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extensions ['cmake', 'python']
+[1.314s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extension 'cmake'
+[1.314s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extension 'python'
+[1.314s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extensions ['python_setup_py']
+[1.315s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BLEManager) by extension 'python_setup_py'
+[1.315s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extensions ['ignore', 'ignore_ament_install']
+[1.316s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extension 'ignore'
+[1.316s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extension 'ignore_ament_install'
+[1.316s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extensions ['colcon_pkg']
+[1.316s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extension 'colcon_pkg'
+[1.317s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extensions ['colcon_meta']
+[1.317s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extension 'colcon_meta'
+[1.317s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extensions ['ros']
+[1.317s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extension 'ros'
+[1.318s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extensions ['cmake', 'python']
+[1.318s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extension 'cmake'
+[1.318s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extension 'python'
+[1.319s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extensions ['python_setup_py']
+[1.319s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/BTS7960) by extension 'python_setup_py'
+[1.319s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extensions ['ignore', 'ignore_ament_install']
+[1.320s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extension 'ignore'
+[1.320s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extension 'ignore_ament_install'
+[1.320s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extensions ['colcon_pkg']
+[1.321s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extension 'colcon_pkg'
+[1.321s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extensions ['colcon_meta']
+[1.321s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extension 'colcon_meta'
+[1.322s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extensions ['ros']
+[1.322s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extension 'ros'
+[1.323s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extensions ['cmake', 'python']
+[1.323s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extension 'cmake'
+[1.323s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extension 'python'
+[1.324s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extensions ['python_setup_py']
+[1.324s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control) by extension 'python_setup_py'
+[1.325s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extensions ['ignore', 'ignore_ament_install']
+[1.325s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extension 'ignore'
+[1.325s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extension 'ignore_ament_install'
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extensions ['colcon_pkg']
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extension 'colcon_pkg'
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extensions ['colcon_meta']
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extension 'colcon_meta'
+[1.327s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extensions ['ros']
+[1.327s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extension 'ros'
+[1.328s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extensions ['cmake', 'python']
+[1.328s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extension 'cmake'
+[1.328s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extension 'python'
+[1.328s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extensions ['python_setup_py']
+[1.328s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/MotionHandlers) by extension 'python_setup_py'
+[1.329s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extensions ['ignore', 'ignore_ament_install']
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extension 'ignore'
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extension 'ignore_ament_install'
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extensions ['colcon_pkg']
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extension 'colcon_pkg'
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extensions ['colcon_meta']
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extension 'colcon_meta'
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extensions ['ros']
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extension 'ros'
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extensions ['cmake', 'python']
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extension 'cmake'
+[1.333s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extension 'python'
+[1.333s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extensions ['python_setup_py']
+[1.333s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Control/PID) by extension 'python_setup_py'
+[1.334s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extensions ['ignore', 'ignore_ament_install']
+[1.335s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extension 'ignore'
+[1.335s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extension 'ignore_ament_install'
+[1.335s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extensions ['colcon_pkg']
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extension 'colcon_pkg'
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extensions ['colcon_meta']
+[1.336s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extension 'colcon_meta'
+[1.337s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extensions ['ros']
+[1.337s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extension 'ros'
+[1.337s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extensions ['cmake', 'python']
+[1.338s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extension 'cmake'
+[1.338s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extension 'python'
+[1.338s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extensions ['python_setup_py']
+[1.338s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core) by extension 'python_setup_py'
+[1.339s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extensions ['ignore', 'ignore_ament_install']
+[1.339s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extension 'ignore'
+[1.340s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extension 'ignore_ament_install'
+[1.340s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extensions ['colcon_pkg']
+[1.340s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extension 'colcon_pkg'
+[1.340s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extensions ['colcon_meta']
+[1.341s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extension 'colcon_meta'
+[1.341s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extensions ['ros']
+[1.341s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extension 'ros'
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extensions ['cmake', 'python']
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extension 'cmake'
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extension 'python'
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extensions ['python_setup_py']
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/EventBus) by extension 'python_setup_py'
+[1.344s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extensions ['ignore', 'ignore_ament_install']
+[1.344s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extension 'ignore'
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extension 'ignore_ament_install'
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extensions ['colcon_pkg']
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extension 'colcon_pkg'
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extensions ['colcon_meta']
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extension 'colcon_meta'
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extensions ['ros']
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extension 'ros'
+[1.347s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extensions ['cmake', 'python']
+[1.347s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extension 'cmake'
+[1.348s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extension 'python'
+[1.348s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extensions ['python_setup_py']
+[1.349s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/Scheduler) by extension 'python_setup_py'
+[1.350s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extensions ['ignore', 'ignore_ament_install']
+[1.350s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extension 'ignore'
+[1.351s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extension 'ignore_ament_install'
+[1.351s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extensions ['colcon_pkg']
+[1.352s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extension 'colcon_pkg'
+[1.352s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extensions ['colcon_meta']
+[1.353s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extension 'colcon_meta'
+[1.353s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extensions ['ros']
+[1.353s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extension 'ros'
+[1.354s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extensions ['cmake', 'python']
+[1.354s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extension 'cmake'
+[1.355s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extension 'python'
+[1.355s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extensions ['python_setup_py']
+[1.356s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Core/SensorManager) by extension 'python_setup_py'
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extensions ['ignore', 'ignore_ament_install']
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extension 'ignore'
+[1.358s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extension 'ignore_ament_install'
+[1.358s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extensions ['colcon_pkg']
+[1.359s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extension 'colcon_pkg'
+[1.359s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extensions ['colcon_meta']
+[1.359s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extension 'colcon_meta'
+[1.360s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extensions ['ros']
+[1.360s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extension 'ros'
+[1.361s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extensions ['cmake', 'python']
+[1.362s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extension 'cmake'
+[1.362s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extension 'python'
+[1.363s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extensions ['python_setup_py']
+[1.363s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Encoder) by extension 'python_setup_py'
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extensions ['ignore', 'ignore_ament_install']
+[1.365s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extension 'ignore'
+[1.365s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extension 'ignore_ament_install'
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extensions ['colcon_pkg']
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extension 'colcon_pkg'
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extensions ['colcon_meta']
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extension 'colcon_meta'
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extensions ['ros']
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extension 'ros'
+[1.368s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extensions ['cmake', 'python']
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extension 'cmake'
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extension 'python'
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extensions ['python_setup_py']
+[1.370s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Interfaces) by extension 'python_setup_py'
+[1.371s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extensions ['ignore', 'ignore_ament_install']
+[1.371s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extension 'ignore'
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extension 'ignore_ament_install'
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extensions ['colcon_pkg']
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extension 'colcon_pkg'
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extensions ['colcon_meta']
+[1.374s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extension 'colcon_meta'
+[1.374s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extensions ['ros']
+[1.375s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extension 'ros'
+[1.375s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extensions ['cmake', 'python']
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extension 'cmake'
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extension 'python'
+[1.377s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extensions ['python_setup_py']
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Kinematics) by extension 'python_setup_py'
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extensions ['ignore', 'ignore_ament_install']
+[1.379s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extension 'ignore'
+[1.380s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extension 'ignore_ament_install'
+[1.380s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extensions ['colcon_pkg']
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extension 'colcon_pkg'
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extensions ['colcon_meta']
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extension 'colcon_meta'
+[1.382s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extensions ['ros']
+[1.382s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extension 'ros'
+[1.383s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extensions ['cmake', 'python']
+[1.383s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extension 'cmake'
+[1.384s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extension 'python'
+[1.384s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extensions ['python_setup_py']
+[1.385s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/MH_FMD) by extension 'python_setup_py'
+[1.386s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extensions ['ignore', 'ignore_ament_install']
+[1.386s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extension 'ignore'
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extension 'ignore_ament_install'
+[1.388s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extensions ['colcon_pkg']
+[1.388s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extension 'colcon_pkg'
+[1.389s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extensions ['colcon_meta']
+[1.389s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extension 'colcon_meta'
+[1.390s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extensions ['ros']
+[1.390s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extension 'ros'
+[1.391s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extensions ['cmake', 'python']
+[1.391s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extension 'cmake'
+[1.391s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extension 'python'
+[1.392s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extensions ['python_setup_py']
+[1.392s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Motor) by extension 'python_setup_py'
+[1.393s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extensions ['ignore', 'ignore_ament_install']
+[1.394s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extension 'ignore'
+[1.394s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extension 'ignore_ament_install'
+[1.395s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extensions ['colcon_pkg']
+[1.395s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extension 'colcon_pkg'
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extensions ['colcon_meta']
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extension 'colcon_meta'
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extensions ['ros']
+[1.397s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extension 'ros'
+[1.397s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extensions ['cmake', 'python']
+[1.398s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extension 'cmake'
+[1.398s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extension 'python'
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extensions ['python_setup_py']
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Mpu6050) by extension 'python_setup_py'
+[1.400s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extensions ['ignore', 'ignore_ament_install']
+[1.400s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extension 'ignore'
+[1.401s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extension 'ignore_ament_install'
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extensions ['colcon_pkg']
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extension 'colcon_pkg'
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extensions ['colcon_meta']
+[1.403s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extension 'colcon_meta'
+[1.403s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extensions ['ros']
+[1.404s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extension 'ros'
+[1.404s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extensions ['cmake', 'python']
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extension 'cmake'
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extension 'python'
+[1.406s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extensions ['python_setup_py']
+[1.406s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ObstacleAvoidance) by extension 'python_setup_py'
+[1.407s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extensions ['ignore', 'ignore_ament_install']
+[1.408s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extension 'ignore'
+[1.408s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extension 'ignore_ament_install'
+[1.409s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extensions ['colcon_pkg']
+[1.409s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extension 'colcon_pkg'
+[1.410s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extensions ['colcon_meta']
+[1.410s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extension 'colcon_meta'
+[1.410s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extensions ['ros']
+[1.411s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extension 'ros'
+[1.412s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extensions ['cmake', 'python']
+[1.412s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extension 'cmake'
+[1.412s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extension 'python'
+[1.413s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extensions ['python_setup_py']
+[1.413s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/ROS2Protocol) by extension 'python_setup_py'
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extensions ['ignore', 'ignore_ament_install']
+[1.415s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extension 'ignore'
+[1.415s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extension 'ignore_ament_install'
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extensions ['colcon_pkg']
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extension 'colcon_pkg'
+[1.417s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extensions ['colcon_meta']
+[1.417s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extension 'colcon_meta'
+[1.418s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extensions ['ros']
+[1.418s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extension 'ros'
+[1.419s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extensions ['cmake', 'python']
+[1.420s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extension 'cmake'
+[1.420s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extension 'python'
+[1.420s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extensions ['python_setup_py']
+[1.421s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/lib/Sensor_HC_SR04) by extension 'python_setup_py'
+[1.422s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extensions ['ignore', 'ignore_ament_install']
+[1.423s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extension 'ignore'
+[1.424s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extension 'ignore_ament_install'
+[1.424s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extensions ['colcon_pkg']
+[1.424s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extension 'colcon_pkg'
+[1.425s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extensions ['colcon_meta']
+[1.425s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extension 'colcon_meta'
+[1.426s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extensions ['ros']
+[1.426s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extension 'ros'
+[1.427s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extensions ['cmake', 'python']
+[1.427s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extension 'cmake'
+[1.428s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extension 'python'
+[1.428s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extensions ['python_setup_py']
+[1.429s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src) by extension 'python_setup_py'
+[1.430s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extensions ['ignore', 'ignore_ament_install']
+[1.430s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extension 'ignore'
+[1.430s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extension 'ignore_ament_install'
+[1.431s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extensions ['colcon_pkg']
+[1.431s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extension 'colcon_pkg'
+[1.431s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extensions ['colcon_meta']
+[1.431s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extension 'colcon_meta'
+[1.432s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extensions ['ros']
+[1.432s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extension 'ros'
+[1.432s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extensions ['cmake', 'python']
+[1.432s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extension 'cmake'
+[1.433s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extension 'python'
+[1.433s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extensions ['python_setup_py']
+[1.433s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Managers) by extension 'python_setup_py'
+[1.434s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extensions ['ignore', 'ignore_ament_install']
+[1.434s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extension 'ignore'
+[1.435s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extension 'ignore_ament_install'
+[1.435s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extensions ['colcon_pkg']
+[1.436s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extension 'colcon_pkg'
+[1.436s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extensions ['colcon_meta']
+[1.436s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extension 'colcon_meta'
+[1.437s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extensions ['ros']
+[1.437s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extension 'ros'
+[1.438s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extensions ['cmake', 'python']
+[1.438s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extension 'cmake'
+[1.438s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extension 'python'
+[1.438s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extensions ['python_setup_py']
+[1.439s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/src/Protocol) by extension 'python_setup_py'
+[1.439s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extensions ['ignore', 'ignore_ament_install']
+[1.440s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extension 'ignore'
+[1.440s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extension 'ignore_ament_install'
+[1.440s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extensions ['colcon_pkg']
+[1.440s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extension 'colcon_pkg'
+[1.441s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extensions ['colcon_meta']
+[1.441s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extension 'colcon_meta'
+[1.441s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extensions ['ros']
+[1.441s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extension 'ros'
+[1.442s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extensions ['cmake', 'python']
+[1.442s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extension 'cmake'
+[1.442s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extension 'python'
+[1.442s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extensions ['python_setup_py']
+[1.443s] Level 1:colcon.colcon_core.package_identification:_identify(Robot_Tu_Hanh/ROBOT_AI/test) by extension 'python_setup_py'
+[1.444s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.444s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.445s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.446s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.446s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.447s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.448s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.448s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.449s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.449s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.449s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.451s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_node) by extensions ['ignore', 'ignore_ament_install']
+[1.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_node) by extension 'ignore'
+[1.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_node) by extension 'ignore_ament_install'
+[1.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_node) by extensions ['colcon_pkg']
+[1.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_node) by extension 'colcon_pkg'
+[1.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_node) by extensions ['colcon_meta']
+[1.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_node) by extension 'colcon_meta'
+[1.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_node) by extensions ['ros']
+[1.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_node) by extension 'ros'
+[1.466s] DEBUG:colcon.colcon_core.package_identification:Package 'src/camera_node' with type 'ros.ament_python' and name 'camera_node'
+[1.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/esp32_ros2_bridge) by extensions ['ignore', 'ignore_ament_install']
+[1.467s] Level 1:colcon.colcon_core.package_identification:_identify(src/esp32_ros2_bridge) by extension 'ignore'
+[1.468s] Level 1:colcon.colcon_core.package_identification:_identify(src/esp32_ros2_bridge) by extension 'ignore_ament_install'
+[1.468s] Level 1:colcon.colcon_core.package_identification:_identify(src/esp32_ros2_bridge) by extensions ['colcon_pkg']
+[1.468s] Level 1:colcon.colcon_core.package_identification:_identify(src/esp32_ros2_bridge) by extension 'colcon_pkg'
+[1.469s] Level 1:colcon.colcon_core.package_identification:_identify(src/esp32_ros2_bridge) by extensions ['colcon_meta']
+[1.469s] Level 1:colcon.colcon_core.package_identification:_identify(src/esp32_ros2_bridge) by extension 'colcon_meta'
+[1.469s] Level 1:colcon.colcon_core.package_identification:_identify(src/esp32_ros2_bridge) by extensions ['ros']
+[1.469s] Level 1:colcon.colcon_core.package_identification:_identify(src/esp32_ros2_bridge) by extension 'ros'
+[1.472s] DEBUG:colcon.colcon_core.package_identification:Package 'src/esp32_ros2_bridge' with type 'ros.ament_python' and name 'esp32_ros2_bridge'
+[1.473s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_ai) by extensions ['ignore', 'ignore_ament_install']
+[1.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_ai) by extension 'ignore'
+[1.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_ai) by extension 'ignore_ament_install'
+[1.474s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_ai) by extensions ['colcon_pkg']
+[1.475s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_ai) by extension 'colcon_pkg'
+[1.475s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_ai) by extensions ['colcon_meta']
+[1.475s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_ai) by extension 'colcon_meta'
+[1.475s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_ai) by extensions ['ros']
+[1.475s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_ai) by extension 'ros'
+[1.478s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_ai' with type 'ros.ament_python' and name 'robot_ai'
+[1.479s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[1.480s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'ignore'
+[1.480s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'ignore_ament_install'
+[1.480s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['colcon_pkg']
+[1.480s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'colcon_pkg'
+[1.481s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['colcon_meta']
+[1.481s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'colcon_meta'
+[1.481s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extensions ['ros']
+[1.481s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_bringup) by extension 'ros'
+[1.485s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_bringup' with type 'ros.ament_cmake' and name 'robot_bringup'
+[1.485s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extensions ['ignore', 'ignore_ament_install']
+[1.486s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'ignore'
+[1.486s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'ignore_ament_install'
+[1.486s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extensions ['colcon_pkg']
+[1.487s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'colcon_pkg'
+[1.487s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extensions ['colcon_meta']
+[1.487s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'colcon_meta'
+[1.487s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extensions ['ros']
+[1.487s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_description) by extension 'ros'
+[1.490s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_description' with type 'ros.ament_cmake' and name 'robot_description'
+[1.491s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_serial) by extensions ['ignore', 'ignore_ament_install']
+[1.492s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_serial) by extension 'ignore'
+[1.492s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_serial) by extension 'ignore_ament_install'
+[1.492s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_serial) by extensions ['colcon_pkg']
+[1.493s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_serial) by extension 'colcon_pkg'
+[1.493s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_serial) by extensions ['colcon_meta']
+[1.493s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_serial) by extension 'colcon_meta'
+[1.493s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_serial) by extensions ['ros']
+[1.493s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_serial) by extension 'ros'
+[1.497s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_serial' with type 'ros.ament_python' and name 'robot_serial'
+[1.497s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ignore', 'ignore_ament_install']
+[1.498s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore'
+[1.498s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore_ament_install'
+[1.499s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_pkg']
+[1.499s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_pkg'
+[1.499s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_meta']
+[1.499s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_meta'
+[1.499s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ros']
+[1.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ros'
+[1.503s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sllidar_ros2' with type 'ros.ament_cmake' and name 'sllidar_ros2'
+[1.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_ai_node) by extensions ['ignore', 'ignore_ament_install']
+[1.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_ai_node) by extension 'ignore'
+[1.504s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_ai_node) by extension 'ignore_ament_install'
+[1.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_ai_node) by extensions ['colcon_pkg']
+[1.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_ai_node) by extension 'colcon_pkg'
+[1.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_ai_node) by extensions ['colcon_meta']
+[1.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_ai_node) by extension 'colcon_meta'
+[1.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_ai_node) by extensions ['ros']
+[1.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_ai_node) by extension 'ros'
+[1.508s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vision_ai_node' with type 'ros.ament_python' and name 'vision_ai_node'
+[1.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_msgs) by extensions ['ignore', 'ignore_ament_install']
+[1.510s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_msgs) by extension 'ignore'
+[1.510s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_msgs) by extension 'ignore_ament_install'
+[1.510s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_msgs) by extensions ['colcon_pkg']
+[1.510s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_msgs) by extension 'colcon_pkg'
+[1.511s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_msgs) by extensions ['colcon_meta']
+[1.511s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_msgs) by extension 'colcon_meta'
+[1.511s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_msgs) by extensions ['ros']
+[1.511s] Level 1:colcon.colcon_core.package_identification:_identify(src/vision_msgs) by extension 'ros'
+[1.514s] DEBUG:colcon.colcon_core.package_identification:Package 'src/vision_msgs' with type 'ros.ament_cmake' and name 'vision_msgs'
+[1.514s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.515s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.515s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.515s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.515s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.614s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'camera_node' in 'src/camera_node'
+[1.615s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'esp32_ros2_bridge' in 'src/esp32_ros2_bridge'
+[1.615s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'robot_description' in 'src/robot_description'
+[1.615s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'sllidar_ros2' in 'src/sllidar_ros2'
+[1.615s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'vision_msgs' in 'src/vision_msgs'
+[1.616s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'robot_ai' in 'src/robot_ai'
+[1.616s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'robot_bringup' in 'src/robot_bringup'
+[1.616s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'vision_ai_node' in 'src/vision_ai_node'
+[1.618s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.618s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.623s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.628s] Level 5:colcon.colcon_core.verb:set package 'robot_serial' build argument 'cmake_args' from command line to 'None'
+[1.628s] Level 5:colcon.colcon_core.verb:set package 'robot_serial' build argument 'cmake_target' from command line to 'None'
+[1.628s] Level 5:colcon.colcon_core.verb:set package 'robot_serial' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.628s] Level 5:colcon.colcon_core.verb:set package 'robot_serial' build argument 'cmake_clean_cache' from command line to 'False'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'robot_serial' build argument 'cmake_clean_first' from command line to 'False'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'robot_serial' build argument 'cmake_force_configure' from command line to 'False'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'robot_serial' build argument 'ament_cmake_args' from command line to 'None'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'robot_serial' build argument 'catkin_cmake_args' from command line to 'None'
+[1.629s] Level 5:colcon.colcon_core.verb:set package 'robot_serial' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.629s] DEBUG:colcon.colcon_core.verb:Building package 'robot_serial' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/robot_ws/build/robot_serial', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/robot_ws/install/robot_serial', 'merge_install': False, 'path': '/home/robot/robot_ws/src/robot_serial', 'symlink_install': False, 'test_result_base': None}
+[1.630s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.634s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.635s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/robot/robot_ws/src/robot_serial' with build type 'ament_python'
+[1.635s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_serial', 'ament_prefix_path')
+[1.651s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.653s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/install/robot_serial/share/robot_serial/hook/ament_prefix_path.ps1'
+[1.658s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/robot_ws/install/robot_serial/share/robot_serial/hook/ament_prefix_path.dsv'
+[1.662s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/install/robot_serial/share/robot_serial/hook/ament_prefix_path.sh'
+[1.667s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.667s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.748s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/robot/robot_ws/src/robot_serial'
+[2.750s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.751s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.429s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: bdist_dumb, bdist_egg, egg_info, bdist_wheel, symlink_data, build_py, build_clib, easy_install, install_headers, build_ext, upload_docs, install_data, install_egg_info, compile_catalog, sdist, dist_info, saveopts, build, install, register, install_lib, extract_messages, develop, init_catalog, bdist_rpm, test, install_scripts, check, update_catalog, build_scripts, upload, alias, clean, rotate, setopt, bdist
+[4.441s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/robot_ws/src/robot_serial': PYTHONPATH=/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_serial build --build-base /home/robot/robot_ws/build/robot_serial/build install --record /home/robot/robot_ws/build/robot_serial/install.log --install-scripts $base/lib/robot_serial --single-version-externally-managed install_data
+[5.901s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/robot_ws/src/robot_serial' returned '0': PYTHONPATH=/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_serial build --build-base /home/robot/robot_ws/build/robot_serial/build install --record /home/robot/robot_ws/build/robot_serial/install.log --install-scripts $base/lib/robot_serial --single-version-externally-managed install_data
+[5.915s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/install/robot_serial' for CMake module files
+[5.918s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/install/robot_serial' for CMake config files
+[5.925s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/install/robot_serial/lib'
+[5.926s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/install/robot_serial/bin'
+[5.927s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/install/robot_serial/lib/pkgconfig/robot_serial.pc'
+[5.928s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages'
+[5.929s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_serial', 'pythonpath')
+[5.930s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/install/robot_serial/share/robot_serial/hook/pythonpath.ps1'
+[5.934s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/robot_ws/install/robot_serial/share/robot_serial/hook/pythonpath.dsv'
+[5.937s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/install/robot_serial/share/robot_serial/hook/pythonpath.sh'
+[5.941s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/install/robot_serial/bin'
+[5.942s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_serial)
+[5.944s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/robot_ws/install/robot_serial/share/robot_serial/package.ps1'
+[5.951s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/robot_ws/install/robot_serial/share/robot_serial/package.dsv'
+[5.955s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/robot_ws/install/robot_serial/share/robot_serial/package.sh'
+[5.960s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/robot_ws/install/robot_serial/share/robot_serial/package.bash'
+[5.965s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/robot_ws/install/robot_serial/share/robot_serial/package.zsh'
+[5.970s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/robot_ws/install/robot_serial/share/colcon-core/packages/robot_serial)
+[5.975s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.976s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.976s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.977s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.979s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.980s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/robot_ws/install/local_setup.ps1'
+[5.987s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robot/robot_ws/install/_local_setup_util_ps1.py'
+[5.996s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/robot_ws/install/setup.ps1'
+[6.002s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/robot_ws/install/local_setup.sh'
+[6.005s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robot/robot_ws/install/_local_setup_util_sh.py'
+[6.009s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/robot_ws/install/setup.sh'
+[6.013s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/robot_ws/install/local_setup.bash'
+[6.016s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/robot_ws/install/setup.bash'
+[6.022s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/robot_ws/install/local_setup.zsh'
+[6.025s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/robot_ws/install/setup.zsh'

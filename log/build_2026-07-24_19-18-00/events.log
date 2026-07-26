@@ -1,0 +1,404 @@
+[0.000000] (-) TimerEvent: {}
+[0.001102] (-) JobUnselected: {'identifier': 'camera_node'}
+[0.001836] (-) JobUnselected: {'identifier': 'esp32_ros2_bridge'}
+[0.002327] (-) JobUnselected: {'identifier': 'robot_ai'}
+[0.002551] (-) JobUnselected: {'identifier': 'robot_bringup'}
+[0.002686] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.003026] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.003212] (-) JobUnselected: {'identifier': 'vision_ai_node'}
+[0.003323] (-) JobUnselected: {'identifier': 'vision_msgs'}
+[0.003478] (robot_serial) JobQueued: {'identifier': 'robot_serial', 'dependencies': OrderedDict()}
+[0.003643] (robot_serial) JobStarted: {'identifier': 'robot_serial'}
+[0.098253] (-) TimerEvent: {}
+[0.198801] (-) TimerEvent: {}
+[0.299215] (-) TimerEvent: {}
+[0.399712] (-) TimerEvent: {}
+[0.500151] (-) TimerEvent: {}
+[0.600595] (-) TimerEvent: {}
+[0.701161] (-) TimerEvent: {}
+[0.801608] (-) TimerEvent: {}
+[0.902026] (-) TimerEvent: {}
+[1.002467] (-) TimerEvent: {}
+[1.102908] (-) TimerEvent: {}
+[1.203431] (-) TimerEvent: {}
+[1.304031] (-) TimerEvent: {}
+[1.404467] (-) TimerEvent: {}
+[1.504900] (-) TimerEvent: {}
+[1.605373] (-) TimerEvent: {}
+[1.705830] (-) TimerEvent: {}
+[1.806310] (-) TimerEvent: {}
+[1.906784] (-) TimerEvent: {}
+[2.007247] (-) TimerEvent: {}
+[2.107727] (-) TimerEvent: {}
+[2.208155] (-) TimerEvent: {}
+[2.308585] (-) TimerEvent: {}
+[2.409026] (-) TimerEvent: {}
+[2.509454] (-) TimerEvent: {}
+[2.609877] (-) TimerEvent: {}
+[2.710312] (-) TimerEvent: {}
+[2.810760] (-) TimerEvent: {}
+[2.911199] (-) TimerEvent: {}
+[3.011651] (-) TimerEvent: {}
+[3.112073] (-) TimerEvent: {}
+[3.212497] (-) TimerEvent: {}
+[3.312913] (-) TimerEvent: {}
+[3.413325] (-) TimerEvent: {}
+[3.513746] (-) TimerEvent: {}
+[3.614173] (-) TimerEvent: {}
+[3.714605] (-) TimerEvent: {}
+[3.815043] (-) TimerEvent: {}
+[3.915627] (-) TimerEvent: {}
+[4.016248] (-) TimerEvent: {}
+[4.116809] (-) TimerEvent: {}
+[4.217436] (-) TimerEvent: {}
+[4.318047] (-) TimerEvent: {}
+[4.418546] (-) TimerEvent: {}
+[4.519077] (-) TimerEvent: {}
+[4.619600] (-) TimerEvent: {}
+[4.720056] (-) TimerEvent: {}
+[4.820637] (-) TimerEvent: {}
+[4.921266] (-) TimerEvent: {}
+[5.021934] (-) TimerEvent: {}
+[5.122554] (-) TimerEvent: {}
+[5.223106] (-) TimerEvent: {}
+[5.323723] (-) TimerEvent: {}
+[5.424163] (-) TimerEvent: {}
+[5.524620] (-) TimerEvent: {}
+[5.625069] (-) TimerEvent: {}
+[5.725602] (-) TimerEvent: {}
+[5.826278] (-) TimerEvent: {}
+[5.926936] (-) TimerEvent: {}
+[6.027532] (-) TimerEvent: {}
+[6.128163] (-) TimerEvent: {}
+[6.228633] (-) TimerEvent: {}
+[6.329135] (-) TimerEvent: {}
+[6.429581] (-) TimerEvent: {}
+[6.530030] (-) TimerEvent: {}
+[6.630560] (-) TimerEvent: {}
+[6.731207] (-) TimerEvent: {}
+[6.831851] (-) TimerEvent: {}
+[6.932348] (-) TimerEvent: {}
+[7.032845] (-) TimerEvent: {}
+[7.133376] (-) TimerEvent: {}
+[7.233936] (-) TimerEvent: {}
+[7.334405] (-) TimerEvent: {}
+[7.434853] (-) TimerEvent: {}
+[7.535295] (-) TimerEvent: {}
+[7.635816] (-) TimerEvent: {}
+[7.736466] (-) TimerEvent: {}
+[7.837108] (-) TimerEvent: {}
+[7.937860] (-) TimerEvent: {}
+[8.038526] (-) TimerEvent: {}
+[8.139109] (-) TimerEvent: {}
+[8.239701] (-) TimerEvent: {}
+[8.340188] (-) TimerEvent: {}
+[8.440688] (-) TimerEvent: {}
+[8.541220] (-) TimerEvent: {}
+[8.641879] (-) TimerEvent: {}
+[8.742508] (-) TimerEvent: {}
+[8.843141] (-) TimerEvent: {}
+[8.943726] (-) TimerEvent: {}
+[9.044267] (-) TimerEvent: {}
+[9.144725] (-) TimerEvent: {}
+[9.245171] (-) TimerEvent: {}
+[9.345615] (-) TimerEvent: {}
+[9.446098] (-) TimerEvent: {}
+[9.546567] (-) TimerEvent: {}
+[9.647038] (-) TimerEvent: {}
+[9.747470] (-) TimerEvent: {}
+[9.847928] (-) TimerEvent: {}
+[9.948409] (-) TimerEvent: {}
+[10.048945] (-) TimerEvent: {}
+[10.149596] (-) TimerEvent: {}
+[10.250219] (-) TimerEvent: {}
+[10.350862] (-) TimerEvent: {}
+[10.451455] (-) TimerEvent: {}
+[10.551963] (-) TimerEvent: {}
+[10.652510] (-) TimerEvent: {}
+[10.753031] (-) TimerEvent: {}
+[10.853563] (-) TimerEvent: {}
+[10.954116] (-) TimerEvent: {}
+[11.054633] (-) TimerEvent: {}
+[11.155284] (-) TimerEvent: {}
+[11.255900] (-) TimerEvent: {}
+[11.356386] (-) TimerEvent: {}
+[11.456918] (-) TimerEvent: {}
+[11.557378] (-) TimerEvent: {}
+[11.657831] (-) TimerEvent: {}
+[11.758424] (-) TimerEvent: {}
+[11.859089] (-) TimerEvent: {}
+[11.959724] (-) TimerEvent: {}
+[12.060256] (-) TimerEvent: {}
+[12.160894] (-) TimerEvent: {}
+[12.261519] (-) TimerEvent: {}
+[12.362124] (-) TimerEvent: {}
+[12.462565] (-) TimerEvent: {}
+[12.563024] (-) TimerEvent: {}
+[12.663637] (-) TimerEvent: {}
+[12.764339] (-) TimerEvent: {}
+[12.864953] (-) TimerEvent: {}
+[12.965555] (-) TimerEvent: {}
+[13.066050] (-) TimerEvent: {}
+[13.166650] (-) TimerEvent: {}
+[13.267263] (-) TimerEvent: {}
+[13.367763] (-) TimerEvent: {}
+[13.468289] (-) TimerEvent: {}
+[13.568754] (-) TimerEvent: {}
+[13.669292] (-) TimerEvent: {}
+[13.769941] (-) TimerEvent: {}
+[13.870627] (-) TimerEvent: {}
+[13.971243] (-) TimerEvent: {}
+[14.071899] (-) TimerEvent: {}
+[14.172362] (-) TimerEvent: {}
+[14.272838] (-) TimerEvent: {}
+[14.373363] (-) TimerEvent: {}
+[14.473870] (-) TimerEvent: {}
+[14.574467] (-) TimerEvent: {}
+[14.675146] (-) TimerEvent: {}
+[14.775801] (-) TimerEvent: {}
+[14.876386] (-) TimerEvent: {}
+[14.976940] (-) TimerEvent: {}
+[15.077513] (-) TimerEvent: {}
+[15.178058] (-) TimerEvent: {}
+[15.278552] (-) TimerEvent: {}
+[15.379032] (-) TimerEvent: {}
+[15.479598] (-) TimerEvent: {}
+[15.580100] (-) TimerEvent: {}
+[15.680637] (-) TimerEvent: {}
+[15.781182] (-) TimerEvent: {}
+[15.881809] (-) TimerEvent: {}
+[15.982384] (-) TimerEvent: {}
+[16.083011] (-) TimerEvent: {}
+[16.183494] (-) TimerEvent: {}
+[16.284000] (-) TimerEvent: {}
+[16.384550] (-) TimerEvent: {}
+[16.485117] (-) TimerEvent: {}
+[16.585761] (-) TimerEvent: {}
+[16.686407] (-) TimerEvent: {}
+[16.787040] (-) TimerEvent: {}
+[16.887624] (-) TimerEvent: {}
+[16.988153] (-) TimerEvent: {}
+[17.088674] (-) TimerEvent: {}
+[17.189175] (-) TimerEvent: {}
+[17.289631] (-) TimerEvent: {}
+[17.390082] (-) TimerEvent: {}
+[17.490632] (-) TimerEvent: {}
+[17.591310] (-) TimerEvent: {}
+[17.691992] (-) TimerEvent: {}
+[17.792639] (-) TimerEvent: {}
+[17.893254] (-) TimerEvent: {}
+[17.993900] (-) TimerEvent: {}
+[18.094429] (-) TimerEvent: {}
+[18.194937] (-) TimerEvent: {}
+[18.295380] (-) TimerEvent: {}
+[18.395870] (-) TimerEvent: {}
+[18.496424] (-) TimerEvent: {}
+[18.597070] (-) TimerEvent: {}
+[18.697646] (-) TimerEvent: {}
+[18.798282] (-) TimerEvent: {}
+[18.898902] (-) TimerEvent: {}
+[18.999491] (-) TimerEvent: {}
+[19.100033] (-) TimerEvent: {}
+[19.200508] (-) TimerEvent: {}
+[19.300939] (-) TimerEvent: {}
+[19.401453] (-) TimerEvent: {}
+[19.502087] (-) TimerEvent: {}
+[19.602736] (-) TimerEvent: {}
+[19.703398] (-) TimerEvent: {}
+[19.804086] (-) TimerEvent: {}
+[19.904659] (-) TimerEvent: {}
+[20.005115] (-) TimerEvent: {}
+[20.105573] (-) TimerEvent: {}
+[20.206075] (-) TimerEvent: {}
+[20.306626] (-) TimerEvent: {}
+[20.407270] (-) TimerEvent: {}
+[20.507947] (-) TimerEvent: {}
+[20.608587] (-) TimerEvent: {}
+[20.709193] (-) TimerEvent: {}
+[20.809735] (-) TimerEvent: {}
+[20.910308] (-) TimerEvent: {}
+[21.010860] (-) TimerEvent: {}
+[21.111355] (-) TimerEvent: {}
+[21.211828] (-) TimerEvent: {}
+[21.312378] (-) TimerEvent: {}
+[21.412807] (-) TimerEvent: {}
+[21.513333] (-) TimerEvent: {}
+[21.613979] (-) TimerEvent: {}
+[21.714589] (-) TimerEvent: {}
+[21.815106] (-) TimerEvent: {}
+[21.915707] (-) TimerEvent: {}
+[22.016220] (-) TimerEvent: {}
+[22.116662] (-) TimerEvent: {}
+[22.217163] (-) TimerEvent: {}
+[22.317786] (-) TimerEvent: {}
+[22.418405] (-) TimerEvent: {}
+[22.519022] (-) TimerEvent: {}
+[22.619640] (-) TimerEvent: {}
+[22.720281] (-) TimerEvent: {}
+[22.820776] (-) TimerEvent: {}
+[22.921291] (-) TimerEvent: {}
+[23.021782] (-) TimerEvent: {}
+[23.122307] (-) TimerEvent: {}
+[23.222887] (-) TimerEvent: {}
+[23.323365] (-) TimerEvent: {}
+[23.423905] (-) TimerEvent: {}
+[23.524471] (-) TimerEvent: {}
+[23.625062] (-) TimerEvent: {}
+[23.725481] (-) TimerEvent: {}
+[23.825912] (-) TimerEvent: {}
+[23.926351] (-) TimerEvent: {}
+[24.026806] (-) TimerEvent: {}
+[24.127261] (-) TimerEvent: {}
+[24.227704] (-) TimerEvent: {}
+[24.328287] (-) TimerEvent: {}
+[24.428677] (-) TimerEvent: {}
+[24.529106] (-) TimerEvent: {}
+[24.629667] (-) TimerEvent: {}
+[24.690108] (robot_serial) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--uninstall', '--editable', '--build-directory', '/home/robot/robot_ws/build/robot_serial/build'], 'cwd': '/home/robot/robot_ws/build/robot_serial', 'env': {'VSCODE_CWD': '/home/robot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'KILO_DISABLE_CHANNEL_DB': 'true', 'USER': 'robot', 'KILO_ENABLE_QUESTION_TOOL': 'true', 'SSH_CLIENT': '192.168.1.87 54968 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'AGENT': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'KILO_VSCODE_VERSION': '1.129.1', 'SHLVL': '0', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws', 'KILO_PROCESS_ROLE': 'main', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-85cb0175-b158-42e8-8951-fb4591b54ca4.sock', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'KILO_APP_VERSION': '7.4.15', 'KILO_RUN_ID': 'b0e8cc2f-4ff3-41b8-8139-64efceb4ca4e', 'KILOCODE_VERSION': '7.4.15', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'KILO_CLIENT': 'vscode', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '3', 'VSCODE_CLI_REQUIRE_TOKEN': '9d52aed2-01f8-4726-82b5-3711d9f1f23a', 'KILO_EDITOR_NAME': 'Visual Studio Code', 'OPENCODE': '1', 'PATH': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'VSCODE_AGENT_FOLDER': '/home/robot/.vscode-server', 'KILO': '1', 'KILO_SERVER_PASSWORD': 'bbcb59f4dc49259fc2f1d85f0f88b56e2bc16e296f1be1b146a9d84dcf8654c7', 'XDG_RUNTIME_DIR': '/run/user/1000', 'KILO_APP_NAME': 'kilo-code', 'LANG': 'en_US.UTF-8', 'KILO_PID': '1742', 'KILOCODE_FEATURE': 'vscode-extension', 'SHELL': '/bin/bash', 'KILO_PLATFORM': 'vscode', 'MXC_BIN_DIR': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/node_modules/@microsoft/mxc-sdk/bin', 'ELECTRON_RUN_AS_NODE': '1', 'KILOCODE_EDITOR_NAME': 'Visual Studio Code 1.129.1', 'NODE_USE_SYSTEM_CA': '1', 'KILO_PARENT_PID': '1440', 'PWD': '/home/robot/robot_ws/build/robot_serial', 'LC_ALL': 'en_US.UTF-8', 'KILO_MACHINE_ID': 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70', 'SSH_CONNECTION': '192.168.1.87 54968 192.168.1.252 22', 'MIMALLOC_PURGE_DELAY': '0', 'COLCON': '1', 'COPILOT_CLI_ENABLED_FEATURE_FLAGS': 'SHELL_SPAWN_BACKEND', 'KILO_DISABLE_CLAUDE_CODE': 'true', 'KILO_TELEMETRY_LEVEL': 'all', 'KILO_TREE_SITTER_WASM_DIR': '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.15-linux-arm64/bin/tree-sitter', 'PYTHONPATH': '/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:'}, 'shell': False}
+[24.729856] (-) TimerEvent: {}
+[24.830308] (-) TimerEvent: {}
+[24.930822] (-) TimerEvent: {}
+[25.031320] (-) TimerEvent: {}
+[25.131789] (-) TimerEvent: {}
+[25.232197] (-) TimerEvent: {}
+[25.332609] (-) TimerEvent: {}
+[25.433001] (-) TimerEvent: {}
+[25.533391] (-) TimerEvent: {}
+[25.633836] (-) TimerEvent: {}
+[25.734274] (-) TimerEvent: {}
+[25.743333] (robot_serial) StdoutLine: {'line': b'running develop\n'}
+[25.834453] (-) TimerEvent: {}
+[25.934935] (-) TimerEvent: {}
+[26.035382] (-) TimerEvent: {}
+[26.135857] (-) TimerEvent: {}
+[26.236292] (-) TimerEvent: {}
+[26.261303] (robot_serial) StdoutLine: {'line': b'Removing /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot-serial.egg-link (link to .)\n'}
+[26.336584] (-) TimerEvent: {}
+[26.395651] (robot_serial) CommandEnded: {'returncode': 0}
+[26.400118] (robot_serial) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/robot_serial', 'build', '--build-base', '/home/robot/robot_ws/build/robot_serial/build', 'install', '--record', '/home/robot/robot_ws/build/robot_serial/install.log', '--install-scripts', '$base/lib/robot_serial', '--single-version-externally-managed', 'install_data', '--force'], 'cwd': '/home/robot/robot_ws/src/robot_serial', 'env': {'VSCODE_CWD': '/home/robot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'KILO_DISABLE_CHANNEL_DB': 'true', 'USER': 'robot', 'KILO_ENABLE_QUESTION_TOOL': 'true', 'SSH_CLIENT': '192.168.1.87 54968 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'AGENT': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'KILO_VSCODE_VERSION': '1.129.1', 'SHLVL': '0', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws', 'KILO_PROCESS_ROLE': 'main', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-85cb0175-b158-42e8-8951-fb4591b54ca4.sock', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'KILO_APP_VERSION': '7.4.15', 'KILO_RUN_ID': 'b0e8cc2f-4ff3-41b8-8139-64efceb4ca4e', 'KILOCODE_VERSION': '7.4.15', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'KILO_CLIENT': 'vscode', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '3', 'VSCODE_CLI_REQUIRE_TOKEN': '9d52aed2-01f8-4726-82b5-3711d9f1f23a', 'KILO_EDITOR_NAME': 'Visual Studio Code', 'OPENCODE': '1', 'PATH': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'VSCODE_AGENT_FOLDER': '/home/robot/.vscode-server', 'KILO': '1', 'KILO_SERVER_PASSWORD': 'bbcb59f4dc49259fc2f1d85f0f88b56e2bc16e296f1be1b146a9d84dcf8654c7', 'XDG_RUNTIME_DIR': '/run/user/1000', 'KILO_APP_NAME': 'kilo-code', 'LANG': 'en_US.UTF-8', 'KILO_PID': '1742', 'KILOCODE_FEATURE': 'vscode-extension', 'SHELL': '/bin/bash', 'KILO_PLATFORM': 'vscode', 'MXC_BIN_DIR': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/node_modules/@microsoft/mxc-sdk/bin', 'ELECTRON_RUN_AS_NODE': '1', 'KILOCODE_EDITOR_NAME': 'Visual Studio Code 1.129.1', 'NODE_USE_SYSTEM_CA': '1', 'KILO_PARENT_PID': '1440', 'PWD': '/home/robot/robot_ws/build/robot_serial', 'LC_ALL': 'en_US.UTF-8', 'KILO_MACHINE_ID': 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70', 'SSH_CONNECTION': '192.168.1.87 54968 192.168.1.252 22', 'MIMALLOC_PURGE_DELAY': '0', 'COLCON': '1', 'COPILOT_CLI_ENABLED_FEATURE_FLAGS': 'SHELL_SPAWN_BACKEND', 'KILO_DISABLE_CLAUDE_CODE': 'true', 'KILO_TELEMETRY_LEVEL': 'all', 'KILO_TREE_SITTER_WASM_DIR': '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.15-linux-arm64/bin/tree-sitter', 'PYTHONPATH': '/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:'}, 'shell': False}
+[26.436741] (-) TimerEvent: {}
+[26.537206] (-) TimerEvent: {}
+[26.637650] (-) TimerEvent: {}
+[26.738071] (-) TimerEvent: {}
+[26.838502] (-) TimerEvent: {}
+[26.939156] (-) TimerEvent: {}
+[27.039723] (-) TimerEvent: {}
+[27.140156] (-) TimerEvent: {}
+[27.240630] (-) TimerEvent: {}
+[27.341028] (-) TimerEvent: {}
+[27.396878] (robot_serial) StdoutLine: {'line': b'running egg_info\n'}
+[27.399719] (robot_serial) StdoutLine: {'line': b'writing ../../build/robot_serial/robot_serial.egg-info/PKG-INFO\n'}
+[27.441240] (-) TimerEvent: {}
+[27.541913] (-) TimerEvent: {}
+[27.642599] (-) TimerEvent: {}
+[27.743233] (-) TimerEvent: {}
+[27.843763] (-) TimerEvent: {}
+[27.944305] (-) TimerEvent: {}
+[28.044790] (-) TimerEvent: {}
+[28.145255] (-) TimerEvent: {}
+[28.245753] (-) TimerEvent: {}
+[28.346252] (-) TimerEvent: {}
+[28.446720] (-) TimerEvent: {}
+[28.547260] (-) TimerEvent: {}
+[28.647887] (-) TimerEvent: {}
+[28.748492] (-) TimerEvent: {}
+[28.849084] (-) TimerEvent: {}
+[28.949672] (-) TimerEvent: {}
+[29.050203] (-) TimerEvent: {}
+[29.150686] (-) TimerEvent: {}
+[29.251121] (-) TimerEvent: {}
+[29.351595] (-) TimerEvent: {}
+[29.452183] (-) TimerEvent: {}
+[29.552785] (-) TimerEvent: {}
+[29.653414] (-) TimerEvent: {}
+[29.753989] (-) TimerEvent: {}
+[29.854624] (-) TimerEvent: {}
+[29.955267] (-) TimerEvent: {}
+[30.055779] (-) TimerEvent: {}
+[30.156262] (-) TimerEvent: {}
+[30.256708] (-) TimerEvent: {}
+[30.357247] (-) TimerEvent: {}
+[30.457900] (-) TimerEvent: {}
+[30.558552] (-) TimerEvent: {}
+[30.659229] (-) TimerEvent: {}
+[30.759803] (-) TimerEvent: {}
+[30.860400] (-) TimerEvent: {}
+[30.960905] (-) TimerEvent: {}
+[31.061376] (-) TimerEvent: {}
+[31.161876] (-) TimerEvent: {}
+[31.262362] (-) TimerEvent: {}
+[31.362947] (-) TimerEvent: {}
+[31.463632] (-) TimerEvent: {}
+[31.564210] (-) TimerEvent: {}
+[31.664794] (-) TimerEvent: {}
+[31.765389] (-) TimerEvent: {}
+[31.865864] (-) TimerEvent: {}
+[31.966347] (-) TimerEvent: {}
+[32.066849] (-) TimerEvent: {}
+[32.167283] (-) TimerEvent: {}
+[32.267837] (-) TimerEvent: {}
+[32.368459] (-) TimerEvent: {}
+[32.469006] (-) TimerEvent: {}
+[32.569642] (-) TimerEvent: {}
+[32.670291] (-) TimerEvent: {}
+[32.770897] (-) TimerEvent: {}
+[32.871393] (-) TimerEvent: {}
+[32.971864] (-) TimerEvent: {}
+[33.014016] (robot_serial) StdoutLine: {'line': b'writing dependency_links to ../../build/robot_serial/robot_serial.egg-info/dependency_links.txt\n'}
+[33.016011] (robot_serial) StdoutLine: {'line': b'writing entry points to ../../build/robot_serial/robot_serial.egg-info/entry_points.txt\n'}
+[33.018657] (robot_serial) StdoutLine: {'line': b'writing requirements to ../../build/robot_serial/robot_serial.egg-info/requires.txt\n'}
+[33.019626] (robot_serial) StdoutLine: {'line': b'writing top-level names to ../../build/robot_serial/robot_serial.egg-info/top_level.txt\n'}
+[33.030687] (robot_serial) StdoutLine: {'line': b"reading manifest file '../../build/robot_serial/robot_serial.egg-info/SOURCES.txt'\n"}
+[33.035911] (robot_serial) StdoutLine: {'line': b"writing manifest file '../../build/robot_serial/robot_serial.egg-info/SOURCES.txt'\n"}
+[33.036961] (robot_serial) StdoutLine: {'line': b'running build\n'}
+[33.037530] (robot_serial) StdoutLine: {'line': b'running build_py\n'}
+[33.038806] (robot_serial) StdoutLine: {'line': b'copying robot_serial/sensor_parser.py -> /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial\n'}
+[33.040417] (robot_serial) StdoutLine: {'line': b'copying robot_serial/teleop.py -> /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial\n'}
+[33.041691] (robot_serial) StdoutLine: {'line': b'copying robot_serial/serial_node.py -> /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial\n'}
+[33.044522] (robot_serial) StdoutLine: {'line': b'running install\n'}
+[33.045961] (robot_serial) StdoutLine: {'line': b'running install_lib\n'}
+[33.049321] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.050322] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/__init__.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.051269] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/serial_protocol.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.052353] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/sensor_parser.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.053334] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/teleop.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.054337] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/serial_manager.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.055283] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/serial_node.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.056321] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/serial_bridge_node.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.057271] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/wheel_odom_node.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.058169] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/build/robot_serial/build/lib/robot_serial/serial_parser.py -> /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[33.064915] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/__init__.py to __init__.cpython-310.pyc\n'}
+[33.066441] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_protocol.py to serial_protocol.cpython-310.pyc\n'}
+[33.069730] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/sensor_parser.py to sensor_parser.cpython-310.pyc\n'}
+[33.071996] (-) TimerEvent: {}
+[33.075221] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/teleop.py to teleop.cpython-310.pyc\n'}
+[33.078294] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_manager.py to serial_manager.cpython-310.pyc\n'}
+[33.084629] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_node.py to serial_node.cpython-310.pyc\n'}
+[33.090948] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_bridge_node.py to serial_bridge_node.cpython-310.pyc\n'}
+[33.099720] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/wheel_odom_node.py to wheel_odom_node.cpython-310.pyc\n'}
+[33.101803] (robot_serial) StderrLine: {'line': b'  File "/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/wheel_odom_node.py", line 81\n'}
+[33.102835] (robot_serial) StderrLine: {'line': b"    '\n"}
+[33.103503] (robot_serial) StderrLine: {'line': b'    ^\n'}
+[33.104396] (robot_serial) StderrLine: {'line': b'SyntaxError: unterminated string literal (detected at line 81)\n'}
+[33.105111] (robot_serial) StderrLine: {'line': b'\n'}
+[33.113819] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_parser.py to serial_parser.cpython-310.pyc\n'}
+[33.114536] (robot_serial) StdoutLine: {'line': b'running install_data\n'}
+[33.115032] (robot_serial) StdoutLine: {'line': b'copying resource/robot_serial -> /home/robot/robot_ws/install/robot_serial/share/ament_index/resource_index/packages\n'}
+[33.115609] (robot_serial) StdoutLine: {'line': b'copying package.xml -> /home/robot/robot_ws/install/robot_serial/share/robot_serial\n'}
+[33.116243] (robot_serial) StdoutLine: {'line': b'copying launch/robot_serial.launch.py -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/launch\n'}
+[33.116881] (robot_serial) StdoutLine: {'line': b'copying launch/wheel_odom.launch.py -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/launch\n'}
+[33.117374] (robot_serial) StdoutLine: {'line': b'copying config/serial.yaml -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/config\n'}
+[33.117900] (robot_serial) StdoutLine: {'line': b'running install_egg_info\n'}
+[33.120881] (robot_serial) StdoutLine: {'line': b'Copying ../../build/robot_serial/robot_serial.egg-info to /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info\n'}
+[33.128865] (robot_serial) StdoutLine: {'line': b'running install_scripts\n'}
+[33.172185] (-) TimerEvent: {}
+[33.215398] (robot_serial) StdoutLine: {'line': b'Installing serial_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial\n'}
+[33.216920] (robot_serial) StdoutLine: {'line': b'Installing teleop_text script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial\n'}
+[33.218031] (robot_serial) StdoutLine: {'line': b'Installing wheel_odom_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial\n'}
+[33.219874] (robot_serial) StdoutLine: {'line': b"writing list of installed files to '/home/robot/robot_ws/build/robot_serial/install.log'\n"}
+[33.272526] (-) TimerEvent: {}
+[33.340355] (robot_serial) CommandEnded: {'returncode': 0}
+[33.372898] (-) TimerEvent: {}
+[33.400036] (robot_serial) JobEnded: {'identifier': 'robot_serial', 'rc': 0}
+[36.311656] (-) TimerEvent: {}
+[36.312064] (-) EventReactorShutdown: {}

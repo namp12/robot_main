@@ -20,4 +20,5 @@ robot_serial/serial_manager.py
 robot_serial/serial_node.py
 robot_serial/serial_parser.py
 robot_serial/serial_protocol.py
+robot_serial/teleop.py
 robot_serial/wheel_odom_node.py

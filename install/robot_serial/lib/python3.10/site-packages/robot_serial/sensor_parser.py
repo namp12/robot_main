@@ -1,130 +1,154 @@
 import re
-from typing import Dict, Any
+from typing import Any, Dict, Optional
+
+
+def _extract_unit_value(text: str, unit: str):
+    pattern = rf'([-+]?\d*\.?\d+)\s*{re.escape(unit)}'
+    match = re.search(pattern, text, re.IGNORECASE)
+    if match:
+        try:
+            return float(match.group(1))
+        except ValueError:
+            return None
+    return None
+
+
+def _extract_key_value(text: str, key: str):
+    pattern = rf'{re.escape(key)}\s*=\s*([-+]?\d*\.?\d+)'
+    match = re.search(pattern, text, re.IGNORECASE)
+    if match:
+        try:
+            return float(match.group(1))
+        except ValueError:
+            return None
+    return None
 
 
 def parse_sensor_line(line: str) -> Dict[str, Any]:
-    """Parse sensor lines from ESP32 into a structured dictionary.
-
-    Supports several formats, including:
-    - ESP32_DATA front=... ax=... ay=... az=... gx=... gy=... gz=... roll=... pitch=... yaw=...
-    - IMU: ax=... ay=... az=... gx=... gy=... gz=...
-    - SENSORS: front=... rear=... battery=...
-    - generic key=value pairs.
-    """
     text = line.strip()
     result: Dict[str, Any] = {
         'imu': {},
         'distance': {},
         'battery': None,
+        'mode': None,
+        'status': None,
+        'encoder_distance': None,
         'raw': text,
     }
 
     if not text:
         return result
 
-    # New ESP32_DATA format: prefix + key=value pairs
-    esp32_data_match = re.search(r'ESP32_DATA\s+(.*)', text, re.IGNORECASE)
-    if esp32_data_match:
-        payload = esp32_data_match.group(1)
-        for token in re.split(r'[,;\s]+', payload):
-            if '=' not in token:
-                continue
-            key, value = token.split('=', 1)
-            key = key.lower()
-            value_clean = value.strip('(),')
-            try:
-                value_num = float(value_clean)
-            except ValueError:
-                continue
+    upper = text.upper()
 
-            if key in {'front', 'front_dist', 'frontdistance', 'distance_front'}:
-                result['distance']['front'] = value_num
-            elif key in {'rear', 'rear_dist', 'reardistance', 'distance_rear'}:
-                result['distance']['rear'] = value_num
-            elif key in {'battery', 'bat', 'voltage'}:
-                result['battery'] = value_num
-            elif key in {'ax', 'accelx'}:
-                result['imu']['ax'] = value_num
-            elif key in {'ay', 'accely'}:
-                result['imu']['ay'] = value_num
-            elif key in {'az', 'accelz'}:
-                result['imu']['az'] = value_num
-            elif key in {'gx', 'gyrox'}:
-                result['imu']['gx'] = value_num
-            elif key in {'gy', 'gyroy'}:
-                result['imu']['gy'] = value_num
-            elif key in {'gz', 'gyroz'}:
-                result['imu']['gz'] = value_num
-            elif key in {'roll'}:
-                result['imu']['roll'] = value_num
-            elif key in {'pitch'}:
-                result['imu']['pitch'] = value_num
-            elif key in {'yaw'}:
-                result['imu']['yaw'] = value_num
+    # 1) [TELEMETRY] format from real Robot_Tu_Hanh firmware
+    if upper.startswith('[TELEMETRY]'):
+        mode_match = re.search(r'MODE:\s*([A-Z0-9_]+)', text, re.IGNORECASE)
+        if mode_match:
+            result['mode'] = mode_match.group(1).upper()
 
-    # Generic key=value parsing for common sensor labels
+        status_match = re.search(r'STATUS:\s*([A-Z0-9_]+)', text, re.IGNORECASE)
+        if status_match:
+            result['status'] = status_match.group(1).upper()
+
+        battery = _extract_unit_value(text, 'V')
+        if battery is not None:
+            result['battery'] = battery
+
+        front = _extract_unit_value(text, 'cm')
+        if front is not None:
+            result['distance']['front'] = front
+
+        rear = _extract_unit_value(text, 'cm')
+        if rear is not None:
+            result['distance']['rear'] = rear
+
+        yaw = _extract_key_value(text, 'Yaw')
+        pitch = _extract_key_value(text, 'Pitch')
+        roll = _extract_key_value(text, 'Roll')
+        if yaw is not None:
+            result['imu']['yaw'] = yaw
+        if pitch is not None:
+            result['imu']['pitch'] = pitch
+        if roll is not None:
+            result['imu']['roll'] = roll
+
+        ax = _extract_key_value(text, 'Ax')
+        ay = _extract_key_value(text, 'Ay')
+        az = _extract_key_value(text, 'Az')
+        gx = _extract_key_value(text, 'Gx')
+        gy = _extract_key_value(text, 'Gy')
+        gz = _extract_key_value(text, 'Gz')
+        if ax is not None:
+            result['imu']['ax'] = ax
+        if ay is not None:
+            result['imu']['ay'] = ay
+        if az is not None:
+            result['imu']['az'] = az
+        if gx is not None:
+            result['imu']['gx'] = gx
+        if gy is not None:
+            result['imu']['gy'] = gy
+        if gz is not None:
+            result['imu']['gz'] = gz
+
+        dist_m = _extract_key_value(text, 'Dist')
+        if dist_m is not None:
+            result['encoder_distance'] = dist_m
+
+        return result
+
+    # 2) Simple key=value lines
     for token in re.split(r'[,;\s]+', text):
         if '=' not in token:
             continue
         key, value = token.split('=', 1)
-        key = key.lower()
-        value_clean = value.strip('(),')
+        key = key.strip().upper()
+        value_clean = value.strip().strip('(),').strip()
         try:
             value_num = float(value_clean)
         except ValueError:
             continue
 
-        if key.startswith('ax') or key.startswith('accelx'):
-            result['imu']['ax'] = value_num
-        elif key.startswith('ay') or key.startswith('accely'):
-            result['imu']['ay'] = value_num
-        elif key.startswith('az') or key.startswith('accelz'):
-            result['imu']['az'] = value_num
-        elif key.startswith('gx') or key.startswith('gyrox'):
-            result['imu']['gx'] = value_num
-        elif key.startswith('gy') or key.startswith('gyroy'):
-            result['imu']['gy'] = value_num
-        elif key.startswith('gz') or key.startswith('gyroz'):
-            result['imu']['gz'] = value_num
-        elif key in {'front', 'front_dist', 'frontdistance', 'distance_front'}:
+        if key == 'FRONT_DISTANCE':
             result['distance']['front'] = value_num
-        elif key in {'rear', 'rear_dist', 'reardistance', 'distance_rear'}:
+        elif key == 'REAR_DISTANCE':
             result['distance']['rear'] = value_num
-        elif key in {'battery', 'bat', 'voltage'}:
+        elif key == 'BATTERY':
             result['battery'] = value_num
+        elif key == 'ENCODER_DIST':
+            result['encoder_distance'] = value_num
+        elif key in {'IMU', 'IMU_RAW'}:
+            continue
 
-    # Handle explicit IMU prefix
-    imu_match = re.search(r'IMU[:\s]+(.*)', text, re.IGNORECASE)
-    if imu_match:
-        payload = imu_match.group(1)
-        for token in re.split(r'[,;\s]+', payload):
-            if '=' not in token:
-                continue
-            key, value = token.split('=', 1)
-            key = key.lower()
-            try:
-                result['imu'][key] = float(value)
-            except ValueError:
-                continue
+    # 3) Legacy single-key lines
+    if upper.startswith('MODE='):
+        result['mode'] = text.split('=', 1)[1].strip().upper()
+        return result
 
-    # Handle explicit sensors prefix
-    sensors_match = re.search(r'SENSORS?[:\s]+(.*)', text, re.IGNORECASE)
-    if sensors_match:
-        payload = sensors_match.group(1)
-        for token in re.split(r'[,;\s]+', payload):
-            if '=' not in token:
-                continue
-            key, value = token.split('=', 1)
-            key = key.lower()
-            try:
-                value_f = float(value)
-            except ValueError:
-                continue
-            if key in {'front', 'front_dist', 'frontdistance', 'distance_front'}:
-                result['distance']['front'] = value_f
-            elif key in {'rear', 'rear_dist', 'reardistance', 'distance_rear'}:
-                result['distance']['rear'] = value_f
-            elif key in {'battery', 'bat', 'voltage'}:
-                result['battery'] = value_f
+    if upper.startswith('STATUS='):
+        result['status'] = text.split('=', 1)[1].strip().upper()
+        return result
+
+    if upper.startswith('BATTERY='):
+        try:
+            result['battery'] = float(text.split('=', 1)[1].strip())
+        except ValueError:
+            pass
+        return result
+
+    if upper.startswith('FRONT_DISTANCE='):
+        try:
+            result['distance']['front'] = float(text.split('=', 1)[1].strip())
+        except ValueError:
+            pass
+        return result
+
+    if upper.startswith('REAR_DISTANCE='):
+        try:
+            result['distance']['rear'] = float(text.split('=', 1)[1].strip())
+        except ValueError:
+            pass
+        return result
 
     return result

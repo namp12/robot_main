@@ -1,0 +1,18 @@
+running develop
+running egg_info
+writing esp32_ros2_bridge.egg-info/PKG-INFO
+writing dependency_links to esp32_ros2_bridge.egg-info/dependency_links.txt
+writing entry points to esp32_ros2_bridge.egg-info/entry_points.txt
+writing requirements to esp32_ros2_bridge.egg-info/requires.txt
+writing top-level names to esp32_ros2_bridge.egg-info/top_level.txt
+reading manifest file 'esp32_ros2_bridge.egg-info/SOURCES.txt'
+writing manifest file 'esp32_ros2_bridge.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32-ros2-bridge.egg-link (link to .)
+Installing esp32_bridge_node script to /home/robot/robot_ws/install/esp32_ros2_bridge/bin
+
+Installed /home/robot/robot_ws/build/esp32_ros2_bridge
+running symlink_data
+symbolically linking /home/robot/robot_ws/build/esp32_ros2_bridge/resource/esp32_ros2_bridge -> /home/robot/robot_ws/install/esp32_ros2_bridge/share/ament_index/resource_index/packages
+symbolically linking /home/robot/robot_ws/build/esp32_ros2_bridge/package.xml -> /home/robot/robot_ws/install/esp32_ros2_bridge/share/esp32_ros2_bridge
+symbolically linking /home/robot/robot_ws/build/esp32_ros2_bridge/launch/esp32_bridge.launch.py -> /home/robot/robot_ws/install/esp32_ros2_bridge/share/esp32_ros2_bridge/launch

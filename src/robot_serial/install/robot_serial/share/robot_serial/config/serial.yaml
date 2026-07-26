@@ -1,0 +1,22 @@
+# serial.yaml - Default parameters for robot_serial_node
+#
+# Loaded by robot_serial.launch.py. Override via launch arguments:
+#   ros2 launch robot_serial robot_serial.launch.py port:=/dev/ttyUSB0
+
+/**:
+  ros__parameters:
+    # Serial port device path
+    # ESP32 typically appears as /dev/ttyACM0
+    port: "/dev/ttyACM0"
+
+    # Serial baud rate (must match ESP32 Serial.begin())
+    baudrate: 115200
+
+    # Serial read timeout in seconds
+    timeout: 0.1
+
+    # Seconds between reconnect attempts if USB disconnected
+    reconnect_interval: 3.0
+
+    # TF frame ID for IMU messages
+    frame_id: "base_link"

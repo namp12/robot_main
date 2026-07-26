@@ -114,5 +114,6 @@ colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX/share/esp32_
 colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX/share/esp32_ros2_bridge/hook/pythonpath.ps1"
 colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX/share/esp32_ros2_bridge/hook/pythonscriptspath.ps1"
 colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX/share/esp32_ros2_bridge/hook/ament_prefix_path.ps1"
+colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX/../../build/esp32_ros2_bridge/share/esp32_ros2_bridge/hook/pythonpath_develop.ps1"
 
 Remove-Item Env:\COLCON_CURRENT_PREFIX

@@ -1,0 +1,414 @@
+[0.000000] (-) TimerEvent: {}
+[0.002069] (-) JobUnselected: {'identifier': 'camera_node'}
+[0.002664] (-) JobUnselected: {'identifier': 'robot_ai'}
+[0.002893] (-) JobUnselected: {'identifier': 'robot_description'}
+[0.003229] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.003428] (-) JobUnselected: {'identifier': 'vision_ai_node'}
+[0.003543] (-) JobUnselected: {'identifier': 'vision_msgs'}
+[0.003666] (esp32_ros2_bridge) JobQueued: {'identifier': 'esp32_ros2_bridge', 'dependencies': OrderedDict()}
+[0.003798] (robot_serial) JobQueued: {'identifier': 'robot_serial', 'dependencies': OrderedDict()}
+[0.003919] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_description', '/home/robot/robot_ws/install/robot_description'), ('sllidar_ros2', '/home/robot/robot_ws/install/sllidar_ros2')])}
+[0.004053] (esp32_ros2_bridge) JobStarted: {'identifier': 'esp32_ros2_bridge'}
+[0.052580] (robot_serial) JobStarted: {'identifier': 'robot_serial'}
+[0.089908] (robot_bringup) JobStarted: {'identifier': 'robot_bringup'}
+[0.098497] (-) TimerEvent: {}
+[0.200739] (-) TimerEvent: {}
+[0.302464] (-) TimerEvent: {}
+[0.403388] (-) TimerEvent: {}
+[0.504294] (-) TimerEvent: {}
+[0.605198] (-) TimerEvent: {}
+[0.706257] (-) TimerEvent: {}
+[0.867585] (-) TimerEvent: {}
+[0.986912] (-) TimerEvent: {}
+[1.097390] (-) TimerEvent: {}
+[1.460475] (-) TimerEvent: {}
+[1.561376] (-) TimerEvent: {}
+[1.662241] (-) TimerEvent: {}
+[1.763329] (-) TimerEvent: {}
+[1.867063] (-) TimerEvent: {}
+[1.969374] (-) TimerEvent: {}
+[2.070674] (-) TimerEvent: {}
+[2.209811] (-) TimerEvent: {}
+[2.310629] (-) TimerEvent: {}
+[2.452837] (-) TimerEvent: {}
+[2.570261] (-) TimerEvent: {}
+[2.671021] (-) TimerEvent: {}
+[2.771820] (-) TimerEvent: {}
+[2.873205] (-) TimerEvent: {}
+[2.974323] (-) TimerEvent: {}
+[3.075058] (-) TimerEvent: {}
+[3.175854] (-) TimerEvent: {}
+[3.268063] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'cmake'}
+[3.271995] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '/home/robot/robot_ws/src/robot_bringup', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/robot_bringup'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.1.87 54968 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('TERM_PROGRAM_VERSION', '1.129.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-89978b7f-b290-4719-8719-3edf1bf94276.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-2e6e89ad67.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('COPILOT_DEBUG_NONCE', 'a4308b616aada4e2c61dcca5c9da473d'), ('SSH_CONNECTION', '192.168.1.87 54968 192.168.1.252 22'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble')]), 'shell': False}
+[3.277440] (-) TimerEvent: {}
+[3.374962] (robot_bringup) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[3.380194] (-) TimerEvent: {}
+[3.481247] (-) TimerEvent: {}
+[3.623531] (-) TimerEvent: {}
+[3.726042] (-) TimerEvent: {}
+[3.854781] (-) TimerEvent: {}
+[4.009915] (-) TimerEvent: {}
+[4.111605] (-) TimerEvent: {}
+[4.213910] (-) TimerEvent: {}
+[4.314771] (-) TimerEvent: {}
+[4.415758] (-) TimerEvent: {}
+[4.516681] (-) TimerEvent: {}
+[4.618518] (-) TimerEvent: {}
+[4.736089] (-) TimerEvent: {}
+[4.837404] (-) TimerEvent: {}
+[4.977857] (-) TimerEvent: {}
+[5.078702] (-) TimerEvent: {}
+[5.179554] (-) TimerEvent: {}
+[5.280659] (-) TimerEvent: {}
+[5.381448] (-) TimerEvent: {}
+[5.482384] (-) TimerEvent: {}
+[5.621744] (-) TimerEvent: {}
+[5.678429] (robot_bringup) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[5.785715] (-) TimerEvent: {}
+[5.886374] (-) TimerEvent: {}
+[5.987148] (-) TimerEvent: {}
+[6.088030] (-) TimerEvent: {}
+[6.189051] (-) TimerEvent: {}
+[6.382068] (-) TimerEvent: {}
+[6.483373] (-) TimerEvent: {}
+[6.601014] (-) TimerEvent: {}
+[6.702347] (-) TimerEvent: {}
+[6.803479] (-) TimerEvent: {}
+[6.831221] (robot_bringup) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[6.903739] (-) TimerEvent: {}
+[7.007024] (-) TimerEvent: {}
+[7.109882] (-) TimerEvent: {}
+[7.213339] (-) TimerEvent: {}
+[7.315203] (-) TimerEvent: {}
+[7.510381] (-) TimerEvent: {}
+[7.611306] (-) TimerEvent: {}
+[7.812230] (-) TimerEvent: {}
+[7.913534] (-) TimerEvent: {}
+[8.091099] (-) TimerEvent: {}
+[8.273420] (-) TimerEvent: {}
+[8.374737] (-) TimerEvent: {}
+[8.475956] (-) TimerEvent: {}
+[8.576940] (-) TimerEvent: {}
+[8.677906] (-) TimerEvent: {}
+[8.948607] (-) TimerEvent: {}
+[9.049820] (-) TimerEvent: {}
+[9.151088] (-) TimerEvent: {}
+[9.252282] (-) TimerEvent: {}
+[9.353553] (-) TimerEvent: {}
+[9.465253] (-) TimerEvent: {}
+[9.566551] (-) TimerEvent: {}
+[9.667533] (-) TimerEvent: {}
+[9.768686] (-) TimerEvent: {}
+[9.889197] (-) TimerEvent: {}
+[9.990495] (-) TimerEvent: {}
+[10.261610] (-) TimerEvent: {}
+[10.444283] (-) TimerEvent: {}
+[10.545297] (-) TimerEvent: {}
+[10.646413] (-) TimerEvent: {}
+[10.747246] (-) TimerEvent: {}
+[10.848326] (-) TimerEvent: {}
+[10.994533] (-) TimerEvent: {}
+[11.095476] (-) TimerEvent: {}
+[11.406406] (-) TimerEvent: {}
+[11.507239] (-) TimerEvent: {}
+[11.676055] (-) TimerEvent: {}
+[11.776863] (-) TimerEvent: {}
+[11.877663] (-) TimerEvent: {}
+[11.978514] (-) TimerEvent: {}
+[11.987610] (robot_bringup) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[12.078696] (-) TimerEvent: {}
+[12.179544] (-) TimerEvent: {}
+[12.328940] (-) TimerEvent: {}
+[12.409155] (robot_bringup) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[12.497878] (-) TimerEvent: {}
+[12.510002] (robot_bringup) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[12.598089] (-) TimerEvent: {}
+[12.609985] (robot_bringup) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[12.705474] (-) TimerEvent: {}
+[12.806874] (-) TimerEvent: {}
+[12.860357] (robot_bringup) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[12.938140] (-) TimerEvent: {}
+[13.041560] (robot_bringup) StdoutLine: {'line': b'-- Configuring done\n'}
+[13.311834] (-) TimerEvent: {}
+[13.413654] (-) TimerEvent: {}
+[13.514727] (-) TimerEvent: {}
+[13.622068] (-) TimerEvent: {}
+[13.723494] (-) TimerEvent: {}
+[13.915813] (robot_bringup) StdoutLine: {'line': b'-- Generating done\n'}
+[13.916611] (-) TimerEvent: {}
+[13.939986] (robot_bringup) StdoutLine: {'line': b'-- Build files have been written to: /home/robot/robot_ws/build/robot_bringup\n'}
+[13.951624] (robot_bringup) CommandEnded: {'returncode': 0}
+[13.962375] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'build'}
+[13.962556] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/robot_bringup', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.1.87 54968 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('TERM_PROGRAM_VERSION', '1.129.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-89978b7f-b290-4719-8719-3edf1bf94276.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-2e6e89ad67.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('COPILOT_DEBUG_NONCE', 'a4308b616aada4e2c61dcca5c9da473d'), ('SSH_CONNECTION', '192.168.1.87 54968 192.168.1.252 22'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble')]), 'shell': False}
+[14.016849] (-) TimerEvent: {}
+[14.117747] (-) TimerEvent: {}
+[14.143525] (robot_bringup) CommandEnded: {'returncode': 0}
+[14.144937] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'install'}
+[14.176655] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/robot_bringup'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'robot'), ('SSH_CLIENT', '192.168.1.87 54968 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('OLDPWD', '/home/robot/robot_ws'), ('TERM_PROGRAM_VERSION', '1.129.1'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-89978b7f-b290-4719-8719-3edf1bf94276.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-2e6e89ad67.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('COPILOT_DEBUG_NONCE', 'a4308b616aada4e2c61dcca5c9da473d'), ('SSH_CONNECTION', '192.168.1.87 54968 192.168.1.252 22'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble')]), 'shell': False}
+[14.213945] (robot_bringup) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[14.215877] (robot_bringup) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[14.217861] (-) TimerEvent: {}
+[14.219263] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/ai.launch.cpython-310.pyc\n'}
+[14.258053] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/full_robot.launch.cpython-310.pyc\n'}
+[14.294835] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/minimal.launch.cpython-310.pyc\n'}
+[14.318095] (-) TimerEvent: {}
+[14.333480] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/nav2.launch.cpython-310.pyc\n'}
+[14.371950] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/slam.launch.cpython-310.pyc\n'}
+[14.409412] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/view_robot.launch.cpython-310.pyc\n'}
+[14.418285] (-) TimerEvent: {}
+[14.519259] (-) TimerEvent: {}
+[14.549726] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/ai.launch.py\n'}
+[14.590248] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/full_robot.launch.py\n'}
+[14.619463] (-) TimerEvent: {}
+[14.627997] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/lidar.launch.py\n'}
+[14.676390] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/localization.launch.py\n'}
+[14.719702] (-) TimerEvent: {}
+[14.729329] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/minimal.launch.py\n'}
+[14.767818] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/nav2.launch.py\n'}
+[14.819875] (-) TimerEvent: {}
+[14.909992] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/robot.launch.py\n'}
+[14.920165] (-) TimerEvent: {}
+[14.949994] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/slam.launch.py\n'}
+[14.988796] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/view_robot.launch.py\n'}
+[15.020391] (-) TimerEvent: {}
+[15.038389] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/amcl_params.yaml\n'}
+[15.077570] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/map_server_params.yaml\n'}
+[15.115306] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/nav2_params.yaml\n'}
+[15.120564] (-) TimerEvent: {}
+[15.152149] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/slam_toolbox_params.yaml\n'}
+[15.220906] (-) TimerEvent: {}
+[15.275491] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz/robot_view.rviz\n'}
+[15.313256] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup//mount_hdd.sh\n'}
+[15.321106] (-) TimerEvent: {}
+[15.352043] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup//unmount_hdd.sh\n'}
+[15.402263] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup//save_map.sh\n'}
+[15.421336] (-) TimerEvent: {}
+[15.444802] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup//setup_hdd_automount.sh\n'}
+[15.490981] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup//save_map.py\n'}
+[15.521558] (-) TimerEvent: {}
+[15.532306] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup//copy_map.sh\n'}
+[15.571099] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/.gitkeep\n'}
+[15.608494] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/my_room/map.pgm\n'}
+[15.621882] (-) TimerEvent: {}
+[15.646459] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/my_room/map.yaml\n'}
+[15.684391] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup\n'}
+[15.722196] (-) TimerEvent: {}
+[15.823245] (-) TimerEvent: {}
+[15.938840] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup\n'}
+[15.939778] (-) TimerEvent: {}
+[15.977420] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh\n'}
+[16.016196] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv\n'}
+[16.040087] (-) TimerEvent: {}
+[16.054613] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.sh\n'}
+[16.140247] (-) TimerEvent: {}
+[16.274629] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.dsv\n'}
+[16.275776] (-) TimerEvent: {}
+[16.316096] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.bash\n'}
+[16.355719] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.sh\n'}
+[16.376032] (-) TimerEvent: {}
+[16.395163] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.zsh\n'}
+[16.434442] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.dsv\n'}
+[16.472067] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.dsv\n'}
+[16.476276] (-) TimerEvent: {}
+[16.509865] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup\n'}
+[16.548117] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake\n'}
+[16.576488] (-) TimerEvent: {}
+[16.586788] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake\n'}
+[16.676758] (-) TimerEvent: {}
+[16.824407] (robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.xml\n'}
+[16.825222] (-) TimerEvent: {}
+[16.868169] (robot_bringup) CommandEnded: {'returncode': 0}
+[16.925438] (-) TimerEvent: {}
+[17.026410] (-) TimerEvent: {}
+[17.265737] (-) TimerEvent: {}
+[17.366592] (-) TimerEvent: {}
+[17.467482] (-) TimerEvent: {}
+[17.568373] (-) TimerEvent: {}
+[17.669550] (-) TimerEvent: {}
+[17.770863] (-) TimerEvent: {}
+[17.872275] (-) TimerEvent: {}
+[17.973531] (-) TimerEvent: {}
+[18.074805] (-) TimerEvent: {}
+[18.176008] (-) TimerEvent: {}
+[18.277172] (-) TimerEvent: {}
+[18.378433] (-) TimerEvent: {}
+[18.479612] (-) TimerEvent: {}
+[18.580750] (-) TimerEvent: {}
+[18.682003] (-) TimerEvent: {}
+[18.783131] (-) TimerEvent: {}
+[18.884278] (-) TimerEvent: {}
+[18.985517] (-) TimerEvent: {}
+[19.086833] (-) TimerEvent: {}
+[19.188116] (-) TimerEvent: {}
+[19.289290] (-) TimerEvent: {}
+[19.390596] (-) TimerEvent: {}
+[19.491827] (-) TimerEvent: {}
+[19.592985] (-) TimerEvent: {}
+[19.694299] (-) TimerEvent: {}
+[19.795732] (-) TimerEvent: {}
+[19.896915] (-) TimerEvent: {}
+[19.998305] (-) TimerEvent: {}
+[20.099559] (-) TimerEvent: {}
+[20.200844] (-) TimerEvent: {}
+[20.302158] (-) TimerEvent: {}
+[20.403478] (-) TimerEvent: {}
+[20.504746] (-) TimerEvent: {}
+[20.605897] (-) TimerEvent: {}
+[20.707106] (-) TimerEvent: {}
+[20.808171] (-) TimerEvent: {}
+[20.909269] (-) TimerEvent: {}
+[21.010528] (-) TimerEvent: {}
+[21.111481] (-) TimerEvent: {}
+[21.212371] (-) TimerEvent: {}
+[21.313230] (-) TimerEvent: {}
+[21.414059] (-) TimerEvent: {}
+[21.514877] (-) TimerEvent: {}
+[21.615695] (-) TimerEvent: {}
+[23.086322] (robot_bringup) JobEnded: {'identifier': 'robot_bringup', 'rc': 0}
+[23.162154] (-) TimerEvent: {}
+[23.263002] (-) TimerEvent: {}
+[23.363794] (-) TimerEvent: {}
+[23.464653] (-) TimerEvent: {}
+[23.904388] (-) TimerEvent: {}
+[24.005645] (-) TimerEvent: {}
+[24.106815] (-) TimerEvent: {}
+[24.209341] (-) TimerEvent: {}
+[24.310210] (-) TimerEvent: {}
+[24.411559] (-) TimerEvent: {}
+[24.740753] (-) TimerEvent: {}
+[24.841718] (-) TimerEvent: {}
+[24.943027] (-) TimerEvent: {}
+[25.045635] (-) TimerEvent: {}
+[25.146919] (-) TimerEvent: {}
+[25.463720] (-) TimerEvent: {}
+[25.564803] (-) TimerEvent: {}
+[25.665841] (-) TimerEvent: {}
+[25.768474] (-) TimerEvent: {}
+[25.869773] (-) TimerEvent: {}
+[26.041178] (-) TimerEvent: {}
+[26.142385] (-) TimerEvent: {}
+[26.243259] (-) TimerEvent: {}
+[26.344512] (-) TimerEvent: {}
+[26.445750] (-) TimerEvent: {}
+[26.546873] (-) TimerEvent: {}
+[26.648126] (-) TimerEvent: {}
+[26.749292] (-) TimerEvent: {}
+[26.850362] (-) TimerEvent: {}
+[26.951540] (-) TimerEvent: {}
+[27.052738] (-) TimerEvent: {}
+[27.153643] (-) TimerEvent: {}
+[27.471457] (-) TimerEvent: {}
+[27.572707] (-) TimerEvent: {}
+[27.673954] (-) TimerEvent: {}
+[27.775032] (-) TimerEvent: {}
+[27.876284] (-) TimerEvent: {}
+[27.977469] (-) TimerEvent: {}
+[28.078404] (-) TimerEvent: {}
+[28.179335] (-) TimerEvent: {}
+[28.280520] (-) TimerEvent: {}
+[28.381362] (-) TimerEvent: {}
+[28.482177] (-) TimerEvent: {}
+[28.582940] (-) TimerEvent: {}
+[28.683838] (-) TimerEvent: {}
+[28.785072] (-) TimerEvent: {}
+[28.886338] (-) TimerEvent: {}
+[29.706832] (-) TimerEvent: {}
+[29.807789] (-) TimerEvent: {}
+[29.908819] (-) TimerEvent: {}
+[30.009939] (-) TimerEvent: {}
+[30.110973] (-) TimerEvent: {}
+[30.212358] (-) TimerEvent: {}
+[30.416299] (-) TimerEvent: {}
+[30.518964] (-) TimerEvent: {}
+[30.621968] (-) TimerEvent: {}
+[30.723007] (-) TimerEvent: {}
+[30.825895] (-) TimerEvent: {}
+[30.927541] (-) TimerEvent: {}
+[31.028920] (-) TimerEvent: {}
+[31.130260] (-) TimerEvent: {}
+[31.231695] (-) TimerEvent: {}
+[31.333058] (-) TimerEvent: {}
+[31.434492] (-) TimerEvent: {}
+[31.535759] (-) TimerEvent: {}
+[31.638302] (-) TimerEvent: {}
+[31.739243] (-) TimerEvent: {}
+[32.810753] (esp32_ros2_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/robot/robot_ws/build/esp32_ros2_bridge/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/home/robot/robot_ws/build/esp32_ros2_bridge', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'robot', 'SSH_CLIENT': '192.168.1.87 54968 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws', 'TERM_PROGRAM_VERSION': '1.129.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-89978b7f-b290-4719-8719-3edf1bf94276.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-2e6e89ad67.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/robot/robot_ws/build/esp32_ros2_bridge', 'LC_ALL': 'en_US.UTF-8', 'COPILOT_DEBUG_NONCE': 'a4308b616aada4e2c61dcca5c9da473d', 'SSH_CONNECTION': '192.168.1.87 54968 192.168.1.252 22', 'PYTHONPATH': '/home/robot/robot_ws/build/esp32_ros2_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description'}, 'shell': False}
+[32.819013] (-) TimerEvent: {}
+[32.833938] (robot_serial) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/robot/robot_ws/build/robot_serial/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/home/robot/robot_ws/build/robot_serial', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'robot', 'SSH_CLIENT': '192.168.1.87 54968 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws', 'TERM_PROGRAM_VERSION': '1.129.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-89978b7f-b290-4719-8719-3edf1bf94276.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/robot/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/robot/.vscode-server/cli/servers/Stable-8a7abeba6e03ea3af87bfbce9a1b7e48fed567b8/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-2e6e89ad67.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/robot/robot_ws/build/robot_serial', 'LC_ALL': 'en_US.UTF-8', 'COPILOT_DEBUG_NONCE': 'a4308b616aada4e2c61dcca5c9da473d', 'SSH_CONNECTION': '192.168.1.87 54968 192.168.1.252 22', 'PYTHONPATH': '/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description'}, 'shell': False}
+[32.919259] (-) TimerEvent: {}
+[33.021179] (-) TimerEvent: {}
+[33.269973] (-) TimerEvent: {}
+[33.372166] (-) TimerEvent: {}
+[33.615682] (-) TimerEvent: {}
+[33.718643] (-) TimerEvent: {}
+[33.819517] (-) TimerEvent: {}
+[33.920461] (-) TimerEvent: {}
+[34.022967] (-) TimerEvent: {}
+[34.125160] (-) TimerEvent: {}
+[34.227376] (-) TimerEvent: {}
+[34.328697] (-) TimerEvent: {}
+[34.427373] (robot_serial) StdoutLine: {'line': b'running develop\n'}
+[34.593878] (-) TimerEvent: {}
+[34.595056] (esp32_ros2_bridge) StdoutLine: {'line': b'running develop\n'}
+[34.694102] (-) TimerEvent: {}
+[34.795131] (-) TimerEvent: {}
+[34.896103] (-) TimerEvent: {}
+[35.002147] (-) TimerEvent: {}
+[35.103141] (-) TimerEvent: {}
+[35.205094] (-) TimerEvent: {}
+[35.307281] (-) TimerEvent: {}
+[35.409792] (-) TimerEvent: {}
+[35.512087] (-) TimerEvent: {}
+[35.612997] (-) TimerEvent: {}
+[35.713844] (-) TimerEvent: {}
+[35.767741] (robot_serial) StdoutLine: {'line': b'running egg_info\n'}
+[35.768767] (robot_serial) StdoutLine: {'line': b'writing robot_serial.egg-info/PKG-INFO\n'}
+[35.770317] (robot_serial) StdoutLine: {'line': b'writing dependency_links to robot_serial.egg-info/dependency_links.txt\n'}
+[35.771691] (robot_serial) StdoutLine: {'line': b'writing entry points to robot_serial.egg-info/entry_points.txt\n'}
+[35.772658] (robot_serial) StdoutLine: {'line': b'writing requirements to robot_serial.egg-info/requires.txt\n'}
+[35.774471] (robot_serial) StdoutLine: {'line': b'writing top-level names to robot_serial.egg-info/top_level.txt\n'}
+[35.786050] (robot_serial) StdoutLine: {'line': b"reading manifest file 'robot_serial.egg-info/SOURCES.txt'\n"}
+[35.791426] (robot_serial) StdoutLine: {'line': b"writing manifest file 'robot_serial.egg-info/SOURCES.txt'\n"}
+[35.800216] (robot_serial) StdoutLine: {'line': b'running build_ext\n'}
+[35.801975] (robot_serial) StdoutLine: {'line': b'Creating /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot-serial.egg-link (link to .)\n'}
+[35.806990] (robot_serial) StdoutLine: {'line': b'Installing serial_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial\n'}
+[35.808959] (robot_serial) StdoutLine: {'line': b'Installing wheel_odom_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial\n'}
+[35.810780] (robot_serial) StdoutLine: {'line': b'\n'}
+[35.812155] (robot_serial) StdoutLine: {'line': b'Installed /home/robot/robot_ws/build/robot_serial\n'}
+[35.814737] (-) TimerEvent: {}
+[35.821204] (robot_serial) StdoutLine: {'line': b'running symlink_data\n'}
+[35.842690] (robot_serial) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/robot_serial/resource/robot_serial -> /home/robot/robot_ws/install/robot_serial/share/ament_index/resource_index/packages\n'}
+[35.854266] (robot_serial) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/robot_serial/package.xml -> /home/robot/robot_ws/install/robot_serial/share/robot_serial\n'}
+[35.878349] (robot_serial) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/robot_serial/launch/robot_serial.launch.py -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/launch\n'}
+[35.882118] (robot_serial) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/robot_serial/launch/wheel_odom.launch.py -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/launch\n'}
+[35.885285] (robot_serial) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/robot_serial/config/serial.yaml -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/config\n'}
+[35.914983] (-) TimerEvent: {}
+[35.996469] (robot_serial) CommandEnded: {'returncode': 0}
+[36.018400] (-) TimerEvent: {}
+[36.120684] (-) TimerEvent: {}
+[36.181736] (robot_serial) JobEnded: {'identifier': 'robot_serial', 'rc': 0}
+[36.221029] (-) TimerEvent: {}
+[36.323794] (-) TimerEvent: {}
+[36.362351] (esp32_ros2_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[36.366047] (esp32_ros2_bridge) StdoutLine: {'line': b'writing esp32_ros2_bridge.egg-info/PKG-INFO\n'}
+[36.369070] (esp32_ros2_bridge) StdoutLine: {'line': b'writing dependency_links to esp32_ros2_bridge.egg-info/dependency_links.txt\n'}
+[36.369921] (esp32_ros2_bridge) StdoutLine: {'line': b'writing entry points to esp32_ros2_bridge.egg-info/entry_points.txt\n'}
+[36.370719] (esp32_ros2_bridge) StdoutLine: {'line': b'writing requirements to esp32_ros2_bridge.egg-info/requires.txt\n'}
+[36.371552] (esp32_ros2_bridge) StdoutLine: {'line': b'writing top-level names to esp32_ros2_bridge.egg-info/top_level.txt\n'}
+[36.380013] (esp32_ros2_bridge) StdoutLine: {'line': b"reading manifest file 'esp32_ros2_bridge.egg-info/SOURCES.txt'\n"}
+[36.385040] (esp32_ros2_bridge) StdoutLine: {'line': b"writing manifest file 'esp32_ros2_bridge.egg-info/SOURCES.txt'\n"}
+[36.394418] (esp32_ros2_bridge) StdoutLine: {'line': b'running build_ext\n'}
+[36.396568] (esp32_ros2_bridge) StdoutLine: {'line': b'Creating /home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages/esp32-ros2-bridge.egg-link (link to .)\n'}
+[36.401418] (esp32_ros2_bridge) StdoutLine: {'line': b'Installing esp32_bridge_node script to /home/robot/robot_ws/install/esp32_ros2_bridge/bin\n'}
+[36.403739] (esp32_ros2_bridge) StdoutLine: {'line': b'\n'}
+[36.404502] (esp32_ros2_bridge) StdoutLine: {'line': b'Installed /home/robot/robot_ws/build/esp32_ros2_bridge\n'}
+[36.406408] (esp32_ros2_bridge) StdoutLine: {'line': b'running symlink_data\n'}
+[36.408754] (esp32_ros2_bridge) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/esp32_ros2_bridge/resource/esp32_ros2_bridge -> /home/robot/robot_ws/install/esp32_ros2_bridge/share/ament_index/resource_index/packages\n'}
+[36.413780] (esp32_ros2_bridge) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/esp32_ros2_bridge/package.xml -> /home/robot/robot_ws/install/esp32_ros2_bridge/share/esp32_ros2_bridge\n'}
+[36.418730] (esp32_ros2_bridge) StdoutLine: {'line': b'symbolically linking /home/robot/robot_ws/build/esp32_ros2_bridge/launch/esp32_bridge.launch.py -> /home/robot/robot_ws/install/esp32_ros2_bridge/share/esp32_ros2_bridge/launch\n'}
+[36.439585] (-) TimerEvent: {}
+[36.541893] (-) TimerEvent: {}
+[36.593772] (esp32_ros2_bridge) CommandEnded: {'returncode': 0}
+[36.641955] (-) TimerEvent: {}
+[36.680815] (esp32_ros2_bridge) JobEnded: {'identifier': 'esp32_ros2_bridge', 'rc': 0}
+[36.684990] (-) EventReactorShutdown: {}

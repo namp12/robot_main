@@ -1,0 +1,166 @@
+[0.000000] (-) TimerEvent: {}
+[0.001628] (robot_serial) JobQueued: {'identifier': 'robot_serial', 'dependencies': OrderedDict()}
+[0.002847] (robot_serial) JobStarted: {'identifier': 'robot_serial'}
+[0.097427] (-) TimerEvent: {}
+[0.197913] (-) TimerEvent: {}
+[0.298336] (-) TimerEvent: {}
+[0.398768] (-) TimerEvent: {}
+[0.499209] (-) TimerEvent: {}
+[0.599620] (-) TimerEvent: {}
+[0.700009] (-) TimerEvent: {}
+[0.800413] (-) TimerEvent: {}
+[0.900817] (-) TimerEvent: {}
+[1.001340] (-) TimerEvent: {}
+[1.101928] (-) TimerEvent: {}
+[1.202343] (-) TimerEvent: {}
+[1.303015] (-) TimerEvent: {}
+[1.403627] (-) TimerEvent: {}
+[1.504030] (-) TimerEvent: {}
+[1.604470] (-) TimerEvent: {}
+[1.704904] (-) TimerEvent: {}
+[1.805334] (-) TimerEvent: {}
+[1.905747] (-) TimerEvent: {}
+[2.006234] (-) TimerEvent: {}
+[2.106668] (-) TimerEvent: {}
+[2.207069] (-) TimerEvent: {}
+[2.307465] (-) TimerEvent: {}
+[2.407858] (-) TimerEvent: {}
+[2.508296] (-) TimerEvent: {}
+[2.608704] (-) TimerEvent: {}
+[2.709097] (-) TimerEvent: {}
+[2.809630] (-) TimerEvent: {}
+[2.910322] (-) TimerEvent: {}
+[3.010933] (-) TimerEvent: {}
+[3.111605] (-) TimerEvent: {}
+[3.212252] (-) TimerEvent: {}
+[3.312988] (-) TimerEvent: {}
+[3.413611] (-) TimerEvent: {}
+[3.514247] (-) TimerEvent: {}
+[3.614952] (-) TimerEvent: {}
+[3.715720] (-) TimerEvent: {}
+[3.816401] (-) TimerEvent: {}
+[3.917040] (-) TimerEvent: {}
+[4.017616] (-) TimerEvent: {}
+[4.118217] (-) TimerEvent: {}
+[4.218792] (-) TimerEvent: {}
+[4.319290] (-) TimerEvent: {}
+[11.023590] (-) TimerEvent: {}
+[11.124104] (-) TimerEvent: {}
+[11.224772] (-) TimerEvent: {}
+[11.325434] (-) TimerEvent: {}
+[11.426086] (-) TimerEvent: {}
+[11.526642] (-) TimerEvent: {}
+[11.627220] (-) TimerEvent: {}
+[11.727894] (-) TimerEvent: {}
+[11.828542] (-) TimerEvent: {}
+[11.929278] (-) TimerEvent: {}
+[12.029894] (-) TimerEvent: {}
+[12.130455] (-) TimerEvent: {}
+[12.231095] (-) TimerEvent: {}
+[12.331706] (-) TimerEvent: {}
+[12.432339] (-) TimerEvent: {}
+[12.532973] (-) TimerEvent: {}
+[12.633582] (-) TimerEvent: {}
+[12.734202] (-) TimerEvent: {}
+[12.834902] (-) TimerEvent: {}
+[12.935519] (-) TimerEvent: {}
+[13.036072] (-) TimerEvent: {}
+[13.136653] (-) TimerEvent: {}
+[13.237294] (-) TimerEvent: {}
+[13.337997] (-) TimerEvent: {}
+[13.438583] (-) TimerEvent: {}
+[13.539135] (-) TimerEvent: {}
+[13.639804] (-) TimerEvent: {}
+[13.740454] (-) TimerEvent: {}
+[13.841131] (-) TimerEvent: {}
+[13.941830] (-) TimerEvent: {}
+[14.042486] (-) TimerEvent: {}
+[14.143123] (-) TimerEvent: {}
+[14.243765] (-) TimerEvent: {}
+[14.344403] (-) TimerEvent: {}
+[14.445040] (-) TimerEvent: {}
+[14.545636] (-) TimerEvent: {}
+[14.693614] (robot_serial) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/robot_serial', 'build', '--build-base', '/home/robot/robot_ws/src/robot_serial/build/robot_serial/build', 'install', '--record', '/home/robot/robot_ws/src/robot_serial/build/robot_serial/install.log', '--install-scripts', '$base/lib/robot_serial', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/robot_serial', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/robot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'KILO_DISABLE_CHANNEL_DB': 'true', 'USER': 'robot', 'KILO_ENABLE_QUESTION_TOOL': 'true', 'SSH_CLIENT': '192.168.1.87 58634 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'AGENT': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'KILO_VSCODE_VERSION': '1.130.0', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'OLDPWD': '/home/robot/robot_ws', 'KILO_PROCESS_ROLE': 'main', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-1d2393f7-9d99-496e-acbc-f87a019e370d.sock', 'ROS_PYTHON_VERSION': '3', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'KILO_APP_VERSION': '7.4.15', 'KILO_RUN_ID': '5c86d6ef-d922-425c-91c1-75bb0fdac972', 'KILOCODE_VERSION': '7.4.15', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'KILO_CLIENT': 'vscode', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '5', 'VSCODE_CLI_REQUIRE_TOKEN': '1ac55e63-c56f-4d42-9183-d8722417639a', 'KILO_EDITOR_NAME': 'Visual Studio Code', 'ROS_LOCALHOST_ONLY': '0', 'OPENCODE': '1', 'PATH': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'VSCODE_AGENT_FOLDER': '/home/robot/.vscode-server', 'KILO': '1', 'KILO_SERVER_PASSWORD': '6521688f626ad737f03eae8a1c018c282f4c810ca20ba2905b1f208d84d6a7c6', 'XDG_RUNTIME_DIR': '/run/user/1000', 'KILO_APP_NAME': 'kilo-code', 'LANG': 'en_US.UTF-8', 'LS_COLORS': '', 'KILO_PID': '32695', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'KILOCODE_FEATURE': 'vscode-extension', 'SHELL': '/bin/bash', 'KILO_PLATFORM': 'vscode', 'MXC_BIN_DIR': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin', 'ELECTRON_RUN_AS_NODE': '1', 'KILOCODE_EDITOR_NAME': 'Visual Studio Code 1.130.0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'NODE_USE_SYSTEM_CA': '1', 'KILO_PARENT_PID': '29343', 'PWD': '/home/robot/robot_ws/src/robot_serial/build/robot_serial', 'LC_ALL': 'en_US.UTF-8', 'KILO_MACHINE_ID': 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70', 'SSH_CONNECTION': '192.168.1.87 58634 192.168.1.252 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/src/robot_serial/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'MIMALLOC_PURGE_DELAY': '0', 'COLCON': '1', 'COPILOT_CLI_ENABLED_FEATURE_FLAGS': 'SHELL_SPAWN_BACKEND', 'KILO_DISABLE_CLAUDE_CODE': 'true', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description', 'KILO_TELEMETRY_LEVEL': 'all', 'KILO_TREE_SITTER_WASM_DIR': '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.15-linux-arm64/bin/tree-sitter'}, 'shell': False}
+[14.699600] (-) TimerEvent: {}
+[14.800205] (-) TimerEvent: {}
+[14.900615] (-) TimerEvent: {}
+[15.001185] (-) TimerEvent: {}
+[15.101698] (-) TimerEvent: {}
+[15.257213] (-) TimerEvent: {}
+[15.357616] (-) TimerEvent: {}
+[15.458048] (-) TimerEvent: {}
+[15.558437] (-) TimerEvent: {}
+[15.658842] (-) TimerEvent: {}
+[15.759277] (-) TimerEvent: {}
+[15.859687] (-) TimerEvent: {}
+[15.948582] (robot_serial) StdoutLine: {'line': b'running egg_info\n'}
+[15.951665] (robot_serial) StdoutLine: {'line': b'creating build/robot_serial/robot_serial.egg-info\n'}
+[15.953265] (robot_serial) StdoutLine: {'line': b'writing build/robot_serial/robot_serial.egg-info/PKG-INFO\n'}
+[15.956125] (robot_serial) StdoutLine: {'line': b'writing dependency_links to build/robot_serial/robot_serial.egg-info/dependency_links.txt\n'}
+[15.958558] (robot_serial) StdoutLine: {'line': b'writing entry points to build/robot_serial/robot_serial.egg-info/entry_points.txt\n'}
+[15.959135] (robot_serial) StdoutLine: {'line': b'writing requirements to build/robot_serial/robot_serial.egg-info/requires.txt\n'}
+[15.959630] (robot_serial) StdoutLine: {'line': b'writing top-level names to build/robot_serial/robot_serial.egg-info/top_level.txt\n'}
+[15.960230] (-) TimerEvent: {}
+[15.960443] (robot_serial) StdoutLine: {'line': b"writing manifest file 'build/robot_serial/robot_serial.egg-info/SOURCES.txt'\n"}
+[15.967912] (robot_serial) StdoutLine: {'line': b"reading manifest file 'build/robot_serial/robot_serial.egg-info/SOURCES.txt'\n"}
+[15.972130] (robot_serial) StdoutLine: {'line': b"writing manifest file 'build/robot_serial/robot_serial.egg-info/SOURCES.txt'\n"}
+[15.973147] (robot_serial) StdoutLine: {'line': b'running build\n'}
+[15.975211] (robot_serial) StdoutLine: {'line': b'running build_py\n'}
+[15.976653] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/src/robot_serial/build/robot_serial/build\n'}
+[15.978004] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib\n'}
+[15.979244] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.980421] (robot_serial) StdoutLine: {'line': b'copying robot_serial/__init__.py -> /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.981639] (robot_serial) StdoutLine: {'line': b'copying robot_serial/serial_protocol.py -> /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.982883] (robot_serial) StdoutLine: {'line': b'copying robot_serial/sensor_parser.py -> /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.983880] (robot_serial) StdoutLine: {'line': b'copying robot_serial/teleop.py -> /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.984482] (robot_serial) StdoutLine: {'line': b'copying robot_serial/serial_manager.py -> /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.985934] (robot_serial) StdoutLine: {'line': b'copying robot_serial/serial_node.py -> /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.987067] (robot_serial) StdoutLine: {'line': b'copying robot_serial/serial_bridge_node.py -> /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.987691] (robot_serial) StdoutLine: {'line': b'copying robot_serial/wheel_odom_node.py -> /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.988831] (robot_serial) StdoutLine: {'line': b'copying robot_serial/serial_parser.py -> /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial\n'}
+[15.989891] (robot_serial) StdoutLine: {'line': b'running install\n'}
+[15.991027] (robot_serial) StdoutLine: {'line': b'running install_lib\n'}
+[15.995368] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[15.996408] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial/__init__.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[15.997668] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial/serial_protocol.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[15.998760] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial/sensor_parser.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[16.000673] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial/teleop.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[16.002151] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial/serial_manager.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[16.003994] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial/serial_node.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[16.005361] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial/serial_bridge_node.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[16.007159] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial/wheel_odom_node.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[16.008970] (robot_serial) StdoutLine: {'line': b'copying /home/robot/robot_ws/src/robot_serial/build/robot_serial/build/lib/robot_serial/serial_parser.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial\n'}
+[16.013368] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial/__init__.py to __init__.cpython-310.pyc\n'}
+[16.016687] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_protocol.py to serial_protocol.cpython-310.pyc\n'}
+[16.021969] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial/sensor_parser.py to sensor_parser.cpython-310.pyc\n'}
+[16.028516] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial/teleop.py to teleop.cpython-310.pyc\n'}
+[16.032174] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_manager.py to serial_manager.cpython-310.pyc\n'}
+[16.038345] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_node.py to serial_node.cpython-310.pyc\n'}
+[16.045039] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_bridge_node.py to serial_bridge_node.cpython-310.pyc\n'}
+[16.053624] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial/wheel_odom_node.py to wheel_odom_node.cpython-310.pyc\n'}
+[16.058416] (robot_serial) StdoutLine: {'line': b'byte-compiling /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial/serial_parser.py to serial_parser.cpython-310.pyc\n'}
+[16.060426] (-) TimerEvent: {}
+[16.061677] (robot_serial) StdoutLine: {'line': b'running install_data\n'}
+[16.127275] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/ament_index\n'}
+[16.129707] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/ament_index/resource_index\n'}
+[16.131585] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/ament_index/resource_index/packages\n'}
+[16.132595] (robot_serial) StdoutLine: {'line': b'copying resource/robot_serial -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/ament_index/resource_index/packages\n'}
+[16.134895] (robot_serial) StdoutLine: {'line': b'copying package.xml -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/robot_serial\n'}
+[16.139226] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/robot_serial/launch\n'}
+[16.140320] (robot_serial) StdoutLine: {'line': b'copying launch/robot_serial.launch.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/robot_serial/launch\n'}
+[16.140877] (robot_serial) StdoutLine: {'line': b'copying launch/wheel_odom.launch.py -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/robot_serial/launch\n'}
+[16.141901] (robot_serial) StdoutLine: {'line': b'creating /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/robot_serial/config\n'}
+[16.143087] (robot_serial) StdoutLine: {'line': b'copying config/serial.yaml -> /home/robot/robot_ws/src/robot_serial/install/robot_serial/share/robot_serial/config\n'}
+[16.144094] (robot_serial) StdoutLine: {'line': b'running install_egg_info\n'}
+[16.152732] (robot_serial) StdoutLine: {'line': b'Copying build/robot_serial/robot_serial.egg-info to /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info\n'}
+[16.159019] (robot_serial) StdoutLine: {'line': b'running install_scripts\n'}
+[16.160554] (-) TimerEvent: {}
+[16.253646] (robot_serial) StdoutLine: {'line': b'Installing serial_node script to /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/robot_serial\n'}
+[16.254835] (robot_serial) StdoutLine: {'line': b'Installing teleop_text script to /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/robot_serial\n'}
+[16.255782] (robot_serial) StdoutLine: {'line': b'Installing wheel_odom_node script to /home/robot/robot_ws/src/robot_serial/install/robot_serial/lib/robot_serial\n'}
+[16.258646] (robot_serial) StdoutLine: {'line': b"writing list of installed files to '/home/robot/robot_ws/src/robot_serial/build/robot_serial/install.log'\n"}
+[16.260887] (-) TimerEvent: {}
+[16.361681] (-) TimerEvent: {}
+[16.382443] (robot_serial) CommandEnded: {'returncode': 0}
+[16.441368] (robot_serial) JobEnded: {'identifier': 'robot_serial', 'rc': 0}
+[16.443868] (-) EventReactorShutdown: {}

@@ -1,0 +1,1 @@
+/home/robot/robot_ws/src/robot_bringup/launch/nav2.launch.py

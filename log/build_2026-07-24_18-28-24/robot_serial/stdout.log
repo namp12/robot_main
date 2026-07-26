@@ -1,0 +1,21 @@
+running develop
+running egg_info
+writing robot_serial.egg-info/PKG-INFO
+writing dependency_links to robot_serial.egg-info/dependency_links.txt
+writing entry points to robot_serial.egg-info/entry_points.txt
+writing requirements to robot_serial.egg-info/requires.txt
+writing top-level names to robot_serial.egg-info/top_level.txt
+reading manifest file 'robot_serial.egg-info/SOURCES.txt'
+writing manifest file 'robot_serial.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot-serial.egg-link (link to .)
+Installing serial_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial
+Installing wheel_odom_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial
+
+Installed /home/robot/robot_ws/build/robot_serial
+running symlink_data
+symbolically linking /home/robot/robot_ws/build/robot_serial/resource/robot_serial -> /home/robot/robot_ws/install/robot_serial/share/ament_index/resource_index/packages
+symbolically linking /home/robot/robot_ws/build/robot_serial/package.xml -> /home/robot/robot_ws/install/robot_serial/share/robot_serial
+symbolically linking /home/robot/robot_ws/build/robot_serial/launch/robot_serial.launch.py -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/launch
+symbolically linking /home/robot/robot_ws/build/robot_serial/launch/wheel_odom.launch.py -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/launch
+symbolically linking /home/robot/robot_ws/build/robot_serial/config/serial.yaml -> /home/robot/robot_ws/install/robot_serial/share/robot_serial/config

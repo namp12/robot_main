@@ -78,7 +78,6 @@ class WheelOdometryNode(Node):
             'Wheel odometry node initialized: '
             f'wheel_radius={self.wheel_radius:.3f}m, '
             f'wheel_separation={self.wheel_separation:.3f}m, '
-'
             f'odom_frame={self.odom_frame}, base_frame={self.base_frame}'
         )
 
