@@ -55,13 +55,21 @@ def parse_sensor_line(line: str) -> Dict[str, Any]:
         if battery is not None:
             result['battery'] = battery
 
-        front = _extract_unit_value(text, 'cm')
-        if front is not None:
-            result['distance']['front'] = front
+        # Extract front distance: match FRONT or FRONT_DISTANCE prefix
+        front_match = re.search(r'(?:FRONT|FRONT_DISTANCE)\s*:\s*([-+]?\d*\.?\d+)\s*cm', text, re.IGNORECASE)
+        if front_match:
+            try:
+                result['distance']['front'] = float(front_match.group(1))
+            except ValueError:
+                pass
 
-        rear = _extract_unit_value(text, 'cm')
-        if rear is not None:
-            result['distance']['rear'] = rear
+        # Extract rear distance: match REAR or REAR_DISTANCE prefix
+        rear_match = re.search(r'(?:REAR|REAR_DISTANCE)\s*:\s*([-+]?\d*\.?\d+)\s*cm', text, re.IGNORECASE)
+        if rear_match:
+            try:
+                result['distance']['rear'] = float(rear_match.group(1))
+            except ValueError:
+                pass
 
         yaw = _extract_key_value(text, 'Yaw')
         pitch = _extract_key_value(text, 'Pitch')

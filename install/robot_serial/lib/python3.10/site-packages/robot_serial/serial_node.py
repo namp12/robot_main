@@ -1,3 +1,4 @@
+import math
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -6,6 +7,22 @@ from std_msgs.msg import Float32, String
 
 from robot_serial.serial_manager import SerialManager
 from robot_serial.sensor_parser import parse_sensor_line
+
+
+def euler_to_quaternion(roll: float, pitch: float, yaw: float):
+    cy = math.cos(yaw * 0.5)
+    sy = math.sin(yaw * 0.5)
+    cp = math.cos(pitch * 0.5)
+    sp = math.sin(pitch * 0.5)
+    cr = math.cos(roll * 0.5)
+    sr = math.sin(roll * 0.5)
+
+    qx = sr * cp * cy - cr * sp * sy
+    qy = cr * sp * cy + sr * cp * sy
+    qz = cr * cp * sy - sr * sp * cy
+    qw = cr * cp * cy + sr * sp * sy
+
+    return qx, qy, qz, qw
 
 
 MAX_SPEED = 255
@@ -92,7 +109,6 @@ class SerialNode(Node):
         self.connected = True
         self.get_logger().info(f'Connected to {port}')
         self._telemetry_enabled = True
-        self.serial_manager.write_line('t on')
 
     def _on_disconnected(self):
         self.connected = False
@@ -126,6 +142,22 @@ class SerialNode(Node):
             imu_msg.angular_velocity.x = float(parsed['imu'].get('gx', 0.0))
             imu_msg.angular_velocity.y = float(parsed['imu'].get('gy', 0.0))
             imu_msg.angular_velocity.z = float(parsed['imu'].get('gz', 0.0))
+            
+            # Convert Roll, Pitch, Yaw from degrees to radians -> Quaternions
+            roll = float(parsed['imu'].get('roll', 0.0))
+            pitch = float(parsed['imu'].get('pitch', 0.0))
+            yaw = float(parsed['imu'].get('yaw', 0.0))
+            
+            qx, qy, qz, qw = euler_to_quaternion(
+                math.radians(roll),
+                math.radians(pitch),
+                math.radians(yaw)
+            )
+            imu_msg.orientation.x = qx
+            imu_msg.orientation.y = qy
+            imu_msg.orientation.z = qz
+            imu_msg.orientation.w = qw
+            
             self.imu_publisher.publish(imu_msg)
 
         if parsed.get('distance'):
