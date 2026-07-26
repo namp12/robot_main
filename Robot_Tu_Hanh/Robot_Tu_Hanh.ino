@@ -191,6 +191,17 @@ void processCommand(String line) {
     enableTelemetry = false;
     return;
   }
+
+  // Kiểm tra lệnh chuyển chế độ (từ teleop hoặc Pi)
+  if (line == "mode_manual") {
+    robotMode = "MANUAL";
+    stopAll();
+    return;
+  }
+  if (line == "mode_auto") {
+    robotMode = "AUTO";
+    return;
+  }
   
   // Phân tách lệnh di chuyển (Ví dụ: "tien 150" -> hướng: "tien", tốc độ: 150)
   int spaceIndex = line.indexOf(' ');
@@ -199,7 +210,8 @@ void processCommand(String line) {
     String speedStr = line.substring(spaceIndex + 1);
     int speed = speedStr.toInt();
     
-    // Gửi lệnh điều khiển xuống động cơ
+    // Khi nhận được lệnh di chuyển, tự động chuyển về chế độ ROS2
+    robotMode = "ROS2";
     controlMecanum(direction, speed);
   } else {
     // Nếu chỉ gửi hướng không kèm tốc độ (ví dụ từ teleop: "tien")
@@ -207,6 +219,8 @@ void processCommand(String line) {
     if (direction == "dung" || direction == "x") {
       controlMecanum("dung", 0);
     } else {
+      // Khi nhận được lệnh di chuyển, tự động chuyển về chế độ ROS2
+      robotMode = "ROS2";
       controlMecanum(direction, 150); // Tốc độ mặc định 150
     }
   }
@@ -280,6 +294,21 @@ void loop() {
   
   // Đọc dữ liệu từ cảm biến liên tục
   readSensors();
+
+  // Xử lý di chuyển theo chế độ tự động (AUTO) tránh vật cản độc lập
+  if (robotMode == "AUTO") {
+    if (frontDistance < 20.0) {
+      // Có vật cản phía trước -> Lùi lại và xoay trái để tránh
+      controlMecanum("lui", 120);
+      delay(300);
+      controlMecanum("xoay_trai", 150);
+      delay(500);
+      stopAll();
+    } else {
+      // Đường thoáng -> Tiếp tục tiến lên phía trước ở tốc độ 120
+      controlMecanum("tien", 120);
+    }
+  }
   
   // Gửi telemetry định kỳ nếu Pi yêu cầu bật ("t on")
   unsigned long now = millis();
