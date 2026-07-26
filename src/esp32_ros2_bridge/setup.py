@@ -24,7 +24,6 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'esp32_bridge_node = esp32_ros2_bridge.esp32_bridge_node:main',
         ],
     },
 )
