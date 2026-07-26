@@ -1,1 +1,39 @@
-/home/robot/robot_ws/src/robot_bringup/config/nav2_params.yaml
+
+nav2:
+  ros__parameters:
+    use_sim_time: false
+    autostart: true
+
+    planners:
+      planner_server:
+        plugin: "nav2_navfn_planner/NavfnPlanner"
+        expected_planner_frequency: 20.0
+        costmap: local_costmap
+        use_sim_time: false
+      costmap_server:
+        plugin: "nav2_costmap_2d/CostmapServer"
+        use_sim_time: false
+        costmap: local_costmap
+        local_costmap:
+           plugin: "nav2_costmap_2d/CostmapLayer"
+           subscribe_to_updates: true
+
+        global_costmap:
+           plugin: "nav2_costmap_2d/CostmapLayer"
+           subscribe_to_updates: true
+
+controller_server:
+  plugin: "nav2_controller::FollowPath"
+  use_sim_time: false
+
+bt_navigator:
+  plugin: "nav2_bt_navigator/BtNavigator"
+  use_sim_time: false
+
+behavior_server:
+  plugin: "nav2_behaviors::BehaviorServer"
+  use_sim_time: false
+
+waypoint_follower:
+  plugin: "nav2_waypoint_follower::WaypointFollower"
+  use_sim_time: false

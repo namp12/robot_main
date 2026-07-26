@@ -1,1 +1,0 @@
-/home/robot/robot_ws/src/sllidar_ros2/launch/slam_sllidar_c1_launch.py

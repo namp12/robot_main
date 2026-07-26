@@ -1,1 +1,0 @@
-/home/robot/robot_ws/build/esp32_ros2_bridge/launch/esp32_bridge.launch.py

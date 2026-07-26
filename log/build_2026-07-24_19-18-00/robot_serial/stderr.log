@@ -1,5 +1,0 @@
-  File "/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial/wheel_odom_node.py", line 81
-    '
-    ^
-SyntaxError: unterminated string literal (detected at line 81)
-

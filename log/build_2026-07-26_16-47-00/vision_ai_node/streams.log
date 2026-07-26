@@ -1,0 +1,42 @@
+[10.700s] Invoking command in '/home/robot/robot_ws/src/vision_ai_node': PYTHONPATH=/home/robot/robot_ws/build/vision_ai_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_ai_node build --build-base /home/robot/robot_ws/build/vision_ai_node/build install --record /home/robot/robot_ws/build/vision_ai_node/install.log --install-scripts $base/lib/vision_ai_node --single-version-externally-managed install_data
+[12.541s] running egg_info
+[12.545s] creating ../../build/vision_ai_node/vision_ai_node.egg-info
+[12.547s] writing ../../build/vision_ai_node/vision_ai_node.egg-info/PKG-INFO
+[12.550s] writing dependency_links to ../../build/vision_ai_node/vision_ai_node.egg-info/dependency_links.txt
+[12.552s] writing entry points to ../../build/vision_ai_node/vision_ai_node.egg-info/entry_points.txt
+[12.554s] writing requirements to ../../build/vision_ai_node/vision_ai_node.egg-info/requires.txt
+[12.555s] writing top-level names to ../../build/vision_ai_node/vision_ai_node.egg-info/top_level.txt
+[12.558s] writing manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'
+[12.571s] reading manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'
+[12.576s] writing manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'
+[12.579s] running build
+[12.580s] running build_py
+[12.584s] creating /home/robot/robot_ws/build/vision_ai_node/build
+[12.588s] creating /home/robot/robot_ws/build/vision_ai_node/build/lib
+[12.592s] creating /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node
+[12.596s] copying vision_ai_node/__init__.py -> /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node
+[12.600s] copying vision_ai_node/vision_ai_node.py -> /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node
+[12.608s] running install
+[12.612s] running install_lib
+[12.656s] creating /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node
+[12.657s] copying /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node/__init__.py -> /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node
+[12.658s] copying /home/robot/robot_ws/build/vision_ai_node/build/lib/vision_ai_node/vision_ai_node.py -> /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node
+[12.659s] byte-compiling /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node/__init__.py to __init__.cpython-310.pyc
+[12.662s] byte-compiling /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node/vision_ai_node.py to vision_ai_node.cpython-310.pyc
+[12.675s] running install_data
+[12.679s] creating /home/robot/robot_ws/install/vision_ai_node/share/ament_index
+[12.829s] creating /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index
+[12.829s] creating /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index/packages
+[12.830s] copying resource/vision_ai_node -> /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index/packages
+[12.832s] copying package.xml -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node
+[12.834s] creating /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/launch
+[12.872s] copying launch/vision_ai.launch.py -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/launch
+[12.873s] creating /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/config
+[12.874s] copying config/vision.yaml -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/config
+[12.874s] creating /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/models
+[12.875s] running install_egg_info
+[12.882s] Copying ../../build/vision_ai_node/vision_ai_node.egg-info to /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node-1.0.0-py3.10.egg-info
+[12.928s] running install_scripts
+[13.200s] Installing vision_ai_node script to /home/robot/robot_ws/install/vision_ai_node/lib/vision_ai_node
+[13.204s] writing list of installed files to '/home/robot/robot_ws/build/vision_ai_node/install.log'
+[13.367s] Invoked command in '/home/robot/robot_ws/src/vision_ai_node' returned '0': PYTHONPATH=/home/robot/robot_ws/build/vision_ai_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_ai_node build --build-base /home/robot/robot_ws/build/vision_ai_node/build install --record /home/robot/robot_ws/build/vision_ai_node/install.log --install-scripts $base/lib/vision_ai_node --single-version-externally-managed install_data

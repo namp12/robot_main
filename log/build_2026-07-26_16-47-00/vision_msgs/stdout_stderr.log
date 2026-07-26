@@ -1,0 +1,289 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found std_msgs: 4.9.1 (/opt/ros/humble/share/std_msgs/cmake)
+-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+-- Found PythonExtra: .so  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/robot/robot_ws/build/vision_msgs
+[  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[  2%] Built target vision_msgs__cpp
+[  2%] Built target ament_cmake_python_copy_vision_msgs
+[  4%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[  6%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vision_msgs/msg/detection__type_support.cpp.o[0m
+[  8%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vision_msgs/msg/detection_array__type_support.cpp.o[0m
+[ 10%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/vision_msgs/msg/ai_status__type_support.cpp.o[0m
+[ 12%] [32m[1mLinking CXX shared library libvision_msgs__rosidl_typesupport_cpp.so[0m
+[ 12%] Built target vision_msgs__rosidl_typesupport_cpp
+[ 14%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vision_msgs/msg/detail/dds_fastrtps/detection__type_support.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vision_msgs/msg/detail/dds_fastrtps/detection_array__type_support.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/vision_msgs/msg/detail/dds_fastrtps/ai_status__type_support.cpp.o[0m
+[ 22%] [32m[1mLinking CXX shared library libvision_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 22%] Built target vision_msgs__rosidl_typesupport_fastrtps_cpp
+[ 25%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vision_msgs/msg/detail/detection__type_support.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vision_msgs/msg/detail/detection_array__type_support.cpp.o[0m
+[ 31%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/vision_msgs/msg/detail/ai_status__type_support.cpp.o[0m
+[ 33%] [32m[1mLinking CXX shared library libvision_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[ 33%] Built target vision_msgs__rosidl_typesupport_introspection_cpp
+running egg_info
+creating vision_msgs.egg-info
+writing vision_msgs.egg-info/PKG-INFO
+writing dependency_links to vision_msgs.egg-info/dependency_links.txt
+writing top-level names to vision_msgs.egg-info/top_level.txt
+writing manifest file 'vision_msgs.egg-info/SOURCES.txt'
+reading manifest file 'vision_msgs.egg-info/SOURCES.txt'
+writing manifest file 'vision_msgs.egg-info/SOURCES.txt'
+[ 33%] Built target ament_cmake_python_build_vision_msgs_egg
+[ 35%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[ 35%] Built target vision_msgs__rs
+[ 37%] [34m[1mGenerating C code for ROS interfaces[0m
+[ 39%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection__functions.c.o[0m
+[ 41%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.c.o[0m
+[ 43%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_generator_c.dir/rosidl_generator_c/vision_msgs/msg/detail/detection_array__functions.c.o[0m
+[ 45%] [32m[1mLinking C shared library libvision_msgs__rosidl_generator_c.so[0m
+[ 45%] Built target vision_msgs__rosidl_generator_c
+[ 47%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vision_msgs/msg/detail/detection__type_support_c.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vision_msgs/msg/detail/detection_array__type_support_c.cpp.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/vision_msgs/msg/detail/ai_status__type_support_c.cpp.o[0m
+[ 56%] [32m[1mLinking CXX shared library libvision_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[ 56%] Built target vision_msgs__rosidl_typesupport_fastrtps_c
+[ 58%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection__type_support.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/ai_status__type_support.cpp.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/vision_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/vision_msgs/msg/detection_array__type_support.cpp.o[0m
+[ 66%] [32m[1mLinking CXX shared library libvision_msgs__rosidl_typesupport_c.so[0m
+[ 66%] Built target vision_msgs__rosidl_typesupport_c
+[ 68%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 70%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection__type_support.c.o[0m
+[ 72%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/ai_status__type_support.c.o[0m
+[ 75%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/vision_msgs/msg/detail/detection_array__type_support.c.o[0m
+[ 77%] [32m[1mLinking C shared library libvision_msgs__rosidl_typesupport_introspection_c.so[0m
+[ 77%] Built target vision_msgs__rosidl_typesupport_introspection_c
+[ 77%] Built target vision_msgs
+[ 79%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 79%] Built target vision_msgs__py
+[ 81%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_detection_s.c.o[0m
+[ 83%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_ai_status_s.c.o[0m
+[ 85%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_generator_py.dir/rosidl_generator_py/vision_msgs/msg/_detection_array_s.c.o[0m
+[ 87%] [32m[1mLinking C shared library rosidl_generator_py/vision_msgs/libvision_msgs__rosidl_generator_py.so[0m
+[ 87%] Built target vision_msgs__rosidl_generator_py
+[ 89%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 91%] [32m[1mLinking C shared library rosidl_generator_py/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[ 91%] Built target vision_msgs__rosidl_typesupport_fastrtps_c__pyext
+[ 93%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[ 95%] [32m[1mLinking C shared library rosidl_generator_py/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[ 95%] Built target vision_msgs__rosidl_typesupport_c__pyext
+[ 97%] [32mBuilding C object CMakeFiles/vision_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[100%] [32m[1mLinking C shared library rosidl_generator_py/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[100%] Built target vision_msgs__rosidl_typesupport_introspection_c__pyext
+-- Install configuration: ""
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/rosidl_interfaces/vision_msgs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/ai_status.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_generator_c__visibility_control.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__struct.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__functions.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__type_support.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__functions.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__functions.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__functions.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__functions.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__struct.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__functions.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__struct.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection_array.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/library_path.sh
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/library_path.dsv
+-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_c.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_c.so" to ""
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_c.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__rosidl_typesupport_introspection_c.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__type_support.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_c.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_c.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_c.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_c.so" to ""
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection_array.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/ai_status.hpp
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__struct.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__traits.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__builder.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__traits.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__struct.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__type_support.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__traits.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__builder.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__builder.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__struct.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection.hpp
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/dds_fastrtps
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_cpp.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg
+-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.cpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.cpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__type_support.cpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_cpp.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_cpp.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_cpp.so" to ""
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/pythonpath.sh
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/pythonpath.dsv
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/PKG-INFO
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/top_level.txt
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/__init__.py
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/libvision_msgs__rosidl_generator_py.so
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_introspection_c.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/__init__.py
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_array_s.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_ai_status.py
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_array.py
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_ai_status_s.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection.py
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_s.c
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_c.c
+Listing '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs'...
+Compiling '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/__init__.py'...
+Listing '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg'...
+Compiling '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/__init__.py'...
+Compiling '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_ai_status.py'...
+Compiling '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection.py'...
+Compiling '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_array.py'...
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""
+-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""
+-- Installing: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_py.so
+-- Set runtime path of "/home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_py.so" to ""
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/rust_packages/vision_msgs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/msg.rs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/msg
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/msg/rmw.rs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/lib.rs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/build.rs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/Cargo.toml
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/Detection.idl
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/DetectionArray.idl
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/AIStatus.idl
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/Detection.msg
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/DetectionArray.msg
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/AIStatus.msg
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/package_run_dependencies/vision_msgs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/parent_prefix_path/vision_msgs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/ament_prefix_path.sh
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/ament_prefix_path.dsv
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/path.sh
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/path.dsv
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.bash
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.sh
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.zsh
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.dsv
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/package.dsv
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/packages/vision_msgs
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_cExport.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_cExport-noconfig.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cExport.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cExport-noconfig.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_cppExport.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cppExport.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_pyExport.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_pyExport-noconfig.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake-extras.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgsConfig.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgsConfig-version.cmake
+-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/package.xml

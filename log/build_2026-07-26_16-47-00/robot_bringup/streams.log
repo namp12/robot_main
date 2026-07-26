@@ -1,0 +1,78 @@
+[0.056s] Invoking command in '/home/robot/robot_ws/build/robot_bringup': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake /home/robot/robot_ws/src/robot_bringup -DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/robot_bringup
+[0.427s] -- The C compiler identification is GNU 11.4.0
+[0.748s] -- The CXX compiler identification is GNU 11.4.0
+[0.785s] -- Detecting C compiler ABI info
+[1.186s] -- Detecting C compiler ABI info - done
+[1.217s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.219s] -- Detecting C compile features
+[1.221s] -- Detecting C compile features - done
+[1.234s] -- Detecting CXX compiler ABI info
+[1.672s] -- Detecting CXX compiler ABI info - done
+[1.702s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.703s] -- Detecting CXX compile features
+[1.705s] -- Detecting CXX compile features - done
+[1.748s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[3.635s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[4.506s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[5.161s] -- Added test 'copyright' to check source files copyright and LICENSE
+[5.216s] -- Added test 'flake8' to check Python code syntax and style conventions
+[5.227s] -- Added test 'lint_cmake' to check CMake code style
+[5.234s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[5.264s] -- Added test 'xmllint' to check XML markup files
+[5.276s] -- Configuring done
+[5.302s] -- Generating done
+[5.315s] -- Build files have been written to: /home/robot/robot_ws/build/robot_bringup
+[5.332s] Invoked command in '/home/robot/robot_ws/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake /home/robot/robot_ws/src/robot_bringup -DCMAKE_INSTALL_PREFIX=/home/robot/robot_ws/install/robot_bringup
+[5.341s] Invoking command in '/home/robot/robot_ws/build/robot_bringup': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/robot_bringup -- -j4 -l4
+[5.543s] Invoked command in '/home/robot/robot_ws/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/robot_bringup -- -j4 -l4
+[5.557s] Invoking command in '/home/robot/robot_ws/build/robot_bringup': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/robot_bringup
+[5.589s] -- Install configuration: ""
+[5.590s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch
+[5.590s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/ai.launch.py
+[5.592s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/full_robot.launch.py
+[5.593s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/slam.launch.py
+[5.594s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__
+[5.594s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/ai.launch.cpython-310.pyc
+[5.596s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/full_robot.launch.cpython-310.pyc
+[5.597s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/minimal.launch.cpython-310.pyc
+[5.598s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/slam.launch.cpython-310.pyc
+[5.600s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/view_robot.launch.cpython-310.pyc
+[5.601s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/nav2.launch.cpython-310.pyc
+[5.602s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/minimal.launch.py
+[5.603s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/localization.launch.py
+[5.605s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/robot.launch.py
+[5.606s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/lidar.launch.py
+[5.607s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/view_robot.launch.py
+[5.608s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/nav2.launch.py
+[5.610s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config
+[5.610s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/slam_toolbox_params.yaml
+[5.611s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/map_server_params.yaml
+[5.613s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/nav2_params.yaml
+[5.614s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/amcl_params.yaml
+[5.615s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz
+[5.615s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz/robot_view.rviz
+[5.617s] -- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/mount_hdd.sh
+[5.618s] -- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/unmount_hdd.sh
+[5.619s] -- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/save_map.sh
+[5.621s] -- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/setup_hdd_automount.sh
+[5.622s] -- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/save_map.py
+[5.623s] -- Installing: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/copy_map.sh
+[5.624s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps
+[5.624s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/.gitkeep
+[5.625s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/my_room
+[5.627s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup
+[5.629s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup
+[5.631s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh
+[5.632s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv
+[5.634s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.sh
+[5.635s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.dsv
+[5.637s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.bash
+[5.638s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.sh
+[5.639s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.zsh
+[5.641s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.dsv
+[5.642s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.dsv
+[5.644s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup
+[5.645s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake
+[5.646s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake
+[5.648s] -- Installing: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.xml
+[5.657s] Invoked command in '/home/robot/robot_ws/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/robot_bringup
