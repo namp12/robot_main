@@ -1,0 +1,44 @@
+# Thư mục `lib/`
+
+Thư mục này được sử dụng để chứa các thư viện riêng (private libraries) cụ thể của dự án.
+PlatformIO sẽ tự động quét, biên dịch chúng thành các thư viện tĩnh và liên kết trực tiếp vào file thực thi chính.
+
+## Cấu trúc thư viện con
+Mỗi thư viện con nên được đặt trong một thư mục con riêng biệt bên trong `lib` theo cấu trúc: `lib/ten_thu_vien/[Mã nguồn]`.
+
+### Ví dụ cấu trúc tổ chức thư viện thực tế:
+```
+|--lib
+|  |
+|  |--MotorDriver
+|  |  |- MotorDriver.h
+|  |  |- MotorDriver.cpp
+|  |
+|  |--EncoderReader
+|  |  |- EncoderReader.h
+|  |  |- EncoderReader.cpp
+|  |
+|  |- README --> TỆP TIN NÀY
+|
+|- platformio.ini
+|--src
+   |- main.cpp
+```
+
+### Cách sử dụng thư viện trong `src/main.cpp`:
+```cpp
+#include <MotorDriver.h>
+#include <EncoderReader.h>
+
+void setup() {
+  // Khởi tạo các thư viện riêng
+  motor.begin();
+  encoder.begin();
+}
+```
+
+## Bộ tìm kiếm phụ thuộc thư viện (LDF)
+Trình biên dịch PlatformIO tích hợp công cụ Library Dependency Finder (LDF) sẽ tự động phân tích mã nguồn trong thư mục `src` để tìm các dòng `#include` và tự động liên kết các thư viện tương ứng trong `lib/`. Bạn không cần khai báo thủ công thư viện cục bộ này vào file cấu hình.
+
+Xem thêm tài liệu chi tiết:
+- PlatformIO LDF: https://docs.platformio.org/page/librarymanager/ldf.html

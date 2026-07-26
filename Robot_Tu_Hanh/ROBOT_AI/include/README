@@ -1,0 +1,29 @@
+# Thư mục `include/`
+
+Thư mục này được sử dụng để chứa các tệp tiêu đề (header files - `.h` hoặc `.hpp`) dùng chung của dự án.
+
+## Giới thiệu về Tệp Tiêu Đề (Header File)
+Tệp tiêu đề chứa các khai báo hàm C/C++, định nghĩa lớp (class), cấu trúc (struct) và các hằng số/macro dùng chung giữa các file mã nguồn. Bạn có thể sử dụng các khai báo này trong thư mục `src` bằng cách khai báo chỉ thị tiền xử lý `#include`.
+
+### Ví dụ sử dụng:
+Trong file mã nguồn `src/main.cpp`:
+```cpp
+#include "PinMap.h"
+#include "Config.h"
+
+void setup() {
+  // Sử dụng các chân GPIO được cấu hình trong PinMap.h
+  pinMode(MOTOR_FL_RPWM, OUTPUT);
+}
+```
+
+## Lợi ích của việc sử dụng Tệp Tiêu Đề
+- **Quản lý tập trung:** Giúp các cấu hình liên quan (như sơ đồ chân GPIO, thông số phần cứng) tập trung tại một nơi duy nhất. Khi thay đổi cấu hình phần cứng, bạn chỉ cần sửa file tiêu đề, các chương trình sử dụng sẽ tự động cập nhật trong lần biên dịch kế tiếp.
+- **Tránh lỗi lặp lại:** Giúp loại bỏ việc phải copy các khai báo hàm/biến qua nhiều file mã nguồn, tránh rủi ro không đồng bộ hoặc sai tên biến.
+- **Include Guard:** Sử dụng cấu trúc `#ifndef FILE_NAME_H` và `#define FILE_NAME_H` ở đầu mỗi file để tránh hiện tượng nạp tệp trùng lặp khi biên dịch.
+
+Tham khảo thêm tài liệu GCC chính thức về tệp tiêu đề:
+* [Include Syntax](https://gcc.gnu.org/onlinedocs/cpp/Include-Syntax.html)
+* [Include Operation](https://gcc.gnu.org/onlinedocs/cpp/Include-Operation.html)
+* [Once-Only Headers](https://gcc.gnu.org/onlinedocs/cpp/Once-Only-Headers.html)
+* [Computed Includes](https://gcc.gnu.org/onlinedocs/cpp/Computed-Includes.html)
