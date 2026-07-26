@@ -1,0 +1,99 @@
+[0.534s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.535s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff9d9653c0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff9dad6b30>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff9dad6b30>>)
+[1.511s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.512s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.512s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.512s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.512s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.513s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.513s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/robot/robot_ws/src/web_bridge'
+[1.513s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.514s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.514s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.514s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.514s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.515s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.515s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.515s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.515s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.574s] DEBUG:colcon.colcon_core.package_identification:Failed to parse potential ROS package manifest in'.': Error(s) in package './package.xml':
+The manifest contains invalid XML:
+unclosed token: line 2, column 0
+[1.575s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.576s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.576s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.577s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.578s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[3.171s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'python' and name 'web_bridge'
+[16.333s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[16.334s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[16.334s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[16.334s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[16.335s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[16.555s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[16.556s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[16.568s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/robot/robot_ws/install/robot_camera' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[16.569s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/robot/robot_ws/install/esp32_ros2_bridge' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[16.579s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/robot/robot_ws/install
+[16.593s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 259 installed packages in /opt/ros/humble
+[16.602s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[17.047s] Level 5:colcon.colcon_core.verb:set package 'web_bridge' build argument 'cmake_args' from command line to 'None'
+[17.047s] Level 5:colcon.colcon_core.verb:set package 'web_bridge' build argument 'cmake_target' from command line to 'None'
+[17.047s] Level 5:colcon.colcon_core.verb:set package 'web_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[17.047s] Level 5:colcon.colcon_core.verb:set package 'web_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[17.048s] Level 5:colcon.colcon_core.verb:set package 'web_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[17.048s] Level 5:colcon.colcon_core.verb:set package 'web_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[17.048s] Level 5:colcon.colcon_core.verb:set package 'web_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[17.048s] Level 5:colcon.colcon_core.verb:set package 'web_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[17.048s] Level 5:colcon.colcon_core.verb:set package 'web_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[17.048s] DEBUG:colcon.colcon_core.verb:Building package 'web_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robot/robot_ws/src/web_bridge/build/web_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robot/robot_ws/src/web_bridge/install/web_bridge', 'merge_install': False, 'path': '/home/robot/robot_ws/src/web_bridge', 'symlink_install': False, 'test_result_base': None}
+[17.049s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[17.055s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[17.057s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/robot/robot_ws/src/web_bridge'
+[17.072s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[17.073s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[17.073s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[21.380s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: install_headers, upload, bdist_egg, build_ext, develop, test, bdist_wheel, upload_docs, build, install_egg_info, install_data, register, bdist_dumb, check, saveopts, bdist_rpm, alias, build_scripts, build_clib, update_catalog, extract_messages, egg_info, install_scripts, bdist, sdist, install_lib, setopt, symlink_data, dist_info, install, compile_catalog, clean, rotate, build_py, init_catalog, easy_install
+[21.391s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robot/robot_ws/src/web_bridge': PYTHONPATH=/home/robot/robot_ws/src/web_bridge/build/web_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/src/web_bridge/install/web_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/web_bridge build --build-base /home/robot/robot_ws/src/web_bridge/build/web_bridge/build install --record /home/robot/robot_ws/src/web_bridge/build/web_bridge/install.log --single-version-externally-managed install_data
+[22.965s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robot/robot_ws/src/web_bridge' returned '0': PYTHONPATH=/home/robot/robot_ws/src/web_bridge/build/web_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/src/web_bridge/install/web_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/web_bridge build --build-base /home/robot/robot_ws/src/web_bridge/build/web_bridge/build install --record /home/robot/robot_ws/src/web_bridge/build/web_bridge/install.log --single-version-externally-managed install_data
+[22.977s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/src/web_bridge/install/web_bridge' for CMake module files
+[22.980s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/src/web_bridge/install/web_bridge' for CMake config files
+[22.984s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/src/web_bridge/install/web_bridge/lib'
+[22.985s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/src/web_bridge/install/web_bridge/bin'
+[22.985s] Level 1:colcon.colcon_core.shell:create_environment_hook('web_bridge', 'path')
+[22.987s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/hook/path.ps1'
+[22.989s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/hook/path.dsv'
+[22.992s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/hook/path.sh'
+[22.994s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/src/web_bridge/install/web_bridge/lib/pkgconfig/web_bridge.pc'
+[22.996s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/src/web_bridge/install/web_bridge/lib/python3.10/site-packages'
+[22.996s] Level 1:colcon.colcon_core.shell:create_environment_hook('web_bridge', 'pythonpath')
+[22.997s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/hook/pythonpath.ps1'
+[22.999s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/hook/pythonpath.dsv'
+[23.001s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/hook/pythonpath.sh'
+[23.005s] Level 1:colcon.colcon_core.environment:checking '/home/robot/robot_ws/src/web_bridge/install/web_bridge/bin'
+[23.005s] Level 1:colcon.colcon_core.shell:create_environment_hook('web_bridge', 'pythonscriptspath')
+[23.006s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/hook/pythonscriptspath.ps1'
+[23.008s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/hook/pythonscriptspath.dsv'
+[23.010s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/hook/pythonscriptspath.sh'
+[23.012s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(web_bridge)
+[23.014s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/package.ps1'
+[23.019s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/package.dsv'
+[23.022s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/package.sh'
+[23.026s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/package.bash'
+[23.029s] INFO:colcon.colcon_core.shell:Creating package script '/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/web_bridge/package.zsh'
+[23.033s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robot/robot_ws/src/web_bridge/install/web_bridge/share/colcon-core/packages/web_bridge)
+[23.034s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[23.036s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[23.036s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[23.036s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[23.037s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[23.038s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/robot_ws/src/web_bridge/install/local_setup.ps1'
+[23.043s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robot/robot_ws/src/web_bridge/install/_local_setup_util_ps1.py'
+[23.050s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/robot_ws/src/web_bridge/install/setup.ps1'
+[23.058s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/robot_ws/src/web_bridge/install/local_setup.sh'
+[23.061s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robot/robot_ws/src/web_bridge/install/_local_setup_util_sh.py'
+[23.064s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/robot_ws/src/web_bridge/install/setup.sh'
+[23.071s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/robot_ws/src/web_bridge/install/local_setup.bash'
+[23.073s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/robot_ws/src/web_bridge/install/setup.bash'
+[23.081s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robot/robot_ws/src/web_bridge/install/local_setup.zsh'
+[23.083s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robot/robot_ws/src/web_bridge/install/setup.zsh'

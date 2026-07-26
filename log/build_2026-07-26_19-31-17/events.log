@@ -1,0 +1,843 @@
+[0.000000] (-) TimerEvent: {}
+[0.004325] (camera_node) JobQueued: {'identifier': 'camera_node', 'dependencies': OrderedDict()}
+[0.006646] (robot_description) JobQueued: {'identifier': 'robot_description', 'dependencies': OrderedDict()}
+[0.008037] (robot_serial) JobQueued: {'identifier': 'robot_serial', 'dependencies': OrderedDict()}
+[0.009772] (sllidar_ros2) JobQueued: {'identifier': 'sllidar_ros2', 'dependencies': OrderedDict()}
+[0.010515] (vision_msgs) JobQueued: {'identifier': 'vision_msgs', 'dependencies': OrderedDict()}
+[0.011862] (web_bridge) JobQueued: {'identifier': 'web_bridge', 'dependencies': OrderedDict()}
+[0.012931] (robot_ai) JobQueued: {'identifier': 'robot_ai', 'dependencies': OrderedDict([('vision_msgs', '/home/robot/robot_ws/install/vision_msgs')])}
+[0.013520] (robot_bringup) JobQueued: {'identifier': 'robot_bringup', 'dependencies': OrderedDict([('robot_description', '/home/robot/robot_ws/install/robot_description'), ('sllidar_ros2', '/home/robot/robot_ws/install/sllidar_ros2')])}
+[0.015013] (vision_ai_node) JobQueued: {'identifier': 'vision_ai_node', 'dependencies': OrderedDict([('vision_msgs', '/home/robot/robot_ws/install/vision_msgs')])}
+[0.015941] (vision_msgs) JobStarted: {'identifier': 'vision_msgs'}
+[0.071356] (robot_description) JobStarted: {'identifier': 'robot_description'}
+[0.095899] (-) TimerEvent: {}
+[0.115924] (sllidar_ros2) JobStarted: {'identifier': 'sllidar_ros2'}
+[0.168451] (camera_node) JobStarted: {'identifier': 'camera_node'}
+[0.197590] (-) TimerEvent: {}
+[0.268504] (vision_msgs) JobProgress: {'identifier': 'vision_msgs', 'progress': 'cmake'}
+[0.293338] (vision_msgs) JobProgress: {'identifier': 'vision_msgs', 'progress': 'build'}
+[0.298972] (vision_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/vision_msgs', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/vision_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/robot'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('PLATFORMIO_CALLER', 'vscode'), ('KILO_DISABLE_CHANNEL_DB', 'true'), ('USER', 'robot'), ('KILO_ENABLE_QUESTION_TOOL', 'true'), ('SSH_CLIENT', '192.168.1.88 62124 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('AGENT', '1'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('KILO_VSCODE_VERSION', '1.130.0'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('KILO_PROCESS_ROLE', 'main'), ('NO_PROXY', '127.0.0.1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock'), ('ROS_PYTHON_VERSION', '3'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('PLATFORMIO_IDE', '3.3.4'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('KILO_APP_VERSION', '7.4.16'), ('KILO_RUN_ID', 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40'), ('KILOCODE_VERSION', '7.4.16'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('KILO_CLIENT', 'vscode'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb'), ('KILO_EDITOR_NAME', 'Visual Studio Code'), ('ROS_LOCALHOST_ONLY', '0'), ('OPENCODE', '1'), ('PATH', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('VSCODE_AGENT_FOLDER', '/home/robot/.vscode-server'), ('KILO', '1'), ('KILO_SERVER_PASSWORD', '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('PLATFORMIO_PATH', '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('KILO_APP_NAME', 'kilo-code'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', ''), ('KILO_PID', '3408'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILOCODE_FEATURE', 'vscode-extension'), ('SHELL', '/bin/bash'), ('KILO_PLATFORM', 'vscode'), ('MXC_BIN_DIR', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin'), ('ELECTRON_RUN_AS_NODE', '1'), ('KILOCODE_EDITOR_NAME', 'Visual Studio Code 1.130.0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('NODE_USE_SYSTEM_CA', '1'), ('KILO_PARENT_PID', '2974'), ('PWD', '/home/robot/robot_ws/build/vision_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('KILO_MACHINE_ID', 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70'), ('SSH_CONNECTION', '192.168.1.88 62124 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MIMALLOC_PURGE_DELAY', '0'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('KILO_DISABLE_CLAUDE_CODE', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILO_TELEMETRY_LEVEL', 'all'), ('KILO_TREE_SITTER_WASM_DIR', '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter')]), 'shell': False}
+[0.317029] (-) TimerEvent: {}
+[0.329634] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'cmake'}
+[0.336702] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'build'}
+[0.339187] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/robot_description', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/robot_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/robot'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('PLATFORMIO_CALLER', 'vscode'), ('KILO_DISABLE_CHANNEL_DB', 'true'), ('USER', 'robot'), ('KILO_ENABLE_QUESTION_TOOL', 'true'), ('SSH_CLIENT', '192.168.1.88 62124 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('AGENT', '1'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('KILO_VSCODE_VERSION', '1.130.0'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('KILO_PROCESS_ROLE', 'main'), ('NO_PROXY', '127.0.0.1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock'), ('ROS_PYTHON_VERSION', '3'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('PLATFORMIO_IDE', '3.3.4'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('KILO_APP_VERSION', '7.4.16'), ('KILO_RUN_ID', 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40'), ('KILOCODE_VERSION', '7.4.16'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('KILO_CLIENT', 'vscode'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb'), ('KILO_EDITOR_NAME', 'Visual Studio Code'), ('ROS_LOCALHOST_ONLY', '0'), ('OPENCODE', '1'), ('PATH', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('VSCODE_AGENT_FOLDER', '/home/robot/.vscode-server'), ('KILO', '1'), ('KILO_SERVER_PASSWORD', '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('PLATFORMIO_PATH', '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('KILO_APP_NAME', 'kilo-code'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', ''), ('KILO_PID', '3408'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILOCODE_FEATURE', 'vscode-extension'), ('SHELL', '/bin/bash'), ('KILO_PLATFORM', 'vscode'), ('MXC_BIN_DIR', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin'), ('ELECTRON_RUN_AS_NODE', '1'), ('KILOCODE_EDITOR_NAME', 'Visual Studio Code 1.130.0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('NODE_USE_SYSTEM_CA', '1'), ('KILO_PARENT_PID', '2974'), ('PWD', '/home/robot/robot_ws/build/robot_description'), ('LC_ALL', 'en_US.UTF-8'), ('KILO_MACHINE_ID', 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70'), ('SSH_CONNECTION', '192.168.1.88 62124 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MIMALLOC_PURGE_DELAY', '0'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('KILO_DISABLE_CLAUDE_CODE', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILO_TELEMETRY_LEVEL', 'all'), ('KILO_TREE_SITTER_WASM_DIR', '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter')]), 'shell': False}
+[0.358944] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'cmake'}
+[0.373800] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'build'}
+[0.381475] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/sllidar_ros2', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/robot'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('PLATFORMIO_CALLER', 'vscode'), ('KILO_DISABLE_CHANNEL_DB', 'true'), ('USER', 'robot'), ('KILO_ENABLE_QUESTION_TOOL', 'true'), ('SSH_CLIENT', '192.168.1.88 62124 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('AGENT', '1'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('KILO_VSCODE_VERSION', '1.130.0'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('KILO_PROCESS_ROLE', 'main'), ('NO_PROXY', '127.0.0.1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock'), ('ROS_PYTHON_VERSION', '3'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('PLATFORMIO_IDE', '3.3.4'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('KILO_APP_VERSION', '7.4.16'), ('KILO_RUN_ID', 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40'), ('KILOCODE_VERSION', '7.4.16'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('KILO_CLIENT', 'vscode'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb'), ('KILO_EDITOR_NAME', 'Visual Studio Code'), ('ROS_LOCALHOST_ONLY', '0'), ('OPENCODE', '1'), ('PATH', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('VSCODE_AGENT_FOLDER', '/home/robot/.vscode-server'), ('KILO', '1'), ('KILO_SERVER_PASSWORD', '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('PLATFORMIO_PATH', '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('KILO_APP_NAME', 'kilo-code'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', ''), ('KILO_PID', '3408'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILOCODE_FEATURE', 'vscode-extension'), ('SHELL', '/bin/bash'), ('KILO_PLATFORM', 'vscode'), ('MXC_BIN_DIR', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin'), ('ELECTRON_RUN_AS_NODE', '1'), ('KILOCODE_EDITOR_NAME', 'Visual Studio Code 1.130.0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('NODE_USE_SYSTEM_CA', '1'), ('KILO_PARENT_PID', '2974'), ('PWD', '/home/robot/robot_ws/build/sllidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('KILO_MACHINE_ID', 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70'), ('SSH_CONNECTION', '192.168.1.88 62124 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MIMALLOC_PURGE_DELAY', '0'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('KILO_DISABLE_CLAUDE_CODE', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILO_TELEMETRY_LEVEL', 'all'), ('KILO_TREE_SITTER_WASM_DIR', '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter')]), 'shell': False}
+[0.424340] (-) TimerEvent: {}
+[0.524940] (-) TimerEvent: {}
+[0.625462] (-) TimerEvent: {}
+[0.725987] (-) TimerEvent: {}
+[0.826635] (-) TimerEvent: {}
+[0.927280] (-) TimerEvent: {}
+[1.301327] (-) TimerEvent: {}
+[1.401981] (-) TimerEvent: {}
+[1.502695] (-) TimerEvent: {}
+[1.603224] (-) TimerEvent: {}
+[1.703722] (-) TimerEvent: {}
+[1.804290] (-) TimerEvent: {}
+[1.904977] (-) TimerEvent: {}
+[2.005581] (-) TimerEvent: {}
+[2.106075] (-) TimerEvent: {}
+[2.206561] (-) TimerEvent: {}
+[2.307133] (-) TimerEvent: {}
+[2.407634] (-) TimerEvent: {}
+[2.508217] (-) TimerEvent: {}
+[2.608769] (-) TimerEvent: {}
+[2.709319] (-) TimerEvent: {}
+[2.810187] (-) TimerEvent: {}
+[2.910754] (-) TimerEvent: {}
+[3.011255] (-) TimerEvent: {}
+[3.111743] (-) TimerEvent: {}
+[3.212229] (-) TimerEvent: {}
+[3.312793] (-) TimerEvent: {}
+[3.413379] (-) TimerEvent: {}
+[3.513873] (-) TimerEvent: {}
+[3.614469] (-) TimerEvent: {}
+[3.715173] (-) TimerEvent: {}
+[3.815767] (-) TimerEvent: {}
+[3.916367] (-) TimerEvent: {}
+[4.017053] (-) TimerEvent: {}
+[4.117880] (-) TimerEvent: {}
+[4.218629] (-) TimerEvent: {}
+[4.319109] (-) TimerEvent: {}
+[4.419654] (-) TimerEvent: {}
+[4.520299] (-) TimerEvent: {}
+[4.620862] (-) TimerEvent: {}
+[4.721498] (-) TimerEvent: {}
+[4.822047] (-) TimerEvent: {}
+[4.922557] (-) TimerEvent: {}
+[5.023241] (-) TimerEvent: {}
+[5.123861] (-) TimerEvent: {}
+[5.224527] (-) TimerEvent: {}
+[5.325111] (-) TimerEvent: {}
+[5.425633] (-) TimerEvent: {}
+[5.526193] (-) TimerEvent: {}
+[5.626845] (-) TimerEvent: {}
+[5.727414] (-) TimerEvent: {}
+[5.827960] (-) TimerEvent: {}
+[5.928606] (-) TimerEvent: {}
+[7.935383] (vision_msgs) StdoutLine: {'line': b'[  2%] Built target vision_msgs__cpp\n'}
+[7.936596] (-) TimerEvent: {}
+[7.936866] (vision_msgs) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_copy_vision_msgs\n'}
+[7.937635] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_cpp\n'}
+[7.938309] (vision_msgs) StdoutLine: {'line': b'[ 12%] Built target vision_msgs__rosidl_typesupport_cpp\n'}
+[7.939009] (sllidar_ros2) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target sllidar_node\n'}
+[7.939598] (sllidar_ros2) StdoutLine: {'line': b'[ 90%] Built target sllidar_node\n'}
+[7.940042] (robot_description) CommandEnded: {'returncode': 0}
+[7.949085] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'install'}
+[7.949966] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/robot_description'], 'cwd': '/home/robot/robot_ws/build/robot_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/robot'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('PLATFORMIO_CALLER', 'vscode'), ('KILO_DISABLE_CHANNEL_DB', 'true'), ('USER', 'robot'), ('KILO_ENABLE_QUESTION_TOOL', 'true'), ('SSH_CLIENT', '192.168.1.88 62124 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('AGENT', '1'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('KILO_VSCODE_VERSION', '1.130.0'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('KILO_PROCESS_ROLE', 'main'), ('NO_PROXY', '127.0.0.1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock'), ('ROS_PYTHON_VERSION', '3'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('PLATFORMIO_IDE', '3.3.4'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('KILO_APP_VERSION', '7.4.16'), ('KILO_RUN_ID', 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40'), ('KILOCODE_VERSION', '7.4.16'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('KILO_CLIENT', 'vscode'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb'), ('KILO_EDITOR_NAME', 'Visual Studio Code'), ('ROS_LOCALHOST_ONLY', '0'), ('OPENCODE', '1'), ('PATH', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('VSCODE_AGENT_FOLDER', '/home/robot/.vscode-server'), ('KILO', '1'), ('KILO_SERVER_PASSWORD', '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('PLATFORMIO_PATH', '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('KILO_APP_NAME', 'kilo-code'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', ''), ('KILO_PID', '3408'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILOCODE_FEATURE', 'vscode-extension'), ('SHELL', '/bin/bash'), ('KILO_PLATFORM', 'vscode'), ('MXC_BIN_DIR', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin'), ('ELECTRON_RUN_AS_NODE', '1'), ('KILOCODE_EDITOR_NAME', 'Visual Studio Code 1.130.0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('NODE_USE_SYSTEM_CA', '1'), ('KILO_PARENT_PID', '2974'), ('PWD', '/home/robot/robot_ws/build/robot_description'), ('LC_ALL', 'en_US.UTF-8'), ('KILO_MACHINE_ID', 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70'), ('SSH_CONNECTION', '192.168.1.88 62124 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MIMALLOC_PURGE_DELAY', '0'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('KILO_DISABLE_CLAUDE_CODE', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILO_TELEMETRY_LEVEL', 'all'), ('KILO_TREE_SITTER_WASM_DIR', '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter')]), 'shell': False}
+[8.036857] (-) TimerEvent: {}
+[8.137459] (-) TimerEvent: {}
+[8.238093] (-) TimerEvent: {}
+[8.338713] (-) TimerEvent: {}
+[8.398160] (sllidar_ros2) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target sllidar_client\n'}
+[8.399616] (sllidar_ros2) StdoutLine: {'line': b'[100%] Built target sllidar_client\n'}
+[8.402061] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[8.403135] (vision_msgs) StdoutLine: {'line': b'[ 22%] Built target vision_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[8.403888] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_introspection_cpp\n'}
+[8.418965] (robot_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.421996] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//launch\n'}
+[8.425914] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//launch/display.launch.py\n'}
+[8.428018] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//launch/robot_state_publisher.launch.py\n'}
+[8.439332] (-) TimerEvent: {}
+[8.439533] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf\n'}
+[8.441291] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf/gazebo.xacro\n'}
+[8.442153] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf/materials.xacro\n'}
+[8.442737] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf/robot.urdf.xacro\n'}
+[8.443443] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf/macros.xacro\n'}
+[8.444038] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//config\n'}
+[8.449448] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//config/joint_limits.yaml\n'}
+[8.452752] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//rviz\n'}
+[8.456016] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description//rviz/rviz.rviz\n'}
+[8.464881] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description\n'}
+[8.467823] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description\n'}
+[8.470563] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.sh\n'}
+[8.473053] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv\n'}
+[8.489688] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/path.sh\n'}
+[8.502958] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/path.dsv\n'}
+[8.515118] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.bash\n'}
+[8.517886] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.sh\n'}
+[8.520406] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.zsh\n'}
+[8.524489] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.dsv\n'}
+[8.528551] (robot_description) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/robot_description/share/robot_description/package.dsv\n'}
+[8.538572] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/ament_index/resource_index/packages/robot_description\n'}
+[8.545705] (-) TimerEvent: {}
+[8.546338] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake\n'}
+[8.548455] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake\n'}
+[8.550634] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_description/share/robot_description/package.xml\n'}
+[8.555223] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[8.572346] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'install'}
+[8.572905] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/sllidar_ros2'], 'cwd': '/home/robot/robot_ws/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/robot'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('PLATFORMIO_CALLER', 'vscode'), ('KILO_DISABLE_CHANNEL_DB', 'true'), ('USER', 'robot'), ('KILO_ENABLE_QUESTION_TOOL', 'true'), ('SSH_CLIENT', '192.168.1.88 62124 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('AGENT', '1'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('KILO_VSCODE_VERSION', '1.130.0'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('KILO_PROCESS_ROLE', 'main'), ('NO_PROXY', '127.0.0.1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock'), ('ROS_PYTHON_VERSION', '3'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('PLATFORMIO_IDE', '3.3.4'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('KILO_APP_VERSION', '7.4.16'), ('KILO_RUN_ID', 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40'), ('KILOCODE_VERSION', '7.4.16'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('KILO_CLIENT', 'vscode'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb'), ('KILO_EDITOR_NAME', 'Visual Studio Code'), ('ROS_LOCALHOST_ONLY', '0'), ('OPENCODE', '1'), ('PATH', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('VSCODE_AGENT_FOLDER', '/home/robot/.vscode-server'), ('KILO', '1'), ('KILO_SERVER_PASSWORD', '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('PLATFORMIO_PATH', '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('KILO_APP_NAME', 'kilo-code'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', ''), ('KILO_PID', '3408'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILOCODE_FEATURE', 'vscode-extension'), ('SHELL', '/bin/bash'), ('KILO_PLATFORM', 'vscode'), ('MXC_BIN_DIR', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin'), ('ELECTRON_RUN_AS_NODE', '1'), ('KILOCODE_EDITOR_NAME', 'Visual Studio Code 1.130.0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('NODE_USE_SYSTEM_CA', '1'), ('KILO_PARENT_PID', '2974'), ('PWD', '/home/robot/robot_ws/build/sllidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('KILO_MACHINE_ID', 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70'), ('SSH_CONNECTION', '192.168.1.88 62124 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MIMALLOC_PURGE_DELAY', '0'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('KILO_DISABLE_CLAUDE_CODE', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILO_TELEMETRY_LEVEL', 'all'), ('KILO_TREE_SITTER_WASM_DIR', '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter')]), 'shell': False}
+[8.578855] (robot_description) CommandEnded: {'returncode': 0}
+[8.646100] (-) TimerEvent: {}
+[8.746729] (-) TimerEvent: {}
+[8.847255] (-) TimerEvent: {}
+[8.947835] (-) TimerEvent: {}
+[9.048450] (-) TimerEvent: {}
+[9.148903] (-) TimerEvent: {}
+[9.249421] (-) TimerEvent: {}
+[9.349914] (-) TimerEvent: {}
+[9.450427] (-) TimerEvent: {}
+[9.551073] (-) TimerEvent: {}
+[9.651682] (-) TimerEvent: {}
+[9.752230] (-) TimerEvent: {}
+[9.852667] (-) TimerEvent: {}
+[9.953119] (-) TimerEvent: {}
+[10.053548] (-) TimerEvent: {}
+[10.154002] (-) TimerEvent: {}
+[10.254455] (-) TimerEvent: {}
+[10.354896] (-) TimerEvent: {}
+[10.455326] (-) TimerEvent: {}
+[10.555744] (-) TimerEvent: {}
+[10.656207] (-) TimerEvent: {}
+[10.757213] (-) TimerEvent: {}
+[10.857786] (-) TimerEvent: {}
+[10.958379] (-) TimerEvent: {}
+[11.059201] (-) TimerEvent: {}
+[11.159823] (-) TimerEvent: {}
+[11.260499] (-) TimerEvent: {}
+[11.361064] (-) TimerEvent: {}
+[11.461547] (-) TimerEvent: {}
+[11.562043] (-) TimerEvent: {}
+[11.662621] (-) TimerEvent: {}
+[11.763280] (-) TimerEvent: {}
+[11.863929] (-) TimerEvent: {}
+[11.964620] (-) TimerEvent: {}
+[12.065234] (-) TimerEvent: {}
+[12.165729] (-) TimerEvent: {}
+[12.266323] (-) TimerEvent: {}
+[12.366842] (-) TimerEvent: {}
+[12.467413] (-) TimerEvent: {}
+[12.567956] (-) TimerEvent: {}
+[12.668505] (-) TimerEvent: {}
+[12.769101] (-) TimerEvent: {}
+[12.869747] (-) TimerEvent: {}
+[12.970414] (-) TimerEvent: {}
+[13.070973] (-) TimerEvent: {}
+[13.171527] (-) TimerEvent: {}
+[13.272038] (-) TimerEvent: {}
+[13.372567] (-) TimerEvent: {}
+[13.473032] (-) TimerEvent: {}
+[13.573574] (-) TimerEvent: {}
+[13.674220] (-) TimerEvent: {}
+[13.774859] (-) TimerEvent: {}
+[13.875533] (-) TimerEvent: {}
+[13.976216] (-) TimerEvent: {}
+[14.076786] (-) TimerEvent: {}
+[14.177264] (-) TimerEvent: {}
+[14.277766] (-) TimerEvent: {}
+[14.378299] (-) TimerEvent: {}
+[14.479039] (-) TimerEvent: {}
+[14.579665] (-) TimerEvent: {}
+[14.680333] (-) TimerEvent: {}
+[14.780935] (-) TimerEvent: {}
+[14.881477] (-) TimerEvent: {}
+[14.982014] (-) TimerEvent: {}
+[15.082502] (-) TimerEvent: {}
+[15.183010] (-) TimerEvent: {}
+[15.283549] (-) TimerEvent: {}
+[15.384249] (-) TimerEvent: {}
+[15.484904] (-) TimerEvent: {}
+[15.585549] (-) TimerEvent: {}
+[15.686136] (-) TimerEvent: {}
+[15.786811] (-) TimerEvent: {}
+[15.874381] (robot_description) JobEnded: {'identifier': 'robot_description', 'rc': 0}
+[15.883454] (robot_serial) JobStarted: {'identifier': 'robot_serial'}
+[15.889158] (-) TimerEvent: {}
+[15.966475] (vision_msgs) StdoutLine: {'line': b'[ 33%] Built target vision_msgs__rosidl_typesupport_introspection_cpp\n'}
+[33.819876] (-) TimerEvent: {}
+[33.820183] (vision_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[33.821915] (vision_msgs) StdoutLine: {'line': b'writing vision_msgs.egg-info/PKG-INFO\n'}
+[33.822709] (vision_msgs) StdoutLine: {'line': b'writing dependency_links to vision_msgs.egg-info/dependency_links.txt\n'}
+[33.823609] (vision_msgs) StdoutLine: {'line': b'writing top-level names to vision_msgs.egg-info/top_level.txt\n'}
+[33.826712] (vision_msgs) StdoutLine: {'line': b"reading manifest file 'vision_msgs.egg-info/SOURCES.txt'\n"}
+[33.827496] (vision_msgs) StdoutLine: {'line': b"writing manifest file 'vision_msgs.egg-info/SOURCES.txt'\n"}
+[33.828021] (sllidar_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[33.828759] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch\n'}
+[33.829249] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_c1_launch.py\n'}
+[33.829704] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_c1_launch.py\n'}
+[33.830157] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/rviz\n'}
+[33.830675] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz\n'}
+[33.831190] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node\n'}
+[33.831679] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client\n'}
+[33.832223] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2\n'}
+[33.832785] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2\n'}
+[33.833247] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh\n'}
+[33.833692] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv\n'}
+[33.834129] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh\n'}
+[33.834564] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv\n'}
+[33.835087] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash\n'}
+[33.835531] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh\n'}
+[33.835973] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh\n'}
+[33.836578] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv\n'}
+[33.846791] (sllidar_ros2) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv\n'}
+[33.847669] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2\n'}
+[33.848375] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[33.849046] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[33.849924] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake\n'}
+[33.850570] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake\n'}
+[33.851188] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/package.xml\n'}
+[33.851754] (camera_node) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/camera_node', 'build', '--build-base', '/home/robot/robot_ws/build/camera_node/build', 'install', '--record', '/home/robot/robot_ws/build/camera_node/install.log', '--install-scripts', '$base/lib/camera_node', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/camera_node', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/robot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'PLATFORMIO_CALLER': 'vscode', 'KILO_DISABLE_CHANNEL_DB': 'true', 'USER': 'robot', 'KILO_ENABLE_QUESTION_TOOL': 'true', 'SSH_CLIENT': '192.168.1.88 62124 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'AGENT': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'KILO_VSCODE_VERSION': '1.130.0', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'KILO_PROCESS_ROLE': 'main', 'NO_PROXY': '127.0.0.1', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock', 'ROS_PYTHON_VERSION': '3', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'PLATFORMIO_IDE': '3.3.4', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'KILO_APP_VERSION': '7.4.16', 'KILO_RUN_ID': 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40', 'KILOCODE_VERSION': '7.4.16', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'KILO_CLIENT': 'vscode', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '3', 'VSCODE_CLI_REQUIRE_TOKEN': 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb', 'KILO_EDITOR_NAME': 'Visual Studio Code', 'ROS_LOCALHOST_ONLY': '0', 'OPENCODE': '1', 'PATH': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'VSCODE_AGENT_FOLDER': '/home/robot/.vscode-server', 'KILO': '1', 'KILO_SERVER_PASSWORD': '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PLATFORMIO_PATH': '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'KILO_APP_NAME': 'kilo-code', 'LANG': 'en_US.UTF-8', 'LS_COLORS': '', 'KILO_PID': '3408', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'KILOCODE_FEATURE': 'vscode-extension', 'SHELL': '/bin/bash', 'KILO_PLATFORM': 'vscode', 'MXC_BIN_DIR': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin', 'ELECTRON_RUN_AS_NODE': '1', 'KILOCODE_EDITOR_NAME': 'Visual Studio Code 1.130.0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'NODE_USE_SYSTEM_CA': '1', 'KILO_PARENT_PID': '2974', 'PWD': '/home/robot/robot_ws/build/camera_node', 'LC_ALL': 'en_US.UTF-8', 'KILO_MACHINE_ID': 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70', 'SSH_CONNECTION': '192.168.1.88 62124 192.168.1.253 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/camera_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'MIMALLOC_PURGE_DELAY': '0', 'COLCON': '1', 'COPILOT_CLI_ENABLED_FEATURE_FLAGS': 'SHELL_SPAWN_BACKEND', 'KILO_DISABLE_CLAUDE_CODE': 'true', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description', 'KILO_TELEMETRY_LEVEL': 'all', 'KILO_TREE_SITTER_WASM_DIR': '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter'}, 'shell': False}
+[33.871066] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[33.920406] (-) TimerEvent: {}
+[34.021491] (-) TimerEvent: {}
+[34.121990] (-) TimerEvent: {}
+[34.222574] (-) TimerEvent: {}
+[34.323197] (-) TimerEvent: {}
+[34.423787] (-) TimerEvent: {}
+[34.524378] (-) TimerEvent: {}
+[34.624835] (-) TimerEvent: {}
+[34.725376] (-) TimerEvent: {}
+[34.825908] (-) TimerEvent: {}
+[34.926467] (-) TimerEvent: {}
+[35.027054] (-) TimerEvent: {}
+[35.127544] (-) TimerEvent: {}
+[35.228078] (-) TimerEvent: {}
+[35.328782] (-) TimerEvent: {}
+[35.429622] (-) TimerEvent: {}
+[35.530176] (-) TimerEvent: {}
+[35.630761] (-) TimerEvent: {}
+[35.731282] (-) TimerEvent: {}
+[35.831853] (-) TimerEvent: {}
+[35.932491] (-) TimerEvent: {}
+[36.032973] (-) TimerEvent: {}
+[36.133506] (-) TimerEvent: {}
+[36.233982] (-) TimerEvent: {}
+[36.334478] (-) TimerEvent: {}
+[36.434986] (-) TimerEvent: {}
+[36.535582] (-) TimerEvent: {}
+[41.654935] (-) TimerEvent: {}
+[41.755596] (-) TimerEvent: {}
+[42.491088] (-) TimerEvent: {}
+[42.591646] (-) TimerEvent: {}
+[42.692380] (-) TimerEvent: {}
+[42.792996] (-) TimerEvent: {}
+[42.893570] (-) TimerEvent: {}
+[42.994242] (-) TimerEvent: {}
+[43.094933] (-) TimerEvent: {}
+[43.195602] (-) TimerEvent: {}
+[43.296260] (-) TimerEvent: {}
+[43.396886] (-) TimerEvent: {}
+[43.497505] (-) TimerEvent: {}
+[43.598147] (-) TimerEvent: {}
+[43.698759] (-) TimerEvent: {}
+[43.799313] (-) TimerEvent: {}
+[43.899889] (-) TimerEvent: {}
+[44.000594] (-) TimerEvent: {}
+[44.101201] (-) TimerEvent: {}
+[44.201822] (-) TimerEvent: {}
+[44.302524] (-) TimerEvent: {}
+[44.403147] (-) TimerEvent: {}
+[44.503850] (-) TimerEvent: {}
+[44.604526] (-) TimerEvent: {}
+[44.705128] (-) TimerEvent: {}
+[44.805686] (-) TimerEvent: {}
+[44.906362] (-) TimerEvent: {}
+[45.007008] (-) TimerEvent: {}
+[45.107726] (-) TimerEvent: {}
+[45.208391] (-) TimerEvent: {}
+[45.308993] (-) TimerEvent: {}
+[45.409615] (-) TimerEvent: {}
+[45.510216] (-) TimerEvent: {}
+[45.610890] (-) TimerEvent: {}
+[45.711503] (-) TimerEvent: {}
+[45.812053] (-) TimerEvent: {}
+[45.865697] (sllidar_ros2) JobEnded: {'identifier': 'sllidar_ros2', 'rc': 0}
+[45.873181] (vision_msgs) StdoutLine: {'line': b'[ 33%] Built target ament_cmake_python_build_vision_msgs_egg\n'}
+[45.874098] (vision_msgs) StdoutLine: {'line': b'[ 35%] Built target vision_msgs__rs\n'}
+[45.874731] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_generator_c\n'}
+[45.875368] (vision_msgs) StdoutLine: {'line': b'[ 45%] Built target vision_msgs__rosidl_generator_c\n'}
+[45.875918] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_fastrtps_c\n'}
+[45.878518] (vision_msgs) StdoutLine: {'line': b'[ 56%] Built target vision_msgs__rosidl_typesupport_fastrtps_c\n'}
+[45.879227] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_c\n'}
+[45.879847] (vision_msgs) StdoutLine: {'line': b'[ 66%] Built target vision_msgs__rosidl_typesupport_c\n'}
+[45.883397] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_introspection_c\n'}
+[45.885843] (vision_msgs) StdoutLine: {'line': b'[ 77%] Built target vision_msgs__rosidl_typesupport_introspection_c\n'}
+[45.887923] (vision_msgs) StdoutLine: {'line': b'[ 77%] Built target vision_msgs\n'}
+[45.891219] (vision_msgs) StdoutLine: {'line': b'[ 79%] Built target vision_msgs__py\n'}
+[45.902610] (web_bridge) JobStarted: {'identifier': 'web_bridge'}
+[45.912476] (-) TimerEvent: {}
+[45.990271] (camera_node) StdoutLine: {'line': b'running egg_info\n'}
+[45.991324] (camera_node) StdoutLine: {'line': b'writing ../../build/camera_node/camera_node.egg-info/PKG-INFO\n'}
+[45.991841] (camera_node) StdoutLine: {'line': b'writing dependency_links to ../../build/camera_node/camera_node.egg-info/dependency_links.txt\n'}
+[45.992399] (camera_node) StdoutLine: {'line': b'writing entry points to ../../build/camera_node/camera_node.egg-info/entry_points.txt\n'}
+[45.993060] (camera_node) StdoutLine: {'line': b'writing requirements to ../../build/camera_node/camera_node.egg-info/requires.txt\n'}
+[45.993743] (camera_node) StdoutLine: {'line': b'writing top-level names to ../../build/camera_node/camera_node.egg-info/top_level.txt\n'}
+[45.994401] (camera_node) StdoutLine: {'line': b"reading manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'\n"}
+[45.995075] (camera_node) StdoutLine: {'line': b"writing manifest file '../../build/camera_node/camera_node.egg-info/SOURCES.txt'\n"}
+[45.995798] (camera_node) StdoutLine: {'line': b'running build\n'}
+[45.997048] (camera_node) StdoutLine: {'line': b'running build_py\n'}
+[45.997778] (camera_node) StdoutLine: {'line': b'running install\n'}
+[45.998426] (camera_node) StdoutLine: {'line': b'running install_lib\n'}
+[45.999118] (camera_node) StdoutLine: {'line': b'running install_data\n'}
+[45.999632] (camera_node) StdoutLine: {'line': b'running install_egg_info\n'}
+[46.000099] (camera_node) StdoutLine: {'line': b"removing '/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node-1.0.0-py3.10.egg-info' (and everything under it)\n"}
+[46.000908] (camera_node) StdoutLine: {'line': b'Copying ../../build/camera_node/camera_node.egg-info to /home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages/camera_node-1.0.0-py3.10.egg-info\n'}
+[46.001364] (camera_node) StdoutLine: {'line': b'running install_scripts\n'}
+[46.001743] (camera_node) StdoutLine: {'line': b'Installing camera_node script to /home/robot/robot_ws/install/camera_node/lib/camera_node\n'}
+[46.002105] (camera_node) StdoutLine: {'line': b"writing list of installed files to '/home/robot/robot_ws/build/camera_node/install.log'\n"}
+[46.012800] (-) TimerEvent: {}
+[46.113436] (-) TimerEvent: {}
+[46.214052] (-) TimerEvent: {}
+[46.314636] (-) TimerEvent: {}
+[46.415139] (-) TimerEvent: {}
+[46.515608] (-) TimerEvent: {}
+[46.616501] (-) TimerEvent: {}
+[46.717421] (-) TimerEvent: {}
+[46.817858] (-) TimerEvent: {}
+[46.918331] (-) TimerEvent: {}
+[47.018835] (-) TimerEvent: {}
+[47.119318] (-) TimerEvent: {}
+[47.219731] (-) TimerEvent: {}
+[47.320262] (-) TimerEvent: {}
+[47.420783] (-) TimerEvent: {}
+[49.769429] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_generator_py\n'}
+[49.770215] (-) TimerEvent: {}
+[49.770404] (vision_msgs) StdoutLine: {'line': b'[ 87%] Built target vision_msgs__rosidl_generator_py\n'}
+[49.771049] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[49.771695] (vision_msgs) StdoutLine: {'line': b'[ 91%] Built target vision_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[49.772416] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_c__pyext\n'}
+[49.772979] (vision_msgs) StdoutLine: {'line': b'[ 95%] Built target vision_msgs__rosidl_typesupport_c__pyext\n'}
+[49.773575] (camera_node) CommandEnded: {'returncode': 0}
+[49.880457] (-) TimerEvent: {}
+[49.896997] (camera_node) JobEnded: {'identifier': 'camera_node', 'rc': 0}
+[49.902846] (robot_bringup) JobStarted: {'identifier': 'robot_bringup'}
+[49.980701] (-) TimerEvent: {}
+[50.081380] (-) TimerEvent: {}
+[50.182041] (-) TimerEvent: {}
+[50.282732] (-) TimerEvent: {}
+[50.383235] (-) TimerEvent: {}
+[50.483740] (-) TimerEvent: {}
+[50.584283] (-) TimerEvent: {}
+[50.684743] (-) TimerEvent: {}
+[50.785259] (-) TimerEvent: {}
+[50.885803] (-) TimerEvent: {}
+[50.986305] (-) TimerEvent: {}
+[51.086804] (-) TimerEvent: {}
+[51.187304] (-) TimerEvent: {}
+[51.287842] (-) TimerEvent: {}
+[51.388592] (-) TimerEvent: {}
+[51.489103] (-) TimerEvent: {}
+[51.589584] (-) TimerEvent: {}
+[51.690063] (-) TimerEvent: {}
+[51.790675] (-) TimerEvent: {}
+[51.891280] (-) TimerEvent: {}
+[51.991933] (-) TimerEvent: {}
+[52.092698] (-) TimerEvent: {}
+[52.193215] (-) TimerEvent: {}
+[52.293858] (-) TimerEvent: {}
+[52.394611] (-) TimerEvent: {}
+[52.398904] (vision_msgs) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target vision_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[52.405307] (vision_msgs) StdoutLine: {'line': b'[100%] Built target vision_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[52.425875] (vision_msgs) CommandEnded: {'returncode': 0}
+[52.813884] (-) TimerEvent: {}
+[52.814131] (vision_msgs) JobProgress: {'identifier': 'vision_msgs', 'progress': 'install'}
+[52.814338] (vision_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/vision_msgs'], 'cwd': '/home/robot/robot_ws/build/vision_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/robot'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('PLATFORMIO_CALLER', 'vscode'), ('KILO_DISABLE_CHANNEL_DB', 'true'), ('USER', 'robot'), ('KILO_ENABLE_QUESTION_TOOL', 'true'), ('SSH_CLIENT', '192.168.1.88 62124 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('AGENT', '1'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('KILO_VSCODE_VERSION', '1.130.0'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('KILO_PROCESS_ROLE', 'main'), ('NO_PROXY', '127.0.0.1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock'), ('ROS_PYTHON_VERSION', '3'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('PLATFORMIO_IDE', '3.3.4'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('KILO_APP_VERSION', '7.4.16'), ('KILO_RUN_ID', 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40'), ('KILOCODE_VERSION', '7.4.16'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('KILO_CLIENT', 'vscode'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb'), ('KILO_EDITOR_NAME', 'Visual Studio Code'), ('ROS_LOCALHOST_ONLY', '0'), ('OPENCODE', '1'), ('PATH', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('VSCODE_AGENT_FOLDER', '/home/robot/.vscode-server'), ('KILO', '1'), ('KILO_SERVER_PASSWORD', '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('PLATFORMIO_PATH', '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('KILO_APP_NAME', 'kilo-code'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', ''), ('KILO_PID', '3408'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILOCODE_FEATURE', 'vscode-extension'), ('SHELL', '/bin/bash'), ('KILO_PLATFORM', 'vscode'), ('MXC_BIN_DIR', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin'), ('ELECTRON_RUN_AS_NODE', '1'), ('KILOCODE_EDITOR_NAME', 'Visual Studio Code 1.130.0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('NODE_USE_SYSTEM_CA', '1'), ('KILO_PARENT_PID', '2974'), ('PWD', '/home/robot/robot_ws/build/vision_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('KILO_MACHINE_ID', 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70'), ('SSH_CONNECTION', '192.168.1.88 62124 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MIMALLOC_PURGE_DELAY', '0'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('KILO_DISABLE_CLAUDE_CODE', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILO_TELEMETRY_LEVEL', 'all'), ('KILO_TREE_SITTER_WASM_DIR', '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter')]), 'shell': False}
+[52.828091] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'cmake'}
+[52.897480] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'build'}
+[52.897741] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/robot/robot_ws/build/robot_bringup', '--', '-j4', '-l4'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/robot'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('PLATFORMIO_CALLER', 'vscode'), ('KILO_DISABLE_CHANNEL_DB', 'true'), ('USER', 'robot'), ('KILO_ENABLE_QUESTION_TOOL', 'true'), ('SSH_CLIENT', '192.168.1.88 62124 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('AGENT', '1'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('KILO_VSCODE_VERSION', '1.130.0'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('KILO_PROCESS_ROLE', 'main'), ('NO_PROXY', '127.0.0.1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock'), ('ROS_PYTHON_VERSION', '3'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('PLATFORMIO_IDE', '3.3.4'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('KILO_APP_VERSION', '7.4.16'), ('KILO_RUN_ID', 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40'), ('KILOCODE_VERSION', '7.4.16'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('KILO_CLIENT', 'vscode'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb'), ('KILO_EDITOR_NAME', 'Visual Studio Code'), ('ROS_LOCALHOST_ONLY', '0'), ('OPENCODE', '1'), ('PATH', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('VSCODE_AGENT_FOLDER', '/home/robot/.vscode-server'), ('KILO', '1'), ('KILO_SERVER_PASSWORD', '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('PLATFORMIO_PATH', '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('KILO_APP_NAME', 'kilo-code'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', ''), ('KILO_PID', '3408'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILOCODE_FEATURE', 'vscode-extension'), ('SHELL', '/bin/bash'), ('KILO_PLATFORM', 'vscode'), ('MXC_BIN_DIR', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin'), ('ELECTRON_RUN_AS_NODE', '1'), ('KILOCODE_EDITOR_NAME', 'Visual Studio Code 1.130.0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('NODE_USE_SYSTEM_CA', '1'), ('KILO_PARENT_PID', '2974'), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('KILO_MACHINE_ID', 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70'), ('SSH_CONNECTION', '192.168.1.88 62124 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MIMALLOC_PURGE_DELAY', '0'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('KILO_DISABLE_CLAUDE_CODE', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILO_TELEMETRY_LEVEL', 'all'), ('KILO_TREE_SITTER_WASM_DIR', '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter')]), 'shell': False}
+[52.914122] (-) TimerEvent: {}
+[52.925702] (vision_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[52.926492] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/rosidl_interfaces/vision_msgs\n'}
+[52.927173] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[52.927777] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[52.928471] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection.h\n'}
+[52.929150] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/ai_status.h\n'}
+[52.929758] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[52.930348] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[52.930956] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__struct.h\n'}
+[52.931591] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__functions.c\n'}
+[52.937371] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__type_support.h\n'}
+[52.940191] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__functions.h\n'}
+[52.949801] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.h\n'}
+[52.952320] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__functions.c\n'}
+[52.954946] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__functions.c\n'}
+[52.958058] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__functions.h\n'}
+[52.961409] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__struct.h\n'}
+[52.965248] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__functions.h\n'}
+[52.973516] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.h\n'}
+[52.987992] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__struct.h\n'}
+[52.990764] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection_array.h\n'}
+[52.993614] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/library_path.sh\n'}
+[52.995978] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/library_path.dsv\n'}
+[53.007103] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_c.so\n'}
+[53.009792] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[53.012576] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[53.015269] (-) TimerEvent: {}
+[53.015860] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[53.018432] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[53.020883] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_fastrtps_c.h\n'}
+[53.031537] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_fastrtps_c.h\n'}
+[53.036747] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__rosidl_typesupport_fastrtps_c.h\n'}
+[53.040595] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[53.042977] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[53.048242] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[53.050961] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[53.060674] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h\n'}
+[53.063611] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__rosidl_typesupport_introspection_c.h\n'}
+[53.066397] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.c\n'}
+[53.069259] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__type_support.c\n'}
+[53.071931] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_c.h\n'}
+[53.074883] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.c\n'}
+[53.082844] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[53.085653] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_c.so\n'}
+[53.087839] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_c.so\n'}
+[53.092709] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[53.095347] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[53.101758] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection_array.hpp\n'}
+[53.105063] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/ai_status.hpp\n'}
+[53.108291] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[53.114748] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__struct.hpp\n'}
+[53.117314] (-) TimerEvent: {}
+[53.118068] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__traits.hpp\n'}
+[53.121590] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.hpp\n'}
+[53.125880] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__builder.hpp\n'}
+[53.127933] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__traits.hpp\n'}
+[53.135336] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__struct.hpp\n'}
+[53.138569] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__type_support.hpp\n'}
+[53.143183] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.hpp\n'}
+[53.152685] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__traits.hpp\n'}
+[53.155159] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__builder.hpp\n'}
+[53.157725] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__builder.hpp\n'}
+[53.159966] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__struct.hpp\n'}
+[53.162900] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[53.175290] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detection.hpp\n'}
+[53.178351] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[53.181273] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[53.183989] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[53.188727] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[53.193175] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/dds_fastrtps\n'}
+[53.196653] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[53.199431] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[53.202090] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[53.204262] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[53.206901] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs\n'}
+[53.209350] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg\n'}
+[53.211648] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail\n'}
+[53.214804] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__type_support.cpp\n'}
+[53.217761] (-) TimerEvent: {}
+[53.218411] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__type_support.cpp\n'}
+[53.221260] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__type_support.cpp\n'}
+[53.223978] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/ai_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[53.226657] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_cpp.hpp\n'}
+[53.229037] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/include/vision_msgs/vision_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_cpp.hpp\n'}
+[53.231527] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[53.235611] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_typesupport_cpp.so\n'}
+[53.242844] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/pythonpath.sh\n'}
+[53.247303] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/pythonpath.dsv\n'}
+[53.250684] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info\n'}
+[53.253736] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/PKG-INFO\n'}
+[53.256840] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/top_level.txt\n'}
+[53.260420] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[53.263472] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs-1.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[53.266398] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs\n'}
+[53.269031] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/__init__.py\n'}
+[53.271319] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[53.274098] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[53.277336] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[53.279978] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/libvision_msgs__rosidl_generator_py.so\n'}
+[53.282975] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[53.285672] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg\n'}
+[53.287933] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/__init__.py\n'}
+[53.290599] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_array_s.c\n'}
+[53.293234] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_ai_status.py\n'}
+[53.295770] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_array.py\n'}
+[53.298932] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_ai_status_s.c\n'}
+[53.302019] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection.py\n'}
+[53.305000] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg/_detection_s.c\n'}
+[53.307297] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[53.310166] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/_vision_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[53.318006] (-) TimerEvent: {}
+[53.390135] (robot_bringup) CommandEnded: {'returncode': 0}
+[53.392427] (robot_bringup) JobProgress: {'identifier': 'robot_bringup', 'progress': 'install'}
+[53.392672] (robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/robot/robot_ws/build/robot_bringup'], 'cwd': '/home/robot/robot_ws/build/robot_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/robot'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('PLATFORMIO_CALLER', 'vscode'), ('KILO_DISABLE_CHANNEL_DB', 'true'), ('USER', 'robot'), ('KILO_ENABLE_QUESTION_TOOL', 'true'), ('SSH_CLIENT', '192.168.1.88 62124 22'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('AGENT', '1'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('KILO_VSCODE_VERSION', '1.130.0'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/robot'), ('KILO_PROCESS_ROLE', 'main'), ('NO_PROXY', '127.0.0.1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock'), ('ROS_PYTHON_VERSION', '3'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('PLATFORMIO_IDE', '3.3.4'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('KILO_APP_VERSION', '7.4.16'), ('KILO_RUN_ID', 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40'), ('KILOCODE_VERSION', '7.4.16'), ('COLCON_PREFIX_PATH', '/home/robot/robot_ws/install'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'robot'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('KILO_CLIENT', 'vscode'), ('XDG_SESSION_CLASS', 'user'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb'), ('KILO_EDITOR_NAME', 'Visual Studio Code'), ('ROS_LOCALHOST_ONLY', '0'), ('OPENCODE', '1'), ('PATH', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('VSCODE_AGENT_FOLDER', '/home/robot/.vscode-server'), ('KILO', '1'), ('KILO_SERVER_PASSWORD', '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('PLATFORMIO_PATH', '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('KILO_APP_NAME', 'kilo-code'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', ''), ('KILO_PID', '3408'), ('AMENT_PREFIX_PATH', '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILOCODE_FEATURE', 'vscode-extension'), ('SHELL', '/bin/bash'), ('KILO_PLATFORM', 'vscode'), ('MXC_BIN_DIR', '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin'), ('ELECTRON_RUN_AS_NODE', '1'), ('KILOCODE_EDITOR_NAME', 'Visual Studio Code 1.130.0'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('NODE_USE_SYSTEM_CA', '1'), ('KILO_PARENT_PID', '2974'), ('PWD', '/home/robot/robot_ws/build/robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('KILO_MACHINE_ID', 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70'), ('SSH_CONNECTION', '192.168.1.88 62124 192.168.1.253 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('MIMALLOC_PURGE_DELAY', '0'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('KILO_DISABLE_CLAUDE_CODE', 'true'), ('CMAKE_PREFIX_PATH', '/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble'), ('KILO_TELEMETRY_LEVEL', 'all'), ('KILO_TREE_SITTER_WASM_DIR', '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter')]), 'shell': False}
+[53.418228] (-) TimerEvent: {}
+[53.475488] (robot_bringup) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[53.489415] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch\n'}
+[53.492011] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/ai.launch.py\n'}
+[53.494138] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/full_robot.launch.py\n'}
+[53.496205] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/slam.launch.py\n'}
+[53.498651] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__\n'}
+[53.514763] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/ai.launch.cpython-310.pyc\n'}
+[53.517737] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/full_robot.launch.cpython-310.pyc\n'}
+[53.518736] (-) TimerEvent: {}
+[53.520813] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/minimal.launch.cpython-310.pyc\n'}
+[53.523953] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/slam.launch.cpython-310.pyc\n'}
+[53.527837] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/view_robot.launch.cpython-310.pyc\n'}
+[53.541265] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/__pycache__/nav2.launch.cpython-310.pyc\n'}
+[53.545270] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/minimal.launch.py\n'}
+[53.549150] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/localization.launch.py\n'}
+[53.553818] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/robot.launch.py\n'}
+[53.560424] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/lidar.launch.py\n'}
+[53.567010] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/view_robot.launch.py\n'}
+[53.573776] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/nav2.launch.py\n'}
+[53.578855] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config\n'}
+[53.584634] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/slam_toolbox_params.yaml\n'}
+[53.597915] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/map_server_params.yaml\n'}
+[53.603384] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/nav2_params.yaml\n'}
+[53.612463] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/amcl_params.yaml\n'}
+[53.618766] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz\n'}
+[53.624545] (-) TimerEvent: {}
+[53.626845] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz/robot_view.rviz\n'}
+[53.640974] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/mount_hdd.sh\n'}
+[53.641658] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/unmount_hdd.sh\n'}
+[53.642163] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/save_map.sh\n'}
+[53.642646] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/setup_hdd_automount.sh\n'}
+[53.643117] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/save_map.py\n'}
+[53.643587] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/copy_map.sh\n'}
+[53.644098] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps\n'}
+[53.644673] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/.gitkeep\n'}
+[53.645170] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/my_room\n'}
+[53.645609] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup\n'}
+[53.646090] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup\n'}
+[53.646574] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh\n'}
+[53.647056] (vision_msgs) StdoutLine: {'line': b"Listing '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs'...\n"}
+[53.647590] (vision_msgs) StdoutLine: {'line': b"Listing '/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/msg'...\n"}
+[53.648080] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv\n'}
+[53.668374] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.sh\n'}
+[53.669225] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.dsv\n'}
+[53.669989] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.bash\n'}
+[53.672227] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.sh\n'}
+[53.672995] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.zsh\n'}
+[53.673667] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.dsv\n'}
+[53.674328] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.dsv\n'}
+[53.675073] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup\n'}
+[53.675725] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake\n'}
+[53.676386] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake\n'}
+[53.676974] (robot_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.xml\n'}
+[53.677504] (robot_bringup) CommandEnded: {'returncode': 0}
+[53.724810] (-) TimerEvent: {}
+[53.825473] (-) TimerEvent: {}
+[53.926014] (-) TimerEvent: {}
+[54.026541] (-) TimerEvent: {}
+[54.127048] (-) TimerEvent: {}
+[54.227510] (-) TimerEvent: {}
+[54.238712] (robot_bringup) JobEnded: {'identifier': 'robot_bringup', 'rc': 0}
+[54.243804] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[54.244742] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[54.245486] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages/vision_msgs/vision_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[54.246195] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/lib/libvision_msgs__rosidl_generator_py.so\n'}
+[54.246856] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/rust_packages/vision_msgs\n'}
+[54.247522] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust\n'}
+[54.248309] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src\n'}
+[54.249476] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/msg.rs\n'}
+[54.250412] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/msg\n'}
+[54.251363] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/msg/rmw.rs\n'}
+[54.258820] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/src/lib.rs\n'}
+[54.260589] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/build.rs\n'}
+[54.261751] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/rust/Cargo.toml\n'}
+[54.266199] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/Detection.idl\n'}
+[54.271292] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/DetectionArray.idl\n'}
+[54.282421] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/AIStatus.idl\n'}
+[54.283438] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/Detection.msg\n'}
+[54.284406] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/DetectionArray.msg\n'}
+[54.285352] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/msg/AIStatus.msg\n'}
+[54.286353] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/package_run_dependencies/vision_msgs\n'}
+[54.288217] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/parent_prefix_path/vision_msgs\n'}
+[54.296293] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/ament_prefix_path.sh\n'}
+[54.297272] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/ament_prefix_path.dsv\n'}
+[54.298142] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/path.sh\n'}
+[54.301222] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/environment/path.dsv\n'}
+[54.314830] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.bash\n'}
+[54.318096] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.sh\n'}
+[54.318979] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.zsh\n'}
+[54.320601] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/local_setup.dsv\n'}
+[54.322322] (vision_msgs) StdoutLine: {'line': b'-- Installing: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/package.dsv\n'}
+[54.337105] (-) TimerEvent: {}
+[54.337409] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/ament_index/resource_index/packages/vision_msgs\n'}
+[54.341431] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_cExport.cmake\n'}
+[54.342513] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[54.343530] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[54.345400] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[54.347579] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[54.349761] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[54.352869] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cExport.cmake\n'}
+[54.361724] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[54.362656] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_cppExport.cmake\n'}
+[54.363604] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[54.369514] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[54.372478] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[54.375518] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[54.377752] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[54.384301] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[54.386969] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_pyExport.cmake\n'}
+[54.393309] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/export_vision_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[54.398954] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[54.400210] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[54.409196] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[54.415130] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[54.420866] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[54.421888] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[54.422825] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[54.423818] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake\n'}
+[54.425015] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgsConfig.cmake\n'}
+[54.427858] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/cmake/vision_msgsConfig-version.cmake\n'}
+[54.441516] (-) TimerEvent: {}
+[54.441883] (vision_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/robot/robot_ws/install/vision_msgs/share/vision_msgs/package.xml\n'}
+[54.443913] (vision_msgs) CommandEnded: {'returncode': 0}
+[54.541714] (-) TimerEvent: {}
+[54.642313] (-) TimerEvent: {}
+[54.658071] (vision_msgs) JobEnded: {'identifier': 'vision_msgs', 'rc': 0}
+[54.664438] (robot_ai) JobStarted: {'identifier': 'robot_ai'}
+[54.743078] (-) TimerEvent: {}
+[54.763557] (vision_ai_node) JobStarted: {'identifier': 'vision_ai_node'}
+[54.864632] (-) TimerEvent: {}
+[54.965128] (-) TimerEvent: {}
+[55.065617] (-) TimerEvent: {}
+[55.166158] (-) TimerEvent: {}
+[55.266707] (-) TimerEvent: {}
+[55.367301] (-) TimerEvent: {}
+[55.467825] (-) TimerEvent: {}
+[55.568548] (-) TimerEvent: {}
+[55.669132] (-) TimerEvent: {}
+[55.769726] (-) TimerEvent: {}
+[55.870302] (-) TimerEvent: {}
+[55.970902] (-) TimerEvent: {}
+[56.071498] (-) TimerEvent: {}
+[56.172053] (-) TimerEvent: {}
+[56.272611] (-) TimerEvent: {}
+[56.373246] (-) TimerEvent: {}
+[56.473845] (-) TimerEvent: {}
+[56.574349] (-) TimerEvent: {}
+[56.674920] (-) TimerEvent: {}
+[56.775426] (-) TimerEvent: {}
+[56.875950] (-) TimerEvent: {}
+[56.976595] (-) TimerEvent: {}
+[57.077213] (-) TimerEvent: {}
+[57.177873] (-) TimerEvent: {}
+[57.278493] (-) TimerEvent: {}
+[57.379125] (-) TimerEvent: {}
+[57.479736] (-) TimerEvent: {}
+[57.845872] (-) TimerEvent: {}
+[57.946339] (-) TimerEvent: {}
+[58.046828] (-) TimerEvent: {}
+[58.147325] (-) TimerEvent: {}
+[58.247909] (-) TimerEvent: {}
+[58.348541] (-) TimerEvent: {}
+[58.448966] (-) TimerEvent: {}
+[58.549412] (-) TimerEvent: {}
+[58.649857] (-) TimerEvent: {}
+[58.750327] (-) TimerEvent: {}
+[58.850764] (-) TimerEvent: {}
+[58.951211] (-) TimerEvent: {}
+[59.051684] (-) TimerEvent: {}
+[59.152216] (-) TimerEvent: {}
+[59.252691] (-) TimerEvent: {}
+[59.353350] (-) TimerEvent: {}
+[59.418064] (web_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/web_bridge', 'build', '--build-base', '/home/robot/robot_ws/build/web_bridge/build', 'install', '--record', '/home/robot/robot_ws/build/web_bridge/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/web_bridge', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/robot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'PLATFORMIO_CALLER': 'vscode', 'KILO_DISABLE_CHANNEL_DB': 'true', 'USER': 'robot', 'KILO_ENABLE_QUESTION_TOOL': 'true', 'SSH_CLIENT': '192.168.1.88 62124 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'AGENT': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'KILO_VSCODE_VERSION': '1.130.0', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'KILO_PROCESS_ROLE': 'main', 'NO_PROXY': '127.0.0.1', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock', 'ROS_PYTHON_VERSION': '3', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'PLATFORMIO_IDE': '3.3.4', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'KILO_APP_VERSION': '7.4.16', 'KILO_RUN_ID': 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40', 'KILOCODE_VERSION': '7.4.16', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'KILO_CLIENT': 'vscode', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '3', 'VSCODE_CLI_REQUIRE_TOKEN': 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb', 'KILO_EDITOR_NAME': 'Visual Studio Code', 'ROS_LOCALHOST_ONLY': '0', 'OPENCODE': '1', 'PATH': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'VSCODE_AGENT_FOLDER': '/home/robot/.vscode-server', 'KILO': '1', 'KILO_SERVER_PASSWORD': '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PLATFORMIO_PATH': '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'KILO_APP_NAME': 'kilo-code', 'LANG': 'en_US.UTF-8', 'LS_COLORS': '', 'KILO_PID': '3408', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'KILOCODE_FEATURE': 'vscode-extension', 'SHELL': '/bin/bash', 'KILO_PLATFORM': 'vscode', 'MXC_BIN_DIR': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin', 'ELECTRON_RUN_AS_NODE': '1', 'KILOCODE_EDITOR_NAME': 'Visual Studio Code 1.130.0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'NODE_USE_SYSTEM_CA': '1', 'KILO_PARENT_PID': '2974', 'PWD': '/home/robot/robot_ws/build/web_bridge', 'LC_ALL': 'en_US.UTF-8', 'KILO_MACHINE_ID': 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70', 'SSH_CONNECTION': '192.168.1.88 62124 192.168.1.253 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/web_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'MIMALLOC_PURGE_DELAY': '0', 'COLCON': '1', 'COPILOT_CLI_ENABLED_FEATURE_FLAGS': 'SHELL_SPAWN_BACKEND', 'KILO_DISABLE_CLAUDE_CODE': 'true', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description', 'KILO_TELEMETRY_LEVEL': 'all', 'KILO_TREE_SITTER_WASM_DIR': '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter'}, 'shell': False}
+[59.431878] (robot_serial) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/robot_serial', 'build', '--build-base', '/home/robot/robot_ws/build/robot_serial/build', 'install', '--record', '/home/robot/robot_ws/build/robot_serial/install.log', '--install-scripts', '$base/lib/robot_serial', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/robot_serial', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/robot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'PLATFORMIO_CALLER': 'vscode', 'KILO_DISABLE_CHANNEL_DB': 'true', 'USER': 'robot', 'KILO_ENABLE_QUESTION_TOOL': 'true', 'SSH_CLIENT': '192.168.1.88 62124 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'AGENT': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'KILO_VSCODE_VERSION': '1.130.0', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'KILO_PROCESS_ROLE': 'main', 'NO_PROXY': '127.0.0.1', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock', 'ROS_PYTHON_VERSION': '3', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'PLATFORMIO_IDE': '3.3.4', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'KILO_APP_VERSION': '7.4.16', 'KILO_RUN_ID': 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40', 'KILOCODE_VERSION': '7.4.16', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'KILO_CLIENT': 'vscode', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '3', 'VSCODE_CLI_REQUIRE_TOKEN': 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb', 'KILO_EDITOR_NAME': 'Visual Studio Code', 'ROS_LOCALHOST_ONLY': '0', 'OPENCODE': '1', 'PATH': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'VSCODE_AGENT_FOLDER': '/home/robot/.vscode-server', 'KILO': '1', 'KILO_SERVER_PASSWORD': '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PLATFORMIO_PATH': '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'KILO_APP_NAME': 'kilo-code', 'LANG': 'en_US.UTF-8', 'LS_COLORS': '', 'KILO_PID': '3408', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'KILOCODE_FEATURE': 'vscode-extension', 'SHELL': '/bin/bash', 'KILO_PLATFORM': 'vscode', 'MXC_BIN_DIR': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin', 'ELECTRON_RUN_AS_NODE': '1', 'KILOCODE_EDITOR_NAME': 'Visual Studio Code 1.130.0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'NODE_USE_SYSTEM_CA': '1', 'KILO_PARENT_PID': '2974', 'PWD': '/home/robot/robot_ws/build/robot_serial', 'LC_ALL': 'en_US.UTF-8', 'KILO_MACHINE_ID': 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70', 'SSH_CONNECTION': '192.168.1.88 62124 192.168.1.253 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'MIMALLOC_PURGE_DELAY': '0', 'COLCON': '1', 'COPILOT_CLI_ENABLED_FEATURE_FLAGS': 'SHELL_SPAWN_BACKEND', 'KILO_DISABLE_CLAUDE_CODE': 'true', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description', 'KILO_TELEMETRY_LEVEL': 'all', 'KILO_TREE_SITTER_WASM_DIR': '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter'}, 'shell': False}
+[59.453704] (-) TimerEvent: {}
+[59.554255] (-) TimerEvent: {}
+[59.655101] (-) TimerEvent: {}
+[59.755572] (-) TimerEvent: {}
+[59.856163] (-) TimerEvent: {}
+[59.956740] (-) TimerEvent: {}
+[60.057378] (-) TimerEvent: {}
+[60.157949] (-) TimerEvent: {}
+[60.258460] (-) TimerEvent: {}
+[60.359012] (-) TimerEvent: {}
+[60.459556] (-) TimerEvent: {}
+[60.560069] (-) TimerEvent: {}
+[60.660601] (-) TimerEvent: {}
+[60.761187] (-) TimerEvent: {}
+[60.861802] (-) TimerEvent: {}
+[60.962282] (-) TimerEvent: {}
+[61.062772] (-) TimerEvent: {}
+[61.163303] (-) TimerEvent: {}
+[61.263851] (-) TimerEvent: {}
+[61.364921] (-) TimerEvent: {}
+[61.465462] (-) TimerEvent: {}
+[61.566115] (-) TimerEvent: {}
+[61.666707] (-) TimerEvent: {}
+[61.670866] (web_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[61.691984] (web_bridge) StdoutLine: {'line': b'writing ../../build/web_bridge/web_bridge.egg-info/PKG-INFO\n'}
+[61.698711] (web_bridge) StdoutLine: {'line': b'writing dependency_links to ../../build/web_bridge/web_bridge.egg-info/dependency_links.txt\n'}
+[61.702828] (web_bridge) StdoutLine: {'line': b'writing entry points to ../../build/web_bridge/web_bridge.egg-info/entry_points.txt\n'}
+[61.707137] (web_bridge) StdoutLine: {'line': b'writing requirements to ../../build/web_bridge/web_bridge.egg-info/requires.txt\n'}
+[61.710934] (web_bridge) StdoutLine: {'line': b'writing top-level names to ../../build/web_bridge/web_bridge.egg-info/top_level.txt\n'}
+[61.736602] (web_bridge) StdoutLine: {'line': b"reading manifest file '../../build/web_bridge/web_bridge.egg-info/SOURCES.txt'\n"}
+[61.748579] (web_bridge) StdoutLine: {'line': b"writing manifest file '../../build/web_bridge/web_bridge.egg-info/SOURCES.txt'\n"}
+[61.757888] (web_bridge) StdoutLine: {'line': b'running build\n'}
+[61.759181] (web_bridge) StdoutLine: {'line': b'running build_py\n'}
+[61.764330] (web_bridge) StdoutLine: {'line': b'running install\n'}
+[61.764955] (web_bridge) StdoutLine: {'line': b'running install_lib\n'}
+[61.766881] (-) TimerEvent: {}
+[61.787162] (web_bridge) StdoutLine: {'line': b'running install_data\n'}
+[61.794464] (web_bridge) StdoutLine: {'line': b'running install_egg_info\n'}
+[61.808527] (web_bridge) StdoutLine: {'line': b"removing '/home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge-0.0.1-py3.10.egg-info' (and everything under it)\n"}
+[61.813890] (web_bridge) StdoutLine: {'line': b'Copying ../../build/web_bridge/web_bridge.egg-info to /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web_bridge-0.0.1-py3.10.egg-info\n'}
+[61.853312] (web_bridge) StdoutLine: {'line': b'running install_scripts\n'}
+[61.867103] (-) TimerEvent: {}
+[61.904284] (robot_serial) StdoutLine: {'line': b'running egg_info\n'}
+[61.909863] (robot_serial) StdoutLine: {'line': b'writing ../../build/robot_serial/robot_serial.egg-info/PKG-INFO\n'}
+[61.911893] (robot_serial) StdoutLine: {'line': b'writing dependency_links to ../../build/robot_serial/robot_serial.egg-info/dependency_links.txt\n'}
+[61.923703] (robot_serial) StdoutLine: {'line': b'writing entry points to ../../build/robot_serial/robot_serial.egg-info/entry_points.txt\n'}
+[61.925769] (robot_serial) StdoutLine: {'line': b'writing requirements to ../../build/robot_serial/robot_serial.egg-info/requires.txt\n'}
+[61.933311] (robot_serial) StdoutLine: {'line': b'writing top-level names to ../../build/robot_serial/robot_serial.egg-info/top_level.txt\n'}
+[61.959475] (robot_serial) StdoutLine: {'line': b"reading manifest file '../../build/robot_serial/robot_serial.egg-info/SOURCES.txt'\n"}
+[61.967447] (-) TimerEvent: {}
+[61.968420] (robot_serial) StdoutLine: {'line': b"writing manifest file '../../build/robot_serial/robot_serial.egg-info/SOURCES.txt'\n"}
+[61.981558] (robot_serial) StdoutLine: {'line': b'running build\n'}
+[61.982632] (robot_serial) StdoutLine: {'line': b'running build_py\n'}
+[61.987564] (robot_serial) StdoutLine: {'line': b'running install\n'}
+[62.002610] (robot_serial) StdoutLine: {'line': b'running install_lib\n'}
+[62.029942] (robot_serial) StdoutLine: {'line': b'running install_data\n'}
+[62.030750] (web_bridge) StdoutLine: {'line': b'Installing web_bridge script to /home/robot/robot_ws/install/web_bridge/bin\n'}
+[62.033024] (robot_serial) StdoutLine: {'line': b'running install_egg_info\n'}
+[62.033793] (web_bridge) StdoutLine: {'line': b"writing list of installed files to '/home/robot/robot_ws/build/web_bridge/install.log'\n"}
+[62.062595] (robot_serial) StdoutLine: {'line': b"removing '/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info' (and everything under it)\n"}
+[62.067785] (-) TimerEvent: {}
+[62.068843] (robot_serial) StdoutLine: {'line': b'Copying ../../build/robot_serial/robot_serial.egg-info to /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot_serial-1.0.0-py3.10.egg-info\n'}
+[62.113388] (robot_serial) StdoutLine: {'line': b'running install_scripts\n'}
+[62.168315] (-) TimerEvent: {}
+[62.268875] (-) TimerEvent: {}
+[62.369452] (-) TimerEvent: {}
+[62.396889] (robot_serial) StdoutLine: {'line': b'Installing serial_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial\n'}
+[62.398714] (robot_serial) StdoutLine: {'line': b'Installing teleop_text script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial\n'}
+[62.400560] (robot_serial) StdoutLine: {'line': b'Installing wheel_odom_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial\n'}
+[62.406767] (robot_serial) StdoutLine: {'line': b"writing list of installed files to '/home/robot/robot_ws/build/robot_serial/install.log'\n"}
+[62.432265] (web_bridge) CommandEnded: {'returncode': 0}
+[62.469855] (-) TimerEvent: {}
+[62.570601] (-) TimerEvent: {}
+[63.169891] (-) TimerEvent: {}
+[63.270471] (-) TimerEvent: {}
+[63.301588] (web_bridge) JobEnded: {'identifier': 'web_bridge', 'rc': 0}
+[63.330131] (robot_serial) CommandEnded: {'returncode': 0}
+[63.370801] (-) TimerEvent: {}
+[63.471673] (-) TimerEvent: {}
+[63.508877] (robot_serial) JobEnded: {'identifier': 'robot_serial', 'rc': 0}
+[63.572252] (-) TimerEvent: {}
+[63.673089] (-) TimerEvent: {}
+[63.713277] (vision_ai_node) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/vision_ai_node', 'build', '--build-base', '/home/robot/robot_ws/build/vision_ai_node/build', 'install', '--record', '/home/robot/robot_ws/build/vision_ai_node/install.log', '--install-scripts', '$base/lib/vision_ai_node', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/vision_ai_node', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/robot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'PLATFORMIO_CALLER': 'vscode', 'KILO_DISABLE_CHANNEL_DB': 'true', 'USER': 'robot', 'KILO_ENABLE_QUESTION_TOOL': 'true', 'SSH_CLIENT': '192.168.1.88 62124 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'AGENT': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'KILO_VSCODE_VERSION': '1.130.0', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'KILO_PROCESS_ROLE': 'main', 'NO_PROXY': '127.0.0.1', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock', 'ROS_PYTHON_VERSION': '3', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'PLATFORMIO_IDE': '3.3.4', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'KILO_APP_VERSION': '7.4.16', 'KILO_RUN_ID': 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40', 'KILOCODE_VERSION': '7.4.16', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'KILO_CLIENT': 'vscode', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '3', 'VSCODE_CLI_REQUIRE_TOKEN': 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb', 'KILO_EDITOR_NAME': 'Visual Studio Code', 'ROS_LOCALHOST_ONLY': '0', 'OPENCODE': '1', 'PATH': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'VSCODE_AGENT_FOLDER': '/home/robot/.vscode-server', 'KILO': '1', 'KILO_SERVER_PASSWORD': '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PLATFORMIO_PATH': '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'KILO_APP_NAME': 'kilo-code', 'LANG': 'en_US.UTF-8', 'LS_COLORS': '', 'KILO_PID': '3408', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'KILOCODE_FEATURE': 'vscode-extension', 'SHELL': '/bin/bash', 'KILO_PLATFORM': 'vscode', 'MXC_BIN_DIR': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin', 'ELECTRON_RUN_AS_NODE': '1', 'KILOCODE_EDITOR_NAME': 'Visual Studio Code 1.130.0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'NODE_USE_SYSTEM_CA': '1', 'KILO_PARENT_PID': '2974', 'PWD': '/home/robot/robot_ws/build/vision_ai_node', 'LC_ALL': 'en_US.UTF-8', 'KILO_MACHINE_ID': 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70', 'SSH_CONNECTION': '192.168.1.88 62124 192.168.1.253 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/vision_ai_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'MIMALLOC_PURGE_DELAY': '0', 'COLCON': '1', 'COPILOT_CLI_ENABLED_FEATURE_FLAGS': 'SHELL_SPAWN_BACKEND', 'KILO_DISABLE_CLAUDE_CODE': 'true', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description', 'KILO_TELEMETRY_LEVEL': 'all', 'KILO_TREE_SITTER_WASM_DIR': '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter'}, 'shell': False}
+[63.751003] (robot_ai) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/robot_ai', 'build', '--build-base', '/home/robot/robot_ws/build/robot_ai/build', 'install', '--record', '/home/robot/robot_ws/build/robot_ai/install.log', '--install-scripts', '$base/lib/robot_ai', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/robot/robot_ws/src/robot_ai', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/robot', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'PLATFORMIO_CALLER': 'vscode', 'KILO_DISABLE_CHANNEL_DB': 'true', 'USER': 'robot', 'KILO_ENABLE_QUESTION_TOOL': 'true', 'SSH_CLIENT': '192.168.1.88 62124 22', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'AGENT': '1', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'KILO_VSCODE_VERSION': '1.130.0', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/robot/robot_ws/install/vision_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/robot', 'KILO_PROCESS_ROLE': 'main', 'NO_PROXY': '127.0.0.1', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-67c0bb6e-b3b3-4ad9-b16c-061cc20513fc.sock', 'ROS_PYTHON_VERSION': '3', 'COPILOT_OTEL_FILE_EXPORTER_PATH': '/dev/null', 'PLATFORMIO_IDE': '3.3.4', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'KILO_APP_VERSION': '7.4.16', 'KILO_RUN_ID': 'e7c0cbee-cf77-4292-9f8d-e0c045c8cf40', 'KILOCODE_VERSION': '7.4.16', 'COLCON_PREFIX_PATH': '/home/robot/robot_ws/install', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robot', 'VSCODE_HANDLES_SIGPIPE': 'true', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'KILO_CLIENT': 'vscode', 'XDG_SESSION_CLASS': 'user', 'XDG_SESSION_ID': '3', 'VSCODE_CLI_REQUIRE_TOKEN': 'd6dd0559-e6b2-4b8a-9214-10d60ed463fb', 'KILO_EDITOR_NAME': 'Visual Studio Code', 'ROS_LOCALHOST_ONLY': '0', 'OPENCODE': '1', 'PATH': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'VSCODE_AGENT_FOLDER': '/home/robot/.vscode-server', 'KILO': '1', 'KILO_SERVER_PASSWORD': '0747d0652fda2ffd6b5461c657fc6102586281f1108ce5d0abaaceed1e2e12e9', 'XDG_RUNTIME_DIR': '/run/user/1000', 'PLATFORMIO_PATH': '/home/robot/.platformio/python3/bin:/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/bin/remote-cli:/home/robot/.local/bin:/home/robot/robot_ws/install/esp32_ros2_bridge/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'KILO_APP_NAME': 'kilo-code', 'LANG': 'en_US.UTF-8', 'LS_COLORS': '', 'KILO_PID': '3408', 'AMENT_PREFIX_PATH': '/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble', 'KILOCODE_FEATURE': 'vscode-extension', 'SHELL': '/bin/bash', 'KILO_PLATFORM': 'vscode', 'MXC_BIN_DIR': '/home/robot/.vscode-server/cli/servers/Stable-1b6a188127eeaf9194f945eb6eb89a657e93c54c/server/node_modules/@microsoft/mxc-sdk/bin', 'ELECTRON_RUN_AS_NODE': '1', 'KILOCODE_EDITOR_NAME': 'Visual Studio Code 1.130.0', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'NODE_USE_SYSTEM_CA': '1', 'KILO_PARENT_PID': '2974', 'PWD': '/home/robot/robot_ws/build/robot_ai', 'LC_ALL': 'en_US.UTF-8', 'KILO_MACHINE_ID': 'fc372026c3290bbaf5aed5c53259f1ec329890d125ceb750a0c2f4cd15a24f70', 'SSH_CONNECTION': '192.168.1.88 62124 192.168.1.253 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robot/robot_ws/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:/home/robot/robot_ws/install/vision_msgs/local/lib/python3.10/dist-packages:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:/home/robot/robot_ws/build/robot_camera:/home/robot/robot_ws/install/robot_camera/lib/python3.10/site-packages:/home/robot/robot_ws/build/esp32_ros2_bridge:/home/robot/robot_ws/install/esp32_ros2_bridge/lib/python3.10/site-packages:/home/robot/robot_ws/install/camera_node/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'MIMALLOC_PURGE_DELAY': '0', 'COLCON': '1', 'COPILOT_CLI_ENABLED_FEATURE_FLAGS': 'SHELL_SPAWN_BACKEND', 'KILO_DISABLE_CLAUDE_CODE': 'true', 'CMAKE_PREFIX_PATH': '/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description', 'KILO_TELEMETRY_LEVEL': 'all', 'KILO_TREE_SITTER_WASM_DIR': '/home/robot/.vscode-server/extensions/kilocode.kilo-code-7.4.16-linux-arm64/bin/tree-sitter'}, 'shell': False}
+[63.773278] (-) TimerEvent: {}
+[63.873747] (-) TimerEvent: {}
+[63.974299] (-) TimerEvent: {}
+[64.074847] (-) TimerEvent: {}
+[64.175307] (-) TimerEvent: {}
+[64.275758] (-) TimerEvent: {}
+[64.376259] (-) TimerEvent: {}
+[64.476737] (-) TimerEvent: {}
+[64.577215] (-) TimerEvent: {}
+[64.677689] (-) TimerEvent: {}
+[64.778178] (-) TimerEvent: {}
+[64.878673] (-) TimerEvent: {}
+[64.979222] (-) TimerEvent: {}
+[65.079665] (-) TimerEvent: {}
+[65.180257] (-) TimerEvent: {}
+[65.280755] (-) TimerEvent: {}
+[65.381218] (-) TimerEvent: {}
+[65.481744] (-) TimerEvent: {}
+[65.582173] (-) TimerEvent: {}
+[65.680111] (vision_ai_node) StdoutLine: {'line': b'running egg_info\n'}
+[65.682350] (-) TimerEvent: {}
+[65.684882] (vision_ai_node) StdoutLine: {'line': b'writing ../../build/vision_ai_node/vision_ai_node.egg-info/PKG-INFO\n'}
+[65.689005] (vision_ai_node) StdoutLine: {'line': b'writing dependency_links to ../../build/vision_ai_node/vision_ai_node.egg-info/dependency_links.txt\n'}
+[65.689702] (vision_ai_node) StdoutLine: {'line': b'writing entry points to ../../build/vision_ai_node/vision_ai_node.egg-info/entry_points.txt\n'}
+[65.690187] (vision_ai_node) StdoutLine: {'line': b'writing requirements to ../../build/vision_ai_node/vision_ai_node.egg-info/requires.txt\n'}
+[65.690698] (vision_ai_node) StdoutLine: {'line': b'writing top-level names to ../../build/vision_ai_node/vision_ai_node.egg-info/top_level.txt\n'}
+[65.698357] (vision_ai_node) StdoutLine: {'line': b"reading manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'\n"}
+[65.703657] (vision_ai_node) StdoutLine: {'line': b"writing manifest file '../../build/vision_ai_node/vision_ai_node.egg-info/SOURCES.txt'\n"}
+[65.707136] (vision_ai_node) StdoutLine: {'line': b'running build\n'}
+[65.711619] (vision_ai_node) StdoutLine: {'line': b'running build_py\n'}
+[65.714658] (vision_ai_node) StdoutLine: {'line': b'running install\n'}
+[65.717560] (vision_ai_node) StdoutLine: {'line': b'running install_lib\n'}
+[65.720931] (vision_ai_node) StdoutLine: {'line': b'running install_data\n'}
+[65.723942] (vision_ai_node) StdoutLine: {'line': b'running install_egg_info\n'}
+[65.726824] (vision_ai_node) StdoutLine: {'line': b"removing '/home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node-1.0.0-py3.10.egg-info' (and everything under it)\n"}
+[65.729366] (vision_ai_node) StdoutLine: {'line': b'Copying ../../build/vision_ai_node/vision_ai_node.egg-info to /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision_ai_node-1.0.0-py3.10.egg-info\n'}
+[65.744334] (vision_ai_node) StdoutLine: {'line': b'running install_scripts\n'}
+[65.782579] (-) TimerEvent: {}
+[65.849675] (vision_ai_node) StdoutLine: {'line': b'Installing vision_ai_node script to /home/robot/robot_ws/install/vision_ai_node/lib/vision_ai_node\n'}
+[65.851618] (vision_ai_node) StdoutLine: {'line': b"writing list of installed files to '/home/robot/robot_ws/build/vision_ai_node/install.log'\n"}
+[65.882862] (-) TimerEvent: {}
+[65.980970] (vision_ai_node) CommandEnded: {'returncode': 0}
+[65.983944] (-) TimerEvent: {}
+[66.021995] (vision_ai_node) JobEnded: {'identifier': 'vision_ai_node', 'rc': 0}
+[66.023800] (robot_ai) StdoutLine: {'line': b'running egg_info\n'}
+[66.024862] (robot_ai) StdoutLine: {'line': b'writing ../../build/robot_ai/robot_ai.egg-info/PKG-INFO\n'}
+[66.026060] (robot_ai) StdoutLine: {'line': b'writing dependency_links to ../../build/robot_ai/robot_ai.egg-info/dependency_links.txt\n'}
+[66.026948] (robot_ai) StdoutLine: {'line': b'writing entry points to ../../build/robot_ai/robot_ai.egg-info/entry_points.txt\n'}
+[66.027742] (robot_ai) StdoutLine: {'line': b'writing requirements to ../../build/robot_ai/robot_ai.egg-info/requires.txt\n'}
+[66.028677] (robot_ai) StdoutLine: {'line': b'writing top-level names to ../../build/robot_ai/robot_ai.egg-info/top_level.txt\n'}
+[66.033641] (robot_ai) StdoutLine: {'line': b"reading manifest file '../../build/robot_ai/robot_ai.egg-info/SOURCES.txt'\n"}
+[66.039668] (robot_ai) StdoutLine: {'line': b"writing manifest file '../../build/robot_ai/robot_ai.egg-info/SOURCES.txt'\n"}
+[66.040583] (robot_ai) StdoutLine: {'line': b'running build\n'}
+[66.041278] (robot_ai) StdoutLine: {'line': b'running build_py\n'}
+[66.044546] (robot_ai) StdoutLine: {'line': b'running install\n'}
+[66.046375] (robot_ai) StdoutLine: {'line': b'running install_lib\n'}
+[66.055803] (robot_ai) StdoutLine: {'line': b'running install_data\n'}
+[66.057339] (robot_ai) StdoutLine: {'line': b'running install_egg_info\n'}
+[66.068449] (robot_ai) StdoutLine: {'line': b"removing '/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai-1.0.0-py3.10.egg-info' (and everything under it)\n"}
+[66.071592] (robot_ai) StdoutLine: {'line': b'Copying ../../build/robot_ai/robot_ai.egg-info to /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai-1.0.0-py3.10.egg-info\n'}
+[66.081414] (robot_ai) StdoutLine: {'line': b'running install_scripts\n'}
+[66.084176] (-) TimerEvent: {}
+[66.184639] (-) TimerEvent: {}
+[66.194920] (robot_ai) StdoutLine: {'line': b'Installing ai_node script to /home/robot/robot_ws/install/robot_ai/lib/robot_ai\n'}
+[66.197912] (robot_ai) StdoutLine: {'line': b"writing list of installed files to '/home/robot/robot_ws/build/robot_ai/install.log'\n"}
+[66.284982] (-) TimerEvent: {}
+[66.329565] (robot_ai) CommandEnded: {'returncode': 0}
+[66.383294] (robot_ai) JobEnded: {'identifier': 'robot_ai', 'rc': 0}
+[66.385828] (-) TimerEvent: {}
+[66.387835] (-) EventReactorShutdown: {}

@@ -1,0 +1,33 @@
+[0.271s] Invoking command in '/home/robot/robot_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/sllidar_ros2 -- -j4 -l4
+[7.823s] Consolidate compiler generated dependencies of target sllidar_node
+[7.824s] [ 90%] Built target sllidar_node
+[8.283s] Consolidate compiler generated dependencies of target sllidar_client
+[8.285s] [100%] Built target sllidar_client
+[8.441s] Invoked command in '/home/robot/robot_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/sllidar_ros2 -- -j4 -l4
+[8.459s] Invoking command in '/home/robot/robot_ws/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/sllidar_ros2
+[33.712s] -- Install configuration: ""
+[33.713s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch
+[33.713s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_c1_launch.py
+[33.714s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_c1_launch.py
+[33.714s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/rviz
+[33.715s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz
+[33.715s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node
+[33.716s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client
+[33.716s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2
+[33.717s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2
+[33.717s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh
+[33.718s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv
+[33.718s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh
+[33.719s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv
+[33.719s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash
+[33.720s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh
+[33.720s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh
+[33.730s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv
+[33.731s] -- Installing: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/package.dsv
+[33.732s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2
+[33.733s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake
+[33.734s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake
+[33.734s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake
+[33.735s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake
+[33.735s] -- Up-to-date: /home/robot/robot_ws/install/sllidar_ros2/share/sllidar_ros2/package.xml
+[33.760s] Invoked command in '/home/robot/robot_ws/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_camera:/home/robot/robot_ws/install/esp32_ros2_bridge:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/sllidar_ros2
