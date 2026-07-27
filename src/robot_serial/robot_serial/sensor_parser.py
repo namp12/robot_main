@@ -41,6 +41,67 @@ def parse_sensor_line(line: str) -> Dict[str, Any]:
 
     upper = text.upper()
 
+    # 0) Space-separated tagged lines (from esp32_mecanum.ino firmware)
+    parts = text.split()
+    if len(parts) >= 2:
+        tag = parts[0].upper()
+        if tag == "STATUS":
+            result['status'] = parts[1].upper()
+            return result
+        elif tag == "BATTERY" and len(parts) >= 3:
+            try:
+                # Part 1 is pct, Part 2 is voltage, Part 3 is current
+                result['battery'] = float(parts[2])
+                return result
+            except ValueError:
+                pass
+        elif tag == "RANGE" and len(parts) >= 3:
+            try:
+                result['distance']['front'] = float(parts[1])
+                result['distance']['rear'] = float(parts[2])
+                return result
+            except ValueError:
+                pass
+        elif tag == "IMU" and len(parts) >= 5:
+            try:
+                import math
+                qx = float(parts[1])
+                qy = float(parts[2])
+                qz = float(parts[3])
+                qw = float(parts[4])
+                
+                # Convert quaternion to Euler angles in degrees
+                sinr_cosp = 2.0 * (qw * qx + qy * qz)
+                cosr_cosp = 1.0 - 2.0 * (qx * qx + qy * qy)
+                roll = math.degrees(math.atan2(sinr_cosp, cosr_cosp))
+
+                sinp = 2.0 * (qw * qy - qz * qx)
+                if abs(sinp) >= 1.0:
+                    pitch = math.degrees(math.copysign(math.pi / 2.0, sinp))
+                else:
+                    pitch = math.degrees(math.asin(sinp))
+
+                siny_cosp = 2.0 * (qw * qz + qx * qy)
+                cosy_cosp = 1.0 - 2.0 * (qy * qy + qz * qz)
+                yaw = math.degrees(math.atan2(siny_cosp, cosy_cosp))
+                
+                result['imu']['roll'] = roll
+                result['imu']['pitch'] = pitch
+                result['imu']['yaw'] = yaw
+                return result
+            except ValueError:
+                pass
+        elif tag == "ENCODER":
+            try:
+                vals = [float(p) for p in parts[1:]]
+                if len(vals) >= 4:
+                    result['encoder_distance'] = sum(vals) / 4.0
+                elif len(vals) >= 1:
+                    result['encoder_distance'] = vals[0]
+                return result
+            except ValueError:
+                pass
+
     # 1) [TELEMETRY] format from real Robot_Tu_Hanh firmware
     if upper.startswith('[TELEMETRY]'):
         mode_match = re.search(r'MODE:\s*([A-Z0-9_]+)', text, re.IGNORECASE)
