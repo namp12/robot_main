@@ -46,13 +46,9 @@ def save_map(map_name: str) -> bool:
         print(f"Map files not found in {source_dir}")
         return False
 
-    try:
-        pkg_share = subprocess.check_output(
-            ["rospack", "find", "robot_bringup"], text=True
-        ).strip()
-    except subprocess.CalledProcessError as exc:
-        print(f"rospack failed: {exc}")
-        return False
+    # Find package source path relative to this script's directory (src/robot_bringup)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    pkg_share = os.path.dirname(script_dir)
 
     dest_dir = os.path.join(pkg_share, "maps", map_name)
     os.makedirs(dest_dir, exist_ok=True)

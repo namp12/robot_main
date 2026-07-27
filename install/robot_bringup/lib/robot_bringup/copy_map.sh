@@ -5,7 +5,9 @@
 set -e
 
 SOURCE="${1:-$HOME/robot_maps/my_room}"
-DEST="${2:-$(rospack find robot_bringup)/maps/my_room}"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PKG_DIR="$(dirname "$SCRIPT_DIR")"
+DEST="${2:-$PKG_DIR/maps/my_room}"
 
 if [ ! -d "$SOURCE" ]; then
     echo "Error: Source directory $SOURCE does not exist"

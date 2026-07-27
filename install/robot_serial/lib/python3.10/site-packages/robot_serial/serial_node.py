@@ -103,6 +103,8 @@ class SerialNode(Node):
 
         self.timer = self.create_timer(0.1, self._timer_callback)
         self._telemetry_enabled = False
+        self._front_dist = 999.0
+        self._rear_dist = 999.0
         self.get_logger().info('Serial node initialized')
 
     def _on_connected(self, port: str):
@@ -162,12 +164,14 @@ class SerialNode(Node):
 
         if parsed.get('distance'):
             if 'front' in parsed['distance']:
+                self._front_dist = float(parsed['distance']['front'])
                 front_msg = Float32()
-                front_msg.data = float(parsed['distance']['front'])
+                front_msg.data = self._front_dist
                 self.front_distance_publisher.publish(front_msg)
             if 'rear' in parsed['distance']:
+                self._rear_dist = float(parsed['distance']['rear'])
                 rear_msg = Float32()
-                rear_msg.data = float(parsed['distance']['rear'])
+                rear_msg.data = self._rear_dist
                 self.rear_distance_publisher.publish(rear_msg)
 
         if parsed.get('battery') is not None:
@@ -193,15 +197,53 @@ class SerialNode(Node):
     def _on_cmd_vel(self, msg: Twist):
         if not self.connected:
             return
-        direction, speed = _speed_from_twist(
-            float(msg.linear.x),
-            float(msg.linear.y),
-            float(msg.angular.z),
-        )
-        if speed <= 0:
+        linear_x = float(msg.linear.x)
+        linear_y = float(msg.linear.y)
+        angular_z = float(msg.angular.z)
+
+        # Determine relevant obstacle distance based on direction
+        dist = 999.0
+        is_forward = False
+        is_backward = False
+        if linear_x > 0.0:
+            dist = self._front_dist
+            is_forward = True
+        elif linear_x < 0.0:
+            dist = self._rear_dist
+            is_backward = True
+
+        # Calculate speed factor based on distance
+        speed_factor = 1.0
+        if dist <= 5.0:
+            speed_factor = 0.0
+        elif dist <= 20.0:
+            speed_factor = 0.3
+        elif dist <= 50.0:
+            speed_factor = 0.6
+
+        # Build command payload
+        if speed_factor == 0.0:
+            direction_name = "Front" if is_forward else "Rear"
+            self.get_logger().warn(f"Safety Stop! {direction_name} obstacle too close: {dist:.1f} cm")
             payload = 'dung'
         else:
-            payload = f'{direction} {speed}'
+            direction, speed = _speed_from_twist(linear_x, linear_y, angular_z)
+            if speed <= 0:
+                payload = 'dung'
+            else:
+                # Apply speed factor and ensure minimum motor power (50) to overcome friction
+                adjusted_speed = int(speed * speed_factor)
+                adjusted_speed = max(50, min(adjusted_speed, 255))
+                
+                if speed_factor < 1.0:
+                    direction_name = "Front" if is_forward else "Rear"
+                    self.get_logger().info(
+                        f"Safety slowdown ({int(speed_factor * 100)}%): "
+                        f"{direction_name} obstacle at {dist:.1f} cm (Speed: {speed} -> {adjusted_speed})"
+                    )
+                
+                payload = f'{direction} {adjusted_speed}'
+
         self.serial_manager.write_line(payload)
 
     def _timer_callback(self):

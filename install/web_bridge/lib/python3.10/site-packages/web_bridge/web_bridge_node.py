@@ -8,6 +8,7 @@ to ROS2 topics so the web dashboard can control the robot.
 
 import asyncio
 import json
+import math
 import threading
 from typing import Dict, Optional
 
@@ -20,6 +21,27 @@ from sensor_msgs.msg import Imu
 from geometry_msgs.msg import Twist
 
 import websockets
+
+
+def quaternion_to_euler(x: float, y: float, z: float, w: float):
+    # roll (x-axis rotation)
+    sinr_cosp = 2.0 * (w * x + y * z)
+    cosr_cosp = 1.0 - 2.0 * (x * x + y * y)
+    roll = math.atan2(sinr_cosp, cosr_cosp)
+
+    # pitch (y-axis rotation)
+    sinp = 2.0 * (w * y - z * x)
+    if abs(sinp) >= 1.0:
+        pitch = math.copysign(math.pi / 2.0, sinp)
+    else:
+        pitch = math.asin(sinp)
+
+    # yaw (z-axis rotation)
+    siny_cosp = 2.0 * (w * z + x * y)
+    cosy_cosp = 1.0 - 2.0 * (y * y + z * z)
+    yaw = math.atan2(siny_cosp, cosy_cosp)
+
+    return roll, pitch, yaw
 
 
 class WebBridgeNode(Node):
@@ -83,6 +105,45 @@ class WebBridgeNode(Node):
         self._latest_telemetry['front_distance'] = msg.data
         self._broadcast_telemetry()
 
+    def _on_imu(self, msg: Imu) -> None:
+        # Convert quaternion to euler angles in degrees
+        roll, pitch, yaw = quaternion_to_euler(
+            msg.orientation.x,
+            msg.orientation.y,
+            msg.orientation.z,
+            msg.orientation.w
+        )
+        roll_deg = math.degrees(roll)
+        pitch_deg = math.degrees(pitch)
+        yaw_deg = math.degrees(yaw)
+
+        self._latest_telemetry['roll'] = roll_deg
+        self._latest_telemetry['pitch'] = pitch_deg
+        self._latest_telemetry['yaw'] = yaw_deg
+
+        # Populate imu_raw for web SensorPanel Accel and Gyro display
+        self._latest_telemetry['imu_raw'] = {
+            'accel': {
+                'x': msg.linear_acceleration.x,
+                'y': msg.linear_acceleration.y,
+                'z': msg.linear_acceleration.z
+            },
+            'gyro': {
+                'x': msg.angular_velocity.x,
+                'y': msg.angular_velocity.y,
+                'z': msg.angular_velocity.z
+            }
+        }
+
+        # Populate pose.yaw for orientation arrow display in map view
+        self._latest_telemetry['pose'] = {
+            'x': self._latest_telemetry.get('pose', {}).get('x', 2.45),
+            'y': self._latest_telemetry.get('pose', {}).get('y', -1.12),
+            'yaw': yaw_deg
+        }
+
+        self._broadcast_telemetry()
+
     def _on_rear_distance(self, msg: Float32) -> None:
         self._latest_telemetry['rear_distance'] = msg.data
         self._broadcast_telemetry()
@@ -92,13 +153,32 @@ class WebBridgeNode(Node):
         self._broadcast_telemetry()
 
     def _on_imu(self, msg: Imu) -> None:
-        self._latest_telemetry['yaw'] = 0.0
-        self._latest_telemetry['pitch'] = 0.0
-        self._latest_telemetry['roll'] = 0.0
-        if msg.orientation.w != 0.0 or msg.orientation.x != 0.0:
-            self._latest_telemetry['yaw'] = msg.orientation.z
-            self._latest_telemetry['pitch'] = msg.orientation.y
-            self._latest_telemetry['roll'] = msg.orientation.x
+        import math
+        x = msg.orientation.x
+        y = msg.orientation.y
+        z = msg.orientation.z
+        w = msg.orientation.w
+        
+        # Roll (x-axis rotation)
+        sinr_cosp = 2.0 * (w * x + y * z)
+        cosr_cosp = 1.0 - 2.0 * (x * x + y * y)
+        roll = math.degrees(math.atan2(sinr_cosp, cosr_cosp))
+
+        # Pitch (y-axis rotation)
+        sinp = 2.0 * (w * y - z * x)
+        if abs(sinp) >= 1.0:
+            pitch = math.degrees(math.copysign(math.pi / 2.0, sinp))
+        else:
+            pitch = math.degrees(math.asin(sinp))
+
+        # Yaw (z-axis rotation)
+        siny_cosp = 2.0 * (w * z + x * y)
+        cosy_cosp = 1.0 - 2.0 * (y * y + z * z)
+        yaw = math.degrees(math.atan2(siny_cosp, cosy_cosp))
+
+        self._latest_telemetry['roll'] = roll
+        self._latest_telemetry['pitch'] = pitch
+        self._latest_telemetry['yaw'] = yaw
         self._broadcast_telemetry()
 
     def _on_encoder_distance(self, msg: Float32) -> None:
