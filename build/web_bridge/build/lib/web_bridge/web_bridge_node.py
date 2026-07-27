@@ -1,0 +1,191 @@
+#!/usr/bin/env python3
+"""
+web_bridge_node.py - WebSocket bridge between ROS2 and web dashboard.
+
+Publishes ROS2 telemetry to WebSocket clients and forwards web commands
+to ROS2 topics so the web dashboard can control the robot.
+"""
+
+import asyncio
+import json
+import threading
+from typing import Dict, Optional
+
+import rclpy
+from rclpy.node import Node
+from rclpy.executors import MultiThreadedExecutor
+from rclpy.callback_groups import ReentrantCallbackGroup
+from std_msgs.msg import String, Float32
+from sensor_msgs.msg import Imu
+from geometry_msgs.msg import Twist
+
+import websockets
+
+
+class WebBridgeNode(Node):
+    """ROS2 node that bridges telemetry and commands via WebSocket."""
+
+    def __init__(self) -> None:
+        super().__init__('web_bridge_node')
+        self.declare_parameter('ws_port', 8080)
+        self._ws_port = self.get_parameter('ws_port').value
+        self._clients: set = set()
+        self._latest_telemetry: Dict = {}
+        self._callback_group = ReentrantCallbackGroup()
+
+        # Publishers for outgoing ROS2 commands
+        self._cmd_vel_pub = self.create_publisher(
+            Twist, '/cmd_vel', 10, callback_group=self._callback_group
+        )
+        self._serial_tx_pub = self.create_publisher(
+            String, '/esp32/serial_tx', 10, callback_group=self._callback_group
+        )
+
+        # Subscribers for incoming telemetry
+        self._mode_sub = self.create_subscription(
+            String, '/esp32/mode', self._on_mode, 10, callback_group=self._callback_group
+        )
+        self._status_sub = self.create_subscription(
+            String, '/esp32/status', self._on_status, 10, callback_group=self._callback_group
+        )
+        self._front_sub = self.create_subscription(
+            Float32, '/sensor/front_distance', self._on_front_distance, 10, callback_group=self._callback_group
+        )
+        self._rear_sub = self.create_subscription(
+            Float32, '/sensor/rear_distance', self._on_rear_distance, 10, callback_group=self._callback_group
+        )
+        self._battery_sub = self.create_subscription(
+            Float32, '/sensor/battery', self._on_battery, 10, callback_group=self._callback_group
+        )
+        self._imu_sub = self.create_subscription(
+            Imu, '/imu/data', self._on_imu, 10, callback_group=self._callback_group
+        )
+        self._encoder_sub = self.create_subscription(
+            Float32, '/esp32/encoder_distance', self._on_encoder_distance, 10, callback_group=self._callback_group
+        )
+
+        self.get_logger().info(f'Web bridge initialized on port {self._ws_port}')
+
+        # Start WebSocket server in a background thread so it can run
+        # alongside the ROS2 MultiThreadedExecutor.
+        ws_thread = threading.Thread(target=self._start_ws_thread, daemon=True)
+        ws_thread.start()
+
+    def _on_mode(self, msg: String) -> None:
+        self._latest_telemetry['mode'] = msg.data
+        self._broadcast_telemetry()
+
+    def _on_status(self, msg: String) -> None:
+        self._latest_telemetry['status'] = msg.data
+        self._broadcast_telemetry()
+
+    def _on_front_distance(self, msg: Float32) -> None:
+        self._latest_telemetry['front_distance'] = msg.data
+        self._broadcast_telemetry()
+
+    def _on_rear_distance(self, msg: Float32) -> None:
+        self._latest_telemetry['rear_distance'] = msg.data
+        self._broadcast_telemetry()
+
+    def _on_battery(self, msg: Float32) -> None:
+        self._latest_telemetry['battery'] = msg.data
+        self._broadcast_telemetry()
+
+    def _on_imu(self, msg: Imu) -> None:
+        self._latest_telemetry['yaw'] = 0.0
+        self._latest_telemetry['pitch'] = 0.0
+        self._latest_telemetry['roll'] = 0.0
+        if msg.orientation.w != 0.0 or msg.orientation.x != 0.0:
+            self._latest_telemetry['yaw'] = msg.orientation.z
+            self._latest_telemetry['pitch'] = msg.orientation.y
+            self._latest_telemetry['roll'] = msg.orientation.x
+        self._broadcast_telemetry()
+
+    def _on_encoder_distance(self, msg: Float32) -> None:
+        self._latest_telemetry['encoder_distance'] = msg.data
+        self._broadcast_telemetry()
+
+    def _broadcast_telemetry(self) -> None:
+        if not self._clients:
+            return
+        message = json.dumps({'type': 'telemetry', 'data': self._latest_telemetry})
+        for ws in list(self._clients):
+            try:
+                asyncio.create_task(ws.send(message))
+            except Exception:
+                pass
+
+    def _handle_ws_command(self, message: str) -> None:
+        try:
+            data = json.loads(message)
+        except json.JSONDecodeError:
+            return
+
+        msg_type = data.get('type')
+        if msg_type == 'cmd_vel':
+            twist = Twist()
+            twist.linear.x = float(data.get('linear_x', 0.0))
+            twist.linear.y = float(data.get('linear_y', 0.0))
+            twist.angular.z = float(data.get('angular_z', 0.0))
+            self._cmd_vel_pub.publish(twist)
+        elif msg_type == 'mode':
+            mode_map = {'manual': 'mode_manual', 'auto': 'mode_auto', 'ros2': 'mode_ros2'}
+            payload = mode_map.get(data.get('mode'))
+            if payload:
+                out = String()
+                out.data = payload
+                self._serial_tx_pub.publish(out)
+        elif msg_type == 'move':
+            direction = data.get('direction', '')
+            speed = data.get('speed', 150)
+            payload = f'{direction} {speed}' if direction and speed > 0 else direction or 'dung'
+            out = String()
+            out.data = payload
+            self._serial_tx_pub.publish(out)
+        elif msg_type == 'beep':
+            out = String()
+            out.data = 'beep 500'
+            self._serial_tx_pub.publish(out)
+        elif msg_type == 'text':
+            out = String()
+            out.data = data.get('data', '')
+            self._serial_tx_pub.publish(out)
+
+    async def _ws_handler(self, websocket, path: str) -> None:
+        self._clients.add(websocket)
+        self.get_logger().info(f'Web client connected: {websocket.remote_address}')
+        try:
+            async for message in websocket:
+                self._handle_ws_command(message)
+        except Exception as exc:
+            self.get_logger().warning(f'WebSocket error: {exc}')
+        finally:
+            self._clients.discard(websocket)
+            self.get_logger().info('Web client disconnected')
+
+    def _start_ws_thread(self) -> None:
+        asyncio.run(self._run_ws())
+
+    async def _run_ws(self) -> None:
+        async with websockets.serve(self._ws_handler, '0.0.0.0', self._ws_port):
+            self.get_logger().info(f'WebSocket server started on port {self._ws_port}')
+            await asyncio.Future()
+
+
+def main(args=None) -> None:
+    rclpy.init(args=args)
+    node = WebBridgeNode()
+    executor = MultiThreadedExecutor()
+    executor.add_node(node)
+    try:
+        executor.spin()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
