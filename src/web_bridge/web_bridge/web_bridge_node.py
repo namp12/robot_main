@@ -231,7 +231,7 @@ class WebBridgeNode(Node):
             out.data = data.get('data', '')
             self._serial_tx_pub.publish(out)
 
-    async def _ws_handler(self, websocket, path: str) -> None:
+    async def _ws_handler(self, websocket, path: Optional[str] = None) -> None:
         self._clients.add(websocket)
         self.get_logger().info(f'Web client connected: {websocket.remote_address}')
         try:
