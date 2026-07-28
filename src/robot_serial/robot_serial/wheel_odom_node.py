@@ -48,6 +48,7 @@ class WheelOdometryNode(Node):
         self.declare_parameter('odom_frame', 'odom')
         self.declare_parameter('base_frame', 'base_footprint')
         self.declare_parameter('publish_rate', 20.0)
+        self.declare_parameter('publish_tf', True)
 
         self.wheel_radius = self.get_parameter('wheel_radius').value
         self.wheel_separation = self.get_parameter('wheel_separation').value
@@ -55,6 +56,7 @@ class WheelOdometryNode(Node):
         self.odom_frame = self.get_parameter('odom_frame').value
         self.base_frame = self.get_parameter('base_frame').value
         self.publish_rate = self.get_parameter('publish_rate').value
+        self.publish_tf = self.get_parameter('publish_tf').value
 
         # 4 Mecanum wheels
         self._rpm_fl: float = 0.0
@@ -155,7 +157,8 @@ class WheelOdometryNode(Node):
         transform.transform.rotation.y = qy
         transform.transform.rotation.z = qz
         transform.transform.rotation.w = qw
-        self._tf_broadcaster.sendTransform(transform)
+        if self.publish_tf:
+            self._tf_broadcaster.sendTransform(transform)
 
         odom_msg = Odometry()
         odom_msg.header.stamp = now.to_msg()

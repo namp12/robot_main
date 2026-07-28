@@ -1,0 +1,31 @@
+ekf_filter_node:
+  ros__parameters:
+    frequency: 20.0
+    two_d_mode: true
+    publish_tf: true
+
+    odom_frame: odom
+    base_link_frame: base_footprint
+    world_frame: odom
+
+    # Fusing wheel odometry (/odom)
+    odom0: /odom
+    odom0_config: [false, false, false,  # x, y, z position (relative)
+                   false, false, false,  # roll, pitch, yaw orientation (relative)
+                   true,  true,  false,  # vx, vy, vz linear velocity (Mecanum support)
+                   false, false, true,   # roll, pitch, yaw velocity
+                   false, false, false]  # acceleration
+    odom0_differential: false
+    odom0_queue_size: 10
+
+    # Fusing IMU (/imu/data)
+    imu0: /imu/data
+    imu0_config: [false, false, false,   # x, y, z position
+                  false, false, false,   # roll, pitch, yaw orientation
+                  false, false, false,   # vx, vy, vz linear velocity
+                  false, false, true,    # roll, pitch, yaw velocity (wz)
+                  true,  true,  false,   # ax, ay, az linear acceleration
+                  false, false, false]   # angular acceleration
+    imu0_differential: false
+    imu0_queue_size: 10
+    imu0_remove_gravitational_acceleration: true

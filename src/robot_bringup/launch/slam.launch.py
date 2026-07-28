@@ -37,6 +37,9 @@ def generate_launch_description():
             'use_sim_time': LaunchConfiguration('use_sim_time'),
             'enable_lidar': 'true',
             'enable_serial': 'true',
+            'enable_wheel_odom': 'true',
+            'enable_ekf': 'true',
+            'use_static_odom': 'false',
         }.items(),
     )
 
