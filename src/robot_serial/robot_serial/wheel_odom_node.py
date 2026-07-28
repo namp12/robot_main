@@ -37,25 +37,31 @@ def euler_to_quaternion(roll: float, pitch: float, yaw: float):
 
 
 class WheelOdometryNode(Node):
-    """Differential-drive odometry from wheel RPM values."""
+    """Mecanum-drive odometry from 4-wheel RPM values with differential fallback."""
 
     def __init__(self):
         super().__init__('wheel_odometry_node')
 
         self.declare_parameter('wheel_radius', 0.033)
-        self.declare_parameter('wheel_separation', 0.30)
+        self.declare_parameter('wheel_separation', 0.30)  # track width (distance left-right)
+        self.declare_parameter('wheel_base', 0.20)        # wheelbase (distance front-rear)
         self.declare_parameter('odom_frame', 'odom')
         self.declare_parameter('base_frame', 'base_footprint')
         self.declare_parameter('publish_rate', 20.0)
 
         self.wheel_radius = self.get_parameter('wheel_radius').value
         self.wheel_separation = self.get_parameter('wheel_separation').value
+        self.wheel_base = self.get_parameter('wheel_base').value
         self.odom_frame = self.get_parameter('odom_frame').value
         self.base_frame = self.get_parameter('base_frame').value
         self.publish_rate = self.get_parameter('publish_rate').value
 
-        self._rpm_left: float = 0.0
-        self._rpm_right: float = 0.0
+        # 4 Mecanum wheels
+        self._rpm_fl: float = 0.0
+        self._rpm_fr: float = 0.0
+        self._rpm_rl: float = 0.0
+        self._rpm_rr: float = 0.0
+        
         self._last_time = self.get_clock().now()
 
         self._x = 0.0
@@ -75,17 +81,26 @@ class WheelOdometryNode(Node):
         self.create_timer(1.0 / float(self.publish_rate), self._publish_odometry)
 
         self.get_logger().info(
-            'Wheel odometry node initialized: '
+            'Mecanum odometry node initialized: '
             f'wheel_radius={self.wheel_radius:.3f}m, '
             f'wheel_separation={self.wheel_separation:.3f}m, '
+            f'wheel_base={self.wheel_base:.3f}m, '
             f'odom_frame={self.odom_frame}, base_frame={self.base_frame}'
         )
 
     def _wheel_rpm_callback(self, msg: Int32MultiArray) -> None:
-        if len(msg.data) < 2:
-            return
-        self._rpm_left = float(msg.data[0])
-        self._rpm_right = float(msg.data[1])
+        if len(msg.data) >= 4:
+            self._rpm_fl = float(msg.data[0])
+            self._rpm_fr = float(msg.data[1])
+            self._rpm_rl = float(msg.data[2])
+            self._rpm_rr = float(msg.data[3])
+        elif len(msg.data) >= 2:
+            # Fallback differential mapping for 2-wheel input:
+            # Left drives FL/RL, Right drives FR/RR
+            self._rpm_fl = float(msg.data[0])
+            self._rpm_rl = float(msg.data[0])
+            self._rpm_fr = float(msg.data[1])
+            self._rpm_rr = float(msg.data[1])
 
     @staticmethod
     def _normalize_angle(angle: float) -> float:
@@ -103,14 +118,24 @@ class WheelOdometryNode(Node):
 
         self._last_time = now
 
-        v_l = self._rpm_left * 2.0 * math.pi * self.wheel_radius / 60.0
-        v_r = self._rpm_right * 2.0 * math.pi * self.wheel_radius / 60.0
+        # Convert RPM to linear speeds (m/s)
+        v_fl = self._rpm_fl * 2.0 * math.pi * self.wheel_radius / 60.0
+        v_fr = self._rpm_fr * 2.0 * math.pi * self.wheel_radius / 60.0
+        v_rl = self._rpm_rl * 2.0 * math.pi * self.wheel_radius / 60.0
+        v_rr = self._rpm_rr * 2.0 * math.pi * self.wheel_radius / 60.0
 
-        linear_velocity = 0.5 * (v_l + v_r)
-        angular_velocity = (v_r - v_l) / self.wheel_separation
+        # Mecanum kinematics forward equations
+        # vx = forward velocity, vy = lateral velocity, wz = angular velocity
+        lx = self.wheel_base / 2.0
+        ly = self.wheel_separation / 2.0
 
-        delta_x = linear_velocity * dt * math.cos(self._yaw)
-        delta_y = linear_velocity * dt * math.sin(self._yaw)
+        linear_velocity_x = (v_fl + v_fr + v_rl + v_rr) / 4.0
+        linear_velocity_y = (-v_fl + v_fr + v_rl - v_rr) / 4.0
+        angular_velocity = (-v_fl + v_fr - v_rl + v_rr) / (4.0 * (lx + ly))
+
+        # Position integration in world coordinate frame
+        delta_x = (linear_velocity_x * math.cos(self._yaw) - linear_velocity_y * math.sin(self._yaw)) * dt
+        delta_y = (linear_velocity_x * math.sin(self._yaw) + linear_velocity_y * math.cos(self._yaw)) * dt
         delta_yaw = angular_velocity * dt
 
         self._x += delta_x
@@ -144,8 +169,8 @@ class WheelOdometryNode(Node):
         odom_msg.pose.pose.orientation.z = qz
         odom_msg.pose.pose.orientation.w = qw
 
-        odom_msg.twist.twist.linear.x = linear_velocity
-        odom_msg.twist.twist.linear.y = 0.0
+        odom_msg.twist.twist.linear.x = linear_velocity_x
+        odom_msg.twist.twist.linear.y = linear_velocity_y
         odom_msg.twist.twist.angular.z = angular_velocity
 
         self._odom_pub.publish(odom_msg)
