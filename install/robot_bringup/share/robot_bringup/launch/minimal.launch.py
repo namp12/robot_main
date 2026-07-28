@@ -107,6 +107,13 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('enable_wheel_odom')),
     )
 
+    camera_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('camera_node'), 'launch', 'camera.launch.py'])
+        ),
+        condition=IfCondition(LaunchConfiguration('enable_camera')),
+    )
+
     return LaunchDescription([
         use_sim_time_arg,
         publish_robot_description_arg,
@@ -122,4 +129,5 @@ def generate_launch_description():
         lidar_launch,
         serial_launch,
         wheel_odom_launch,
+        camera_launch,
     ])
