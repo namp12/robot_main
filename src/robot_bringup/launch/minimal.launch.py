@@ -109,7 +109,7 @@ def generate_launch_description():
             'odom_frame': 'odom',
             'base_frame': 'base_footprint',
             'publish_rate': '20.0',
-            'publish_tf': PythonExpression(['"false" if ', LaunchConfiguration('enable_ekf'), ' == "true" else "true"']),
+            'publish_tf': PythonExpression(["'false' if '", LaunchConfiguration('enable_ekf'), "' == 'true' else 'true'"]),
         }.items(),
         condition=IfCondition(LaunchConfiguration('enable_wheel_odom')),
     )
