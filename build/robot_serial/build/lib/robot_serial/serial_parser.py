@@ -109,10 +109,12 @@ class SerialParser:
         """
         try:
             if tag == 'ENC':
-                # Encoder: <ENC,left,right> - integers
-                if len(raw_values) < 2:
+                # Encoder: <ENC,fl,fr,rl,rr> - integers
+                if len(raw_values) < 4:
+                    if len(raw_values) >= 2:
+                        return [int(raw_values[0].strip()), int(raw_values[1].strip()), 0, 0]
                     return None
-                return [int(raw_values[0].strip()), int(raw_values[1].strip())]
+                return [int(v.strip()) for v in raw_values[:4]]
 
             elif tag == 'IMU':
                 # IMU: <IMU,ax,ay,az> - floats
@@ -131,10 +133,12 @@ class SerialParser:
                 return [float(raw_values[0].strip())]
 
             elif tag == 'RPM':
-                # RPM: <RPM,left,right> - integers
-                if len(raw_values) < 2:
+                # RPM: <RPM,fl,fr,rl,rr> - integers
+                if len(raw_values) < 4:
+                    if len(raw_values) >= 2:
+                        return [int(raw_values[0].strip()), int(raw_values[1].strip()), 0, 0]
                     return None
-                return [int(raw_values[0].strip()), int(raw_values[1].strip())]
+                return [int(v.strip()) for v in raw_values[:4]]
 
             elif tag == 'STATUS':
                 # Status: <STATUS,text> - string

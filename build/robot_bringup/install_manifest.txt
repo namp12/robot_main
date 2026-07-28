@@ -13,6 +13,7 @@
 /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/lidar.launch.py
 /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/view_robot.launch.py
 /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/nav2.launch.py
+/home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/ekf.yaml
 /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/slam_toolbox_params.yaml
 /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/map_server_params.yaml
 /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/nav2_params.yaml
@@ -25,6 +26,8 @@
 /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/save_map.py
 /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup/copy_map.sh
 /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/.gitkeep
+/home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/my_room/map.yaml
+/home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/my_room/map.pgm
 /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup
 /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup
 /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh

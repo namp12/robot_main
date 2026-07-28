@@ -1,0 +1,21 @@
+[7.564s] Invoking command in '/home/robot/robot_ws/src/robot_ai': PYTHONPATH=/home/robot/robot_ws/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_ai build --build-base /home/robot/robot_ws/build/robot_ai/build install --record /home/robot/robot_ws/build/robot_ai/install.log --install-scripts $base/lib/robot_ai --single-version-externally-managed install_data
+[9.286s] running egg_info
+[9.287s] writing ../../build/robot_ai/robot_ai.egg-info/PKG-INFO
+[9.290s] writing dependency_links to ../../build/robot_ai/robot_ai.egg-info/dependency_links.txt
+[9.296s] writing entry points to ../../build/robot_ai/robot_ai.egg-info/entry_points.txt
+[9.297s] writing requirements to ../../build/robot_ai/robot_ai.egg-info/requires.txt
+[9.298s] writing top-level names to ../../build/robot_ai/robot_ai.egg-info/top_level.txt
+[9.311s] reading manifest file '../../build/robot_ai/robot_ai.egg-info/SOURCES.txt'
+[9.485s] writing manifest file '../../build/robot_ai/robot_ai.egg-info/SOURCES.txt'
+[9.486s] running build
+[9.487s] running build_py
+[9.490s] running install
+[9.492s] running install_lib
+[9.505s] running install_data
+[9.506s] running install_egg_info
+[9.520s] removing '/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai-1.0.0-py3.10.egg-info' (and everything under it)
+[9.523s] Copying ../../build/robot_ai/robot_ai.egg-info to /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot_ai-1.0.0-py3.10.egg-info
+[9.660s] running install_scripts
+[9.818s] Installing ai_node script to /home/robot/robot_ws/install/robot_ai/lib/robot_ai
+[9.827s] writing list of installed files to '/home/robot/robot_ws/build/robot_ai/install.log'
+[10.083s] Invoked command in '/home/robot/robot_ws/src/robot_ai' returned '0': PYTHONPATH=/home/robot/robot_ws/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_ai build --build-base /home/robot/robot_ws/build/robot_ai/build install --record /home/robot/robot_ws/build/robot_ai/install.log --install-scripts $base/lib/robot_ai --single-version-externally-managed install_data
