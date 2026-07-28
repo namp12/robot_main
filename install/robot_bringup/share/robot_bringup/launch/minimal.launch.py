@@ -5,7 +5,8 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, PythonExpression
+from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -38,6 +39,11 @@ def generate_launch_description():
         'enable_wheel_odom',
         default_value='false',
         description='Launch wheel odometry when true',
+    )
+    enable_ekf_arg = DeclareLaunchArgument(
+        'enable_ekf',
+        default_value='false',
+        description='Launch EKF sensor fusion (robot_localization) when true',
     )
     enable_camera_arg = DeclareLaunchArgument(
         'enable_camera',
@@ -103,8 +109,21 @@ def generate_launch_description():
             'odom_frame': 'odom',
             'base_frame': 'base_footprint',
             'publish_rate': '20.0',
+            'publish_tf': PythonExpression(['"false" if ', LaunchConfiguration('enable_ekf'), ' == "true" else "true"']),
         }.items(),
         condition=IfCondition(LaunchConfiguration('enable_wheel_odom')),
+    )
+
+    ekf_node = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[
+            PathJoinSubstitution([bringup_pkg, 'config', 'ekf.yaml']),
+            {'use_sim_time': LaunchConfiguration('use_sim_time')}
+        ],
+        condition=IfCondition(LaunchConfiguration('enable_ekf')),
     )
 
     camera_launch = IncludeLaunchDescription(
@@ -120,6 +139,7 @@ def generate_launch_description():
         enable_lidar_arg,
         enable_serial_arg,
         enable_wheel_odom_arg,
+        enable_ekf_arg,
         enable_camera_arg,
         serial_port_arg,
         use_static_odom_arg,
@@ -129,5 +149,6 @@ def generate_launch_description():
         lidar_launch,
         serial_launch,
         wheel_odom_launch,
+        ekf_node,
         camera_launch,
     ])
