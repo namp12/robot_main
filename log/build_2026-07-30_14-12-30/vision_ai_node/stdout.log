@@ -1,0 +1,19 @@
+running develop
+running egg_info
+writing vision_ai_node.egg-info/PKG-INFO
+writing dependency_links to vision_ai_node.egg-info/dependency_links.txt
+writing entry points to vision_ai_node.egg-info/entry_points.txt
+writing requirements to vision_ai_node.egg-info/requires.txt
+writing top-level names to vision_ai_node.egg-info/top_level.txt
+reading manifest file 'vision_ai_node.egg-info/SOURCES.txt'
+writing manifest file 'vision_ai_node.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/robot/robot_ws/install/vision_ai_node/lib/python3.10/site-packages/vision-ai-node.egg-link (link to .)
+Installing vision_ai_node script to /home/robot/robot_ws/install/vision_ai_node/lib/vision_ai_node
+
+Installed /home/robot/robot_ws/build/vision_ai_node
+running symlink_data
+symbolically linking /home/robot/robot_ws/build/vision_ai_node/resource/vision_ai_node -> /home/robot/robot_ws/install/vision_ai_node/share/ament_index/resource_index/packages
+symbolically linking /home/robot/robot_ws/build/vision_ai_node/package.xml -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node
+symbolically linking /home/robot/robot_ws/build/vision_ai_node/launch/vision_ai.launch.py -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/launch
+symbolically linking /home/robot/robot_ws/build/vision_ai_node/config/vision.yaml -> /home/robot/robot_ws/install/vision_ai_node/share/vision_ai_node/config

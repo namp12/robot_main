@@ -2,18 +2,20 @@
 """
 dialogue_tts_node.py
 
-Simple ROS2 node that subscribes to `/speech/text`, generates a reply
-via OpenAI (if configured) or a rule-based fallback, publishes the
-response on `/dialogue/response` and speaks it using `pyttsx3`.
+ROS2 node that converts ASR text into a dialogue response, optionally
+calls OpenAI ChatGPT, publishes navigation/command intent, and speaks
+back via pyttsx3 when available.
 
-This node is intentionally lightweight and safe-fallbacking so it can
-run on edge devices without network.
+The node is designed for Pi4 edge operation with remote AI enabled only
+when configured, and a lightweight offline fallback otherwise.
 """
 
+import json
 import os
-import threading
+import re
 import traceback
-from typing import Optional
+from concurrent.futures import ThreadPoolExecutor
+from typing import Optional, Tuple
 
 import rclpy
 from rclpy.node import Node
@@ -24,125 +26,222 @@ class DialogueTTSNode(Node):
     def __init__(self) -> None:
         super().__init__('dialogue_tts_node')
 
-        # Parameters
-        self.declare_parameter('openai_enabled', False)
+        # ---- Params ----
+        self.declare_parameter('openai_enabled', True)
         self.declare_parameter('openai_model', 'gpt-3.5-turbo')
+        self.declare_parameter('openai_temperature', 0.7)
+        self.declare_parameter('response_max_tokens', 150)
+        self.declare_parameter('tts_enabled', True)
+        self.declare_parameter('speech_text_topic', '/speech/text')
+        self.declare_parameter('response_topic', '/dialogue/response')
+        self.declare_parameter('command_topic', '/dialogue/command')
+        self.declare_parameter('openai_api_key', '')
+        self.declare_parameter('openai_system_prompt', (
+            'You are a helpful robot assistant. Keep answers short, polite, and '
+            'focused on the user request. If the user asks for movement commands, '
+            'return the best matching navigation intent.'
+        ))
 
-        self._openai_enabled = self.get_parameter('openai_enabled').value
-        self._openai_model = self.get_parameter('openai_model').value
+        self._openai_enabled = bool(self.get_parameter('openai_enabled').value)
+        self._openai_model = str(self.get_parameter('openai_model').value)
+        self._openai_temperature = float(self.get_parameter('openai_temperature').value)
+        self._response_max_tokens = int(self.get_parameter('response_max_tokens').value)
+        self._tts_enabled = bool(self.get_parameter('tts_enabled').value)
+        self._speech_text_topic = str(self.get_parameter('speech_text_topic').value)
+        self._response_topic = str(self.get_parameter('response_topic').value)
+        self._command_topic = str(self.get_parameter('command_topic').value)
+        self._openai_api_key = str(self.get_parameter('openai_api_key').value).strip()
+        self._openai_system_prompt = str(self.get_parameter('openai_system_prompt').value)
 
-        # Publisher for textual responses
-        self._pub = self.create_publisher(String, '/dialogue/response', 10)
-
-        # Subscriber to ASR text
-        self._sub = self.create_subscription(
-            String, '/speech/text', self._on_speech_text, 10
+        # ---- Publishers / Subscribers ----
+        self._response_pub = self.create_publisher(String, self._response_topic, 10)
+        self._command_pub = self.create_publisher(String, self._command_topic, 10)
+        self._speech_sub = self.create_subscription(
+            String,
+            self._speech_text_topic,
+            self._on_speech_text,
+            10,
         )
 
-        # Try to import optional backends
-        self._openai = None
-        self._tts = None
-        try:
-            import pyttsx3
-            self._tts = pyttsx3.init()
-        except Exception:
-            self.get_logger().warning('pyttsx3 not available; TTS disabled')
+        # ---- Thread pool for OpenAI and TTS work ----
+        self._executor = ThreadPoolExecutor(max_workers=2)
 
+        # ---- TTS initialization ----
+        self._tts_engine = None
+        if self._tts_enabled:
+            try:
+                import pyttsx3
+                self._tts_engine = pyttsx3.init()
+            except Exception as exc:
+                self.get_logger().warning(f'pyttsx3 unavailable: {exc}. TTS disabled.')
+                self._tts_engine = None
+
+        # ---- OpenAI initialization ----
+        self._openai = None
         if self._openai_enabled:
             try:
                 import openai
                 self._openai = openai
-                # If API key provided via env, set it
-                key = os.environ.get('OPENAI_API_KEY')
-                if key:
-                    self._openai.api_key = key
-            except Exception:
-                self.get_logger().warning('openai package not available; GPT disabled')
+                api_key = self._openai_api_key or os.environ.get('OPENAI_API_KEY', '')
+                if api_key:
+                    self._openai.api_key = api_key
+                else:
+                    self.get_logger().warning(
+                        'openai_enabled=true but no OPENAI_API_KEY found. Remote AI disabled.'
+                    )
+                    self._openai = None
+            except Exception as exc:
+                self.get_logger().warning(f'OpenAI package unavailable: {exc}. Remote AI disabled.')
                 self._openai = None
 
-        self.get_logger().info('DialogueTTS node started')
+        self.get_logger().info(
+            'DialogueTTS node started: '
+            f'openai_enabled={self._openai is not None}, '
+            f'tts_enabled={self._tts_engine is not None}'
+        )
 
     def _on_speech_text(self, msg: String) -> None:
         text = msg.data.strip()
         if not text:
             return
 
-        self.get_logger().info(f'Received text: {text}')
-
-        # Generate response (may block briefly) in worker thread
-        thread = threading.Thread(target=self._handle_query, args=(text,), daemon=True)
-        thread.start()
+        self.get_logger().info(f'Received speech text: {text}')
+        self._executor.submit(self._handle_query, text)
 
     def _handle_query(self, text: str) -> None:
         try:
-            resp = self._generate_response(text)
-            if resp is None:
-                resp = 'Xin lỗi, tôi chưa trả lời được.'
+            response_text, command = self._generate_response(text)
+            if not response_text:
+                response_text = 'Xin lỗi, tôi chưa trả lời được.'
 
-            # Publish textual response
-            out = String()
-            out.data = resp
-            self._pub.publish(out)
+            self._publish_text(response_text)
+            if command:
+                self._publish_command(command)
 
-            # Speak it (non-blocking to ROS main thread)
-            if self._tts is not None:
-                try:
-                    # run TTS in a short-lived thread to avoid blocking
-                    t = threading.Thread(target=self._speak, args=(resp,), daemon=True)
-                    t.start()
-                except Exception:
-                    self.get_logger().error('Failed to start TTS thread')
+            if self._tts_engine is not None:
+                self._executor.submit(self._speak, response_text)
 
         except Exception:
             self.get_logger().error(f'Error handling query:\n{traceback.format_exc()}')
 
-    def _generate_response(self, text: str) -> Optional[str]:
-        """Generate textual response using OpenAI if available, else fallback."""
-        # Use OpenAI chat API if configured
-        if self._openai is not None and os.environ.get('OPENAI_API_KEY'):
-            try:
-                # Prefer ChatCompletion interface if available
-                if hasattr(self._openai, 'ChatCompletion'):
-                    completion = self._openai.ChatCompletion.create(
-                        model=self._openai_model,
-                        messages=[{"role": "user", "content": text}],
-                        max_tokens=256,
-                    )
-                    choice = completion.choices[0]
-                    return choice.message.content.strip()
+    def _publish_text(self, text: str) -> None:
+        msg = String()
+        msg.data = text
+        self._response_pub.publish(msg)
 
-                # Fallback older completion
-                elif hasattr(self._openai, 'Completion'):
-                    completion = self._openai.Completion.create(
-                        model=self._openai_model,
-                        prompt=text,
-                        max_tokens=256,
-                    )
-                    return completion.choices[0].text.strip()
+    def _publish_command(self, command: str) -> None:
+        msg = String()
+        msg.data = command
+        self._command_pub.publish(msg)
+        self.get_logger().info(f'Published command intent: {command}')
 
-            except Exception:
-                self.get_logger().warning('OpenAI request failed, falling back')
+    def _generate_response(self, text: str) -> Tuple[str, Optional[str]]:
+        command = self._parse_command(text)
+        response = None
 
-        # Simple rule-based fallback for offline use
-        # Echo + simple heuristics
+        if self._openai is not None:
+            response = self._call_openai(text)
+
+        if response:
+            return response, command
+
+        response = self._fallback_response(text, command)
+        return response, command
+
+    def _call_openai(self, text: str) -> Optional[str]:
+        try:
+            if hasattr(self._openai, 'ChatCompletion'):
+                completion = self._openai.ChatCompletion.create(
+                    model=self._openai_model,
+                    messages=[
+                        {'role': 'system', 'content': self._openai_system_prompt},
+                        {'role': 'user', 'content': text},
+                    ],
+                    temperature=self._openai_temperature,
+                    max_tokens=self._response_max_tokens,
+                )
+                choice = completion.choices[0]
+                return choice.message.content.strip()
+
+            if hasattr(self._openai, 'Completion'):
+                completion = self._openai.Completion.create(
+                    model=self._openai_model,
+                    prompt=text,
+                    temperature=self._openai_temperature,
+                    max_tokens=self._response_max_tokens,
+                )
+                return completion.choices[0].text.strip()
+
+        except Exception as exc:
+            self.get_logger().warning(f'OpenAI request failed: {exc}')
+
+        return None
+
+    def _fallback_response(self, text: str, command: Optional[str]) -> str:
         lower = text.lower()
-        if any(g in lower for g in ['xin chào', 'chào', 'hello', 'hi']):
-            return 'Chào bạn! Tôi có thể giúp gì hôm nay?'
-        if 'tên' in lower and ('bạn' in lower or 'của bạn' in lower):
-            return 'Mình là trợ lý robot.'
-        if lower.endswith('?'):
-            return 'Đó là câu hỏi hay — tôi sẽ suy nghĩ về nó.'
 
-        # Default: echo
+        if command:
+            if command == 'stop':
+                return 'Đã hiểu. Tôi sẽ dừng lại ngay.'
+            if command == 'forward':
+                return 'Được rồi, tiến về phía trước.'
+            if command == 'backward':
+                return 'Tôi sẽ lùi lại.'
+            if command == 'left':
+                return 'Quay trái ngay.'
+            if command == 'right':
+                return 'Quay phải ngay.'
+            if command == 'follow':
+                return 'Tôi sẽ theo bạn.'
+            if command == 'home':
+                return 'Tôi sẽ trở về vị trí ban đầu.'
+            if command == 'navigate':
+                return 'Hãy chỉ cho tôi điểm đến.'
+
+        if any(greet in lower for greet in ['xin chào', 'chào', 'hello', 'hi']):
+            return 'Chào bạn! Tôi ở đây và sẵn sàng giúp.'
+        if 'tên bạn' in lower or 'bạn tên' in lower:
+            return 'Mình là trợ lý robot.'
+        if 'bao nhiêu' in lower and 'pin' in lower:
+            return 'Pin đang ở mức đủ dùng.'
+        if lower.endswith('?'):
+            return 'Đây là câu hỏi hay — tôi sẽ suy nghĩ về nó.'
+
         return f'Tôi nghe được: {text}'
+
+    def _parse_command(self, text: str) -> Optional[str]:
+        lower = text.lower()
+        if any(word in lower for word in ['dừng', 'stop', 'ngừng', 'đứng lại', 'dừng lại']):
+            return 'stop'
+        if any(word in lower for word in ['tiến', 'đi tới', 'đi về', 'tiến về', 'go forward']):
+            return 'forward'
+        if any(word in lower for word in ['lùi', 'quay sau', 'backward', 'go back']):
+            return 'backward'
+        if any(word in lower for word in ['trái', 'quay trái', 'left']):
+            return 'left'
+        if any(word in lower for word in ['phải', 'quay phải', 'right']):
+            return 'right'
+        if any(word in lower for word in ['theo', 'follow']):
+            return 'follow'
+        if any(word in lower for word in ['về nhà', 'trở về', 'home']):
+            return 'home'
+        if any(word in lower for word in ['đi đến', 'đến', 'navigate', 'go to', 'move to']):
+            return 'navigate'
+        if re.search(r'^(đi|lái|hướng)', lower):
+            return 'navigate'
+        return None
 
     def _speak(self, text: str) -> None:
         try:
-            # pyttsx3 may be blocking; run here in a separate thread
-            self._tts.say(text)
-            self._tts.runAndWait()
-        except Exception:
-            self.get_logger().error('TTS failed to speak')
+            self._tts_engine.say(text)
+            self._tts_engine.runAndWait()
+        except Exception as exc:
+            self.get_logger().error(f'TTS failed to speak: {exc}')
+
+    def destroy_node(self) -> None:
+        self.get_logger().info('Shutting down DialogueTTS node')
+        self._executor.shutdown(wait=False)
+        super().destroy_node()
 
 
 def main(args=None) -> None:
@@ -155,7 +254,6 @@ def main(args=None) -> None:
         pass
     finally:
         if node is not None:
-            node.get_logger().info('Shutting down DialogueTTS node')
             node.destroy_node()
         rclpy.shutdown()
 

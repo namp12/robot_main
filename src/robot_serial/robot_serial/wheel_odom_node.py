@@ -3,7 +3,7 @@ from typing import Optional
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int32MultiArray
+from std_msgs.msg import Float32, Int32MultiArray
 from sensor_msgs.msg import Imu
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import TransformStamped
@@ -84,10 +84,13 @@ class WheelOdometryNode(Node):
         self._odom_pub = self.create_publisher(Odometry, '/odom', 10)
         self._tf_broadcaster = TransformBroadcaster(self)
 
+        self._last_distance: Optional[float] = None
+        self._current_distance: float = 0.0
+
         self.create_subscription(
-            Int32MultiArray,
-            '/wheel_rpm',
-            self._wheel_rpm_callback,
+            Float32,
+            '/esp32/encoder_distance',
+            self._encoder_distance_callback,
             10,
         )
 
@@ -109,38 +112,16 @@ class WheelOdometryNode(Node):
             f'odom_frame={self.odom_frame}, base_frame={self.base_frame}'
         )
 
+    def _encoder_distance_callback(self, msg: Float32) -> None:
+        distance = float(msg.data)
+        if self._last_distance is None:
+            self._last_distance = distance
+
+        self._current_distance = distance
+
     def _wheel_rpm_callback(self, msg: Int32MultiArray) -> None:
-        if len(msg.data) >= 4:
-            rpm_fl = float(msg.data[0])
-            rpm_fr = float(msg.data[1])
-            rpm_rl = float(msg.data[2])
-            rpm_rr = float(msg.data[3])
-        elif len(msg.data) >= 2:
-            # Fallback differential mapping for 2-wheel input:
-            # Left drives FL/RL, Right drives FR/RR
-            rpm_fl = float(msg.data[0])
-            rpm_rl = float(msg.data[0])
-            rpm_fr = float(msg.data[1])
-            rpm_rr = float(msg.data[1])
-        else:
-            return
-
-        if not hasattr(self, '_filtered_rpm_fl'):
-            self._filtered_rpm_fl = rpm_fl
-            self._filtered_rpm_fr = rpm_fr
-            self._filtered_rpm_rl = rpm_rl
-            self._filtered_rpm_rr = rpm_rr
-
-        alpha = max(0.0, min(1.0, self.rpm_filter_alpha))
-        self._filtered_rpm_fl = alpha * rpm_fl + (1.0 - alpha) * self._filtered_rpm_fl
-        self._filtered_rpm_fr = alpha * rpm_fr + (1.0 - alpha) * self._filtered_rpm_fr
-        self._filtered_rpm_rl = alpha * rpm_rl + (1.0 - alpha) * self._filtered_rpm_rl
-        self._filtered_rpm_rr = alpha * rpm_rr + (1.0 - alpha) * self._filtered_rpm_rr
-
-        self._rpm_fl = self._filtered_rpm_fl
-        self._rpm_fr = self._filtered_rpm_fr
-        self._rpm_rl = self._filtered_rpm_rl
-        self._rpm_rr = self._filtered_rpm_rr
+        # Legacy callback preserved for compatibility but not used by current ESP32 pipeline.
+        return
 
     @staticmethod
     def _normalize_angle(angle: float) -> float:
@@ -170,37 +151,46 @@ class WheelOdometryNode(Node):
 
         self._last_time = now
 
-        # Convert RPM to linear speeds (m/s)
-        v_fl = self._rpm_fl * 2.0 * math.pi * self.wheel_radius / 60.0
-        v_fr = self._rpm_fr * 2.0 * math.pi * self.wheel_radius / 60.0
-        v_rl = self._rpm_rl * 2.0 * math.pi * self.wheel_radius / 60.0
-        v_rr = self._rpm_rr * 2.0 * math.pi * self.wheel_radius / 60.0
+        if self._last_distance is not None:
+            # Use encoder distance as the current primary odometry source.
+            # This assumes /esp32/encoder_distance is a cumulative distance in meters.
+            distance_delta = self._current_distance - self._last_distance
+            linear_velocity_x = distance_delta / dt
+            linear_velocity_y = 0.0
+            angular_velocity = 0.0
+            self._last_distance = self._current_distance
+        else:
+            # Legacy RPM-based odometry path if RPM values are available.
+            v_fl = self._rpm_fl * 2.0 * math.pi * self.wheel_radius / 60.0
+            v_fr = self._rpm_fr * 2.0 * math.pi * self.wheel_radius / 60.0
+            v_rl = self._rpm_rl * 2.0 * math.pi * self.wheel_radius / 60.0
+            v_rr = self._rpm_rr * 2.0 * math.pi * self.wheel_radius / 60.0
 
-        if not hasattr(self, '_smoothed_v_fl'):
-            self._smoothed_v_fl = v_fl
-            self._smoothed_v_fr = v_fr
-            self._smoothed_v_rl = v_rl
-            self._smoothed_v_rr = v_rr
+            if not hasattr(self, '_smoothed_v_fl'):
+                self._smoothed_v_fl = v_fl
+                self._smoothed_v_fr = v_fr
+                self._smoothed_v_rl = v_rl
+                self._smoothed_v_rr = v_rr
 
-        alpha = max(0.0, min(1.0, self.odom_smoothing_alpha))
-        self._smoothed_v_fl = alpha * v_fl + (1.0 - alpha) * self._smoothed_v_fl
-        self._smoothed_v_fr = alpha * v_fr + (1.0 - alpha) * self._smoothed_v_fr
-        self._smoothed_v_rl = alpha * v_rl + (1.0 - alpha) * self._smoothed_v_rl
-        self._smoothed_v_rr = alpha * v_rr + (1.0 - alpha) * self._smoothed_v_rr
+            alpha = max(0.0, min(1.0, self.odom_smoothing_alpha))
+            self._smoothed_v_fl = alpha * v_fl + (1.0 - alpha) * self._smoothed_v_fl
+            self._smoothed_v_fr = alpha * v_fr + (1.0 - alpha) * self._smoothed_v_fr
+            self._smoothed_v_rl = alpha * v_rl + (1.0 - alpha) * self._smoothed_v_rl
+            self._smoothed_v_rr = alpha * v_rr + (1.0 - alpha) * self._smoothed_v_rr
 
-        v_fl = self._smoothed_v_fl
-        v_fr = self._smoothed_v_fr
-        v_rl = self._smoothed_v_rl
-        v_rr = self._smoothed_v_rr
+            v_fl = self._smoothed_v_fl
+            v_fr = self._smoothed_v_fr
+            v_rl = self._smoothed_v_rl
+            v_rr = self._smoothed_v_rr
 
-        # Mecanum kinematics forward equations
-        # vx = forward velocity, vy = lateral velocity, wz = angular velocity
-        lx = self.wheel_base / 2.0
-        ly = self.wheel_separation / 2.0
+            # Mecanum kinematics forward equations
+            # vx = forward velocity, vy = lateral velocity, wz = angular velocity
+            lx = self.wheel_base / 2.0
+            ly = self.wheel_separation / 2.0
 
-        linear_velocity_x = (v_fl + v_fr + v_rl + v_rr) / 4.0
-        linear_velocity_y = (-v_fl + v_fr + v_rl - v_rr) / 4.0
-        angular_velocity = (-v_fl + v_fr - v_rl + v_rr) / (4.0 * (lx + ly))
+            linear_velocity_x = (v_fl + v_fr + v_rl + v_rr) / 4.0
+            linear_velocity_y = (-v_fl + v_fr + v_rl - v_rr) / 4.0
+            angular_velocity = (-v_fl + v_fr - v_rl + v_rr) / (4.0 * (lx + ly))
 
         # Position integration in world coordinate frame
         delta_x = (linear_velocity_x * math.cos(self._yaw) - linear_velocity_y * math.sin(self._yaw)) * dt

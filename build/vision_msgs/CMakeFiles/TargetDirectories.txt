@@ -9,7 +9,7 @@
 /home/robot/robot_ws/build/vision_msgs/CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_cpp.dir
 /home/robot/robot_ws/build/vision_msgs/CMakeFiles/vision_msgs__rosidl_typesupport_introspection_cpp.dir
 /home/robot/robot_ws/build/vision_msgs/CMakeFiles/vision_msgs__rosidl_typesupport_cpp.dir
-/home/robot/robot_ws/build/vision_msgs/CMakeFiles/ament_cmake_python_copy_vision_msgs.dir
+/home/robot/robot_ws/build/vision_msgs/CMakeFiles/ament_cmake_python_symlink_vision_msgs.dir
 /home/robot/robot_ws/build/vision_msgs/CMakeFiles/ament_cmake_python_build_vision_msgs_egg.dir
 /home/robot/robot_ws/build/vision_msgs/CMakeFiles/vision_msgs__rosidl_generator_py.dir
 /home/robot/robot_ws/build/vision_msgs/CMakeFiles/vision_msgs__rosidl_typesupport_fastrtps_c__pyext.dir

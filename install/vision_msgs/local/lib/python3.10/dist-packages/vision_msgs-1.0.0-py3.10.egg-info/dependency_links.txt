@@ -1,1 +1,1 @@
-
+/home/robot/robot_ws/build/vision_msgs/ament_cmake_python/vision_msgs/vision_msgs.egg-info/dependency_links.txt

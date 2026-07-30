@@ -1,3 +1,1 @@
-from vision_msgs.msg._ai_status import AIStatus  # noqa: F401
-from vision_msgs.msg._detection import Detection  # noqa: F401
-from vision_msgs.msg._detection_array import DetectionArray  # noqa: F401
+/home/robot/robot_ws/build/vision_msgs/rosidl_generator_py/vision_msgs/msg/__init__.py

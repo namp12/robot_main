@@ -14,22 +14,26 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'),
             glob(os.path.join('launch', '*.launch.py'))),
-        (os.path.join('share', package_name, 'config'),
-            glob(os.path.join('config', '*.yaml'))),
-        (os.path.join('share', package_name, 'model'),
-            glob(os.path.join('model', '*'))),
     ],
-    install_requires=['setuptools', 'pyttsx3'],
+    install_requires=[
+        'setuptools',
+        'pyttsx3',
+        'openai',
+        'SpeechRecognition',
+    ],
     zip_safe=True,
     maintainer='robot',
     maintainer_email='robot@todo.todo',
-    description='AI Vision module with YOLO + ONNX Runtime',
+    description='Cloud-backed dialogue and TTS support for ROS2 Humble',
     license='Apache-2.0',
     extras_require={'test': ['pytest']},
     entry_points={
-        'console_scripts': [
-            'ai_node = robot_ai.ai_node:main',
-            'dialogue_tts_node = robot_ai.dialogue_tts_node:main',
-        ],
-    },
+     'console_scripts': [
+        'dialogue_tts_node = robot_ai.dialogue_tts_node:main',
+        'stt_node = robot_ai.stt_node:main',
+        'command_node = robot_ai.command_node:main',
+        'http_bridge_node = robot_ai.http_bridge_node:main',
+    ]
+  }
 )
+

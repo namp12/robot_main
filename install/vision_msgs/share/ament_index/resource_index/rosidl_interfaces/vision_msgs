@@ -1,6 +1,1 @@
-msg/AIStatus.idl
-msg/AIStatus.msg
-msg/Detection.idl
-msg/Detection.msg
-msg/DetectionArray.idl
-msg/DetectionArray.msg
+/home/robot/robot_ws/build/vision_msgs/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/vision_msgs
