@@ -35,19 +35,19 @@ class CommandNode(Node):
 
         cmd = Twist()
 
-        if text in ['đi thẳng', 'di thang', 'tiến', 'tien', 'forward']:
+        if text in ['đi thẳng', 'di thang', 'tiến', 'tien', 'forward', 'tiens_len']:
             cmd.linear.x = 0.20
 
-        elif text in ['lùi', 'lui', 'back', 'backward']:
+        elif text in ['lùi', 'lui', 'back', 'backward', 'lui_lai']:
             cmd.linear.x = -0.20
 
-        elif text in ['trái', 'trai', 'left']:
+        elif text in ['trái', 'trai', 'left', 'quay_trai']:
             cmd.angular.z = 0.50
 
-        elif text in ['phải', 'phai', 'right']:
+        elif text in ['phải', 'phai', 'right', 'quay_phai']:
             cmd.angular.z = -0.50
 
-        elif text in ['dừng', 'dung', 'stop']:
+        elif text in ['dừng', 'dung', 'stop', 'giu_nguyen']:
             cmd.linear.x = 0.0
             cmd.angular.z = 0.0
 
