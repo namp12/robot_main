@@ -4,6 +4,7 @@ from typing import Optional
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int32MultiArray
+from sensor_msgs.msg import Imu
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import TransformStamped
 from tf2_ros import TransformBroadcaster
@@ -49,6 +50,10 @@ class WheelOdometryNode(Node):
         self.declare_parameter('base_frame', 'base_footprint')
         self.declare_parameter('publish_rate', 20.0)
         self.declare_parameter('publish_tf', True)
+        self.declare_parameter('rpm_filter_alpha', 0.5)
+        self.declare_parameter('odom_smoothing_alpha', 0.7)
+        self.declare_parameter('use_imu_heading_correction', True)
+        self.declare_parameter('imu_heading_alpha', 0.9)
 
         self.wheel_radius = self.get_parameter('wheel_radius').value
         self.wheel_separation = self.get_parameter('wheel_separation').value
@@ -57,12 +62,18 @@ class WheelOdometryNode(Node):
         self.base_frame = self.get_parameter('base_frame').value
         self.publish_rate = self.get_parameter('publish_rate').value
         self.publish_tf = self.get_parameter('publish_tf').value
+        self.rpm_filter_alpha = float(self.get_parameter('rpm_filter_alpha').value)
+        self.odom_smoothing_alpha = float(self.get_parameter('odom_smoothing_alpha').value)
+        self.use_imu_heading_correction = self.get_parameter('use_imu_heading_correction').value
+        self.imu_heading_alpha = float(self.get_parameter('imu_heading_alpha').value)
 
         # 4 Mecanum wheels
         self._rpm_fl: float = 0.0
         self._rpm_fr: float = 0.0
         self._rpm_rl: float = 0.0
         self._rpm_rr: float = 0.0
+        self._imu_has_data: bool = False
+        self._imu_yaw: float = 0.0
         
         self._last_time = self.get_clock().now()
 
@@ -80,6 +91,14 @@ class WheelOdometryNode(Node):
             10,
         )
 
+        if self.use_imu_heading_correction:
+            self.create_subscription(
+                Imu,
+                '/imu/data',
+                self._imu_callback,
+                10,
+            )
+
         self.create_timer(1.0 / float(self.publish_rate), self._publish_odometry)
 
         self.get_logger().info(
@@ -92,17 +111,36 @@ class WheelOdometryNode(Node):
 
     def _wheel_rpm_callback(self, msg: Int32MultiArray) -> None:
         if len(msg.data) >= 4:
-            self._rpm_fl = float(msg.data[0])
-            self._rpm_fr = float(msg.data[1])
-            self._rpm_rl = float(msg.data[2])
-            self._rpm_rr = float(msg.data[3])
+            rpm_fl = float(msg.data[0])
+            rpm_fr = float(msg.data[1])
+            rpm_rl = float(msg.data[2])
+            rpm_rr = float(msg.data[3])
         elif len(msg.data) >= 2:
             # Fallback differential mapping for 2-wheel input:
             # Left drives FL/RL, Right drives FR/RR
-            self._rpm_fl = float(msg.data[0])
-            self._rpm_rl = float(msg.data[0])
-            self._rpm_fr = float(msg.data[1])
-            self._rpm_rr = float(msg.data[1])
+            rpm_fl = float(msg.data[0])
+            rpm_rl = float(msg.data[0])
+            rpm_fr = float(msg.data[1])
+            rpm_rr = float(msg.data[1])
+        else:
+            return
+
+        if not hasattr(self, '_filtered_rpm_fl'):
+            self._filtered_rpm_fl = rpm_fl
+            self._filtered_rpm_fr = rpm_fr
+            self._filtered_rpm_rl = rpm_rl
+            self._filtered_rpm_rr = rpm_rr
+
+        alpha = max(0.0, min(1.0, self.rpm_filter_alpha))
+        self._filtered_rpm_fl = alpha * rpm_fl + (1.0 - alpha) * self._filtered_rpm_fl
+        self._filtered_rpm_fr = alpha * rpm_fr + (1.0 - alpha) * self._filtered_rpm_fr
+        self._filtered_rpm_rl = alpha * rpm_rl + (1.0 - alpha) * self._filtered_rpm_rl
+        self._filtered_rpm_rr = alpha * rpm_rr + (1.0 - alpha) * self._filtered_rpm_rr
+
+        self._rpm_fl = self._filtered_rpm_fl
+        self._rpm_fr = self._filtered_rpm_fr
+        self._rpm_rl = self._filtered_rpm_rl
+        self._rpm_rr = self._filtered_rpm_rr
 
     @staticmethod
     def _normalize_angle(angle: float) -> float:
@@ -111,6 +149,18 @@ class WheelOdometryNode(Node):
         while angle < -math.pi:
             angle += 2.0 * math.pi
         return angle
+
+    @staticmethod
+    def _quaternion_to_yaw(orientation) -> float:
+        x = orientation.x
+        y = orientation.y
+        z = orientation.z
+        w = orientation.w
+        # yaw (z-axis rotation)
+        return math.atan2(
+            2.0 * (w * z + x * y),
+            1.0 - 2.0 * (y * y + z * z)
+        )
 
     def _publish_odometry(self) -> None:
         now = self.get_clock().now()
@@ -125,6 +175,23 @@ class WheelOdometryNode(Node):
         v_fr = self._rpm_fr * 2.0 * math.pi * self.wheel_radius / 60.0
         v_rl = self._rpm_rl * 2.0 * math.pi * self.wheel_radius / 60.0
         v_rr = self._rpm_rr * 2.0 * math.pi * self.wheel_radius / 60.0
+
+        if not hasattr(self, '_smoothed_v_fl'):
+            self._smoothed_v_fl = v_fl
+            self._smoothed_v_fr = v_fr
+            self._smoothed_v_rl = v_rl
+            self._smoothed_v_rr = v_rr
+
+        alpha = max(0.0, min(1.0, self.odom_smoothing_alpha))
+        self._smoothed_v_fl = alpha * v_fl + (1.0 - alpha) * self._smoothed_v_fl
+        self._smoothed_v_fr = alpha * v_fr + (1.0 - alpha) * self._smoothed_v_fr
+        self._smoothed_v_rl = alpha * v_rl + (1.0 - alpha) * self._smoothed_v_rl
+        self._smoothed_v_rr = alpha * v_rr + (1.0 - alpha) * self._smoothed_v_rr
+
+        v_fl = self._smoothed_v_fl
+        v_fr = self._smoothed_v_fr
+        v_rl = self._smoothed_v_rl
+        v_rr = self._smoothed_v_rr
 
         # Mecanum kinematics forward equations
         # vx = forward velocity, vy = lateral velocity, wz = angular velocity
@@ -143,6 +210,12 @@ class WheelOdometryNode(Node):
         self._x += delta_x
         self._y += delta_y
         self._yaw = self._normalize_angle(self._yaw + delta_yaw)
+
+        if self.use_imu_heading_correction and getattr(self, '_imu_has_data', False):
+            # Softly correct absolute yaw using IMU orientation
+            yaw_error = self._normalize_angle(self._imu_yaw - self._yaw)
+            correction_alpha = max(0.0, min(1.0, self.imu_heading_alpha))
+            self._yaw = self._normalize_angle(self._yaw + (1.0 - correction_alpha) * yaw_error)
 
         # Publish odom -> base_footprint transform
         qx, qy, qz, qw = euler_to_quaternion(0.0, 0.0, self._yaw)
@@ -177,6 +250,10 @@ class WheelOdometryNode(Node):
         odom_msg.twist.twist.angular.z = angular_velocity
 
         self._odom_pub.publish(odom_msg)
+
+    def _imu_callback(self, msg: Imu) -> None:
+        self._imu_yaw = self._quaternion_to_yaw(msg.orientation)
+        self._imu_has_data = True
 
 
 def main(args: Optional[list] = None) -> None:

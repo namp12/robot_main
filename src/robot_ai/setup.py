@@ -19,7 +19,7 @@ setup(
         (os.path.join('share', package_name, 'model'),
             glob(os.path.join('model', '*'))),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'pyttsx3'],
     zip_safe=True,
     maintainer='robot',
     maintainer_email='robot@todo.todo',
@@ -29,6 +29,7 @@ setup(
     entry_points={
         'console_scripts': [
             'ai_node = robot_ai.ai_node:main',
+            'dialogue_tts_node = robot_ai.dialogue_tts_node:main',
         ],
     },
 )
