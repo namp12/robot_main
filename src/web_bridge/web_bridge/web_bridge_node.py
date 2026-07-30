@@ -54,6 +54,7 @@ class WebBridgeNode(Node):
         self._clients: set = set()
         self._latest_telemetry: Dict = {}
         self._callback_group = ReentrantCallbackGroup()
+        self._ws_loop: Optional[asyncio.AbstractEventLoop] = None
 
         # Publishers for outgoing ROS2 commands
         self._cmd_vel_pub = self.create_publisher(
@@ -186,12 +187,12 @@ class WebBridgeNode(Node):
         self._broadcast_telemetry()
 
     def _broadcast_telemetry(self) -> None:
-        if not self._clients:
+        if not self._clients or self._ws_loop is None or self._ws_loop.is_closed():
             return
         message = json.dumps({'type': 'telemetry', 'data': self._latest_telemetry})
         for ws in list(self._clients):
             try:
-                asyncio.create_task(ws.send(message))
+                asyncio.run_coroutine_threadsafe(ws.send(message), self._ws_loop)
             except Exception:
                 pass
 
@@ -237,6 +238,10 @@ class WebBridgeNode(Node):
         try:
             async for message in websocket:
                 self._handle_ws_command(message)
+        except websockets.ConnectionClosed as exc:
+            self.get_logger().info(f'WebSocket connection closed: {exc}')
+        except asyncio.CancelledError:
+            self.get_logger().info('WebSocket handler cancelled')
         except Exception as exc:
             self.get_logger().warning(f'WebSocket error: {exc}')
         finally:
@@ -247,6 +252,7 @@ class WebBridgeNode(Node):
         asyncio.run(self._run_ws())
 
     async def _run_ws(self) -> None:
+        self._ws_loop = asyncio.get_running_loop()
         async with websockets.serve(self._ws_handler, '0.0.0.0', self._ws_port):
             self.get_logger().info(f'WebSocket server started on port {self._ws_port}')
             await asyncio.Future()
