@@ -1,23 +1,33 @@
 #!/bin/bash
-# save_map.sh - Save the current SLAM map to SD card
+# save_map.sh - Save the current SLAM map to a custom location or standard directory
 #
 # Usage:
 #   bash save_map.sh                  # saves to ~/robot_maps/<timestamp>/
 #   bash save_map.sh my_room          # saves to ~/robot_maps/my_room/
+#   bash save_map.sh /path/to/folder  # saves to /path/to/folder/
 #
 # Prerequisites:
-#   - SLAM Toolbox must be running and publishing /map
+#   - SLAM Toolbox or Map Server must be running and publishing /map
 
 set -e
 
-# ---- Configuration ----
-MAPS_DIR="$HOME/robot_maps"
-
 # ---- Parse arguments ----
-MAP_NAME="${1:-$(date +%Y%m%d_%H%M%S)}"
+TARGET="${1:-$(date +%Y%m%d_%H%M%S)}"
+
+# ---- Determine target directory ----
+if [[ "$TARGET" == /* || "$TARGET" == \.* || "$TARGET" == ~* ]]; then
+    # Expand ~ if present
+    if [[ "$TARGET" == ~* ]]; then
+        OUTPUT_DIR="${TARGET/#\~/$HOME}"
+    else
+        OUTPUT_DIR="$TARGET"
+    fi
+else
+    MAPS_DIR="$HOME/robot_maps"
+    OUTPUT_DIR="$MAPS_DIR/$TARGET"
+fi
 
 # ---- Create output directory ----
-OUTPUT_DIR="$MAPS_DIR/$MAP_NAME"
 mkdir -p "$OUTPUT_DIR"
 
 echo "[INFO] Saving map to: $OUTPUT_DIR"
@@ -43,7 +53,7 @@ if [ -f "$OUTPUT_DIR/map.yaml" ] && [ -f "$OUTPUT_DIR/map.pgm" ]; then
     echo "     PGM:  $OUTPUT_DIR/map.pgm"
     echo ""
     echo "To load this map:"
-    echo "  ros2 launch robot_bringup localization.launch.py map:=$OUTPUT_DIR/map.yaml"
+    echo "  ros2 launch robot_bringup nav2.launch.py map:=$OUTPUT_DIR/map.yaml"
     echo ""
     ls -lh "$OUTPUT_DIR/"
 else

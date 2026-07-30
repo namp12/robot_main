@@ -1,6 +1,6 @@
 # slam_toolbox_params.yaml
 # Optimized parameters for RPLidar C1 on Raspberry Pi 4 (ROS2 Humble)
-# Location: e:\robot_main\src\robot_bringup\config\slam_toolbox_params.yaml
+# Location: /home/phuongnam/robot_main/src/robot_bringup/config/slam_toolbox_params.yaml
 
 slam_toolbox:
   ros__parameters:
@@ -11,10 +11,10 @@ slam_toolbox:
     ceres_preconditioner: SCHUR_JACOBI
     ceres_trust_strategy: LEVENBERG_MARQUARDT
     ceres_dogleg_type: TRADITIONAL_DOGLEG
-    ceres_loss_function: Huber  # Changed: Huber loss helps reject laser outlier noise
+    ceres_loss_function: Huber
 
     # ---- Threading ----
-    thread_num: 2  # Keep 2 cores free on RPi4 for WebSocket and control nodes
+    thread_num: 2
 
     # ---- Frame IDs ----
     odom_frame: odom
@@ -24,32 +24,34 @@ slam_toolbox:
     use_map_saver: true
 
     # ---- Motion / scan thresholds ----
-    minimum_travel_distance: 0.30    # Ignore small jitter and require more motion to add scan
-    minimum_travel_heading: 0.25     # Ignore tiny rotations to stabilize the map
-    scan_buffer_maximum_size: 5      # Reduce scan queue size to avoid stale noisy data
-    scan_buffer_size: 5
-    scan_publisher_maximum_size: 5
+    minimum_travel_distance: 0.40
+    minimum_travel_heading: 0.40
+    scan_buffer_maximum_size: 10
+    scan_buffer_size: 10
+    scan_publisher_maximum_size: 10
 
     # ---- Laser parameters (RPLidar C1) ----
-    max_laser_range: 12.0            # C1 hardware maximum limit
-    minimum_time_interval: 0.1       # Max rate limiting at 10 Hz
+    max_laser_range: 12.0
+    minimum_time_interval: 0.1
 
     # ---- Map resolution & Update rate ----
-    resolution: 0.05                 # 5 cm per pixel (standard balanced resolution)
-    map_update_interval: 2.5         # Throttle map publishing to save CPU and reduce jitter
+    resolution: 0.05
+    map_update_interval: 5.0
 
     # ---- Transform ----
-    transform_publish_period: 0.1    # Publish map->odom transform at 10 Hz
+    transform_publish_period: 0.1
     transform_timeout: 0.5
 
     # ---- Loop closure ----
-    do_loop_closing: false
-    loop_search_maximum_distance: 2.0
-    loop_search_maximum_error: 0.8   # Tighter threshold to avoid wrong loop closures
-    loop_search_space_dimension: 6.0   # Smaller search space for better stability
+    do_loop_closing: true
+    loop_search_maximum_distance: 3.0
+    loop_search_maximum_error: 0.8
+    loop_search_space_dimension: 4.0
+    loop_match_minimum_response_coarse: 0.45
+    loop_match_minimum_response_fine: 0.55
 
     # ---- Graph Decimation (RPi4 CPU Optimization) ----
-    max_covariance_decimation: 3     # More decimation to smooth noisy maps
+    max_covariance_decimation: 3
     max_nodes_decimation: 2
 
     # ---- Debug ----
