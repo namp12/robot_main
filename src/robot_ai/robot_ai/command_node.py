@@ -16,65 +16,55 @@ class CommandNode(Node):
             10
         )
 
-        self.cmd_vel_pub = self.create_publisher(
+        self.cmd_pub = self.create_publisher(
             Twist,
             '/cmd_vel',
             10
         )
 
-        self.last_motion_time = None
-        self.last_cmd = Twist()
-        self.motion_timeout_sec = 1.0
-        self.watchdog_timer = self.create_timer(0.1, self.watchdog_callback)
-
         self.get_logger().info('Robot command node ONLINE')
+
+    def publish_cmd(self, linear=0.0, angular=0.0):
+        msg = Twist()
+        msg.linear.x = float(linear)
+        msg.angular.z = float(angular)
+        self.cmd_pub.publish(msg)
+
+        self.get_logger().info(
+            f'CMD_VEL: linear={linear:.2f}, angular={angular:.2f}'
+        )
 
     def command_callback(self, msg):
         text = msg.data.strip().lower()
+
+        if not text:
+            return
+
         self.get_logger().info(f'COMMAND RECEIVED: {msg.data}')
 
-        cmd = Twist()
+        # STOP
+        if any(x in text for x in ['dừng', 'dung', 'stop', 'thôi', 'thoi']):
+            self.publish_cmd(0.0, 0.0)
 
-        if text in ['đi thẳng', 'di thang', 'tiến', 'tien', 'forward', 'tiens_len']:
-            cmd.linear.x = 0.20
+        # FORWARD
+        elif any(x in text for x in ['đi thẳng', 'di thang', 'tiến', 'tien', 'forward']):
+            self.publish_cmd(0.20, 0.0)
 
-        elif text in ['lùi', 'lui', 'lùi lại', 'lui lai', 'back', 'backward', 'lui_lai']:
-            cmd.linear.x = -0.20
+        # BACKWARD
+        elif any(x in text for x in ['đi lùi', 'di lui', 'lùi', 'lui', 'back']):
+            self.publish_cmd(-0.20, 0.0)
 
-        elif text in ['trái', 'trai', 'left', 'quay_trai']:
-            cmd.angular.z = 0.50
+        # LEFT
+        elif any(x in text for x in ['rẽ trái', 're trai', 'sang trái', 'sang trai', 'left']):
+            self.publish_cmd(0.0, 0.50)
 
-        elif text in ['phải', 'phai', 'right', 'quay_phai']:
-            cmd.angular.z = -0.50
-
-        elif text in ['dừng', 'dung', 'stop', 'giu_nguyen']:
-            cmd.linear.x = 0.0
-            cmd.angular.z = 0.0
+        # RIGHT
+        elif any(x in text for x in ['rẽ phải', 're phai', 'sang phải', 'sang phai', 'right']):
+            self.publish_cmd(0.0, -0.50)
 
         else:
             self.get_logger().warn(f'UNKNOWN COMMAND: {msg.data}')
-            return
-
-        self.cmd_vel_pub.publish(cmd)
-        self.last_cmd = cmd
-        self.last_motion_time = self.get_clock().now()
-
-        self.get_logger().info(
-            f'CMD_VEL: linear.x={cmd.linear.x:.2f}, angular.z={cmd.angular.z:.2f}'
-        )
-
-    def watchdog_callback(self):
-        if self.last_motion_time is None:
-            return
-
-        elapsed = (self.get_clock().now() - self.last_motion_time).nanoseconds * 1e-9
-        if elapsed > self.motion_timeout_sec:
-            if self.last_cmd.linear.x != 0.0 or self.last_cmd.angular.z != 0.0:
-                stop_cmd = Twist()
-                self.cmd_vel_pub.publish(stop_cmd)
-                self.last_cmd = stop_cmd
-                self.last_motion_time = self.get_clock().now()
-                self.get_logger().info('CMD_VEL watchdog: published stop after 1s timeout')
+            self.publish_cmd(0.0, 0.0)
 
 
 def main(args=None):
