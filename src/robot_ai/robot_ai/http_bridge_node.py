@@ -14,23 +14,32 @@ tts_publisher = None
 
 
 def speak_on_pi(text: str):
-    """Đọc giọng nói ra Loa Bluetooth / Audio Jack của Raspberry Pi."""
+    """Đọc giọng nói chuẩn tiếng Việt ra Loa Bluetooth / Audio Jack của Raspberry Pi."""
     if not text or not text.strip():
         return
+
+    # 1. Thử dùng pyttsx3 với giọng đọc tiếng Việt
     try:
-        # 1. Thử dùng pyttsx3 nếu có
         import pyttsx3
         engine = pyttsx3.init()
+        voices = engine.getProperty('voices')
+        for v in voices:
+            if 'vietnam' in v.name.lower() or 'vi' in v.id.lower():
+                engine.setProperty('voice', v.id)
+                break
         engine.say(text)
         engine.runAndWait()
         engine.stop()
+        return
     except Exception:
-        # 2. Fallback sang espeak-ng / gTTS / aplay của Linux Pi
-        try:
-            cmd = f'espeak-ng -v vi "{text}" 2>/dev/null'
-            os.system(cmd)
-        except Exception:
-            pass
+        pass
+
+    # 2. Fallback sang espeak-ng giọng tiếng Việt chuẩn (-v vi)
+    try:
+        cmd = f'espeak-ng -v vi "{text}" 2>/dev/null'
+        os.system(cmd)
+    except Exception:
+        pass
 
 
 class Handler(BaseHTTPRequestHandler):
