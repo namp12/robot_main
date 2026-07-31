@@ -43,23 +43,23 @@ class CommandNode(Node):
         self.get_logger().info(f'COMMAND RECEIVED: {msg.data}')
 
         # STOP
-        if any(x in text for x in ['dừng', 'dung', 'stop', 'thôi', 'thoi']):
+        if any(x in text for x in ['dừng', 'dung', 'stop', 'thôi', 'thoi', 'giu_nguyen']):
             self.publish_cmd(0.0, 0.0)
 
         # FORWARD
-        elif any(x in text for x in ['đi thẳng', 'di thang', 'tiến', 'tien', 'forward']):
+        elif any(x in text for x in ['đi thẳng', 'di thang', 'tiến', 'tien', 'forward', 'tiens_len']):
             self.publish_cmd(0.20, 0.0)
 
         # BACKWARD
-        elif any(x in text for x in ['đi lùi', 'di lui', 'lùi', 'lui', 'back']):
+        elif any(x in text for x in ['đi lùi', 'di lui', 'lùi', 'lui', 'back', 'lui_lai']):
             self.publish_cmd(-0.20, 0.0)
 
         # LEFT
-        elif any(x in text for x in ['rẽ trái', 're trai', 'sang trái', 'sang trai', 'left']):
+        elif any(x in text for x in ['rẽ trái', 're trai', 'sang trái', 'quay_trai', 'left']):
             self.publish_cmd(0.0, 0.50)
 
         # RIGHT
-        elif any(x in text for x in ['rẽ phải', 're phai', 'sang phải', 'sang phai', 'right']):
+        elif any(x in text for x in ['rẽ phải', 're phai', 'sang phải', 'quay_phai', 'right']):
             self.publish_cmd(0.0, -0.50)
 
         else:

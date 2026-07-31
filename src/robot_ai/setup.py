@@ -33,6 +33,8 @@ setup(
         'stt_node = robot_ai.stt_node:main',
         'command_node = robot_ai.command_node:main',
         'http_bridge_node = robot_ai.http_bridge_node:main',
+        'video_stream_server = robot_ai.video_stream_server:main',
+        'audio_stream_server = robot_ai.audio_stream_server:main',
     ]
   }
 )
