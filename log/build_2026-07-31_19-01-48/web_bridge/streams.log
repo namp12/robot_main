@@ -1,0 +1,17 @@
+[8.519s] Invoking command in '/home/robot/robot_ws/build/web_bridge': PYTHONPATH=/home/robot/robot_ws/build/web_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robot/robot_ws/build/web_bridge/build --no-deps symlink_data
+[10.298s] running develop
+[11.220s] running egg_info
+[11.221s] writing web_bridge.egg-info/PKG-INFO
+[11.222s] writing dependency_links to web_bridge.egg-info/dependency_links.txt
+[11.223s] writing entry points to web_bridge.egg-info/entry_points.txt
+[11.225s] writing requirements to web_bridge.egg-info/requires.txt
+[11.226s] writing top-level names to web_bridge.egg-info/top_level.txt
+[11.237s] reading manifest file 'web_bridge.egg-info/SOURCES.txt'
+[11.520s] writing manifest file 'web_bridge.egg-info/SOURCES.txt'
+[11.537s] running build_ext
+[11.540s] Creating /home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages/web-bridge.egg-link (link to .)
+[11.658s] Installing web_bridge script to /home/robot/robot_ws/install/web_bridge/lib/web_bridge
+[11.661s] 
+[11.662s] Installed /home/robot/robot_ws/build/web_bridge
+[11.663s] running symlink_data
+[12.137s] Invoked command in '/home/robot/robot_ws/build/web_bridge' returned '0': PYTHONPATH=/home/robot/robot_ws/build/web_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/web_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robot/robot_ws/build/web_bridge/build --no-deps symlink_data

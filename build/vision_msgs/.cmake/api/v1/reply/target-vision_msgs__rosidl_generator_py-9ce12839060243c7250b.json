@@ -263,12 +263,12 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 14,
-			"id" : "vision_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 13,
 			"id" : "vision_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 14,
+			"id" : "vision_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 14,
