@@ -25,7 +25,7 @@ class CommandNode(Node):
         self.last_motion_time = None
         self.last_cmd = Twist()
         self.motion_timeout_sec = 1.0
-        self.watchdog_timer = self.create_timer(1.0, self.watchdog_callback)
+        self.watchdog_timer = self.create_timer(0.1, self.watchdog_callback)
 
         self.get_logger().info('Robot command node ONLINE')
 
@@ -38,7 +38,7 @@ class CommandNode(Node):
         if text in ['đi thẳng', 'di thang', 'tiến', 'tien', 'forward', 'tiens_len']:
             cmd.linear.x = 0.20
 
-        elif text in ['lùi', 'lui', 'back', 'backward', 'lui_lai']:
+        elif text in ['lùi', 'lui', 'lùi lại', 'lui lai', 'back', 'backward', 'lui_lai']:
             cmd.linear.x = -0.20
 
         elif text in ['trái', 'trai', 'left', 'quay_trai']:
