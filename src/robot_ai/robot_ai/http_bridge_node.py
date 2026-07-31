@@ -1,21 +1,42 @@
+import os
+import json
+import threading
+import subprocess
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 
-from http.server import BaseHTTPRequestHandler, HTTPServer
-import json
-import threading
-
-
 ros_node = None
-publisher = None
+command_publisher = None
+tts_publisher = None
+
+
+def speak_on_pi(text: str):
+    """Đọc giọng nói ra Loa Bluetooth / Audio Jack của Raspberry Pi."""
+    if not text or not text.strip():
+        return
+    try:
+        # 1. Thử dùng pyttsx3 nếu có
+        import pyttsx3
+        engine = pyttsx3.init()
+        engine.say(text)
+        engine.runAndWait()
+        engine.stop()
+    except Exception:
+        # 2. Fallback sang espeak-ng / gTTS / aplay của Linux Pi
+        try:
+            cmd = f'espeak-ng -v vi "{text}" 2>/dev/null'
+            os.system(cmd)
+        except Exception:
+            pass
 
 
 class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
-
-        if self.path not in {"/command", "/robot/command"}:
+        if self.path not in {"/command", "/robot/command", "/tts", "/speech/tts"}:
             self.send_response(404)
             self.end_headers()
             return
@@ -46,9 +67,17 @@ class Handler(BaseHTTPRequestHandler):
             if text:
                 msg = String()
                 msg.data = text
-                publisher.publish(msg)
 
-                ros_node.get_logger().info(f'HTTP COMMAND: {text}')
+                if self.path in {"/tts", "/speech/tts"}:
+                    if tts_publisher:
+                        tts_publisher.publish(msg)
+                    ros_node.get_logger().info(f'HTTP TTS: "{text}"')
+                    # Đọc câu thoại ra Loa Bluetooth cắm tại Pi 4
+                    threading.Thread(target=speak_on_pi, args=(text,), daemon=True).start()
+                else:
+                    if command_publisher:
+                        command_publisher.publish(msg)
+                    ros_node.get_logger().info(f'HTTP COMMAND: "{text}"')
 
             response = {
                 'status': 'received',
@@ -75,39 +104,26 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-
     global ros_node
-    global publisher
+    global command_publisher
+    global tts_publisher
 
     rclpy.init()
 
     ros_node = Node("http_bridge")
 
-    publisher = ros_node.create_publisher(
-        String,
-        "/robot/command",
-        10
-    )
+    command_publisher = ros_node.create_publisher(String, "/robot/command", 10)
+    tts_publisher = ros_node.create_publisher(String, "/speech/text", 10)
 
-    server = HTTPServer(
-        ("0.0.0.0", 8001),
-        Handler
-    )
+    server = HTTPServer(("0.0.0.0", 8001), Handler)
 
-    thread = threading.Thread(
-        target=server.serve_forever,
-        daemon=True
-    )
-
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
 
-    ros_node.get_logger().info(
-        "HTTP bridge listening on port 8001"
-    )
+    ros_node.get_logger().info("HTTP bridge listening on port 8001 (Command & TTS Endpoints)")
 
     try:
         rclpy.spin(ros_node)
-
     except KeyboardInterrupt:
         pass
 
