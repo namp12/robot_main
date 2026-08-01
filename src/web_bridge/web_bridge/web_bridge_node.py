@@ -49,7 +49,7 @@ class WebBridgeNode(Node):
 
     def __init__(self) -> None:
         super().__init__('web_bridge_node')
-        self.declare_parameter('ws_port', 8080)
+        self.declare_parameter('ws_port', 8090)
         self._ws_port = self.get_parameter('ws_port').value
         self._clients: set = set()
         self._latest_telemetry: Dict = {}

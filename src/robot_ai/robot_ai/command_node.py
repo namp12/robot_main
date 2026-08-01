@@ -62,6 +62,18 @@ class CommandNode(Node):
         elif any(x in text for x in ['rẽ phải', 're phai', 'sang phải', 'quay_phai', 'right']):
             self.publish_cmd(0.0, -0.50)
 
+        # CHEO TRAI (DIAGONAL LEFT)
+        elif any(x in text for x in ['chéo trái', 'cheo trai', 'tiến trái']):
+            self.publish_cmd(0.15, 0.35)
+
+        # CHEO PHAI (DIAGONAL RIGHT)
+        elif any(x in text for x in ['chéo phải', 'cheo phai', 'tiến phải']):
+            self.publish_cmd(0.15, -0.35)
+
+        # XOAY TRON (SPIN IN A CIRCLE)
+        elif any(x in text for x in ['xoay tròn', 'xoay tron', 'vòng tròn', 'vong tron', 'quay 360', 'xoay 360', 'spin']):
+            self.publish_cmd(0.0, 0.80)
+
         else:
             self.get_logger().warn(f'UNKNOWN COMMAND: {msg.data}')
             self.publish_cmd(0.0, 0.0)
