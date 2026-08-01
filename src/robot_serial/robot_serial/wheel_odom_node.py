@@ -3,7 +3,7 @@ from typing import Optional
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32, Int32MultiArray
+from std_msgs.msg import Float32, Int32MultiArray, Float32MultiArray
 from sensor_msgs.msg import Imu
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import TransformStamped
@@ -86,11 +86,20 @@ class WheelOdometryNode(Node):
 
         self._last_distance: Optional[float] = None
         self._current_distance: float = 0.0
+        self._last_encoders: Optional[list[float]] = None
+        self._current_encoders: list[float] = [0.0, 0.0, 0.0, 0.0]
 
         self.create_subscription(
             Float32,
             '/esp32/encoder_distance',
             self._encoder_distance_callback,
+            10,
+        )
+
+        self.create_subscription(
+            Float32MultiArray,
+            '/esp32/encoder_values',
+            self._encoder_values_callback,
             10,
         )
 
@@ -118,6 +127,13 @@ class WheelOdometryNode(Node):
             self._last_distance = distance
 
         self._current_distance = distance
+
+    def _encoder_values_callback(self, msg: Float32MultiArray) -> None:
+        if len(msg.data) >= 4:
+            if self._last_encoders is None:
+                self._last_encoders = list(msg.data[:4])
+
+            self._current_encoders = list(msg.data[:4])
 
     def _wheel_rpm_callback(self, msg: Int32MultiArray) -> None:
         # Legacy callback preserved for compatibility but not used by current ESP32 pipeline.
@@ -151,7 +167,22 @@ class WheelOdometryNode(Node):
 
         self._last_time = now
 
-        if self._last_distance is not None:
+        if self._last_encoders is not None:
+            # Mecanum kinematics forward calculation using the 4 wheel distances
+            d_fl = self._current_encoders[0] - self._last_encoders[0]
+            d_fr = self._current_encoders[1] - self._last_encoders[1]
+            d_rl = self._current_encoders[2] - self._last_encoders[2]
+            d_rr = self._current_encoders[3] - self._last_encoders[3]
+
+            lx = self.wheel_base / 2.0
+            ly = self.wheel_separation / 2.0
+
+            linear_velocity_x = (d_fl + d_fr + d_rl + d_rr) / (4.0 * dt)
+            linear_velocity_y = (-d_fl + d_fr + d_rl - d_rr) / (4.0 * dt)
+            angular_velocity = (-d_fl + d_fr - d_rl + d_rr) / (4.0 * (lx + ly) * dt)
+
+            self._last_encoders = list(self._current_encoders)
+        elif self._last_distance is not None:
             # Use encoder distance as the current primary odometry source.
             # This assumes /esp32/encoder_distance is a cumulative distance in meters.
             distance_delta = self._current_distance - self._last_distance
@@ -234,10 +265,29 @@ class WheelOdometryNode(Node):
         odom_msg.pose.pose.orientation.y = qy
         odom_msg.pose.pose.orientation.z = qz
         odom_msg.pose.pose.orientation.w = qw
+        odom_msg.pose.covariance = [
+            1e-5, 0.0, 0.0, 0.0, 0.0, 0.0,
+            0.0, 1e-5, 0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 1e-5, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 1e-5, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0, 1e-5, 0.0,
+            0.0, 0.0, 0.0, 0.0, 0.0, 1e-3
+        ]
 
         odom_msg.twist.twist.linear.x = linear_velocity_x
         odom_msg.twist.twist.linear.y = linear_velocity_y
+        odom_msg.twist.twist.linear.z = 0.0
+        odom_msg.twist.twist.angular.x = 0.0
+        odom_msg.twist.twist.angular.y = 0.0
         odom_msg.twist.twist.angular.z = angular_velocity
+        odom_msg.twist.covariance = [
+            1e-5, 0.0, 0.0, 0.0, 0.0, 0.0,
+            0.0, 1e-5, 0.0, 0.0, 0.0, 0.0,
+            0.0, 0.0, 1e-5, 0.0, 0.0, 0.0,
+            0.0, 0.0, 0.0, 1e-5, 0.0, 0.0,
+            0.0, 0.0, 0.0, 0.0, 1e-5, 0.0,
+            0.0, 0.0, 0.0, 0.0, 0.0, 1e-3
+        ]
 
         self._odom_pub.publish(odom_msg)
 

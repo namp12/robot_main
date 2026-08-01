@@ -3,7 +3,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Imu
-from std_msgs.msg import Float32, String
+from std_msgs.msg import Float32, String, Float32MultiArray
 
 from robot_serial.serial_manager import SerialManager
 from robot_serial.sensor_parser import parse_sensor_line
@@ -100,6 +100,7 @@ class SerialNode(Node):
         self.mode_publisher = self.create_publisher(String, '/esp32/mode', 10)
         self.status_publisher = self.create_publisher(String, '/esp32/status', 10)
         self.encoder_distance_publisher = self.create_publisher(Float32, '/esp32/encoder_distance', 10)
+        self.encoder_values_publisher = self.create_publisher(Float32MultiArray, '/esp32/encoder_values', 10)
 
         self.timer = self.create_timer(0.1, self._timer_callback)
         self._telemetry_enabled = False
@@ -183,6 +184,11 @@ class SerialNode(Node):
             enc_msg = Float32()
             enc_msg.data = float(parsed['encoder_distance'])
             self.encoder_distance_publisher.publish(enc_msg)
+
+        if parsed.get('encoders') is not None:
+            val_msg = Float32MultiArray()
+            val_msg.data = [float(v) for v in parsed['encoders']]
+            self.encoder_values_publisher.publish(val_msg)
 
     def _on_tx_command(self, msg: String):
         if not self.connected:

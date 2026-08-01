@@ -93,6 +93,7 @@
   <xacro:property name="wheel_width"     value="0.040"/>
   <xacro:property name="wheel_mass"      value="0.100"/>
   <xacro:property name="wheel_separation" value="0.30"/>
+  <xacro:property name="wheel_base"       value="0.20"/>
   <!-- Wheel center Z = wheel_radius (so wheel bottom touches ground at z=0) -->
   <!-- But base_link is at ground_clearance above ground, so wheel z relative to base_link: -->
   <xacro:property name="wheel_z_offset"  value="${wheel_radius - ground_clearance}"/>
@@ -209,27 +210,38 @@
   <!--                     DRIVE WHEELS                              -->
   <!-- ============================================================ -->
   <!--
-    Two drive wheels on left and right sides.
+    Four Mecanum drive wheels on front-left, front-right, back-left, back-right.
     Continuous joints allow rotation (needed for /joint_states from ESP32).
-
-    Wheel positions:
-      - X: center of chassis (x=0)
-      - Y: +/- wheel_separation/2 from center
-      - Z: so that wheel bottom is at ground level (z=0 relative to base_footprint)
   -->
-  <xacro:drive_wheel prefix="left"
+  <xacro:drive_wheel prefix="front_left"
     wheel_radius="${wheel_radius}"
     wheel_width="${wheel_width}"
     wheel_mass="${wheel_mass}"
-    x_offset="0"
+    x_offset="${wheel_base / 2}"
     y_offset="${wheel_separation / 2}"
     z_offset="${wheel_z_offset}"/>
 
-  <xacro:drive_wheel prefix="right"
+  <xacro:drive_wheel prefix="front_right"
     wheel_radius="${wheel_radius}"
     wheel_width="${wheel_width}"
     wheel_mass="${wheel_mass}"
-    x_offset="0"
+    x_offset="${wheel_base / 2}"
+    y_offset="${-wheel_separation / 2}"
+    z_offset="${wheel_z_offset}"/>
+
+  <xacro:drive_wheel prefix="back_left"
+    wheel_radius="${wheel_radius}"
+    wheel_width="${wheel_width}"
+    wheel_mass="${wheel_mass}"
+    x_offset="${-wheel_base / 2}"
+    y_offset="${wheel_separation / 2}"
+    z_offset="${wheel_z_offset}"/>
+
+  <xacro:drive_wheel prefix="back_right"
+    wheel_radius="${wheel_radius}"
+    wheel_width="${wheel_width}"
+    wheel_mass="${wheel_mass}"
+    x_offset="${-wheel_base / 2}"
     y_offset="${-wheel_separation / 2}"
     z_offset="${wheel_z_offset}"/>
 
@@ -239,33 +251,30 @@
   <!--
     Encoders mounted next to each wheel axis.
     Fixed joints (they don't rotate - they READ the wheel rotation).
-    Positioned slightly inward from the wheels, on the chassis wall.
   -->
-  <xacro:encoder prefix="left"
+  <xacro:encoder prefix="front_left"
     enc_x="${enc_x}" enc_y="${enc_y}" enc_z="${enc_z}" enc_mass="${enc_mass}"
-    x_offset="0"
+    x_offset="${wheel_base / 2}"
     y_offset="${wheel_separation / 2 - 0.04}"
     z_offset="${wheel_z_offset}"/>
 
-  <xacro:encoder prefix="right"
+  <xacro:encoder prefix="front_right"
     enc_x="${enc_x}" enc_y="${enc_y}" enc_z="${enc_z}" enc_mass="${enc_mass}"
-    x_offset="0"
+    x_offset="${wheel_base / 2}"
     y_offset="${-wheel_separation / 2 + 0.04}"
     z_offset="${wheel_z_offset}"/>
 
-  <!-- ============================================================ -->
-  <!--                     CASTER WHEEL                              -->
-  <!-- ============================================================ -->
-  <!--
-    Passive caster wheel at the rear for support.
-    Fixed joint, low friction sphere.
-  -->
-  <xacro:caster_wheel prefix="rear"
-    caster_radius="${caster_radius}"
-    caster_mass="${caster_mass}"
-    x_offset="${-chassis_length/2 + caster_radius + 0.02}"
-    y_offset="0"
-    z_offset="${caster_radius - ground_clearance}"/>
+  <xacro:encoder prefix="back_left"
+    enc_x="${enc_x}" enc_y="${enc_y}" enc_z="${enc_z}" enc_mass="${enc_mass}"
+    x_offset="${-wheel_base / 2}"
+    y_offset="${wheel_separation / 2 - 0.04}"
+    z_offset="${wheel_z_offset}"/>
+
+  <xacro:encoder prefix="back_right"
+    enc_x="${enc_x}" enc_y="${enc_y}" enc_z="${enc_z}" enc_mass="${enc_mass}"
+    x_offset="${-wheel_base / 2}"
+    y_offset="${-wheel_separation / 2 + 0.04}"
+    z_offset="${wheel_z_offset}"/>
 
   <!-- ============================================================ -->
   <!--                     RPLIDAR C1M1                              -->

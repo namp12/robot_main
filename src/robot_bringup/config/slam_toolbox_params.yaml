@@ -24,19 +24,19 @@ slam_toolbox:
     use_map_saver: true
 
     # ---- Motion / scan thresholds ----
-    minimum_travel_distance: 0.40
-    minimum_travel_heading: 0.40
+    minimum_travel_distance: 0.15
+    minimum_travel_heading: 0.15
     scan_buffer_maximum_size: 10
     scan_buffer_size: 10
     scan_publisher_maximum_size: 10
 
     # ---- Laser parameters (RPLidar C1) ----
-    max_laser_range: 12.0
+    max_laser_range: 8.0
     minimum_time_interval: 0.1
 
     # ---- Map resolution & Update rate ----
     resolution: 0.05
-    map_update_interval: 5.0
+    map_update_interval: 1.5
 
     # ---- Transform ----
     transform_publish_period: 0.1

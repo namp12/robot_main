@@ -96,8 +96,10 @@ def parse_sensor_line(line: str) -> Dict[str, Any]:
                 vals = [float(p) for p in parts[1:]]
                 if len(vals) >= 4:
                     result['encoder_distance'] = sum(vals) / 4.0
+                    result['encoders'] = vals[:4]
                 elif len(vals) >= 1:
                     result['encoder_distance'] = vals[0]
+                    result['encoders'] = [vals[0]] * 4
                 return result
             except ValueError:
                 pass
@@ -164,6 +166,7 @@ def parse_sensor_line(line: str) -> Dict[str, Any]:
         dist_m = _extract_key_value(text, 'Dist')
         if dist_m is not None:
             result['encoder_distance'] = dist_m
+            result['encoders'] = [dist_m] * 4
 
         return result
 
