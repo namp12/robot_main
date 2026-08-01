@@ -1,8 +1,8 @@
-# Install script for directory: /home/phuongnam/robot_main/src/robot_bringup
+# Install script for directory: /home/robot/robot_ws/src/robot_bringup
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/phuongnam/robot_main/install/robot_bringup")
+  set(CMAKE_INSTALL_PREFIX "/home/robot/robot_ws/install/robot_bringup")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/phuongnam/robot_main/build/robot_bringup/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/robot/robot_ws/build/robot_bringup/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/phuongnam/robot_main/build/robot_bringup/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/robot/robot_ws/build/robot_bringup/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

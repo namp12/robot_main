@@ -1,1 +1,1 @@
-/home/phuongnam/robot_main/src/robot_description/launch/display.launch.py
+/home/robot/robot_ws/src/robot_description/launch/display.launch.py

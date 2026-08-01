@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-956f99b0ef64919b2bbb.json",
+					"jsonFile" : "directory-.-bb4d6ffb5d27dd00a294.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.12"
@@ -46,21 +46,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "sllidar_client::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sllidar_client-b63ac9ec6aaaf45175ef.json",
+					"jsonFile" : "target-sllidar_client-eaf516341aa35cb98839.json",
 					"name" : "sllidar_client",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "sllidar_node::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sllidar_node-bf8e1247c87ee596d162.json",
+					"jsonFile" : "target-sllidar_node-8c48a24b012ef07373af.json",
 					"name" : "sllidar_node",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "sllidar_ros2_uninstall::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sllidar_ros2_uninstall-fa734207a5a886284b27.json",
+					"jsonFile" : "target-sllidar_ros2_uninstall-434ee2f68dc15a7fddaa.json",
 					"name" : "sllidar_ros2_uninstall",
 					"projectIndex" : 0
 				},
@@ -77,8 +77,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/phuongnam/robot_main/build/sllidar_ros2",
-		"source" : "/home/phuongnam/robot_main/src/sllidar_ros2"
+		"build" : "/home/robot/robot_ws/build/sllidar_ros2",
+		"source" : "/home/robot/robot_ws/src/sllidar_ros2"
 	},
 	"version" : 
 	{

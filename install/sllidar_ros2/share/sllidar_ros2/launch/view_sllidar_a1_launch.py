@@ -1,1 +1,1 @@
-/home/phuongnam/robot_main/src/sllidar_ros2/launch/view_sllidar_a1_launch.py
+/home/robot/robot_ws/src/sllidar_ros2/launch/view_sllidar_a1_launch.py

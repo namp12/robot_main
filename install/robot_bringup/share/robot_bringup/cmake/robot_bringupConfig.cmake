@@ -1,1 +1,1 @@
-/home/phuongnam/robot_main/build/robot_bringup/ament_cmake_core/robot_bringupConfig.cmake
+/home/robot/robot_ws/build/robot_bringup/ament_cmake_core/robot_bringupConfig.cmake

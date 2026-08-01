@@ -81,7 +81,7 @@
 		{
 			"backtrace" : 10,
 			"component" : "Unspecified",
-			"scriptFile" : "/home/phuongnam/robot_main/build/robot_description/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake",
+			"scriptFile" : "/home/robot/robot_ws/build/robot_bringup/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake",
 			"type" : "script"
 		}
 	],

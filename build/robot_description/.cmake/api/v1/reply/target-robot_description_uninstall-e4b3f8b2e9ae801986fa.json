@@ -69,8 +69,8 @@
 			}
 		]
 	},
-	"id" : "robot_bringup_uninstall::@6890427a1f51a3e7e1df",
-	"name" : "robot_bringup_uninstall",
+	"id" : "robot_description_uninstall::@6890427a1f51a3e7e1df",
+	"name" : "robot_description_uninstall",
 	"paths" : 
 	{
 		"build" : ".",
@@ -98,13 +98,13 @@
 		{
 			"backtrace" : 9,
 			"isGenerated" : true,
-			"path" : "/home/phuongnam/robot_main/build/robot_bringup/CMakeFiles/robot_bringup_uninstall",
+			"path" : "/home/robot/robot_ws/build/robot_description/CMakeFiles/robot_description_uninstall",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/home/phuongnam/robot_main/build/robot_bringup/CMakeFiles/robot_bringup_uninstall.rule",
+			"path" : "/home/robot/robot_ws/build/robot_description/CMakeFiles/robot_description_uninstall.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

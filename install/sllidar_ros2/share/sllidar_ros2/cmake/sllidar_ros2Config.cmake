@@ -1,1 +1,1 @@
-/home/phuongnam/robot_main/build/sllidar_ros2/ament_cmake_core/sllidar_ros2Config.cmake
+/home/robot/robot_ws/build/sllidar_ros2/ament_cmake_core/sllidar_ros2Config.cmake

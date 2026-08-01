@@ -1,1 +1,1 @@
-/home/phuongnam/robot_main/src/robot_bringup/scripts/save_map.sh
+/home/robot/robot_ws/src/robot_bringup/scripts/save_map.sh
