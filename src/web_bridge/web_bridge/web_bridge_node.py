@@ -190,10 +190,36 @@ class WebBridgeNode(Node):
         elif msg_type == 'move':
             direction = data.get('direction', '')
             speed = data.get('speed', 150)
+            
+            # 1. Bắn chuỗi Serial xuống ESP32
             payload = f'{direction} {speed}' if direction and speed > 0 else direction or 'dung'
             out = String()
             out.data = payload
             self._serial_tx_pub.publish(out)
+
+            # 2. Bắn ROS 2 Twist Message tới /cmd_vel
+            twist = Twist()
+            if direction in ['tien', 'forward']:
+                twist.linear.x = 0.20
+            elif direction in ['lui', 'backward']:
+                twist.linear.x = -0.20
+            elif direction in ['trai', 'left']:
+                twist.angular.z = 0.50
+            elif direction in ['phai', 'right']:
+                twist.angular.z = -0.50
+            elif direction in ['cheo_trai', 'diag_left']:
+                twist.linear.x = 0.15
+                twist.angular.z = 0.35
+            elif direction in ['cheo_phai', 'diag_right']:
+                twist.linear.x = 0.15
+                twist.angular.z = -0.35
+            elif direction in ['xoay_tron', 'spin']:
+                twist.angular.z = 0.80
+            else:
+                twist.linear.x = 0.0
+                twist.angular.z = 0.0
+            
+            self._cmd_vel_pub.publish(twist)
         elif msg_type == 'beep':
             out = String()
             out.data = 'beep 500'
