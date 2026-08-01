@@ -11,6 +11,8 @@ from std_msgs.msg import String
 ros_node = None
 command_publisher = None
 tts_publisher = None
+detection_publisher = None
+conversation_publisher = None
 
 
 def speak_on_pi(text: str):
@@ -18,7 +20,35 @@ def speak_on_pi(text: str):
     if not text or not text.strip():
         return
 
-    # 1. Thử dùng pyttsx3 với giọng đọc tiếng Việt
+    # 1. Thử tải giọng nói tự nhiên trực tuyến từ Google TTS
+    try:
+        import urllib.parse
+        import urllib.request
+        encoded_text = urllib.parse.quote(text)
+        url = f"https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q={encoded_text}"
+        
+        mp3_path = "/tmp/speak.mp3"
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req) as response:
+            with open(mp3_path, 'wb') as f:
+                f.write(response.read())
+        
+        # Thử phát file mp3 bằng các trình phát có sẵn trên Pi
+        players = ["mpg123", "mpv", "play", "cvlc"]
+        for player in players:
+            try:
+                if player == "mpg123":
+                    subprocess.run([player, "-q", mp3_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                else:
+                    subprocess.run([player, mp3_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                return  # Phát thành công, thoát khỏi hàm
+            except FileNotFoundError:
+                continue
+    except Exception:
+        pass
+
+    # 2. Fallback ngoại tuyến 1: pyttsx3 với giọng tiếng Việt
     try:
         import pyttsx3
         engine = pyttsx3.init()
@@ -34,7 +64,7 @@ def speak_on_pi(text: str):
     except Exception:
         pass
 
-    # 2. Fallback sang espeak-ng giọng tiếng Việt chuẩn (-v vi)
+    # 3. Fallback ngoại tuyến 2: espeak-ng giọng tiếng Việt
     try:
         cmd = f'espeak-ng -v vi "{text}" 2>/dev/null'
         os.system(cmd)
@@ -45,7 +75,7 @@ def speak_on_pi(text: str):
 class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
-        if self.path not in {"/command", "/robot/command", "/tts", "/speech/tts"}:
+        if self.path not in {"/command", "/robot/command", "/tts", "/speech/tts", "/detection", "/conversation"}:
             self.send_response(404)
             self.end_headers()
             return
@@ -83,6 +113,14 @@ class Handler(BaseHTTPRequestHandler):
                     ros_node.get_logger().info(f'HTTP TTS: "{text}"')
                     # Đọc câu thoại ra Loa Bluetooth cắm tại Pi 4
                     threading.Thread(target=speak_on_pi, args=(text,), daemon=True).start()
+                elif self.path == "/detection":
+                    if detection_publisher:
+                        detection_publisher.publish(msg)
+                    ros_node.get_logger().info(f'HTTP DETECTION (YOLO): "{text[:100]}..."')
+                elif self.path == "/conversation":
+                    if conversation_publisher:
+                        conversation_publisher.publish(msg)
+                    ros_node.get_logger().info(f'HTTP CONVERSATION: "{text[:100]}..."')
                 else:
                     if command_publisher:
                         command_publisher.publish(msg)
@@ -116,6 +154,8 @@ def main():
     global ros_node
     global command_publisher
     global tts_publisher
+    global detection_publisher
+    global conversation_publisher
 
     rclpy.init()
 
@@ -123,13 +163,15 @@ def main():
 
     command_publisher = ros_node.create_publisher(String, "/robot/command", 10)
     tts_publisher = ros_node.create_publisher(String, "/speech/text", 10)
+    detection_publisher = ros_node.create_publisher(String, "/ai/detection", 10)
+    conversation_publisher = ros_node.create_publisher(String, "/ai/conversation", 10)
 
     server = HTTPServer(("0.0.0.0", 8001), Handler)
 
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
 
-    ros_node.get_logger().info("HTTP bridge listening on port 8001 (Command & TTS Endpoints)")
+    ros_node.get_logger().info("HTTP bridge listening on port 8001 (Command, TTS, Detection & Conversation Endpoints)")
 
     try:
         rclpy.spin(ros_node)
