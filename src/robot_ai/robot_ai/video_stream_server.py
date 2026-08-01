@@ -13,23 +13,36 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
 
 
 class CamHandler(BaseHTTPRequestHandler):
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', '*')
+        self.end_headers()
+
     def do_GET(self):
         if self.path.startswith('/video_feed') or self.path == '/':
             self.send_response(200)
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+            self.send_header('Access-Control-Allow-Headers', '*')
             self.send_header('Content-Type', 'multipart/x-mixed-replace; boundary=FRAME')
             self.end_headers()
             while True:
                 try:
-                    if camera is None or not camera.isOpened():
-                        time.sleep(0.1)
-                        continue
-                    ret, frame = camera.read()
-                    if not ret or frame is None:
-                        time.sleep(0.03)
-                        continue
+                    frame = None
+                    if camera is not None and camera.isOpened():
+                        ret, frame = camera.read()
+                    
+                    if frame is None:
+                        # Frame fallback khi Camera bị khoá hoặc ngắt kết nối
+                        frame = np.zeros((480, 640, 3), dtype=np.uint8)
+                        frame[:] = (40, 20, 10)
+                        cv2.putText(frame, "CAMERA HARDWARE BUSY / OFFLINE", (50, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+                        cv2.putText(frame, "Check USB cable or close other camera apps", (70, 280), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (200, 200, 200), 1)
 
                     # Compress frame to JPEG
-                    ret, jpeg = cv2.imencode('.jpg', frame, [int(cv2.IMWRITE_JPEG_QUALITY), 70])
+                    ret, jpeg = cv2.imencode('.jpg', frame, [int(cv2.IMWRITE_JPEG_QUALITY), 75])
                     if not ret:
                         continue
 
@@ -40,7 +53,7 @@ class CamHandler(BaseHTTPRequestHandler):
                     self.end_headers()
                     self.wfile.write(data)
                     self.wfile.write(b'\r\n')
-                    time.sleep(0.03)  # ~30 FPS limit
+                    time.sleep(0.033)  # ~30 FPS limit
                 except (BrokenPipeError, ConnectionResetError):
                     break
                 except Exception:
