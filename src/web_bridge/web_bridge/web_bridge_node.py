@@ -153,35 +153,6 @@ class WebBridgeNode(Node):
         self._latest_telemetry['battery'] = msg.data
         self._broadcast_telemetry()
 
-    def _on_imu(self, msg: Imu) -> None:
-        import math
-        x = msg.orientation.x
-        y = msg.orientation.y
-        z = msg.orientation.z
-        w = msg.orientation.w
-        
-        # Roll (x-axis rotation)
-        sinr_cosp = 2.0 * (w * x + y * z)
-        cosr_cosp = 1.0 - 2.0 * (x * x + y * y)
-        roll = math.degrees(math.atan2(sinr_cosp, cosr_cosp))
-
-        # Pitch (y-axis rotation)
-        sinp = 2.0 * (w * y - z * x)
-        if abs(sinp) >= 1.0:
-            pitch = math.degrees(math.copysign(math.pi / 2.0, sinp))
-        else:
-            pitch = math.degrees(math.asin(sinp))
-
-        # Yaw (z-axis rotation)
-        siny_cosp = 2.0 * (w * z + x * y)
-        cosy_cosp = 1.0 - 2.0 * (y * y + z * z)
-        yaw = math.degrees(math.atan2(siny_cosp, cosy_cosp))
-
-        self._latest_telemetry['roll'] = roll
-        self._latest_telemetry['pitch'] = pitch
-        self._latest_telemetry['yaw'] = yaw
-        self._broadcast_telemetry()
-
     def _on_encoder_distance(self, msg: Float32) -> None:
         self._latest_telemetry['encoder_distance'] = msg.data
         self._broadcast_telemetry()
