@@ -74,6 +74,14 @@ def speak_on_pi(text: str):
 
 class Handler(BaseHTTPRequestHandler):
 
+    def handle(self):
+        try:
+            super().handle()
+        except (ConnectionResetError, BrokenPipeError):
+            if ros_node:
+                ros_node.get_logger().info("HTTP client disconnected before request completed")
+            return
+
     def do_POST(self):
         if self.path not in {"/command", "/robot/command", "/tts", "/speech/tts", "/detection", "/conversation"}:
             self.send_response(404)

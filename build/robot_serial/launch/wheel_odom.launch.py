@@ -1,1 +1,1 @@
-/home/phuongnam/robot_main/src/robot_serial/launch/wheel_odom.launch.py
+/home/robot/robot_ws/src/robot_serial/launch/wheel_odom.launch.py

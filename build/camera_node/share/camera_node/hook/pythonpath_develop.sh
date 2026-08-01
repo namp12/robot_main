@@ -1,3 +1,3 @@
 # generated from colcon_core/shell/template/hook_prepend_value.sh.em
 
-_colcon_prepend_unique_value PYTHONPATH "/home/phuongnam/robot_main/build/camera_node"
+_colcon_prepend_unique_value PYTHONPATH "/home/robot/robot_ws/build/camera_node"

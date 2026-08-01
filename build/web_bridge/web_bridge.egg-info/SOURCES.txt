@@ -11,4 +11,11 @@ setup.py
 resource/web_bridge
 web_bridge/__init__.py
 web_bridge/web_bridge_node.py
+web_bridge.egg-info/PKG-INFO
+web_bridge.egg-info/SOURCES.txt
+web_bridge.egg-info/dependency_links.txt
+web_bridge.egg-info/entry_points.txt
+web_bridge.egg-info/requires.txt
+web_bridge.egg-info/top_level.txt
+web_bridge.egg-info/zip-safe
 web_bridge/launch/web_bridge.launch.py

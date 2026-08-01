@@ -1,4 +1,3 @@
-README.md
 package.xml
 setup.cfg
 setup.py
@@ -18,3 +17,10 @@ robot_ai/dialogue_tts_node.py
 robot_ai/http_bridge_node.py
 robot_ai/stt_node.py
 robot_ai/video_stream_server.py
+robot_ai.egg-info/PKG-INFO
+robot_ai.egg-info/SOURCES.txt
+robot_ai.egg-info/dependency_links.txt
+robot_ai.egg-info/entry_points.txt
+robot_ai.egg-info/requires.txt
+robot_ai.egg-info/top_level.txt
+robot_ai.egg-info/zip-safe

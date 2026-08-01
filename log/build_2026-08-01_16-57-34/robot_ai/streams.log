@@ -1,0 +1,25 @@
+[29.064s] Invoking command in '/home/robot/robot_ws/build/robot_ai': PYTHONPATH=/home/robot/robot_ws/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robot/robot_ws/build/robot_ai/build --no-deps symlink_data --force
+[31.440s] running develop
+[33.103s] running egg_info
+[33.104s] writing robot_ai.egg-info/PKG-INFO
+[33.107s] writing dependency_links to robot_ai.egg-info/dependency_links.txt
+[33.109s] writing entry points to robot_ai.egg-info/entry_points.txt
+[33.111s] writing requirements to robot_ai.egg-info/requires.txt
+[33.114s] writing top-level names to robot_ai.egg-info/top_level.txt
+[35.763s] reading manifest file 'robot_ai.egg-info/SOURCES.txt'
+[35.771s] writing manifest file 'robot_ai.egg-info/SOURCES.txt'
+[37.643s] running build_ext
+[37.645s] Creating /home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages/robot-ai.egg-link (link to .)
+[41.449s] Installing audio_stream_server script to /home/robot/robot_ws/install/robot_ai/lib/robot_ai
+[41.452s] Installing command_node script to /home/robot/robot_ws/install/robot_ai/lib/robot_ai
+[41.453s] Installing dialogue_tts_node script to /home/robot/robot_ws/install/robot_ai/lib/robot_ai
+[41.453s] Installing http_bridge_node script to /home/robot/robot_ws/install/robot_ai/lib/robot_ai
+[41.463s] Installing stt_node script to /home/robot/robot_ws/install/robot_ai/lib/robot_ai
+[41.465s] Installing video_stream_server script to /home/robot/robot_ws/install/robot_ai/lib/robot_ai
+[41.466s] 
+[41.480s] Installed /home/robot/robot_ws/build/robot_ai
+[41.507s] running symlink_data
+[41.515s] symbolically linking /home/robot/robot_ws/build/robot_ai/resource/robot_ai -> /home/robot/robot_ws/install/robot_ai/share/ament_index/resource_index/packages
+[41.557s] symbolically linking /home/robot/robot_ws/build/robot_ai/package.xml -> /home/robot/robot_ws/install/robot_ai/share/robot_ai
+[41.560s] symbolically linking /home/robot/robot_ws/build/robot_ai/launch/ai.launch.py -> /home/robot/robot_ws/install/robot_ai/share/robot_ai/launch
+[42.186s] Invoked command in '/home/robot/robot_ws/build/robot_ai' returned '0': PYTHONPATH=/home/robot/robot_ws/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robot/robot_ws/build/robot_ai/build --no-deps symlink_data --force

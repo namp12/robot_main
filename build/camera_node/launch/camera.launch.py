@@ -1,1 +1,1 @@
-/home/phuongnam/robot_main/src/camera_node/launch/camera.launch.py
+/home/robot/robot_ws/src/camera_node/launch/camera.launch.py
