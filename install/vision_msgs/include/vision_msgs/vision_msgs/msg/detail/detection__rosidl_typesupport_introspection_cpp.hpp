@@ -1,1 +1,0 @@
-/home/robot/robot_ws/build/vision_msgs/rosidl_typesupport_introspection_cpp/vision_msgs/msg/detail/detection__rosidl_typesupport_introspection_cpp.hpp

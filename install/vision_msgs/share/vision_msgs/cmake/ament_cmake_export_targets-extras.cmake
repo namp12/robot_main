@@ -1,1 +1,0 @@
-/home/robot/robot_ws/build/vision_msgs/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake

@@ -27,10 +27,7 @@ install(DIRECTORY
 
 # Install scripts
 install(PROGRAMS
-  scripts/mount_hdd.sh
-  scripts/unmount_hdd.sh
   scripts/save_map.sh
-  scripts/setup_hdd_automount.sh
   scripts/save_map.py
   scripts/copy_map.sh
   DESTINATION lib/${PROJECT_NAME}/

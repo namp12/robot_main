@@ -1,1 +1,0 @@
-/home/robot/robot_ws/src/robot_bringup/scripts/unmount_hdd.sh

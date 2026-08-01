@@ -1,0 +1,29 @@
+[0.052s] Invoking command in '/home/phuongnam/robot_main/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/phuongnam/robot_main/build/robot_description -- -j8 -l8
+[1.663s] Invoked command in '/home/phuongnam/robot_main/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/phuongnam/robot_main/build/robot_description -- -j8 -l8
+[1.682s] Invoking command in '/home/phuongnam/robot_main/build/robot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/phuongnam/robot_main/build/robot_description
+[1.698s] -- Install configuration: ""
+[1.701s] -- Execute custom install script
+[1.701s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description//launch/display.launch.py
+[1.702s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description//launch/robot_state_publisher.launch.py
+[1.702s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description//urdf/gazebo.xacro
+[1.703s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description//urdf/macros.xacro
+[1.703s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description//urdf/materials.xacro
+[1.703s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description//urdf/robot.urdf.xacro
+[1.706s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description//config/joint_limits.yaml
+[1.707s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description//rviz/rviz.rviz
+[1.707s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description
+[1.707s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description
+[1.707s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/environment/ament_prefix_path.sh
+[1.707s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv
+[1.707s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/environment/path.sh
+[1.708s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/environment/path.dsv
+[1.710s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/local_setup.bash
+[1.710s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/local_setup.sh
+[1.710s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/local_setup.zsh
+[1.710s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/local_setup.dsv
+[1.711s] -- Symlinking: /home/phuongnam/robot_main/install/robot_description/share/robot_description/package.dsv
+[1.729s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/ament_index/resource_index/packages/robot_description
+[1.729s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake
+[1.730s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake
+[1.730s] -- Up-to-date symlink: /home/phuongnam/robot_main/install/robot_description/share/robot_description/package.xml
+[1.742s] Invoked command in '/home/phuongnam/robot_main/build/robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/phuongnam/robot_main/build/robot_description

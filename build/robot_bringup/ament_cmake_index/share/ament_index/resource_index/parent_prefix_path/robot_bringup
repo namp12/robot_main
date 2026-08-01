@@ -1,1 +1,1 @@
-/home/robot/robot_ws/install/web_bridge:/home/robot/robot_ws/install/vision_ai_node:/home/robot/robot_ws/install/vision_msgs:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/camera_node:/opt/ros/humble
+/home/phuongnam/robot_main/install/robot_description:/opt/ros/humble

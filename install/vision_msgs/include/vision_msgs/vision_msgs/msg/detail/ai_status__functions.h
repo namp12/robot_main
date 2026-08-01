@@ -1,1 +1,0 @@
-/home/robot/robot_ws/build/vision_msgs/rosidl_generator_c/vision_msgs/msg/detail/ai_status__functions.h

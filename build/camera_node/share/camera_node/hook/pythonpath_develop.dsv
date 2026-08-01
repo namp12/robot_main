@@ -1,1 +1,1 @@
-prepend-non-duplicate;PYTHONPATH;/home/robot/robot_ws/build/camera_node
+prepend-non-duplicate;PYTHONPATH;/home/phuongnam/robot_main/build/camera_node

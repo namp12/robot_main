@@ -1,1 +1,0 @@
-/home/robot/robot_ws/build/vision_msgs/rosidl_generator_cpp/vision_msgs/msg/detail/detection__builder.hpp

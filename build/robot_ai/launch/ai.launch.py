@@ -1,1 +1,1 @@
-/home/robot/robot_ws/src/robot_ai/launch/ai.launch.py
+/home/phuongnam/robot_main/src/robot_ai/launch/ai.launch.py

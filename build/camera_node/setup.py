@@ -1,1 +1,1 @@
-/home/robot/robot_ws/src/camera_node/setup.py
+/home/phuongnam/robot_main/src/camera_node/setup.py

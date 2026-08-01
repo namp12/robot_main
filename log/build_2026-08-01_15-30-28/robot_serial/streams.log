@@ -1,0 +1,31 @@
+[3.035s] Invoking command in '/home/phuongnam/robot_main/build/robot_serial': PYTHONPATH=/home/phuongnam/robot_main/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/phuongnam/robot_main/install/robot_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/phuongnam/robot_main/build/robot_serial/build --no-deps symlink_data
+[3.472s] running develop
+[3.774s] running egg_info
+[3.775s] creating robot_serial.egg-info
+[3.775s] writing robot_serial.egg-info/PKG-INFO
+[3.776s] writing dependency_links to robot_serial.egg-info/dependency_links.txt
+[3.778s] writing entry points to robot_serial.egg-info/entry_points.txt
+[3.779s] writing requirements to robot_serial.egg-info/requires.txt
+[3.779s] writing top-level names to robot_serial.egg-info/top_level.txt
+[3.779s] writing manifest file 'robot_serial.egg-info/SOURCES.txt'
+[3.785s] reading manifest file 'robot_serial.egg-info/SOURCES.txt'
+[3.786s] writing manifest file 'robot_serial.egg-info/SOURCES.txt'
+[3.790s] running build_ext
+[3.790s] Creating /home/phuongnam/robot_main/install/robot_serial/lib/python3.10/site-packages/robot-serial.egg-link (link to .)
+[3.792s] Installing serial_node script to /home/phuongnam/robot_main/install/robot_serial/lib/robot_serial
+[3.795s] Installing teleop_text script to /home/phuongnam/robot_main/install/robot_serial/lib/robot_serial
+[3.795s] Installing wheel_odom_node script to /home/phuongnam/robot_main/install/robot_serial/lib/robot_serial
+[3.796s] 
+[3.796s] Installed /home/phuongnam/robot_main/build/robot_serial
+[3.796s] running symlink_data
+[3.796s] creating /home/phuongnam/robot_main/install/robot_serial/share/ament_index
+[3.796s] creating /home/phuongnam/robot_main/install/robot_serial/share/ament_index/resource_index
+[3.797s] creating /home/phuongnam/robot_main/install/robot_serial/share/ament_index/resource_index/packages
+[3.797s] symbolically linking /home/phuongnam/robot_main/build/robot_serial/resource/robot_serial -> /home/phuongnam/robot_main/install/robot_serial/share/ament_index/resource_index/packages
+[3.797s] symbolically linking /home/phuongnam/robot_main/build/robot_serial/package.xml -> /home/phuongnam/robot_main/install/robot_serial/share/robot_serial
+[3.798s] creating /home/phuongnam/robot_main/install/robot_serial/share/robot_serial/launch
+[3.798s] symbolically linking /home/phuongnam/robot_main/build/robot_serial/launch/robot_serial.launch.py -> /home/phuongnam/robot_main/install/robot_serial/share/robot_serial/launch
+[3.798s] symbolically linking /home/phuongnam/robot_main/build/robot_serial/launch/wheel_odom.launch.py -> /home/phuongnam/robot_main/install/robot_serial/share/robot_serial/launch
+[3.798s] creating /home/phuongnam/robot_main/install/robot_serial/share/robot_serial/config
+[3.801s] symbolically linking /home/phuongnam/robot_main/build/robot_serial/config/serial.yaml -> /home/phuongnam/robot_main/install/robot_serial/share/robot_serial/config
+[3.866s] Invoked command in '/home/phuongnam/robot_main/build/robot_serial' returned '0': PYTHONPATH=/home/phuongnam/robot_main/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/phuongnam/robot_main/install/robot_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/phuongnam/robot_main/build/robot_serial/build --no-deps symlink_data

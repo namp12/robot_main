@@ -1,1 +1,0 @@
-/home/robot/robot_ws/src/vision_msgs/msg/Detection.msg

@@ -1,1 +1,1 @@
-/home/robot/robot_ws/src/robot_bringup/launch/full_robot.launch.py
+/home/phuongnam/robot_main/src/robot_bringup/launch/full_robot.launch.py

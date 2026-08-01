@@ -1,1 +1,1 @@
-/home/robot/robot_ws/build/robot_bringup/ament_cmake_environment_hooks/local_setup.zsh
+/home/phuongnam/robot_main/build/robot_bringup/ament_cmake_environment_hooks/local_setup.zsh

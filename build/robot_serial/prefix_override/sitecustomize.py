@@ -1,4 +1,4 @@
 import sys
 if sys.prefix == '/usr':
     sys.real_prefix = sys.prefix
-    sys.prefix = sys.exec_prefix = '/home/robot/robot_ws/install/robot_serial'
+    sys.prefix = sys.exec_prefix = '/home/phuongnam/robot_main/install/robot_serial'

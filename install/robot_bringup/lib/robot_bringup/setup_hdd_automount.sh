@@ -1,1 +1,0 @@
-/home/robot/robot_ws/src/robot_bringup/scripts/setup_hdd_automount.sh

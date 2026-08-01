@@ -1,1 +1,1 @@
-prepend-non-duplicate;PYTHONPATH;/home/robot/robot_ws/build/robot_serial
+prepend-non-duplicate;PYTHONPATH;/home/phuongnam/robot_main/build/robot_serial

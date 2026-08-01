@@ -1,1 +1,0 @@
-/home/robot/robot_ws/build/vision_msgs/rosidl_generator_rs/vision_msgs/rust/build.rs

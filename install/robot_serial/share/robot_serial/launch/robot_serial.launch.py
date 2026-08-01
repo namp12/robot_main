@@ -1,1 +1,1 @@
-/home/robot/robot_ws/build/robot_serial/launch/robot_serial.launch.py
+/home/phuongnam/robot_main/build/robot_serial/launch/robot_serial.launch.py
