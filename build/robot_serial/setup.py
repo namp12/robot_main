@@ -1,1 +1,0 @@
-/home/phuongnam/robot_main/src/robot_serial/setup.py

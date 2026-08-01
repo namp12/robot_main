@@ -1,1 +1,0 @@
-/home/phuongnam/robot_main/src/camera_node/setup.py

@@ -1,0 +1,57 @@
+[2.569s] Invoking command in '/home/phuongnam/robot_main/build/robot_ai': PYTHONPATH=/home/phuongnam/robot_main/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/phuongnam/robot_main/build/robot_ai/build
+[2.958s] running develop
+[3.202s] Removing /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot-ai.egg-link (link to .)
+[3.262s] Invoked command in '/home/phuongnam/robot_main/build/robot_ai' returned '0': PYTHONPATH=/home/phuongnam/robot_main/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/phuongnam/robot_main/build/robot_ai/build
+[3.266s] Invoking command in '/home/phuongnam/robot_main/src/robot_ai': PYTHONPATH=/home/phuongnam/robot_main/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_ai build --build-base /home/phuongnam/robot_main/build/robot_ai/build install --record /home/phuongnam/robot_main/build/robot_ai/install.log --install-scripts $base/lib/robot_ai --single-version-externally-managed install_data --force
+[3.638s] running egg_info
+[3.640s] writing ../../build/robot_ai/robot_ai.egg-info/PKG-INFO
+[3.641s] writing dependency_links to ../../build/robot_ai/robot_ai.egg-info/dependency_links.txt
+[3.641s] writing entry points to ../../build/robot_ai/robot_ai.egg-info/entry_points.txt
+[3.642s] writing requirements to ../../build/robot_ai/robot_ai.egg-info/requires.txt
+[3.642s] writing top-level names to ../../build/robot_ai/robot_ai.egg-info/top_level.txt
+[3.644s] reading manifest file '../../build/robot_ai/robot_ai.egg-info/SOURCES.txt'
+[3.646s] writing manifest file '../../build/robot_ai/robot_ai.egg-info/SOURCES.txt'
+[3.647s] running build
+[3.647s] running build_py
+[3.647s] creating /home/phuongnam/robot_main/build/robot_ai/build
+[3.647s] creating /home/phuongnam/robot_main/build/robot_ai/build/lib
+[3.647s] creating /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai
+[3.648s] copying robot_ai/command_node.py -> /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai
+[3.649s] copying robot_ai/dialogue_tts_node.py -> /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai
+[3.649s] copying robot_ai/audio_stream_server.py -> /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai
+[3.649s] copying robot_ai/http_bridge_node.py -> /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai
+[3.650s] copying robot_ai/stt_node.py -> /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai
+[3.650s] copying robot_ai/__init__.py -> /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai
+[3.650s] copying robot_ai/video_stream_server.py -> /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai
+[3.650s] running install
+[3.651s] running install_lib
+[3.654s] creating /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[3.654s] copying /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai/command_node.py -> /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[3.655s] copying /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai/dialogue_tts_node.py -> /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[3.655s] copying /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai/audio_stream_server.py -> /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[3.655s] copying /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai/http_bridge_node.py -> /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[3.655s] copying /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai/stt_node.py -> /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[3.655s] copying /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai/__init__.py -> /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[3.655s] copying /home/phuongnam/robot_main/build/robot_ai/build/lib/robot_ai/video_stream_server.py -> /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai
+[3.656s] byte-compiling /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai/command_node.py to command_node.cpython-310.pyc
+[3.657s] byte-compiling /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai/dialogue_tts_node.py to dialogue_tts_node.cpython-310.pyc
+[3.660s] byte-compiling /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai/audio_stream_server.py to audio_stream_server.cpython-310.pyc
+[3.661s] byte-compiling /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai/http_bridge_node.py to http_bridge_node.cpython-310.pyc
+[3.662s] byte-compiling /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai/stt_node.py to stt_node.cpython-310.pyc
+[3.664s] byte-compiling /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai/__init__.py to __init__.cpython-310.pyc
+[3.664s] byte-compiling /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai/video_stream_server.py to video_stream_server.cpython-310.pyc
+[3.669s] running install_data
+[3.669s] copying resource/robot_ai -> /home/phuongnam/robot_main/install/robot_ai/share/ament_index/resource_index/packages
+[3.670s] copying package.xml -> /home/phuongnam/robot_main/install/robot_ai/share/robot_ai
+[3.670s] copying launch/ai.launch.py -> /home/phuongnam/robot_main/install/robot_ai/share/robot_ai/launch
+[3.670s] running install_egg_info
+[3.671s] Copying ../../build/robot_ai/robot_ai.egg-info to /home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages/robot_ai-1.0.0-py3.10.egg-info
+[3.677s] running install_scripts
+[3.734s] Installing audio_stream_server script to /home/phuongnam/robot_main/install/robot_ai/lib/robot_ai
+[3.740s] Installing command_node script to /home/phuongnam/robot_main/install/robot_ai/lib/robot_ai
+[3.740s] Installing dialogue_tts_node script to /home/phuongnam/robot_main/install/robot_ai/lib/robot_ai
+[3.741s] Installing http_bridge_node script to /home/phuongnam/robot_main/install/robot_ai/lib/robot_ai
+[3.741s] Installing stt_node script to /home/phuongnam/robot_main/install/robot_ai/lib/robot_ai
+[3.742s] Installing video_stream_server script to /home/phuongnam/robot_main/install/robot_ai/lib/robot_ai
+[3.742s] writing list of installed files to '/home/phuongnam/robot_main/build/robot_ai/install.log'
+[3.787s] Invoked command in '/home/phuongnam/robot_main/src/robot_ai' returned '0': PYTHONPATH=/home/phuongnam/robot_main/build/robot_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/phuongnam/robot_main/install/robot_ai/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_ai build --build-base /home/phuongnam/robot_main/build/robot_ai/build install --record /home/phuongnam/robot_main/build/robot_ai/install.log --install-scripts $base/lib/robot_ai --single-version-externally-managed install_data --force

@@ -1,1 +1,1 @@
-/home/phuongnam/robot_main/install/web_bridge:/home/phuongnam/robot_main/install/vision_ai_node:/home/phuongnam/robot_main/install/robot_serial:/home/phuongnam/robot_main/install/robot_ai:/home/phuongnam/robot_main/install/camera_node:/opt/ros/humble
+/opt/ros/humble

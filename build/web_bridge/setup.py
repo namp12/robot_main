@@ -1,1 +1,0 @@
-/home/phuongnam/robot_main/src/web_bridge/setup.py
