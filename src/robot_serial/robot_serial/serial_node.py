@@ -237,9 +237,9 @@ class SerialNode(Node):
             if speed <= 0:
                 payload = 'dung'
             else:
-                # Apply speed factor and ensure minimum motor power (50) to overcome friction
+                # Apply speed factor and ensure minimum motor power (120) to overcome friction
                 adjusted_speed = int(speed * speed_factor)
-                adjusted_speed = max(50, min(adjusted_speed, 255))
+                adjusted_speed = max(120, min(adjusted_speed, 255))
                 
                 if speed_factor < 1.0:
                     direction_name = "Front" if is_forward else "Rear"
