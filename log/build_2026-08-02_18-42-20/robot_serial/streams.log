@@ -1,0 +1,19 @@
+[21.615s] Invoking command in '/home/robot/robot_ws/build/robot_serial': PYTHONPATH=/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robot/robot_ws/build/robot_serial/build --no-deps symlink_data
+[26.077s] running develop
+[28.173s] running egg_info
+[28.174s] writing robot_serial.egg-info/PKG-INFO
+[28.175s] writing dependency_links to robot_serial.egg-info/dependency_links.txt
+[28.178s] writing entry points to robot_serial.egg-info/entry_points.txt
+[28.180s] writing requirements to robot_serial.egg-info/requires.txt
+[28.182s] writing top-level names to robot_serial.egg-info/top_level.txt
+[28.196s] reading manifest file 'robot_serial.egg-info/SOURCES.txt'
+[28.207s] writing manifest file 'robot_serial.egg-info/SOURCES.txt'
+[28.226s] running build_ext
+[28.228s] Creating /home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages/robot-serial.egg-link (link to .)
+[28.238s] Installing serial_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial
+[28.240s] Installing teleop_text script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial
+[28.247s] Installing wheel_odom_node script to /home/robot/robot_ws/install/robot_serial/lib/robot_serial
+[28.252s] 
+[28.257s] Installed /home/robot/robot_ws/build/robot_serial
+[28.262s] running symlink_data
+[28.834s] Invoked command in '/home/robot/robot_ws/build/robot_serial' returned '0': PYTHONPATH=/home/robot/robot_ws/build/robot_serial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/robot/robot_ws/install/robot_serial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/robot/robot_ws/build/robot_serial/build --no-deps symlink_data

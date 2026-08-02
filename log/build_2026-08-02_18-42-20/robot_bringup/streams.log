@@ -1,0 +1,42 @@
+[0.289s] Invoking command in '/home/robot/robot_ws/build/robot_bringup': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/web_bridge:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/robot_bringup -- -j4 -l4
+[1.121s] Invoked command in '/home/robot/robot_ws/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/web_bridge:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/robot_bringup -- -j4 -l4
+[1.134s] Invoking command in '/home/robot/robot_ws/build/robot_bringup': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/web_bridge:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/robot_bringup
+[1.140s] -- Install configuration: ""
+[1.145s] -- Execute custom install script
+[1.152s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/ai.launch.py
+[1.158s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/full_robot.launch.py
+[1.162s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/lidar.launch.py
+[1.167s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/localization.launch.py
+[1.172s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/minimal.launch.py
+[1.177s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/nav2.launch.py
+[1.182s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/robot.launch.py
+[1.186s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/slam.launch.py
+[1.191s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//launch/view_robot.launch.py
+[1.196s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/amcl_params.yaml
+[1.202s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/ekf.yaml
+[1.208s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/map_server_params.yaml
+[1.212s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/nav2_params.yaml
+[1.217s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//config/slam_toolbox_params.yaml
+[1.222s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//rviz/robot_view.rviz
+[1.226s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup//save_map.sh
+[1.233s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup//save_map.py
+[1.239s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/lib/robot_bringup//copy_map.sh
+[1.243s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/.gitkeep
+[1.246s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/my_room/map.pgm
+[1.248s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup//maps/my_room/map.yaml
+[1.249s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/package_run_dependencies/robot_bringup
+[1.251s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/parent_prefix_path/robot_bringup
+[1.252s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.sh
+[1.254s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/ament_prefix_path.dsv
+[1.258s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.sh
+[1.264s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/environment/path.dsv
+[1.270s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.bash
+[1.274s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.sh
+[1.277s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.zsh
+[1.432s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/local_setup.dsv
+[1.437s] -- Symlinking: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.dsv
+[1.532s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/ament_index/resource_index/packages/robot_bringup
+[1.538s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig.cmake
+[1.540s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/cmake/robot_bringupConfig-version.cmake
+[1.547s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_bringup/share/robot_bringup/package.xml
+[1.563s] Invoked command in '/home/robot/robot_ws/build/robot_bringup' returned '0': CMAKE_PREFIX_PATH=/home/robot/robot_ws/install/sllidar_ros2:/home/robot/robot_ws/install/robot_description:/home/robot/robot_ws/install/robot_bringup:/home/robot/robot_ws/install/web_bridge:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/robot_bringup

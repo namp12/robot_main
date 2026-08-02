@@ -1,0 +1,29 @@
+[2.356s] Invoking command in '/home/robot/robot_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/web_bridge:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/robot_description -- -j4 -l4
+[14.286s] Invoked command in '/home/robot/robot_ws/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/web_bridge:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --build /home/robot/robot_ws/build/robot_description -- -j4 -l4
+[14.291s] Invoking command in '/home/robot/robot_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/web_bridge:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/robot_description
+[14.498s] -- Install configuration: ""
+[14.552s] -- Execute custom install script
+[14.589s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description//launch/display.launch.py
+[14.616s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description//launch/robot_state_publisher.launch.py
+[14.636s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf/gazebo.xacro
+[14.650s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf/macros.xacro
+[14.679s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf/materials.xacro
+[14.681s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description//urdf/robot.urdf.xacro
+[14.706s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description//config/joint_limits.yaml
+[14.708s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description//rviz/rviz.rviz
+[14.747s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description
+[14.770s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description
+[14.793s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.sh
+[14.808s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv
+[14.826s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/path.sh
+[14.828s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/environment/path.dsv
+[14.836s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.bash
+[14.838s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.sh
+[14.850s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.zsh
+[14.900s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/local_setup.dsv
+[14.909s] -- Symlinking: /home/robot/robot_ws/install/robot_description/share/robot_description/package.dsv
+[15.566s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/ament_index/resource_index/packages/robot_description
+[15.585s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake
+[15.615s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake
+[15.655s] -- Up-to-date symlink: /home/robot/robot_ws/install/robot_description/share/robot_description/package.xml
+[20.494s] Invoked command in '/home/robot/robot_ws/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot/robot_ws/install/web_bridge:/home/robot/robot_ws/install/robot_serial:/home/robot/robot_ws/install/robot_ai:/home/robot/robot_ws/install/camera_node:/opt/ros/humble /usr/bin/cmake --install /home/robot/robot_ws/build/robot_description
