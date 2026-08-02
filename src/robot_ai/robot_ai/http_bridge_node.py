@@ -73,6 +73,9 @@ def speak_on_pi(text: str):
 
 
 class Handler(BaseHTTPRequestHandler):
+    def log_message(self, format, *args):
+        # Tắt in log HTTP 200 liên tục để giữ Terminal Pi sạch sẽ và tăng tốc độ
+        return
 
     def handle(self):
         try:
@@ -124,7 +127,7 @@ class Handler(BaseHTTPRequestHandler):
                 elif self.path == "/detection":
                     if detection_publisher:
                         detection_publisher.publish(msg)
-                    ros_node.get_logger().info(f'HTTP DETECTION (YOLO): "{text[:100]}..."')
+                    # Suppress spam log print for detection
                 elif self.path == "/conversation":
                     if conversation_publisher:
                         conversation_publisher.publish(msg)

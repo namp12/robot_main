@@ -1,14 +1,39 @@
 import cv2
 import time
+import numpy as np
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
 import threading
 
 camera = None
+_latest_jpeg_bytes: bytes | None = None
+_lock = threading.Lock()
+_running = True
+
+
+def camera_capture_loop():
+    """Luồng ngầm độc quyền đọc /dev/video0 tránh tranh chấp đa luồng HTTP."""
+    global camera, _latest_jpeg_bytes, _running
+    while _running:
+        try:
+            if camera is not None and camera.isOpened():
+                ret, frame = camera.read()
+                if ret and frame is not None:
+                    res, jpeg = cv2.imencode('.jpg', frame, [int(cv2.IMWRITE_JPEG_QUALITY), 75])
+                    if res:
+                        with _lock:
+                            _latest_jpeg_bytes = jpeg.tobytes()
+                else:
+                    time.sleep(0.02)
+            else:
+                time.sleep(0.05)
+        except Exception:
+            time.sleep(0.02)
+        time.sleep(0.025)  # ~40 FPS capture rate
 
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
-    """Threaded HTTP server to handle multiple viewers if needed."""
+    """Threaded HTTP server to handle multiple viewers without blocking."""
     daemon_threads = True
 
 
@@ -30,23 +55,17 @@ class CamHandler(BaseHTTPRequestHandler):
             self.end_headers()
             while True:
                 try:
-                    frame = None
-                    if camera is not None and camera.isOpened():
-                        ret, frame = camera.read()
-                    
-                    if frame is None:
-                        # Frame fallback khi Camera bị khoá hoặc ngắt kết nối
-                        frame = np.zeros((480, 640, 3), dtype=np.uint8)
-                        frame[:] = (40, 20, 10)
-                        cv2.putText(frame, "CAMERA HARDWARE BUSY / OFFLINE", (50, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-                        cv2.putText(frame, "Check USB cable or close other camera apps", (70, 280), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (200, 200, 200), 1)
+                    with _lock:
+                        data = _latest_jpeg_bytes
 
-                    # Compress frame to JPEG
-                    ret, jpeg = cv2.imencode('.jpg', frame, [int(cv2.IMWRITE_JPEG_QUALITY), 75])
-                    if not ret:
-                        continue
+                    if data is None:
+                        # Frame fallback khi Camera chưa sẵn sàng
+                        img = np.zeros((480, 640, 3), dtype=np.uint8)
+                        img[:] = (40, 20, 10)
+                        cv2.putText(img, "CAMERA INITIALIZING...", (140, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
+                        _, jpeg = cv2.imencode('.jpg', img)
+                        data = jpeg.tobytes()
 
-                    data = jpeg.tobytes()
                     self.wfile.write(b'--FRAME\r\n')
                     self.send_header('Content-Type', 'image/jpeg')
                     self.send_header('Content-Length', str(len(data)))
@@ -62,11 +81,15 @@ class CamHandler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
 
+    def log_message(self, format, *args):
+        # Suppress logging to improve performance
+        return
+
 
 def main():
-    global camera
+    global camera, _running
     print("==============================================")
-    print("      RASPBERRY PI - VIDEO STREAM SERVER      ")
+    print("  RASPBERRY PI - THREAD-SAFE VIDEO STREAM     ")
     print("==============================================")
     print("Opening /dev/video0...")
 
@@ -78,6 +101,10 @@ def main():
         print("ERROR: Cannot open camera /dev/video0!")
         return
 
+    _running = True
+    capture_thread = threading.Thread(target=camera_capture_loop, daemon=True)
+    capture_thread.start()
+
     port = 8080
     server = ThreadedHTTPServer(('0.0.0.0', port), CamHandler)
     print(f"Video MJPEG Streamer running on http://0.0.0.0:{port}/video_feed")
@@ -88,6 +115,7 @@ def main():
     except KeyboardInterrupt:
         print("\nStopping Video Stream Server...")
     finally:
+        _running = False
         server.shutdown()
         if camera:
             camera.release()
