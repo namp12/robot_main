@@ -1,0 +1,1 @@
+/home/robot/robot_ws/build/robot_ai/launch/robot_all.launch.py

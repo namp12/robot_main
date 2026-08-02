@@ -9,6 +9,7 @@ setup.py
 ../../build/robot_ai/robot_ai.egg-info/top_level.txt
 ../../build/robot_ai/robot_ai.egg-info/zip-safe
 launch/ai.launch.py
+launch/robot_all.launch.py
 resource/robot_ai
 robot_ai/__init__.py
 robot_ai/audio_stream_server.py
