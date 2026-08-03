@@ -44,8 +44,7 @@ def main():
     print("Streaming USB Camera Microphone PCM 16kHz Mono over UDP...")
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    if target_ip == "255.255.255.255":
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
     # Try sounddevice first
     sd_success = False
@@ -87,6 +86,7 @@ def main():
             bytes_per_chunk = CHUNK_SIZE * 2  # 16-bit = 2 bytes per sample
             last_ip_check = 0.0
             pc_ip = target_ip
+            chunk_counter = 0
 
             while True:
                 data = proc.stdout.read(bytes_per_chunk)
@@ -94,7 +94,7 @@ def main():
                     break
 
                 now = time.time()
-                if now - last_ip_check > 2.0:
+                if now - last_ip_check > 3.0:
                     last_ip_check = now
                     try:
                         import os
@@ -105,11 +105,13 @@ def main():
                                     pc_ip = ip_str
                     except Exception:
                         pass
+                    print(f"🎙️ [PI AUDIO STREAM] 🟢 Đang truyền luồng âm thanh Micro tới PC IP ({pc_ip}:5000) - Tổng gói: {chunk_counter}")
 
                 # Convert int16 to float32 normalized [-1, 1]
                 int16_arr = np.frombuffer(data, dtype=np.int16)
                 float32_arr = (int16_arr / 32768.0).astype(np.float32)
                 raw_payload = float32_arr.tobytes()
+                chunk_counter += 1
 
                 # Send both to Broadcast and Direct PC IP for 100% reliable reception
                 try:
