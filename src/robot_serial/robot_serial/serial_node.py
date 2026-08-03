@@ -46,29 +46,29 @@ def _speed_from_twist(vx: float, vy: float, wz: float) -> tuple[str, int]:
     speed = max(50, min(speed, MAX_SPEED))
 
     if abs(vx) < LINEAR_SLOW_THRESHOLD and abs(vy) < LINEAR_SLOW_THRESHOLD and abs(wz) < ANGULAR_SLOW_THRESHOLD:
-        return 'STOP', 0
+        return 'dung', 0
 
     if wz > ANGULAR_SLOW_THRESHOLD:
-        return 'ROTATE_LEFT', speed
+        return 'xoay_trai', speed
     if wz < -ANGULAR_SLOW_THRESHOLD:
-        return 'ROTATE_RIGHT', speed
+        return 'xoay_phai', speed
     if vx > LINEAR_SLOW_THRESHOLD and vy > LINEAR_SLOW_THRESHOLD:
-        return 'DIAGONAL_FRONT_LEFT', speed
+        return 'cheo_tt', speed
     if vx > LINEAR_SLOW_THRESHOLD and vy < -LINEAR_SLOW_THRESHOLD:
-        return 'DIAGONAL_FRONT_RIGHT', speed
+        return 'cheo_tp', speed
     if vx < -LINEAR_SLOW_THRESHOLD and vy > LINEAR_SLOW_THRESHOLD:
-        return 'DIAGONAL_REAR_LEFT', speed
+        return 'cheo_st', speed
     if vx < -LINEAR_SLOW_THRESHOLD and vy < -LINEAR_SLOW_THRESHOLD:
-        return 'DIAGONAL_REAR_RIGHT', speed
+        return 'cheo_sp', speed
     if vx > LINEAR_SLOW_THRESHOLD:
-        return 'FORWARD', speed
+        return 'tien', speed
     if vx < -LINEAR_SLOW_THRESHOLD:
-        return 'BACKWARD', speed
+        return 'lui', speed
     if vy > LINEAR_SLOW_THRESHOLD:
-        return 'STRAFE_LEFT', speed
+        return 'trai', speed
     if vy < -LINEAR_SLOW_THRESHOLD:
-        return 'STRAFE_RIGHT', speed
-    return 'STOP', 0
+        return 'phai', speed
+    return 'dung', 0
 
 
 class SerialNode(Node):
@@ -211,51 +211,60 @@ class SerialNode(Node):
             return ""
         
         parts = raw.split()
-        cmd = parts[0].upper()
+        cmd = parts[0].lower()
         speed = parts[1] if len(parts) > 1 else "150"
 
-        if cmd in ["MODE_MANUAL", "MODE_AUTO", "MODE_ROS"]:
-            return f"MODE {cmd.replace('MODE_', '')}"
-        if cmd.startswith("MODE"):
+        if cmd in ["mode_manual", "mode_auto", "mode_ros", "mode_ros2"]:
+            return f"mode_{cmd.replace('mode_', '')}"
+        if cmd.startswith("mode"):
             return raw
 
         translation_map = {
-            "TIEN": "FORWARD",
-            "FORWARD": "FORWARD",
-            "DI_THANG": "FORWARD",
-            "LUI": "BACKWARD",
-            "BACKWARD": "BACKWARD",
-            "DI_LUI": "BACKWARD",
-            "TRAI": "STRAFE_LEFT",
-            "LEFT": "STRAFE_LEFT",
-            "STRAFE_LEFT": "STRAFE_LEFT",
-            "PHAI": "STRAFE_RIGHT",
-            "RIGHT": "STRAFE_RIGHT",
-            "STRAFE_RIGHT": "STRAFE_RIGHT",
-            "XOAY_TRAI": "ROTATE_LEFT",
-            "ROTATE_LEFT": "ROTATE_LEFT",
-            "XOAY_PHAI": "ROTATE_RIGHT",
-            "ROTATE_RIGHT": "ROTATE_RIGHT",
-            "CHEO_TT": "DIAGONAL_FRONT_LEFT",
-            "CHEO_TRAI": "DIAGONAL_FRONT_LEFT",
-            "DIAG_FL": "DIAGONAL_FRONT_LEFT",
-            "DIAGONAL_FRONT_LEFT": "DIAGONAL_FRONT_LEFT",
-            "CHEO_TP": "DIAGONAL_FRONT_RIGHT",
-            "CHEO_PHAI": "DIAGONAL_FRONT_RIGHT",
-            "DIAG_FR": "DIAGONAL_FRONT_RIGHT",
-            "DIAGONAL_FRONT_RIGHT": "DIAGONAL_FRONT_RIGHT",
-            "CHEO_ST": "DIAGONAL_REAR_LEFT",
-            "DIAGONAL_REAR_LEFT": "DIAGONAL_REAR_LEFT",
-            "CHEO_SP": "DIAGONAL_REAR_RIGHT",
-            "DIAGONAL_REAR_RIGHT": "DIAGONAL_REAR_RIGHT",
-            "DUNG": "STOP",
-            "STOP": "STOP",
+            "tien": "tien",
+            "forward": "tien",
+            "di_thang": "tien",
+            "w": "tien",
+            "lui": "lui",
+            "backward": "lui",
+            "di_lui": "lui",
+            "s": "lui",
+            "trai": "trai",
+            "left": "trai",
+            "strafe_left": "trai",
+            "a": "trai",
+            "phai": "phai",
+            "right": "phai",
+            "strafe_right": "phai",
+            "d": "phai",
+            "xoay_trai": "xoay_trai",
+            "rotate_left": "xoay_trai",
+            "q": "xoay_trai",
+            "xoay_phai": "xoay_phai",
+            "rotate_right": "xoay_phai",
+            "e": "xoay_phai",
+            "cheo_tt": "cheo_tt",
+            "cheo_trai": "cheo_tt",
+            "diag_fl": "cheo_tt",
+            "diagonal_front_left": "cheo_tt",
+            "z": "cheo_tt",
+            "cheo_tp": "cheo_tp",
+            "cheo_phai": "cheo_tp",
+            "diag_fr": "cheo_tp",
+            "diagonal_front_right": "cheo_tp",
+            "c": "cheo_tp",
+            "cheo_st": "cheo_st",
+            "diagonal_rear_left": "cheo_st",
+            "cheo_sp": "cheo_sp",
+            "diagonal_rear_right": "cheo_sp",
+            "dung": "dung",
+            "stop": "dung",
+            "x": "dung",
         }
 
         if cmd in translation_map:
             target = translation_map[cmd]
-            if target == "STOP":
-                return "STOP"
+            if target == "dung":
+                return "dung"
             return f"{target} {speed}"
 
         return raw
