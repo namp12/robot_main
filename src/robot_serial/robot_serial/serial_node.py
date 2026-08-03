@@ -214,6 +214,11 @@ class SerialNode(Node):
         cmd = parts[0].upper()
         speed = parts[1] if len(parts) > 1 else "150"
 
+        if cmd in ["MODE_MANUAL", "MODE_AUTO", "MODE_ROS"]:
+            return f"MODE {cmd.replace('MODE_', '')}"
+        if cmd.startswith("MODE"):
+            return raw
+
         translation_map = {
             "TIEN": "FORWARD",
             "FORWARD": "FORWARD",
