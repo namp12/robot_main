@@ -6,7 +6,7 @@ import numpy as np
 
 SAMPLE_RATE = 16000
 CHANNELS = 1
-CHUNK_SIZE = 1024
+CHUNK_SIZE = 512  # 512 samples int16 = 1024 bytes (Perfect Wi-Fi UDP packet without fragmentation)
 
 
 def find_alsa_usb_mic() -> str:

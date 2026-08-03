@@ -27,47 +27,49 @@ def speak_on_pi(text: str):
         encoded_text = urllib.parse.quote(text)
         url = f"https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q={encoded_text}"
         
+def speak_on_pi(text: str):
+    """Phát âm thanh mượt mà qua Loa Bluetooth LA16 mà không bị rè/giật."""
+    if not text:
+        return
+    try:
+        url = f"https://translate.google.com/translate_tts?ie=UTF-8&q={urllib.parse.quote(text)}&tl=vi&client=tw-ob"
         mp3_path = "/tmp/speak.mp3"
+        wav_path = "/tmp/speak.wav"
         headers = {'User-Agent': 'Mozilla/5.0'}
         req = urllib.request.Request(url, headers=headers)
         with urllib.request.urlopen(req) as response:
             with open(mp3_path, 'wb') as f:
                 f.write(response.read())
-        
-        # Thử phát file mp3 bằng các trình phát có sẵn trên Pi
-        players = ["mpg123", "mpv", "play", "cvlc"]
-        for player in players:
+
+        # Convert MP3 to 22.05kHz 16-bit Mono WAV for PulseAudio smooth playback
+        try:
+            subprocess.run(["ffmpeg", "-y", "-i", mp3_path, "-ar", "22050", "-ac", "1", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            if os.path.exists(wav_path):
+                # Try paplay (PulseAudio native - 100% smooth on Bluetooth LA16 speaker)
+                res = subprocess.run(["paplay", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                if res.returncode == 0:
+                    return
+                # Try aplay
+                res = subprocess.run(["aplay", "-D", "default", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                if res.returncode == 0:
+                    return
+        except Exception:
+            pass
+
+        # Fallback players with buffer boost
+        players = [
+            ["mpg123", "-b", "2048", "-q", mp3_path],
+            ["mpv", "--no-video", "--ao=pulse", mp3_path],
+            ["ffplay", "-nodisp", "-autoexit", mp3_path],
+            ["cvlc", "--play-and-exit", mp3_path]
+        ]
+        for cmd in players:
             try:
-                if player == "mpg123":
-                    subprocess.run([player, "-q", mp3_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                else:
-                    subprocess.run([player, mp3_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                return  # Phát thành công, thoát khỏi hàm
+                res = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                if res.returncode == 0:
+                    return
             except FileNotFoundError:
                 continue
-    except Exception:
-        pass
-
-    # 2. Fallback ngoại tuyến 1: pyttsx3 với giọng tiếng Việt
-    try:
-        import pyttsx3
-        engine = pyttsx3.init()
-        voices = engine.getProperty('voices')
-        for v in voices:
-            if 'vietnam' in v.name.lower() or 'vi' in v.id.lower():
-                engine.setProperty('voice', v.id)
-                break
-        engine.say(text)
-        engine.runAndWait()
-        engine.stop()
-        return
-    except Exception:
-        pass
-
-    # 3. Fallback ngoại tuyến 2: espeak-ng giọng tiếng Việt
-    try:
-        cmd = f'espeak-ng -v vi "{text}" 2>/dev/null'
-        os.system(cmd)
     except Exception:
         pass
 
