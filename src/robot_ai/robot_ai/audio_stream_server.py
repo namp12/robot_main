@@ -16,19 +16,19 @@ def find_alsa_usb_mic() -> str:
         res = subprocess.run(["arecord", "-l"], capture_output=True, text=True)
         lines = res.stdout.splitlines()
         for line in lines:
-            if "card" in line.lower() and ("usb" in line.lower() or "camera" in line.lower() or "ugreen" in line.lower() or "device" in line.lower() or "audio" in line.lower() or "mic" in line.lower()):
+            if "card" in line.lower() and ("u2k" in line.lower() or "ugreen" in line.lower() or "usb" in line.lower() or "camera" in line.lower() or "device" in line.lower() or "audio" in line.lower() or "mic" in line.lower()):
                 m = re.search(r'card\s+(\d+)', line, re.IGNORECASE)
                 if m:
                     card_num = m.group(1)
                     return f"plughw:{card_num},0"
-        # If no explicit USB string, pick the first non-zero card
+        # If no explicit string, pick the first card (card 1)
         for line in lines:
             m = re.search(r'card\s+([1-9])', line, re.IGNORECASE)
             if m:
                 return f"plughw:{m.group(1)},0"
     except Exception:
         pass
-    return "default"
+    return "plughw:1,0"
 
 
 def main():
