@@ -249,9 +249,14 @@ class WebBridgeNode(Node):
 
     async def _run_ws(self) -> None:
         self._ws_loop = asyncio.get_running_loop()
-        async with websockets.serve(self._ws_handler, '0.0.0.0', self._ws_port):
-            self.get_logger().info(f'WebSocket server started on port {self._ws_port}')
-            await asyncio.Future()
+        try:
+            async with websockets.serve(self._ws_handler, '0.0.0.0', self._ws_port, reuse_port=True):
+                self.get_logger().info(f'WebSocket server started on port {self._ws_port}')
+                await asyncio.Future()
+        except TypeError:
+            async with websockets.serve(self._ws_handler, '0.0.0.0', self._ws_port):
+                self.get_logger().info(f'WebSocket server started on port {self._ws_port}')
+                await asyncio.Future()
 
 
 def main(args=None) -> None:
