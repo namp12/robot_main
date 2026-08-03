@@ -91,6 +91,15 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             return
 
+        # Save PC client IP for targeted UDP audio streaming
+        try:
+            client_ip = self.client_address[0]
+            if client_ip and client_ip != "127.0.0.1":
+                with open('/tmp/last_pc_ip.txt', 'w') as f:
+                    f.write(client_ip)
+        except Exception:
+            pass
+
         length = int(self.headers.get("Content-Length", 0))
         body = self.rfile.read(length)
         text = ""

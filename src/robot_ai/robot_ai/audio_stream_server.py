@@ -85,14 +85,44 @@ def main():
             proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
             print(f"Microphone streaming ACTIVE via ALSA ({alsa_dev}). Press CTRL+C to stop.")
             bytes_per_chunk = CHUNK_SIZE * 2  # 16-bit = 2 bytes per sample
+            last_ip_check = 0.0
+            pc_ip = target_ip
+
             while True:
                 data = proc.stdout.read(bytes_per_chunk)
                 if not data:
                     break
+
+                now = time.time()
+                if now - last_ip_check > 2.0:
+                    last_ip_check = now
+                    try:
+                        import os
+                        if os.path.exists('/tmp/last_pc_ip.txt'):
+                            with open('/tmp/last_pc_ip.txt', 'r') as f:
+                                ip_str = f.read().strip()
+                                if ip_str and ip_str != "127.0.0.1":
+                                    pc_ip = ip_str
+                    except Exception:
+                        pass
+
                 # Convert int16 to float32 normalized [-1, 1]
                 int16_arr = np.frombuffer(data, dtype=np.int16)
                 float32_arr = (int16_arr / 32768.0).astype(np.float32)
-                sock.sendto(float32_arr.tobytes(), (target_ip, target_port))
+                raw_payload = float32_arr.tobytes()
+
+                # Send both to Broadcast and Direct PC IP for 100% reliable reception
+                try:
+                    sock.sendto(raw_payload, ("255.255.255.255", target_port))
+                except Exception:
+                    pass
+
+                if pc_ip and pc_ip != "255.255.255.255":
+                    try:
+                        sock.sendto(raw_payload, (pc_ip, target_port))
+                    except Exception:
+                        pass
+
         except KeyboardInterrupt:
             print("\nStopping Audio Streamer...")
         except Exception as e:
