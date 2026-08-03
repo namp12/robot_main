@@ -95,32 +95,46 @@ class CameraNode(Node):
     def _open_camera(self):
         """
         Open the USB webcam using OpenCV VideoCapture.
-
-        Sets resolution and FPS from ROS2 parameters.
-        If successful, starts the publish timer.
-        If failed, logs error and will retry via reconnect timer.
-
-        Returns:
-            bool: True if camera opened successfully, False otherwise.
+        Tries requested camera_index first, then falls back to /dev/ugreen_camera, /dev/video0, /dev/video1, 0, 1.
         """
-        device_path = f'/dev/video{self._camera_index}'
-        self.get_logger().info(f'Opening camera device: {device_path}')
+        candidates = [self._camera_index]
+        if os.path.exists('/dev/ugreen_camera'):
+            candidates.append('/dev/ugreen_camera')
+        for dev in ['/dev/video0', '/dev/video1', 0, 1, 2]:
+            if dev not in candidates:
+                candidates.append(dev)
 
-        try:
-            # Use V4L2 backend explicitly for Linux USB cameras
-            self._cap = cv2.VideoCapture(self._camera_index, cv2.CAP_V4L2)
-        except Exception as exc:
-            self.get_logger().error(f'Exception while opening {device_path}: {exc}')
-            self._cap = None
-            return False
+        for dev in candidates:
+            self.get_logger().info(f'Attempting to open camera device: {dev}')
+            try:
+                if isinstance(dev, str) and os.path.exists(dev):
+                    self._cap = cv2.VideoCapture(dev, cv2.CAP_V4L2)
+                elif isinstance(dev, int):
+                    self._cap = cv2.VideoCapture(dev, cv2.CAP_V4L2)
+                else:
+                    continue
+                
+                if self._cap and self._cap.isOpened():
+                    ret, test_frame = self._cap.read()
+                    if ret and test_frame is not None:
+                        self.get_logger().info(f'Successfully opened camera device: {dev}')
+                        break
+                    else:
+                        self._cap.release()
+                        self._cap = None
+                else:
+                    if self._cap:
+                        self._cap.release()
+                    self._cap = None
+            except Exception as exc:
+                self.get_logger().warn(f'Could not open camera device {dev}: {exc}')
+                self._cap = None
 
-        if not self._cap.isOpened():
+        if not self._cap or not self._cap.isOpened():
             self.get_logger().error(
-                f'Cannot open camera {device_path}. '
-                f'Check: is the camera plugged in? Is another node using it?'
+                'Cannot open any camera device (/dev/ugreen_camera, /dev/video0, /dev/video1). '
+                'Check: is the camera plugged in? Is another process using it?'
             )
-            self._cap.release()
-            self._cap = None
             return False
 
         # ---- Configure camera properties ----
