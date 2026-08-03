@@ -150,6 +150,13 @@ def generate_launch_description():
         output='screen',
     )
 
+    audio_stream_node = Node(
+        package='robot_ai',
+        executable='audio_stream_server',
+        name='audio_stream_server',
+        output='screen',
+    )
+
     return LaunchDescription([
         use_sim_time_arg,
         publish_robot_description_arg,
@@ -170,4 +177,5 @@ def generate_launch_description():
         camera_launch,
         web_bridge_node,
         http_bridge_node,
+        audio_stream_node,
     ])
