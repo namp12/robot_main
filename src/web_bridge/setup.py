@@ -22,6 +22,7 @@ setup(
     entry_points={
         'console_scripts': [
             'web_bridge = web_bridge.web_bridge_node:main',
+            'web_bridge_node = web_bridge.web_bridge_node:main',
         ],
     },
 )
