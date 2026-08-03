@@ -40,101 +40,93 @@ def main():
     print("==============================================")
     alsa_dev = find_alsa_usb_mic()
     print(f"Target PC IP: {target_ip}:{target_port}")
-    print(f"ALSA Mic Device Detected: {alsa_dev}")
+    print(f"ALSA Mic Device Selected: {alsa_dev}")
     print("Streaming USB Camera Microphone PCM 16kHz Mono over UDP...")
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
-    # Try sounddevice first
-    sd_success = False
-    try:
-        import sounddevice as sd
+    # Try ALSA arecord directly with USB camera mic (plughw:1,0)
+    devices_to_try = [alsa_dev, "plughw:1,0", "plughw:U2K,0", "hw:1,0", "default"]
+    proc = None
 
-        def audio_callback(indata, frames, time_info, status):
-            raw_bytes = indata.tobytes()
-            try:
-                sock.sendto(raw_bytes, (target_ip, target_port))
-            except Exception:
-                pass
-
-        with sd.InputStream(samplerate=SAMPLE_RATE, channels=CHANNELS, dtype='float32', blocksize=CHUNK_SIZE, callback=audio_callback):
-            print("Microphone streaming ACTIVE (via sounddevice). Press CTRL+C to stop.")
-            sd_success = True
-            while True:
-                time.sleep(1)
-    except KeyboardInterrupt:
-        print("\nStopping Audio Streamer...")
-        sock.close()
-        return
-    except Exception as e:
-        print(f"sounddevice unavailable: {e}. Switching to ALSA arecord fallback ({alsa_dev})...")
-
-    # Fallback to Linux ALSA arecord with auto-detected USB camera mic
-    if not sd_success:
+    for dev in devices_to_try:
         cmd = [
             "arecord",
-            "-D", alsa_dev,
+            "-D", dev,
             "-r", str(SAMPLE_RATE),
             "-c", str(CHANNELS),
             "-f", "S16_LE",
             "-t", "raw"
         ]
         try:
+            print(f"Opening ALSA capture device: {dev}...")
             proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-            print(f"Microphone streaming ACTIVE via ALSA ({alsa_dev}). Press CTRL+C to stop.")
-            bytes_per_chunk = CHUNK_SIZE * 2  # 16-bit = 2 bytes per sample
-            last_ip_check = 0.0
-            pc_ip = target_ip
-            chunk_counter = 0
+            time.sleep(0.3)
+            if proc.poll() is None:
+                print(f"🎯 ALSA Microphone capture ACTIVE on device [{dev}]. Streaming UDP to port {target_port}...")
+                alsa_dev = dev
+                break
+        except Exception as e:
+            print(f"Failed to open ALSA device {dev}: {e}")
 
-            while True:
-                data = proc.stdout.read(bytes_per_chunk)
-                if not data:
-                    break
+    if proc is None or proc.poll() is not None:
+        print("❌ FATAL: Could not open any ALSA microphone device on Pi 4!")
+        sock.close()
+        return
 
-                now = time.time()
-                if now - last_ip_check > 3.0:
-                    last_ip_check = now
-                    try:
-                        import os
-                        if os.path.exists('/tmp/last_pc_ip.txt'):
-                            with open('/tmp/last_pc_ip.txt', 'r') as f:
-                                ip_str = f.read().strip()
-                                if ip_str and ip_str != "127.0.0.1":
-                                    pc_ip = ip_str
-                    except Exception:
-                        pass
-                    print(f"🎙️ [PI AUDIO STREAM] 🟢 Đang truyền luồng âm thanh Micro tới PC IP ({pc_ip}:5000) - Tổng gói: {chunk_counter}")
+    bytes_per_chunk = CHUNK_SIZE * 2  # 16-bit = 2 bytes per sample
+    last_ip_check = 0.0
+    pc_ip = target_ip
+    chunk_counter = 0
 
-                # Convert int16 to float32 normalized [-1, 1]
-                int16_arr = np.frombuffer(data, dtype=np.int16)
-                float32_arr = (int16_arr / 32768.0).astype(np.float32)
-                raw_payload = float32_arr.tobytes()
-                chunk_counter += 1
+    try:
+        while True:
+            data = proc.stdout.read(bytes_per_chunk)
+            if not data:
+                break
 
-                # Send both to Broadcast and Direct PC IP for 100% reliable reception
+            now = time.time()
+            if now - last_ip_check > 3.0:
+                last_ip_check = now
                 try:
-                    sock.sendto(raw_payload, ("255.255.255.255", target_port))
+                    import os
+                    if os.path.exists('/tmp/last_pc_ip.txt'):
+                        with open('/tmp/last_pc_ip.txt', 'r') as f:
+                            ip_str = f.read().strip()
+                            if ip_str and ip_str != "127.0.0.1":
+                                pc_ip = ip_str
+                except Exception:
+                    pass
+                print(f"🎙️ [PI AUDIO STREAM] 🟢 Đang thu âm từ [{alsa_dev}] & truyền tới PC IP ({pc_ip}:5000) - Gói: {chunk_counter}")
+
+            # Convert int16 to float32 normalized [-1, 1]
+            int16_arr = np.frombuffer(data, dtype=np.int16)
+            float32_arr = (int16_arr / 32768.0).astype(np.float32)
+            raw_payload = float32_arr.tobytes()
+            chunk_counter += 1
+
+            # Send both to Broadcast and Direct PC IP for 100% reliable reception
+            try:
+                sock.sendto(raw_payload, ("255.255.255.255", target_port))
+            except Exception:
+                pass
+
+            if pc_ip and pc_ip != "255.255.255.255":
+                try:
+                    sock.sendto(raw_payload, (pc_ip, target_port))
                 except Exception:
                     pass
 
-                if pc_ip and pc_ip != "255.255.255.255":
-                    try:
-                        sock.sendto(raw_payload, (pc_ip, target_port))
-                    except Exception:
-                        pass
-
-        except KeyboardInterrupt:
-            print("\nStopping Audio Streamer...")
-        except Exception as e:
-            print(f"ALSA arecord error: {e}")
-        finally:
-            if 'proc' in locals():
-                proc.terminate()
-
-    sock.close()
-    print("Audio Streamer closed.")
+    except KeyboardInterrupt:
+        print("\nStopping Audio Streamer...")
+    except Exception as e:
+        print(f"ALSA streaming error: {e}")
+    finally:
+        if proc and proc.poll() is None:
+            proc.terminate()
+        sock.close()
+        print("Audio Streamer closed.")
 
 
 if __name__ == '__main__':
