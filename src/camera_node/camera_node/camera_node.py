@@ -158,6 +158,7 @@ class CameraNode(Node):
         Open the USB webcam using OpenCV VideoCapture.
         Tries requested camera_index first, then falls back to /dev/ugreen_camera, /dev/video0, /dev/video1, 0, 1.
         """
+        import os
         candidates = [self._camera_index]
         if os.path.exists('/dev/ugreen_camera'):
             candidates.append('/dev/ugreen_camera')
