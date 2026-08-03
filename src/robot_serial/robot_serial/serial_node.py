@@ -74,10 +74,18 @@ def _speed_from_twist(vx: float, vy: float, wz: float) -> tuple[str, int]:
 class SerialNode(Node):
     def __init__(self):
         super().__init__('serial_node')
+        self.declare_parameter('port', 'auto')
+        self.declare_parameter('baudrate', 115200)
+
+        port_param = str(self.get_parameter('port').value)
+        baudrate_param = int(self.get_parameter('baudrate').value)
+
         self.serial_manager = SerialManager(
             on_data_received=self._on_data_received,
             on_connected=self._on_connected,
             on_disconnected=self._on_disconnected,
+            port=port_param,
+            baudrate=baudrate_param,
         )
         self.connected = False
 
@@ -85,6 +93,12 @@ class SerialNode(Node):
         self.tx_subscriber = self.create_subscription(
             String,
             '/esp32/serial_tx',
+            self._on_tx_command,
+            10,
+        )
+        self.robot_move_subscriber = self.create_subscription(
+            String,
+            '/robot/move',
             self._on_tx_command,
             10,
         )
@@ -191,14 +205,65 @@ class SerialNode(Node):
             val_msg.data = [float(v) for v in parsed['encoders']]
             self.encoder_values_publisher.publish(val_msg)
 
+    def _translate_command(self, text: str) -> str:
+        raw = text.strip()
+        if not raw:
+            return ""
+        
+        parts = raw.split()
+        cmd = parts[0].upper()
+        speed = parts[1] if len(parts) > 1 else "150"
+
+        translation_map = {
+            "TIEN": "FORWARD",
+            "FORWARD": "FORWARD",
+            "DI_THANG": "FORWARD",
+            "LUI": "BACKWARD",
+            "BACKWARD": "BACKWARD",
+            "DI_LUI": "BACKWARD",
+            "TRAI": "STRAFE_LEFT",
+            "LEFT": "STRAFE_LEFT",
+            "STRAFE_LEFT": "STRAFE_LEFT",
+            "PHAI": "STRAFE_RIGHT",
+            "RIGHT": "STRAFE_RIGHT",
+            "STRAFE_RIGHT": "STRAFE_RIGHT",
+            "XOAY_TRAI": "ROTATE_LEFT",
+            "ROTATE_LEFT": "ROTATE_LEFT",
+            "XOAY_PHAI": "ROTATE_RIGHT",
+            "ROTATE_RIGHT": "ROTATE_RIGHT",
+            "CHEO_TT": "DIAGONAL_FRONT_LEFT",
+            "CHEO_TRAI": "DIAGONAL_FRONT_LEFT",
+            "DIAG_FL": "DIAGONAL_FRONT_LEFT",
+            "DIAGONAL_FRONT_LEFT": "DIAGONAL_FRONT_LEFT",
+            "CHEO_TP": "DIAGONAL_FRONT_RIGHT",
+            "CHEO_PHAI": "DIAGONAL_FRONT_RIGHT",
+            "DIAG_FR": "DIAGONAL_FRONT_RIGHT",
+            "DIAGONAL_FRONT_RIGHT": "DIAGONAL_FRONT_RIGHT",
+            "CHEO_ST": "DIAGONAL_REAR_LEFT",
+            "DIAGONAL_REAR_LEFT": "DIAGONAL_REAR_LEFT",
+            "CHEO_SP": "DIAGONAL_REAR_RIGHT",
+            "DIAGONAL_REAR_RIGHT": "DIAGONAL_REAR_RIGHT",
+            "DUNG": "STOP",
+            "STOP": "STOP",
+        }
+
+        if cmd in translation_map:
+            target = translation_map[cmd]
+            if target == "STOP":
+                return "STOP"
+            return f"{target} {speed}"
+
+        return raw
+
     def _on_tx_command(self, msg: String):
         if not self.connected:
             self.get_logger().warn('Cannot send command: serial not connected')
             return
-        payload = msg.data.strip()
-        if not payload:
+        raw = msg.data.strip()
+        if not raw:
             return
-        self.get_logger().info(f'[TX] {payload}')
+        payload = self._translate_command(raw)
+        self.get_logger().info(f'[TX] {payload} (raw: "{raw}")')
         self.serial_manager.write_line(payload)
 
     def _on_cmd_vel(self, msg: Twist):
@@ -262,7 +327,8 @@ class SerialNode(Node):
                     self._retry_count = 0
                 self._retry_count += 1
                 if self._retry_count >= 20:
-                    self.get_logger().error('Serial device not found.')
+                    err_msg = self.serial_manager.last_error or 'Serial device not found.'
+                    self.get_logger().error(f'Connection failed: {err_msg}')
                     self._retry_count = 0
         else:
             while True:

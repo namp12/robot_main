@@ -1,3 +1,4 @@
+import glob
 import os
 import struct
 from typing import Optional, Callable
@@ -10,10 +11,12 @@ class SerialManager:
     
     # Prioritized list of serial ports to check
     SERIAL_PORTS = [
-        '/dev/ttyACM0',
-        '/dev/ttyACM1',
         '/dev/ttyUSB0',
         '/dev/ttyUSB1',
+        '/dev/ttyUSB2',
+        '/dev/ttyACM0',
+        '/dev/ttyACM1',
+        '/dev/ttyACM2',
     ]
     
     BAUDRATE = 115200
@@ -26,7 +29,9 @@ class SerialManager:
     
     def __init__(self, on_data_received: Optional[Callable[[str], None]] = None,
                  on_connected: Optional[Callable[[str], None]] = None,
-                 on_disconnected: Optional[Callable[[], None]] = None):
+                 on_disconnected: Optional[Callable[[], None]] = None,
+                 port: Optional[str] = None,
+                 baudrate: int = 115200):
         """
         Initialize SerialManager.
         
@@ -34,10 +39,15 @@ class SerialManager:
             on_data_received: Callback when data is received
             on_connected: Callback when successfully connected
             on_disconnected: Callback when disconnected
+            port: Specific port path or 'auto'
+            baudrate: Baudrate for serial connection
         """
         self.serial_port = None
         self.connected = False
         self.current_port = None
+        self.target_port = port if (port and port != 'auto') else None
+        self.baudrate = baudrate
+        self.last_error = ""
         
         self.on_data_received = on_data_received
         self.on_connected = on_connected
@@ -53,6 +63,16 @@ class SerialManager:
         Returns:
             Port name if found, None otherwise
         """
+        if self.target_port:
+            if os.path.exists(self.target_port):
+                return self.target_port
+            return None
+        
+        # Dynamic search for USB / ACM ports
+        dynamic_ports = sorted(glob.glob('/dev/ttyUSB*') + glob.glob('/dev/ttyACM*'))
+        if dynamic_ports:
+            return dynamic_ports[0]
+
         for port in self.SERIAL_PORTS:
             if os.path.exists(port):
                 return port
@@ -68,17 +88,22 @@ class SerialManager:
         port = self.find_serial_port()
         
         if port is None:
+            if self.target_port:
+                self.last_error = f"Specified serial port not found: {self.target_port}"
+            else:
+                self.last_error = "No serial device found on /dev/ttyUSB* or /dev/ttyACM*"
             return False
         
         try:
             self.serial_port = serial.Serial(
                 port=port,
-                baudrate=self.BAUDRATE,
+                baudrate=self.baudrate,
                 timeout=self.TIMEOUT_MS / 1000.0,
                 write_timeout=0.5
             )
             self.connected = True
             self.current_port = port
+            self.last_error = ""
             
             if self.on_connected:
                 self.on_connected(port)
@@ -88,6 +113,7 @@ class SerialManager:
         except Exception as e:
             self.connected = False
             self.serial_port = None
+            self.last_error = f"Failed to open {port}: {e}"
             return False
     
     def disconnect(self):
