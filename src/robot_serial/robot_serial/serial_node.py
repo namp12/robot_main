@@ -46,28 +46,29 @@ def _speed_from_twist(vx: float, vy: float, wz: float) -> tuple[str, int]:
     speed = max(50, min(speed, MAX_SPEED))
 
     if abs(vx) < LINEAR_SLOW_THRESHOLD and abs(vy) < LINEAR_SLOW_THRESHOLD and abs(wz) < ANGULAR_SLOW_THRESHOLD:
-        return 'dung', 0
+        return 'STOP', 0
+
     if wz > ANGULAR_SLOW_THRESHOLD:
-        return 'xoay_phai', speed
+        return 'ROTATE_LEFT', speed
     if wz < -ANGULAR_SLOW_THRESHOLD:
-        return 'xoay_trai', speed
+        return 'ROTATE_RIGHT', speed
     if vx > LINEAR_SLOW_THRESHOLD and vy > LINEAR_SLOW_THRESHOLD:
-        return 'cheo_tp', speed
+        return 'DIAGONAL_FRONT_LEFT', speed
     if vx > LINEAR_SLOW_THRESHOLD and vy < -LINEAR_SLOW_THRESHOLD:
-        return 'cheo_tt', speed
+        return 'DIAGONAL_FRONT_RIGHT', speed
     if vx < -LINEAR_SLOW_THRESHOLD and vy > LINEAR_SLOW_THRESHOLD:
-        return 'cheo_sp', speed
+        return 'DIAGONAL_REAR_LEFT', speed
     if vx < -LINEAR_SLOW_THRESHOLD and vy < -LINEAR_SLOW_THRESHOLD:
-        return 'cheo_st', speed
+        return 'DIAGONAL_REAR_RIGHT', speed
     if vx > LINEAR_SLOW_THRESHOLD:
-        return 'tien', speed
+        return 'FORWARD', speed
     if vx < -LINEAR_SLOW_THRESHOLD:
-        return 'lui', speed
+        return 'BACKWARD', speed
     if vy > LINEAR_SLOW_THRESHOLD:
-        return 'phai', speed
+        return 'STRAFE_LEFT', speed
     if vy < -LINEAR_SLOW_THRESHOLD:
-        return 'trai', speed
-    return 'dung', 0
+        return 'STRAFE_RIGHT', speed
+    return 'STOP', 0
 
 
 class SerialNode(Node):
@@ -220,22 +221,22 @@ class SerialNode(Node):
 
         # Calculate speed factor based on distance
         speed_factor = 1.0
-        if dist <= 5.0:
+        if 0.0 < dist <= 5.0:
             speed_factor = 0.0
-        elif dist <= 20.0:
+        elif 5.0 < dist <= 20.0:
             speed_factor = 0.3
-        elif dist <= 50.0:
+        elif 20.0 < dist <= 50.0:
             speed_factor = 0.6
 
         # Build command payload
         if speed_factor == 0.0:
             direction_name = "Front" if is_forward else "Rear"
             self.get_logger().warn(f"Safety Stop! {direction_name} obstacle too close: {dist:.1f} cm")
-            payload = 'dung'
+            payload = 'STOP'
         else:
             direction, speed = _speed_from_twist(linear_x, linear_y, angular_z)
-            if speed <= 0:
-                payload = 'dung'
+            if speed <= 0 or direction == 'STOP':
+                payload = 'STOP'
             else:
                 # Apply speed factor and ensure minimum motor power (120) to overcome friction
                 adjusted_speed = int(speed * speed_factor)

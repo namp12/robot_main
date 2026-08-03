@@ -188,37 +188,36 @@ class WebBridgeNode(Node):
                 out.data = payload
                 self._serial_tx_pub.publish(out)
         elif msg_type == 'move':
-            direction = data.get('direction', '')
-            speed = data.get('speed', 150)
-            
-            # 1. Bắn chuỗi Serial xuống ESP32
-            payload = f'{direction} {speed}' if direction and speed > 0 else direction or 'dung'
-            out = String()
-            out.data = payload
-            self._serial_tx_pub.publish(out)
+            direction = str(data.get('direction', '')).lower()
+            speed = float(data.get('speed', 150.0))
+            scale = max(0.1, min(speed / 150.0, 1.7))
 
-            # 2. Bắn ROS 2 Twist Message tới /cmd_vel
             twist = Twist()
             if direction in ['tien', 'forward']:
-                twist.linear.x = 0.20
+                twist.linear.x = 0.25 * scale
             elif direction in ['lui', 'backward']:
-                twist.linear.x = -0.20
-            elif direction in ['trai', 'left']:
-                twist.angular.z = 0.50
-            elif direction in ['phai', 'right']:
-                twist.angular.z = -0.50
-            elif direction in ['cheo_trai', 'diag_left']:
-                twist.linear.x = 0.15
-                twist.angular.z = 0.35
-            elif direction in ['cheo_phai', 'diag_right']:
-                twist.linear.x = 0.15
-                twist.angular.z = -0.35
+                twist.linear.x = -0.25 * scale
+            elif direction in ['trai', 'left', 'strafe_left']:
+                twist.linear.y = 0.25 * scale
+            elif direction in ['phai', 'right', 'strafe_right']:
+                twist.linear.y = -0.25 * scale
+            elif direction in ['xoay_trai', 'rotate_left']:
+                twist.angular.z = 0.60 * scale
+            elif direction in ['xoay_phai', 'rotate_right']:
+                twist.angular.z = -0.60 * scale
+            elif direction in ['cheo_trai', 'cheo_tt', 'diag_fl', 'diag_left']:
+                twist.linear.x = 0.20 * scale
+                twist.linear.y = 0.20 * scale
+            elif direction in ['cheo_phai', 'cheo_tp', 'diag_fr', 'diag_right']:
+                twist.linear.x = 0.20 * scale
+                twist.linear.y = -0.20 * scale
             elif direction in ['xoay_tron', 'spin']:
-                twist.angular.z = 0.80
+                twist.angular.z = 0.80 * scale
             else:
                 twist.linear.x = 0.0
+                twist.linear.y = 0.0
                 twist.angular.z = 0.0
-            
+
             self._cmd_vel_pub.publish(twist)
         elif msg_type == 'beep':
             out = String()
