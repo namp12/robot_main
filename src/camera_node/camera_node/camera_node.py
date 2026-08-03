@@ -28,11 +28,60 @@ Design:
   - Low CPU/RAM: only reads frames and publishes, no copies
 """
 
+import os
+import threading
+from http.server import BaseHTTPRequestHandler, HTTPServer
+from socketserver import ThreadingMixIn
+
 import cv2
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image, CameraInfo
 from cv_bridge import CvBridge
+
+_latest_jpeg_bytes = None
+_jpeg_lock = threading.Lock()
+
+
+class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
+    daemon_threads = True
+
+
+class CamStreamHandler(BaseHTTPRequestHandler):
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', '*')
+        self.end_headers()
+
+    def do_GET(self):
+        if self.path.startswith('/video_feed') or self.path == '/':
+            self.send_response(200)
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.send_header('Content-Type', 'multipart/x-mixed-replace; boundary=FRAME')
+            self.end_headers()
+            while True:
+                try:
+                    with _jpeg_lock:
+                        data = _latest_jpeg_bytes
+                    if data:
+                        self.wfile.write(b'--FRAME\r\n')
+                        self.send_header('Content-Type', 'image/jpeg')
+                        self.send_header('Content-Length', str(len(data)))
+                        self.end_headers()
+                        self.wfile.write(data)
+                        self.wfile.write(b'\r\n')
+                    import time
+                    time.sleep(0.033)
+                except Exception:
+                    break
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def log_message(self, format, *args):
+        return
 
 
 class CameraNode(Node):
@@ -91,6 +140,18 @@ class CameraNode(Node):
 
         # ---- Start reconnect timer (checks every 3 seconds if camera needs reconnect) ----
         self._reconnect_timer = self.create_timer(3.0, self._check_and_reconnect)
+
+        # ---- Start embedded HTTP MJPEG video stream server on port 8080 ----
+        self._start_http_stream_server()
+
+    def _start_http_stream_server(self):
+        try:
+            self._http_server = ThreadedHTTPServer(('0.0.0.0', 8080), CamStreamHandler)
+            self._http_thread = threading.Thread(target=self._http_server.serve_forever, daemon=True)
+            self._http_thread.start()
+            self.get_logger().info('Embedded MJPEG HTTP Streamer running on http://0.0.0.0:8080/video_feed')
+        except Exception as exc:
+            self.get_logger().warn(f'Could not start MJPEG HTTP server on port 8080: {exc}')
 
     def _open_camera(self):
         """
@@ -247,6 +308,16 @@ class CameraNode(Node):
             0.0, float(self._height), float(self._height) / 2.0, 0.0,
             0.0, 0.0, 1.0, 0.0
         ]
+
+        # ---- Update latest JPEG bytes for HTTP stream server ----
+        try:
+            res, jpeg = cv2.imencode('.jpg', frame, [int(cv2.IMWRITE_JPEG_QUALITY), 80])
+            if res:
+                global _latest_jpeg_bytes
+                with _jpeg_lock:
+                    _latest_jpeg_bytes = jpeg.tobytes()
+        except Exception:
+            pass
 
         # ---- Publish both messages ----
         self._image_pub.publish(image_msg)

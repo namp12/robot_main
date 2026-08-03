@@ -134,7 +134,7 @@ class SerialNode(Node):
         self.get_logger().warn('Serial disconnected.')
 
     def _on_data_received(self, data: str):
-        self.get_logger().info(f'[RX]\n{data}')
+        self.get_logger().debug(f'[RX]\n{data}')
         msg = String()
         msg.data = data
         self.rx_publisher.publish(msg)
