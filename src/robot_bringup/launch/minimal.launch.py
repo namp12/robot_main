@@ -47,12 +47,12 @@ def generate_launch_description():
     )
     enable_camera_arg = DeclareLaunchArgument(
         'enable_camera',
-        default_value='false',
-        description='Reserved flag for camera node integration',
+        default_value='true',
+        description='Launch camera node when true',
     )
     serial_port_arg = DeclareLaunchArgument(
         'serial_port',
-        default_value='/dev/ttyUSB0',
+        default_value='/dev/rplidar',
         description='USB serial port for the LiDAR',
     )
     use_static_odom_arg = DeclareLaunchArgument(
@@ -133,6 +133,13 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('enable_camera')),
     )
 
+    web_bridge_node = Node(
+        package='web_bridge',
+        executable='web_bridge',
+        name='web_bridge_node',
+        output='screen',
+    )
+
     return LaunchDescription([
         use_sim_time_arg,
         publish_robot_description_arg,
@@ -151,4 +158,5 @@ def generate_launch_description():
         wheel_odom_launch,
         ekf_node,
         camera_launch,
+        web_bridge_node,
     ])
