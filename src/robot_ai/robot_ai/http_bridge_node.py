@@ -15,23 +15,34 @@ detection_publisher = None
 conversation_publisher = None
 
 
-def speak_on_pi(text: str):
-    """Đọc giọng nói chuẩn tiếng Việt ra Loa Bluetooth / Audio Jack của Raspberry Pi."""
-    if not text or not text.strip():
-        return
+import queue
 
-    # 1. Thử tải giọng nói tự nhiên trực tuyến từ Google TTS
+tts_queue = queue.Queue()
+
+
+def _tts_worker_loop():
+    """Background worker thread executing TTS playback sequentially without blocking HTTP server."""
+    while True:
+        try:
+            text = tts_queue.get()
+            if text:
+                _play_tts_audio(text)
+            tts_queue.task_done()
+        except Exception:
+            pass
+
+
+def speak_on_pi(text: str):
+    """Enqueue TTS text for non-blocking background playback."""
+    if text and text.strip():
+        tts_queue.put(text.strip())
+
+
+def _play_tts_audio(text: str):
+    """Play audio to Bluetooth LA16 / ALSA speaker."""
     try:
         import urllib.parse
         import urllib.request
-        encoded_text = urllib.parse.quote(text)
-        url = f"https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q={encoded_text}"
-        
-def speak_on_pi(text: str):
-    """Phát âm thanh mượt mà qua Loa Bluetooth LA16 mà không bị rè/giật."""
-    if not text:
-        return
-    try:
         url = f"https://translate.google.com/translate_tts?ie=UTF-8&q={urllib.parse.quote(text)}&tl=vi&client=tw-ob"
         mp3_path = "/tmp/speak.mp3"
         wav_path = "/tmp/speak.wav"
@@ -190,6 +201,7 @@ def main():
 
     server = HTTPServer(("0.0.0.0", 8001), Handler)
 
+    threading.Thread(target=_tts_worker_loop, daemon=True).start()
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
 
