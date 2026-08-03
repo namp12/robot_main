@@ -9,6 +9,28 @@ CHANNELS = 1
 CHUNK_SIZE = 1024
 
 
+def find_alsa_usb_mic() -> str:
+    """Auto-detect USB Camera Microphone ALSA card from arecord -l."""
+    import re
+    try:
+        res = subprocess.run(["arecord", "-l"], capture_output=True, text=True)
+        lines = res.stdout.splitlines()
+        for line in lines:
+            if "card" in line.lower() and ("usb" in line.lower() or "camera" in line.lower() or "ugreen" in line.lower() or "device" in line.lower() or "audio" in line.lower() or "mic" in line.lower()):
+                m = re.search(r'card\s+(\d+)', line, re.IGNORECASE)
+                if m:
+                    card_num = m.group(1)
+                    return f"plughw:{card_num},0"
+        # If no explicit USB string, pick the first non-zero card
+        for line in lines:
+            m = re.search(r'card\s+([1-9])', line, re.IGNORECASE)
+            if m:
+                return f"plughw:{m.group(1)},0"
+    except Exception:
+        pass
+    return "default"
+
+
 def main():
     target_ip = sys.argv[1] if len(sys.argv) > 1 else "255.255.255.255"  # Broadcast or PC IP
     target_port = 5000
@@ -16,8 +38,10 @@ def main():
     print("==============================================")
     print("      RASPBERRY PI - AUDIO STREAM SENDER      ")
     print("==============================================")
+    alsa_dev = find_alsa_usb_mic()
     print(f"Target PC IP: {target_ip}:{target_port}")
-    print("Streaming Microphone PCM 16kHz Mono over UDP...")
+    print(f"ALSA Mic Device Detected: {alsa_dev}")
+    print("Streaming USB Camera Microphone PCM 16kHz Mono over UDP...")
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     if target_ip == "255.255.255.255":
@@ -45,13 +69,13 @@ def main():
         sock.close()
         return
     except Exception as e:
-        print(f"sounddevice unavailable: {e}. Switching to ALSA arecord fallback...")
+        print(f"sounddevice unavailable: {e}. Switching to ALSA arecord fallback ({alsa_dev})...")
 
-    # Fallback to Linux ALSA arecord
+    # Fallback to Linux ALSA arecord with auto-detected USB camera mic
     if not sd_success:
         cmd = [
             "arecord",
-            "-D", "default",
+            "-D", alsa_dev,
             "-r", str(SAMPLE_RATE),
             "-c", str(CHANNELS),
             "-f", "S16_LE",
@@ -59,7 +83,7 @@ def main():
         ]
         try:
             proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-            print("Microphone streaming ACTIVE (via ALSA arecord). Press CTRL+C to stop.")
+            print(f"Microphone streaming ACTIVE via ALSA ({alsa_dev}). Press CTRL+C to stop.")
             bytes_per_chunk = CHUNK_SIZE * 2  # 16-bit = 2 bytes per sample
             while True:
                 data = proc.stdout.read(bytes_per_chunk)
