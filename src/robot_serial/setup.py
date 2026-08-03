@@ -29,6 +29,7 @@ setup(
             'serial_node = robot_serial.serial_node:main',
             'wheel_odom_node = robot_serial.wheel_odom_node:main',
             'teleop_text = robot_serial.teleop:main',
+            'teleop = robot_serial.teleop:main',
         ],
     },
 )
