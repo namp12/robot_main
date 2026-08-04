@@ -209,6 +209,24 @@ class SerialNode(Node):
         raw = text.strip()
         if not raw:
             return ""
+
+        # Chuẩn hóa chuỗi lệnh tiếng Việt thành dạng chuẩn
+        vietnamese_map = {
+            "đi thẳng": "tien 150",
+            "đi lùi": "lui 150",
+            "rẽ trái": "trai 150",
+            "rẽ phải": "phai 150",
+            "xoay trái": "xoay_trai 150",
+            "xoay phải": "xoay_phai 150",
+            "chéo trái": "cheo_tt 150",
+            "chéo phải": "cheo_tp 150",
+            "lùi chéo trái": "cheo_st 150",
+            "lùi chéo phải": "cheo_sp 150",
+            "dừng": "dung",
+            "dừng lại": "dung"
+        }
+        if raw.lower() in vietnamese_map:
+            return vietnamese_map[raw.lower()]
         
         parts = raw.split()
         cmd = parts[0].lower()
