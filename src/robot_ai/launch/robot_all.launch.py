@@ -44,9 +44,17 @@ def generate_launch_description():
         output='screen'
     )
 
+    serial_node = Node(
+        package='robot_serial',
+        executable='serial_node',
+        name='serial_node',
+        output='screen'
+    )
+
     return LaunchDescription([
         http_bridge_node,
         command_node,
+        serial_node,
         video_stream_server,
         audio_stream_server,
     ])
