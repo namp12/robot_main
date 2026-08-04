@@ -110,10 +110,8 @@ def main():
                     pass
                 print(f"🎙️ [PI AUDIO STREAM] 🟢 Đang thu âm từ [{alsa_dev}] & truyền tới PC IP ({pc_ip}:5000) - Gói: {chunk_counter}")
 
-            # Convert int16 to float32 normalized [-1, 1]
-            int16_arr = np.frombuffer(data, dtype=np.int16)
-            float32_arr = (int16_arr / 32768.0).astype(np.float32)
-            raw_payload = float32_arr.tobytes()
+            # Send raw int16 PCM bytes directly (matches PhoWhisper decoder int16 format)
+            raw_payload = data
             chunk_counter += 1
 
             # Send to Direct PC IP if available, otherwise Broadcast (never send both to prevent duplicate audio packets)
