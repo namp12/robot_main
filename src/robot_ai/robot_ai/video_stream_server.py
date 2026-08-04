@@ -86,36 +86,44 @@ class CamHandler(BaseHTTPRequestHandler):
         return
 
 
+def open_camera():
+    """Tự động quét và mở thiết bị Webcam (/dev/video0, /dev/video1, ...) có trả về frame thực tế."""
+    for index in [0, 1, 2, 4]:
+        try:
+            print(f"Thử mở Camera tại index [{index}]...")
+            cap = cv2.VideoCapture(index, cv2.CAP_V4L2)
+            if not cap.isOpened():
+                cap = cv2.VideoCapture(index)
+            
+            if cap.isOpened():
+                cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+                cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+                cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+                cap.set(cv2.CAP_PROP_FPS, 30)
+                
+                # Test đọc thử 1 frame thực tế
+                ret, frame = cap.read()
+                if ret and frame is not None and frame.size > 0:
+                    print(f"🎯 Camera đọc hình ảnh THÀNH CÔNG tại index [{index}] (/dev/video{index})!")
+                    return cap
+                else:
+                    print(f"⚠️ Index [{index}] mở được nhưng không trả về khung hình. Giải phóng...")
+                    cap.release()
+        except Exception as e:
+            print(f"Lỗi khi thử index [{index}]: {e}")
+    return None
+
+
 def main():
     global camera, _running
     print("==============================================")
     print("  RASPBERRY PI - THREAD-SAFE VIDEO STREAM     ")
     print("==============================================")
-    # Auto-detect working camera device index (tries 0, 1, 2, 4)
-    camera = None
-    for idx in [0, 1, 2, 4]:
-        print(f"Testing camera index /dev/video{idx}...")
-        cap = cv2.VideoCapture(idx, cv2.CAP_V4L2)
-        if not cap.isOpened():
-            cap = cv2.VideoCapture(idx)
 
-        if cap.isOpened():
-            cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
-            cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-            cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-            cap.set(cv2.CAP_PROP_FPS, 30)
-
-            # Test frame read to verify device isn't a dummy metadata node
-            ret, test_frame = cap.read()
-            if ret and test_frame is not None and test_frame.size > 0:
-                print(f"🎯 Camera ACTIVE on /dev/video{idx} ({test_frame.shape[1]}x{test_frame.shape[0]})!")
-                camera = cap
-                break
-            else:
-                cap.release()
+    camera = open_camera()
 
     if camera is None or not camera.isOpened():
-        print("ERROR: Cannot open any camera device (/dev/video0, /dev/video1, /dev/video2)!")
+        print("ERROR: Không mở được bất kỳ Camera /dev/video nào trên Pi!")
         return
 
     _running = True
