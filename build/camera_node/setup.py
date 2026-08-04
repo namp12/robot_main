@@ -1,1 +1,0 @@
-/home/robot/robot_ws/src/camera_node/setup.py

@@ -1,1 +1,0 @@
-/home/robot/robot_ws/src/web_bridge/setup.py

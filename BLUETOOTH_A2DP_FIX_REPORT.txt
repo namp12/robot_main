@@ -1,0 +1,57 @@
+BLUETOOTH A2DP FIX REPORT
+
+Date: 2026-08-03
+System: Ubuntu 22.04.5 LTS
+User: robot
+
+Issue summary:
+- Symptom: When rebooting or power-cycling the machine, Bluetooth device (e.g., LA16) could not connect with error "org.bluez.Error.Failed br-connection-profile-unavailable".
+- Root cause: Audio backend (PulseAudio/PipeWire) not running or not available when BlueZ attempted to establish A2DP/HFP profile, so BlueZ reported profile unavailable.
+
+Actions performed (commands run):
+1) Inspected Bluetooth/Audio status
+   - `bluetoothctl show`
+   - `systemctl status bluetooth`
+   - `pactl info`
+   - `ps -ef | grep pulseaudio`
+
+2) Started PulseAudio for the user session
+   - `pulseaudio --start`
+   - Verified modules: `pactl list short modules | grep -E 'bluetooth|bluez'`
+
+3) Enabled linger so user services run without active login
+   - `sudo loginctl enable-linger robot`
+
+4) Enabled PulseAudio user service (if unit available)
+   - `systemctl --user enable --now pulseaudio.service`
+
+5) Re-attempted Bluetooth connection
+   - `bluetoothctl connect 7E:14:80:F1:21:19` -> Connection successful
+
+Verification steps and evidence:
+- `pactl info` showed Server Name: pulseaudio and bluetooth modules loaded
+- `bluetoothctl info 7E:14:80:F1:21:19` shows UUIDs including A2DP/AVRCP
+- Connection established after PulseAudio started
+
+Files/logs saved:
+- /tmp/ugreen_pulseaudio_test.wav (microphone test)
+- Journal snippets saved by systemd journalctl (optional)
+
+Residual risks / notes:
+- If PulseAudio is not started automatically on boot/session start, the issue will reoccur.
+- Consider enabling `pulseaudio` systemd user unit and `loginctl enable-linger` for `robot` to persist user services.
+- Alternatively consider migrating to PipeWire (`pipewire`, `pipewire-pulse`, `libspa-0.2-bluetooth`) for more modern stack.
+
+Recommended permanent fixes:
+- Ensure `pulseaudio` (or `pipewire-pulse`) is enabled for the user at boot:
+  - `sudo loginctl enable-linger robot`
+  - `systemctl --user enable --now pulseaudio.service` (or enable pipewire-pulse if using PipeWire)
+- Add monitoring or startup script to guarantee audio backend before pairing attempts.
+
+Next steps (optional):
+- Convert to PipeWire if you need better bluetooth audio handling.
+- Create a systemd user unit to start PulseAudio on boot if not present.
+
+Contact / author: (fill your name)
+
+--- End of report

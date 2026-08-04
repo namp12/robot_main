@@ -15,70 +15,103 @@ detection_publisher = None
 conversation_publisher = None
 
 
-def speak_on_pi(text: str):
-    """Đọc giọng nói chuẩn tiếng Việt ra Loa Bluetooth / Audio Jack của Raspberry Pi."""
-    if not text or not text.strip():
-        return
+import queue
 
-    # 1. Thử tải giọng nói tự nhiên trực tuyến từ Google TTS
+tts_queue = queue.Queue()
+
+
+def _tts_worker_loop():
+    """Background worker thread executing TTS playback sequentially without blocking HTTP server."""
+    while True:
+        try:
+            text = tts_queue.get()
+            if text:
+                _play_tts_audio(text)
+            tts_queue.task_done()
+        except Exception:
+            pass
+
+
+def speak_on_pi(text: str):
+    """Enqueue TTS text for non-blocking background playback."""
+    if text and text.strip():
+        tts_queue.put(text.strip())
+
+
+def _play_tts_audio(text: str):
+    """Play audio to Bluetooth LA16 / ALSA speaker."""
     try:
         import urllib.parse
         import urllib.request
-        encoded_text = urllib.parse.quote(text)
-        url = f"https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q={encoded_text}"
-        
+        url = f"https://translate.google.com/translate_tts?ie=UTF-8&q={urllib.parse.quote(text)}&tl=vi&client=tw-ob"
         mp3_path = "/tmp/speak.mp3"
+        wav_path = "/tmp/speak.wav"
         headers = {'User-Agent': 'Mozilla/5.0'}
         req = urllib.request.Request(url, headers=headers)
         with urllib.request.urlopen(req) as response:
             with open(mp3_path, 'wb') as f:
                 f.write(response.read())
-        
-        # Thử phát file mp3 bằng các trình phát có sẵn trên Pi
-        players = ["mpg123", "mpv", "play", "cvlc"]
-        for player in players:
+
+        # Convert MP3 to 22.05kHz 16-bit Mono WAV for PulseAudio smooth playback
+        try:
+            subprocess.run(["ffmpeg", "-y", "-i", mp3_path, "-ar", "22050", "-ac", "1", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            if os.path.exists(wav_path):
+                # Try paplay (PulseAudio native - 100% smooth on Bluetooth LA16 speaker)
+                res = subprocess.run(["paplay", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                if res.returncode == 0:
+                    return
+                # Try aplay
+                res = subprocess.run(["aplay", "-D", "default", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                if res.returncode == 0:
+                    return
+        except Exception:
+            pass
+
+        # Fallback players with buffer boost
+        players = [
+            ["mpg123", "-b", "2048", "-q", mp3_path],
+            ["mpv", "--no-video", "--ao=pulse", mp3_path],
+            ["ffplay", "-nodisp", "-autoexit", mp3_path],
+            ["cvlc", "--play-and-exit", mp3_path]
+        ]
+        for cmd in players:
             try:
-                if player == "mpg123":
-                    subprocess.run([player, "-q", mp3_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                else:
-                    subprocess.run([player, mp3_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                return  # Phát thành công, thoát khỏi hàm
+                res = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                if res.returncode == 0:
+                    return
             except FileNotFoundError:
                 continue
     except Exception:
         pass
 
-    # 2. Fallback ngoại tuyến 1: pyttsx3 với giọng tiếng Việt
-    try:
-        import pyttsx3
-        engine = pyttsx3.init()
-        voices = engine.getProperty('voices')
-        for v in voices:
-            if 'vietnam' in v.name.lower() or 'vi' in v.id.lower():
-                engine.setProperty('voice', v.id)
-                break
-        engine.say(text)
-        engine.runAndWait()
-        engine.stop()
-        return
-    except Exception:
-        pass
-
-    # 3. Fallback ngoại tuyến 2: espeak-ng giọng tiếng Việt
-    try:
-        cmd = f'espeak-ng -v vi "{text}" 2>/dev/null'
-        os.system(cmd)
-    except Exception:
-        pass
-
 
 class Handler(BaseHTTPRequestHandler):
+    def log_message(self, format, *args):
+        # Tắt in log HTTP 200 liên tục để giữ Terminal Pi sạch sẽ và tăng tốc độ
+        return
+
+    def handle(self):
+        try:
+            super().handle()
+        except (ConnectionResetError, BrokenPipeError):
+            if ros_node:
+                ros_node.get_logger().info("HTTP client disconnected before request completed")
+            return
 
     def do_POST(self):
         if self.path not in {"/command", "/robot/command", "/tts", "/speech/tts", "/detection", "/conversation"}:
             self.send_response(404)
             self.end_headers()
             return
+
+        # Save PC client IP for targeted UDP audio streaming
+        try:
+            client_ip = self.client_address[0]
+            if client_ip and client_ip != "127.0.0.1":
+                with open('/tmp/last_pc_ip.txt', 'w') as f:
+                    f.write(client_ip)
+        except Exception:
+            pass
 
         length = int(self.headers.get("Content-Length", 0))
         body = self.rfile.read(length)
@@ -116,7 +149,7 @@ class Handler(BaseHTTPRequestHandler):
                 elif self.path == "/detection":
                     if detection_publisher:
                         detection_publisher.publish(msg)
-                    ros_node.get_logger().info(f'HTTP DETECTION (YOLO): "{text[:100]}..."')
+                    # Suppress spam log print for detection
                 elif self.path == "/conversation":
                     if conversation_publisher:
                         conversation_publisher.publish(msg)
@@ -168,6 +201,7 @@ def main():
 
     server = HTTPServer(("0.0.0.0", 8001), Handler)
 
+    threading.Thread(target=_tts_worker_loop, daemon=True).start()
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
 
