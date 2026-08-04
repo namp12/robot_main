@@ -225,6 +225,10 @@ class Handler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps({'status': 'error', 'message': 'Invalid request'}).encode())
 
 
+class ReusableHTTPServer(HTTPServer):
+    allow_reuse_address = True
+
+
 def main():
     global ros_node
     global command_publisher
@@ -248,7 +252,7 @@ def main():
     esp32_tx_publisher = ros_node.create_publisher(String, "/esp32/serial_tx", 10)
     ros_node.create_subscription(LaserScan, "/scan", _on_scan_callback, 10)
 
-    server = HTTPServer(("0.0.0.0", 8001), Handler)
+    server = ReusableHTTPServer(("0.0.0.0", 8001), Handler)
 
     threading.Thread(target=_tts_worker_loop, daemon=True).start()
     thread = threading.Thread(target=server.serve_forever, daemon=True)
