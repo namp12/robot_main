@@ -13,7 +13,7 @@
 
 set -e
 
-WORKSPACE="$HOME/robot_ws"
+WORKSPACE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DRY_RUN=true
 
 if [ "${1}" = "--run" ]; then
