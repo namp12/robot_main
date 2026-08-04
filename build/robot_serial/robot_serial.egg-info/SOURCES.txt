@@ -1,14 +1,6 @@
-README.md
 package.xml
 setup.cfg
 setup.py
-../../build/robot_serial/robot_serial.egg-info/PKG-INFO
-../../build/robot_serial/robot_serial.egg-info/SOURCES.txt
-../../build/robot_serial/robot_serial.egg-info/dependency_links.txt
-../../build/robot_serial/robot_serial.egg-info/entry_points.txt
-../../build/robot_serial/robot_serial.egg-info/requires.txt
-../../build/robot_serial/robot_serial.egg-info/top_level.txt
-../../build/robot_serial/robot_serial.egg-info/zip-safe
 config/serial.yaml
 launch/robot_serial.launch.py
 launch/wheel_odom.launch.py
@@ -19,3 +11,10 @@ robot_serial/serial_manager.py
 robot_serial/serial_node.py
 robot_serial/teleop.py
 robot_serial/wheel_odom_node.py
+robot_serial.egg-info/PKG-INFO
+robot_serial.egg-info/SOURCES.txt
+robot_serial.egg-info/dependency_links.txt
+robot_serial.egg-info/entry_points.txt
+robot_serial.egg-info/requires.txt
+robot_serial.egg-info/top_level.txt
+robot_serial.egg-info/zip-safe
