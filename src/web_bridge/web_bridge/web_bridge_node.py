@@ -17,7 +17,7 @@ from rclpy.node import Node
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.callback_groups import ReentrantCallbackGroup
 from std_msgs.msg import String, Float32
-from sensor_msgs.msg import Imu
+from sensor_msgs.msg import Imu, LaserScan
 from geometry_msgs.msg import Twist
 
 import websockets
@@ -65,6 +65,9 @@ class WebBridgeNode(Node):
         )
 
         # Subscribers for incoming telemetry
+        self._scan_sub = self.create_subscription(
+            LaserScan, '/scan', self._on_scan, 10, callback_group=self._callback_group
+        )
         self._mode_sub = self.create_subscription(
             String, '/esp32/mode', self._on_mode, 10, callback_group=self._callback_group
         )
@@ -93,6 +96,15 @@ class WebBridgeNode(Node):
         # alongside the ROS2 MultiThreadedExecutor.
         ws_thread = threading.Thread(target=self._start_ws_thread, daemon=True)
         ws_thread.start()
+
+    def _on_scan(self, msg: LaserScan) -> None:
+        self._latest_telemetry['scan'] = {
+            'ranges': [float(r) if not math.isinf(r) and not math.isnan(r) else 0.0 for r in msg.ranges],
+            'angle_min': float(msg.angle_min),
+            'angle_max': float(msg.angle_max),
+            'angle_increment': float(msg.angle_increment)
+        }
+        self._broadcast_telemetry()
 
     def _on_mode(self, msg: String) -> None:
         self._latest_telemetry['mode'] = msg.data
