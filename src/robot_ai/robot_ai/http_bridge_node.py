@@ -163,6 +163,8 @@ class Handler(BaseHTTPRequestHandler):
                 else:
                     if command_publisher:
                         command_publisher.publish(msg)
+                    if esp32_tx_publisher:
+                        esp32_tx_publisher.publish(msg)
                     ros_node.get_logger().info(f'HTTP COMMAND: "{text}"')
 
             response = {
@@ -197,6 +199,7 @@ def main():
     global conversation_publisher
     global partial_publisher
     global final_publisher
+    global esp32_tx_publisher
 
     rclpy.init()
 
@@ -208,6 +211,7 @@ def main():
     conversation_publisher = ros_node.create_publisher(String, "/ai/conversation", 10)
     partial_publisher = ros_node.create_publisher(String, "/speech/partial_text", 10)
     final_publisher = ros_node.create_publisher(String, "/speech/final_text", 10)
+    esp32_tx_publisher = ros_node.create_publisher(String, "/esp32/serial_tx", 10)
 
     server = HTTPServer(("0.0.0.0", 8001), Handler)
 
