@@ -16,6 +16,13 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
+    http_bridge_node = Node(
+        package='robot_ai',
+        executable='http_bridge_node',
+        name='http_bridge_node',
+        output='screen'
+    )
+
     command_node = Node(
         package='robot_ai',
         executable='command_node',
@@ -38,6 +45,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        http_bridge_node,
         command_node,
         video_stream_server,
         audio_stream_server,
