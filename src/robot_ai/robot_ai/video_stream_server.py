@@ -91,20 +91,31 @@ def main():
     print("==============================================")
     print("  RASPBERRY PI - THREAD-SAFE VIDEO STREAM     ")
     print("==============================================")
-    print("Opening /dev/video0...")
+    # Auto-detect working camera device index (tries 0, 1, 2, 4)
+    camera = None
+    for idx in [0, 1, 2, 4]:
+        print(f"Testing camera index /dev/video{idx}...")
+        cap = cv2.VideoCapture(idx, cv2.CAP_V4L2)
+        if not cap.isOpened():
+            cap = cv2.VideoCapture(idx)
 
-    # Open camera with V4L2 backend and MJPG FOURCC to minimize USB bandwidth (~10Mbps instead of ~150Mbps)
-    camera = cv2.VideoCapture(0, cv2.CAP_V4L2)
-    if not camera.isOpened():
-        camera = cv2.VideoCapture(0)
+        if cap.isOpened():
+            cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+            cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+            cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+            cap.set(cv2.CAP_PROP_FPS, 30)
 
-    camera.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
-    camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-    camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-    camera.set(cv2.CAP_PROP_FPS, 30)
+            # Test frame read to verify device isn't a dummy metadata node
+            ret, test_frame = cap.read()
+            if ret and test_frame is not None and test_frame.size > 0:
+                print(f"🎯 Camera ACTIVE on /dev/video{idx} ({test_frame.shape[1]}x{test_frame.shape[0]})!")
+                camera = cap
+                break
+            else:
+                cap.release()
 
-    if not camera.isOpened():
-        print("ERROR: Cannot open camera /dev/video0!")
+    if camera is None or not camera.isOpened():
+        print("ERROR: Cannot open any camera device (/dev/video0, /dev/video1, /dev/video2)!")
         return
 
     _running = True
