@@ -58,7 +58,7 @@ class SerialManager:
     
     def find_serial_port(self) -> Optional[str]:
         """
-        Find available serial port in priority order.
+        Find available serial port in priority order (Smart Auto-Detection).
         
         Returns:
             Port name if found, None otherwise
@@ -67,15 +67,25 @@ class SerialManager:
             if os.path.exists(self.target_port):
                 return self.target_port
             return None
-        
-        # Dynamic search for USB / ACM ports
-        dynamic_ports = sorted(glob.glob('/dev/ttyUSB*') + glob.glob('/dev/ttyACM*'))
-        if dynamic_ports:
-            return dynamic_ports[0]
 
-        for port in self.SERIAL_PORTS:
-            if os.path.exists(port):
-                return port
+        # 1. Ưu tiên Udev symlink /dev/esp32
+        if os.path.exists('/dev/esp32'):
+            return '/dev/esp32'
+        
+        # 2. Ưu tiên các cổng /dev/ttyUSB* (/dev/ttyUSB1, /dev/ttyUSB0) trước /dev/ttyACM*
+        usb_ports = sorted(glob.glob('/dev/ttyUSB*'))
+        if usb_ports:
+            # Nếu có ttyUSB1, chọn ttyUSB1 để nhường ttyUSB0 cho Lidar
+            for p in reversed(usb_ports):
+                if 'USB0' not in p.upper():
+                    return p
+            return usb_ports[0]
+
+        # 3. Sau cùng mới tìm các cổng /dev/ttyACM*
+        acm_ports = sorted(glob.glob('/dev/ttyACM*'))
+        if acm_ports:
+            return acm_ports[0]
+
         return None
     
     def connect(self) -> bool:
