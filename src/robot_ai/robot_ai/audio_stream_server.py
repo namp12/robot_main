@@ -46,32 +46,42 @@ def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
-    # Try ALSA arecord directly with USB camera mic (plughw:1,0)
-    devices_to_try = [alsa_dev, "plughw:1,0", "plughw:U2K,0", "hw:1,0", "default"]
-    proc = None
+    # Try software virtual devices first (PulseAudio / PipeWire) to allow shared audio access,
+    # then fallback to explicit hardware ALSA devices.
+    devices_to_try = [
+        ("parec", ["parec", "--format=s16le", "--rate=" + str(SAMPLE_RATE), "--channels=" + str(CHANNELS)]),
+        ("arecord", ["arecord", "-D", "default", "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
+        ("arecord", ["arecord", "-D", "pulse", "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
+        ("arecord", ["arecord", "-D", alsa_dev, "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
+        ("arecord", ["arecord", "-D", "plughw:1,0", "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
+    ]
 
-    for dev in devices_to_try:
-        cmd = [
-            "arecord",
-            "-D", dev,
-            "-r", str(SAMPLE_RATE),
-            "-c", str(CHANNELS),
-            "-f", "S16_LE",
-            "-t", "raw"
-        ]
-        try:
-            print(f"Opening ALSA capture device: {dev}...")
-            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-            time.sleep(0.3)
-            if proc.poll() is None:
-                print(f"🎯 ALSA Microphone capture ACTIVE on device [{dev}]. Streaming UDP to port {target_port}...")
-                alsa_dev = dev
-                break
-        except Exception as e:
-            print(f"Failed to open ALSA device {dev}: {e}")
+    proc = None
+    max_retries = 3
+
+    for attempt in range(max_retries):
+        for tool_type, cmd in devices_to_try:
+            try:
+                dev_name = cmd[2] if tool_type == "arecord" and len(cmd) > 2 else tool_type
+                print(f"Opening audio capture [{tool_type}] on device: {dev_name} (Attempt {attempt + 1})...")
+                proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+                time.sleep(0.3)
+                if proc.poll() is None:
+                    print(f"🎯 Audio Microphone capture ACTIVE via [{dev_name}]. Streaming UDP to port {target_port}...")
+                    alsa_dev = dev_name
+                    break
+                else:
+                    proc = None
+            except Exception as e:
+                print(f"Failed to open audio device: {e}")
+                proc = None
+        if proc is not None:
+            break
+        print("⚠️ Audio device temporarily busy, retrying in 0.5s...")
+        time.sleep(0.5)
 
     if proc is None or proc.poll() is not None:
-        print("❌ FATAL: Could not open any ALSA microphone device on Pi 4!")
+        print("❌ FATAL: Could not open any audio microphone device on Pi 4!")
         sock.close()
         return
 
