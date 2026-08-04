@@ -116,15 +116,15 @@ def main():
             raw_payload = float32_arr.tobytes()
             chunk_counter += 1
 
-            # Send both to Broadcast and Direct PC IP for 100% reliable reception
-            try:
-                sock.sendto(raw_payload, ("255.255.255.255", target_port))
-            except Exception:
-                pass
-
+            # Send to Direct PC IP if available, otherwise Broadcast (never send both to prevent duplicate audio packets)
             if pc_ip and pc_ip != "255.255.255.255":
                 try:
                     sock.sendto(raw_payload, (pc_ip, target_port))
+                except Exception:
+                    pass
+            else:
+                try:
+                    sock.sendto(raw_payload, ("255.255.255.255", target_port))
                 except Exception:
                     pass
 
