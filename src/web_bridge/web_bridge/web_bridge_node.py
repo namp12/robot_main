@@ -51,7 +51,7 @@ class WebBridgeNode(Node):
         super().__init__('web_bridge_node')
         self.declare_parameter('ws_port', 8090)
         self._ws_port = self.get_parameter('ws_port').value
-        self._clients: set = set()
+        self._ws_connected_clients: set = set()
         self._latest_telemetry: Dict = {}
         self._callback_group = ReentrantCallbackGroup()
         self._ws_loop: Optional[asyncio.AbstractEventLoop] = None
@@ -170,10 +170,10 @@ class WebBridgeNode(Node):
         self._broadcast_telemetry()
 
     def _broadcast_telemetry(self) -> None:
-        if not self._clients or self._ws_loop is None or self._ws_loop.is_closed():
+        if not self._ws_connected_clients or self._ws_loop is None or self._ws_loop.is_closed():
             return
         message = json.dumps({'type': 'telemetry', 'data': self._latest_telemetry})
-        for ws in list(self._clients):
+        for ws in list(self._ws_connected_clients):
             try:
                 asyncio.run_coroutine_threadsafe(ws.send(message), self._ws_loop)
             except Exception:
@@ -241,7 +241,7 @@ class WebBridgeNode(Node):
             self._serial_tx_pub.publish(out)
 
     async def _ws_handler(self, websocket, path: Optional[str] = None) -> None:
-        self._clients.add(websocket)
+        self._ws_connected_clients.add(websocket)
         self.get_logger().info(f'Web client connected: {websocket.remote_address}')
         try:
             async for message in websocket:
@@ -253,7 +253,7 @@ class WebBridgeNode(Node):
         except Exception as exc:
             self.get_logger().warning(f'WebSocket error: {exc}')
         finally:
-            self._clients.discard(websocket)
+            self._ws_connected_clients.discard(websocket)
             self.get_logger().info('Web client disconnected')
 
     def _start_ws_thread(self) -> None:
