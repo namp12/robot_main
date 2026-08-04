@@ -99,7 +99,7 @@ class Handler(BaseHTTPRequestHandler):
             return
 
     def do_POST(self):
-        if self.path not in {"/command", "/robot/command", "/tts", "/speech/tts", "/detection", "/conversation"}:
+        if self.path not in {"/command", "/robot/command", "/tts", "/speech/tts", "/detection", "/conversation", "/speech/partial", "/partial", "/speech/final", "/speech/text"}:
             self.send_response(404)
             self.end_headers()
             return
@@ -146,10 +146,16 @@ class Handler(BaseHTTPRequestHandler):
                     ros_node.get_logger().info(f'HTTP TTS: "{text}"')
                     # Đọc câu thoại ra Loa Bluetooth cắm tại Pi 4
                     threading.Thread(target=speak_on_pi, args=(text,), daemon=True).start()
+                elif self.path in {"/speech/partial", "/partial"}:
+                    if partial_publisher:
+                        partial_publisher.publish(msg)
+                elif self.path in {"/speech/final", "/speech/text"}:
+                    if final_publisher:
+                        final_publisher.publish(msg)
+                    ros_node.get_logger().info(f'HTTP FINAL STT: "{text}"')
                 elif self.path == "/detection":
                     if detection_publisher:
                         detection_publisher.publish(msg)
-                    # Suppress spam log print for detection
                 elif self.path == "/conversation":
                     if conversation_publisher:
                         conversation_publisher.publish(msg)
@@ -189,6 +195,8 @@ def main():
     global tts_publisher
     global detection_publisher
     global conversation_publisher
+    global partial_publisher
+    global final_publisher
 
     rclpy.init()
 
@@ -198,6 +206,8 @@ def main():
     tts_publisher = ros_node.create_publisher(String, "/speech/text", 10)
     detection_publisher = ros_node.create_publisher(String, "/ai/detection", 10)
     conversation_publisher = ros_node.create_publisher(String, "/ai/conversation", 10)
+    partial_publisher = ros_node.create_publisher(String, "/speech/partial_text", 10)
+    final_publisher = ros_node.create_publisher(String, "/speech/final_text", 10)
 
     server = HTTPServer(("0.0.0.0", 8001), Handler)
 
