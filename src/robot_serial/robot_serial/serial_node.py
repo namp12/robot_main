@@ -316,9 +316,9 @@ class SerialNode(Node):
             dist = self._rear_dist
             is_backward = True
 
-        # Calculate speed factor based on distance
+        # Calculate speed factor based on valid obstacle distance (Ignore 0.0 disconnected sensor)
         speed_factor = 1.0
-        if 0.0 < dist <= 5.0:
+        if 0.1 <= dist <= 5.0:
             speed_factor = 0.0
         elif 5.0 < dist <= 20.0:
             speed_factor = 0.3
