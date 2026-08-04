@@ -7,12 +7,35 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
+from sensor_msgs.msg import LaserScan
 
 ros_node = None
 command_publisher = None
 tts_publisher = None
 detection_publisher = None
 conversation_publisher = None
+partial_publisher = None
+final_publisher = None
+esp32_tx_publisher = None
+
+latest_scan_data = {
+    "angle_min": -3.14159,
+    "angle_max": 3.14159,
+    "angle_increment": 0.017453,
+    "ranges": []
+}
+
+
+def _on_scan_callback(msg):
+    global latest_scan_data
+    import math
+    clean_ranges = [float(r) if not math.isinf(r) and not math.isnan(r) else 0.0 for r in msg.ranges]
+    latest_scan_data = {
+        "angle_min": float(msg.angle_min),
+        "angle_max": float(msg.angle_max),
+        "angle_increment": float(msg.angle_increment),
+        "ranges": clean_ranges
+    }
 
 
 import queue
@@ -97,6 +120,17 @@ class Handler(BaseHTTPRequestHandler):
             if ros_node:
                 ros_node.get_logger().info("HTTP client disconnected before request completed")
             return
+
+    def do_GET(self):
+        if self.path in {"/scan", "/robot/scan", "/api/v1/robot/scan"}:
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(latest_scan_data).encode())
+        else:
+            self.send_response(404)
+            self.end_headers()
 
     def do_POST(self):
         if self.path not in {"/command", "/robot/command", "/tts", "/speech/tts", "/detection", "/conversation", "/speech/partial", "/partial", "/speech/final", "/speech/text"}:
@@ -212,6 +246,7 @@ def main():
     partial_publisher = ros_node.create_publisher(String, "/speech/partial_text", 10)
     final_publisher = ros_node.create_publisher(String, "/speech/final_text", 10)
     esp32_tx_publisher = ros_node.create_publisher(String, "/esp32/serial_tx", 10)
+    ros_node.create_subscription(LaserScan, "/scan", _on_scan_callback, 10)
 
     server = HTTPServer(("0.0.0.0", 8001), Handler)
 
