@@ -15,19 +15,26 @@ def find_alsa_usb_mic() -> str:
     try:
         res = subprocess.run(["arecord", "-l"], capture_output=True, text=True)
         lines = res.stdout.splitlines()
+        print("🔍 [ALSA CARDS DETECTED]:")
+        for line in lines:
+            print("  ", line)
         for line in lines:
             if "card" in line.lower() and ("u2k" in line.lower() or "ugreen" in line.lower() or "usb" in line.lower() or "camera" in line.lower() or "device" in line.lower() or "audio" in line.lower() or "mic" in line.lower()):
                 m = re.search(r'card\s+(\d+)', line, re.IGNORECASE)
                 if m:
                     card_num = m.group(1)
-                    return f"plughw:{card_num},0"
-        # If no explicit string, pick the first card (card 1)
+                    chosen = f"plughw:{card_num},0"
+                    print(f"🎯 [ALSA SELECTED MIC]: {chosen} from line: {line}")
+                    return chosen
+        # If no explicit string, pick the first non-zero card
         for line in lines:
             m = re.search(r'card\s+([1-9])', line, re.IGNORECASE)
             if m:
-                return f"plughw:{m.group(1)},0"
-    except Exception:
-        pass
+                chosen = f"plughw:{m.group(1)},0"
+                print(f"🎯 [ALSA FALLBACK MIC]: {chosen}")
+                return chosen
+    except Exception as e:
+        print("⚠️ [ALSA ENUM ERROR]:", e)
     return "plughw:1,0"
 
 
