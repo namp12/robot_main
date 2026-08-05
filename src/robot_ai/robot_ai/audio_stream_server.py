@@ -32,7 +32,11 @@ def find_alsa_usb_mic() -> str:
 
 
 def main():
-    target_ip = sys.argv[1] if len(sys.argv) > 1 else "255.255.255.255"  # Broadcast or PC IP
+    target_ip = "255.255.255.255"
+    for arg in sys.argv[1:]:
+        if not arg.startswith("-") and not arg.startswith("_"):
+            target_ip = arg
+            break
     target_port = 5000
 
     print("==============================================")
