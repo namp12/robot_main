@@ -199,7 +199,8 @@ class CameraNode(Node):
             )
             return False
 
-        # ---- Configure camera properties ----
+        # ---- Configure camera properties (Use MJPEG hardware decode to free USB bandwidth for ALSA mic) ----
+        self._cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
         self._cap.set(cv2.CAP_PROP_FRAME_WIDTH, self._width)
         self._cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self._height)
         self._cap.set(cv2.CAP_PROP_FPS, self._fps)
