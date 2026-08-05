@@ -72,20 +72,19 @@ class SerialManager:
         if os.path.exists('/dev/esp32'):
             return '/dev/esp32'
         
-        # 2. Ưu tiên cổng /dev/ttyACM* (ESP32-S3 CDC Native USB)
+        # 2. Ưu tiên cổng /dev/ttyUSB1... (Mạch ESP32-S3 chạy với chip USB-UART CP2102/CH340 từ PlatformIO)
+        usb_ports = sorted(glob.glob('/dev/ttyUSB*'))
+        for p in usb_ports:
+            if 'USB0' not in p.upper():  # Tách biệt nhường ttyUSB0 cho mắt thần RPLiDAR C1
+                return p
+
+        # 3. Cổng /dev/ttyACM* (Dành cho ESP32 CDC Native USB)
         acm_ports = sorted(glob.glob('/dev/ttyACM*'))
         if acm_ports:
             return acm_ports[0]
 
-        # 3. Tìm các cổng /dev/ttyUSB* ngoại trừ ttyUSB0 (để nhường ttyUSB0 cho RPLiDAR C1)
-        usb_ports = sorted(glob.glob('/dev/ttyUSB*'))
         if usb_ports:
-            for p in usb_ports:
-                if 'USB0' not in p.upper():
-                    return p
-            # Nếu chỉ có 1 cổng USB0 duy nhất và không có LiDAR
-            if not os.path.exists('/dev/rplidar'):
-                return usb_ports[0]
+            return usb_ports[0]
 
         return None
     
