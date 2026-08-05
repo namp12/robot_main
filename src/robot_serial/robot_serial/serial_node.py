@@ -127,6 +127,9 @@ class SerialNode(Node):
         self.connected = True
         self.get_logger().info(f'Connected to {port}')
         self._telemetry_enabled = True
+        # Send mode initialization to ESP32 so motor controllers are unlocked
+        self.serial_manager.send('mode ros')
+        self.serial_manager.send('mode manual')
 
     def _on_disconnected(self):
         self.connected = False
