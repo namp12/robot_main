@@ -59,33 +59,31 @@ class SerialManager:
     def find_serial_port(self) -> Optional[str]:
         """
         Find available serial port in priority order (Smart Auto-Detection).
-        
-        Returns:
-            Port name if found, None otherwise
         """
-        # If specified target port exists, use it immediately
-        if self.target_port and os.path.exists(self.target_port):
+        # 1. Nếu chỉ định target_port và cổng tồn tại -> Dùng ngay
+        if self.target_port and self.target_port != 'auto' and os.path.exists(self.target_port):
             return self.target_port
 
-        # 1. Ưu tiên Udev symlink /dev/esp32
+        # 2. Ưu tiên Udev symlink /dev/esp32
         if os.path.exists('/dev/esp32'):
             return '/dev/esp32'
-        
-        # 2. Ưu tiên cổng /dev/ttyUSB1... (Mạch ESP32-S3 chạy với chip USB-UART CP2102/CH340 từ PlatformIO)
-        usb_ports = sorted(glob.glob('/dev/ttyUSB*'))
-        for p in usb_ports:
-            if 'USB0' not in p.upper():  # Tách biệt nhường ttyUSB0 cho mắt thần RPLiDAR C1
+
+        # Lấy tất cả cổng ttyACM* và ttyUSB* hiện có trên Pi 4
+        all_acm = sorted(glob.glob('/dev/ttyACM*'))
+        all_usb = sorted(glob.glob('/dev/ttyUSB*'))
+
+        # 3. Ưu tiên các cổng /dev/ttyACM* (ESP32-S3 CDC Native USB)
+        if all_acm:
+            return all_acm[0]
+
+        # 4. Ưu tiên cổng /dev/ttyUSB1 (hoặc ttyUSB* ngoại trừ ttyUSB0 để nhường LiDAR C1)
+        for p in all_usb:
+            if 'USB0' not in p.upper():
                 return p
 
-        # 3. Cổng /dev/ttyACM* (Dành cho ESP32 CDC Native USB)
-        acm_ports = sorted(glob.glob('/dev/ttyACM*'))
-        if acm_ports:
-            return acm_ports[0]
-
-        # 4. Chỉ dùng ttyUSB0 nếu KHÔNG có mắt thần RPLiDAR C1
-        if usb_ports and not os.path.exists('/dev/rplidar'):
-            # Kiểm tra an toàn: nếu ttyUSB0 đang dùng cho LiDAR thì nhường
-            return usb_ports[0]
+        # 5. Nếu không còn cổng nào khác ngoài ttyUSB0
+        if all_usb and not os.path.exists('/dev/rplidar'):
+            return all_usb[0]
 
         return None
     
