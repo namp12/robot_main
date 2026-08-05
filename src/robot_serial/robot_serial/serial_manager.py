@@ -178,6 +178,10 @@ class SerialManager:
         clean_line = line.strip('\r\n') + '\r\n'
         payload = clean_line.encode('utf-8', errors='replace')
         return self.write_data(payload)
+
+    def send(self, line: str) -> bool:
+        """Alias for write_line."""
+        return self.write_line(line)
     
     def read_line(self) -> Optional[str]:
         """
