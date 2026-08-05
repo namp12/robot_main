@@ -106,12 +106,16 @@ class SerialManager:
             return False
         
         try:
-            self.serial_port = serial.Serial(
-                port=port,
-                baudrate=self.baudrate,
-                timeout=self.TIMEOUT_MS / 1000.0,
-                write_timeout=0.5
-            )
+            self.serial_port = serial.Serial()
+            self.serial_port.port = port
+            self.serial_port.baudrate = self.baudrate
+            self.serial_port.timeout = self.TIMEOUT_MS / 1000.0
+            self.serial_port.write_timeout = 0.5
+            self.serial_port.dtr = False
+            self.serial_port.rts = False
+            self.serial_port.open()
+            self.serial_port.dtr = False
+            self.serial_port.rts = False
             self.connected = True
             self.current_port = port
             self.last_error = ""
@@ -156,12 +160,11 @@ class SerialManager:
             return False
 
     def write_line(self, line: str) -> bool:
-        """Write a text line to the serial port, appending newline if needed."""
+        """Write a text line to the serial port, appending \\r\\n matching Arduino Serial Monitor."""
         if not line:
             return False
-        payload = line.encode('utf-8', errors='replace')
-        if not payload.endswith(b'\n'):
-            payload += b'\n'
+        clean_line = line.strip('\r\n') + '\r\n'
+        payload = clean_line.encode('utf-8', errors='replace')
         return self.write_data(payload)
     
     def read_line(self) -> Optional[str]:
