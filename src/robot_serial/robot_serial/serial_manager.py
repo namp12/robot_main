@@ -82,7 +82,9 @@ class SerialManager:
         if acm_ports:
             return acm_ports[0]
 
-        if usb_ports:
+        # 4. Chỉ dùng ttyUSB0 nếu KHÔNG có mắt thần RPLiDAR C1
+        if usb_ports and not os.path.exists('/dev/rplidar'):
+            # Kiểm tra an toàn: nếu ttyUSB0 đang dùng cho LiDAR thì nhường
             return usb_ports[0]
 
         return None
