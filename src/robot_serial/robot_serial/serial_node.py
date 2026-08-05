@@ -300,7 +300,12 @@ class SerialNode(Node):
         if not raw:
             return
         payload = self._translate_command(raw)
-        self.get_logger().info(f'[TX] {payload} (raw: "{raw}")')
+        
+        # Only log to terminal when command changes to eliminate log spam during key holds
+        if not hasattr(self, '_last_logged_tx') or self._last_logged_tx != payload:
+            self._last_logged_tx = payload
+            self.get_logger().info(f'[TX] {payload} (raw: "{raw}")')
+            
         self.serial_manager.write_line(payload)
 
     def _on_cmd_vel(self, msg: Twist):
