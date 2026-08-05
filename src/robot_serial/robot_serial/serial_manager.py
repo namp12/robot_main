@@ -68,22 +68,31 @@ class SerialManager:
         if os.path.exists('/dev/esp32'):
             return '/dev/esp32'
 
-        # Lấy tất cả cổng ttyACM* và ttyUSB* hiện có trên Pi 4
+        # Tìm đường dẫn thực của mắt thần LiDAR (nếu có /dev/rplidar)
+        lidar_path = None
+        if os.path.exists('/dev/rplidar'):
+            try:
+                lidar_path = os.path.realpath('/dev/rplidar')
+            except Exception:
+                pass
+
         all_acm = sorted(glob.glob('/dev/ttyACM*'))
         all_usb = sorted(glob.glob('/dev/ttyUSB*'))
 
-        # 3. Ưu tiên các cổng /dev/ttyACM* (ESP32-S3 CDC Native USB)
-        if all_acm:
-            return all_acm[0]
-
-        # 4. Ưu tiên cổng /dev/ttyUSB1 (hoặc ttyUSB* ngoại trừ ttyUSB0 để nhường LiDAR C1)
-        for p in all_usb:
-            if 'USB0' not in p.upper():
+        # 3. Thử tất cả cổng /dev/ttyACM*
+        for p in all_acm:
+            if lidar_path is None or os.path.realpath(p) != lidar_path:
                 return p
 
-        # 5. Nếu không còn cổng nào khác ngoài ttyUSB0
-        if all_usb and not os.path.exists('/dev/rplidar'):
-            return all_usb[0]
+        # 4. Thử các cổng /dev/ttyUSB* ngoại trừ USB0 (để nhường LiDAR)
+        non_usb0 = [p for p in all_usb if 'USB0' not in p.upper() and (lidar_path is None or os.path.realpath(p) != lidar_path)]
+        if non_usb0:
+            return non_usb0[0]
+
+        # 5. Nếu chỉ có 1 cổng USB và không bị LiDAR chiếm giữ
+        for p in all_usb:
+            if lidar_path is None or os.path.realpath(p) != lidar_path:
+                return p
 
         return None
     
