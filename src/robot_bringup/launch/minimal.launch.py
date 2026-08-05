@@ -97,7 +97,7 @@ def generate_launch_description():
             PathJoinSubstitution([serial_pkg, 'launch', 'robot_serial.launch.py'])
         ),
         launch_arguments={
-            'port': '/dev/esp32',
+            'port': 'auto',
         }.items(),
         condition=IfCondition(LaunchConfiguration('enable_serial')),
     )

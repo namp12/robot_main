@@ -63,10 +63,9 @@ class SerialManager:
         Returns:
             Port name if found, None otherwise
         """
-        if self.target_port:
-            if os.path.exists(self.target_port):
-                return self.target_port
-            return None
+        # If specified target port exists, use it immediately
+        if self.target_port and os.path.exists(self.target_port):
+            return self.target_port
 
         # 1. Ưu tiên Udev symlink /dev/esp32
         if os.path.exists('/dev/esp32'):
