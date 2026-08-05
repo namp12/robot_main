@@ -143,13 +143,6 @@ def generate_launch_description():
         output='screen',
     )
 
-    http_bridge_node = Node(
-        package='robot_ai',
-        executable='http_bridge_node',
-        name='http_bridge_node',
-        output='screen',
-    )
-
     audio_stream_node = Node(
         package='robot_ai',
         executable='audio_stream_server',
@@ -176,6 +169,5 @@ def generate_launch_description():
         ekf_node,
         camera_launch,
         web_bridge_node,
-        http_bridge_node,
         audio_stream_node,
     ])
