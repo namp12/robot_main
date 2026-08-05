@@ -43,7 +43,7 @@ def _speed_from_twist(vx: float, vy: float, wz: float) -> tuple[str, int]:
     elif abs(wz) > ANGULAR_SLOW_THRESHOLD:
         speed = int(abs(wz) * 200)
 
-    speed = max(50, min(speed, MAX_SPEED))
+    speed = max(10, min(speed, MAX_SPEED))
 
     if abs(vx) < LINEAR_SLOW_THRESHOLD and abs(vy) < LINEAR_SLOW_THRESHOLD and abs(wz) < ANGULAR_SLOW_THRESHOLD:
         return 'dung', 0
@@ -340,9 +340,9 @@ class SerialNode(Node):
             if speed <= 0 or direction == 'STOP':
                 payload = 'STOP'
             else:
-                # Apply speed factor and ensure minimum motor power (120) to overcome friction
+                # Apply speed factor and preserve user speed setting
                 adjusted_speed = int(speed * speed_factor)
-                adjusted_speed = max(120, min(adjusted_speed, 255))
+                adjusted_speed = max(10, min(adjusted_speed, 255))
                 
                 if speed_factor < 1.0:
                     direction_name = "Front" if is_forward else "Rear"
