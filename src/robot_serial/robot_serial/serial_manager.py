@@ -113,9 +113,12 @@ class SerialManager:
                 self.last_error = "No serial device found on /dev/ttyUSB* or /dev/ttyACM*"
             return False
         
+        # Convert symlink like /dev/esp32 to real device path like /dev/ttyACM0
+        real_port = os.path.realpath(port)
+
         try:
             self.serial_port = serial.Serial()
-            self.serial_port.port = port
+            self.serial_port.port = real_port
             self.serial_port.baudrate = self.baudrate
             self.serial_port.timeout = self.TIMEOUT_MS / 1000.0
             self.serial_port.write_timeout = 0.5
@@ -125,18 +128,19 @@ class SerialManager:
             self.serial_port.dtr = False
             self.serial_port.rts = False
             self.connected = True
-            self.current_port = port
+            self.current_port = real_port
             self.last_error = ""
             
             if self.on_connected:
-                self.on_connected(port)
+                self.on_connected(real_port)
             
             return True
         
         except Exception as e:
             self.connected = False
             self.serial_port = None
-            self.last_error = f"Failed to open {port}: {e}"
+            self.last_error = f"Failed to open {real_port} (raw: {port}): {e}"
+            print(f"❌ [SERIAL ERROR] {self.last_error}", flush=True)
             return False
     
     def disconnect(self):
