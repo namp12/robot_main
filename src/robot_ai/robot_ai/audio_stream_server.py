@@ -53,11 +53,10 @@ def main():
     # Try software virtual devices first (PulseAudio / PipeWire) to allow shared audio access,
     # then fallback to explicit hardware ALSA devices.
     devices_to_try = [
+        ("arecord_alsa", ["arecord", "-D", alsa_dev, "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
+        ("arecord_hw1", ["arecord", "-D", "hw:1,0", "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
+        ("arecord_plug1", ["arecord", "-D", "plughw:1,0", "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
         ("parec", ["parec", "--format=s16le", "--rate=" + str(SAMPLE_RATE), "--channels=" + str(CHANNELS)]),
-        ("arecord", ["arecord", "-D", "default", "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
-        ("arecord", ["arecord", "-D", "pulse", "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
-        ("arecord", ["arecord", "-D", alsa_dev, "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
-        ("arecord", ["arecord", "-D", "plughw:1,0", "-r", str(SAMPLE_RATE), "-c", str(CHANNELS), "-f", "S16_LE", "-t", "raw"]),
     ]
 
     proc = None
