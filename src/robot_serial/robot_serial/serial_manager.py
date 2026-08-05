@@ -78,6 +78,7 @@ class SerialManager:
 
         all_acm = sorted(glob.glob('/dev/ttyACM*'))
         all_usb = sorted(glob.glob('/dev/ttyUSB*'))
+        print(f"🔎 [SERIAL SCAN] target_port='{self.target_port}', ACM={all_acm}, USB={all_usb}, LiDAR='{lidar_path}'", flush=True)
 
         # 3. Thử tất cả cổng /dev/ttyACM*
         for p in all_acm:
