@@ -188,17 +188,8 @@
     <origin xyz="0 0 ${ground_clearance}" rpy="0 0 0"/>
   </joint>
 
-  <!-- ============================================================ -->
-  <!--                     ODOM (placeholder)                        -->
-  <!-- ============================================================ -->
-  <!--
-    Static odom frame. Currently odom == base_footprint (identity).
-    When ESP32 is added, this joint will be removed and the
-    robot_base node will publish odom->base_footprint dynamically.
-  -->
-  <link name="odom"/>
-
   <xacro:if value="$(arg use_static_odom)">
+    <link name="odom"/>
     <joint name="odom_to_base_footprint" type="fixed">
       <parent link="odom"/>
       <child  link="base_footprint"/>
