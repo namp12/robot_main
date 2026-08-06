@@ -119,6 +119,15 @@ class SerialNode(Node):
         self._telemetry_enabled = False
         self._front_dist = 999.0
         self._rear_dist = 999.0
+        self.global_speed_factor = 0.70  # Default 70% Global Speed Limit
+
+        self.speed_limit_subscriber = self.create_subscription(
+            Int32,
+            '/robot/speed_limit',
+            self._on_speed_limit,
+            10,
+        )
+        self._rear_dist = 999.0
         self.get_logger().info('Serial node initialized')
 
     def _on_connected(self, port: str):
@@ -206,37 +215,52 @@ class SerialNode(Node):
             val_msg.data = [float(v) for v in parsed['encoders']]
             self.encoder_values_publisher.publish(val_msg)
 
-    def _translate_command(self, text: str) -> str:
-        raw = text.strip()
+    def _translate_command(self, raw: str) -> str:
         if not raw:
             return ""
 
-        # Chuẩn hóa chuỗi lệnh tiếng Việt thành dạng chuẩn
+        parts = raw.split()
+        cmd = parts[0].lower()
+        speed_str = parts[1] if len(parts) > 1 else "70"
+
+        # Allow dynamic speed limit commands via String: "speed 50" or "speed_limit 50"
+        if cmd in ["speed", "speed_limit", "set_speed"]:
+            try:
+                limit_val = max(20, min(100, int(speed_str)))
+                self.global_speed_factor = limit_val / 100.0
+                self.get_logger().info(f"⚡ [GLOBAL SPEED LIMIT SET] {limit_val}% (Factor: {self.global_speed_factor:.2f})")
+            except Exception:
+                pass
+            return ""
+
         vietnamese_map = {
-            "đi thẳng": "tien 150",
-            "đi lùi": "lui 150",
-            "rẽ trái": "trai 150",
-            "rẽ phải": "phai 150",
-            "xoay trái": "xoay_trai 150",
-            "xoay phải": "xoay_phai 150",
-            "chéo trái": "cheo_tt 150",
-            "chéo phải": "cheo_tp 150",
-            "lùi chéo trái": "cheo_st 150",
-            "lùi chéo phải": "cheo_sp 150",
+            "đi thẳng": "tien 70",
+            "đi lùi": "lui 70",
+            "rẽ trái": "trai 60",
+            "rẽ phải": "phai 60",
+            "xoay trái": "xoay_trai 60",
+            "xoay phải": "xoay_phai 60",
+            "chéo trái": "cheo_tt 70",
+            "chéo phải": "cheo_tp 70",
+            "lùi chéo trái": "cheo_st 70",
+            "lùi chéo phải": "cheo_sp 70",
             "dừng": "dung",
             "dừng lại": "dung"
         }
         if raw.lower() in vietnamese_map:
-            return vietnamese_map[raw.lower()]
-        
-        parts = raw.split()
-        cmd = parts[0].lower()
-        speed = parts[1] if len(parts) > 1 else "70"
+            raw = vietnamese_map[raw.lower()]
+            parts = raw.split()
+            cmd = parts[0].lower()
+            speed_str = parts[1] if len(parts) > 1 else "70"
 
         if cmd in ["mode_manual", "mode_auto", "mode_ros", "mode_ros2"]:
             return f"mode_{cmd.replace('mode_', '')}"
         if cmd.startswith("mode"):
             return raw
+
+        raw_speed = int(speed_str) if speed_str.isdigit() else 70
+        scaled_speed = int(raw_speed * self.global_speed_factor)
+        scaled_speed = max(15, min(255, scaled_speed)) if raw_speed > 0 else 0
 
         # Map logical movement commands to physical ESP32 chassis motor polarities
         translation_map = {
@@ -287,7 +311,7 @@ class SerialNode(Node):
             target = translation_map[cmd]
             if target == "dung":
                 return "dung"
-            return f"{target} {speed}"
+            return f"{target} {scaled_speed}"
 
         return raw
 
@@ -299,6 +323,8 @@ class SerialNode(Node):
         if not raw:
             return
         payload = self._translate_command(raw)
+        if not payload:
+            return
         
         # Only log to terminal when command changes to eliminate log spam during key holds
         if not hasattr(self, '_last_logged_tx') or self._last_logged_tx != payload:
@@ -344,8 +370,8 @@ class SerialNode(Node):
             if speed <= 0 or direction == 'STOP':
                 payload = 'STOP'
             else:
-                # Apply speed factor and preserve user speed setting
-                adjusted_speed = int(speed * speed_factor)
+                # Apply speed factor and global speed limit factor
+                adjusted_speed = int(speed * speed_factor * self.global_speed_factor)
                 adjusted_speed = max(10, min(adjusted_speed, 255))
                 
                 if speed_factor < 1.0:
