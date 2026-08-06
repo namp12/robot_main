@@ -258,9 +258,17 @@ class SerialNode(Node):
         if cmd.startswith("mode"):
             return raw
 
-        raw_speed = int(speed_str) if speed_str.isdigit() else 70
-        scaled_speed = int(raw_speed * self.global_speed_factor)
-        scaled_speed = max(15, min(255, scaled_speed)) if raw_speed > 0 else 0
+        raw_speed = int(speed_str) if speed_str.isdigit() else 150
+        # Preserve explicit BTS7960 PWM values (65..245 PWM) from Web UI & API
+        if raw_speed > 0:
+            if raw_speed >= 60:
+                scaled_speed = raw_speed
+            else:
+                # Scaled percentage input (20..100) -> linear BTS7960 PWM range (65..245)
+                scaled_speed = int(65 + (raw_speed - 20) * (245 - 65) / 80.0) if raw_speed >= 20 else int(raw_speed * 2.55)
+            scaled_speed = max(20, min(255, scaled_speed))
+        else:
+            scaled_speed = 0
 
         # Map logical movement commands to physical ESP32 chassis motor polarities
         translation_map = {
