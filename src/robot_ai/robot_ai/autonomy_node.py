@@ -30,7 +30,7 @@ class AutonomyNode(Node):
 
         # Declare ROS2 Parameters
         self.declare_parameter('simulation', False)
-        self.declare_parameter('autonomy_enabled', True)
+        self.declare_parameter('autonomy_enabled', False)
         self.declare_parameter('max_linear_speed', 0.35)
         self.declare_parameter('watchdog_enabled', False)
         self.declare_parameter('max_angular_speed', 0.60)
@@ -54,9 +54,8 @@ class AutonomyNode(Node):
         self.velocity_planner = DynamicVelocityPlanner(max_linear_speed=max_lin, max_angular_speed=max_ang)
         self.watchdog = HealthWatchdog(timeout_sec=3.0, startup_grace_sec=15.0)
 
-        # Default initial state to EXPLORE when enabled
-        if self.autonomy_enabled:
-            self.behavior.set_state(RobotState.EXPLORE)
+        # Default initial state to IDLE (waiting for explicit user mode activation)
+        self.behavior.set_state(RobotState.IDLE)
 
         # Standard Compatible QoS Subscriptions for /scan (compatible with all LiDAR drivers)
         from rclpy.qos import qos_profile_sensor_data

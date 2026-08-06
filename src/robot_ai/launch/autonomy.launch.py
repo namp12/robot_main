@@ -16,7 +16,7 @@ def generate_launch_description():
 
     autonomy_enabled_arg = DeclareLaunchArgument(
         'autonomy_enabled',
-        default_value='true',
+        default_value='false',
         description='Enable or disable local autonomy engine'
     )
 

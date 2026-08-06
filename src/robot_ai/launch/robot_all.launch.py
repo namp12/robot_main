@@ -56,7 +56,7 @@ def generate_launch_description():
         executable='autonomy_node',
         name='robot_autonomy_node',
         output='screen',
-        parameters=[{'simulation': False, 'autonomy_enabled': True}]
+        parameters=[{'simulation': False, 'autonomy_enabled': False}]
     )
 
     return LaunchDescription([
