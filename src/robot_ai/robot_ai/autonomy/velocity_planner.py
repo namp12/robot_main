@@ -12,10 +12,10 @@ class DynamicVelocityPlanner:
 
     def __init__(
         self,
-        max_linear_speed: float = 0.40,
-        max_angular_speed: float = 0.60,
-        max_acceleration: float = 0.35,
-        kp_angular: float = 1.2
+        max_linear_speed: float = 0.20,
+        max_angular_speed: float = 0.35,
+        max_acceleration: float = 0.25,
+        kp_angular: float = 1.0
     ):
         self.max_linear_speed = max_linear_speed
         self.max_angular_speed = max_angular_speed

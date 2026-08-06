@@ -231,7 +231,7 @@ class SerialNode(Node):
         
         parts = raw.split()
         cmd = parts[0].lower()
-        speed = parts[1] if len(parts) > 1 else "150"
+        speed = parts[1] if len(parts) > 1 else "70"
 
         if cmd in ["mode_manual", "mode_auto", "mode_ros", "mode_ros2"]:
             return f"mode_{cmd.replace('mode_', '')}"
