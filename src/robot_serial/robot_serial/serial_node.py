@@ -48,22 +48,20 @@ def _speed_from_twist(vx: float, vy: float, wz: float) -> tuple[str, int]:
     if abs(vx) < LINEAR_SLOW_THRESHOLD and abs(vy) < LINEAR_SLOW_THRESHOLD and abs(wz) < ANGULAR_SLOW_THRESHOLD:
         return 'dung', 0
 
+    # Forward motion (both wheels spin forward together)
+    if vx > LINEAR_SLOW_THRESHOLD:
+        return 'lui', speed
+
+    # Backward motion (both wheels spin backward together)
+    if vx < -LINEAR_SLOW_THRESHOLD:
+        return 'tien', speed
+
+    # Pure In-Place Rotation (only when linear velocity is zero)
     if wz > ANGULAR_SLOW_THRESHOLD:
         return 'xoay_trai', speed
     if wz < -ANGULAR_SLOW_THRESHOLD:
         return 'xoay_phai', speed
-    if vx > LINEAR_SLOW_THRESHOLD and vy > LINEAR_SLOW_THRESHOLD:
-        return 'cheo_st', speed
-    if vx > LINEAR_SLOW_THRESHOLD and vy < -LINEAR_SLOW_THRESHOLD:
-        return 'cheo_sp', speed
-    if vx < -LINEAR_SLOW_THRESHOLD and vy > LINEAR_SLOW_THRESHOLD:
-        return 'cheo_tt', speed
-    if vx < -LINEAR_SLOW_THRESHOLD and vy < -LINEAR_SLOW_THRESHOLD:
-        return 'cheo_tp', speed
-    if vx > LINEAR_SLOW_THRESHOLD:
-        return 'lui', speed
-    if vx < -LINEAR_SLOW_THRESHOLD:
-        return 'tien', speed
+
     if vy > LINEAR_SLOW_THRESHOLD:
         return 'trai', speed
     if vy < -LINEAR_SLOW_THRESHOLD:
