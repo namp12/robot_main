@@ -143,6 +143,15 @@ class SerialNode(Node):
         self._telemetry_enabled = False
         self.get_logger().warn('Serial disconnected.')
 
+    def _on_speed_limit(self, msg: Int32):
+        try:
+            val = int(msg.data)
+            limit_val = max(20, min(100, val))
+            self.global_speed_factor = limit_val / 100.0
+            self.get_logger().info(f"⚡ [SPEED LIMIT UPDATED] {limit_val}% (Factor: {self.global_speed_factor:.2f})")
+        except Exception as e:
+            self.get_logger().error(f"Failed to parse speed limit: {e}")
+
     def _on_data_received(self, data: str):
         self.get_logger().debug(f'[RX]\n{data}')
         msg = String()
