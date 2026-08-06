@@ -102,7 +102,18 @@ def _play_tts_audio(text: str):
         with open(mp3_path, 'wb') as f:
             f.write(combined_mp3)
 
-        # Convert MP3 to 22.05kHz 16-bit Mono WAV for PulseAudio smooth playback
+        # Tự động tìm Bluetooth PulseAudio Sink (LA16) và đặt làm mặc định
+        try:
+            pactl_out = subprocess.check_output(["pactl", "list", "short", "sinks"], text=True)
+            for line in pactl_out.splitlines():
+                if "bluez" in line.lower() or "la16" in line.lower() or "dc_a6_32" in line.lower():
+                    sink_name = line.split()[1]
+                    subprocess.run(["pactl", "set-default-sink", sink_name], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    break
+        except Exception:
+            pass
+
+        # Convert MP3 to 22.05kHz 16-bit Mono WAV for PulseAudio / ALSA smooth playback
         try:
             subprocess.run(["ffmpeg", "-y", "-i", mp3_path, "-ar", "22050", "-ac", "1", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             if os.path.exists(wav_path):
@@ -110,6 +121,9 @@ def _play_tts_audio(text: str):
                 if res.returncode == 0:
                     return
                 res = subprocess.run(["aplay", "-D", "default", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                if res.returncode == 0:
+                    return
+                res = subprocess.run(["aplay", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 if res.returncode == 0:
                     return
         except Exception:
@@ -120,7 +134,8 @@ def _play_tts_audio(text: str):
             ["mpg123", "-b", "2048", "-q", mp3_path],
             ["mpv", "--no-video", "--ao=pulse", mp3_path],
             ["ffplay", "-nodisp", "-autoexit", mp3_path],
-            ["cvlc", "--play-and-exit", mp3_path]
+            ["cvlc", "--play-and-exit", mp3_path],
+            ["espeak", "-v", "vi", text]
         ]
         for cmd in players:
             try:
@@ -131,6 +146,10 @@ def _play_tts_audio(text: str):
                 continue
     except Exception as e:
         logger.error(f"TTS playback error on Pi: {e}")
+        try:
+            subprocess.run(["espeak", "-v", "vi", text], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        except Exception:
+            pass
 
 
 class Handler(BaseHTTPRequestHandler):
