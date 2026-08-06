@@ -7,7 +7,7 @@ package_name = 'robot_ai'
 setup(
     name=package_name,
     version='1.0.0',
-    packages=[package_name, package_name + '.autonomy', package_name + '.mode_manager'],
+    packages=[package_name, package_name + '.autonomy', package_name + '.mode_manager', package_name + '.mode'],
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
