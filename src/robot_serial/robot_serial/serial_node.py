@@ -3,7 +3,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Imu
-from std_msgs.msg import Float32, String, Float32MultiArray
+from std_msgs.msg import Float32, String, Float32MultiArray, Int32
 
 from robot_serial.serial_manager import SerialManager
 from robot_serial.sensor_parser import parse_sensor_line
