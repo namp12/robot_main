@@ -234,16 +234,16 @@ class SerialNode(Node):
             return ""
 
         vietnamese_map = {
-            "đi thẳng": "tien 70",
-            "đi lùi": "lui 70",
-            "rẽ trái": "trai 60",
-            "rẽ phải": "phai 60",
-            "xoay trái": "xoay_trai 60",
-            "xoay phải": "xoay_phai 60",
-            "chéo trái": "cheo_tt 70",
-            "chéo phải": "cheo_tp 70",
-            "lùi chéo trái": "cheo_st 70",
-            "lùi chéo phải": "cheo_sp 70",
+            "đi thẳng": "tien",
+            "đi lùi": "lui",
+            "rẽ trái": "trai",
+            "rẽ phải": "phai",
+            "xoay trái": "xoay_trai",
+            "xoay phải": "xoay_phai",
+            "chéo trái": "cheo_tt",
+            "chéo phải": "cheo_tp",
+            "lùi chéo trái": "cheo_st",
+            "lùi chéo phải": "cheo_sp",
             "dừng": "dung",
             "dừng lại": "dung"
         }
@@ -251,7 +251,7 @@ class SerialNode(Node):
             raw = vietnamese_map[raw.lower()]
             parts = raw.split()
             cmd = parts[0].lower()
-            speed_str = parts[1] if len(parts) > 1 else "70"
+            speed_str = parts[1] if len(parts) > 1 else "180"
 
         if cmd in ["mode_manual", "mode_auto", "mode_ros", "mode_ros2"]:
             return f"mode_{cmd.replace('mode_', '')}"

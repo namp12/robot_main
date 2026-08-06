@@ -131,9 +131,9 @@ class FollowPersonEngine:
     - Distance < 0.6m -> Speed = 0 (HARD SAFETY STOP)
     """
 
-    FORWARD_MAX = 70
-    BACKWARD_MAX = 50
-    TURN_MAX = 40
+    FORWARD_MAX = 200
+    BACKWARD_MAX = 150
+    TURN_MAX = 120
 
     def __init__(self):
         self.state = FollowPersonFSMState.IDLE
@@ -193,25 +193,25 @@ class FollowPersonEngine:
             time_missing = (now - self.last_target_seen_ts) if self.last_target_seen_ts > 0 else 999.0
 
             if time_missing < 2.0:
-                # < 2s -> Light search spin (20°/s)
+                # < 2s -> Light search spin
                 self.state = FollowPersonFSMState.LOST
-                return "xoay_trai 20", {
+                return "xoay_trai 60", {
                     "state": self.state.name,
                     "tracking_id": self.target_lock.locked_target_id,
-                    "target_state": "LOST_LIGHT_SEARCH_20DEG",
-                    "current_speed": 20,
+                    "target_state": "LOST_LIGHT_SEARCH",
+                    "current_speed": 60,
                     "obstacle_distance_m": round(min_obstacle_dist, 2),
                     "follow_state": self.state.name,
                     "safety_status": "SAFE"
                 }
             elif 2.0 <= time_missing <= 5.0:
-                # 2~5s -> Full 360 scan spin (Turn Max 35)
+                # 2~5s -> Full 360 scan spin
                 self.state = FollowPersonFSMState.SEARCH
-                return "xoay_trai 35", {
+                return "xoay_trai 90", {
                     "state": self.state.name,
                     "tracking_id": self.target_lock.locked_target_id,
                     "target_state": "SEARCH_360_SCAN",
-                    "current_speed": 35,
+                    "current_speed": 90,
                     "obstacle_distance_m": round(min_obstacle_dist, 2),
                     "follow_state": self.state.name,
                     "safety_status": "SAFE"
@@ -242,36 +242,36 @@ class FollowPersonEngine:
         # Distance Estimation
         estimated_dist = self.distance_estimator.estimate_distance(bbox)
 
-        # 3. STEERING SPEED COMPUTATION (Turn Max = 40)
+        # 3. STEERING SPEED COMPUTATION (Turn Max = 120)
         abs_err = abs(self.filtered_norm_error)
         turn_speed = 0
         if abs_err < 0.08:
             turn_speed = 0   # Steering Deadband (No jitter, 0 angular)
         elif abs_err < 0.25:
-            turn_speed = 15  # Chậm mượt
+            turn_speed = 45  # Chậm mượt
         elif abs_err < 0.50:
-            turn_speed = 25  # Vừa
+            turn_speed = 85  # Vừa
         else:
-            turn_speed = 40  # Max Turn Speed = 40
+            turn_speed = 120 # Turn Speed = 120
 
         turn_speed = min(self.TURN_MAX, turn_speed)
 
-        # 4. LINEAR SPEED COMPUTATION (Linear Ramp Down, Forward Max = 70, Backward Max = 50)
+        # 4. LINEAR SPEED COMPUTATION (Linear Ramp Down, Forward Max = 200, Backward Max = 150)
         linear_speed = 0
         is_too_close_hard_stop = False
 
         if estimated_dist > 2.50:
-            linear_speed = 70
+            linear_speed = 180
         elif estimated_dist > 2.00:
-            linear_speed = 60
+            linear_speed = 140
         elif estimated_dist > 1.50:
-            linear_speed = 45
+            linear_speed = 100
         elif estimated_dist > 1.20:
-            linear_speed = 25
+            linear_speed = 60
         elif estimated_dist >= 0.80:
             linear_speed = 0  # Target Deadband (0.8m ~ 1.2m): Stand Still
         elif estimated_dist >= 0.60:
-            linear_speed = 35  # Lùi nhẹ
+            linear_speed = 80  # Lùi nhẹ
         else:
             # Distance < 0.6m -> HARD SAFETY STOP (Do NOT move into person)
             linear_speed = 0
