@@ -8,7 +8,7 @@ class AdaptiveCurveSpeedController:
     Prevents jerky motor motion and wheel slipping during turns.
     """
 
-    def __init__(self, max_linear_speed: float = 0.35, max_angular_speed: float = 0.65):
+    def __init__(self, max_linear_speed: float = 0.15, max_angular_speed: float = 0.35):
         self.max_linear_speed = max_linear_speed
         self.max_angular_speed = max_angular_speed
 

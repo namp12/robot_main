@@ -12,12 +12,12 @@ class DWACurvePlanner:
 
     def __init__(
         self,
-        max_speed: float = 0.35,
-        max_yaw_rate: float = 0.65,
-        max_accel: float = 0.20,
-        max_dyaw_rate: float = 0.40,
-        v_resolution: float = 0.05,
-        w_resolution: float = 0.08,
+        max_speed: float = 0.15,
+        max_yaw_rate: float = 0.35,
+        max_accel: float = 0.12,
+        max_dyaw_rate: float = 0.25,
+        v_resolution: float = 0.03,
+        w_resolution: float = 0.05,
         predict_time: float = 2.0,
         heading_cost_gain: float = 0.15,
         clearance_cost_gain: float = 1.0,

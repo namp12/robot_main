@@ -59,9 +59,9 @@ class FreeSpaceCorridorPlanner:
             "sector_distances": sector_distances
         }
 
-    def compute_corridor_cmd_vel(self, scan_ranges: List[float], max_linear: float = 0.35, max_angular: float = 0.65) -> Tuple[float, float]:
+    def compute_corridor_cmd_vel(self, scan_ranges: List[float], max_linear: float = 0.15, max_angular: float = 0.35) -> Tuple[float, float]:
         """
-        Compute smooth velocity trajectory (linear_x, angular_z) following the best open corridor.
+        Compute smooth velocity trajectory (linear_x, angular_z) following the best open corridor (Ultra-safe slow speed for small spaces).
         """
         analysis = self.analyze_corridors(scan_ranges)
         if not analysis["corridor_found"]:
