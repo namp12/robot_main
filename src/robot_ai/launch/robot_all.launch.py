@@ -51,10 +51,19 @@ def generate_launch_description():
         output='screen'
     )
 
+    autonomy_node = Node(
+        package='robot_ai',
+        executable='autonomy_node',
+        name='robot_autonomy_node',
+        output='screen',
+        parameters=[{'simulation': False, 'autonomy_enabled': True}]
+    )
+
     return LaunchDescription([
         http_bridge_node,
         command_node,
         serial_node,
         video_stream_server,
         audio_stream_server,
+        autonomy_node,
     ])

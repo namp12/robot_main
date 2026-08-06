@@ -7,7 +7,7 @@ package_name = 'robot_ai'
 setup(
     name=package_name,
     version='1.0.0',
-    packages=[package_name],
+    packages=[package_name, package_name + '.autonomy'],
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -34,8 +34,8 @@ setup(
         'command_node = robot_ai.command_node:main',
         'http_bridge_node = robot_ai.http_bridge_node:main',
         'video_stream_server = robot_ai.video_stream_server:main',
-           'audio_stream_server = robot_ai.audio_stream_server:main',
+        'audio_stream_server = robot_ai.audio_stream_server:main',
+        'autonomy_node = robot_ai.autonomy_node:main',
     ]
   }
 )
-
