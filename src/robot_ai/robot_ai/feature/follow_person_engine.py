@@ -4,7 +4,7 @@ import logging
 from enum import Enum, auto
 from typing import Dict, Any, Optional, Tuple, List
 
-logger = logging.getLogger("FollowPersonEngineV31")
+logger = logging.getLogger("FollowPersonEngineV23")
 
 
 class FollowPersonFSMState(Enum):
@@ -19,9 +19,9 @@ class FollowPersonFSMState(Enum):
     STOP = auto()
 
 
-class TargetLockManagerV31:
+class TargetLockManagerV23:
     """
-    Manages Person Target Lock for FOLLOW_PERSON V3.1.
+    Manages Person Target Lock for FOLLOW_PERSON V2.3.
     Locks EXCLUSIVELY to ONE person tracking ID (e.g. ID = 3).
     Will NOT switch targets automatically unless target is lost for > 5.0 seconds.
     """
@@ -38,7 +38,7 @@ class TargetLockManagerV31:
         if not person_detections:
             if self.locked_target_id is not None:
                 if (now - self.last_seen_timestamp) > self.lost_timeout_sec:
-                    logger.info(f"🔒 [TARGET LOCK V3.1] Target ID {self.locked_target_id} lost > {self.lost_timeout_sec}s. Unlocking.")
+                    logger.info(f"🔒 [TARGET LOCK V2.3] Target ID {self.locked_target_id} lost > {self.lost_timeout_sec}s. Unlocking.")
                     self.locked_target_id = None
             return None
 
@@ -51,7 +51,7 @@ class TargetLockManagerV31:
 
             # Locked target missing in current frame
             if (now - self.last_seen_timestamp) > self.lost_timeout_sec:
-                logger.info(f"🔒 [TARGET LOCK V3.1] Target ID {self.locked_target_id} disappeared > {self.lost_timeout_sec}s. Unlocking.")
+                logger.info(f"🔒 [TARGET LOCK V2.3] Target ID {self.locked_target_id} disappeared > {self.lost_timeout_sec}s. Unlocking.")
                 self.locked_target_id = None
             else:
                 return None
@@ -62,7 +62,7 @@ class TargetLockManagerV31:
             track_id = best_person.get("track_id", 3)
             self.locked_target_id = track_id
             self.last_seen_timestamp = now
-            logger.info(f"🔒 [TARGET LOCK V3.1] Locked exclusively to Target ID: {self.locked_target_id}")
+            logger.info(f"🔒 [TARGET LOCK V2.3] Locked exclusively to Target ID: {self.locked_target_id}")
             return best_person
 
         return None
@@ -72,10 +72,10 @@ class TargetLockManagerV31:
         self.last_seen_timestamp = 0.0
 
 
-class DistanceEstimatorV31:
+class DistanceEstimatorV23:
     """
     Estimates target distance using Bounding Box Height + Width + Exponential Low-Pass Filter.
-    Target Zone: 1.2m (Deadband: 1.0m ~ 1.4m).
+    Target Zone: 0.8m ~ 1.2m (Optimal ~1.0m).
     """
 
     def __init__(self, frame_height: int = 480, frame_width: int = 640):
@@ -92,8 +92,8 @@ class DistanceEstimatorV31:
         height_ratio = bh / float(self.frame_height)
         width_ratio = bw / float(self.frame_width)
 
-        # Empirical calibration for human height (~1.7m) to target ~1.2m
-        raw_dist = 1.60 / (height_ratio + 0.1 * width_ratio)
+        # Empirical calibration for human height (~1.7m) to target ~1.0m
+        raw_dist = 1.45 / (height_ratio + 0.1 * width_ratio)
 
         if self.filtered_dist is None:
             self.filtered_dist = raw_dist
@@ -105,47 +105,46 @@ class DistanceEstimatorV31:
 
 class FollowPersonEngine:
     """
-    Commercial-Grade Behavior Engine for FOLLOW_PERSON V3.1.
-    Strictly isolated: Camera AI + YOLO11 + Person Tracker + Dual Parallel Turn/Distance PID + LiDAR Safety.
+    Commercial-Grade Behavior Engine for FOLLOW_PERSON V2.3 (Behavior Fix & Stable Tracking).
+    Strictly isolated: Camera AI + YOLO11 + Person Tracker + Dual Steering/Distance PID + LiDAR Safety.
     
-    Hard Speed Limit: MAX SPEED = 70 (NEVER EXCEEDS 70 IN ANY SITUATION).
+    Speed Limits:
+    - FORWARD_MAX = 70
+    - BACKWARD_MAX = 50
+    - TURN_MAX = 40
     
-    Rules:
-    1. Turn Controller:
-       - pixel_error_x = center_person - center_camera (center_camera = 320 for 640px)
-       - |pixel_error_x| <= 30 px -> Straight (0 angular)
-       - pixel_error_x < -30 px -> Turn Left
-       - pixel_error_x > 30 px -> Turn Right
-       - Priority Rule: If |pixel_error_x| > 115 px (~ angle > 20°), ONLY ROTATE IN PLACE (0 linear speed).
+    Steering Error & Deadband:
+    - norm_error_x = (center_x - center_camera) / (frame_w / 2.0)
+    - |norm_error_x| < 0.08 -> Steering Deadband (Turn = 0, NO jitter)
+    - 0.08 <= |norm_error_x| < 0.25 -> Turn = 15
+    - 0.25 <= |norm_error_x| < 0.50 -> Turn = 25
+    - |norm_error_x| >= 0.50 -> Turn = 40
+    - Priority Rule: If |norm_error_x| > 0.35, ONLY ROTATE IN PLACE (linear = 0).
     
-    2. Distance Controller:
-       - Target Distance = 1.2m (Deadband: 1.0m ~ 1.4m -> 0 linear speed, Stand Still).
-       - Distance > 1.4m -> Move Forward
-       - Distance < 1.0m -> Move Backward
-    
-    3. Dual Parallel Steering while Backing Up:
-       - While backing up (Distance < 1.0m), Turn Controller remains 100% ACTIVE.
-       - Close + Left -> cheo_st (Backward + Turn Left)
-       - Close + Right -> cheo_sp (Backward + Turn Right)
-       - Close + Center -> lui (Backward Straight)
-    
-    4. Smooth Speed Scaling (Hard capped <= 70):
-       - Linear Speed: Far (>2.2m) -> 70 | Mid (1.8-2.2m) -> 40 | Near (1.4-1.8m) -> 20 | Deadband (1.0-1.4m) -> 0
-       - Angular Speed: Large (>115px) -> 70 | Mid (60-115px) -> 45 | Small (30-60px) -> 20 | Center (<=30px) -> 0
+    Distance Control & Linear Speed Ramp Down:
+    - Distance > 2.5m -> Speed = 70
+    - 2.0m < Distance <= 2.5m -> Speed = 60
+    - 1.5m < Distance <= 2.0m -> Speed = 45
+    - 1.2m < Distance <= 1.5m -> Speed = 25
+    - 0.8m <= Distance <= 1.2m -> Speed = 0 (Stand Still, Target Deadband)
+    - 0.6m <= Distance < 0.8m -> Speed = 35 (Backward)
+    - Distance < 0.6m -> Speed = 0 (HARD SAFETY STOP)
     """
 
-    MAX_SPEED_CAP = 70  # ABSOLUTE HARD SPEED LIMIT
+    FORWARD_MAX = 70
+    BACKWARD_MAX = 50
+    TURN_MAX = 40
 
     def __init__(self):
         self.state = FollowPersonFSMState.IDLE
-        self.target_lock = TargetLockManagerV31(lost_timeout_sec=5.0)
-        self.distance_estimator = DistanceEstimatorV31()
+        self.target_lock = TargetLockManagerV23(lost_timeout_sec=5.0)
+        self.distance_estimator = DistanceEstimatorV23()
 
         self.last_target_seen_ts: float = 0.0
         self.safety_stop_active: bool = False
         self.safety_clearance_hysteresis_m: float = 0.50
 
-        self.filtered_pixel_error: float = 0.0
+        self.filtered_norm_error: float = 0.0
         self.alpha_error = 0.40  # Anti-jitter low-pass filter
 
     def process_cycle(self, perception_data: Dict[str, Any]) -> Tuple[str, Dict[str, Any]]:
@@ -194,37 +193,37 @@ class FollowPersonEngine:
             time_missing = (now - self.last_target_seen_ts) if self.last_target_seen_ts > 0 else 999.0
 
             if time_missing < 2.0:
-                # < 2s -> Keep Target & Stand Still Wait
+                # < 2s -> Light search spin (20°/s)
                 self.state = FollowPersonFSMState.LOST
-                return "dung", {
+                return "xoay_trai 20", {
                     "state": self.state.name,
                     "tracking_id": self.target_lock.locked_target_id,
-                    "target_state": "LOST_SHORT_WAIT",
-                    "current_speed": 0,
+                    "target_state": "LOST_LIGHT_SEARCH_20DEG",
+                    "current_speed": 20,
                     "obstacle_distance_m": round(min_obstacle_dist, 2),
                     "follow_state": self.state.name,
                     "safety_status": "SAFE"
                 }
             elif 2.0 <= time_missing <= 5.0:
-                # 2~5s -> Slow Search Spin (Hard capped 45)
+                # 2~5s -> Full 360 scan spin (Turn Max 35)
                 self.state = FollowPersonFSMState.SEARCH
-                return "xoay_trai 45", {
+                return "xoay_trai 35", {
                     "state": self.state.name,
                     "tracking_id": self.target_lock.locked_target_id,
-                    "target_state": "SEARCH_SPIN",
-                    "current_speed": 45,
+                    "target_state": "SEARCH_360_SCAN",
+                    "current_speed": 35,
                     "obstacle_distance_m": round(min_obstacle_dist, 2),
                     "follow_state": self.state.name,
                     "safety_status": "SAFE"
                 }
             else:
-                # > 5s -> Cancel Target & STOP
+                # > 5s -> Cancel Target & STOP (IDLE)
                 self.state = FollowPersonFSMState.STOP
                 self.target_lock.release_lock()
                 return "dung", {
                     "state": self.state.name,
                     "tracking_id": None,
-                    "target_state": "TARGET_RELEASED",
+                    "target_state": "TARGET_RELEASED_IDLE",
                     "current_speed": 0,
                     "obstacle_distance_m": round(min_obstacle_dist, 2),
                     "follow_state": self.state.name,
@@ -236,102 +235,121 @@ class FollowPersonEngine:
         center_x = (bbox[0] + bbox[2]) / 2.0
         center_camera = frame_w / 2.0
 
-        # Pixel Error & Anti-Jitter Low-Pass Filter
-        raw_pixel_error = center_x - center_camera
-        self.filtered_pixel_error = (self.alpha_error * raw_pixel_error) + ((1.0 - self.alpha_error) * self.filtered_pixel_error)
+        # Normalized Error [-1.0 to +1.0] and Anti-Jitter Low-Pass Filter
+        raw_norm_error = (center_x - center_camera) / (frame_w / 2.0) if frame_w > 0 else 0.0
+        self.filtered_norm_error = (self.alpha_error * raw_norm_error) + ((1.0 - self.alpha_error) * self.filtered_norm_error)
 
         # Distance Estimation
         estimated_dist = self.distance_estimator.estimate_distance(bbox)
 
-        # 3. ANGULAR SPEED COMPUTATION (Scaled 0 -> 70 max)
-        abs_err = abs(self.filtered_pixel_error)
-        angular_speed = 0
-        if abs_err > 115:
-            angular_speed = 70  # Lệch nhiều (> 20°)
-        elif abs_err > 60:
-            angular_speed = 45  # Lệch vừa
-        elif abs_err > 30:
-            angular_speed = 20  # Lệch ít
+        # 3. STEERING SPEED COMPUTATION (Turn Max = 40)
+        abs_err = abs(self.filtered_norm_error)
+        turn_speed = 0
+        if abs_err < 0.08:
+            turn_speed = 0   # Steering Deadband (No jitter, 0 angular)
+        elif abs_err < 0.25:
+            turn_speed = 15  # Chậm mượt
+        elif abs_err < 0.50:
+            turn_speed = 25  # Vừa
         else:
-            angular_speed = 0   # Trong deadband 30px
+            turn_speed = 40  # Max Turn Speed = 40
 
-        angular_speed = min(self.MAX_SPEED_CAP, angular_speed)
+        turn_speed = min(self.TURN_MAX, turn_speed)
 
-        # 4. LINEAR SPEED COMPUTATION (Scaled 0 -> 70 max)
+        # 4. LINEAR SPEED COMPUTATION (Linear Ramp Down, Forward Max = 70, Backward Max = 50)
         linear_speed = 0
-        if estimated_dist > 1.40:
-            if estimated_dist > 2.20:
-                linear_speed = 70
-            elif estimated_dist > 1.80:
-                linear_speed = 40
-            else:
-                linear_speed = 20
-        elif estimated_dist < 1.00:
-            if estimated_dist < 0.60:
-                linear_speed = 50
-            else:
-                linear_speed = 30
+        is_too_close_hard_stop = False
+
+        if estimated_dist > 2.50:
+            linear_speed = 70
+        elif estimated_dist > 2.00:
+            linear_speed = 60
+        elif estimated_dist > 1.50:
+            linear_speed = 45
+        elif estimated_dist > 1.20:
+            linear_speed = 25
+        elif estimated_dist >= 0.80:
+            linear_speed = 0  # Target Deadband (0.8m ~ 1.2m): Stand Still
+        elif estimated_dist >= 0.60:
+            linear_speed = 35  # Lùi nhẹ
         else:
-            linear_speed = 0  # Target Deadband (1.0m ~ 1.4m): Stand Still
+            # Distance < 0.6m -> HARD SAFETY STOP (Do NOT move into person)
+            linear_speed = 0
+            is_too_close_hard_stop = True
 
-        linear_speed = min(self.MAX_SPEED_CAP, linear_speed)
+        if estimated_dist > 1.20:
+            linear_speed = min(self.FORWARD_MAX, linear_speed)
+        elif estimated_dist < 0.80:
+            linear_speed = min(self.BACKWARD_MAX, linear_speed)
 
-        # 5. PRIORITY & DUAL PARALLEL MOTION EXECUTION
-        is_left = self.filtered_pixel_error < -30
-        is_right = self.filtered_pixel_error > 30
-        is_large_angle = abs_err > 115  # Angle > 20°
+        # 5. PRIORITY & MOTION MATRIX EXECUTION
+        is_left = self.filtered_norm_error < -0.08
+        is_right = self.filtered_norm_error > 0.08
+        is_large_angle = abs_err > 0.35  # Angle deviation > 0.35
 
         cmd = "dung"
-        target_state_str = "HOLD_DISTANCE_PERFECT"
+        target_state_str = "STAND_STILL_DEADBAND"
 
-        # PRIORITY 1: Large Angle Deviation (> 20°) -> ONLY ROTATE IN PLACE
-        if is_large_angle:
+        # Check Hard Safety Stop for Distance < 0.6m
+        if is_too_close_hard_stop:
+            self.state = FollowPersonFSMState.KEEP_DISTANCE
+            cmd = "dung"
+            target_state_str = "HARD_STOP_TOO_CLOSE"
+        # Priority 1: Large Angle Deviation (|error| > 0.35) -> ONLY ROTATE IN PLACE
+        elif is_large_angle:
             self.state = FollowPersonFSMState.SEARCH
-            cmd = f"trai {angular_speed}" if is_left else f"phai {angular_speed}"
+            cmd = f"trai {turn_speed}" if is_left else f"phai {turn_speed}"
             target_state_str = f"PRIORITY_ROTATE_{'LEFT' if is_left else 'RIGHT'}"
         else:
-            # PRIORITY 2: Aligned within 20° -> DUAL PARALLEL MOTION
-            if estimated_dist > 1.40:
+            # Priority 2: Aligned within 0.35 -> Motion Execution
+            if estimated_dist > 1.20:
                 self.state = FollowPersonFSMState.FOLLOW
                 if is_left:
-                    cmd = f"cheo_tt {max(linear_speed, angular_speed)}"
+                    cmd = f"cheo_tt {max(linear_speed, turn_speed)}"
                     target_state_str = "FORWARD_LEFT"
                 elif is_right:
-                    cmd = f"cheo_tp {max(linear_speed, angular_speed)}"
+                    cmd = f"cheo_tp {max(linear_speed, turn_speed)}"
                     target_state_str = "FORWARD_RIGHT"
                 else:
                     cmd = f"tien {linear_speed}"
                     target_state_str = "FORWARD_STRAIGHT"
-            elif estimated_dist < 1.00:
+            elif estimated_dist < 0.80:
                 self.state = FollowPersonFSMState.KEEP_DISTANCE
                 if is_left:
-                    cmd = f"cheo_st {max(linear_speed, angular_speed)}"
+                    cmd = f"cheo_st {max(linear_speed, turn_speed)}"
                     target_state_str = "BACKWARD_LEFT"
                 elif is_right:
-                    cmd = f"cheo_sp {max(linear_speed, angular_speed)}"
+                    cmd = f"cheo_sp {max(linear_speed, turn_speed)}"
                     target_state_str = "BACKWARD_RIGHT"
                 else:
                     cmd = f"lui {linear_speed}"
                     target_state_str = "BACKWARD_STRAIGHT"
             else:
-                # Deadband 1.0m ~ 1.4m (Target ~1.2m): Hold distance, rotate in place if off-center
+                # Deadband 0.8m ~ 1.2m (Target ~1.0m): Hold distance, rotate in place if off-center
                 self.state = FollowPersonFSMState.KEEP_DISTANCE
                 if is_left:
-                    cmd = f"trai {angular_speed}"
+                    cmd = f"trai {turn_speed}"
                     target_state_str = "ROTATE_LEFT_DEADBAND"
                 elif is_right:
-                    cmd = f"phai {angular_speed}"
+                    cmd = f"phai {turn_speed}"
                     target_state_str = "ROTATE_RIGHT_DEADBAND"
                 else:
                     cmd = "dung"
                     target_state_str = "HOLD_DISTANCE_PERFECT"
 
-        # 6. HARD SPEED CAP SANITY CHECK (NEVER EXCEED 70)
+        # 6. HARD SPEED CAP SANITY CHECK (Forward <= 70, Backward <= 50, Turn <= 40)
         parts = cmd.split()
         if len(parts) > 1:
             try:
-                spd_val = min(self.MAX_SPEED_CAP, int(parts[1]))
-                cmd = f"{parts[0]} {spd_val}"
+                raw_spd = int(parts[1])
+                cap = self.FORWARD_MAX
+                if parts[0] in ["lui", "cheo_st", "cheo_sp"]:
+                    cap = self.BACKWARD_MAX
+                elif parts[0] in ["trai", "phai", "xoay_trai", "xoay_phai"]:
+                    cap = self.TURN_MAX
+                
+                final_spd = min(cap, max(0, raw_spd))
+                cmd = f"{parts[0]} {final_spd}"
             except Exception:
                 pass
 
@@ -339,10 +357,12 @@ class FollowPersonEngine:
             "state": self.state.name,
             "tracking_id": self.target_lock.locked_target_id,
             "distance_m": estimated_dist,
-            "pixel_error_x": round(self.filtered_pixel_error, 1),
+            "norm_error_x": round(self.filtered_norm_error, 2),
             "target_state": target_state_str,
             "current_speed": cmd,
-            "max_speed_cap": self.MAX_SPEED_CAP,
+            "forward_max": self.FORWARD_MAX,
+            "backward_max": self.BACKWARD_MAX,
+            "turn_max": self.TURN_MAX,
             "obstacle_distance_m": round(min_obstacle_dist, 2),
             "follow_state": self.state.name,
             "safety_status": "SAFE"
@@ -355,4 +375,4 @@ class FollowPersonEngine:
         self.target_lock.release_lock()
         self.safety_stop_active = False
         self.last_target_seen_ts = 0.0
-        self.filtered_pixel_error = 0.0
+        self.filtered_norm_error = 0.0
