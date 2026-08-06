@@ -59,24 +59,44 @@ class ModeManagerNode(Node):
 
         if any(w in cmd_text for w in ["dừng khẩn cấp", "khẩn cấp", "emergency"]):
             self.manager.trigger_emergency_stop()
+            from robot_ai.mode.mode_activation_bridge import mode_activation_bridge
+            mode_activation_bridge.activate_mode(RobotMode.EMERGENCY_STOP, source="ROS_COMMAND")
             self.get_logger().error("EMERGENCY STOP TRIGGERED VIA COMMAND")
+            return
         elif "khôi phục" in cmd_text or "reset emergency" in cmd_text:
             self.manager.reset_emergency_stop()
+            from robot_ai.mode.mode_activation_bridge import mode_activation_bridge
+            mode_activation_bridge.activate_mode(RobotMode.MANUAL, source="ROS_COMMAND")
             self.get_logger().info("EMERGENCY STOP RESET TO MANUAL")
-        elif "chế độ tự hành" in cmd_text or "mode auto" in cmd_text or "explore" in cmd_text:
-            self.manager.switch_mode(RobotMode.AUTO_EXPLORE)
-        elif "chế độ lái tay" in cmd_text or "mode manual" in cmd_text:
-            self.manager.switch_mode(RobotMode.MANUAL)
-        elif "bám theo" in cmd_text or "follow person" in cmd_text:
-            self.manager.switch_mode(RobotMode.FOLLOW_PERSON)
-        elif "trợ lý giọng nói" in cmd_text or "voice assistant" in cmd_text:
-            self.manager.switch_mode(RobotMode.VOICE_ASSISTANT)
+            return
+
+        target_mode = None
+        if cmd_text.startswith("mode "):
+            mode_str = cmd_text.replace("mode ", "").strip()
+            target_mode = self._parse_mode_string(mode_str)
+        elif "chế độ tự hành" in cmd_text or "explore" in cmd_text:
+            target_mode = RobotMode.AUTO_EXPLORE
+        elif "chế độ lái tay" in cmd_text or "lái tay" in cmd_text:
+            target_mode = RobotMode.MANUAL
+        elif "bám theo" in cmd_text or "follow" in cmd_text:
+            target_mode = RobotMode.FOLLOW_PERSON
+        elif "trợ lý" in cmd_text or "voice" in cmd_text:
+            target_mode = RobotMode.VOICE_ASSISTANT
+
+        if target_mode:
+            ok, reason = self.manager.switch_mode(target_mode)
+            if ok:
+                from robot_ai.mode.mode_activation_bridge import mode_activation_bridge
+                mode_activation_bridge.activate_mode(target_mode, source="ROS_COMMAND")
+                self.get_logger().info(f"🟢 Mode switched to {target_mode.name}: {reason}")
 
     def _on_set_mode_topic(self, msg: String):
         """Direct topic handler for mode switching."""
         target_mode = self._parse_mode_string(msg.data)
         success, reason = self.manager.switch_mode(target_mode)
         if success:
+            from robot_ai.mode.mode_activation_bridge import mode_activation_bridge
+            mode_activation_bridge.activate_mode(target_mode, source="ROS_TOPIC")
             self.get_logger().info(f"Mode set to {target_mode.name}: {reason}")
         else:
             self.get_logger().warn(f"Failed to set mode {target_mode.name}: {reason}")
