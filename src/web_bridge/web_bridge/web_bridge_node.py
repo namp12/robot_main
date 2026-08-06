@@ -201,8 +201,11 @@ class WebBridgeNode(Node):
                 self._serial_tx_pub.publish(out)
         elif msg_type == 'move':
             direction = str(data.get('direction', '')).lower()
-            speed = float(data.get('speed', 150.0))
-            scale = max(0.1, min(speed / 150.0, 1.7))
+            speed = float(data.get('speed', 70.0))
+            if speed <= 100.0:
+                scale = max(0.2, min(1.0, speed / 100.0))
+            else:
+                scale = max(0.2, min(1.0, speed / 255.0))
 
             twist = Twist()
             if direction in ['tien', 'forward']:

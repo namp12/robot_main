@@ -258,14 +258,15 @@ class SerialNode(Node):
         if cmd.startswith("mode"):
             return raw
 
-        raw_speed = int(speed_str) if speed_str.isdigit() else 150
-        # Preserve explicit BTS7960 PWM values (65..245 PWM) from Web UI & API
+        raw_speed = int(speed_str) if speed_str.isdigit() else 70
+        # Convert percentage (20..100%) or preserve explicit PWM (101..255)
         if raw_speed > 0:
-            if raw_speed >= 60:
-                scaled_speed = raw_speed
+            if raw_speed <= 100:
+                # Scaled percentage input (20..100%) -> linear BTS7960 PWM range (65..255)
+                scaled_speed = int(65 + (raw_speed - 20) * (255 - 65) / 80.0) if raw_speed >= 20 else int(raw_speed * 2.55)
             else:
-                # Scaled percentage input (20..100) -> linear BTS7960 PWM range (65..245)
-                scaled_speed = int(65 + (raw_speed - 20) * (245 - 65) / 80.0) if raw_speed >= 20 else int(raw_speed * 2.55)
+                # Explicit PWM value (101..255)
+                scaled_speed = raw_speed
             scaled_speed = max(20, min(255, scaled_speed))
         else:
             scaled_speed = 0
@@ -378,8 +379,8 @@ class SerialNode(Node):
             if speed <= 0 or direction == 'STOP':
                 payload = 'STOP'
             else:
-                # Apply speed factor and global speed limit factor
-                adjusted_speed = int(speed * speed_factor * self.global_speed_factor)
+                # Apply obstacle safety speed factor (cmd_vel linear velocity already contains target speed scale)
+                adjusted_speed = int(speed * speed_factor)
                 adjusted_speed = max(10, min(adjusted_speed, 255))
                 
                 if speed_factor < 1.0:
