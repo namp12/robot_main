@@ -49,22 +49,25 @@ class StandardModeFeature(FeatureBase):
         return True
 
 
+from robot_ai.feature.feature_v2_implementations import FollowPersonFeature, AutoExploreFeature
+
+
 def create_all_default_features() -> Dict[str, FeatureBase]:
     """Factory creating feature implementation instances for all 14 modes."""
-    mapping = {
-        "MANUAL": RobotMode.MANUAL,
-        "SAFE_MANUAL": RobotMode.SAFE_MANUAL,
-        "FOLLOW_PERSON": RobotMode.FOLLOW_PERSON,
-        "FOLLOW_TARGET": RobotMode.FOLLOW_TARGET,
-        "AUTO_EXPLORE": RobotMode.AUTO_EXPLORE,
-        "GO_TO_GOAL": RobotMode.GO_TO_GOAL,
-        "PATROL": RobotMode.PATROL,
-        "DELIVERY": RobotMode.DELIVERY,
-        "RETURN_HOME": RobotMode.RETURN_HOME,
-        "INSPECTION": RobotMode.INSPECTION,
-        "VOICE_ASSISTANT": RobotMode.VOICE_ASSISTANT,
-        "DOCKING": RobotMode.DOCKING,
-        "SIMULATION": RobotMode.SIMULATION,
-        "EMERGENCY_STOP": RobotMode.EMERGENCY_STOP,
+    default_features: Dict[str, FeatureBase] = {
+        "MANUAL": StandardModeFeature("MANUAL", RobotMode.MANUAL),
+        "SAFE_MANUAL": StandardModeFeature("SAFE_MANUAL", RobotMode.SAFE_MANUAL),
+        "FOLLOW_PERSON": FollowPersonFeature(),
+        "FOLLOW_TARGET": StandardModeFeature("FOLLOW_TARGET", RobotMode.FOLLOW_TARGET),
+        "AUTO_EXPLORE": AutoExploreFeature(),
+        "GO_TO_GOAL": StandardModeFeature("GO_TO_GOAL", RobotMode.GO_TO_GOAL),
+        "PATROL": StandardModeFeature("PATROL", RobotMode.PATROL),
+        "DELIVERY": StandardModeFeature("DELIVERY", RobotMode.DELIVERY),
+        "RETURN_HOME": StandardModeFeature("RETURN_HOME", RobotMode.RETURN_HOME),
+        "INSPECTION": StandardModeFeature("INSPECTION", RobotMode.INSPECTION),
+        "VOICE_ASSISTANT": StandardModeFeature("VOICE_ASSISTANT", RobotMode.VOICE_ASSISTANT),
+        "DOCKING": StandardModeFeature("DOCKING", RobotMode.DOCKING),
+        "SIMULATION": StandardModeFeature("SIMULATION", RobotMode.SIMULATION),
+        "EMERGENCY_STOP": StandardModeFeature("EMERGENCY_STOP", RobotMode.EMERGENCY_STOP),
     }
-    return {fid: StandardModeFeature(fid, mode) for fid, mode in mapping.items()}
+    return default_features
