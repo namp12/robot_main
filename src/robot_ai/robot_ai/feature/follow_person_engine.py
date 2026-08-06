@@ -9,19 +9,20 @@ logger = logging.getLogger("FollowPersonEngineV3")
 
 class FollowPersonFSMState(Enum):
     IDLE = auto()
-    SEARCH_PERSON = auto()
-    LOCK_TARGET = auto()
+    SEARCH = auto()
+    DETECT = auto()
+    LOCK = auto()
     FOLLOW = auto()
     KEEP_DISTANCE = auto()
-    SAFETY_CHECK = auto()
-    LOST_TARGET = auto()
+    SAFETY_STOP = auto()
+    LOST = auto()
     STOP = auto()
 
 
 class TargetLockManagerV3:
     """
     Manages Person Target Lock for FOLLOW_PERSON V3.
-    Locks EXCLUSIVELY to ONE person tracking ID (e.g. ID = 4).
+    Locks EXCLUSIVELY to ONE person tracking ID (e.g. ID = 3).
     Will NOT switch targets automatically unless target is lost for > 5.0 seconds.
     """
 
@@ -58,7 +59,7 @@ class TargetLockManagerV3:
         # 2. Lock first available target if none is currently locked
         if person_detections and self.locked_target_id is None:
             best_person = max(person_detections, key=lambda p: p.get("area", p.get("bbox_height", 0) * p.get("bbox_width", 0)))
-            track_id = best_person.get("track_id", 4)
+            track_id = best_person.get("track_id", 3)
             self.locked_target_id = track_id
             self.last_seen_timestamp = now
             logger.info(f"🔒 [TARGET LOCK V3] Locked exclusively to Target ID: {self.locked_target_id}")
@@ -73,15 +74,15 @@ class TargetLockManagerV3:
 
 class DistanceEstimatorV3:
     """
-    Estimates target distance using Bounding Box Height + Width + Moving Average Filter.
-    Target Zone: ~1.2m.
+    Estimates target distance using Bounding Box Height + Width + Exponential Moving Average Filter.
+    Target Zone: 1.2m (Deadband: 1.0m ~ 1.4m).
     """
 
     def __init__(self, frame_height: int = 480, frame_width: int = 640):
         self.frame_height = frame_height
         self.frame_width = frame_width
-        self.history: List[float] = []
-        self.history_max = 5
+        self.filtered_dist: Optional[float] = None
+        self.alpha = 0.35  # Low-pass filter smoothing coefficient
 
     def estimate_distance(self, bbox: Tuple[int, int, int, int]) -> float:
         x1, y1, x2, y2 = bbox
@@ -94,28 +95,36 @@ class DistanceEstimatorV3:
         # Empirical calibration for human height (~1.7m) to target ~1.2m
         raw_dist = 1.60 / (height_ratio + 0.1 * width_ratio)
 
-        self.history.append(raw_dist)
-        if len(self.history) > self.history_max:
-            self.history.pop(0)
+        if self.filtered_dist is None:
+            self.filtered_dist = raw_dist
+        else:
+            self.filtered_dist = (self.alpha * raw_dist) + ((1.0 - self.alpha) * self.filtered_dist)
 
-        smooth_dist = sum(self.history) / len(self.history)
-        return round(smooth_dist, 2)
+        return round(self.filtered_dist, 2)
 
 
 class FollowPersonEngine:
     """
-    Behavior Engine for FOLLOW_PERSON V3 (KEEP DISTANCE + SAFETY STOP).
-    Strictly isolated: Camera AI + YOLO11 + Person Tracker + Distance Controller + LiDAR Safety.
+    Commercial-Grade Behavior Engine for FOLLOW_PERSON V3 (Tracking & Distance Control Fix).
+    Strictly isolated: Camera AI + YOLO11 + Person Tracker + Combined Steering/Distance PID + LiDAR Safety.
     
-    Rules:
-    - Target Distance ~ 1.2m.
-      - > 1.5m -> Move Forward (0.25~0.35 m/s, `tien 70`)
-      - 1.0m ~ 1.5m -> Stand Still (Hold distance, `dung`)
-      - < 0.8m -> Move Backward (0.15 m/s, `lui 50`)
-    - Steering: CenterX < 40% -> Turn Left; CenterX > 60% -> Turn Right; 40~60% -> Straight.
-    - LiDAR Safety: Obstacle < 40cm -> STOP IMMEDIATELY (State: SAFETY_CHECK). Wait until > 50cm -> Auto Resume.
-      NO Replan, NO Costmap, NO Auto Avoidance.
-    - Target Lost: < 2s -> Stand & Wait; 2~5s -> Slow Search; > 5s -> Cancel Target & STOP.
+    Combined Motion Matrix:
+    - Deadband Distance: 1.0m ~ 1.4m (Target ~1.2m)
+    - Normalized Error x: error_x = (center_x - img_center) / (img_width / 2)  [-1.0 to +1.0]
+    - Error Deadband: -0.15 <= error_x <= 0.15
+    
+    Commands:
+    - Far (> 1.4m) + Left (error < -0.15) -> cheo_tt 70 (Forward + Turn Left)
+    - Far (> 1.4m) + Right (error > 0.15) -> cheo_tp 70 (Forward + Turn Right)
+    - Far (> 1.4m) + Center -> tien 70 (Forward Straight)
+    
+    - Close (< 1.0m) + Left (error < -0.15) -> cheo_st 60 (Backward + Turn Left)
+    - Close (< 1.0m) + Right (error > 0.15) -> cheo_sp 60 (Backward + Turn Right)
+    - Close (< 1.0m) + Center -> lui 50 (Backward Straight)
+    
+    - Deadband (1.0m ~ 1.4m) + Left -> trai 50 (Rotate Left in place)
+    - Deadband (1.0m ~ 1.4m) + Right -> phai 50 (Rotate Right in place)
+    - Deadband (1.0m ~ 1.4m) + Center -> dung (Hold Distance, Stand Still)
     """
 
     def __init__(self):
@@ -127,11 +136,10 @@ class FollowPersonEngine:
         self.safety_stop_active: bool = False
         self.safety_clearance_hysteresis_m: float = 0.50
 
+        self.filtered_error_x: float = 0.0
+        self.alpha_error = 0.40  # Anti-jitter low-pass filter for steering
+
     def process_cycle(self, perception_data: Dict[str, Any]) -> Tuple[str, Dict[str, Any]]:
-        """
-        Executes one control cycle for Follow Person V3.
-        Returns (command_str, metadata_dict).
-        """
         now = time.time()
         detections = perception_data.get("detections", [])
         min_obstacle_dist = perception_data.get("min_obstacle_distance_m", 99.0)
@@ -139,10 +147,8 @@ class FollowPersonEngine:
 
         # 1. LIDAR SAFETY LAYER CHECK (Obstacle < 40 cm -> STOP IMMEDIATELY)
         if self.safety_stop_active:
-            # Hysteresis check: Must clear > 50 cm before auto-resuming
             if min_obstacle_dist < self.safety_clearance_hysteresis_m:
-                self.state = FollowPersonFSMState.SAFETY_CHECK
-                logger.info(f"🛑 [SAFETY CHECK WAIT MODE] Obstacle at {min_obstacle_dist:.2f}m < 0.50m. Waiting for clearance.")
+                self.state = FollowPersonFSMState.SAFETY_STOP
                 return "dung", {
                     "state": self.state.name,
                     "tracking_id": self.target_lock.locked_target_id,
@@ -155,10 +161,10 @@ class FollowPersonEngine:
                 }
             else:
                 self.safety_stop_active = False
-                logger.info(f"🟢 [SAFETY CHECK CLEARED] Obstacle cleared at {min_obstacle_dist:.2f}m > 0.50m. Auto Resuming Follow.")
+                logger.info(f"🟢 [SAFETY CLEARED] Obstacle at {min_obstacle_dist:.2f}m > 0.50m. Resuming Follow.")
 
         if min_obstacle_dist < 0.40:
-            self.state = FollowPersonFSMState.SAFETY_CHECK
+            self.state = FollowPersonFSMState.SAFETY_STOP
             self.safety_stop_active = True
             logger.warning(f"🚨 [SAFETY STOP TRIGGERED] Obstacle detected at {min_obstacle_dist:.2f}m < 0.40m! Stopping immediately.")
             return "dung", {
@@ -180,7 +186,7 @@ class FollowPersonEngine:
 
             if time_missing < 2.0:
                 # < 2s -> Keep Target & Stand Still Wait
-                self.state = FollowPersonFSMState.LOST_TARGET
+                self.state = FollowPersonFSMState.LOST
                 return "dung", {
                     "state": self.state.name,
                     "tracking_id": self.target_lock.locked_target_id,
@@ -191,8 +197,8 @@ class FollowPersonEngine:
                     "safety_status": "SAFE"
                 }
             elif 2.0 <= time_missing <= 5.0:
-                # 2~5s -> Slow Search Spin
-                self.state = FollowPersonFSMState.SEARCH_PERSON
+                # 2~5s -> Slow Search Spin (10 deg/s)
+                self.state = FollowPersonFSMState.SEARCH
                 return "xoay_trai 40", {
                     "state": self.state.name,
                     "tracking_id": self.target_lock.locked_target_id,
@@ -219,53 +225,66 @@ class FollowPersonEngine:
         self.last_target_seen_ts = now
         bbox = locked_person.get("bbox", (0, 0, 100, 100))
         center_x = (bbox[0] + bbox[2]) / 2.0
-        center_x_pct = center_x / float(frame_w) if frame_w > 0 else 0.50
+        
+        # Normalized Steering Error [-1.0, 1.0]
+        raw_error_x = (center_x - (frame_w / 2.0)) / (frame_w / 2.0) if frame_w > 0 else 0.0
+        self.filtered_error_x = (self.alpha_error * raw_error_x) + ((1.0 - self.alpha_error) * self.filtered_error_x)
 
-        # 3. DISTANCE ESTIMATION (~1.2m Target)
+        # Distance Estimation
         estimated_dist = self.distance_estimator.estimate_distance(bbox)
 
-        # 4. DIRECTION / STEERING DECISION (CenterX 40% ~ 60%)
-        # CenterX < 40% -> Turn Left; CenterX > 60% -> Turn Right; 40~60% -> Straight
-        steering_cmd = "straight"
-        if center_x_pct < 0.40:
-            steering_cmd = "left"
-        elif center_x_pct > 0.60:
-            steering_cmd = "right"
+        # 3. COMBINED MOTION MATRIX (Steering Error + Distance Deadband 1.0m~1.4m)
+        is_left = self.filtered_error_x < -0.15
+        is_right = self.filtered_error_x > 0.15
+        is_center = not (is_left or is_right)
 
-        # 5. DISTANCE CONTROL DECISION
-        # > 1.5m -> Forward; 1.0 ~ 1.5m -> Hold (Stand still); < 0.8m -> Backward
+        is_far = estimated_dist > 1.40
+        is_close = estimated_dist < 1.00
+        is_deadband = not (is_far or is_close)
+
         cmd = "dung"
-        target_state_str = "KEEP_DISTANCE"
+        target_state_str = "KEEP_DISTANCE_DEADBAND"
 
-        if estimated_dist > 1.50:
+        if is_far:
             self.state = FollowPersonFSMState.FOLLOW
-            target_state_str = "FOLLOW_FORWARD"
-            if steering_cmd == "left":
-                cmd = "cheo_tt 70"
-            elif steering_cmd == "right":
-                cmd = "cheo_tp 70"
+            if is_left:
+                cmd = "cheo_tt 70"   # Forward + Turn Left
+                target_state_str = "FORWARD_LEFT"
+            elif is_right:
+                cmd = "cheo_tp 70"   # Forward + Turn Right
+                target_state_str = "FORWARD_RIGHT"
             else:
-                cmd = "tien 70"
-        elif estimated_dist < 0.80:
+                cmd = "tien 70"      # Forward Straight
+                target_state_str = "FORWARD_STRAIGHT"
+        elif is_close:
             self.state = FollowPersonFSMState.KEEP_DISTANCE
-            target_state_str = "KEEP_DISTANCE_BACKWARD"
-            cmd = "lui 50"
+            if is_left:
+                cmd = "cheo_st 60"   # Backward + Turn Left (Vừa lùi vừa xoay trái)
+                target_state_str = "BACKWARD_LEFT"
+            elif is_right:
+                cmd = "cheo_sp 60"   # Backward + Turn Right (Vừa lùi vừa xoay phải)
+                target_state_str = "BACKWARD_RIGHT"
+            else:
+                cmd = "lui 50"       # Backward Straight
+                target_state_str = "BACKWARD_STRAIGHT"
         else:
-            # 1.0m <= estimated_dist <= 1.5m (Target ~1.2m): Stand still / Turn in place to keep centered
+            # Deadband (1.0m <= dist <= 1.4m, target 1.2m): Hold distance, rotate in place if off-center
             self.state = FollowPersonFSMState.KEEP_DISTANCE
-            target_state_str = "KEEP_DISTANCE_HOLD"
-            if steering_cmd == "left":
-                cmd = "trai 50"
-            elif steering_cmd == "right":
-                cmd = "phai 50"
+            if is_left:
+                cmd = "trai 50"      # Rotate Left in place
+                target_state_str = "ROTATE_LEFT_DEADBAND"
+            elif is_right:
+                cmd = "phai 50"      # Rotate Right in place
+                target_state_str = "ROTATE_RIGHT_DEADBAND"
             else:
-                cmd = "dung"
+                cmd = "dung"         # Perfect Hold Distance (Stop)
+                target_state_str = "HOLD_DISTANCE_PERFECT"
 
         metadata = {
             "state": self.state.name,
             "tracking_id": self.target_lock.locked_target_id,
             "distance_m": estimated_dist,
-            "center_x_pct": round(center_x_pct * 100, 1),
+            "error_x": round(self.filtered_error_x, 2),
             "target_state": target_state_str,
             "current_speed": cmd,
             "obstacle_distance_m": round(min_obstacle_dist, 2),
@@ -280,3 +299,4 @@ class FollowPersonEngine:
         self.target_lock.release_lock()
         self.safety_stop_active = False
         self.last_target_seen_ts = 0.0
+        self.filtered_error_x = 0.0
