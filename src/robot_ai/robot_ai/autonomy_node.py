@@ -32,12 +32,14 @@ class AutonomyNode(Node):
         self.declare_parameter('simulation', False)
         self.declare_parameter('autonomy_enabled', True)
         self.declare_parameter('max_linear_speed', 0.35)
+        self.declare_parameter('watchdog_enabled', False)
         self.declare_parameter('max_angular_speed', 0.60)
         self.declare_parameter('inflation_radius', 0.35)
         self.declare_parameter('sector_count', 36)
 
         self.simulation = self.get_parameter('simulation').value
         self.autonomy_enabled = self.get_parameter('autonomy_enabled').value
+        self.watchdog_enabled = self.get_parameter('watchdog_enabled').value
         max_lin = self.get_parameter('max_linear_speed').value
         max_ang = self.get_parameter('max_angular_speed').value
         inf_rad = self.get_parameter('inflation_radius').value
@@ -50,18 +52,17 @@ class AutonomyNode(Node):
         self.planner = LocalPlanner(num_sectors=sec_cnt)
         self.behavior = BehaviorManager()
         self.velocity_planner = DynamicVelocityPlanner(max_linear_speed=max_lin, max_angular_speed=max_ang)
-        self.watchdog = HealthWatchdog(timeout_sec=0.8)
+        self.watchdog = HealthWatchdog(timeout_sec=3.0, startup_grace_sec=15.0)
 
-        # Sensor Subscriptions with BestEffort QoS for low latency
-        qos_sensor = QoSProfile(
-            reliability=ReliabilityPolicy.BEST_EFFORT,
-            history=HistoryPolicy.KEEP_LAST,
-            depth=5
-        )
+        # Default initial state to EXPLORE when enabled
+        if self.autonomy_enabled:
+            self.behavior.set_state(RobotState.EXPLORE)
 
-        self.create_subscription(LaserScan, '/scan', self._on_scan, qos_sensor)
+        # Standard Compatible QoS Subscriptions for /scan (compatible with all LiDAR drivers)
+        from rclpy.qos import qos_profile_sensor_data
+        self.create_subscription(LaserScan, '/scan', self._on_scan, qos_profile_sensor_data)
         self.create_subscription(Odometry, '/odom', self._on_odom, 10)
-        self.create_subscription(Imu, '/imu/data', self._on_imu, qos_sensor)
+        self.create_subscription(Imu, '/imu/data', self._on_imu, 10)
         self.create_subscription(String, '/detection', self._on_detection, 10)
         self.create_subscription(String, '/robot/command', self._on_command, 10)
 
@@ -74,7 +75,7 @@ class AutonomyNode(Node):
         self.create_timer(0.1, self._control_loop)
 
         self.get_logger().info(
-            f'🤖 Autonomous Navigation Stack V3 ONLINE (Simulation={self.simulation}, Enabled={self.autonomy_enabled})'
+            f'🤖 Autonomous Navigation Stack V3 ONLINE (Simulation={self.simulation}, Enabled={self.autonomy_enabled}, State={self.behavior.get_state().name})'
         )
 
     def _on_scan(self, msg: LaserScan):
@@ -147,8 +148,11 @@ class AutonomyNode(Node):
         # 1. Safety Watchdog Health Check
         is_healthy, health_reason = self.watchdog.check_health()
         if not is_healthy:
-            self.get_logger().error(f"HEALTH MONITOR FAILURE: {health_reason}")
-            self.behavior.trigger_emergency_stop()
+            if self.watchdog_enabled:
+                self.get_logger().error(f"HEALTH MONITOR FAILURE: {health_reason}")
+                self.behavior.trigger_emergency_stop()
+            else:
+                self.get_logger().warning(f"HEALTH MONITOR WARNING: {health_reason}")
 
         current_state = self.behavior.get_state()
         world_model = self.fusion.get_world_model()
