@@ -62,28 +62,53 @@ def speak_on_pi(text: str):
 
 
 def _play_tts_audio(text: str):
-    """Play audio to Bluetooth LA16 / ALSA speaker."""
+    """Play audio to Bluetooth LA16 / ALSA speaker using Google TTS with automatic text chunking."""
+    if not text or not text.strip():
+        return
+
+    import urllib.parse
+    import urllib.request
+    import re
+
+    # Chunk text into <= 150 char segments for Google TTS API
+    sentences = re.split(r'([.!?,;\n])', text)
+    chunks = []
+    current = ""
+    for item in sentences:
+        if len(current) + len(item) <= 150:
+            current += item
+        else:
+            if current.strip():
+                chunks.append(current.strip())
+            current = item
+    if current.strip():
+        chunks.append(current.strip())
+
+    if not chunks:
+        chunks = [text[:150]]
+
+    mp3_path = "/tmp/speak.mp3"
+    wav_path = "/tmp/speak.wav"
+    headers = {'User-Agent': 'Mozilla/5.0'}
+
     try:
-        import urllib.parse
-        import urllib.request
-        url = f"https://translate.google.com/translate_tts?ie=UTF-8&q={urllib.parse.quote(text)}&tl=vi&client=tw-ob"
-        mp3_path = "/tmp/speak.mp3"
-        wav_path = "/tmp/speak.wav"
-        headers = {'User-Agent': 'Mozilla/5.0'}
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req) as response:
-            with open(mp3_path, 'wb') as f:
-                f.write(response.read())
+        combined_mp3 = bytearray()
+        for chunk in chunks:
+            url = f"https://translate.google.com/translate_tts?ie=UTF-8&q={urllib.parse.quote(chunk)}&tl=vi&client=tw-ob"
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=5) as response:
+                combined_mp3.extend(response.read())
+
+        with open(mp3_path, 'wb') as f:
+            f.write(combined_mp3)
 
         # Convert MP3 to 22.05kHz 16-bit Mono WAV for PulseAudio smooth playback
         try:
             subprocess.run(["ffmpeg", "-y", "-i", mp3_path, "-ar", "22050", "-ac", "1", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             if os.path.exists(wav_path):
-                # Try paplay (PulseAudio native - 100% smooth on Bluetooth LA16 speaker)
                 res = subprocess.run(["paplay", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 if res.returncode == 0:
                     return
-                # Try aplay
                 res = subprocess.run(["aplay", "-D", "default", wav_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 if res.returncode == 0:
                     return
@@ -104,8 +129,8 @@ def _play_tts_audio(text: str):
                     return
             except FileNotFoundError:
                 continue
-    except Exception:
-        pass
+    except Exception as e:
+        logger.error(f"TTS playback error on Pi: {e}")
 
 
 class Handler(BaseHTTPRequestHandler):
