@@ -94,8 +94,12 @@ free_thresh: 0.25
 
 
 def main():
-    path_arg = sys.argv[1] if len(sys.argv) > 1 else "~/robot_ws/src/robot_bringup/maps/my_map"
-    target_path = os.path.expanduser(path_arg)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    workspace_dir = os.path.abspath(os.path.join(script_dir, ".."))
+    default_map_path = os.path.join(workspace_dir, "src", "robot_bringup", "maps", "my_map")
+    
+    path_arg = sys.argv[1] if len(sys.argv) > 1 else default_map_path
+    target_path = os.path.abspath(os.path.expanduser(path_arg))
     
     rclpy.init()
     node = NonBlockingMapSaver(target_path)

@@ -1,7 +1,20 @@
 #!/bin/bash
-TARGET_PATH=${1:-~/robot_ws/src/robot_bringup/maps/phong_demo}
-export CYCLONEDDS_URI='<CycloneDDS><Domain id="any"><Discovery><MaxAutoParticipantIndex>500</MaxAutoParticipantIndex></Discovery></Domain></CycloneDDS>'
-source /opt/ros/humble/setup.bash
-source ~/robot_ws/install/setup.bash 2>/dev/null
+# save_map.sh - Save SLAM occupancy grid map to YAML & PGM
+# Usage: bash save_map.sh [optional_target_path]
 
-python3 ~/robot_ws/scripts/save_map.py "$TARGET_PATH"
+WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TARGET_PATH=${1:-"$WORKSPACE_DIR/src/robot_bringup/maps/phong_demo"}
+
+# Detect & source ROS 2
+for distro in humble jazzy iron rolling foxy; do
+    if [ -f "/opt/ros/$distro/setup.bash" ]; then
+        source "/opt/ros/$distro/setup.bash"
+        break
+    fi
+done
+
+if [ -f "$WORKSPACE_DIR/install/setup.bash" ]; then
+    source "$WORKSPACE_DIR/install/setup.bash" 2>/dev/null
+fi
+
+python3 "$WORKSPACE_DIR/scripts/save_map.py" "$TARGET_PATH"

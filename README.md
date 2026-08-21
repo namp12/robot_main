@@ -1,12 +1,12 @@
-# Autonomous Delivery Robot - ROS2 Humble
+# Autonomous Delivery Robot - ROS 2 (Ubuntu Native & SBC)
 
-Hệ thống robot giao hàng tự hành sử dụng ROS2 Humble trên Raspberry Pi 4.
+Hệ thống robot giao hàng tự hành sử dụng ROS 2 (Humble / Jazzy), hỗ trợ phát triển và chạy trực tiếp trên **máy tính Ubuntu** cũng như trên Raspberry Pi.
 
 ## Tổng quan kiến trúc
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Raspberry Pi 4 (4GB)                         │
+│                     Ubuntu PC / SBC Compute                     │
 │                                                                 │
 │  ┌──────────────┐   ┌──────────────┐   ┌──────────────────┐    │
 │  │ camera_node   │   │ sllidar_ros2 │   │ robot_serial     │    │
@@ -22,8 +22,8 @@ Hệ thống robot giao hàng tự hành sử dụng ROS2 Humble trên Raspberry
 │  └──────┬───────────────────┬───────────────────┬───────────┘   │
 │         │                   │                   │                │
 │  ┌──────┴───────┐   ┌──────┴───────┐   ┌──────┴───────────┐    │
-│  │vision_ai_node│   │slam_toolbox  │   │ robot_description│    │
-│  │ (YOLO AI)    │   │ (SLAM)       │   │ (Robot Model)    │    │
+│  │  robot_ai    │   │slam_toolbox  │   │ robot_description│    │
+│  │ (YOLO / LLM) │   │ (SLAM / Nav2)│   │ (Robot Model)    │    │
 │  └──────────────┘   └──────────────┘   └──────────────────┘    │
 │                                                                 │
 │  ┌──────────────────────────────────────────────────────────┐   │
@@ -39,66 +39,27 @@ Hệ thống robot giao hàng tự hành sử dụng ROS2 Humble trên Raspberry
 
 | Thành phần | Chi tiết |
 |-------------|----------|
-| SBC | Raspberry Pi 4 (4GB RAM) |
-| OS | Ubuntu Server 22.04 |
-| ROS2 | Humble |
-| Lidar | RPLidar C1M1 (12m, 360°) |
+| Nền tảng | Ubuntu PC (x86_64) hoặc Raspberry Pi 4 (aarch64) |
+| OS | Ubuntu 22.04 LTS (Jammy) / Ubuntu 24.04 LTS (Noble) |
+| ROS 2 | Humble / Jazzy |
+| Lidar | RPLidar C1M1 (12m, 360°, 460800 baud) |
 | Camera | UGREEN USB Webcam (UVC) |
-| MCU | ESP32 DevKit V1 (UART qua USB) |
-| Workspace | `~/robot_ws` |
+| MCU | ESP32 DevKit V1 (UART qua USB, 115200 baud) |
+| Workspace | Thư mục repo hiện tại |
 
-## Packages
+> 📖 **Xem hướng dẫn chi tiết dành riêng cho Ubuntu PC:** [UBUNTU_GUIDE.md](UBUNTU_GUIDE.md)
 
-| # | Package | Loại | Mô tả |
-|---|---------|------|--------|
-| 1 | `robot_description` | CMake | Mô hình URDF/xacro robot (13 links, TF tree) |
-| 2 | `robot_bringup` | CMake | Master launch files (lidar, SLAM, localization) |
-| 3 | `camera_node` | Python | Driver webcam USB - publish `/camera/image_raw` |
-| 4 | `vision_ai_node` | Python | YOLO object detection - subscribe camera, publish detections |
-| 5 | `vision_msgs` | CMake | Custom message definitions (Detection, DetectionArray) |
-| 6 | `robot_serial` | Python | Serial bridge ESP32 - encoder, IMU, battery, cmd_vel |
-| 7 | `sllidar_ros2` | CMake | Driver RPLidar C1M1 - publish `/scan` |
-
-## Cài đặt Dependencies
+## Cài đặt Nhanh (One-Click Setup trên Ubuntu)
 
 ```bash
-# ROS2 core
-sudo apt install ros-humble-desktop
+# 1. Cài đặt toàn bộ dependencies & cấu hình udev rules:
+bash setup_ubuntu.sh
 
-# Lidar
-sudo apt install ros-humble-sllidar-ros2
+# 2. Source môi trường làm việc:
+source setup_env.sh
 
-# SLAM
-sudo apt install ros-humble-slam-toolbox
-
-# Camera & Vision
-sudo apt install ros-humble-cv-bridge ros-humble-sensor-msgs python3-opencv
-
-# Serial
-pip3 install pyserial
-
-# YOLO (cho vision_ai_node)
-pip3 install ultralytics
-```
-
-## Build toàn bộ workspace
-
-```bash
-cd ~/robot_ws
-source /opt/ros/humble/setup.bash
-colcon build
-source install/setup.bash
-```
-
-Build từng package:
-
-```bash
-colcon build --packages-select robot_description
-colcon build --packages-select robot_bringup
-colcon build --packages-select camera_node
-colcon build --packages-select vision_msgs
-colcon build --packages-select vision_ai_node
-colcon build --packages-select robot_serial
+# 3. Build workspace:
+robot_build
 ```
 
 ---
